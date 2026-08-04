@@ -1,0 +1,318 @@
+const ZH_SERVICE_LABELS: Record<string, string> = {
+  "General Consultation": "一般門診",
+  "Vaccination": "疫苗",
+  "Physical Exam": "身體檢查",
+  "Surgery": "手術",
+  "Dental Care": "牙齒護理",
+  "Emergency": "急症",
+  "24 Hours": "24小時",
+  "TCM": "中醫",
+  "Physiotherapy": "物理治療",
+  "Oncology": "腫瘤科",
+  "Cardiology": "心臟科",
+  "Dermatology": "皮膚科",
+  "Ophthalmology": "眼科",
+  "Orthopedics": "骨科",
+  "Neurology": "神經科",
+  "Internal Medicine": "內科",
+  "Exotic Pet Care": "珍禽異獸",
+  "X-Ray": "X光",
+  "Ultrasound": "超聲波",
+  "Blood Test": "驗血",
+  "Hospitalization": "住院",
+  "ICU": "深切治療",
+  "Pharmacy": "藥房",
+  "CT Scan": "CT掃描",
+  "MRI": "核磁共振",
+  "Laboratory Services": "實驗室",
+  "Biopsy": "活檢",
+  "Cytology": "細胞學",
+  "Allergy Testing": "過敏測試",
+  "Blood Pressure Monitoring": "血壓監測",
+  "ECG": "心電圖",
+  "Holter Monitoring": "24小時心電圖",
+  "Endoscopy": "內視鏡",
+  "Dental X-Ray": "牙科x光",
+  "Anesthesia": "麻醉",
+  "Pain Management": "疼痛管理",
+  "Desexing": "絕育",
+  "Microchip": "植入晶片",
+  "Parasite Control": "驅蟲",
+  "Weight Management": "體重管理",
+  "Travel Certificate": "健康證明",
+  "Nutrition Counseling": "營養諮詢",
+  "Wellness Programs": "健康計劃",
+  "Puppy Care": "幼犬",
+  "Kitten Care": "幼貓",
+  "Senior Pet Care": "老犬照顧",
+  "Vaccination Clinic": "防疫診所",
+  "Spay/Neuter Clinic": "絕育診所",
+  "House Call": "上門",
+  "Online Consultation": "網上診症",
+  "Behavioral Consultation": "行為諮詢",
+  "End-of-Life Care": "臨終",
+  "Pet Insurance": "寵物保險",
+  "Pet Cremation": "火化",
+  "Pet Memorial": "紀念",
+  "Pet Loss Support": "喪寵支援",
+  "Community Education": "講座",
+  "Pet First Aid": "寵物急救",
+  "Fear-Free Handling": "無壓力",
+  "Cat-Only Clinic": "只限貓",
+  "Dog-Only Clinic": "只限狗",
+  "Avian Specialist": "鳥類專科",
+  "Reptile Specialist": "爬蟲專科",
+  "Small Mammal Specialist": "小動物專科",
+  "Stem Cell Therapy": "幹細胞",
+  "Platelet Rich Plasma": "血小板",
+  "Shockwave Therapy": "衝擊波",
+  "Cryotherapy": "冷凍治療",
+  "Electrotherapy": "電療",
+  "Therapeutic Diets": "處方糧",
+  "Raw Food Consultation": "生食",
+  "Homemade Diet": "自製糧",
+  "Puppy Socialization": "幼犬社交",
+  "Obedience Training": "服從訓練",
+  "Behavioral Modification": "行為矯正",
+  "Aggression Management": "攻擊行為",
+  "Separation Anxiety": "分離焦慮",
+  "House Training": "如廁訓練",
+  "Palliative Care": "緩和治療",
+  "Quality of Life Assessment": "生活質素評估",
+  "Grooming": "美容",
+  "Bathing": "洗澡",
+  "Nail Trimming": "剪指甲",
+  "Ear Cleaning": "清耳朵",
+  "Anal Gland": "肛門腺",
+  "Full Service Grooming": "全套美容",
+  "Express Grooming": "快速美容",
+  "Self-Service Grooming": "自助美容",
+  "Breed-Specific Grooming": "品種剪",
+  "Show Grooming": "比賽剪",
+  "Creative Grooming": "創意造型",
+  "De-matting": "解結",
+  "Hand Stripping": "手拔毛",
+  "De-shedding": "去毛",
+  "Puppy Grooming": "幼犬美容",
+  "Senior Pet Grooming": "老犬美容",
+  "Aggressive Pet Handling": "難搞",
+  "Spa Treatment": "水療",
+  "Medicated Bath": "藥浴",
+  "Mud Spa": "泥浴",
+  "Ayurveda": "阿育吠陀",
+  "CO2 Spa": "碳酸泉",
+  "Massage": "按摩",
+  "Aromatherapy": "香薰",
+  "Hot Oil Treatment": "熱油",
+  "Blueberry Facial": "藍莓面部",
+  "Paw Treatment": "足部護理",
+  "Nail Art": "指甲彩繪",
+  "Dyeing": "染色",
+  "Teeth Cleaning": "刷牙",
+  "Paw Care": "足部護理",
+  "Facial": "面部修剪",
+  "Pick-up Service": "接送",
+  "Cat Grooming": "貓美容",
+  "Rabbit/Small Pet Grooming": "兔美容",
+  "Mobile Grooming": "上門美容",
+  "Flea/Tick Treatment": "跳蚤處理",
+  "Fur Dyeing": "毛色處理",
+  "Grooming Packages": "美容套餐",
+  "Boarding": "寄養",
+  "Cage-Free Boarding": "無籠",
+  "Private Room": "獨立房",
+  "24H Supervision": "24小時監察",
+  "Day Care": "日托",
+  "Hourly Care": "小時計",
+  "Extended Stay": "長期",
+  "Luxury Suites": "豪華",
+  "Standard Rooms": "標準房",
+  "Shared Accommodation": "共用",
+  "Cat-Only Boarding": "只限貓",
+  "Dog-Only Boarding": "只限狗",
+  "Small Pet Boarding": "小動物寄養",
+  "Exotic Pet Boarding": "珍禽異獸寄養",
+  "Medical Boarding": "醫療寄養",
+  "Webcam": "監控",
+  "Photo/Video Updates": "照片影片",
+  "Air Conditioning": "冷氣",
+  "Outdoor Area": "戶外",
+  "Medical Care": "醫療照顧",
+  "Special Needs": "特殊需求",
+  "Walking": "散步",
+  "Swimming": "游泳",
+  "Training": "訓練",
+  "Indoor Play Area": "室內遊樂",
+  "Agility Equipment": "敏捷",
+  "Socialization": "社交",
+  "Exercise Programs": "運動計劃",
+  "Playtime": "遊戲時間",
+  "Grooming Services": "美容服務",
+  "Feeding Service": "餵食",
+  "Special Diet Accommodation": "特殊飲食",
+  "Medication Administration": "餵藥",
+  "Insulin Administration": "胰島素",
+  "Temperature Control": "恆溫",
+  "Heating": "暖氣",
+  "Cooling": "冷氣",
+  "Ventilation": "通風",
+  "Security": "安全",
+  "Fire Safety": "防火",
+  "Emergency Care": "緊急照顧",
+  "Veterinary Access": "獸醫",
+  "Pick-up/Drop-off": "接送",
+  "Pet Taxi": "寵物車",
+  "Flexible Check-in": "彈性入住",
+  "Early Check-in": "提早入住",
+  "Late Check-out": "延遲退房",
+  "Holiday Care": "節日照顧",
+  "Weekend Care": "週末照顧",
+  "Overnight Care": "過夜",
+  "24/7 Care": "24小時",
+  "Live-in Staff": "駐場員工",
+  "CCTV Monitoring": "閉路電視",
+  "Daily Reports": "每日報告",
+  "WhatsApp Updates": "即時通訊",
+  "Video Calls": "視像通話",
+  "Pet Birthday Celebration": "生日",
+  "Customized Care": "個人化",
+  "Multi-Pet Discount": "多寵物",
+  "Loyalty Program": "會員",
+  "Referral Program": "推薦",
+  "Indoor Pet Friendly": "室內",
+  "Outdoor Pet Friendly": "戶外",
+  "Pet Seating": "寵物座",
+  "Pet Menu": "寵物餐",
+  "Pet Treats": "寵物零食",
+  "Water Provided": "水碗",
+  "Pet Birthday": "生日",
+  "Pet Parking": "泊狗",
+  "Pet Supplies": "尿片",
+  "Stroller Access": "寵物車",
+  "Off-Leash Area": "放繩",
+  "Pet Water Station": "飲水機",
+  "Pet Dining Area": "寵物用餐區",
+  "Pet Play Area": "寵物遊樂區",
+  "Pet Events": "寵物活動",
+  "Pet Photography": "寵物攝影",
+  "Pet-Friendly Staff": "愛寵員工",
+  "Pet Size Restrictions": "體型限制",
+  "Pet Weight Limit": "體重限制",
+  "Leash Required": "必須牽繩",
+  "Vaccination Required": "需打針",
+  "Reservation for Pets": "寵物預約",
+  "Pet-Friendly Hours": "寵物時段",
+  "Pet Birthday Packages": "生日套餐",
+  "Pet Menu Options": "寵物餐選擇",
+  "Fresh Pet Food": "新鮮寵物食物",
+  "Organic Pet Food": "有機寵物食物",
+  "Grain-Free Options": "無穀",
+  "Raw Food Option": "生食",
+  "Pet Desserts": "寵物甜品",
+  "Pet Beverages": "寵物飲品",
+  "Complimentary Treats": "免費零食",
+  "Pet Waste Disposal": "廢物處理",
+  "Pet Sanitization": "消毒",
+  "Pet First Aid Kit": "急救包",
+  "Pet Emergency Contact": "緊急聯絡",
+  "Pet Insurance Accepted": "寵物保險",
+  "Pet-Friendly Parking": "寵物停車",
+  "Pet-Friendly Entrance": "寵物入口",
+  "Pet-Friendly Restrooms": "寵物洗手間",
+  "Pet-Friendly Seating": "寵物座位",
+  "Pet-Friendly Tables": "寵物桌",
+  "Pet-Friendly Decor": "寵物裝飾",
+  "Pet Art": "寵物藝術",
+  "Pet Music": "寵物音樂",
+  "Pet Aromatherapy": "寵物香薰",
+  "Pet Massage": "寵物按摩",
+  "Pet Grooming Station": "美容站",
+  "Pet Drying Station": "吹乾站",
+  "Pet Rest Area": "寵物休息區",
+  "Pet Sleeping Area": "寵物睡眠區",
+  "Pet Viewing Area": "寵物觀賞區",
+  "Pet Social Area": "寵物社交區",
+  "Pet Exercise Area": "寵物運動區",
+  "Pet Training Area": "寵物訓練區",
+  "Pet Agility Course": "敏捷課程",
+  "Pet Swimming Pool": "寵物泳池",
+  "Pet Spa": "寵物水療",
+  "Pet Wellness Center": "健康中心",
+  "Pet Retail Shop": "寵物店",
+  "Pet Adoption Events": "領養活動",
+  "Pet Charity Events": "慈善活動",
+  "Pet Education": "寵物教育",
+  "Pet Training Classes": "訓練班",
+  "Pet Behavior Consultation": "行為諮詢",
+  "Pet Nutrition Consultation": "營養諮詢",
+  "Pet Health Check": "健康檢查",
+  "Pet Vaccination": "疫苗",
+  "Pet Microchipping": "晶片",
+  "Cat Friendly": "適合貓咪",
+  "Dog Friendly": "適合狗狗",
+  "Payment Options": "付款",
+};
+
+const EN_SERVICE_LABELS: Record<string, string> = {
+  "TCM": "Traditional Chinese Medicine",
+  "ICU": "Intensive Care Unit",
+  "Anal Gland": "Anal Gland Expression",
+};
+
+const EXCLUDED_SERVICES = new Set(["air-conditioning", "air conditioning"]);
+
+function normalizeValue(value: string) {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+export function translateService(service: string, language: string) {
+  const normalizedLanguage = language.toLowerCase();
+
+  if (normalizedLanguage.startsWith("zh")) {
+    return ZH_SERVICE_LABELS[service] || service;
+  }
+
+  return EN_SERVICE_LABELS[service] || service;
+}
+
+export function translateServiceOfferings(
+  serviceOfferings: string | string[] | null | undefined,
+  language: string
+) {
+  if (!serviceOfferings) {
+    return [];
+  }
+
+  const rawServices = Array.isArray(serviceOfferings)
+    ? serviceOfferings
+    : serviceOfferings.split(",");
+
+  const translatedServices: string[] = [];
+  const seenTranslatedLabels = new Set<string>();
+
+  rawServices.forEach((service) => {
+    const rawLabel = String(service || "").trim();
+    if (!rawLabel) {
+      return;
+    }
+
+    if (EXCLUDED_SERVICES.has(normalizeValue(rawLabel))) {
+      return;
+    }
+
+    const translatedLabel = translateService(rawLabel, language).trim();
+    if (!translatedLabel) {
+      return;
+    }
+
+    const normalizedTranslatedLabel = normalizeValue(translatedLabel);
+    if (seenTranslatedLabels.has(normalizedTranslatedLabel)) {
+      return;
+    }
+
+    seenTranslatedLabels.add(normalizedTranslatedLabel);
+    translatedServices.push(translatedLabel);
+  });
+
+  return translatedServices;
+}

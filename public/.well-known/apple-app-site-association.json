@@ -1,0 +1,16 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "F4349NCC87.com.bugy.petwell",
+                "paths": [
+                    "/forum/*",
+                    "/clinics/*",
+                    "/pet/*",
+                    "/activate/*"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,3 @@
+# SPA fallback — only used when no matching static file exists.
+# Nested dist/<route>/<id>/index.html files (SEO prerender) are served first.
+/*    /index.html   200

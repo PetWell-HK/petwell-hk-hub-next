@@ -1,0 +1,15 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls",
+            "delegate_permission/common.get_login_creds"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.bugy.petwell",
+            "sha256_cert_fingerprints": [
+                "09:38:E0:A2:26:C8:59:72:02:04:F8:07:E5:66:4F:C3:32:BD:67:3E:50:5E:82:9E:6C:A6:8A:A7:96:D4:24:55"
+            ]
+        }
+    }
+]

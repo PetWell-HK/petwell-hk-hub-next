@@ -1,0 +1,2484 @@
+{
+  "nav": {
+    "home": "Home",
+    "openMenu": "Open menu",
+    "logoAlt": "PetWell Hong Kong pet health app logo - veterinary reviews and pet health management platform",
+    "petFriendly": "Pet-friendly",
+    "clinics": "Clinics",
+    "salons": "Pet Grooming",
+    "lodging": "Pet Lodging",
+    "malls": "Pet-friendly Malls",
+    "restaurants": "Restaurants",
+    "restaurantsByDistrict": "By district (18)",
+    "ngos": "Animal NGOs",
+    "about": "About Us",
+    "forum": "Pet Forum",
+    "blog": "Pet Info",
+    "ownerZone": "Owner Zone",
+    "tests": "Fun Tests",
+    "petMatchmaker": "Pet Matchmaker",
+    "petActivities": "Pet Activities",
+    "testBooking": "Testing Services",
+    "nutritionScore": "Food Score",
+    "otherServices": "Merchant Partnership"
+  },
+  "restaurantReservation": {
+    "cta": "Reserve a table",
+    "ctaShort": "Reserve",
+    "title": "Reserve a table",
+    "subtitle": "{{restaurantName}} · Pending confirmation after you send",
+    "when": "Date & time",
+    "moreDates": "More dates",
+    "contact": "Your details",
+    "customerName": "Name",
+    "customerNamePlaceholder": "e.g. Chan Tai Man",
+    "customerPhone": "Phone",
+    "customerPhonePlaceholder": "e.g. 9123 4567",
+    "customerEmail": "Email",
+    "customerEmailPlaceholder": "you@example.com",
+    "reservationAt": "Reservation date and time",
+    "reservationDate": "Date",
+    "reservationDatePlaceholder": "Choose a date",
+    "reservationTime": "Time",
+    "partySize": "Guests",
+    "petCount": "Pets",
+    "maxPetsHint": "Up to {{count}}",
+    "fewer": "Fewer",
+    "more": "More",
+    "petSummary": "Pet details (optional)",
+    "petSummaryPlaceholder": "e.g. 1 small dog, outdoor seat",
+    "specialRequest": "Special request (optional)",
+    "specialRequestPlaceholder": "Seating preference, celebration, etc.",
+    "addExtras": "Add email or notes",
+    "editExtras": "Edit email or notes",
+    "termsTitle": "Booking terms",
+    "termsAccept": "I agree to the booking terms",
+    "viewTerms": "View terms",
+    "hideTerms": "Hide terms",
+    "depositNotice": "A deposit may be required for {{count}}+ pets.",
+    "noAvailableDates": "No dates available right now.",
+    "noAvailableTimes": "No times on this date.",
+    "pickDateFirst": "Choose a date first.",
+    "notice": "Pending confirmation — the restaurant may contact you.",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "successTitle": "Request sent",
+    "successDesc": "Your request for {{restaurantName}} is pending confirmation.",
+    "errorDesc": "Couldn't send your request. Please try again.",
+    "validation": {
+      "required": "Please fill this in.",
+      "email": "Enter a valid email.",
+      "future": "Choose a time that meets the notice period.",
+      "unavailableDate": "This date isn't available.",
+      "unavailableTime": "This time isn't available.",
+      "maxPets": "Up to {{count}} pets for this slot.",
+      "partySize": "Select at least 1 guest.",
+      "petCount": "Pet count can't be negative.",
+      "terms": "Please agree to the booking terms."
+    }
+  },
+  "tests": {
+    "title": "Fun Pet Tests",
+    "subtitle": "Discover fun and insightful tests about you and your pets!",
+    "petMatchmakerDesc": "Find out which pet matches your personality and lifestyle perfectly.",
+    "startTest": "Start Test"
+  },
+  "hero": {
+    "title": "Hong Kong's First",
+    "titleHighlight": "Pet Health App",
+    "titleEnd": "",
+    "subtitle": "Complete veterinary and pet grooming information in one app",
+    "cta": "Download Now"
+  },
+  "home": {
+    "eyebrow": "Hong Kong's first all-in-one pet health platform",
+    "summary": "Hong Kong's go-to platform — clinic reviews, pet-friendly restaurants, grooming, lodging, activities and forum",
+    "explorePlatform": "Explore platform",
+    "stats": {
+      "clinicsValue": "200+",
+      "clinicsLabel": "Vet clinics",
+      "restaurantsValue": "1500+",
+      "restaurantsLabel": "Pet-friendly spots",
+      "freeValue": "100%",
+      "freeLabel": "Free to use"
+    },
+    "features": {
+      "eyebrow": "Core capabilities",
+      "title": "Built for pet parents",
+      "subtitle": "Reviews, discovery, and health records — making pet care clearer and simpler.",
+      "saveTime": {
+        "title": "Save research time",
+        "description": "PetWell consolidates reviews* so you find what you need in one place."
+      },
+      "advocacy": {
+        "title": "Advocate for animals",
+        "description": "Share good and bad experiences to build a more pet-inclusive city."
+      },
+      "records": {
+        "title": "Lifetime health records",
+        "description": "Keep a detailed history of your pet's care — nothing gets lost when you switch vets."
+      },
+      "free": {
+        "title": "Completely free",
+        "description": "We believe every animal deserves access to quality services."
+      }
+    },
+    "platform": {
+      "eyebrow": "Product ecosystem",
+      "title": "Everything in one platform",
+      "subtitle": "From medical decisions to everyday outings — PetWell covers what Hong Kong pet owners need.",
+      "clinics": {
+        "title": "Vet clinics",
+        "description": "Real reviews, fee references, and 24-hour emergency filtering.",
+        "cta": "Browse clinics"
+      },
+      "restaurants": {
+        "title": "Pet-friendly dining",
+        "description": "Team-verified restaurants across Hong Kong Island, Kowloon, and NT.",
+        "cta": "Browse restaurants"
+      },
+      "activities": {
+        "title": "Pet activities",
+        "description": "Markets, parties, carnivals — plan great weekends for your pet.",
+        "cta": "Browse activities"
+      }
+    },
+    "testimonials": {
+      "eyebrow": "User stories",
+      "title": "What Hong Kong pet owners say",
+      "minnie": {
+        "text": "I used to rely on friends for vet recommendations and travel far for appointments. With PetWell, everyone can share reviews — I can finally pick a clinic near me!",
+        "author": "Minnie Leung"
+      },
+      "elaine": {
+        "text": "After years of pet ownership, I'd often lose vaccination cards or forget emergency visits. Now I can record every vet visit in detail — switching vets without missing anything.",
+        "author": "Elaine Yeung"
+      },
+      "matthew": {
+        "text": "My dog hates groomers after a bad experience as a puppy. With so many mobile groomers, it's hard to compare value — PetWell lets me compare options and see the earliest booking slots at once!",
+        "author": "Matthew Chan"
+      }
+    },
+    "appPreviewAlt": "PetWell pet health app on mobile — vet clinic search, health records, and walk tracking"
+  },
+  "homePortal": {
+    "hero": {
+      "eyebrow": "Hong Kong pet platform",
+      "title": "Making pet life simpler",
+      "subtitle": "Price compare, clinics, grooming, boarding, restaurants, events & forum — one search",
+      "subtitleMobile": "Compare prices, clinics, restaurants & more — one search"
+    },
+    "tabs": {
+      "all": "All",
+      "review": "Price compare"
+    },
+    "search": {
+      "categoryLabel": "Search category",
+      "placeholder": "Search products, clinics, salons, restaurants, events…",
+      "placeholderMobile": "Search products, clinics…",
+      "placeholders": {
+        "review": "Search brand or product name…",
+        "activities": "Search event name or location…"
+      },
+      "submit": "Search"
+    },
+    "quickNav": {
+      "label": "Quick access",
+      "review": "Price compare"
+    },
+    "promos": {
+      "title": "Featured offers",
+      "cta": "View now",
+      "member": {
+        "title": "PetWell Member perks",
+        "subtitle": "Members enjoy 10% off"
+      },
+      "activities": {
+        "title": "2026 pet hotspots",
+        "subtitle": "Weekend activities & outings"
+      },
+      "review": {
+        "title": "Pet product price compare",
+        "subtitle": "Compare prices across Hong Kong"
+      }
+    },
+    "suggestions": {
+      "title": "Explore PetWell",
+      "explore": "Go",
+      "clinicsSub": "Real reviews & fee references",
+      "salonsSub": "Grooming salons across HK",
+      "lodgingSub": "Boarding & pet hotels",
+      "restaurantsSub": "Team-verified pet-friendly dining",
+      "districtsLink": "Browse by 18 districts",
+      "activities": "Hong Kong pet hotspots",
+      "activitiesSub": "Events, markets & outdoor picks",
+      "ownerZoneSub": "Care guides & practical tips"
+    },
+    "featured": {
+      "title": "Featured picks",
+      "subtitle": "Popular categories curated for pet owners",
+      "review": {
+        "title": "Pet product price compare",
+        "subtitle": "Compare real prices across Hong Kong stores"
+      }
+    },
+    "sectors": {
+      "viewAll": "View all",
+      "verified": "Verified",
+      "review": {
+        "title": "Best deals · Pet price compare",
+        "subtitle": "Compare store prices and find the best buy"
+      },
+      "restaurants": {
+        "title": "Pet-friendly restaurants",
+        "subtitle": "Team-verified — dine with your pet confidently"
+      },
+      "events": {
+        "title": "Pet events & outings",
+        "subtitle": "Weekend markets, parties & outdoor picks"
+      },
+      "clinics": {
+        "title": "Vet clinic reviews",
+        "subtitle": "Real user ratings & fee references"
+      },
+      "salons": {
+        "title": "Pet grooming"
+      },
+      "lodging": {
+        "title": "Pet boarding"
+      }
+    },
+    "cards": {
+      "stores": "{{count}} stores",
+      "savePercent": "Save {{pct}}%",
+      "newListing": "New",
+      "freeEntry": "Free entry",
+      "priceFrom": "From HK$ {{price}}",
+      "rank": "Rank #{{rank}}"
+    },
+    "forum": {
+      "title": "Trending in forum",
+      "subtitle": "Latest discussions from the community",
+      "viewAll": "View more",
+      "hot": "Hot",
+      "replies": "{{count}} replies"
+    }
+  },
+  "clinics": {
+    "pageTitle": "Hong Kong Veterinary Clinic Search & Reviews",
+    "subtitle": "Discover the Best Veterinary Clinics for Your Pet - Kowloon, Hong Kong Island & New Territories",
+    "description": "Over 200 veterinary clinics across Hong Kong with real user reviews and instant booking",
+    "searchPlaceholder": "Search clinic name or address...",
+    "filterByRegion": "Filter by Region",
+    "regions": {
+      "all": "All Regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Error loading clinic data",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No clinics found in this region",
+    "services": "Services",
+    "reviews": "user reviews",
+    "ctaTitle": "Need to Find More Clinics?",
+    "ctaDescription": "Download PetWell App to browse over 200 veterinary clinics in Hong Kong with advanced search features",
+    "ctaButton": "Download App Now",
+    "filter24Hour": "Show 24-hour clinics only",
+    "filtersLabel": "Filters",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{{count}} clinics",
+    "loadMore": "Load more",
+    "noResultsHint": "Try adjusting your search or filters to see more results.",
+    "trustBadge": "Real user reviews",
+    "backToList": "Back to Clinics",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Opening Hours",
+    "closed": "Closed",
+    "gallery": "Photos",
+    "detail": {
+      "notFound": "Clinic not found",
+      "servicesOverview": "Services at a glance",
+      "servicesOverviewSubtitle": "Key services offered at this clinic",
+      "callNow": "Call clinic",
+      "getDirections": "Get directions",
+      "email": "Email",
+      "todayHours": "Open today",
+      "viewFullHours": "View full opening hours",
+      "hideFullHours": "Hide opening hours",
+      "reviewsTitle": "Reviews",
+      "reviewsSubtitle": "What other pet owners say",
+      "planVisit": "Visit details",
+      "noHoursToday": "Closed today or hours unavailable",
+      "suggestEdit": "Suggest edit",
+      "suggestEditPrompt": "Info outdated?",
+      "reviewsEmpty": "No reviews yet",
+      "businessReply": "Reply from this place",
+      "reviewsMoreTitle": "Want more reviews?",
+      "reviewsMoreDescription": "Download PetWell to read all reviews",
+      "businessReplyFrom": "Reply from {{placeName}}",
+      "businessReplyOfficial": "Official"
+    }
+  },
+  "salons": {
+    "pageTitle": "Pet Grooming",
+    "subtitle": "Discover pet grooming salons in Hong Kong - Kowloon, Hong Kong Island & New Territories",
+    "description": "Pet salon search, user reviews, services and pricing reference",
+    "searchPlaceholder": "Search salon name or address...",
+    "filterByRegion": "Filter by Region",
+    "regions": {
+      "all": "All Regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Error loading pet grooming data",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No pet grooming salons found in this region",
+    "services": "Services",
+    "reviews": "user reviews",
+    "ctaTitle": "Need to Find More Pet Grooming Salons?",
+    "ctaDescription": "Download PetWell App to browse more pet salons with advanced search",
+    "ctaButton": "Download App Now",
+    "filter24Hour": "24-hour only",
+    "filtersLabel": "Filters",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{{count}} salons",
+    "loadMore": "Load more",
+    "noResultsHint": "Try adjusting your search or filters to see more results.",
+    "trustBadge": "Real user reviews",
+    "backToList": "Back to Salons",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Opening Hours",
+    "closed": "Closed",
+    "gallery": "Photos",
+    "detail": {
+      "notFound": "Salon not found",
+      "servicesOverview": "Services at a glance",
+      "servicesOverviewSubtitle": "Key grooming services available here",
+      "callNow": "Call salon",
+      "getDirections": "Get directions",
+      "email": "Email",
+      "todayHours": "Open today",
+      "viewFullHours": "View full opening hours",
+      "hideFullHours": "Hide opening hours",
+      "reviewsTitle": "Reviews",
+      "reviewsSubtitle": "What other pet owners say",
+      "planVisit": "Visit details",
+      "noHoursToday": "Closed today or hours unavailable",
+      "suggestEdit": "Suggest edit",
+      "suggestEditPrompt": "Info outdated?",
+      "reviewsEmpty": "No reviews yet",
+      "businessReply": "Reply from this place",
+      "reviewsMoreTitle": "Want more reviews?",
+      "reviewsMoreDescription": "Download PetWell to read all reviews",
+      "businessReplyFrom": "Reply from {{placeName}}",
+      "businessReplyOfficial": "Official"
+    }
+  },
+  "lodging": {
+    "pageTitle": "Pet Lodging",
+    "subtitle": "Discover pet lodging and pet hotels in Hong Kong - Kowloon, Hong Kong Island & New Territories",
+    "description": "Pet lodging search, user reviews, facilities and pricing reference",
+    "searchPlaceholder": "Search lodging name or address...",
+    "filterByRegion": "Filter by Region",
+    "regions": {
+      "all": "All Regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Error loading pet lodging data",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No pet lodging found in this region",
+    "services": "Services",
+    "reviews": "user reviews",
+    "ctaTitle": "Need to Find More Pet Lodging?",
+    "ctaDescription": "Download PetWell App to browse more pet lodging and pet hotels with advanced search",
+    "ctaButton": "Download App Now",
+    "filter24Hour": "24-hour only",
+    "filtersLabel": "Filters",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{{count}} lodging options",
+    "loadMore": "Load more",
+    "noResultsHint": "Try adjusting your search or filters to see more results.",
+    "trustBadge": "Real user reviews",
+    "backToList": "Back to Lodging",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Opening Hours",
+    "closed": "Closed",
+    "gallery": "Photos",
+    "detail": {
+      "notFound": "Lodging not found",
+      "servicesOverview": "Facilities at a glance",
+      "servicesOverviewSubtitle": "Key services and facilities available",
+      "callNow": "Call lodging",
+      "getDirections": "Get directions",
+      "email": "Email",
+      "todayHours": "Open today",
+      "viewFullHours": "View full opening hours",
+      "hideFullHours": "Hide opening hours",
+      "reviewsTitle": "Reviews",
+      "reviewsSubtitle": "What other pet owners say",
+      "planVisit": "Visit details",
+      "noHoursToday": "Closed today or hours unavailable",
+      "suggestEdit": "Suggest edit",
+      "suggestEditPrompt": "Info outdated?",
+      "reviewsEmpty": "No reviews yet",
+      "businessReply": "Reply from this place",
+      "reviewsMoreTitle": "Want more reviews?",
+      "reviewsMoreDescription": "Download PetWell to read all reviews",
+      "businessReplyFrom": "Reply from {{placeName}}",
+      "businessReplyOfficial": "Official"
+    }
+  },
+  "restaurants": {
+    "pageTitle": "Hong Kong Pet-Friendly Restaurant Guide",
+    "subtitle": "1,000+ real pet owner reviews to help you avoid the pitfalls",
+    "description": "The most comprehensive guide | PetWell is written by real Hong Kong pet owners to help you avoid traps and find truly pet-friendly restaurants.",
+    "seoTitle": "Hong Kong Pet-Friendly Restaurant Guide | 1,000+ Real Owner Reviews | PetWell",
+    "seoDescription": "PetWell is Hong Kong's only pet-friendly restaurant review site. Real pet owners share honest reviews and photos so you avoid traps and find truly dog-friendly restaurants.",
+    "seoKeywords": "pet friendly restaurant hong kong,dog friendly restaurant hong kong,FEHD pet friendly restaurants,where to eat with dog hong kong,indoor pet friendly cafe hk,walk in dog restaurant,帶狗餐廳,香港寵物友善餐廳",
+    "seoStructuredDataName": "Hong Kong Pet-Friendly Restaurant Directory",
+    "enAliasPageTitle": "Pet-Friendly Restaurants in Hong Kong",
+    "enAliasSubtitle": "Team-verified restaurants where pets are welcome",
+    "enAliasDescription": "Browse Hong Kong pet-friendly restaurants verified by PetWell, with indoor access and walk-in filters.",
+    "enAliasSeoTitle": "Pet-Friendly Restaurants Hong Kong 2026 | Verified Dog-Friendly Dining | PetWell",
+    "enAliasSeoDescription": "Find verified pet-friendly restaurants in Hong Kong. Filter by district, indoor access, and walk-in policy — beyond the FEHD lottery list.",
+    "searchIntent": "PetWell is written by real Hong Kong pet owners to help you avoid traps and find truly pet-friendly restaurants.",
+    "directQuestion": "Which Hong Kong restaurants are actually safe to visit with your pet?",
+    "directAnswer": "PetWell is Hong Kong's only community review site dedicated to pet-friendly restaurants. Beyond ratings, hours, and indoor/walk-in policies, you'll find honest reviews and real photos from other pet owners — so you know what to expect before bringing your dog or cat.",
+    "faqTitle": "Pet-Friendly Restaurant FAQ",
+    "faq": {
+      "q1": "Where can I find pet-friendly restaurants in Hong Kong?",
+      "a1": "You can find them across Hong Kong Island, Kowloon, and the New Territories, and filter by district to find nearby options.",
+      "q2": "What should I check before bringing my dog to a restaurant?",
+      "a2": "Check whether pets are allowed indoors, whether reservations are required, and if walk-ins are accepted before visiting.",
+      "q3": "How can I tell if a restaurant is truly pet-friendly?",
+      "a3": "Look for verification badges, policy tags, ratings, and real user feedback on pet access and dining experience.",
+      "q4": "Can I walk in, or do I need a reservation?",
+      "a4": "It depends on the venue policy. Use the walk-in filter or check each restaurant's entry policy label.",
+      "q5": "What's the difference between the FEHD list and PetWell verified restaurants?",
+      "a5": "The FEHD list shows licence-approved premises allowing dogs. PetWell verification means our team called to confirm pet policies including indoor access and walk-in rules.",
+      "q6": "What rules apply at FEHD-approved restaurants?",
+      "a6": "Typical rules include leashing, no dogs on tables, no contact with utensils, and no access to kitchen areas. See FEHD for full details.",
+      "q7": "Can I bring my cat to pet-friendly restaurants?",
+      "a7": "Policies vary. PetWell listings focus on dog-friendly venues — call ahead to confirm if cats are welcome.",
+      "q8": "Which areas have the most pet-friendly restaurants?",
+      "a8": "Hong Kong Island (Central, Wan Chai, Eastern) and Kowloon (Yau Tsim Mong, Kwun Tong) tend to have more options. Browse our 18-district pages for counts."
+    },
+    "howTo": {
+      "name": "How to choose a pet-friendly restaurant",
+      "description": "Use PetWell to quickly find a Hong Kong restaurant that welcomes your pet.",
+      "step1Name": "Pick an area",
+      "step1Text": "Filter by 18 districts or Hong Kong Island / Kowloon / New Territories, or search by name and address.",
+      "step2Name": "Check pet policies",
+      "step2Text": "Look for indoor access, walk-in, and PetWell verification badges.",
+      "step3Name": "Compare ratings and hours",
+      "step3Text": "Review user ratings, today's opening hours, and extras like Puppuccino.",
+      "step4Name": "Confirm before you go",
+      "step4Text": "Call ahead to confirm the latest policy, especially during peak hours or for large dogs."
+    },
+    "hubSeo": {
+      "title": "Hong Kong's only pet-friendly restaurant review site — by owners, for owners",
+      "body": "Plenty of restaurants say they're pet-friendly, but the reality is often different: outdoor seating only, advance booking required, or dogs kept in strollers indoors. Don't let another owner get caught out — share your real experience here. You can post anonymously, upload photos, and speak your mind. Every review helps the next family bringing a pet out, and makes Hong Kong genuinely more pet-friendly."
+    },
+    "communityReviewsTitle": "Why leave a review?",
+    "communityReviewsBody": "PetWell isn't just a directory — it's a shared map built by Hong Kong pet owners. One honest comment, good or bad, helps the next family avoid a bad experience or discover a hidden gem. Post anonymously, add photos, tell the truth. All free.",
+    "districtPage": {
+      "indexTitle": "Pet-friendly restaurants by Hong Kong's 18 districts",
+      "indexSubtitle": "Find verified pet-friendly restaurants in every official district across HK Island, Kowloon, NT, and Islands.",
+      "indexSeoTitle": "Hong Kong 18 Districts Pet-Friendly Restaurants | PetWell HK",
+      "indexSeoDescription": "Browse pet-friendly restaurants by Hong Kong's 18 districts. PetWell verified listings plus FEHD reference data.",
+      "indexSeoKeywords": "pet friendly restaurant by district hong kong,18 districts dog friendly dining",
+      "pageTitle": "Pet-friendly restaurants in {{district}}",
+      "subtitle": "Verified pet-friendly dining in {{district}} ({{region}})",
+      "seoTitle": "{{district}} Pet-Friendly Restaurants | Dog-Friendly Dining | PetWell HK",
+      "seoDescription": "{{district}} has {{count}} PetWell verified pet-friendly restaurants. Filter by indoor access and walk-in, plus FEHD approved venues in the area.",
+      "seoKeywords": "{{district}} pet friendly restaurant,{{district}} dog friendly restaurant,{{region}} pet dining",
+      "searchIntent": "Looking for pet-friendly restaurants in {{district}}? Here are PetWell verified options.",
+      "directQuestion": "Where are pet-friendly restaurants in {{district}}?",
+      "directAnswer": "{{district}} currently has {{count}} PetWell verified restaurants — {{indoorCount}} allow indoor access and {{walkInCount}} accept walk-ins.",
+      "faqTitle": "{{district}} pet-friendly restaurant FAQ",
+      "faq": {
+        "q1": "How many pet-friendly restaurants are in {{district}}?",
+        "a1": "PetWell lists {{count}} verified pet-friendly restaurants in {{district}}. If the count is low, see the FEHD directory on this page.",
+        "q2": "Which {{district}} restaurants allow indoor pet access?",
+        "a2": "Use the indoor access filter or check each listing's pet policy tags."
+      },
+      "indexFaq": {
+        "q1": "How do I search by Hong Kong's 18 districts?",
+        "a1": "Pick your district to see PetWell verified restaurants and FEHD reference listings for that area.",
+        "q2": "How is this different from the main restaurant list?",
+        "a2": "District pages pre-filter to one area with localized SEO and FAQ content for faster discovery."
+      },
+      "statsTitle": "How many pet-friendly restaurants in {{district}}?",
+      "statsBody": "{{district}} has {{count}} PetWell verified restaurants ({{indoorCount}} indoor, {{walkInCount}} walk-in).",
+      "fehdCompare": "PetWell verified restaurants are phone-confirmed for pet policies. The FEHD list shows licence-approved dog-access premises — use both for reference.",
+      "hubLink": "All Hong Kong pet-friendly restaurants",
+      "fehdLink": "FEHD 1,000 approved list",
+      "allDistricts": "All 18 districts",
+      "districtNavTitle": "Browse by Hong Kong's 18 districts",
+      "districtNavDescription": "Select a district to see verified pet-friendly restaurants in that area.",
+      "noResults": "No PetWell verified restaurants match in {{district}} yet",
+      "noResultsHint": "Try the FEHD directory below or browse nearby districts.",
+      "listAriaLabel": "Pet-friendly restaurants in {{district}}"
+    },
+    "regionPage": {
+      "pageTitle": "Pet-friendly restaurants in {{region}}",
+      "subtitle": "Verified pet-friendly dining across {{region}}",
+      "seoTitle": "{{region}} Pet-Friendly Restaurants | Dog-Friendly Dining | PetWell HK",
+      "seoDescription": "{{region}} has {{count}} PetWell verified pet-friendly restaurants. Filter by indoor access and walk-in across all districts.",
+      "seoKeywords": "{{region}} pet friendly restaurant,{{region}} dog friendly dining"
+    },
+    "searchPlaceholder": "Search restaurant name or address...",
+    "filterByRegion": "Filter by Region",
+    "filterWalkIn": "Walk-in allowed",
+    "filterFehdLicensed": "FEHD licensed",
+    "filtersLabel": "Restaurant filters",
+    "heroEyebrow": "Verified dining guide",
+    "verifiedPanelTitle": "Every listing is PetWell verified",
+    "verifiedPanelDescription": "We confirm pet policies before a restaurant appears here — so you know what's allowed before you go.",
+    "resultsCount": "{{count}} verified restaurants",
+    "showingCount": "Showing {{shown}} of {{total}}",
+    "loadMore": "Load more",
+    "clearFilters": "Clear filters",
+    "regions": {
+      "all": "All Regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Error loading restaurant data",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No pet-friendly restaurants found",
+    "noResultsHint": "Try adjusting your search or filters to see more results.",
+    "searchingMore": "Searching more restaurants that match your filters…",
+    "backToList": "Back to Restaurants",
+    "petPolicy": "Pet Policy",
+    "contactInfo": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Opening Hours",
+    "closed": "Closed",
+    "gallery": "Photos",
+    "ctaTitle": "Just visited a restaurant? Leave a review!",
+    "ctaDescription": "Hong Kong's only pet-friendly restaurant review site. Help the next owner avoid a bad experience — post anonymously, add photos, tell the truth.",
+    "ctaButton": "Download App Now",
+    "detail": {
+      "notFound": "Restaurant not found",
+      "decisionTitle": "Dining with your pet · essentials",
+      "decisionSubtitle": "Confirm pet policy before you go",
+      "callNow": "Call",
+      "getDirections": "Directions",
+      "visitWebsite": "Website",
+      "todayHours": "Open today",
+      "viewFullHours": "View full opening hours",
+      "hideFullHours": "Hide opening hours",
+      "reviewsTitle": "Reviews",
+      "reviewsSubtitle": "What other pet owners say",
+      "planVisit": "Visit details",
+      "noHoursToday": "Closed today or hours unavailable",
+      "nearbyTitle": "Other pet-friendly restaurants nearby",
+      "nearbySubtitle": "More verified restaurants within 3 km of {{district}}",
+      "nearbySubtitleDefault": "Other verified restaurants within {{radius}} km",
+      "nearbyCount": "{{count}} places",
+      "nearbyEmpty": "No other verified pet-friendly restaurants found nearby",
+      "nearbyShowMore": "Show {{count}} more",
+      "nearbyShowLess": "Show less",
+      "nearbyDistanceM": "{{m}} m",
+      "nearbyDistanceKm": "{{km}} km",
+      "reviewsEmpty": "No reviews yet",
+      "businessReply": "Reply from this place",
+      "suggestEdit": "Suggest edit",
+      "suggestEditPrompt": "Info outdated?",
+      "sections": {
+        "overview": "About",
+        "petPolicy": "Pet policy",
+        "reviews": "Reviews",
+        "info": "Location & contact"
+      },
+      "faq": {
+        "q1": "Can I bring my dog to {{name}}?",
+        "a1": "{{name}} is a PetWell verified pet-friendly restaurant, currently listed as {{policy}}.",
+        "q2": "Do I need a reservation for {{name}}?",
+        "a2": "Check the entry policy tag (walk-in / reservation required) and call ahead to confirm.",
+        "q3": "What rules apply when bringing a dog to {{name}}?",
+        "a3": "Keep your dog leashed and follow venue rules. At FEHD-approved premises, dogs must not go on tables or contact utensils."
+      },
+      "businessReplyFrom": "Reply from {{placeName}}",
+      "businessReplyOfficial": "Official"
+    }
+  },
+  "testBooking": {
+    "seoTitle": "Pet Allergy and Pathogen Test Booking | PetWell",
+    "seoDescription": "Book professional pet diagnostic testing for allergy IgE screening and PCR pathogen detection, with clinically relevant reporting for veterinary follow-up.",
+    "seoKeywords": "pet test booking,allergen test,pcr test,pet diagnostics,petwell payment",
+    "structuredDataName": "PetWell Pet Testing Booking",
+    "structuredDataSpecialty": "Veterinary medicine",
+    "badge": "Veterinary diagnostics",
+    "title": "Pet Diagnostic Test Booking",
+    "subtitle": "Choose a professional diagnostic service for allergy investigation or pathogen screening, then submit your booking details for clinic follow-up.",
+    "testPriceNotice": "Booking price: HKD {{price}} per service",
+    "buyerInfoTitle": "Buyer Information",
+    "buyerInfoDesc": "Used for booking confirmation and clinic follow-up.",
+    "checkoutModalTitle": "Complete Your Booking",
+    "checkoutModalDesc": "You are booking {{productName}}. Log in to continue, or fill in your personal info below.",
+    "authChoiceTitle": "Already have a PetWell account?",
+    "authChoiceDesc": "You can log in to continue, or fill in your personal info below to proceed with this email.",
+    "loginToContinue": "Login to continue",
+    "heroPrimaryCta": "Book Allergen IgE Test",
+    "heroSecondaryCta": "Book PCR Screening",
+    "heroKeywords": {
+      "igeAllergy": "IgE allergy test",
+      "pcrPathogen": "PCR pathogen screening",
+      "rastClass": "RAST class 0-3",
+      "serumSample": "Serum sample",
+      "veterinaryDiagnostics": "Veterinary diagnostics"
+    },
+    "keywords": {
+      "ige": "IgE",
+      "rast": "RAST 0-3",
+      "auMl": "AU/mL",
+      "serum": "Serum",
+      "enzymeImmunoblot": "Enzyme immunoblot",
+      "pcr": "PCR",
+      "respiratory": "Respiratory",
+      "gastrointestinal": "Gastrointestinal",
+      "zoonotic": "Zoonotic pathogens",
+      "pcrTargets": "100+ targets"
+    },
+    "labCardLabel": "Veterinary diagnostic service",
+    "labCardTitle": "Pet allergy + pathogen testing",
+    "labCardDesc": "Built for veterinary-led decisions: quantitative results, clinical correlation, and clear reporting for owners and clinics.",
+    "stats": {
+      "allergens": "Allergen panel",
+      "pcrTargets": "PCR screening",
+      "sample": "Serum sample",
+      "rast": "RAST class"
+    },
+    "valueProps": {
+      "quantitativeTitle": "Quantitative detection",
+      "quantitativeDesc": "Allergen-specific IgE values are reported in AU/mL and mapped to RAST classes for clearer interpretation.",
+      "clinicalTitle": "Clinical relevance",
+      "clinicalDesc": "Designed for allergy, respiratory, and gastrointestinal workups when symptoms need deeper investigation.",
+      "reportTitle": "Professional report",
+      "reportDesc": "Structured report fields include sample ID, specimen type, test method, result class, and interpretation notes.",
+      "workflowTitle": "Simple booking flow",
+      "workflowDesc": "Choose the test, submit booking details, pay online, and let the clinic/lab proceed with fulfilment."
+    },
+    "productSectionBadge": "Diagnostic options",
+    "productSectionTitle": "Choose the right test for your pet's symptoms",
+    "productSectionDesc": "Two focused veterinary diagnostic services for allergy investigation and pathogen screening.",
+    "productMeta": {
+      "bestFor": "Best for",
+      "method": "Method",
+      "sample": "Sample",
+      "turnaround": "Report focus"
+    },
+    "methodology": {
+      "badge": "Medical method",
+      "title": "How the CANINE PRO allergy report is interpreted",
+      "desc1": "The CANINE PRO allergy report detects specific IgE antibodies from serum using a quantitative enzyme immunoblot assay. Reaction intensity is scanned optically and converted into allergen-specific IgE titers.",
+      "desc2": "Results are expressed in AU/mL and attributed to RAST class 0 to 3: not found, moderate, serious, and severe. The report covers mites and mould, plants and pollens, food allergens, insects, and miscellaneous allergens."
+    },
+    "workflow": {
+      "step1Title": "Select a diagnostic service",
+      "step1Desc": "Choose IgE allergy testing or PCR pathogen screening based on the clinical concern.",
+      "step2Title": "Enter booking details",
+      "step2Desc": "Provide owner contact, pet name, clinic, notes, and preferred booking time.",
+      "step3Title": "Complete payment online",
+      "step3Desc": "Complete payment online and submit the booking for clinic follow-up.",
+      "step4Title": "Clinic/lab fulfilment",
+      "step4Desc": "The booking record is sent to operations for follow-up, reporting, and lab coordination."
+    },
+    "medicalDisclaimer": "This service supports veterinary assessment and should be interpreted together with clinical signs and professional advice. It is not a standalone diagnosis or treatment plan.",
+    "faq": {
+      "q1": "What does the allergy test measure?",
+      "a1": "It measures allergen-specific IgE antibody levels from serum and reports them as AU/mL with RAST class 0 to 3.",
+      "q2": "Which pets may benefit from testing?",
+      "a2": "Pets with suspected allergy, recurring skin irritation, respiratory signs, gastrointestinal signs, or unexplained sensitivity may be candidates after veterinary assessment.",
+      "q3": "Is PCR the same as an allergy test?",
+      "a3": "No. PCR screening looks for pathogen genetic material, while IgE allergy testing evaluates immune response to allergens."
+    },
+    "form": {
+      "firstName": "First Name",
+      "firstNamePlaceholder": "e.g. Wing",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "e.g. Chan",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+852 9123 4567",
+      "petName": "Pet Name",
+      "petNamePlaceholder": "e.g. Cocoa",
+      "bookingClinic": "Clinic",
+      "bookingClinicPlaceholder": "Select a clinic",
+      "bookingTimeContactPrompt": "After payment, the selected clinic will contact you directly to confirm the appointment time, sample arrangement, and any follow-up details.",
+      "bookingTimeContactRecord": "Clinic will contact customer directly",
+      "notes": "Notes",
+      "notesPlaceholder": "Optional notes"
+    },
+    "clinicInfo": {
+      "phone": "Phone",
+      "address": "Address",
+      "hours": "Opening hours"
+    },
+    "clinics": {
+      "fairview": {
+        "name": "錦绣動物診所 Fairview Veterinary Clinic",
+        "phone": "24718980",
+        "address": "新界元朗馬田村201號 201 Ma Tin Tsuen, Yuen Long, NT",
+        "hours": "10:00 - 13:00, 15:00 - 19:00"
+      },
+      "ivet": {
+        "name": "iPet Animal Clinic",
+        "phone": "2561 1116",
+        "address": "太子基隆街46號地下",
+        "hours": "Wed, Thu, Fri, Sat and Sun 11:00 - 20:00"
+      },
+      "parkIsland": {
+        "name": "珀麗灣獸醫診所 Pets Central (Park Island)",
+        "phone": "67383280",
+        "address": "香港馬灣珀麗路8號 G/F, 322 Ma Wan Main Street Village North, Ma Wan, NT",
+        "hours": "No fixed office hours. The clinic will tailor the arrangement and contact you directly."
+      }
+    },
+    "products": {
+      "allergen": {
+        "name": "Feline/Canine PRO 125 - Allergen IgE Allergy Test",
+        "shortName": "PRO 125 IgE",
+        "description": "One complete panel covering 125 clinically relevant allergens for pets with potential skin, respiratory, or GI allergy concerns.",
+        "h1": "Environmental and mite allergen coverage",
+        "h2": "Pollens and plant allergen coverage",
+        "h3": "Food + insect and miscellaneous allergen coverage",
+        "bestFor": "Allergy investigation",
+        "method": "Quantitative enzyme immunoblot assay",
+        "sample": "Serum specimen",
+        "turnaround": "IgE AU/mL + RAST class"
+      },
+      "pcr": {
+        "name": "Feline/Canine 100+ PCR Test",
+        "shortName": "100+ PCR",
+        "description": "Ultra-fast PCR panel for respiratory, gastrointestinal, and zoonotic pathogen screening in cats and dogs.",
+        "h1": "Respiratory and gastrointestinal panel",
+        "h2": "Zoonotic pathogen screening items",
+        "h3": "Broad feline and canine pathogen coverage",
+        "bestFor": "Pathogen screening",
+        "method": "PCR amplification",
+        "sample": "Clinic-collected specimen",
+        "turnaround": "Respiratory/GI pathogen panel"
+      }
+    },
+    "priceLabel": "Test Price",
+    "offer": {
+      "label": "Member exclusive",
+      "title": "Early booking discount",
+      "off": "OFF",
+      "originalPrice": "Original price",
+      "todayPrice": "Today",
+      "savings": "You save {{currency}} {{amount}} with this booking."
+    },
+    "comingSoon": {
+      "badge": "Coming soon",
+      "title": "PCR booking opens soon",
+      "desc": "We are preparing clinic availability for this PCR panel. Booking and payment will be available once the next service window is confirmed.",
+      "button": "Coming Soon"
+    },
+    "buyNow": "Pay and Book Now",
+    "processing": "Preparing checkout...",
+    "footnote": "Booking price: {{currency}} {{price}}.",
+    "todoNotice": "Booking records are saved for clinic and operations follow-up.",
+    "toast": {
+      "loginRequiredTitle": "Login required",
+      "loginRequiredDesc": "Please log in to create a payment link.",
+      "missingFieldsTitle": "Required fields missing",
+      "missingFieldsDesc": "Please fill first name, last name, email, phone, pet name, and clinic.",
+      "paymentFailedTitle": "Failed to create payment link",
+      "paymentFailedDesc": "Please try again later."
+    }
+  },
+  "restaurant": {
+    "verifiedTrue": "Pet-friendly verified",
+    "petWellVerified": "PetWell Verified",
+    "fehdLicensed": "FEHD Licensed",
+    "premiumPartner": "Premium Partner",
+    "listingAlertTitle": "Notice",
+    "listingAlertChip": "Not pet-friendly",
+    "notPetFriendly": "Not pet-friendly",
+    "petEntryPolicy": {
+      "walkInOnly": "Walk-in only",
+      "reservationRequired": "Reservation required",
+      "both": "Walk-in or reservation"
+    },
+    "petAccessArea": {
+      "indoorAllowed": "Indoor allowed",
+      "outdoorOnly": "Outdoor only"
+    },
+    "import": {
+      "title": "Restaurant insights",
+      "subtitle": "Type, price range, amenities and ratings",
+      "types": "Venue type",
+      "cuisines": "Cuisine",
+      "dishStyles": "Dish style",
+      "priceRange": "Price range",
+      "amenitiesTitle": "Pet-friendly amenities",
+      "amenities": {
+        "waterBowl": "Water bowl",
+        "dogMenu": "Dog menu",
+        "petTreats": "Pet treats",
+        "groomingServices": "Grooming",
+        "petStore": "Pet store",
+        "sanitationKits": "Sanitation kits",
+        "photoArea": "Photo spot",
+        "petFirstAidKit": "Pet first aid",
+        "employeePetTraining": "Staff pet training",
+        "nutritionLabelsProvided": "Nutrition labels"
+      }
+    }
+  },
+  "ngos": {
+    "pageTitle": "Animal Welfare Organizations in Hong Kong",
+    "subtitle": "Support Animal Welfare - Donate, Volunteer, Make a Difference",
+    "description": "Discover local animal NGOs working to protect and care for animals in need",
+    "searchPlaceholder": "Search organization name or description...",
+    "filterByRegion": "Filter by Region",
+    "regions": {
+      "all": "All Regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories"
+    },
+    "noResults": "No organizations found",
+    "established": "Established",
+    "activeCampaigns": "active campaigns",
+    "volunteerEvents": "volunteer events",
+    "backToList": "Back to Organizations",
+    "notFound": "Organization not found",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "mission": "Our Mission",
+    "services": "Services We Provide",
+    "donationCampaigns": "Donation Campaigns",
+    "donationDescription": "Support our campaigns to make a difference for animals in need",
+    "progress": "Progress",
+    "donors": "donors",
+    "endDate": "End Date",
+    "donate": "Donate Now",
+    "volunteerDescription": "Join us and make a hands-on difference in animal welfare",
+    "requirements": "Requirements",
+    "spotsLeft": "spots left",
+    "fullBooked": "Full",
+    "enroll": "Enroll"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "terms": "Terms & Privacy Policy",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 PetWell HK Limited. All rights reserved",
+    "tagline": "Hong Kong's first all-in-one pet health management platform",
+    "suggestPlace": "Suggest a place",
+    "feedback": "Feedback"
+  },
+  "report": {
+    "suggestTitle": "Suggest a new place",
+    "suggestDesc": "Tell us about a pet-friendly place we don't have yet.",
+    "suggestTab": "Suggest place",
+    "suggestCategory": "Place type",
+    "suggestName": "Place name",
+    "suggestNamePlaceholder": "Enter place name…",
+    "suggestAddressOptional": "Address (optional)",
+    "suggestAddressPlaceholder": "Street, district, or landmark…",
+    "suggestNotesOptional": "Notes (optional)",
+    "suggestNotesPlaceholder": "Anything helpful — pet policy, hours, website…",
+    "suggestSubmit": "Submit suggestion",
+    "suggestEmptyCta": "Can't find it? Suggest a new place",
+    "successTitle": "Submitted",
+    "successDesc": "Thanks. We will follow up soon.",
+    "suggestSuccessDesc": "Thank you. We've received your suggestion and will review it."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "downloadApp": "Download PetWell Now",
+    "rating": "Rating",
+    "outOf5": "/5",
+    "loading": "Loading...",
+    "cancel": "Cancel"
+  },
+  "hours": {
+    "open247": "Open 24/7",
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday",
+    "noInfo": "No information available"
+  },
+  "forum": {
+    "title": "Pet Owners Forum",
+    "subtitle": "Share Experiences · Help Each Other · Build a Pet-Friendly Community",
+    "loading": "Loading...",
+    "error": "Unable to load forum content. Please try again later",
+    "noContent": "No discussions yet",
+    "retry": "Retry",
+    "backToForum": "Back to Forum",
+    "replies": "Replies",
+    "noReplies": "No replies yet",
+    "postNotFound": "Post not found",
+    "invalidPostId": "Invalid post ID",
+    "searchPlaceholder": "Search posts...",
+    "filterCategory": "Category",
+    "filterTag": "Tag",
+    "allCategories": "All Categories",
+    "allTags": "All Tags",
+    "sortRecent": "Recent",
+    "sortPopular": "Popular",
+    "sortReplies": "Most Replies",
+    "tableTitle": "Title",
+    "tableAuthor": "Author",
+    "tableDate": "Date",
+    "tableViews": "Views/Replies",
+    "tableLastReply": "Last Reply",
+    "showingResults": "Showing {{count}} results",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "time": {
+      "hoursAgo": "hours ago",
+      "daysAgo": "days ago"
+    },
+    "forumListCta": {
+      "title": "Want to See More Discussions?",
+      "description": "Download PetWell App to browse more posts, share your opinions, and interact with other pet owners!",
+      "button": "Download PetWell Now"
+    },
+    "postDetailCta": {
+      "title": "Want to Share Your Opinion?",
+      "description": "Download PetWell App to join discussions, leave comments, and share experiences and advice with other pet owners!",
+      "button": "Download PetWell Now"
+    },
+    "createPost": {
+      "button": "Create Post",
+      "title": "Create New Post",
+      "description": "Share your thoughts, ask questions, or start a discussion with the community",
+      "loginRequired": "Login Required",
+      "loginRequiredDesc": "Please log in to create a post",
+      "titleLabel": "Title",
+      "titlePlaceholder": "Enter post title",
+      "contentLabel": "Content",
+      "contentPlaceholder": "Write your post content here...",
+      "tagsLabel": "Tags",
+      "tagsPlaceholder": "e.g., clinic, lost pet, advice",
+      "tagsHint": "Separate tags with commas (max 10 tags)",
+      "categoryLabel": "Category",
+      "categoryPlaceholder": "Select category",
+      "locationLabel": "Location",
+      "locationPlaceholder": "e.g., Hong Kong Island, Kowloon",
+      "characters": "characters",
+      "creating": "Creating...",
+      "submit": "Create Post",
+      "error": "Failed to create post. Please try again.",
+      "anonymousLabel": "Post Anonymously",
+      "anonymousHint": "Your identity will be hidden",
+      "editor": {
+        "bold": "Bold",
+        "underline": "Underline",
+        "strikethrough": "Strikethrough",
+        "fontSize": "Font Size",
+        "small": "Small (12px)",
+        "medium": "Medium (24px)",
+        "large": "Large (36px)",
+        "textColor": "Text Color",
+        "insertLink": "Insert Link",
+        "urlLabel": "URL",
+        "urlPlaceholder": "https://example.com",
+        "linkTextLabel": "Link Text (optional)",
+        "linkTextPlaceholder": "Click here",
+        "alignLeft": "Align Left",
+        "alignCenter": "Align Center",
+        "alignRight": "Align Right"
+      }
+    },
+    "sortBy": "Sort By",
+    "sortHot": "Hot",
+    "advancedSearch": "Advanced Search",
+    "hideAdvancedSearch": "Hide",
+    "showAdvancedSearch": "Advanced Search",
+    "dateFrom": "Start Date",
+    "dateTo": "End Date",
+    "selectedTags": "Selected Tags",
+    "clearFilters": "Clear Filters",
+    "pages": "pages",
+    "anonymousUser": "Anonymous User",
+    "genericUser": "User",
+    "anonymous": "Anonymous",
+    "pinned": "Pinned",
+    "loadingMore": "Loading more...",
+    "selectPost": "Select a post from the left to view content",
+    "categories": {
+      "DOG": "Dogs",
+      "CAT": "Cats",
+      "SMALL_ANIMAL": "Small Animals",
+      "LIFE_SHARING": "Life Sharing",
+      "EVENTS": "Events",
+      "ADOPTION": "Adoption",
+      "HEALTH": "Health",
+      "GROOMING": "Grooming",
+      "DIET": "Diet",
+      "TRAINING": "Training",
+      "BEHAVIOR": "Behavior Issues",
+      "PRODUCT_REVIEW": "Product Reviews",
+      "TRADING": "Trading",
+      "TRAVEL": "Travel",
+      "LODGING": "Lodging",
+      "LOST_FOUND": "Lost & Found",
+      "EMERGENCY": "Emergency"
+    }
+  },
+  "deleteAccount": {
+    "title": "Delete Account",
+    "warning": "This action cannot be undone. Once you delete your account, all your data will be permanently removed.",
+    "whatHappens": "What happens when you delete your account?",
+    "consequence1": "Your personal information and account details will be permanently deleted",
+    "consequence2": "All your pet health records will be removed",
+    "consequence3": "You will not be able to register with this email address again",
+    "consequence4": "This action cannot be reversed",
+    "confirmTitle": "Confirm Deletion",
+    "emailLabel": "Confirm Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "emailHint": "Please enter the email address you used to register your account",
+    "typeDelete": "Type 'DELETE' to confirm",
+    "deletePlaceholder": "DELETE",
+    "understand": "I understand this action is irreversible and confirm I want to delete my account",
+    "cancel": "Cancel",
+    "deleteButton": "Delete Account",
+    "finalWarning": "Final Confirmation",
+    "finalWarningMessage": "Are you absolutely sure you want to permanently delete your account? This action cannot be undone.",
+    "confirmDelete": "Confirm Delete",
+    "deleting": "Deleting...",
+    "success": "Account Deleted",
+    "successMessage": "Your account has been successfully deleted.",
+    "error": "Error",
+    "errorMessage": "An error occurred while deleting your account. Please try again later or contact support.",
+    "confirmError": "Please type 'DELETE' to confirm",
+    "checkboxError": "Please confirm you understand the consequences",
+    "emailMismatch": "Email address does not match. Please enter the email you used to register"
+  },
+  "petTag": {
+    "needsActivation": "This tag needs to be activated",
+    "activationDescription": "To view pet information and owner contact details, please download the PetWell App and activate this tag.",
+    "downloadPetWell": "Download PetWell Now",
+    "alreadyActivated": "Already activated? Please log in to the App to view",
+    "foundLostPet": "You found a lost pet!",
+    "thankYouMessage": "Thank you for helping this pet. Below is the owner's contact information, please contact them as soon as possible.",
+    "age": "Age",
+    "yearsOld": "years old",
+    "species": "Species",
+    "speciesValues": {
+      "dog": "Dog",
+      "dogs": "Dogs",
+      "cat": "Cat",
+      "cats": "Cats"
+    },
+    "breed": "Breed",
+    "weight": "Weight",
+    "birthday": "Birthday",
+    "microchipId": "Microchip ID",
+    "contactOwner": "Contact Owner",
+    "callOwnerNow": "Call Owner Now",
+    "phoneNotAvailable": "Phone number not available",
+    "footer": "Powered by PetWell · Protecting every pet",
+    "notActivated": {
+      "title": "Pet is Not Activated",
+      "description": "This pet tag hasn't been activated yet. Activate it now to help protect your pet from getting lost.",
+      "cta": "Activate Now"
+    }
+  },
+  "reviews": {
+    "externalUserFrom": "External User from {{source}}",
+    "fromGoogle": "Google review"
+  },
+  "activateTag": {
+    "alreadyActivated": {
+      "title": "Pet is Already Activated",
+      "description": "This pet tag has already been activated. You can view the pet's information.",
+      "cta": "View Pet Info"
+    }
+  },
+  "download": {
+    "title": "Download Now",
+    "subtitle1": "Hong Kong's First Pet Health Management Platform",
+    "subtitle2": "All-in-One Care for Your Furry Friend",
+    "ctaTitle": "Limited Time Exclusive Offer",
+    "ctaDescription": "Reserve now and get a free smart pet tag to prevent your pet from getting lost!",
+    "feature1": "Real-time GPS tracking",
+    "feature2": "One-tap owner contact",
+    "feature3": "Lifetime warranty service",
+    "ctaButton": "Get Your Free Smart Pet Tag Now",
+    "disclaimer": "*Limited quantity, while supplies last"
+  },
+  "event": {
+    "status": {
+      "startingSoon": "Starting Soon",
+      "upcoming": "Upcoming",
+      "ongoing": "Ongoing",
+      "completed": "Finished",
+      "cancelled": "Cancelled"
+    },
+    "filters": {
+      "allStatuses": "All Statuses"
+    },
+    "categories": {
+      "ADOPTION": "Adoption",
+      "MARKET": "Pet Market",
+      "EXPO": "Pet Expo",
+      "WORKSHOP": "Workshop / Class",
+      "CHARITY": "Charity",
+      "MEETUP": "Pet Meetup",
+      "PET_FRIENDLY": "Pet-friendly Event",
+      "OTHER": "Other Event"
+    },
+    "detail": {
+      "invalidId": "Invalid event ID",
+      "notFound": "Event not found",
+      "loadFailed": "Failed to load event",
+      "backToEvents": "Back to events",
+      "defaultSeoDescription": "Hong Kong pet event information",
+      "unknownOrganizer": "Organizer not provided",
+      "officialInfo": "Official info",
+      "date": "Date",
+      "location": "Location",
+      "organizer": "Organizer",
+      "price": "Price",
+      "notProvided": "Not provided",
+      "free": "Free",
+      "aboutEvent": "About This Event",
+      "remark": "Remark",
+      "allFields": "Event Data",
+      "category": "Category",
+      "statusLabel": "Status",
+      "organizerEmail": "Organizer email",
+      "dateTime": "Start time",
+      "deadline": "Deadline / end time",
+      "openTime": "Open time",
+      "closeTime": "Close time",
+      "address": "Address",
+      "district": "District",
+      "capacity": "Capacity",
+      "attendees": "Attendees",
+      "paymentRequired": "Payment required",
+      "redirection": "External link",
+      "redirectedUrl": "Official / registration link",
+      "photoCount": "Photo count",
+      "createdAt": "Created at",
+      "updatedAt": "Updated at",
+      "unlimited": "Unlimited",
+      "yes": "Yes",
+      "no": "No",
+      "photos": "Event Photos",
+      "endDate": "End time",
+      "hours": "Opening hours",
+      "where": "Where",
+      "availability": "Availability",
+      "spotsLeft": "{{count}} spots left",
+      "openOfficialLink": "Open official / registration page",
+      "noOfficialLink": "No official link provided",
+      "quickInfo": "Quick Info",
+      "hasOfficialLink": "Official link available",
+      "hasI18n": "Chinese and English content available"
+    }
+  },
+  "adminForms": {
+    "title": "Admin Forms",
+    "redirecting": "Redirecting to Google Form..."
+  },
+  "nameTagBanner": {
+    "ariaLabel": "Anti-lost smart tag promotion",
+    "badge": "Free",
+    "title": "Smart Anti-Lost Tag",
+    "subtitle": "NFC tap-to-read — help reunite lost pets faster",
+    "progressLabel": "Registration",
+    "cta": "Register"
+  },
+  "nametagDailyPopup": {
+    "eyebrow": "Limited free offer",
+    "title": "Get a free PetWell anti-lost name tag",
+    "tagline": "Like Octopus — one tap shows your pet’s private page",
+    "time": "Done in about 1 minute",
+    "urgency": "Limited spots — first come, first served.",
+    "cta": "Claim for free",
+    "imageAlt": "PetWell Paws Port anti-lost name tag promo"
+  },
+  "cnyProducts": {
+    "allProducts": "All Products",
+    "cart": "Cart",
+    "backToList": "Back to Products",
+    "productNotFound": "Product Not Found",
+    "productNotFoundDesc": "This product may not exist or has been removed",
+    "customizable": "Customizable",
+    "selectOption": "Select Option:",
+    "uploadPhoto": "Upload Pet Photo:",
+    "chooseFile": "Choose File",
+    "noFileChosen": "No file chosen",
+    "uploadedPreview": "Uploaded pet photo preview:",
+    "selected": "Selected:",
+    "dimensions": "Dimensions:",
+    "dimensionsLabel": "Dimensions",
+    "material": "Material:",
+    "selectOptionForPrice": "(Select option to see price)",
+    "quantity": "Quantity",
+    "quantityLabel": "Quantity:",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "productDetails": "Product Details",
+    "shippingPayment": "Shipping & Payment",
+    "shippingInfo": "Free shipping in HK (orders over HK$300)",
+    "paymentMethods": "Payment: PayMe / Bank Transfer / FPS",
+    "processingTime": "Processing time: 3-5 business days",
+    "selectOptionError": "Please select an option",
+    "selectOptionErrorDesc": "Please select a product option before adding to cart",
+    "uploadPhotoError": "Please upload a photo",
+    "uploadPhotoErrorDesc": "This product requires a pet photo",
+    "addedToCart": "Added to Cart",
+    "addedToCartDesc": "has been added to your cart",
+    "priceViewHint": "Please select style to view total price",
+    "items": "items",
+    "specs": {
+      "redPocketPaper": "200g Matte Coated Paper",
+      "petBackpackMaterial": "Plush",
+      "rectangle": "Rectangle",
+      "diamond": "Diamond",
+      "rectangleSpecs": "10.5 × 29.7 cm · 128g Glossy Paper",
+      "diamondSpecs": "21 × 21 cm · 128g Glossy Paper"
+    },
+    "shippingInfoDetails": {
+      "freeShippingThreshold": "Free shipping for orders over HK$200",
+      "sfExpress": "SF Express +$30",
+      "regularMail": "Regular Mail +$15",
+      "paymentMethods": "Payment: FPS / Bank Transfer / PayMe / Alipay",
+      "emailNotification": "Payment details will be sent via email after order confirmation",
+      "shippingDeadline": "All products will be shipped before February 12",
+      "imageDisclaimer": "Images are for reference only, actual products may vary",
+      "inquiry": "Inquiry:",
+      "whatsapp": "WhatsApp"
+    },
+    "priceViewDetails": "Please check details for price",
+    "categories": {
+      "accessory": "Accessory",
+      "decoration": "Decoration",
+      "toy": "Toy",
+      "gift": "Gift"
+    },
+    "discountBanner": {
+      "title": "PetWell Members Get 10% Off!",
+      "description": "Use your registered PetWell App email at checkout to automatically receive 10% discount",
+      "cta": "Download App Now"
+    }
+  },
+  "checkout": {
+    "title": "Fill Order Information",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "phone": "Phone Number",
+    "phonePlaceholder": "12345678",
+    "phoneHint": "Please enter an 8-digit phone number",
+    "shippingAddress": "Shipping Address",
+    "shippingAddressPlaceholder": "Enter your complete shipping address",
+    "remark": "Remark (Optional)",
+    "remarkPlaceholder": "If you have special requirements or remarks, please enter them here",
+    "submit": "Proceed to Payment",
+    "backToCart": "Back to Cart",
+    "emptyCart": "Cart is Empty",
+    "emptyCartDesc": "Please select products before checkout",
+    "browseProducts": "Browse Products",
+    "orderSummary": "Order Summary",
+    "total": "Total",
+    "deliveryOption": "Delivery Option",
+    "sfExpress": "SF Express",
+    "regularMail": "Regular Mail",
+    "freeShipping": "Free",
+    "freeShippingThreshold": "Free shipping for orders over HK$200",
+    "shippingFee": "Shipping Fee",
+    "contactInfoReminder": "Important Notice",
+    "contactInfoReminderDesc": "Please ensure the contact information you provide is accurate so we can reach you. If you choose to upload pet photos later, we will contact you via the email or phone number you provided.",
+    "nameError": "Please enter your name",
+    "emailError": "Please enter your email",
+    "emailInvalid": "Please enter a valid email address",
+    "phoneError": "Please enter your phone number",
+    "phoneInvalid": "Please enter a valid phone number (8 digits)",
+    "shippingAddressError": "Please enter shipping address",
+    "validationError": "Please check your input",
+    "validationErrorDesc": "Please fill in all required fields",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "memberDiscount": "Member Discount {{percent}}%",
+    "discountApplied": "{{percent}}% member discount applied!",
+    "discountInfo": "PetWell users get 10% off! Use your registered email address.",
+    "downloadAppLink": "Download PetWell App now"
+  },
+  "payment": {
+    "title": "Upload Payment Proof",
+    "backToCheckout": "Back to Checkout",
+    "paymentMethod": "Payment Method",
+    "paymentMethodDesc": "Please complete payment and upload a screenshot as proof. We will process your order after confirming payment.",
+    "paymentInfo": "Payment Information:",
+    "paymentInfoDetails": "Bank Transfer / FPS / Other Payment Methods",
+    "paymentInfoNote": "(Payment details will be sent via email after order submission)",
+    "paymentProof": "Payment Proof Screenshot",
+    "uploadPaymentProof": "Click to upload payment screenshot",
+    "uploadPaymentProofHint": "Supports JPG, PNG formats, file size not exceeding 5MB",
+    "paymentProofPreview": "Payment Proof Preview",
+    "submitOrder": "Submit Order",
+    "processing": "Processing...",
+    "orderSummary": "Order Summary",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "shippingAddress": "Shipping Address",
+    "deliveryMethod": "Delivery Method",
+    "sfExpress": "SF Express",
+    "regularMail": "Regular Mail",
+    "shippingFee": "Shipping Fee",
+    "freeShipping": "Free",
+    "remark": "Remark",
+    "total": "Total",
+    "uploadPaymentProofError": "Please upload payment proof",
+    "uploadPaymentProofErrorDesc": "Please upload payment screenshot before submitting order",
+    "fileTooLarge": "File Too Large",
+    "fileTooLargeDesc": "Please upload an image smaller than 5MB",
+    "invalidFileType": "Invalid File Type",
+    "invalidFileTypeDesc": "Please upload an image file",
+    "invalidFileTypeDetailed": "Unsupported file format: {{fileType}}. Please upload an image file in JPG, PNG, WEBP, or HEIC format.",
+    "supportedFormats": "Supported formats: JPG, PNG, WEBP, HEIC",
+    "unknownFormat": "Unknown Format",
+    "orderSuccess": "Order Submitted Successfully!",
+    "orderSuccessDesc": "We have received your order and will process it as soon as possible.",
+    "orderError": "Submission Failed",
+    "orderErrorDesc": "An error occurred while submitting the order. Please try again later or contact us.",
+    "cannotContinue": "Cannot Continue",
+    "cannotContinueDesc": "Please complete order information first",
+    "petPhotoUpload": {
+      "title": "Upload Pet Photos",
+      "description": "Your order contains customizable products. Please upload pet photos to complete your order.",
+      "uploadNow": "Upload Now",
+      "uploadLater": "Upload Later",
+      "uploadLaterDesc": "If you choose to upload later, we will contact you via the contact information you provided to request pet photo upload.",
+      "uploadNowDesc": "Please upload pet photos for each customizable product",
+      "noCustomizableProducts": "Your order does not contain customizable products. No pet photo upload is required.",
+      "missingPhotos": "Please upload photos for the following products: {{products}}",
+      "changeMind": "Change Selection",
+      "edit": "Edit",
+      "reset": "Reset",
+      "resetSuccess": "Reset",
+      "resetSuccessDesc": "Photo removed, please upload again",
+      "uploadPhoto": "Upload Photo",
+      "changePhoto": "Change Photo"
+    },
+    "productImageEditor": {
+      "title": "Edit Product Design",
+      "uploadPhoto": "Upload Photo",
+      "processing": "Processing",
+      "processingDesc": "AI processing takes time, please be patient and don't leave the page",
+      "processingText": "Processing, please wait...",
+      "waitReminder": "⏱️ AI processing takes time, please be patient and don't leave the page",
+      "addDecoration": "Add Festive Decoration",
+      "confirm": "Confirm",
+      "confirmDesign": "Confirm Design",
+      "cancel": "Cancel",
+      "uploadHint": "🤖 AI auto-detects pet head, drag to adjust position and size",
+      "photoGuidance": "📷 Please upload a clear pet photo for accurate AI detection. For any issues,",
+      "whatsappUs": "WhatsApp us",
+      "aiMode": "",
+      "front": "Front",
+      "back": "Back",
+      "emptyState": "Upload pet photos to start designing",
+      "instructions": {
+        "click": "",
+        "resize": "",
+        "rotate": "",
+        "scale": "",
+        "multiple": ""
+      },
+      "controls": {
+        "rotateLeft": "Rotate Left",
+        "rotateRight": "Rotate Right",
+        "zoomIn": "Zoom In",
+        "zoomOut": "Zoom Out",
+        "delete": "Delete"
+      },
+      "viewControls": {
+        "locked": "Locked",
+        "unlocked": "Drag",
+        "lockTitle": "Unlock drag to move",
+        "unlockTitle": "Lock drag to move",
+        "altDragTip": "Alt+Drag to move"
+      },
+      "longProcessing": {
+        "title": "Processing Taking Longer",
+        "description": "The uploaded photo may be large and requires more time to process, please be patient..."
+      },
+      "error": {
+        "title": "Error",
+        "generic": "AI detection failed, please try again later",
+        "timeout": "AI processing timeout, please try uploading a smaller image or try again later",
+        "memory": "AI processing out of memory, please try uploading a smaller image or try again later",
+        "server": "AI service temporarily unavailable, please try uploading a smaller image or try again later",
+        "network": "Network connection error, please check your internet connection and try again"
+      }
+    },
+    "uploadPayment": {
+      "title": "Order Details & Upload",
+      "description": "View your order details and upload payment proof or custom product images.",
+      "loading": "Loading order information...",
+      "orderNotFound": "Order Not Found",
+      "orderNotFoundDesc": "This order could not be found. Please verify the order ID is correct.",
+      "alreadyUploaded": "Payment Proof Already Uploaded",
+      "alreadyUploadedTitle": "Payment Proof Already Uploaded",
+      "alreadyUploadedDesc": "Payment proof for this order has already been uploaded. If you need to upload again, please contact us.",
+      "contactWhatsApp": "Contact WhatsApp {{number}}",
+      "backToProducts": "Back to Products",
+      "orderId": "Order ID",
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email",
+      "customerPhone": "Customer Phone",
+      "shippingAddress": "Shipping Address",
+      "deliveryOption": "Delivery Option",
+      "shippingFee": "Shipping Fee",
+      "totalPrice": "Total Price",
+      "orderDate": "Order Date",
+      "orderItems": "Order Items",
+      "noItems": "No items found",
+      "customProduct": "Custom Product",
+      "uploadCustomProduct": "Upload Custom Product Image",
+      "customProductUploaded": "Custom Product Image Uploaded",
+      "uploadCustomProductDesc": "Upload your custom product image for this item. You can use AI head detection or upload manually.",
+      "noCustomImage": "No custom image uploaded yet",
+      "uploading": "Uploading...",
+      "submit": "Submit Payment Proof",
+      "uploadCustomImage": "Upload Custom Image",
+      "updateCustomImage": "Update Custom Image",
+      "customImageSuccess": "Custom Image Uploaded Successfully!",
+      "customImageSuccessDesc": "Your custom product image has been uploaded successfully.",
+      "customImageError": "Upload Failed",
+      "customImageErrorDesc": "An error occurred while uploading custom image. Please try again later.",
+      "success": "Payment Proof Uploaded Successfully!",
+      "successDesc": "Your payment proof has been uploaded successfully. We will process your order as soon as possible.",
+      "error": "Upload Failed",
+      "errorDesc": "An error occurred while uploading payment proof. Please try again later or contact us.",
+      "orderDetails": "Order Details",
+      "contactInfo": "Contact Information",
+      "needHelp": "Need Help?",
+      "contactUsDesc": "If you have any questions about your order, please contact us via WhatsApp."
+    }
+  },
+  "cart": {
+    "emptyCart": "Cart is Empty",
+    "emptyCartDesc": "Go shop for your favorite products!",
+    "browseProducts": "Browse Products",
+    "orderConfirmation": "Order Confirmation",
+    "orderConfirmationDesc": "Please confirm your order details, then proceed to checkout",
+    "orderItems": "Order Items",
+    "itemsCount": "items",
+    "spec": "Spec:",
+    "customImageUploaded": "Custom Image Uploaded",
+    "removed": "Removed",
+    "removedDesc": "Item has been removed from cart",
+    "clearCart": "Clear Cart",
+    "cleared": "Cleared",
+    "clearedDesc": "Cart has been cleared",
+    "orderSummary": "Order Summary",
+    "totalItems": "Total Items",
+    "itemsUnit": "items",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping",
+    "shippingInfo": "• Free shipping for orders over HK$200<br />• SF Express +HK$30 ｜ Regular Mail +HK$15",
+    "freeShippingPrompt": "Spend HK${{amount}} more to get free shipping!",
+    "freeShippingQualified": "You qualify for free shipping!"
+  },
+  "petMatchmaker": {
+    "title": "The Ultimate Pet Matchmaker: Fur, Feathers, or Scales?",
+    "intro": "Finding the right pet isn't just about what's cute—it's about matching their lifestyle to yours. From the chirpy energy of a bird to the quiet hops of a rabbit, let's find out who your soul-pet actually is. Answer these 5 questions!",
+    "question": "Question",
+    "of": "of",
+    "restart": "Take Quiz Again",
+    "outcomes": {
+      "dog": {
+        "title": "You should get a Dog!",
+        "description": "You have an active lifestyle and plenty of love to give. You want a partner in crime who will go outside with you, greet you enthusiastically, and participate in your daily routine. You don't mind a little noise or mud."
+      },
+      "cat": {
+        "title": "You should get a Cat!",
+        "description": "You want a companion who is affectionate but independent. You appreciate a pet that fits into your current routine without needing constant supervision. You like quiet evenings and warm snuggles on the sofa."
+      },
+      "bird": {
+        "title": "You should get a Bird!",
+        "description": "You are smart, social, and maybe a little quirky! You don't mind noise (in fact, you might like the singing or talking) and you want a pet that is highly intelligent and interactive. You are okay with cleaning up seeds and feathers."
+      },
+      "rabbit": {
+        "title": "You should get a Rabbit!",
+        "description": "You want something softer and quieter than a dog, but more interactive than a hamster. You have space for them to hop around safely and you don't mind pet-proofing your cords. You love the idea of a gentle, social vegetarian friend."
+      },
+      "reptile": {
+        "title": "You should get a Reptile or Fish!",
+        "description": "You prefer a low-pressure pet that is fascinating to observe. You might have allergies, or you simply prefer a quiet home. You enjoy curating a habitat (tank or terrarium) and appreciate the aesthetic of a pet that doesn't demand constant physical affection."
+      }
+    },
+    "questions": {
+      "q1": {
+        "question": "Let's talk about noise. What is your tolerance level?",
+        "a": "I don't mind barking or active noise; a quiet house feels empty!",
+        "b": "I like it mostly quiet, just some occasional meows or purring.",
+        "c": "I love chatter, whistling, or even some loud squawking—it's festive!",
+        "d": "I prefer almost total silence, maybe just some gentle chewing sounds.",
+        "e": "I want zero noise from my pet."
+      },
+      "q2": {
+        "question": "How much space can you dedicate to a pet?",
+        "a": "I have a yard or access to parks and plenty of floor space.",
+        "b": "My apartment/house is their kingdom; they can roam everywhere.",
+        "c": "I have space for a large vertical cage and room for them to fly safely.",
+        "d": "I have a designated \"pen\" area or a room where they can hop freely.",
+        "e": "I have a sturdy table or shelf for a tank/enclosure, but limited floor space."
+      },
+      "q3": {
+        "question": "What kind of \"mess\" are you willing to deal with?",
+        "a": "Muddy paws, shed hair, and slobber.",
+        "b": "Dealing with a litter box and occasional scratched furniture.",
+        "c": "Seeds, hulls, and feathers scattered around a cage.",
+        "d": "Hay... lots of hay. And cleaning a litter tray daily.",
+        "e": "Cleaning algae or changing bedding/water once a week."
+      },
+      "q4": {
+        "question": "How do you want to interact with your pet?",
+        "a": "Wrestling, running, and high-energy play.",
+        "b": "Petting them while I watch TV, or playing with a laser pointer.",
+        "c": "Teaching them tricks, whistling tunes, or having them sit on my shoulder.",
+        "d": "Sitting on the floor with them and letting them nudge me for treats.",
+        "e": "Watching them explore their tank; looking but not touching."
+      },
+      "q5": {
+        "question": "If you leave the house for 8 hours, what is your pet doing?",
+        "a": "Waiting by the door (or maybe needing a dog walker).",
+        "b": "Sleeping in a sunbeam, completely unbothered.",
+        "c": "Playing with toys in their cage, possibly listening to the radio I left on.",
+        "d": "Sleeping in their hutch or safe pen area with plenty of hay.",
+        "e": "Just swimming or basking under their heat lamp."
+      }
+    }
+  },
+  "otherServices": {
+    "learnMore": "Discuss media partnership",
+    "hero": {
+      "badge": "Business · Data-driven",
+      "title": "Reach Hong Kong pet owners",
+      "subtitle": "Hong Kong's first AI-powered pet health tech platform — media promotion and merchant partnerships backed by verified data. Featured in major press; App Store Lifestyle Top 9.",
+      "trust": {
+        "media": "ViuTV · Now TV · AM730 · Yahoo",
+        "appStore": "App Store Top 9",
+        "platform": "AI-powered · Data verified"
+      },
+      "kolCaption": "KOL campaign examples",
+      "kolVisualLabel": "Sample KOL pet collaboration content",
+      "showcaseHint": "Move your mouse to explore · hover a card for service highlights"
+    },
+    "sections": {
+      "marketing": {
+        "eyebrow": "Promotion",
+        "title": "Multi-channel media services",
+        "subtitle": "From owned channels to KOL partnerships — every service comes with measurable reach."
+      },
+      "platform": {
+        "eyebrow": "Platform listing",
+        "title": "Publish on PetWell",
+        "subtitle": "Events, restaurants, shop prices — verified and live to pet owners across Hong Kong."
+      }
+    },
+    "audiences": {
+      "intro": {
+        "title": "What we offer",
+        "subtitle": "Choose your path and explore the services that fit"
+      },
+      "viewMore": "View services",
+      "enterprise": {
+        "eyebrow": "Brands · Large events",
+        "title": "Media promotion",
+        "subtitle": "Website, app, Instagram, KOL partnerships, and event planning.",
+        "cardTagline": "Multi-channel reach, KOL collabs, and event planning at scale",
+        "imageAlt": "PetWell pet event on-site",
+        "cta": "Discuss media partnership"
+      },
+      "smallBusiness": {
+        "eyebrow": "Small business",
+        "title": "Platform listings",
+        "subtitle": "List events, restaurants, or shop prices — reach pet owners across Hong Kong.",
+        "cardTagline": "Free listings, self-service updates, direct reach to pet owners",
+        "imageAlt": "Merchant engaging pet owners at a PetWell event",
+        "cta": "Discuss media partnership"
+      }
+    },
+    "gallery": {
+      "eyebrow": "Case studies",
+      "title": "Recent events & KOL work",
+      "subtitle": "Mall pop-ups, brand collabs, KOL trials, and on-site events — real campaign footage.",
+      "imageCount": "{{count}} campaign assets",
+      "viewHint": "Hover to pause · click any image to enlarge",
+      "openImage": "View campaign image {{index}}",
+      "lightboxTitle": "Case study {{current}} of {{total}}",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "channels": {
+      "websiteAds": {
+        "title": "Website advertising",
+        "summary": "Banner or featured content on PetWell's website and SEO blog — reaching users searching for pet info.",
+        "imageAlt": "PetWell website platform",
+        "kpis": {
+          "a": {
+            "value": "3,000",
+            "label": "Daily page views"
+          },
+          "b": {
+            "value": "14,700+",
+            "label": "Peak single day"
+          },
+          "c": {
+            "value": "SEO",
+            "label": "Organic blog traffic"
+          }
+        }
+      },
+      "appAds": {
+        "title": "In-app advertising",
+        "summary": "Banners, push notifications, and activity sections — reaching verified pet owners directly.",
+        "imageAlt": "PetWell app activities screen",
+        "kpis": {
+          "a": {
+            "value": "7,500+",
+            "label": "Verified users"
+          },
+          "b": {
+            "value": "Top 9",
+            "label": "Lifestyle app rank"
+          },
+          "c": {
+            "value": "Push",
+            "label": "Targeted alerts"
+          }
+        }
+      },
+      "igAds": {
+        "title": "Instagram promotion",
+        "summary": "Posts, Stories, and Reels produced and published by the PetWell team.",
+        "imageAlt": "PetWell Instagram Reels content",
+        "kpis": {
+          "a": {
+            "value": "4,000+",
+            "label": "IG followers"
+          },
+          "b": {
+            "value": "10%+",
+            "label": "Avg. engagement"
+          },
+          "c": {
+            "value": "All formats",
+            "label": "Post / Story / Reel"
+          }
+        }
+      },
+      "edm": {
+        "title": "Email (EDM)",
+        "summary": "Send event invites to verified email users — not dependent on social algorithms.",
+        "imageAlt": "PetWell community content example",
+        "kpis": {
+          "a": {
+            "value": "3,000+",
+            "label": "Verified emails"
+          },
+          "b": {
+            "value": "100%",
+            "label": "Pet-related users"
+          },
+          "c": {
+            "value": "Direct",
+            "label": "Inbox delivery"
+          }
+        }
+      },
+      "kol": {
+        "title": "KOL partnerships",
+        "summary": "80+ Hong Kong pet KOLs — from product trials to event check-ins, real pet accounts drive word-of-mouth and reach.",
+        "imageAlt": "PetWell brand collaboration gift set",
+        "kpis": {
+          "a": {
+            "value": "80+",
+            "label": "KOL partners"
+          },
+          "b": {
+            "value": "~60K",
+            "label": "Reels views"
+          },
+          "c": {
+            "value": "Targeted",
+            "label": "Pet account audience"
+          }
+        }
+      },
+      "eventPlanning": {
+        "title": "Event planning & on-site",
+        "summary": "Markets, pop-ups, mall activations — from promotion to on-site photo/video and consulting.",
+        "imageAlt": "Pet event scene",
+        "kpis": {
+          "a": {
+            "value": "Omni",
+            "label": "Online + offline"
+          },
+          "b": {
+            "value": "On-site",
+            "label": "Photo & video"
+          },
+          "c": {
+            "value": "AI",
+            "label": "Short-form video"
+          }
+        }
+      },
+      "listEvent": {
+        "title": "List your event",
+        "summary": "Publish on PetWell's activities section with in-app registration and member perks.",
+        "imageAlt": "PetWell app event listing",
+        "kpis": {
+          "a": {
+            "value": "In-app",
+            "label": "Registration"
+          },
+          "b": {
+            "value": "HK-wide",
+            "label": "Event exposure"
+          },
+          "c": {
+            "value": "Members",
+            "label": "Exclusive deals"
+          }
+        }
+      },
+      "listRestaurant": {
+        "title": "Add your restaurant",
+        "summary": "Pet-friendly restaurants verified by phone before publishing — attracting diners with pets.",
+        "imageAlt": "Pet-friendly restaurant promotion",
+        "kpis": {
+          "a": {
+            "value": "1,500+",
+            "label": "Listed restaurants"
+          },
+          "b": {
+            "value": "18",
+            "label": "HK districts"
+          },
+          "c": {
+            "value": "Verified",
+            "label": "Team confirmed"
+          }
+        }
+      },
+      "updatePrices": {
+        "title": "Update shop prices",
+        "summary": "Verified merchants can self-update product prices and promotions anytime.",
+        "imageAlt": "",
+        "kpis": {
+          "a": {
+            "value": "Live",
+            "label": "Price updates"
+          },
+          "b": {
+            "value": "Push",
+            "label": "Sale alerts"
+          },
+          "c": {
+            "value": "Free",
+            "label": "Merchant signup"
+          }
+        }
+      },
+      "openAccount": {
+        "title": "Open merchant account",
+        "summary": "Apply as a verified partner — manage your shop and earn the verified badge.",
+        "imageAlt": "",
+        "kpis": {
+          "a": {
+            "value": "Verified",
+            "label": "Trust badge"
+          },
+          "b": {
+            "value": "Self-serve",
+            "label": "Dashboard"
+          },
+          "c": {
+            "value": "Exposure",
+            "label": "Platform listing"
+          }
+        }
+      }
+    },
+    "results": {
+      "eyebrow": "Platform data",
+      "title": "Platform performance",
+      "subtitle": "Real operational data — not estimates.",
+      "groups": {
+        "reach": {
+          "title": "Platform reach",
+          "subtitle": "Multi-channel coverage across Hong Kong pet owners"
+        },
+        "engagement": {
+          "title": "Engagement",
+          "subtitle": "How our community interacts with content"
+        },
+        "scale": {
+          "title": "Partnership scale",
+          "subtitle": "Network depth and collaboration volume"
+        }
+      },
+      "appUsers": {
+        "value": "7,500+",
+        "label": "Verified app users"
+      },
+      "igFollowers": {
+        "value": "4,000+",
+        "label": "IG followers"
+      },
+      "dailyViews": {
+        "value": "3,000",
+        "label": "Daily site views"
+      },
+      "kolPartners": {
+        "value": "80+",
+        "label": "KOL partners"
+      },
+      "peakViews": {
+        "value": "14,700+",
+        "label": "Peak daily views"
+      },
+      "igEngagement": {
+        "value": "10%+",
+        "label": "Avg. IG engagement"
+      },
+      "reelsViews": {
+        "value": "60K+",
+        "label": "Reels views"
+      },
+      "restaurants": {
+        "value": "1,500+",
+        "label": "Listed restaurants"
+      },
+      "appStoreTop": {
+        "value": "Top 9",
+        "label": "Lifestyle downloads"
+      }
+    },
+    "trust": {
+      "eyebrow": "In the press",
+      "subtitle": "Featured by ViuTV, Now TV, AM730, Yahoo, Sing Tao, and more"
+    },
+    "partnership": {
+      "highlight": {
+        "title": "Become a PetWell verified partner",
+        "desc": "For pet shops, brands, or long-term merchants — manage your own prices with platform trust.",
+        "item1": "Self-service price and promotion updates",
+        "item2": "Verified badge on your listing",
+        "item3": "Push alerts to tracking users",
+        "cta": "Discuss media partnership",
+        "asideLabel": "Is this for you?",
+        "asideTitle": "If you're a pet shop or brand",
+        "asideDesc": "Free to register, update prices yourself, and reach pet owners across Hong Kong. Tap below for details and application."
+      }
+    },
+    "seo": {
+      "title": "Other Services | PetWell Advertising & Partnership Programme",
+      "description": "PetWell offers business services: website and app ads, Instagram promotion, event planning, plus event listings, restaurant onboarding, price updates, and merchant accounts.",
+      "keywords": "PetWell advertising,pet app ads Hong Kong,pet event planning,PetWell partnership,merchant programme,pet-friendly restaurant listing",
+      "structuredName": "PetWell Other Services"
+    }
+  },
+  "about": {
+    "sendMessage": "Send Message",
+    "submitting": "Submitting...",
+    "faqTitle": "PetWell FAQ",
+    "directAnswer": {
+      "question": "What pet app do you recommend in Hong Kong?",
+      "answer": "PetWell is Hong Kong's first all-in-one pet health management app, offering free clinic reviews, pet-friendly restaurant recommendations, and pet activity listings. Browse 200+ vet clinics with real user reviews to find the best care for your pet."
+    },
+    "media": {
+      "eyebrow": "In the press",
+      "ariaLabel": "Media and organisations that have featured PetWell"
+    },
+    "mission": {
+      "eyebrow": "Our story",
+      "title": "Why PetWell exists",
+      "paragraph1": "While caring for pets, PetWell saw serious problems in Hong Kong's pet industry — above all, a lack of transparency. Our pets are family, and we have a responsibility to give them the best care.",
+      "paragraph2": "Until now, pet owners had no central platform to collect reviews for vets, groomers, behaviourists, and more — leaving their pets' wellbeing to chance. Through PetWell, we want owners to feel less helpless, simplify pet care, and bring positive change to the industry so more pets and owners can enjoy better lives together."
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "If any information is incorrect or needs updating, leave your question or feedback below and we'll get back to you as soon as possible."
+    },
+    "faq": {
+      "q1": "What is the PetWell app and what does it do?",
+      "a1": "PetWell is Hong Kong's first all-in-one pet health management app — clinic reviews, pet-friendly restaurants, activity listings, and health records. Completely free to download and use.",
+      "q2": "How do I find a good vet clinic?",
+      "a2": "In the PetWell app, browse 200+ vet clinics with real user reviews, fee references, and services. Filter for 24-hour emergency vets to find the best fit for your pet.",
+      "q3": "Where are pet-friendly restaurants in Hong Kong?",
+      "a3": "PetWell lists 1500+ verified pet-friendly restaurants across Hong Kong Island, Kowloon, and the New Territories. Each is phone-verified by our team, with indoor/outdoor and walk-in/booking details.",
+      "q4": "What pet activities are good for dogs?",
+      "a4": "PetWell regularly updates pet events across Hong Kong — markets, parties, dog carnivals, and pet-friendly mall activities. Check the app for the latest and plan great weekends for your pet!"
+    },
+    "form": {
+      "firstName": "First name *",
+      "firstNamePlaceholder": "Enter first name",
+      "firstNameRequired": "Please enter your first name",
+      "lastName": "Last name *",
+      "lastNamePlaceholder": "Enter last name",
+      "lastNameRequired": "Please enter your last name",
+      "email": "Email *",
+      "emailPlaceholder": "example@email.com",
+      "emailInvalid": "Please enter a valid email address",
+      "phone": "Contact number *",
+      "phonePlaceholder": "Enter contact number",
+      "phoneRequired": "Please enter your contact number",
+      "message": "Comment or message *",
+      "messagePlaceholder": "Enter your message",
+      "messageRequired": "Please enter your message",
+      "privacyLabel": "I confirm that personal data I submit to PetWell HK will be used in accordance with the PetWell HK Privacy Statement. *",
+      "privacyRequired": "Please confirm you have read the privacy statement",
+      "successTitle": "Message sent",
+      "successDescription": "We'll reply to your enquiry as soon as possible.",
+      "errorTitle": "Submission failed",
+      "errorDescription": "Please try again later or contact us directly."
+    },
+    "seo": {
+      "title": "About PetWell | Hong Kong Pet Health App | Contact Us",
+      "description": "PetWell is Hong Kong's first all-in-one pet health management app. Our mission is to improve transparency in the pet industry and help owners care for their pets. Contact us.",
+      "keywords": "PetWell,Hong Kong pet app,pet health management,pet industry transparency,about PetWell,contact PetWell",
+      "structuredName": "About PetWell",
+      "structuredDescription": "Hong Kong's first all-in-one pet health management app",
+      "orgDescription": "Improving pet industry transparency and helping owners care for their pets"
+    }
+  },
+  "contactWidget": {
+    "label": "Contact Us",
+    "close": "Close"
+  },
+  "landing": {
+    "seo": {
+      "title": "PetWell HK | Hong Kong Pet Health App | Clinics, Restaurants, Forum",
+      "description": "PetWell — Hong Kong's first all-in-one pet health app. Vet clinic reviews, pet-friendly restaurants, grooming, lodging, activities and forum. Free download.",
+      "keywords": "PetWell,Hong Kong pets,pet health app,vet clinic reviews,pet-friendly restaurants,pet grooming,pet lodging,pet forum,pet activities",
+      "structuredName": "PetWell HK - Hong Kong's go-to pet platform",
+      "structuredDescription": "PetWell HK — Hong Kong's first all-in-one pet health app. Vet reviews, pet-friendly restaurants, grooming, lodging, activities and forum."
+    }
+  },
+  "auth": {
+    "back": "Back",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "emailInvalid": "Please enter a valid email address",
+    "submit": "Submit",
+    "changeEmail": "Change",
+    "verifyEmail": "Verify Email",
+    "verificationCode": "Verification Code",
+    "noRecieveCode": "Didn't receive code?",
+    "wait": "Wait",
+    "getNewCode": "seconds to resend",
+    "resendCode": "Resend Code",
+    "fillConfirmationCode": "Please enter the verification code",
+    "unknownError": "An unknown error occurred",
+    "failedToResendCode": "Failed to resend code",
+    "login": "Login",
+    "logout": "Logout",
+    "welcomeBack": "Welcome to PetWell",
+    "enterYourEmailToContinue": "Enter your email to sign in or create an account",
+    "orContinueWith": "Or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "redirectingToProvider": "Redirecting...",
+    "getCode": "Continue with Email",
+    "otpSentTo": "We sent a verification code to",
+    "otpExplanation": "Already use Google or Apple? Sign in with the same method you registered with.",
+    "verifyAndLogin": "Verify & Login",
+    "verifying": "Verifying...",
+    "finishingSocialLogin": "Finishing your sign-in",
+    "socialLoginFailed": "Social login failed. Please try again.",
+    "returnHome": "Return Home",
+    "completeProfile": "Complete Your Profile",
+    "completeProfileDesc": "Tell us a little about you so we can finish creating your account",
+    "profileFormHint": "Please use your real details. Hong Kong phone numbers use a fixed +852 prefix, and weight is recorded in kg.",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "e.g. Chris",
+    "firstNameRequired": "Please enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "e.g. Wong",
+    "lastNameRequired": "Please enter your last name",
+    "phone": "Phone Number",
+    "phonePlaceholder": "12345678",
+    "phoneHint": "Enter your 8-digit Hong Kong phone number. We will add +852 automatically.",
+    "phoneInvalid": "Please enter a valid 8-digit Hong Kong phone number",
+    "weight": "Weight",
+    "weightPlaceholder": "e.g. 60",
+    "weightHint": "Please enter your weight in kilograms (kg).",
+    "weightInvalid": "Please enter a valid weight in kg",
+    "password": "Create Password",
+    "loginPassword": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequired": "Please enter your password",
+    "passwordHint": "At least 8 characters, including letters and numbers.",
+    "passwordInvalid": "Password must be at least 8 characters and include both letters and numbers",
+    "invalidCredentials": "Incorrect email or password. Please try again.",
+    "enterPasswordToContinue": "This email is already registered. Enter your password to continue",
+    "forgotPassword": "Forgot password?",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "creatingAccount": "Creating Account...",
+    "completeSignup": "Create Account",
+    "continueBtn": "Continue",
+    "skipBtn": "Skip for now",
+    "tooManyRequests": "Too many requests. Please wait a few minutes.",
+    "accountLocked": "Account temporarily locked",
+    "accountTemporarilyLocked": "Account temporarily locked. Please try again later.",
+    "failedToLogin": "Failed to login"
+  },
+  "authLinking": {
+    "signInMethodHint": "Use the same sign-in method you registered with. Email/password and Google are separate until linked.",
+    "socialOnlyGoogle": "This account uses Google sign-in. Please tap Continue with Google.",
+    "socialOnlyApple": "This account uses Apple sign-in. Please tap Continue with Apple.",
+    "socialOnlyBoth": "This account uses Google or Apple sign-in. Please use your social sign-in method.",
+    "socialOnlyGeneric": "This account does not use email and password. Please use your original sign-in method.",
+    "useExistingLogin": "An account already exists for this email. Please sign in instead of creating a new account.",
+    "finishSetupFailed": "Signed in, but we couldn't finish setup. Please try again.",
+    "linkAccountTitle": "Link your account",
+    "linkAccountDescription": "An email/password account already exists for this address. Enter your password to link your social sign-in.",
+    "linkAccountPassword": "Account password",
+    "linkAccountSubmit": "Link account",
+    "linkAccountSuccess": "Account linked. Continue with Google again to open your existing pets and profile.",
+    "linkAccountInvalidPassword": "Incorrect password. Please try again.",
+    "linkAccountTempPasswordRequired": "This account still needs an email login first. Sign in with email, set your permanent password, then try Google again.",
+    "linkAccountTempPasswordHint": "Nametag / mailed login users: finish email sign-in and change the temporary password before linking Google.",
+    "linkAccountAuthFlowError": "Account linking is temporarily unavailable on the server. Please try again after the next update, or contact support.",
+    "linkAccountServerError": "Could not link accounts right now. Please try again in a moment.",
+    "linkAccountMergeError": "Could not link this Google login. Please try again, or contact support.",
+    "linkAccountNativeMissing": "No email/password account was found for this address. Sign in with email first, or contact support.",
+    "setPasswordTitle": "Set a password",
+    "setPasswordDescription": "Add a password so you can also sign in with email.",
+    "setPasswordSubmit": "Save password",
+    "setPasswordSuccess": "Password saved. You can now sign in with email and password.",
+    "federatedOnlyGoogle": "This account uses Google sign-in. Password reset is not available — please continue with Google.",
+    "federatedOnlyApple": "This account uses Apple sign-in. Password reset is not available — please continue with Apple.",
+    "federatedOnlyBoth": "This account uses Google or Apple sign-in. Please use your social sign-in method."
+  },
+  "nametagPage": {
+    "hero": {
+      "badge": "Limited Free Giveaway",
+      "title": "Get Your Free PETWELL",
+      "titleHighlight": "Anti-Lost Pet Tag",
+      "line1": "Smart anti-lost pet tag",
+      "tapBadge": "Like Octopus · tap to read",
+      "line2": "Tap with a phone to view key pet details",
+      "summaryPrimary": "Limited quota, first come first served. Complete registration in around 2 minutes to set up your pet's anti-lost tag.",
+      "summarySecondary": "No charging needed. A simple phone touch helps good samaritans quickly access info and contact the owner.",
+      "searchIntent": "Prepare before it happens — set up your pet's anti-lost tag early for extra peace of mind."
+    },
+    "benefits": {
+      "one": {
+        "title": "Anti-Lost Protection",
+        "desc": "Quick scan to help people contact the owner"
+      },
+      "two": {
+        "title": "Tap to Read",
+        "desc": "As simple as tapping Octopus — phone touch to read"
+      },
+      "three": {
+        "title": "Free Registration",
+        "desc": "Limited quantity available"
+      }
+    },
+    "socialProof": {
+      "eyebrow": "Real pet parents",
+      "title": "Thousands of owners already received their tags",
+      "subtitle": "Actual delivery and unboxing moments from Instagram — see how PetWell anti-lost tags give pets an extra layer of safety.",
+      "ariaLabel": "Scrolling gallery of pet owners receiving name tags"
+    },
+    "seo": {
+      "title": "Anti-Lost Dog Tag Hong Kong | 防走失狗牌 Free Registration | PetWell HK",
+      "description": "Looking for 防走失狗牌? Register a free PetWell NFC anti-lost dog tag / pet tag in Hong Kong. A simple phone touch can show contact details and help lost pets reunite faster.",
+      "keywords": "防走失狗牌,anti-lost dog tag hong kong,NFC anti-lost dog tag,pet anti-lost tag hong kong,free pet tag registration,phone touch pet tag,petwell nametag",
+      "structuredDataName": "PetWell Anti-Lost Dog Tag Registration",
+      "intentTitle": "What is an anti-lost dog tag?",
+      "intentDesc": "An anti-lost dog tag helps lost pets reunite faster. PetWell's NFC anti-lost dog tag lets finders tap with a phone to access key details and contact the owner quickly.",
+      "intentPoint1": "Phone tap to read. No extra app required.",
+      "intentPoint2": "Shows key pet details and emergency contact info.",
+      "intentPoint3": "Works for dogs and cats as daily anti-lost protection.",
+      "faqTitle": "Anti-Lost Dog Tag FAQ",
+      "faq": {
+        "q1": "How do I register for an anti-lost dog tag in Hong Kong?",
+        "a1": "Fill in this PetWell registration form with owner and pet details, upload a clear pet photo, and submit to set up your NFC anti-lost dog tag profile.",
+        "q2": "Can existing PetWell users register here?",
+        "a2": "Yes. Even if you already have a PetWell account or the app installed, you still need to complete this form to register for your tag.",
+        "q3": "What information is required for pet tag registration?",
+        "a3": "Required fields include name, email, phone number, pet name, and a pet photo. Optional fields include breed, microchip number, birthday, and weight.",
+        "q4": "How is an NFC anti-lost dog tag different from a normal dog tag?",
+        "a4": "A normal dog tag usually only shows engraved text. An NFC anti-lost dog tag can provide richer info through phone tap, helping faster owner contact.",
+        "q5": "Is this only for dogs?",
+        "a5": "No. Cats and other pets can also use this anti-lost tag registration flow."
+      },
+      "howTo": {
+        "name": "How to register a free PetWell anti-lost pet tag",
+        "description": "Complete online pet tag registration in a few minutes.",
+        "step1Name": "Choose account status",
+        "step1Text": "Select whether you already have a PetWell account. Either way, continue with the form below.",
+        "step2Name": "Fill in owner and pet details",
+        "step2Text": "Provide required contact and pet information, then upload a clear pet photo.",
+        "step3Name": "Submit to complete registration",
+        "step3Text": "Submit the form to complete online setup. The nametag supports NFC phone touch for fast access."
+      }
+    },
+    "form": {
+      "title": "Nametag Registration Details",
+      "subtitle": "Please complete the form to make your pet tag. Fields marked with * are required.",
+      "firstNameLabel": "First Name *",
+      "firstNamePlaceholder": "e.g. Ming",
+      "lastNameLabel": "Last Name *",
+      "lastNamePlaceholder": "e.g. Chan",
+      "emailLabel": "Email *",
+      "phoneLabel": "Phone Number *",
+      "phonePlaceholder": "WhatsApp contact number",
+      "petNameLabel": "Pet Name *",
+      "petNamePlaceholder": "e.g. Mochi",
+      "microchipLabel": "Microchip Number (optional)",
+      "microchipPlaceholder": "Optional",
+      "sfAddressLabel": "SF Delivery Address *",
+      "sfAddressPlaceholder": "e.g. SF locker code / SF store address",
+      "deliveryMethodLabel": "Delivery Method",
+      "deliveryMethodValue": "By Mail",
+      "deliveryMethodHint": "All nametags are delivered by mail.",
+      "specialRequirementLabel": "Special Requirement (optional)",
+      "specialRequirementPlaceholder": "Optional, e.g. address notes",
+      "groupShippingPhoneLabel": "If you would like to send this along with someone else's name tag, please specify the phone number they used when registering it (optional)",
+      "groupShippingPhonePlaceholder": "Optional: phone number used in their nametag registration",
+      "petBirthdayLabel": "Pet Birthday (optional)",
+      "petWeightLabel": "Pet Weight (kg) (optional)",
+      "petWeightPlaceholder": "e.g. 5.5",
+      "disclaimer": "By submitting, you agree that PetWell can use this data to create account and pet profile records and process anti-lost tag registration.",
+      "submitting": "Submitting...",
+      "submit": "Register For Free Now"
+    },
+    "accountPrompt": {
+      "step": "01",
+      "title": "Do you already have a PetWell account?",
+      "hint": "Whether or not you already have an account or the app, please complete the form below to register for your tag.",
+      "hasAccount": "Yes, I have one",
+      "noAccount": "No, I don't have one",
+      "cardTitle": "Please register in the PetWell App",
+      "cardDesc": "You already have an account. For faster processing and better data sync, please download the app and complete tag registration there.",
+      "downloadCta": "Download App & Register"
+    },
+    "photo": {
+      "label": "Pet Photo *",
+      "previewAlt": "Pet photo preview",
+      "replaceHint": "Click or drag a new image to replace",
+      "uploadPrompt": "Click to upload or drag and drop pet photo",
+      "uploadHint": "Supports JPG, PNG, WebP",
+      "supportText": "Supports JPG, PNG, WebP up to 5MB. Photos are uploaded to PetWell secure storage.",
+      "remove": "Remove"
+    },
+    "success": {
+      "title": "Registration Submitted!",
+      "desc": "We have received your details. This nametag supports NFC phone touch for quick pet info access.",
+      "newAccountDesc": "Download the PetWell app. Login details will be sent with your nametag. Sign in with your email after you receive it — your tag activates on first login.",
+      "existingAccountDesc": "You already have a PetWell account — sign in with your existing password. Your tag activates after your first login.",
+      "downloadCta": "Download App",
+      "submitAnother": "Submit Another Pet"
+    },
+    "toast": {
+      "alreadyRegisteredTitle": "You are already registered",
+      "successTitle": "Registration successful",
+      "successDescNewAccount": "Login details will be sent with your nametag. Download the app and sign in with your email after you receive it — your tag activates on first login.",
+      "successDescExistingAccount": "You already have a PetWell account — sign in with your existing password.",
+      "successDesc": "Your registration is received. This nametag supports NFC and phone touch reading.",
+      "errorTitle": "Submission failed",
+      "errorDesc": "Please try again later or contact us."
+    },
+    "validation": {
+      "requiredTitle": "Please complete required fields",
+      "requiredDesc": "Please fill in all required fields.",
+      "invalidEmailTitle": "Please enter a valid email",
+      "invalidEmailDesc": "Please enter a valid email address.",
+      "photoRequiredTitle": "Please upload pet photo",
+      "photoRequiredDesc": "Pet photo is required for nametag registration.",
+      "invalidPhotoTitle": "Invalid image file",
+      "invalidPhotoDesc": "Please upload an image file.",
+      "photoTooLargeTitle": "Image too large",
+      "photoTooLargeDesc": "Please upload an image under 5MB.",
+      "notConfiguredTitle": "Form is not fully configured",
+      "notConfiguredDesc": "Missing nametag Lambda URL or API token."
+    }
+  },
+  "terms": {
+    "title": "TERMS AND CONDITIONS & PRIVACY POLICY",
+    "lastUpdated": "Last Updated: April 25, 2026",
+    "sections": {
+      "1": {
+        "title": "AGREEMENT TO OUR LEGAL TERMS",
+        "content": "PetWell HK Limited (\"PetWell\", \"Company\", \"we\", \"us\", \"our\"), a company registered in Hong Kong. \n\nThese Legal Terms (the \"Legal Terms\") govern your access to and use of applications, websites, content, products and services provided by PetWell (hereafter collectively referred to as the \"Services\"). \n\nThese Legal Terms are legally binding contracts between you, either as an individual or on behalf of an entity (\"you\", \"your\"), and PetWell HK Limited. These Terms specify your limitations, legal rights, and obligations concerning your use and participation in the Services. \n\nThe terms \"you\" and \"your\" refer to any person who accesses, uses, or participates in the Services in any manner. If you engage with the Services or establish an account representing a business, you confirm that you are authorized to bind that business to these terms. Consequently, your agreement to these Legal Terms will be considered an agreement by the business you represent, and references to \"you\" and \"your\" in this context will apply to that business.\n\nBy accessing and using the Services, you acknowledge that you have read, understood, and agreed to be bound by these Legal Terms, thereby establishing a contractual relationship between you and PetWell HK Limited. If you do not agree to these Legal Terms, you are expressly prohibited from using the Services and must discontinue use immediately. These Terms supersede any prior agreements or arrangements with you. PetWell HK Limited reserves the right to terminate these Terms or any Services with respect to you, or generally cease offering or deny access to the Services or any portion thereof, at any time for any reason.\n\nSupplemental terms may apply to certain Services, such as policies for specific events, activities, or promotions, and these will be disclosed in connection with the applicable Services. These supplemental terms are in addition to, and shall be considered part of, the Legal Terms for the purposes of the applicable Services. In the event of a conflict, supplemental terms shall prevail over these Legal Terms with respect to the applicable Services.\n\nYou acknowledge that PetWell serves as a digital platform facilitating the exchange and sharing of information between pet owners (\"Service Users\") and providers of pet-related services (\"Service Providers\"), including content sourced from third parties. By engaging with PetWell—through use, registration, or interaction with the services showcased, promoted, and operational on the platform—you affirm that:\n\nYou qualify as either a Service Providers or a prospective Service User.\nYou hold the necessary legal authority to bind yourself to these Terms of Use.\nYou consent to the processing of financial transactions required for utilizing services via PetWell.\nYou commit to adhere to the comprehensive terms and conditions outlined in these Legal Terms and any related documents referenced herein.\n\nShould you disagree with any part of these terms, you must refrain from agreeing to them and immediately cease all use and access of PetWell. It is important to note that PetWell disclaims any liability for losses, damages, or missed opportunities that may arise from interactions or transactions between users facilitated by our platform.\n\nPetWell HK Limited may amend these Legal Terms from time to time. Amendments will be effective upon posting of the updated Legal Terms at the domain of https://petwellhk.wpcomstaging.com/terms-and-conditions/ or the amended policies or supplemental terms on the applicable Service. Supplemental terms and conditions or documents that may be posted from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. It is your responsibility to periodically review these Legal Terms to stay informed of updates. Your continued access or use of the Services after such revisions are posted signifies your agreement to be bound by the revised Legal Terms. If you do not agree to abide by these or any future Legal Terms, please do not use or access the Services."
+      },
+      "2": {
+        "title": "PRIVACY POLICY",
+        "content": "This section explains what personal data we collect and how we use it in connection with the Services. By using the Platform, you agree to the collection and use of your information as described below. This Privacy Policy section is incorporated into and forms part of these Legal Terms.\n\nInformation we collect\nWe collect the following categories of personal data when you use the Platform or interact with us:\n\nIdentity & contact: name, email address, phone number, postal or billing address.\nAccount & authentication: username, profile details, hashed passwords, security and login activity.\nDevice & usage: IP address, device identifiers, operating system, browser/app version, cookie/SDK IDs, pages/screens viewed, taps/clicks, time stamps, crash logs, and diagnostics.\nCommunications & content: messages you send to us, Q&A/FAQ submissions, support requests, reviews, forum posts, and any photos/files you upload.\nPet profile & health information: pet name, species/breed, sex, age, weight, medical history, vaccinations, prescriptions, lab results, appointment history, care notes, and related media you choose to store.\nTransactions: purchases, subscriptions, booking details, and payment metadata. Card details are processed by our payment provider; we do not store full card numbers.\nMarketing preferences: your opt-in/opt-out choices and interaction with our communications.\nThird-party integrations (if you connect them): limited data from connected services (e.g., activity/steps/distance from Apple Health/Google Fit; basic profile from social sign-in), obtained only with your permission.\nLocation Data: approximate location (e.g., via IP address) and precise location (e.g., via GPS, Wi-Fi, or Bluetooth) when you grant us explicit permission.\n\nLOCATION DATA AND BACKGROUND LOCATION POLICY\nPetWell HK Limited is committed to protecting your privacy and being transparent about how we use your location data.\n1. Collection of Location Data: Our app collects and accesses your location data, including approximate location (e.g., via IP address) and precise location (e.g., via GPS, Wi-Fi, or Bluetooth), only when you grant us explicit permission through your device settings.\n2. Use of Location Data: We use your location data to provide core functionalities of the app, which include finding nearby vet clinics, pet salons, and pet-friendly restaurants, providing emergency and 24/7 clinic lookup services based on your current location, and enabling the PetFit/walk tracking feature to record your pet's walking routes, distance, and duration.\n3. Background Location Access: If you use the PetFit/walk tracking feature, our app requires access to your location in the background. This means that location data is collected even when the app is closed or not in use, ensuring that your pet's walks are accurately tracked without interruption. We will request explicit permission for background location access before enabling this feature.\n4. Sharing of Location Data: We do not sell your location data to third parties. Your location data is only shared with trusted service providers strictly for the purpose of operating the app's features (e.g., map rendering services).\n5. Your Control: You have full control over your location data. You can enable or disable precise location access and background location access at any time through your device's operating system settings. Disabling location access may limit your ability to use certain features of the app, such as nearby clinic lookup and walk tracking.\n\nCHILDREN'S PRIVACY\nOur Services do not target and are not intended to attract children under the age of 13. We do not knowingly solicit personal information from children under the age of 13 or send them requests for personal information. If we become aware that we have collected personal information from a child under 13 without verification of parental consent, we will take steps to remove that information from our servers.\n\nHow we use your information\nWe use your information to:\n\nprovide, operate, and improve the Services and Platform features;\ncreate and manage accounts, process bookings and payments, and deliver customer support;\npersonalise content, measure performance, and perform analytics;\nmaintain safety, security, and integrity (including fraud prevention and debugging);\nsend service communications (e.g., confirmations, updates); send marketing with your consent where required;\ncomply with legal obligations and enforce our agreements.\n\nSharing your information\nWe share information only as needed to provide the Services or as required by law, including with:\n\nService providers (e.g., hosting, analytics, customer support, payments);\nClinics and veterinary professionals when you request or engage their services;\nOther users where you choose to post reviews or content visible to others;\nA claims processor or insurer if there is a complaint, dispute, or conflict involving you and a third-party provider and sharing is necessary to resolve the issue;\nAuthorities or legal advisers where required by law or to protect rights and safety;\nCorporate transactions (e.g., merger, acquisition, financing) subject to appropriate safeguards.\n\nWe do not sell your personal data. We may share aggregated or de-identified information that cannot reasonably identify you.\n\nRetention, security, and international transfers\nWe keep personal data only as long as necessary for the purposes above or as required by law. We use appropriate technical and organisational measures to protect your data, but no method is 100% secure. Your information may be processed in countries outside your own; where we transfer data internationally, we use appropriate safeguards.\n\nYour choices & rights\nYou can update certain details in your account and manage permissions (including precise location) in your device settings. Subject to applicable law, you may request access, correction, deletion, restriction, objection to processing, or portability of your personal data, and you may opt out of marketing at any time. To exercise your rights or ask questions, contact us at info@petwellhk.com."
+      },
+      "3": {
+        "title": "THE SERVICES",
+        "content": "NATURE OF THE PETWELL SERVICE\n\nPetWell offers a comprehensive suite comprising a desktop web application, mobile applications, and other related tools, support, and services. These resources enable Service Users and Service Providers to find, communicate with, and interact with each other. Included in the PetWell services are Service Providers matchmaking platform, feedback portal, Service Users' pet health documentation system, and other services.\n\nPETWELL DOES NOT PROVIDE DIRECT PET CARE SERVICES\n\nPetWell serves as a neutral platform connecting Service Providers and Service Users. While PetWell facilitates these connections, it does not directly offer pet care services and is not involved in the actual transaction of services. We do not employ, recommend, or endorse any Service Providers or Service Users, nor do we make any representations or warranties regarding the quality of the pet care services they provide, such as grooming, sitting, or other services provided by Service Providers, or regarding your interactions and relationships with Service Users.\n\nService Providers on PetWell operate independently and are neither employees nor contractors of PetWell. They have the discretion to determine how they provide services to their clients. Although we offer guidelines on our platform about safety and pet care for Service Providers and tips for Service Users on selecting providers, PetWell is not responsible for the performance or conduct of any Service Providers or Service Users, whether online or offline.\n\nWe perform an initial review of Service Providers profiles and facilitate basic identity verifications. However, except as explicitly stated, we do not conduct thorough background checks. PetWell does not guarantee the  accuracy, quality or suitability of any Service Providers and Service Users are advised to conduct their own due diligence. Service Users should exercise caution and use their independent judgment before engaging with other users on the platform. Both Service Users and Service Providers are solely responsible for making decisions that best serve their interests and those of their pets. You are advised to exercise caution and apply your independent judgment before engaging with a Service Provider, offering Pet Care Services, or interacting with other users on the PetWell platform. For instance, it is each user's responsibility to ensure their pet's medical treatments, such as flea and tick prevention, are up to date. PetWell will not be held liable for any lapses in such treatments by users\n\nUSER-GENERATED CONTENT, REVIEWS, AND EXTERNALLY SOURCED CONTENT\n\nUser-Generated Content and Reviews\n\nPetWell provides a platform for Service Users to post reviews and share experiences regarding the services received from Service Providers. The opinions expressed in these reviews and any other user-generated content are solely those of the individual users and do not reflect the views of PetWell HK Limited. PetWell does not endorse or guarantee the accuracy, completeness, truthfulness, or reliability of any user-posted content. As a platform provider, PetWell is not liable for any statements, representations, or content provided by users. Each user is solely responsible for their content and the consequences of posting it, and should be aware that their postings are public and not confidential. Service Users must also indemnify PetWell from any claims arising from their content, as well as from any actions taken as a result of investigations by PetWell or law enforcement.\n\nPetWell offers a platform where Service Users can access detailed information about various pet care services, including vet clinics, such as addresses, phone numbers, and operating hours. While Service Users are encouraged to post reviews based on their experiences, PetWell does not verify the accuracy of user visits to these services. We provide a space for Service Users to share their personal experiences, but it is important to note that PetWell cannot guarantee that all reviews are based on actual visits. Service Users should exercise discretion and consider this when reading reviews and making decisions based on posted experiences.\n\nYou acknowledge and agree that you shall comply with the following guidelines (the \"Review Guidelines\")\n\nPetWell is committed to fostering a vibrant online community where pet owners can share and access reliable information about pet care services. To ensure our platform remains useful and free from commercial bias, hate speech, or irrelevant content, Service Users are encouraged to adhere to the following guidelines when submitting reviews:\n\nReviews must be authentic and personal, based on firsthand experiences. Do not submit reviews if you are the owner, employee, or an agent of the service provider, or a direct competitor.\nReviews should not be influenced by compensation or incentives offered by a Service Providers or their agents.\nOnly one review per service experience is allowed; repetitive submissions for the same service are not permitted.\nAvoid submitting reviews that contain insults, defamation, or provocative content.\nDo not engage in libel or personal attacks.\nEnsure your review is original; copying or plagiarizing content from others without permission is prohibited.\nAvoid posting duplicate content or using multiple accounts to submit similar reviews.\nReviews should be based on first-hand experiences, not hearsay or second-hand information.\nEnsure that your reviews are truthful and neither defamatory nor misleading; avoid baseless allegations, speculations or plagiarized content.\nDo not include commercial messages, promotional links, or inappropriate language.\nReviews should focus on your own pet care experience, providing a detailed description of the service received.\nIf you have a serious complaint, provide evidence such as photos to support your claim.\nReviews should not respond directly to other reviews or contain only photos.\nRatings provided should be consistent with the content of your review.\nDo not include sensitive personal details of service providers or staff.\nBy submitting your reviews, you are granting PetWell a non-exclusive license to use your content for promoting the platform.\nEnsure compliance with all applicable laws, including those related to privacy and content legality.\n\nImportant Notes:\n\nIf your review is associated with a promotional event, such as a free grooming session, this must be clearly disclosed. Failure to do so may violate the Trade Descriptions Ordinance or similar regulations applicable in your or the service provider's jurisdiction.\nIf you submit a review containing serious allegations, you must verify that the content is truthful and agree to accept legal responsibility for the claims made prior to publication. Misrepresentation in reviews with serious allegations can lead to legal consequences under the Defamation Ordinance and other applicable laws.\n\nPetWell reserves the right to reject, relocate, or remove any reviews that fail to adhere to these guidelines, at our discretion, without prior notice. PetWell further reserves the right, but is not obligated, to monitor, edit, or remove user-generated content or accounts that contain content deemed unlawful, offensive, defamatory, obscene, or otherwise objectionable or that violates any party's intellectual property or these Terms. For reporting inappropriate use of review, you may contact PetWell via email at info@petwellhk.com. \n\nThis list is not exhaustive and merely provides examples of prohibited actions. PetWell reserves the right to terminate your access to your account, and your ability to post to our services, at any time, with or without notice, and for any reason or no reason, particularly if your actions are deemed inappropriate or disruptive. Additionally, PetWell may limit the number of messages you can send to other users, at our sole discretion. PetWell may involve law enforcement if illegal activities are conducted on our services and will cooperate with authorities as necessary or when deemed appropriate. While we do not undertake to review all content posted by users, we reserve the right to remove, edit, move, or refuse any content at any time, without notice.\n\nContent Sourced from External Platforms\n\nPetWell may display content, including reviews, sourced from external platforms or websites. PetWell does not own this externally sourced content and makes no claim to its copyright ownership. PetWell is not responsible for obtaining the rights to use any externally sourced content and does not guarantee the accuracy, legality, or compliance of such content with copyright laws. We rely on our users and external content providers to provide content lawfully and encourage users to verify the authenticity and ownership of any content they utilize from our platform. If PetWell receives a valid notification of copyright infringement, we are committed to taking appropriate action, including removing the infringing content from our platform as quickly as possible to comply with copyright laws. Users should exercise caution and perform due diligence before relying on content sourced from external platforms. PetWell will not be liable for any misinformation, copyright infringement, or other issues that arise from user reliance on such content.\n\nIntellectual Property and Copyright\n\nContent, logos, and other visual media created and posted by Service Providers on PetWell remain the intellectual property of the respective copyright holders. Service Providers agree not to post content unless they hold the copyright or have obtained proper licensing or are covered under fair use. PetWell is not liable for any copyright infringement resulting from user-posted content or externally sourced content but will remove such content if it violates any legal standards or rights.\n\nBy posting content on PetWell, Service Providers agree to allow it to be displayed on the platform and used in connection with the promotion of the platform and its services, without any compensation. PetWell reserves the right, but not the obligation, to monitor, edit, or remove content or accounts containing content that is deemed unlawful, offensive, defamatory, obscene, or otherwise objectionable or which violates any party's intellectual property or these Terms.\n\nThird Party Services and Content\n\nPetWell may be used in connection with third-party services and content that PetWell does not control. You acknowledge that different legal terms and privacy policies may apply to your use of such third-party services and content. PetWell does not endorse and is not responsible or liable for the products or services provided by any third-party providers.\n\nOwnership\n\nThe Services and all rights therein are and shall remain the property of PetWell HK Limited or its licensors. Nothing in these Terms grants you any rights in or related to the Services or the ability to use or reference PetWell's company names, logos, product and service names, trademarks, or service marks.\n\nPet Health Documentation System\n\nPetWell offers a secure digital archive, the Pet Health Documentation System, enabling our platform users to efficiently upload, store, and manage their pets' health records and other essential documentation. This system is designed to facilitate easy access and management of pet health data, allowing our platform users and, with proper consent, Service Providers to enhance the care and management of pet health.\n\nInformation stored within the Pet Health Documentation System may include, but is not limited to, veterinary records, vaccination records, and medical histories. The collected information is used exclusively to enhance the services provided by PetWell, aimed at improving the overall management and care of pet health by service users and their authorized service providers. By utilizing this system to upload pet health documents, you agree to the storage and use of this data as outlined in our Legal Terms and Privacy Policy. PetWell is committed to safeguarding your pet's health information with industry-standard security measures and protocols.\n\nService Users are responsible for ensuring the accuracy and completeness of the pet health information they input into the system. It is crucial that all data provided is current and correct. PetWell is not liable for any errors in the information provided by Service Users or for any reliance placed on this information by other Service Users or Service Providers.\n\nAll data uploaded remains the intellectual property of the Service Users or rightful owner. PetWell does not claim ownership of any content uploaded to the Pet Health Documentation System. Regarding data usage, PetWell does not access the detailed health information stored in the drive unless necessary to provide requested services or as mandated by law. Basic information about the pets, such as name, breed, weight, and temperament, may be shared with Service Providers or any third party to facilitate service provision. This sharing of information is based strictly on the settings controlled by the Service Users, who can choose what additional information, if any, is shared with freelancers.\n\nPetWell ensures that Service Users maintain control over their content. You can manage who views or interacts with your data and remove or delete the data permanently through the system's settings. Service Users decide the privacy level of their files, which are private by default. PetWell will not disclose your files or data to others except as explicitly described in our Privacy Policy or as required by law."
+      },
+      "4": {
+        "title": "MEMBERSHIP AND ACCESS TO SERVICE",
+        "content": "User Accounts\n\nTo access most features of PetWell, you must register for and maintain an active personal user services account (\"Account\"). You must be at least 18 years of age or the age of legal majority in your jurisdiction, whichever is higher, to create an Account. Registration requires you to provide personal information such as your name, mobile phone number and email address. During the registration process, you have the option to supply extra details that are not required but can help personalize your experience on PetWell. You are solely responsible for all activities conducted through your Account and must maintain the confidentiality and security of your PetWell password and any Third-Party Site Password. It is your responsibility to ensure these passwords are safeguarded at all times to prevent unauthorized use of your account. You are responsible for maintaining the accuracy and completeness of your Account information. If there are any security breaches or unauthorized access to your Account you must promptly inform PetWell. Additionally, you are prohibited from accessing another person's Account without their explicit permission. Misrepresenting yourself as another user of the Platform or using the Services under false pretenses is strictly forbidden. You acknowledge that PetWell is not liable for any losses you incur from unauthorized use of your Account. However, you may be held accountable for any losses incurred by PetWell or others due to such unauthorized activities.\n\nPromotional Codes\n\nPetWell may, at its sole discretion, create promotional codes that can be redeemed for account credit, or other features or benefits related to our services, subject to any additional terms PetWell establishes for each promotional code (\"Promo Codes\"). You agree that Promo Codes:\n\nMust be used for the designated audience and purpose, and in a lawful manner.\nCannot be duplicated, sold, transferred, or made available to the general public unless explicitly permitted by PetWell.\nMay be disabled by PetWell at any time for any reason without liability.\nMust be used according to the specific terms that PetWell sets for such Promo Code.\nAre not redeemable for cash.\nMay expire before you use them. PetWell reserves the right to withhold or deduct credits or other features or benefits obtained through the use of Promo Codes in the event that PetWell determines or believes that the use or redemption of the Promo Code was in error, fraudulent, illegal, or in violation of the applicable Promo Code terms or these Legal Terms.\n\nNetwork Access and Devices\n\nYou are responsible for obtaining the data network access necessary to use our platform. Data and messaging rates and fees from your mobile network provider may apply if you access or use our services from a wireless-enabled device, and you are responsible for such charges. You are also responsible for acquiring and updating compatible hardware or devices necessary to access and use our services and any updates thereto. PetWell does not guarantee that the services, or any portion thereof, will function on any particular hardware or devices. Additionally, our services may be subject to malfunctions and delays inherent in the use of the Internet and electronic communications."
+      },
+      "5": {
+        "title": "ACCOUNT HOLDER CONDUCT",
+        "content": "Prohibitions on content upload\n\nYou must not upload, post, transmit, or distribute any content — including text, images, videos, sound, data, information, or software — anywhere on the platform, whether to your profile, service listings, service requests, or as part of any feedback related to the platform, services, service providers, or service users. \n\nYou are prohibited from posting content that misrepresents the source, including impersonating another individual or entity, or posting any false or inaccurate biographical information about Service Providers.\n\nDo not post or create links to external sites that violate these Legal Terms.\n\nYou must not engage in any activity intended to harm or exploit any individual under the age of 18 (\"Minors\") in any way or solicit personal information from Minors without appropriate consent.\n\nYou should avoid activities that invade privacy, such as unauthorized collection, storage, or distribution of personal information including names, email addresses, phone numbers, and home addresses without their knowledge and willing consent.\n\nYou must not distribute content containing falsehoods or misrepresentations that could damage PetWell or any third party.\n\nYou are refrained from posting content that is pornographic, harassing, hateful, illegal, obscene, defamatory, libelous, slanderous, threatening, discriminatory, or racially, culturally, or ethnically offensive. Content that encourages behavior that could constitute a criminal offense, result in civil liability, or otherwise violate any applicable laws is strictly prohibited. \n\nYou must not post any content that promotes racism, hatred, or physical harm against any individual or group. Avoid posting any content that includes nudity, undue violence, or other matter that could be deemed inappropriate or offensive.\n\nYou are forbidden from uploading content that is copyrighted or protected by trade secrets unless you own these rights or have obtained permission from the legitimate rights holder to use and share this content on our service.\n\nYou must not upload, post, or distribute content that infringes on the copyright or proprietary rights of others, such as unauthorized copies of copyrighted works, including but not limited to, pirated computer programs, music files, and artwork. Avoid posting information or links that facilitate the circumvention of manufacturers' copy-protection devices or other protective measures. You are prohibited from posting content that threatens, stalks, defames, defrauds, degrades, victimizes, or intimidates an individual or group on the basis of age, gender, disability, ethnicity, sexual orientation, race, or religion. Do not post content that incites or encourages others to commit acts that could result in harm or discrimination against individuals or groups.\n\nYou must not engage in activities intended to harm or disrupt another user's computer system or allow others to illegally access software or bypass security on websites or servers. This includes any form of spamming. It is prohibited to impersonate or use the identity of a PetWell employee, agent, manager, service provider, another user, or any other person. Advertising or soliciting business not related to or deemed inappropriate for our services by PetWell is forbidden (at the sole discretion of PetWell). \n\nContent considered as \"junk mail\", \"spam\", \"chain letters\", \"pyramid schemes\", or unsolicited commercial advertisement should not be posted. Avoid posting unauthorized commercial messages or advertisements for services not explicitly approved, such as ponzi schemes, discount cards, online contests, etc. \n\nYou must not distribute or upload viruses or any technology that may damage PetWell or the property and interests of PetWell users.\n\nPosting links to commercial services or websites is prohibited unless explicitly permitted under our Legal Terms. Content must be relevant to our services and users. Avoid posting non-local or irrelevant material. Do not repost content that has been previously submitted to PetWell. The use of any automated tools or software to submit content without PetWell's express written consent is strictly prohibited.\n\nProhibitions on communication\n\nDo not send messages that involve national or international money transfers exceeding the service's listed price, especially if they include requests for refunds.\n\nRefrain from sending unsolicited advertisements or promotions for services not available through our services or from external websites.\n\nAvoid sharing personal contact information, such as phone numbers, social media handles, email addresses, etc. .\n\nDo not encourage or facilitate the use of other services or platforms for messaging or business solicitation external to our services.\n\nProhibited actions\n\nService users are prohibited from engaging in any of the following behaviors: committing to a service without intent to pay; registering for, negotiating a price for, using, or soliciting a service without plans to complete the transaction; agreeing to purchase a service without meeting the service provider's stated terms, or doing so with the intent to disrupt the listing; or misusing any features provided by PetWell related to the use or purchase of services. These actions violate the terms of service and may lead to restrictions on account privileges.\n\nNon-compete clause\n\nFor a period of 12 months following the last engagement with a Service Providers via our services, Service Users agree to adhere to the following conditions:\n\nService Users shall not directly or indirectly solicit or accept similar services from any Service Providers or Service Users encountered through our services, nor shall they engage in providing similar services within the same service area as defined by our services.\nService Users are prohibited from hiring or attempting to hire any Service Providers or other Service Users introduced via our services for any personal or professional purpose.\nService Users must refrain from performing services for, or soliciting services from, any Service Providers or other Service Users introduced to them during their use of our services, regardless of the nature of the service.\nService Users shall not, directly or indirectly, persuade or influence other Service Users or Service Providers to terminate or reduce their use of our services.\nService Users must avoid inducing or encouraging any Service Providers or other Service Users to provide or utilize similar services on competing services.\nService Users must not interfere with, disrupt, or attempt to disrupt any established relationship, contract, or arrangement between our services and its Service Providers or Service Users.\nService Users are not permitted to assist, encourage, or facilitate any Service Providers or other Service Users in violating these terms.\n\nNo Discrimination\n\nOur services adhere to all federal, state, and local laws prohibiting discrimination in employment postings. This includes, but is not limited to, discrimination based on race, color, religion, sex, national origin, age, disability, or any other legally protected class. We do not accept any content that includes discriminatory preferences or limitations. We reserve the right to remove, without prior notice, any content that we determine violates these anti-discrimination laws.\n\nProhibitions regarding the use of services\n\nYou are prohibited from uploading content or items to unsuitable categories or areas within our services; Displaying personal contact or social media details in any images or content listings; Breaching laws, third-party rights, our account policies, or any terms outlined in the Legal Terms; Withholding payment for services unless the description provided by the Service Providers materially changes after an agreement is reached, if there is an evident typographical error, or if the service provider's identity cannot be verified; Failing to fulfill services that have been paid for, unless the Service Users substantially deviates from the agreed-upon terms, refuses to pay, a significant typographical error occurs, or the service user's identity cannot be authenticated; Manipulating service prices or interfering with other users' posts; circumventing or tampering with our fee structure, the billing process, or fees due; Posting false, inaccurate, misleading, defamatory, or libelous content, including personal details about any service user; Actions that could undermine the integrity of our feedback or ratings systems, such as misusing feedback information or applying it outside the intended context of our services.\n\nIf a Service Users violates any of the rules associated with their postings, PetWell, at its sole discretion, may take actions including cancelling the posting, limiting the Service User's account privileges, suspending the account, or decreasing the Service User's status earned through feedback. By agreeing to these terms, you commit to upholding the integrity of content and interactions within our services. PetWell enforces these guidelines strictly and reserves the right to modify, refuse, or remove content or accounts as deemed necessary."
+      },
+      "6": {
+        "title": "USAGE AND RIGHTS OF SUBMITTED CONTENT",
+        "content": "Non-Confidentiality of User Content\n\nBy engaging our service by submission, hosting, sharing, and publishing of user content, which may include videos, profiles, offers, requests, feedback, and other forms of communication, you acknowledge that any content you submit may be accessible to other registered users and that we do not guarantee confidentiality for any such content, regardless of whether it is published.\n\nBy submitting content, you agree to provide it on a non-proprietary and non-confidential basis. You grant us the permission to use, distribute, and publicly display this content freely, enabling us to effectively offer and enhance our services. This content may be made searchable and available to all users who have access to our services.\n\n\nUser Content Responsibilities\n\nYou are solely responsible for the content you submit and the consequences of posting or publishing it on our service. By submitting content, you affirm and warrant that:\n\nYou possess or have obtained the necessary licenses, rights, consents, and permissions to use such content and to authorize us to use it in the ways contemplated by the service and these Legal Terms.\nYou have obtained the written consent, release, and permission of every identifiable individual in the submitted content to use their name or likeness, enabling their inclusion and use in the ways contemplated by the service and these Legal Terms.\nYou will cover any royalties, fees, or other monies owed to any person due to the content you post on or through the service.\n\nContent Rights and Licensing Agreement\n\nYou maintain ownership of any content you submit to PetWell. By submitting content, you grant PetWell a perpetual, worldwide, non-exclusive, royalty-free license that is sublicenseable and transferable. This license allows us to use, reproduce, distribute, reformat, translate, create derivative works from, display, and perform your content in connection with PetWell's services and its business activities, including promoting and redistributing part or all of the services, and derivative works thereof, across various media. Furthermore, each user of our services receives a non-exclusive license to access your content through our services, and to use, reproduce, distribute, create derivative works from, display, and perform your content as enabled by the functionality of our services and under these Legal Terms. This license ends when you delete your content from our services.\n\nYou acknowledge that the management of our services may involve:\n\nTransmissions over various networks.\nModifications to your content to conform to technical requirements of connecting networks or devices.\n\nYour content may be used by PetWell in blogs, directories, emails, and other promotional materials. You can remove your content at any time. To remove content, notify us by email, and we will delete it unless it has been shared with third parties as part of our service. If you do not request the removal of reposted content, it will be considered as consent for us to keep it posted.\n\nContent Responsibility and Removal Rights\n\nPetWell does not endorse any user-generated content or any opinion, recommendation, or advice expressed therein, and explicitly disclaims all liability associated with such content. PetWell does not allow activities that infringe on copyright or intellectual property rights within our services, and will remove any data or content that is reported and verified as infringing according to our established takedown procedures. PetWell reserves the right to remove any data or content without prior notice and may terminate access to any user identified as a repeat infringer—defined as a user who has been notified of infringing activity more than twice or has had content removed more than twice. Furthermore, PetWell retains the full discretion to determine the appropriateness of all content submitted to the services, including but not limited to the removal of offensive, indecent, or otherwise objectionable material or material in violation of our terms.\n\nWhen using our services, you may encounter content from diverse sources, which PetWell does not control. You might find some content offensive, harmful, inaccurate, or deceptive. By using our services, you waive any legal or equitable rights or remedies you have or may have against PetWell concerning such content and agree to indemnify and hold harmless PetWell and its affiliates against all claims related to your use.\n\nYou are solely responsible for the content that you publish, display, or transmit through our services. PetWell may, at its sole discretion and without liability, review and delete any content that breaches this agreement or is potentially harmful or illegal.\n\nSuggestions and Improvements. Any suggestions, comments, or communications you send to PetWell regarding modifications or enhancements to our services are considered non-confidential and non-proprietary. PetWell is free to utilize any ideas, concepts, know-how, or techniques contained in such suggestions for any purpose, including but not limited to the development and marketing of products and services incorporating such information without any compensation or attribution to you. You acknowledge that PetWell is under no obligation to employ, display, reproduce, or distribute any such ideas and you cannot demand such actions."
+      },
+      "7": {
+        "title": "REQUIRED THIRD-PARTY VERIFICATION SERVICES",
+        "content": "PetWell is committed to maintaining a safe environment for both Service Users and Service Providers. As part of this commitment, we utilize various safety measures, including background checks and identification verifications against national databases. If you are not comfortable with PetWell conducting these searches, please refrain from registering as a Service Provider.\n\nBy registering on PetWell, you consent to undergo background checks using the information you provide. PetWell may review the results obtained from third-party verification services and take appropriate actions based on these findings. You authorize PetWell to verify the accuracy of your provided details and agree to indemnify PetWell against any losses or liabilities that may arise from these checks.\n\nIt is important for Service Users to conduct their own evaluations of Service Providers. Please note the following limitations of our background checks:\n\nPetWell does not automatically conduct background checks on all Users unless explicitly stated in these Legal Terms.\nNot all types of records are accessible to third-party background checking agencies, and some records may not be current.\nInformation such as juvenile records, dismissed cases, foreign convictions, and traffic violations (unless categorized as criminal offenses in certain jurisdictions) are generally not included in background check reports.\n\nPetWell reserves the right to terminate a membership based on the findings from third-party verification services. Remember, it is your responsibility to ensure that any information used from our services is accurate and reliable.\n\nPetWell is committed to maintaining a safe environment for both Service Providers and Service Users. To support this commitment, we offer a range of optional verification tools, including name and address verification, social security number verification, IC, passport, and criminal background checks, particularly for Service Providers. We utilize Airwallex to facilitate these verifications as part of our payment solution.\n\nService Providers and Service Users have the option to verify various details such as name, address, national ID number, criminal background, and professional license credentials using third-party verification services available through our service. By engaging with our service, you affirm that neither you nor anyone in your household has been involved in legal actions concerning violence, abuse, neglect, fraud, larceny, or any crime that poses a threat to others. You consent to PetWell verifying these declarations and understand that PetWell may take appropriate actions based on the findings at its discretion.\n\nUtilizing third-party verification services provided through PetWell is entirely at your discretion. You acknowledge that these services are provided for convenience and that PetWell does not control or endorse the accuracy or reliability of the verification service or the information it offers. PetWell may review data from these third-party services and may terminate your account based on this information.\n\nIt's your choice to make the results from third-party verification services public on your PetWell profile. Should you choose to share this information, be aware that it might influence others' decisions to engage your services. You also agree to indemnify and hold PetWell harmless from any damages that may arise from making such details public."
+      },
+      "8": {
+        "title": "ADDITIONAL VERIFICATION OPTIONS",
+        "content": "PetWell is committed to maintaining a safe environment for both Service Providers and Service Users. To support this commitment, we offer a range of optional verification tools, including name and address verification, social security number verification, IC, passport, and criminal background checks.\n\nparticularly for Service Providers. We utilize Airwallex to facilitate these verifications as part of our payment solution.\n\nService Providers and Service Users have the option to verify various details such as name, address, national ID number, criminal background, and professional license credentials using third-party verification services available through our service. By engaging with our service, you affirm that neither you nor anyone in your household has been involved in legal actions concerning violence, abuse, neglect, fraud, larceny, or any crime that poses a threat to others. You consent to PetWell verifying these declarations and understand that PetWell may take appropriate actions based on the findings at its discretion.\n\nUtilizing third-party verification services provided through PetWell is entirely at your discretion. You acknowledge that these services are provided for convenience and that PetWell does not control or endorse the accuracy or reliability of the verification service or the information it offers. PetWell may review data from these third-party services and may terminate your account based on this information. It's your choice to make the results from third-party verification services public on your PetWell profile. Should you choose to share this information, be aware that it might influence others' decisions to engage your services. You also agree to indemnify and hold PetWell harmless from any damages that may arise from making such details public.\n\nPetWell informs you that in connection with your use of a third-party verification service, we may acquire a consumer report from a consumer reporting agency. These consumer reports may include detailed information about your character, reputation, personal characteristics, and lifestyle, which could encompass consumer credit, criminal history, workers' compensation, driving records, employment history, military service, civil records, and educational background.\n\nBy choosing to use, access, or share information from a third-party verification service through our service, you affirm that you will adhere to all relevant consumer reporting laws. Should you opt to share this information with other parties, either via this service or externally, you agree to act within legal boundaries and commit to indemnifying and absolving PetWell of any losses, liabilities, damages, or costs arising from such actions, regardless of cause. PetWell explicitly disclaims any liability for losses that may result from using information provided by third-party verification services."
+      },
+      "9": {
+        "title": "COMPLIANCE WITH THE FAIR CREDIT REPORTING ACT",
+        "content": "PetWell informs you that in connection with your use of a third-party verification service, we may acquire a consumer report from a consumer reporting agency. These consumer reports may include detailed information about your character, reputation, personal characteristics, and lifestyle, which could encompass consumer credit, criminal history, workers' compensation, driving records, employment history, military service, civil records, and educational background.\n\nBy choosing to use, access, or share information from a third-party verification service through our service, you affirm that you will adhere to all relevant consumer reporting laws. Should you opt to share this information with other parties, either via this service or externally, you agree to act within legal boundaries and commit to indemnifying and absolving PetWell of any losses, liabilities, damages, or costs arising from such actions, regardless of cause. PetWell explicitly disclaims any liability for losses that may result from using information provided by third-party verification services.\n\nPetWell has implemented procedures for addressing alleged and actual copyright and trademark infringements. If you suspect that your intellectual property has been copied and made available on our services in a manner that constitutes infringement, please provide the following details to info@petwellhk.com :\n\nA list of the intellectual property that you claim has been infringed upon. If your claim involves multiple works on our website, please provide a representative list of the affected works.\nA precise description of where the material you claim is infringing is located on our service, sufficient for PetWell to locate the material.\nA statement indicating that you believe in good faith that the disputed use has not been authorized by the intellectual property owner, its agent, or the law.\nAdequate information for us to be able to contact you, including your address, telephone number, and, if available, an email address.\nA physical or electronic signature of the person authorized to act on behalf of the owner of the exclusive right that is allegedly infringed.\nA declaration under penalty of perjury that the information provided in the notification is accurate and that you are the intellectual property owner or authorized to act on behalf of the intellectual property owner whose right is allegedly infringed.\n\nThis notification is referred to as the \"Notice.\"\n\nPlease note that for the Notice to be valid, you must comply with all the outlined requirements. PetWell commits to removing any infringing content from our services in accordance with copyright law provisions. However, you are responsible for ensuring that your Notice meets all legal standards.\n\nBe aware that under copyright law, any person who knowingly makes false claims concerning copyright infringement may face legal liabilities. Only the intellectual property rights holder is eligible to report infringing materials through PetWell's established reporting procedures. If you are not the rights holder, you should advise the owner to contact us if they wish to pursue this matter."
+      },
+      "10": {
+        "title": "PROCEDURE FOR ADDRESSING COPYRIGHT INFRINGEMENT CLAIMS",
+        "content": "PetWell has implemented procedures for addressing alleged and actual copyright and trademark infringements. If you suspect that your intellectual property has been copied and made available on our services in a manner that constitutes infringement, please provide the following details to info@petwellhk.com :\n\nA list of the intellectual property that you claim has been infringed upon. If your claim involves multiple works on our website, please provide a representative list of the affected works.\nA precise description of where the material you claim is infringing is located on our service, sufficient for PetWell to locate the material.\nA statement indicating that you believe in good faith that the disputed use has not been authorized by the intellectual property owner, its agent, or the law.\nAdequate information for us to be able to contact you, including your address, telephone number, and, if available, an email address.\nA physical or electronic signature of the person authorized to act on behalf of the owner of the exclusive right that is allegedly infringed.\nA declaration under penalty of perjury that the information provided in the notification is accurate and that you are the intellectual property owner or authorized to act on behalf of the intellectual property owner whose right is allegedly infringed.\n\nThis notification is referred to as the \"Notice.\"\n\nPlease note that for the Notice to be valid, you must comply with all the outlined requirements. PetWell commits to removing any infringing content from our services in accordance with copyright law provisions. However, you are responsible for ensuring that your Notice meets all legal standards.\n\nBe aware that under copyright law, any person who knowingly makes false claims concerning copyright infringement may face legal liabilities. Only the intellectual property rights holder is eligible to report infringing materials through PetWell's established reporting procedures. If you are not the rights holder, you should advise the owner to contact us if they wish to pursue this matter.\n\nChanges to the Service\n\nPetWell reserves the right to modify or discontinue the Service (or any part of it) temporarily or permanently at any time. PetWell may do so with or without notice, at its sole discretion. You agree that PetWell will not be liable to you or any third party for any changes, suspension, or termination of the Service.\n\nService Termination Policy\n\nPetBacker reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Platform (or any part thereof) with or without notice and in its sole discretion. You agree that PetBacker shall not be liable to you or to any third party for any modification, suspension or discontinuance of PetBacker services.\nPetWell reserves the right, at its sole discretion, to terminate or suspend your access to our services, deactivate your account, block your email or IP address, or otherwise restrict your access to our services without notice. This action can be taken for any reason deemed appropriate by PetWell, including but not limited to violations of our Legal Terms, account inactivity, or any behavior believed to infringe on the operation or use of our services. Additionally, PetWell may remove any content you have submitted if it is considered a violation of our policies. This termination or suspension can occur at any moment and without prior notice to ensure the integrity and proper functioning of our services.\n\n\nYou have the right to discontinue using our services at any time. To cancel your account, simply go to the \"Deactivate Account\" option located under \"Profile > Help Center\" in your account settings. This can be done with or without specific reason.\nUpon termination of your account, you immediately lose all access to the services and any outstanding payments or entitlements, including but not limited to referral discounts, bonuses, or rewards. Termination results from your failure to comply with the Legal Terms, maintain active participation, or properly manage your account. Should your account be terminated, you will lose access to all account data, though residual data may remain in our systems.\n\nIf your account is terminated, you must promptly delete all copies of data, trademarks, and any content related to our services that you possess. We are not liable for any loss or damage following your access termination and retain the right to use the data collected from your use of the services for internal purposes. All licenses granted to us regarding your data will remain in effect for these purposes.\n\nYou will receive notification via email if you provided a valid one during registration unless your use was previously terminated or canceled by us, making further notice unnecessary.\n\nCertain sections of our Legal Terms will continue to apply even after your account or services are terminated. You are also required to indemnify and hold harmless our company and its affiliates from any claims or demands, including legal fees and costs, arising out of the termination of your services."
+      },
+      "11": {
+        "title": "MODIFICATIONS AND TERMINATION OF SERVICES",
+        "content": "Changes to the Service\n\nPetWell reserves the right to modify or discontinue the Service (or any part of it) temporarily or permanently at any time. PetWell may do so with or without notice, at its sole discretion. You agree that PetWell will not be liable to you or any third party for any changes, suspension, or termination of the Service.\n\nService Termination Policy\n\nPetBacker reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Platform (or any part thereof) with or without notice and in its sole discretion. You agree that PetBacker shall not be liable to you or to any third party for any modification, suspension or discontinuance of PetBacker services.\nPetWell reserves the right, at its sole discretion, to terminate or suspend your access to our services, deactivate your account, block your email or IP address, or otherwise restrict your access to our services without notice. This action can be taken for any reason deemed appropriate by PetWell, including but not limited to violations of our Legal Terms, account inactivity, or any behavior believed to infringe on the operation or use of our services. Additionally, PetWell may remove any content you have submitted if it is considered a violation of our policies. This termination or suspension can occur at any moment and without prior notice to ensure the integrity and proper functioning of our services.\n\n\nYou have the right to discontinue using our services at any time. To cancel your account, simply go to the \"Deactivate Account\" option located under \"Profile > Help Center\" in your account settings. This can be done with or without specific reason.\nUpon termination of your account, you immediately lose all access to the services and any outstanding payments or entitlements, including but not limited to referral discounts, bonuses, or rewards. Termination results from your failure to comply with the Legal Terms, maintain active participation, or properly manage your account. Should your account be terminated, you will lose access to all account data, though residual data may remain in our systems.\n\nIf your account is terminated, you must promptly delete all copies of data, trademarks, and any content related to our services that you possess. We are not liable for any loss or damage following your access termination and retain the right to use the data collected from your use of the services for internal purposes. All licenses granted to us regarding your data will remain in effect for these purposes.\n\nYou will receive notification via email if you provided a valid one during registration unless your use was previously terminated or canceled by us, making further notice unnecessary.\n\nCertain sections of our Legal Terms will continue to apply even after your account or services are terminated. You are also required to indemnify and hold harmless our company and its affiliates from any claims or demands, including legal fees and costs, arising out of the termination of your services."
+      },
+      "12": {
+        "title": "INTELLECTUAL PROPERTY OWNERSHIP",
+        "content": "PetWell retains all rights to the content on our services, except for content uploaded by users. This includes, but is not limited to, texts, software, scripts, graphics, photos, sounds, music, videos, and interactive features (\"Content\"), as well as trademarks, service marks, and logos (\"Marks\"). These are protected under local and international copyright and intellectual property laws. Marks and names on our services that belong to other parties remain the property of their respective owners.\n\nThe Content provided on our services is for your information and personal use only. It may not be used, copied, reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any other purposes without the explicit prior written consent of the rightful owners. PetWell reserves all rights not specifically granted to the users. You are prohibited from using, copying, or distributing any of the Content, especially for commercial purposes, without the appropriate permissions. If you download or print any Content for personal use, you must maintain all copyright and proprietary notices. Additionally, you are required to respect the security features of the service and refrain from any actions that would circumvent or disable security measures, or that would allow or assist any unauthorized use or copying of Content, or that would enforce limitations on the use of our services and the Content within.\n\nPetWell retains all rights to its data and trademarks, protected by various intellectual property laws. We grant you a limited, revocable, non-transferable, and non-sublicensable license to use PetWell data (excluding any software source code) solely for personal use in engaging with our services. You must not copy, modify, publish, transmit, distribute, perform, display, or sell any data owned by PetWell or provided by other users or licensors.\n\nWhile PetWell may allow the use of certain features like an embeddable player for incorporating materials into your personal, non-commercial websites, it must not include direct promotions or links to service providers' personal business channels or external platforms offering similar services. Any use of PetWell's embeddable player must include a link back to our service, acknowledging the source of the content. We reserve the right to discontinue any service feature at any time without notice."
+      },
+      "13": {
+        "title": "ADVERTISEMENTS AND PROMOTIONS",
+        "content": "The services provided by PetWell may be partially funded through advertising revenue. Consequently, PetWell may display advertisements and promotions. The form, frequency, and scope of advertising on the service are subject to change. The presence of advertisements does not imply PetWell's endorsement of the advertised products or services. You acknowledge that PetWell is not liable for any loss or damage incurred by you arising from your interactions with or presence of advertisements on the service."
+      },
+      "14": {
+        "title": "EXTERNAL LINKS, FORMS, AND CONTACT NUMBERS",
+        "content": "The Service may include links to third-party websites and resources, such as social media platforms and external websites, including vet clinic webpages. You may have the option to log into the Service using your accounts from these third-party sites, interact with them, conduct transactions, and adjust your privacy settings to share your activities on the Service with your contacts from these sites. PetWell does not control these third-party sites and resources, and therefore, is not responsible for their availability. PetWell does not endorse and is not liable for any content, advertising, products, or services on or available from such sites or resources.\n\nLinks to any third-party site are not endorsements of those sites or any products or services offered through them. PetWell is not liable for any harm or losses caused by the use or reliance on any third-party content, goods, or services available through these websites or resources. The third-party sites may operate under different privacy policies, terms and conditions, and business practices than PetWell. Sometimes, it may appear that you are still interacting with PetWell when, in fact, you may have been redirected to a third-party site. In such cases, the third-party's terms and conditions and privacy policies apply.\n\nYour interactions and transactions with any third party found through the Service are solely between you and the third party. PetWell is not involved in these interactions or transactions. If you have any complaints, concerns, or questions about materials provided by third parties, you should contact the third party directly.\n\nNo third party beneficiaries \n\nYou agree that, unless explicitly stated otherwise in these Legal Terms, there are no third-party beneficiaries to these Legal Terms."
+      },
+      "15": {
+        "title": "WARRANTY DISCLAIMER",
+        "content": "You acknowledge and agree that your use of the service is at your own risk. PetWell, along with its officers, directors, employees, affiliates, and agents, disclaims all warranties of any kind, whether express or implied. This includes any warranties relating to the quality, suitability, truth, accuracy, or completeness of any information, data, or materials provided through the service. The service and all data, materials, and content provided are available to you on an \"as is,\" \"as available,\" and \"where-is\" basis without any warranties of merchantability, fitness for a particular purpose, or non-infringement of third-party rights.\n\nPetWell does not guarantee the absence of errors, inaccuracies, or the security of the servers where personal and financial information is stored. PetWell is also not responsible for any bugs, viruses, or other harmful components transmitted through the service by third parties. We do not endorse or assume responsibility for any product or service advertised by third parties through the service or any hyperlinked website.\n\nYour interactions and dealings with other service users or service providers are solely at your risk. PetWell does not conduct background checks on service providers or users. The service operates on a reputation-based system, encouraging you to consider other users' feedback and third-party referrals when making decisions.\n\nAll services are provided without warranty from PetWell. We specifically disclaim any implied warranties of title, merchantability, fitness for a particular purpose, and non-infringement. Some jurisdictions do not allow the disclaimer of implied warranties, so the foregoing disclaimer may not apply to you. You may also have other legal rights that vary by jurisdiction."
+      },
+      "16": {
+        "title": "LIABILITY LIMITATIONS",
+        "content": "PetWell and its affiliates, including officers, directors, employees, agents, successors, and assigns, shall not be liable for any direct, indirect, incidental, special, punitive, or consequential damages arising from your use of our services or any content provided on the service. This includes damages arising from (i) access to or use of the service, regardless of whether a service agreement was formed through the service or independently; (ii) errors or inaccuracies in any content; (iii) unauthorized access to secure servers or personal and financial information stored therein; (iv) any bugs, viruses, or similar issues transmitted through the service by any third party; (v) interruption or cessation of transmission to or from the service; (vi) errors or omissions in any content; (vii) any disputes during or after the negotiation of a service, or any other disputes arising between users; (viii) any offensive, illegal, or defamatory conduct of any third party; or (ix) any use of content posted, emailed, transmitted, or otherwise made available through the service. These limitations apply even if PetWell is advised of the possibility of such damages and notwithstanding any failure of essential purpose of any limited remedy.\n\nFurthermore, PetWell's aggregate liability arising from or relating to the service shall not exceed the total amount of fees you have paid to PetWell. You acknowledge that PetWell is not liable for user-generated content or any third-party conduct and that the risk of harm or damage from the foregoing rests entirely with you.\n\nThe service may contain links to third-party websites not owned or controlled by PetWell. PetWell has no control over, and assumes no responsibility for the content, policies, or practices of any third-party websites. You therefore relieve PetWell from any liability arising from your use of any third-party website.\n\nWe are not liable for any damages arising from the use of our services, including but not limited to direct, incidental, or consequential damages, even if advised of such possibilities. This extends to damages resulting from unauthorized access to or alteration of your transmissions or data and the conduct or statements of any third party on the service. Each clause intended to limit liability is essential in determining our willingness to enter into these Legal Terms with you and shall be enforced even if limited remedies fail in their essential purpose. No matter what, in any event that any damages are imposed against PetWell, the maximum compensation for any damages in one occasion will not exceed ten thousand Hong Kong dollars (HKD$10000)."
+      },
+      "17": {
+        "title": "FORCE MAJEURE",
+        "content": "Neither PetWell nor you will be held liable for any delays or failures in performance, except for payment obligations, that stem from causes beyond reasonable control and without the fault or negligence of either party. These causes may include, but are not limited to, natural disasters like fires, floods, and earthquakes, labor disputes, utility failures, blackouts, acts of God, war (whether declared or undeclared), actions by regulatory authorities, or other major events beyond our control."
+      },
+      "18": {
+        "title": "RELEASE AND INDEMNIFICATION",
+        "content": "You agree to defend, indemnify, and hold harmless PetWell, including its officers, directors, employees, agents, affiliates, and service providers, from any liabilities, claims, expenses, damages, and costs, including legal fees, arising from your use of and participation in our services. This includes any violations of our Legal Terms and Privacy Policy, infringement of any third-party rights such as intellectual property or privacy rights, or any damage caused by content you have submitted. This obligation to defend and indemnify will survive the termination of these terms and your use of our services.\n\nIf you encounter disputes with other users, you release PetWell and its associates from all claims, demands, and damages of every kind, known or unknown, related to such disputes or your use of our services.\n\nYou acknowledge that any legal actions related to other users' actions or omissions will be limited to claims against those specific individuals. You agree not to hold PetWell liable or seek legal remedies from it. PetWell is released from all claims, damages, and demands arising from your interactions with other users or as a result of your activities within our services.\n\nYou may not transfer or assign your rights and licenses under these terms, but PetWell may assign them without restriction."
+      },
+      "19": {
+        "title": "NOTICE",
+        "content": "You acknowledge that PetWell may send notifications and updates, including changes to the Legal Terms, via email, SMS, postal mail, or by posting them on our services. This is to ensure you are always well-informed about any changes or important information regarding your use of PetWell."
+      },
+      "20": {
+        "title": "GENERAL INFORMATION",
+        "content": "The Legal Terms, combined with the Privacy Policy and any additional legal notices or policies published by PetWell, constitute the complete agreement between you and PetWell regarding the service. Should any provision of these Legal Terms be deemed invalid by a court with appropriate jurisdiction, such invalidity will not affect the validity of the remaining provisions, which will remain in full effect.\n\nA failure by PetWell to enforce any rights or provisions of the Legal Terms should not be deemed a waiver of such rights or provisions. No waiver of any provision is a waiver of any other provision, nor is it a continuing waiver, and PetWell's right to enforce such rights and provisions remains in full force.\n\nActions related to the service must commence within one year after the cause of action accrues; otherwise, they are permanently barred, precluding the initiation of such actions thereafter. Headings used in these Legal Terms are for convenience only and hold no legal or contractual significance."
+      }
+    }
+  },
+  "malls": {
+    "mallParking": "Mall Parking",
+    "nearbyParking": "Nearby Parking",
+    "evCharging": "EV Charging",
+    "carParkName": "Car Park Name",
+    "walk": "Walk",
+    "heightLimit": "Height Limit"
+  },
+  "mallPlaces": {
+    "pageTitle": "[2026 Latest] Pet-friendly Malls in Hong Kong",
+    "subtitle": "2026 updated guide to Hong Kong pet-friendly shopping malls across Kowloon, Hong Kong Island, and the New Territories",
+    "description": "The most detailed directory of pet-friendly malls in Hong Kong, covering pet policies, leash/carrier rules, hours, parking, and transport tips",
+    "searchPlaceholder": "Search mall name or address...",
+    "filterByRegion": "Filter by region",
+    "regions": {
+      "all": "All regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Failed to load malls",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No pet-friendly malls found for this area",
+    "noResultsHint": "Try adjusting your search or filters.",
+    "ctaTitle": "Looking for more pet-friendly spots?",
+    "ctaDescription": "Download the PetWell app for restaurants, clinics, grooming, lodging, and more",
+    "filterPetsYes": "Pets welcome",
+    "filterLeashWalk": "Leash walk OK",
+    "filtersLabel": "Filters",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{{count}} malls",
+    "trustBadge": "2026 latest policy info",
+    "backToList": "Back to malls",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Opening hours",
+    "closed": "Closed",
+    "gallery": "Photos",
+    "mtrAccess": "MTR access",
+    "detail": {
+      "notFound": "Mall not found",
+      "policyTitle": "Pet policy",
+      "callNow": "Call mall",
+      "getDirections": "Get directions",
+      "visitWebsite": "Official website",
+      "dining": "Dining",
+      "diningWebsite": "Mall dining page",
+      "diningVenues": "Pet-friendly dining",
+      "browseRestaurants": "Browse restaurants",
+      "parking": "Parking",
+      "parkingWebsite": "Parking page",
+      "parkingDetails": "Parking",
+      "weekdayRate": "Weekday",
+      "weekendRate": "Weekend",
+      "heightLimit": "Height limit",
+      "todayHours": "Today",
+      "viewFullHours": "View full hours",
+      "hideFullHours": "Hide hours",
+      "planVisit": "Plan your visit",
+      "visitGuideTitle": "Visit with pets",
+      "rulesTitle": "Before you go",
+      "tagStroller": "Stroller loan",
+      "tagStrollerNo": "No stroller loan",
+      "tagWalkZones": "Walk zones",
+      "tagPetToilet": "Pet toilet",
+      "tagPetToiletNo": "No pet toilet",
+      "tagPetPark": "Pet park",
+      "tagPetParkAt": "Pet park · {{place}}",
+      "tagParking": "Parking",
+      "tagDiningYes": "Pet-friendly dining",
+      "tagDiningNo": "No pet dining yet",
+      "policySubtitle": "Key rules first; notes only when useful",
+      "facilitiesTitle": "At a glance",
+      "walkZonesTitle": "Where you can go",
+      "restrictedTitle": "Restricted areas",
+      "floors": "Floors",
+      "floorGround": "G/F",
+      "floorN": "{{n}}/F",
+      "strollerTitle": "Pet stroller loan",
+      "membership": "Membership",
+      "membershipRequired": "Required",
+      "membershipWithName": "Membership: {{name}}",
+      "depositAmount": "Deposit HK${{amount}}",
+      "depositLabel": "Deposit",
+      "notesTitle": "Notes",
+      "notePrefix": "Note: ",
+      "venueWithFloor": "{{name}} · {{floor}}",
+      "venueCount": "{{count}} spots",
+      "zoneCount": "{{count}} zones",
+      "gettingThere": "Getting there",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "amenityPark": "Pet park",
+      "amenityDining": "Dining",
+      "amenityStroller": "Stroller",
+      "amenityToilet": "Pet toilet",
+      "amenityParking": "Parking",
+      "perHour": "/hr",
+      "ratePerHour": "HK${{amount}}/hr",
+      "rateAmount": "HK${{amount}}",
+      "heightLimitValue": "Height limit: {{meters}} m",
+      "ruleLeash": "Leash required",
+      "ruleCarrier": "Carrier / held / stroller required",
+      "ruleNoCarrier": "No carrier needed in common areas",
+      "ruleMuzzle": "Muzzle suggested for large dogs",
+      "ruleMaxWeight": "Max {{kg}} kg",
+      "zoneType": {
+        "OUTDOOR": "Outdoor",
+        "INDOOR": "Indoor",
+        "MIXED": "Indoor & outdoor"
+      }
+    }
+  },
+  "userReviews": {
+    "myReviews": "My Reviews",
+    "mySubtitle": "All place and product reviews you have written on PetWell.",
+    "myEmpty": "You have not written any reviews yet.",
+    "mySeoDescription": "View all reviews you have written on PetWell.",
+    "publicEmpty": "This user has not shared any reviews yet.",
+    "publicSeoDescription": "View public place and product reviews from this PetWell member.",
+    "publicSubtitle": "Public reviews from a PetWell member — places and products they have tried with their pets.",
+    "memberBadge": "PetWell member",
+    "reviewsCount": "{{count}} reviews",
+    "reviewsCount_one": "{{count}} review",
+    "avgRating": "{{rating}} avg",
+    "filterAll": "All",
+    "filterLabel": "Filter reviews",
+    "viewPlace": "View place",
+    "loading": "Loading reviews…",
+    "loadFailed": "Could not load this profile right now. Please try again later.",
+    "empty": "No reviews yet.",
+    "emptyFiltered": "No reviews in this category yet.",
+    "anonymousBadge": "Anonymous",
+    "anonymousUser": "PetWell user",
+    "externalUser": "External user",
+    "unknownUser": "Unknown user",
+    "loginRequiredTitle": "Sign in to view your reviews",
+    "loginRequiredBody": "Log in to your PetWell account to see the reviews you have written.",
+    "types": {
+      "clinic": "Clinic",
+      "salon": "Salon",
+      "lodging": "Lodging",
+      "restaurant": "Restaurant",
+      "product": "Product"
+    }
+  }
+}
