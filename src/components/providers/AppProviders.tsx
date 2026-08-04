@@ -40,4 +40,9 @@ export default function AppProviders({ children }: { children: ReactNode }) {
                 </Suspense>
               </CompareProvider>
             </WishlistProvider>
-          </AuthPanelProv
+          </AuthPanelProvider>
+        </AuthProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}

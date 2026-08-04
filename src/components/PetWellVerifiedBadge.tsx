@@ -1,7 +1,8 @@
-﻿const logo = "/assets/logo.png";
-import { CheckCircle } from "lucide-react";
+﻿import { CheckCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+
+const logo = "/assets/logo.png";
 
 interface PetWellVerifiedBadgeProps {
   variant?: "default" | "onDark";

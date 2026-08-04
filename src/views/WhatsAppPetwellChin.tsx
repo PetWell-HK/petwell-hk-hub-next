@@ -1,4 +1,6 @@
-﻿import { useEffect } from "react";
+"use client";
+
+import { useEffect } from "react";
 const logo = "/assets/logo.png";
 
 const WhatsAppPetwellChin = () => {
@@ -9,7 +11,7 @@ const WhatsAppPetwellChin = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-background to-secondary/20">
       <img src={logo} alt="PetWell Logo" className="h-24 w-auto animate-fade-in" />
-      <p className="text-lg text-muted-foreground animate-fade-in">æ­£åœ¨è·³è½‰åˆ° WhatsApp...</p>
+      <p className="text-lg text-muted-foreground animate-fade-in">正在跳轉到 WhatsApp...</p>
     </div>
   );
 };

@@ -1,4 +1,6 @@
-﻿import { useEffect } from "react";
+"use client";
+
+import { useEffect } from "react";
 const logo = "/assets/logo.png";
 
 const TARGET_URL =
@@ -23,7 +25,7 @@ const AfcdPdfRedirect = () => {
 
         <div className="space-y-2">
           <p className="text-lg md:text-xl font-semibold text-foreground">
-            æ­£åœ¨è·³è½‰è‡³æ¼è­·è™•å®‰å…¨æ„è¦‹æ”¶é›†PDF...
+            正在跳轉至漁護處安全意見收集PDF...
           </p>
           <p className="text-base md:text-lg text-muted-foreground">
             Redirecting you to the AFCD Pet Food Safety Consultation PDF...
@@ -37,15 +39,15 @@ const AfcdPdfRedirect = () => {
         </div>
 
         <p className="text-xs text-muted-foreground">
-          å¦‚æœªè‡ªå‹•è·³è½‰ï¼Œè«‹{" "}
+          如未自動跳轉，請{" "}
           <a
             href={TARGET_URL}
             className="underline text-primary"
             rel="noopener noreferrer"
           >
-            æŒ‰æ­¤ç¹¼çºŒ / click here
+            按此繼續 / click here
           </a>
-          ã€‚
+          。
         </p>
       </div>
     </div>

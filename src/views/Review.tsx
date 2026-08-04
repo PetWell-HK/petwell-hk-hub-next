@@ -1,4 +1,6 @@
-﻿import { memo, useCallback, useEffect, useMemo, useState } from "react";
+"use client";
+
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -58,31 +60,31 @@ import { toast } from "sonner";
 const logo = "/assets/logo.png";
 
 const CATEGORIES: { id: string; label: string; icon: LucideIcon }[] = [
-  { id: "all", label: "å…¨éƒ¨", icon: LayoutGrid },
-  { id: "food", label: "ç³§é£Ÿ", icon: Utensils },
-  { id: "medicine", label: "è—¥å“", icon: Pill },
-  { id: "treats", label: "é›¶é£Ÿ", icon: Cookie },
-  { id: "supplies", label: "æ—¥ç”¨å“", icon: Package },
-  { id: "unknown", label: "å…¶ä»–", icon: MoreHorizontal },
+  { id: "all", label: "全部", icon: LayoutGrid },
+  { id: "food", label: "糧食", icon: Utensils },
+  { id: "medicine", label: "藥品", icon: Pill },
+  { id: "treats", label: "零食", icon: Cookie },
+  { id: "supplies", label: "日用品", icon: Package },
+  { id: "unknown", label: "其他", icon: MoreHorizontal },
 ];
 
-const HOT_SEARCHES = ["Royal Canin", "è²“ç ‚", "Hill's i/d", "Orijen", "Frontline"];
+const HOT_SEARCHES = ["Royal Canin", "貓砂", "Hill's i/d", "Orijen", "Frontline"];
 
 const NAV_TABS = [
-  { label: "æ ¼åƒ¹é¦–é ", href: "#review-top", hash: true },
-  { label: "ç†±é–€æ¯”åƒ¹", href: "#review-results", hash: true },
-  { label: "å¿ƒæ°´æ¸…å–®", href: "/wishlist", hash: false },
-  { label: "ç”¢å“æ¯”è¼ƒ", href: "/compare", hash: false },
-  { label: "åº—ä¸»åˆä½œ", href: "/other-services", hash: false },
+  { label: "格價首頁", href: "#review-top", hash: true },
+  { label: "熱門比價", href: "#review-results", hash: true },
+  { label: "心水清單", href: "/wishlist", hash: false },
+  { label: "產品比較", href: "/compare", hash: false },
+  { label: "店主合作", href: "/other-services", hash: false },
 ] as const;
 
 const PROMO_TILES = [
-  { id: "deals", title: "ä»Šæ—¥æœ€æŠµ", sub: "æ…³æœ€å¤š", filter: "deals" as const },
-  { id: "stores", title: "æœ€å¤šåº—èˆ–", sub: "é¸æ“‡å¤š", filter: "stores" as const },
-  { id: "food", title: "ç³§é£Ÿå°ˆå€", sub: "ä¸»ç³§ç½é ­", filter: "food" as const },
-  { id: "medicine", title: "è—¥å“å°ˆå€", sub: "é©…èŸ²è­·ç†", filter: "medicine" as const },
-  { id: "treats", title: "é›¶é£Ÿå°ˆå€", sub: "çŽå‹µå°é£Ÿ", filter: "treats" as const },
-  { id: "supplies", title: "ç”¨å“å°ˆå€", sub: "æ—¥å¸¸è­·ç†", filter: "supplies" as const },
+  { id: "deals", title: "今日最抵", sub: "慳最多", filter: "deals" as const },
+  { id: "stores", title: "最多店舖", sub: "選擇多", filter: "stores" as const },
+  { id: "food", title: "糧食專區", sub: "主糧罐頭", filter: "food" as const },
+  { id: "medicine", title: "藥品專區", sub: "驅蟲護理", filter: "medicine" as const },
+  { id: "treats", title: "零食專區", sub: "獎勵小食", filter: "treats" as const },
+  { id: "supplies", title: "用品專區", sub: "日常護理", filter: "supplies" as const },
 ] as const;
 
 type PromoFilter = (typeof PROMO_TILES)[number]["filter"];
@@ -90,11 +92,11 @@ type SortKey = "default" | "price-asc" | "price-desc" | "savings" | "stores";
 type ViewMode = "grid" | "list";
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: "default", label: "æŽ¨è–¦" },
-  { value: "price-asc", label: "åƒ¹æ ¼ â†‘" },
-  { value: "price-desc", label: "åƒ¹æ ¼ â†“" },
-  { value: "savings", label: "æ…³æœ€å¤š" },
-  { value: "stores", label: "åº—èˆ–æœ€å¤š" },
+  { value: "default", label: "推薦" },
+  { value: "price-asc", label: "價格 ↑" },
+  { value: "price-desc", label: "價格 ↓" },
+  { value: "savings", label: "慳最多" },
+  { value: "stores", label: "店舖最多" },
 ];
 
 const Review = () => {
@@ -105,7 +107,7 @@ const Review = () => {
   const [pageIndex, setPageIndex] = useState(0);
   const [pageCursors, setPageCursors] = useState<(string | undefined)[]>([undefined]);
   const [promoFilter, setPromoFilter] = useState<PromoFilter | null>(null);
-  const [activeNav, setActiveNav] = useState("æ ¼åƒ¹é¦–é ");
+  const [activeNav, setActiveNav] = useState("格價首頁");
   const [sortBy, setSortBy] = useState<SortKey>("default");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const { isSelected, toggle: toggleCompare, ids: compareIds } = useCompare();
@@ -207,8 +209,8 @@ const Review = () => {
   }, [hasPreviousPage]);
 
   useSEO({
-    title: "å¯µç‰©ç”¨å“æ ¼åƒ¹æ¯”è¼ƒ | PetWell Review",
-    description: "æ¯”è¼ƒé¦™æ¸¯å¯µç‰©ç³§é£Ÿã€è—¥å“ã€ç”¨å“çœŸå¯¦åƒ¹æ ¼ï¼Œç‡æ¸…æ¥šé‚Šé–“æœ€æŠµã€‚",
+    title: "寵物用品格價比較 | PetWell Review",
+    description: "比較香港寵物糧食、藥品、用品真實價格，睇清楚邊間最抵。",
     canonicalUrl: "https://petwellhk.com/review",
   });
 
@@ -254,9 +256,9 @@ const Review = () => {
               <img src={logo} alt="PetWell" className="h-9 w-9 object-contain md:h-10 md:w-10" />
               <div>
                 <p className="text-[15px] font-semibold leading-tight text-foreground md:text-base">
-                  PetWell æ ¼åƒ¹
+                  PetWell 格價
                 </p>
-                <p className="text-[12px] text-muted-foreground">é¦™æ¸¯å¯µç‰©ç”¨å“æ¯”åƒ¹</p>
+                <p className="text-[12px] text-muted-foreground">香港寵物用品比價</p>
               </div>
             </Link>
 
@@ -275,11 +277,11 @@ const Review = () => {
                         document.getElementById("review-results")?.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    placeholder="æœå°‹å“ç‰Œã€ç”¢å“åç¨±â€¦"
+                    placeholder="搜尋品牌、產品名稱…"
                     className="h-full border-0 px-0 text-[14px] shadow-none focus-visible:ring-0 md:text-[15px]"
                   />
                   {search && (
-                    <button type="button" onClick={() => setSearch("")} aria-label="æ¸…é™¤æœå°‹" className="rounded-sm p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground">
+                    <button type="button" onClick={() => setSearch("")} aria-label="清除搜尋" className="rounded-sm p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground">
                       <X className="h-4 w-4" />
                     </button>
                   )}
@@ -289,12 +291,12 @@ const Review = () => {
                   onClick={() => document.getElementById("review-results")?.scrollIntoView({ behavior: "smooth" })}
                   className="shrink-0 bg-primary px-5 text-[14px] font-semibold text-primary-foreground transition-colors hover:bg-primary-hover md:px-8"
                 >
-                  æœå°‹
+                  搜尋
                 </button>
               </div>
               <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]">
                 <span className="inline-flex items-center gap-1 text-muted-foreground">
-                  <Flame className="h-3 w-3 text-primary" /> ç†±æœ
+                  <Flame className="h-3 w-3 text-primary" /> 熱搜
                 </span>
                 {HOT_SEARCHES.map((s) => (
                   <button
@@ -348,7 +350,7 @@ const Review = () => {
             <aside className="hidden w-[188px] shrink-0 lg:block">
               <div className="review-category-rail bg-primary text-primary-foreground">
                 <div className="border-b border-white/15 px-3 py-2 text-[12px] font-semibold">
-                  å•†å“åˆ†é¡ž
+                  商品分類
                 </div>
                 <ul>
                   {CATEGORIES.map((c) => (
@@ -367,9 +369,9 @@ const Review = () => {
                 </ul>
               </div>
               <div className="review-panel mt-2 space-y-2 p-3 text-[12px] text-muted-foreground">
-                <TrustLine icon={Store} label={`${storeLabel} é–“é¦™æ¸¯å¯µç‰©åº—`} />
-                <TrustLine icon={Clock} label="æ¯æ—¥æ›´æ–°å ±åƒ¹" />
-                <TrustLine icon={ShieldCheck} label="ä¸­ç«‹æ ¼åƒ¹å¹³å°" />
+                <TrustLine icon={Store} label={`${storeLabel} 間香港寵物店`} />
+                <TrustLine icon={Clock} label="每日更新報價" />
+                <TrustLine icon={ShieldCheck} label="中立格價平台" />
               </div>
             </aside>
 
@@ -390,11 +392,11 @@ const Review = () => {
                     <div className="relative flex h-full flex-col p-4 md:p-5">
                       <div className="flex items-center gap-2">
                         <span className="review-savings-pill inline-flex items-center gap-1 rounded-sm px-2 py-0.5 text-[11px]">
-                          <Zap className="h-3 w-3" /> ä»Šæ—¥æœ€æŠµ
+                          <Zap className="h-3 w-3" /> 今日最抵
                         </span>
                         {savingsPct(heroProduct) > 0 && (
                           <span className="text-[11px] font-semibold text-primary">
-                            æ…³ {savingsPct(heroProduct)}%
+                            慳 {savingsPct(heroProduct)}%
                           </span>
                         )}
                       </div>
@@ -410,7 +412,7 @@ const Review = () => {
                               HK${roundPrice(getProductComparablePrices(heroProduct).highestPrice)}
                             </span>
                             <span className="text-[11px] font-medium text-primary">
-                              æ…³ HK${savingsAmount(heroProduct)}
+                              慳 HK${savingsAmount(heroProduct)}
                             </span>
                           </div>
                         )}
@@ -418,7 +420,7 @@ const Review = () => {
                           <div className="review-spread-bar" aria-hidden />
                           <p className="mt-1.5 flex items-center gap-1 text-[11px] text-muted-foreground">
                             <Store className="h-3 w-3" />
-                            {heroProduct.storeCount} é–“åº—èˆ–å ±åƒ¹ Â· ç‡å…¨éƒ¨
+                            {heroProduct.storeCount} 間店舖報價 · 睇全部
                             <ArrowRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
                           </p>
                         </div>
@@ -462,7 +464,7 @@ const Review = () => {
 
               {bestDeals.length > 1 && (
                 <DealRail
-                  title="ä»Šæ—¥æœ€æŠµ"
+                  title="今日最抵"
                   icon={Zap}
                   products={bestDeals.slice(1, 9)}
                   onSeeAll={() => applyPromo("deals")}
@@ -476,7 +478,7 @@ const Review = () => {
 
               {trending.length > 0 && (
                 <DealRail
-                  title="æœ€å¤šåº—èˆ–æ¯”åƒ¹"
+                  title="最多店舖比價"
                   icon={Store}
                   products={trending.slice(0, 8)}
                   onSeeAll={() => applyPromo("stores")}
@@ -504,7 +506,7 @@ const Review = () => {
 
               {allBrands.length > 0 && (
                 <div className="review-panel mt-2 px-3 py-2.5">
-                  <p className="mb-2 text-[12px] font-medium text-muted-foreground">ç†±é–€å“ç‰Œ</p>
+                  <p className="mb-2 text-[12px] font-medium text-muted-foreground">熱門品牌</p>
                   <div className="-mx-1 flex gap-2 overflow-x-auto pb-0.5 scrollbar-none">
                     {allBrands.slice(0, 24).map((b) => (
                       <Link
@@ -523,31 +525,31 @@ const Review = () => {
             <aside className="hidden w-[212px] shrink-0 xl:block">
               <div className="review-panel p-4">
                 <p className="text-[13px] text-muted-foreground">
-                  {getGreeting()}ï¼Œ{isAuthenticated ? "æ­¡è¿Žè¿”åšŸ" : "æ­¡è¿Ž"}
+                  {getGreeting()}，{isAuthenticated ? "歡迎返嚟" : "歡迎"}
                 </p>
                 {!isAuthenticated ? (
                   <Button onClick={() => openPanel("LANDING")} className="mt-3 h-9 w-full rounded-md text-[13px]" size="sm">
                     <LogIn className="mr-1.5 h-3.5 w-3.5" />
-                    ç™»å…¥ / è¨»å†Š
+                    登入 / 註冊
                   </Button>
                 ) : (
                   <Link to="/owner-zone" className="mt-3 block">
                     <Button variant="outline" className="h-9 w-full rounded-md text-[13px]" size="sm">
-                      æˆ‘çš„å¸³æˆ¶
+                      我的帳戶
                     </Button>
                   </Link>
                 )}
                 <div className="review-panel-inset mt-4 grid grid-cols-2 gap-px overflow-hidden border border-[hsl(var(--review-line))] bg-[hsl(var(--review-line))]">
-                  <QuickLink to="/wishlist" icon={Heart} label="å¿ƒæ°´" count={wishlistItems.length} />
-                  <QuickLink to="/compare" icon={Scale} label="æ¯”è¼ƒ" count={compareIds.length} />
-                  <QuickLink to="/review" icon={Store} label="æ ¼åƒ¹" />
-                  <QuickLink to="/other-services" icon={BadgeCheck} label="åˆä½œ" />
+                  <QuickLink to="/wishlist" icon={Heart} label="心水" count={wishlistItems.length} />
+                  <QuickLink to="/compare" icon={Scale} label="比較" count={compareIds.length} />
+                  <QuickLink to="/review" icon={Store} label="格價" />
+                  <QuickLink to="/other-services" icon={BadgeCheck} label="合作" />
                 </div>
               </div>
               <div className="review-panel mt-2 border-primary/20 bg-secondary/50 p-3 text-center">
-                <p className="text-[13px] font-semibold text-primary">åƒ¹æ ¼æ°¸ä¹…å…è²»</p>
+                <p className="text-[13px] font-semibold text-primary">價格永久免費</p>
                 <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">
-                  æˆ‘å“‹å””è³£å˜¢ï¼Œåªå¹«ä½ ç‡æ¸…æ¥šé‚Šé–“æœ€æŠµ
+                  我哋唔賣嘢，只幫你睇清楚邊間最抵
                 </p>
               </div>
             </aside>
@@ -562,14 +564,14 @@ const Review = () => {
               <div className="mr-auto flex min-w-0 items-center gap-2">
                 <h2 className="shrink-0 text-[14px] font-semibold text-foreground">
                   {promoFilter
-                    ? PROMO_TILES.find((t) => t.filter === promoFilter)?.title ?? "ç²¾é¸"
+                    ? PROMO_TILES.find((t) => t.filter === promoFilter)?.title ?? "精選"
                     : hasActiveFilter
-                      ? "æœå°‹çµæžœ"
-                      : "çŒœä½ é¾æ„"}
+                      ? "搜尋結果"
+                      : "猜你鍾意"}
                 </h2>
                 {sortedProducts.length > 0 && (
                   <span className="review-stat-pill hidden px-2 py-0.5 text-[11px] text-muted-foreground sm:inline">
-                    {sortedProducts.length} ä»¶
+                    {sortedProducts.length} 件
                   </span>
                 )}
               </div>
@@ -582,10 +584,10 @@ const Review = () => {
               </div>
               <Select value={brand} onValueChange={setBrand}>
                 <SelectTrigger className="review-chip h-7 w-[118px] shrink-0 border-[hsl(var(--review-line))] bg-white text-[12px]">
-                  <SelectValue placeholder="å“ç‰Œ" />
+                  <SelectValue placeholder="品牌" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">å…¨éƒ¨å“ç‰Œ</SelectItem>
+                  <SelectItem value="all">全部品牌</SelectItem>
                   {allBrands.map((b) => (
                     <SelectItem key={b} value={b}>{b}</SelectItem>
                   ))}
@@ -607,9 +609,9 @@ const Review = () => {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="10">10 ä»¶</SelectItem>
-                    <SelectItem value="20">20 ä»¶</SelectItem>
-                    <SelectItem value="40">40 ä»¶</SelectItem>
+                    <SelectItem value="10">10 件</SelectItem>
+                    <SelectItem value="20">20 件</SelectItem>
+                    <SelectItem value="40">40 件</SelectItem>
                   </SelectContent>
                 </Select>
               )}
@@ -617,7 +619,7 @@ const Review = () => {
                 <button
                   type="button"
                   onClick={() => setViewMode("grid")}
-                  aria-label="æ ¼ç‹€æª¢è¦–"
+                  aria-label="格狀檢視"
                   className={cn(
                     "flex h-7 w-8 items-center justify-center transition-colors",
                     viewMode === "grid" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
@@ -628,7 +630,7 @@ const Review = () => {
                 <button
                   type="button"
                   onClick={() => setViewMode("list")}
-                  aria-label="åˆ—è¡¨æª¢è¦–"
+                  aria-label="列表檢視"
                   className={cn(
                     "flex h-7 w-8 items-center justify-center border-l border-[hsl(var(--review-line))] transition-colors",
                     viewMode === "list" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
@@ -639,7 +641,7 @@ const Review = () => {
               </div>
               {hasActiveFilter && (
                 <button type="button" onClick={resetFilters} className="inline-flex shrink-0 items-center gap-0.5 text-[12px] text-primary hover:underline">
-                  <X className="h-3 w-3" /> æ¸…é™¤
+                  <X className="h-3 w-3" /> 清除
                 </button>
               )}
             </div>
@@ -712,18 +714,18 @@ const Review = () => {
       <section className="mt-2 border-t border-[hsl(var(--review-line))] bg-white">
         <div className="container mx-auto grid gap-6 px-4 py-8 md:grid-cols-[1.4fr_1fr] md:py-10">
           <div>
-            <p className="text-[12px] text-muted-foreground">é—œæ–¼ PetWell æ ¼åƒ¹</p>
+            <p className="text-[12px] text-muted-foreground">關於 PetWell 格價</p>
             <h2 className="review-display mt-2 text-xl leading-snug md:text-2xl">
-              æˆ‘å“‹å””è³£å˜¢ï¼Œåªä¿‚å¹«ä½ <span className="text-primary">ç‡æ¸…æ¥š</span>åƒ¹éŒ¢
+              我哋唔賣嘢，只係幫你<span className="text-primary">睇清楚</span>價錢
             </h2>
             <p className="mt-2 max-w-lg text-[14px] leading-relaxed text-muted-foreground">
-              æ‰€æœ‰åƒ¹æ ¼ç”± PetWell ç·¨è¼¯éƒ¨æ•´ç†è‡ªé¦™æ¸¯å¯µç‰©åº—å…¬é–‹å ±åƒ¹ã€‚åƒ¹æ ¼èˆ‡åº«å­˜å¯èƒ½éš¨æ™‚è®Šå‹•ï¼Œè½å–®å‰è«‹ä»¥åº—èˆ–é é¢ç‚ºæº–ã€‚
+              所有價格由 PetWell 編輯部整理自香港寵物店公開報價。價格與庫存可能隨時變動，落單前請以店舖頁面為準。
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <FootLink icon={Sparkles} label="æƒ³æˆ‘å“‹åŠ é‚Šæ¬¾ï¼Ÿ" sub="WhatsApp ç·¨è¼¯éƒ¨" href="https://wa.me/85255954078" />
-            <FootLink icon={Store} label="åº—ä¸»åˆä½œ" sub="åŠ å…¥æ¯”åƒ¹è¯ç›Ÿ" href="/other-services" internal />
-            <FootLink icon={TrendingDown} label="æ ¼åƒ¹å…¬å¹³å®ˆå‰‡" sub="é»žè§£ä¿¡å¾—éŽ" href="/about" internal />
+            <FootLink icon={Sparkles} label="想我哋加邊款？" sub="WhatsApp 編輯部" href="https://wa.me/85255954078" />
+            <FootLink icon={Store} label="店主合作" sub="加入比價聯盟" href="/other-services" internal />
+            <FootLink icon={TrendingDown} label="格價公平守則" sub="點解信得過" href="/about" internal />
           </div>
         </div>
       </section>
@@ -746,9 +748,9 @@ function getPromoSample(items: PriceReviewProductSummary[], filter: PromoFilter)
 
 function getGreeting() {
   const h = new Date().getHours();
-  if (h < 12) return "æ—©æ™¨";
-  if (h < 18) return "åˆå®‰";
-  return "æ™šå®‰";
+  if (h < 12) return "早晨";
+  if (h < 18) return "午安";
+  return "晚安";
 }
 
 function TrustLine({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
@@ -860,11 +862,11 @@ const ProductCard = memo(function ProductCard({
             className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
           />
         ) : (
-          <div className="flex h-full items-center justify-center text-[12px] text-muted-foreground">â€”</div>
+          <div className="flex h-full items-center justify-center text-[12px] text-muted-foreground">—</div>
         )}
         {pct > 0 && (
           <span className="review-savings-pill absolute left-2 top-2 rounded-sm px-1.5 py-0.5 text-[10px] leading-none">
-            æ…³{pct}%
+            慳{pct}%
           </span>
         )}
         <div className="absolute bottom-2 right-2 opacity-0 transition-opacity group-hover:opacity-100">
@@ -890,14 +892,14 @@ const ProductCard = memo(function ProductCard({
           {saved > 0 && (
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="review-price-struck">HK${roundPrice(pricing.highestPrice)}</span>
-              <span className="text-[10px] font-medium text-primary">æ…³ HK${saved}</span>
+              <span className="text-[10px] font-medium text-primary">慳 HK${saved}</span>
             </div>
           )}
           <div className="flex items-end justify-between gap-1">
             <div className="space-y-0.5">
               <p className="flex items-center gap-0.5 text-[11px] text-muted-foreground">
                 <Store className="h-3 w-3 shrink-0" />
-                {product.storeCount} é–“
+                {product.storeCount} 間
               </p>
               <ProductReviewRatingBadge avgRating={product.avgRating} numReviews={product.numReviews} />
             </div>
@@ -911,7 +913,7 @@ const ProductCard = memo(function ProductCard({
               onClick={(e) => e.stopPropagation()}
             >
               <Checkbox checked={isSelected} onCheckedChange={onToggleCompare} className="h-3 w-3" />
-              æ¯”è¼ƒ
+              比較
             </label>
           </div>
         </div>
@@ -939,7 +941,7 @@ function ProductListRow({
         {product.image ? (
           <img src={product.image} alt="" loading="lazy" className="h-full w-full object-contain" />
         ) : (
-          <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">â€”</div>
+          <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">—</div>
         )}
       </Link>
 
@@ -957,7 +959,7 @@ function ProductListRow({
         </Link>
         <p className="mt-0.5 hidden items-center gap-2 text-[11px] text-muted-foreground md:flex">
           <span className="inline-flex items-center gap-1">
-            <Store className="h-3 w-3" /> {product.storeCount} é–“åº—èˆ–
+            <Store className="h-3 w-3" /> {product.storeCount} 間店舖
           </span>
           <ProductReviewRatingBadge avgRating={product.avgRating} numReviews={product.numReviews} />
         </p>
@@ -965,27 +967,27 @@ function ProductListRow({
 
       <div className="hidden text-right md:block">
         <ReviewProductPrice product={product} size="sm" />
-        <p className="mt-0.5 text-[10px] text-muted-foreground">æœ€ä½Ž</p>
+        <p className="mt-0.5 text-[10px] text-muted-foreground">最低</p>
       </div>
 
       <div className="hidden text-right md:block">
         {pricing.highestPrice > pricing.lowestPrice ? (
           <>
             <span className="review-price-struck text-[13px]">HK${roundPrice(pricing.highestPrice)}</span>
-            <p className="mt-0.5 text-[10px] text-muted-foreground">æœ€é«˜</p>
+            <p className="mt-0.5 text-[10px] text-muted-foreground">最高</p>
           </>
         ) : (
-          <span className="text-[12px] text-muted-foreground">â€”</span>
+          <span className="text-[12px] text-muted-foreground">—</span>
         )}
       </div>
 
       <div className="hidden text-center md:block">
         {pct > 0 ? (
           <span className="review-savings-pill inline-block rounded-sm px-1.5 py-0.5 text-[11px]">
-            æ…³ {pct}%
+            慳 {pct}%
           </span>
         ) : (
-          <span className="text-[12px] text-muted-foreground">â€”</span>
+          <span className="text-[12px] text-muted-foreground">—</span>
         )}
         {saved > 0 && (
           <p className="mt-0.5 text-[10px] text-primary">HK${saved}</p>
@@ -995,7 +997,7 @@ function ProductListRow({
       <div className="text-right md:hidden">
         <ReviewProductPrice product={product} size="sm" />
         {pct > 0 && (
-          <span className="mt-0.5 inline-block text-[10px] font-medium text-primary">æ…³{pct}%</span>
+          <span className="mt-0.5 inline-block text-[10px] font-medium text-primary">慳{pct}%</span>
         )}
       </div>
 
@@ -1041,7 +1043,7 @@ function DealRail({
           onClick={onSeeAll}
           className="flex items-center gap-0.5 text-[12px] font-medium text-primary hover:underline"
         >
-          ç‡å…¨éƒ¨ <ChevronRight className="h-3.5 w-3.5" />
+          睇全部 <ChevronRight className="h-3.5 w-3.5" />
         </button>
       </div>
       <div className="review-deal-rail flex gap-2 overflow-x-auto p-2.5">
@@ -1056,7 +1058,7 @@ function DealRail({
                 {product.image ? (
                   <img src={product.image} alt="" loading="lazy" className="h-full w-full object-contain" />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">â€”</div>
+                  <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">—</div>
                 )}
                 {pct > 0 && (
                   <span className="review-savings-pill absolute left-1 top-1 rounded-sm px-1 py-px text-[9px] leading-none">
@@ -1070,7 +1072,7 @@ function DealRail({
                 </Link>
                 <ReviewProductPrice product={product} size="sm" showPurchaseNote={false} />
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] text-muted-foreground">{product.storeCount} åº—</span>
+                  <span className="text-[10px] text-muted-foreground">{product.storeCount} 店</span>
                   <label
                     className={cn(
                       "cursor-pointer",
@@ -1118,10 +1120,10 @@ function PaginationBar({
         disabled={!hasPreviousPage || isFetching}
         className="h-8 rounded-md border-[hsl(var(--review-line))] text-[13px]"
       >
-        <ChevronLeft className="mr-1 h-4 w-4" /> ä¸Šä¸€é 
+        <ChevronLeft className="mr-1 h-4 w-4" /> 上一頁
       </Button>
       <span className="min-w-[4rem] text-center text-[13px] text-muted-foreground">
-        ç¬¬ {pageIndex + 1} é 
+        第 {pageIndex + 1} 頁
       </span>
       <Button
         variant="outline"
@@ -1131,7 +1133,7 @@ function PaginationBar({
         className="h-8 rounded-md border-[hsl(var(--review-line))] text-[13px]"
       >
         {isFetching ? <Loader2 className="mr-1 h-4 w-4 animate-spin" /> : null}
-        ä¸‹ä¸€é  <ChevronRight className="ml-1 h-4 w-4" />
+        下一頁 <ChevronRight className="ml-1 h-4 w-4" />
       </Button>
     </div>
   );
@@ -1141,7 +1143,7 @@ function LoadingState() {
   return (
     <div className="review-panel flex items-center justify-center p-12 text-[14px] text-muted-foreground">
       <Loader2 className="mr-2 h-5 w-5 animate-spin text-primary" />
-      æ­£åœ¨æ•´ç†å ±åƒ¹â€¦
+      正在整理報價…
     </div>
   );
 }
@@ -1149,7 +1151,7 @@ function LoadingState() {
 function ErrorState({ message }: { message: string }) {
   return (
     <div className="review-panel border-destructive/30 p-6 text-center">
-      <h3 className="review-display text-xl">æš«æ™‚æœªèƒ½è¼‰å…¥</h3>
+      <h3 className="review-display text-xl">暫時未能載入</h3>
       <p className="mx-auto mt-2 max-w-xl text-[14px] text-muted-foreground">{message}</p>
     </div>
   );
@@ -1162,20 +1164,20 @@ function SuggestProductCard({ initialQuery }: { initialQuery: string }) {
   const handleSubmit = () => {
     if (!canSubmit) return;
     const text =
-      `[ç”¢å“å»ºè­°]\næƒ³ç‡å˜…ç”¢å“ï¼š${request.trim()}\nè¯çµ¡æ–¹å¼ï¼ˆé›»è©± / IGï¼‰ï¼š${contact.trim()}\n\néº»ç…© PetWell æ›´æ–°å¾Œ DM æˆ‘ï¼Œå¤šè¬ï¼`;
+      `[產品建議]\n想睇嘅產品：${request.trim()}\n聯絡方式（電話 / IG）：${contact.trim()}\n\n麻煩 PetWell 更新後 DM 我，多謝！`;
     window.open(`https://wa.me/85255954078?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
     <div className="review-panel p-8 md:p-10">
       <div className="mx-auto max-w-md text-center">
-        <h3 className="review-display text-2xl">æœªæµåˆ°ï¼Ÿè©±æˆ‘å“‹çŸ¥</h3>
-        <p className="mt-2 text-[14px] text-muted-foreground">ç•™ä½Žè¯çµ¡æ–¹æ³•åŒç”¢å“åï¼Œæ›´æ–°å¾Œå³åˆ»é€šçŸ¥ä½ </p>
+        <h3 className="review-display text-2xl">未搵到？話我哋知</h3>
+        <p className="mt-2 text-[14px] text-muted-foreground">留低聯絡方法同產品名，更新後即刻通知你</p>
         <div className="mt-5 space-y-2 text-left">
-          <Input placeholder="ä¾‹å¦‚ï¼šRoyal Canin æˆè²“ç³§" value={request} onChange={(e) => setRequest(e.target.value)} maxLength={200} />
-          <Input placeholder="é›»è©± æˆ– IG" value={contact} onChange={(e) => setContact(e.target.value)} maxLength={100} />
+          <Input placeholder="例如：Royal Canin 成貓糧" value={request} onChange={(e) => setRequest(e.target.value)} maxLength={200} />
+          <Input placeholder="電話 或 IG" value={contact} onChange={(e) => setContact(e.target.value)} maxLength={100} />
           <Button onClick={handleSubmit} disabled={!canSubmit} className="w-full rounded-md" size="lg">
-            æäº¤å»ºè­°
+            提交建議
           </Button>
         </div>
       </div>

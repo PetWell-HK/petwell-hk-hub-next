@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useMemo, useRef, useState, type FocusEvent } from "react";
 import { useTranslation } from "react-i18next";
 import {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Phone, Calendar, Weight, Heart, Loader2 } from "lucide-react";

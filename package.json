@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:routes": "node scripts/generate-app-routes.mjs"
+    "generate:routes": "node scripts/generate-app-routes.mjs",
+    "smoke": "node scripts/smoke-next.mjs",
+    "smoke:detail": "node scripts/smoke-probe-detail.mjs",
+    "smoke:graphql": "node scripts/smoke-probe-graphql.mjs",
+    "assets:vendor-l5e": "node scripts/vendor-l5e-assets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

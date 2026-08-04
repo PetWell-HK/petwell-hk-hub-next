@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";

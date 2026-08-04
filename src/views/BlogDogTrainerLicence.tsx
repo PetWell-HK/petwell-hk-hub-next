@@ -1,4 +1,6 @@
-﻿import { useMemo, useState } from "react";
+"use client";
+
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,42 +19,42 @@ import BlogAdSense from "@/components/BlogAdSense";
 
 const faqItems = [
   {
-    question: "é¦™æ¸¯è¨“çŠ¬å¸«ä¸éœ€è¦ç‰Œç…§ï¼Œæ˜¯å¦ç­‰æ–¼ä¸å—ä»»ä½•æ³•å¾‹ä¿éšœï¼Ÿ",
+    question: "香港訓犬師不需要牌照，是否等於不受任何法律保障？",
     answer:
-      "åŸºæœ¬ä¸Šæ˜¯çš„ã€‚è‹¥è¨“ç·´éŽç¨‹ä¸­ä½ çš„å¯µç‰©å—å‚·ï¼Œç›®å‰ä¸¦æ²’æœ‰é‡å°è¨“ç·´å¸«çš„è¡Œæ¥­è¦ç®¡æ©Ÿåˆ¶ï¼Œä¸»è¦éœ€é€éŽæ°‘äº‹é€”å¾‘è¿½ç©¶ã€‚å› æ­¤é¸æ“‡æœ‰èªè­‰çš„è¨“ç·´å¸«ï¼ŒåŒæ™‚ç°½è¨‚æ›¸é¢æœå‹™åˆç´„ï¼Œæ˜¯ä¿éšœè‡ªå·±å’Œæ¯›å­©çš„é‡è¦æ­¥é©Ÿã€‚",
+      "基本上是的。若訓練過程中你的寵物受傷，目前並沒有針對訓練師的行業規管機制，主要需透過民事途徑追究。因此選擇有認證的訓練師，同時簽訂書面服務合約，是保障自己和毛孩的重要步驟。",
   },
   {
-    question: "ICA çš„ QSSD èªè­‰å’Œ IACP æœ‰ä»€éº¼é—œä¿‚ï¼Ÿ",
+    question: "ICA 的 QSSD 認證和 IACP 有什麼關係？",
     answer:
-      "QSSD ç”± ICA åŠ MINSENï¼ˆé¦™æ¸¯ï¼‰å…±åŒä¸»è¾¦ï¼Œç² IACPï¼ˆåœ‹éš›å°ˆæ¥­ç·´ç‹—å”æœƒï¼‰èªå¯ã€‚æŒæœ‰ QSSD è­‰æ›¸çš„äººå£«å¯ç”³è«‹è½‰æ›æˆ–åŒæ™‚æŒæœ‰ IACP çš„åœ‹éš›è­‰æ›¸ï¼Œå…©è€…äº’èªã€‚",
+      "QSSD 由 ICA 及 MINSEN（香港）共同主辦，獲 IACP（國際專業練狗協會）認可。持有 QSSD 證書的人士可申請轉換或同時持有 IACP 的國際證書，兩者互認。",
   },
   {
-    question: "ERB çš„çŠ¬éš»è¨“ç·´å“¡èª²ç¨‹çœŸçš„å…è²»å—Žï¼Ÿ",
+    question: "ERB 的犬隻訓練員課程真的免費嗎？",
     answer:
-      "æ˜¯çš„ï¼ŒERB è³‡åŠ©èª²ç¨‹å°ç¬¦åˆè³‡æ ¼çš„å­¸å“¡å…¨å…è²»ç”¨ã€‚ä»¥ä¿¡ç¾©æœƒ GTC ç‚ºä¾‹ï¼Œèª²ç¨‹å…¨æ—¥åˆ¶ç´„ 8 é€±ï¼Œ132 å°æ™‚ï¼Œé©åˆæœ‰æ„å…¥è¡Œçš„äººå£«ã€‚",
+      "是的，ERB 資助課程對符合資格的學員全免費用。以信義會 GTC 為例，課程全日制約 8 週，132 小時，適合有意入行的人士。",
   },
   {
-    question: "å¦‚æžœæˆ‘æƒ³æˆç‚ºè¨“ç·´å¸«ï¼Œæ‡‰è©²è€ƒå“ªå€‹è³‡æ ¼ï¼Ÿ",
+    question: "如果我想成為訓練師，應該考哪個資格？",
     answer:
-      "å¦‚æžœä½ å¸Œæœ›ä»¥é¦™æ¸¯å¸‚å ´ç‚ºä¸»ï¼ŒICA QSSD çš„æœ¬åœ°èªå—æ€§è¼ƒé«˜ï¼›å¦‚æžœä½ æœ‰æ„åœ¨åœ‹éš›å¸‚å ´ç™¼å±•ï¼ŒCPDT-KA çš„èªå—æ€§æ›´å»£ã€‚å…©è€…ä¸¦ä¸äº’æ–¥ï¼Œå¯ä»¥å…ˆè€ƒ QSSD å†é€²ä¿® CPDT-KAã€‚",
+      "如果你希望以香港市場為主，ICA QSSD 的本地認受性較高；如果你有意在國際市場發展，CPDT-KA 的認受性更廣。兩者並不互斥，可以先考 QSSD 再進修 CPDT-KA。",
   },
 ];
 
 const licenceTableData = [
   {
-    type: "å‹•ç‰©å”®è³£å•†ç‰Œç…§ï¼ˆATLï¼‰",
-    target: "å‡ºå”®è²“ç‹—çš„å¯µç‰©åº—",
-    requirement: "å¼·åˆ¶ï¼Œç„¡ç‰Œå±¬é•æ³•",
+    type: "動物售賣商牌照（ATL）",
+    target: "出售貓狗的寵物店",
+    requirement: "強制，無牌屬違法",
   },
   {
-    type: "ç”²é¡žç¹è‚²ç‹—éš»ç‰Œç…§ï¼ˆDBLAï¼‰",
-    target: "ç¹è‚² 4 éš»æˆ–ä»¥ä¸‹é›ŒçŠ¬ä¸¦å‡ºå”®è€…",
-    requirement: "å¼·åˆ¶",
+    type: "甲類繁育狗隻牌照（DBLA）",
+    target: "繁育 4 隻或以下雌犬並出售者",
+    requirement: "強制",
   },
   {
-    type: "ä¹™é¡žç¹è‚²ç‹—éš»ç‰Œç…§ï¼ˆDBLBï¼‰",
-    target: "ç¹è‚² 5 éš»æˆ–ä»¥ä¸Šé›ŒçŠ¬ä¸¦å‡ºå”®è€…",
-    requirement: "å¼·åˆ¶",
+    type: "乙類繁育狗隻牌照（DBLB）",
+    target: "繁育 5 隻或以上雌犬並出售者",
+    requirement: "強制",
   },
 ];
 
@@ -66,9 +68,9 @@ const BlogDogTrainerLicence = () => {
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        headline: "é¦™æ¸¯å¯µç‰©è¨“ç·´å¸«éœ€è¦ç‰Œç…§å—Žï¼Ÿ2026å¹´å®Œæ•´æŒ‡å—",
+        headline: "香港寵物訓練師需要牌照嗎？2026年完整指南",
         description:
-          "é¦™æ¸¯æ³•å¾‹ä¸Šä¸éœ€è¦å¯µç‰©è¨“ç·´å¸«æŒç‰Œâ€”â€”ä½†é€™å°ä½ çš„æ¯›å­©æœ‰ä»€éº¼å½±éŸ¿ï¼ŸPetWell ç‚ºä½ è§£æžæ¥­ç•Œèªè­‰ã€æ¼è¾²ç½²è¦ç®¡ç¯„åœåŠé¸å¸«è²¼å£«ã€‚",
+          "香港法律上不需要寵物訓練師持牌——但這對你的毛孩有什麼影響？PetWell 為你解析業界認證、漁農署規管範圍及選師貼士。",
         author: { "@type": "Organization", name: "PetWell HK" },
         publisher: { "@type": "Organization", name: "PetWell HK" },
         datePublished: "2026-03-06",
@@ -90,32 +92,32 @@ const BlogDogTrainerLicence = () => {
   );
 
   useSEO({
-    title: "é¦™æ¸¯å¯µç‰©è¨“ç·´å¸«éœ€è¦ç‰Œç…§å—Žï¼Ÿ2026å¹´å®Œæ•´æŒ‡å—",
+    title: "香港寵物訓練師需要牌照嗎？2026年完整指南",
     description:
-      "é¦™æ¸¯æ³•å¾‹ä¸Šä¸éœ€è¦å¯µç‰©è¨“ç·´å¸«æŒç‰Œâ€”â€”ä½†é€™å°ä½ çš„æ¯›å­©æœ‰ä»€éº¼å½±éŸ¿ï¼ŸPetWell ç‚ºä½ è§£æžæ¥­ç•Œèªè­‰ã€æ¼è¾²ç½²è¦ç®¡ç¯„åœåŠé¸å¸«è²¼å£«ã€‚",
+      "香港法律上不需要寵物訓練師持牌——但這對你的毛孩有什麼影響？PetWell 為你解析業界認證、漁農署規管範圍及選師貼士。",
     keywords:
-      "é¦™æ¸¯è¨“çŠ¬å¸«èªè­‰,å¯µç‰©è¨“ç·´é¦™æ¸¯,è¨“çŠ¬å¸«ç‰Œç…§,ç‹—è¨“ç·´å¸«,å¯µç‰©è¨“ç·´å¸«è³‡æ ¼,ICA QSSD,CPDT-KA,æ¼è¾²ç½²",
+      "香港訓犬師認證,寵物訓練香港,訓犬師牌照,狗訓練師,寵物訓練師資格,ICA QSSD,CPDT-KA,漁農署",
     canonicalUrl: pageUrl,
     ogImage: heroImage,
     ogType: "article",
     articlePublishedTime: "2026-03-06",
     articleModifiedTime: "2026-03-06",
     articleAuthor: "PetWell HK",
-    articleSection: "å¯µç‰©è¨“ç·´",
-    articleTags: ["é¦™æ¸¯è¨“çŠ¬å¸«", "å¯µç‰©è¨“ç·´", "è¨“çŠ¬å¸«èªè­‰", "æ¼è¾²ç½²", "ICA QSSD", "CPDT-KA", "æ­£å‘å¼·åŒ–"],
+    articleSection: "寵物訓練",
+    articleTags: ["香港訓犬師", "寵物訓練", "訓犬師認證", "漁農署", "ICA QSSD", "CPDT-KA", "正向強化"],
     structuredData,
   });
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(pageUrl);
     setCopied(true);
-    toast({ title: "å·²è¤‡è£½é€£çµï¼", duration: 3000 });
+    toast({ title: "已複製連結！", duration: 3000 });
     setTimeout(() => setCopied(false), 2000);
   };
 
   const shareWhatsApp = () => {
     window.open(
-      `https://wa.me/?text=${encodeURIComponent("é¦™æ¸¯å¯µç‰©è¨“ç·´å¸«éœ€è¦ç‰Œç…§å—Žï¼Ÿ2026å¹´å®Œæ•´æŒ‡å— " + pageUrl)}`,
+      `https://wa.me/?text=${encodeURIComponent("香港寵物訓練師需要牌照嗎？2026年完整指南 " + pageUrl)}`,
       "_blank"
     );
   };
@@ -137,19 +139,19 @@ const BlogDogTrainerLicence = () => {
           <div className="w-full bg-white flex justify-center">
             <img
               src={heroImage}
-              alt="é¦™æ¸¯è¨“çŠ¬å¸«èªè­‰ â€” å°ˆæ¥­å¯µç‰©è¨“ç·´é¦™æ¸¯æŒ‡å—"
+              alt="香港訓犬師認證 — 專業寵物訓練香港指南"
               className="max-h-[420px] w-auto object-contain"
             />
           </div>
           <div className="container mx-auto px-4 py-10 md:py-14">
             <p className="text-sm text-muted-foreground mb-3 font-medium tracking-wide uppercase">
-              PetWell ä¸»äººå°ˆå€
+              PetWell 主人專區
             </p>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
-              é¦™æ¸¯å¯µç‰©è¨“ç·´å¸«éœ€è¦ç‰Œç…§å—Žï¼Ÿ2026å¹´å®Œæ•´æŒ‡å—
+              香港寵物訓練師需要牌照嗎？2026年完整指南
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              åŽŸä¾†ä»»ä½•äººéƒ½å¯ä»¥è‡ªç¨±ã€Œè¨“ç·´å¸«ã€â€”â€”é€™å°ä½ çš„æ¯›å­©æ„å‘³è‘—ä»€éº¼ï¼Ÿ
+              原來任何人都可以自稱「訓練師」——這對你的毛孩意味著什麼？
             </p>
           </div>
         </section>
@@ -160,32 +162,32 @@ const BlogDogTrainerLicence = () => {
         <article className="container mx-auto px-4 max-w-3xl">
           {/* Callout Box */}
           <div className="rounded-xl border-l-4 border-primary bg-[hsl(var(--accent))] p-6 md:p-8 mb-10">
-            <p className="font-bold text-lg mb-2">ðŸ”” æ ¸å¿ƒäº‹å¯¦</p>
+            <p className="font-bold text-lg mb-2">🔔 核心事實</p>
             <p className="text-base leading-relaxed">
-              é¦™æ¸¯æ³•å¾‹ç›®å‰ä¸¦ç„¡è¦å®šå¯µç‰©è¨“ç·´å¸«æˆ–è¨“çŠ¬å¸«å¿…é ˆæŒæœ‰å®˜æ–¹ç‰Œç…§ã€‚ä»»ä½•äººï¼Œä¸è«–æœ‰æ²’æœ‰å—éŽæ­£å¼è¨“ç·´ï¼Œéƒ½å¯ä»¥åˆæ³•åœ°ä»¥ã€Œè¨“çŠ¬å¸«ã€èº«ä»½æ”¶è²»æä¾›æœå‹™ã€‚
+              香港法律目前並無規定寵物訓練師或訓犬師必須持有官方牌照。任何人，不論有沒有受過正式訓練，都可以合法地以「訓犬師」身份收費提供服務。
             </p>
           </div>
 
           {/* Intro */}
           <div className="prose prose-lg max-w-none mb-10 space-y-5">
             <p>
-              ä½ æœ‰æ²’æœ‰è©¦éŽï¼ŒèŠ±äº†å¹¾åƒå…ƒè«‹è¨“ç·´å¸«ï¼Œä½†ç‹—ç‹—çš„è¡Œç‚ºå•é¡Œä¸€é»žéƒ½æ²’æ”¹å–„ï¼Ÿ
+              你有沒有試過，花了幾千元請訓練師，但狗狗的行為問題一點都沒改善？
             </p>
             <p>
-              åœ¨ PetWellï¼Œæˆ‘å€‘æ¯æ˜ŸæœŸéƒ½æ”¶åˆ°é¡žä¼¼çš„è¨Šæ¯ã€‚å¾ˆå¤šä¸»äººäº‹å¾Œæ‰ç™¼ç¾ï¼ŒåŽŸä¾†é¦™æ¸¯çš„å¯µç‰©è¨“ç·´å¸«æ ¹æœ¬ä¸éœ€è¦ä»»ä½•ç‰Œç…§å°±å¯ä»¥åŸ·æ¥­â€”â€”é€™å€‹ç¾å¯¦ï¼Œæ¯”æƒ³åƒä¸­æ›´å€¼å¾—æ¯ä¸€ä½æ¯›å­©å®¶é•·äº†è§£ã€‚
+              在 PetWell，我們每星期都收到類似的訊息。很多主人事後才發現，原來香港的寵物訓練師根本不需要任何牌照就可以執業——這個現實，比想像中更值得每一位毛孩家長了解。
             </p>
           </div>
 
-          {/* Section: ç„¡ç‰Œç…§åˆ¶åº¦ */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">é¦™æ¸¯ç¾æ™‚ç„¡å¼·åˆ¶ç‰Œç…§åˆ¶åº¦</h2>
+          {/* Section: 無牌照制度 */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">香港現時無強制牌照制度</h2>
           <p className="text-base leading-relaxed mb-8 text-muted-foreground">
-            é¦™æ¸¯çš„å¯µç‰©è¨“ç·´è¡Œæ¥­å±¬æ–¼è‡ªæˆ‘è¦ç®¡æ¨¡å¼ï¼Œæ”¿åºœæ²’æœ‰è¨­ç«‹ç™¼ç‰Œåˆ¶åº¦ï¼Œä¹Ÿæ²’æœ‰çµ±ä¸€çš„åŸ·æ¥­æ¨™æº–ã€‚é€™æ„å‘³è‘—å¸‚é¢ä¸Šçš„è¨“ç·´å¸«è³ªç´ åƒå·®ï¼Œå¾žæŽ¥å—éŽåœ‹éš›èªè­‰çš„å°ˆæ¥­äººå£«ï¼Œåˆ°å®Œå…¨æ²’æœ‰ä»»ä½•è¨“ç·´èƒŒæ™¯çš„äººï¼Œéƒ½æœ‰å¯èƒ½åœ¨ä½ é¢å‰èªªã€Œæˆ‘ä¿‚å°ˆæ¥­è¨“ç·´å¸«ã€ã€‚
+            香港的寵物訓練行業屬於自我規管模式，政府沒有設立發牌制度，也沒有統一的執業標準。這意味著市面上的訓練師質素參差，從接受過國際認證的專業人士，到完全沒有任何訓練背景的人，都有可能在你面前說「我係專業訓練師」。
           </p>
 
-          {/* Section: æ¼è¾²ç½² */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">æ¼è¾²ç½²ç®¡çš„æ˜¯ä»€éº¼ï¼Ÿ</h2>
+          {/* Section: 漁農署 */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">漁農署管的是什麼？</h2>
           <p className="text-base leading-relaxed mb-6 text-muted-foreground">
-            å¾ˆå¤šäººä»¥ç‚ºæ¼è¾²è‡ªç„¶è­·ç†ç½²ï¼ˆæ¼è¾²ç½²ï¼‰æœƒè¦ç®¡è¨“ç·´å¸«ï¼Œå…¶å¯¦ä¸ç„¶ã€‚æ¼è¾²ç½²çš„ç‰Œç…§åˆ¶åº¦åªè¦†è“‹å‹•ç‰©è²·è³£å’Œç¹è‚²ï¼š
+            很多人以為漁農自然護理署（漁農署）會規管訓練師，其實不然。漁農署的牌照制度只覆蓋動物買賣和繁育：
           </p>
 
           {/* Table */}
@@ -193,9 +195,9 @@ const BlogDogTrainerLicence = () => {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted">
-                  <th className="text-left p-3 font-semibold">ç‰Œç…§é¡žåˆ¥</th>
-                  <th className="text-left p-3 font-semibold">é©ç”¨å°è±¡</th>
-                  <th className="text-left p-3 font-semibold">æ³•å¾‹è¦æ±‚</th>
+                  <th className="text-left p-3 font-semibold">牌照類別</th>
+                  <th className="text-left p-3 font-semibold">適用對象</th>
+                  <th className="text-left p-3 font-semibold">法律要求</th>
                 </tr>
               </thead>
               <tbody>
@@ -212,75 +214,75 @@ const BlogDogTrainerLicence = () => {
 
           <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-4 mb-10">
             <p className="text-sm">
-              <strong>âš ï¸ é‡è¦æç¤ºï¼š</strong>å¦‚æžœä½ çš„æ¥­å‹™åŒæ™‚æ¶‰åŠè¨“ç·´æœå‹™åŠ ä¸Šå‡ºå”®æˆ–ç¹è‚²å‹•ç‰©ï¼Œå”®è³£éƒ¨åˆ†ä¾ç„¶å—æ³•å¾‹è¦ç®¡ï¼Œä¸èƒ½å› ç‚ºã€Œä¸»æ¥­æ˜¯è¨“ç·´ã€è€Œè±å…ç”³è«‹ç‰Œç…§ã€‚
+              <strong>⚠️ 重要提示：</strong>如果你的業務同時涉及訓練服務加上出售或繁育動物，售賣部分依然受法律規管，不能因為「主業是訓練」而豁免申請牌照。
             </p>
           </div>
 
-          {/* Section: è‡ªé¡˜æ€§èªè­‰ */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">æ¥­ç•Œèªå¯çš„è‡ªé¡˜æ€§èªè­‰</h2>
+          {/* Section: 自願性認證 */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">業界認可的自願性認證</h2>
           <p className="text-base leading-relaxed mb-6 text-muted-foreground">
-            é›–ç„¶æ²’æœ‰æ³•å¾‹å¼·åˆ¶ï¼Œä½†æœ‰è²¬ä»»æ„Ÿçš„è¨“ç·´å¸«é€šå¸¸æœƒä¸»å‹•è€ƒå–æ¥­ç•Œèªè­‰ã€‚ä»¥ä¸‹æ˜¯é¦™æ¸¯ç¾æ™‚ä¸»è¦çš„å¹¾å€‹è³‡æ ¼ï¼š
+            雖然沒有法律強制，但有責任感的訓練師通常會主動考取業界認證。以下是香港現時主要的幾個資格：
           </p>
 
           <div className="space-y-8 mb-10">
             {/* Cert 1 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">1. ICA é¦´çŠ¬å¸«æœå‹™è³ªç´ æ¨™æº–ï¼ˆQSSDï¼‰</h3>
-              <p className="text-muted-foreground mb-3">ç”±åœ‹éš›èªè­‰æ©Ÿæ§‹ï¼ˆICAï¼‰ä¸»è¾¦ï¼Œè¨­æœ‰å››å€‹ç´šåˆ¥ï¼š</p>
+              <h3 className="text-xl font-bold mb-2">1. ICA 馴犬師服務質素標準（QSSD）</h3>
+              <p className="text-muted-foreground mb-3">由國際認證機構（ICA）主辦，設有四個級別：</p>
               <ul className="list-disc pl-6 space-y-1 text-muted-foreground">
-                <li><strong>Cert CC é¦´çŠ¬å¸«ï¼š</strong>å…·å‚™è¨“ç·´çŠ¬éš»æå‡ç‰¹æ®ŠæŠ€èƒ½çš„èƒ½åŠ›</li>
-                <li><strong>Cert PT ç·´ç‹—å¸«ï¼š</strong>èƒ½è¨“ç·´çŠ¬éš»æŽŒæ¡ä¸€èˆ¬æŠ€å·§</li>
-                <li><strong>Cert DH é ˜çŠ¬å¸«ï¼š</strong>å…·å‚™è™•ç†åŠæ“æŽ§çŠ¬éš»çš„å¯¦æˆ°ç¶“é©—</li>
-                <li><strong>Cert PS åª¬å§†å¸«ï¼š</strong>å°ˆæ³¨çŠ¬éš»æ—¥å¸¸ç…§è­·</li>
+                <li><strong>Cert CC 馴犬師：</strong>具備訓練犬隻提升特殊技能的能力</li>
+                <li><strong>Cert PT 練狗師：</strong>能訓練犬隻掌握一般技巧</li>
+                <li><strong>Cert DH 領犬師：</strong>具備處理及操控犬隻的實戰經驗</li>
+                <li><strong>Cert PS 媬姆師：</strong>專注犬隻日常照護</li>
               </ul>
-              <p className="text-sm text-muted-foreground mt-2">ç”³è«‹è²»ç”¨ HKD 1,500ï¼Œæ¯å…©å¹´é‡æ–°è©•å¯©ï¼Œç²åœ‹éš›å°ˆæ¥­ç·´ç‹—å”æœƒï¼ˆIACPï¼‰èªå¯ã€‚</p>
+              <p className="text-sm text-muted-foreground mt-2">申請費用 HKD 1,500，每兩年重新評審，獲國際專業練狗協會（IACP）認可。</p>
             </div>
 
             {/* Cert 2 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">2. é¦™æ¸¯è¨“çŠ¬å¸«åŸ¹è¨“å”æœƒï¼ˆHKACEï¼‰è¨“çŠ¬å“¡ç•¢æ¥­è­‰æ›¸</h3>
-              <p className="text-muted-foreground">å®Œæˆèª²ç¨‹ä¸¦é€šéŽè€ƒæ ¸å¾Œå¯ç² HKACE é ’ç™¼çš„ç•¢æ¥­è­‰æ›¸ï¼Œè¡¨ç¾å„ªç§€è€…å¯é€²ä¸€æ­¥ç”³è«‹ IACP åœ‹éš›èªå¯è³‡æ ¼ã€‚</p>
+              <h3 className="text-xl font-bold mb-2">2. 香港訓犬師培訓協會（HKACE）訓犬員畢業證書</h3>
+              <p className="text-muted-foreground">完成課程並通過考核後可獲 HKACE 頒發的畢業證書，表現優秀者可進一步申請 IACP 國際認可資格。</p>
             </div>
 
             {/* Cert 3 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">3. åƒ±å“¡å†åŸ¹è¨“å±€ï¼ˆERBï¼‰çŠ¬éš»è¨“ç·´å“¡è­‰æ›¸</h3>
-              <p className="text-muted-foreground">ç”±ä¿¡ç¾©æœƒ GTC ç­‰æ©Ÿæ§‹æä¾›çš„ ERB è³‡åŠ©èª²ç¨‹ï¼Œå…¨æ—¥åˆ¶ç´„ 132 å°æ™‚ï¼ˆ8 é€±ï¼‰ï¼Œè²»ç”¨å…¨å…ï¼Œé©åˆæœ‰æ„è½‰è¡Œçš„äººå£«å…¥é–€ã€‚</p>
+              <h3 className="text-xl font-bold mb-2">3. 僱員再培訓局（ERB）犬隻訓練員證書</h3>
+              <p className="text-muted-foreground">由信義會 GTC 等機構提供的 ERB 資助課程，全日制約 132 小時（8 週），費用全免，適合有意轉行的人士入門。</p>
             </div>
 
             {/* Cert 4 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">4. CPDT-KA åœ‹éš›èªå¯è¨“çŠ¬å¸«è³‡æ ¼</h3>
-              <p className="text-muted-foreground">ç”±ç¾Žåœ‹èªè­‰å°ˆæ¥­è¨“çŠ¬å¸«å§”å“¡æœƒï¼ˆCCPDTï¼‰é ’ç™¼ï¼Œæ˜¯åœ‹éš›èªå—æ€§æœ€é«˜çš„è¨“çŠ¬å¸«è³‡æ ¼ä¹‹ä¸€ã€‚é¦™æ¸¯ç›®å‰åªæœ‰æ¥µå°‘æ•¸è¨“ç·´å¸«æŒæœ‰æ­¤è³‡æ ¼ï¼Œæ˜¯å…¨çƒå«é‡‘é‡æœ€é«˜çš„æ¥­ç•Œèªè­‰ã€‚</p>
+              <h3 className="text-xl font-bold mb-2">4. CPDT-KA 國際認可訓犬師資格</h3>
+              <p className="text-muted-foreground">由美國認證專業訓犬師委員會（CCPDT）頒發，是國際認受性最高的訓犬師資格之一。香港目前只有極少數訓練師持有此資格，是全球含金量最高的業界認證。</p>
             </div>
 
             {/* Cert 5 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">5. SPCA é ˜çŠ¬å“¡è¨“ç·´ç­</h3>
-              <p className="text-muted-foreground">ç”±é¦™æ¸¯æ„›è­·å‹•ç‰©å”æœƒæä¾›ï¼Œå®Œæˆèª²ç¨‹å¾Œå¯ç²è¨“ç·´ç­è­‰æ›¸åŠæ„›å”é ˜çŠ¬å“¡è³‡æ ¼å¡ï¼ˆä¸€å¹´æœ‰æ•ˆï¼‰ï¼Œæ¯å¹´é ˆå®Œæˆè‡³å°‘ 9 æ¬¡æ„›å”é ˜çŠ¬å“¡æœå‹™ä»¥çºŒæœŸã€‚</p>
+              <h3 className="text-xl font-bold mb-2">5. SPCA 領犬員訓練班</h3>
+              <p className="text-muted-foreground">由香港愛護動物協會提供，完成課程後可獲訓練班證書及愛協領犬員資格卡（一年有效），每年須完成至少 9 次愛協領犬員服務以續期。</p>
             </div>
 
             {/* Cert 6 */}
             <div>
-              <h3 className="text-xl font-bold mb-2">6. é’å¹´æœƒï¼é¦™æ¸¯é’å¹´å”æœƒ çŠ¬éš»è¡Œç‚ºè¨“ç·´åŠè­·ç†è­‰æ›¸</h3>
-              <p className="text-muted-foreground">å¼·èª¿ä»¥ç§‘å­¸ç‚ºåŸºç¤Žçš„äººé“è¨“ç·´æ–¹æ³•ï¼Œè²»ç”¨ç´„ HKD 3,400â€“3,800ï¼Œé©åˆæœ‰å¿—æˆç‚ºè¨“ç·´å¸«çš„äººå£«ç³»çµ±æ€§å…¥é–€ã€‚</p>
+              <h3 className="text-xl font-bold mb-2">6. 青年會／香港青年協會 犬隻行為訓練及護理證書</h3>
+              <p className="text-muted-foreground">強調以科學為基礎的人道訓練方法，費用約 HKD 3,400–3,800，適合有志成為訓練師的人士系統性入門。</p>
             </div>
           </div>
 
-          {/* Section: åˆ†è¾¨è¨“ç·´å¸« */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">ä½œç‚ºä¸»äººï¼Œä½ å¦‚ä½•åˆ†è¾¨é è­œçš„è¨“ç·´å¸«ï¼Ÿ</h2>
+          {/* Section: 分辨訓練師 */}
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-12">作為主人，你如何分辨靠譜的訓練師？</h2>
           <ul className="space-y-3 mb-10">
             {[
-              ["ç›´æŽ¥å•è³‡æ ¼", "è©¢å•è¨“ç·´å¸«æŒæœ‰å“ªäº›èªè­‰ï¼Œä¸¦è¦æ±‚æŸ¥çœ‹å¯¦ç‰©è­‰æ›¸æˆ–ç™»è¨˜ç·¨è™Ÿ"],
-              ["äº†è§£è¨“ç·´æ–¹æ³•", "ç¾ä»£å‹•ç‰©è¡Œç‚ºç§‘å­¸ä¸€è‡´æŽ¨å´‡æ­£å‘å¼·åŒ–ï¼ˆPositive Reinforcementï¼‰ï¼Œæ‡‰é¿å…ä½¿ç”¨æ‡²ç½°ã€æåš‡æˆ–ç—›æ¥šä½œç‚ºè¨“ç·´æ‰‹æ®µ"],
-              ["æŸ¥çœ‹çœŸå¯¦è©•åƒ¹", "åœ¨ Googleã€Facebook æˆ–æœ¬åœ°å¯µç‰©ç¾¤çµ„æœå°‹è¨“ç·´å¸«åå­—"],
-              ["è¦æ±‚å…è²»è«®è©¢", "æ­£è¦è¨“ç·´å¸«é€šå¸¸é¡˜æ„å…ˆäº†è§£ä½ çš„ç‹—ç‹—æƒ…æ³ï¼Œå†åˆ¶å®šå€‹äººåŒ–è¨“ç·´è¨ˆåŠƒ"],
-              ["è§€å¯Ÿè¨“ç·´å¸«èˆ‡ç‹—çš„äº’å‹•", "ç¬¬ä¸€å ‚èª²æ™‚ç•™æ„ç‹—ç‹—æ˜¯å¦æ”¾é¬†è€Œéžç„¦æ…®"],
+              ["直接問資格", "詢問訓練師持有哪些認證，並要求查看實物證書或登記編號"],
+              ["了解訓練方法", "現代動物行為科學一致推崇正向強化（Positive Reinforcement），應避免使用懲罰、恐嚇或痛楚作為訓練手段"],
+              ["查看真實評價", "在 Google、Facebook 或本地寵物群組搜尋訓練師名字"],
+              ["要求免費諮詢", "正規訓練師通常願意先了解你的狗狗情況，再制定個人化訓練計劃"],
+              ["觀察訓練師與狗的互動", "第一堂課時留意狗狗是否放鬆而非焦慮"],
             ].map(([title, desc], i) => (
               <li key={i} className="flex gap-3 items-start">
                 <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <span>
-                  <strong>{title}ï¼š</strong>
+                  <strong>{title}：</strong>
                   <span className="text-muted-foreground">{desc}</span>
                 </span>
               </li>
@@ -289,7 +291,7 @@ const BlogDogTrainerLicence = () => {
 
 
           {/* FAQ Section */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 mt-14">å¸¸è¦‹å•é¡Œ FAQ</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 mt-14">常見問題 FAQ</h2>
           <Accordion type="single" collapsible className="mb-12">
             {faqItems.map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
@@ -305,7 +307,7 @@ const BlogDogTrainerLicence = () => {
 
           {/* Social Share */}
           <div className="border-t pt-8 mb-10">
-            <p className="text-sm font-semibold mb-4">åˆ†äº«é€™ç¯‡æ–‡ç« </p>
+            <p className="text-sm font-semibold mb-4">分享這篇文章</p>
             <div className="flex gap-3">
               <Button variant="outline" size="sm" onClick={shareWhatsApp}>
                 <MessageCircle className="w-4 h-4" />
@@ -317,7 +319,7 @@ const BlogDogTrainerLicence = () => {
               </Button>
               <Button variant="outline" size="sm" onClick={handleCopyLink}>
                 <Link2 className="w-4 h-4" />
-                {copied ? "å·²è¤‡è£½ï¼" : "è¤‡è£½é€£çµ"}
+                {copied ? "已複製！" : "複製連結"}
               </Button>
             </div>
           </div>
@@ -326,7 +328,7 @@ const BlogDogTrainerLicence = () => {
 
           {/* Author Tag */}
           <div className="border-t pt-6 text-sm text-muted-foreground">
-            PetWell åœ˜éšŠ | æ›´æ–°æ–¼ 2026 å¹´ 3 æœˆ
+            PetWell 團隊 | 更新於 2026 年 3 月
           </div>
         </article>
       </main>
@@ -336,7 +338,7 @@ const BlogDogTrainerLicence = () => {
         <div className="container mx-auto flex justify-center">
           <Link to="/about">
             <Button size="lg" className="w-full max-w-md text-base font-semibold">
-              è¯çµ¡ PetWell äº†è§£æ›´å¤š
+              聯絡 PetWell 了解更多
             </Button>
           </Link>
         </div>

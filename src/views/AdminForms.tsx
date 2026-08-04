@@ -1,4 +1,6 @@
-﻿import { useEffect } from "react";
+"use client";
+
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

@@ -1,10 +1,4 @@
-﻿const heroKol = "/assets/other-services/photo/img_5118.png";
-const heroIg = "/assets/other-services/photo/img_5120.png";
-const heroEvent = "/assets/other-services/photo/img_5172.png";
-const heroMedia = "/assets/other-services/photo/435d8262-052f-48d5-ac76-f3bdd2f45cda_4_5005_c.jpeg";
-const audienceEnterprise = "/assets/other-services/audience-enterprise-japanese-festival.png";
-const audienceMerchant = "/assets/other-services/audience-merchant-pet-tag.png";
-import type { LucideIcon } from "lucide-react";
+﻿import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BarChart3,
@@ -16,6 +10,13 @@ import {
   Users,
   UtensilsCrossed,
 } from "lucide-react";
+
+const heroKol = "/assets/other-services/photo/img_5118.png";
+const heroIg = "/assets/other-services/photo/img_5120.png";
+const heroEvent = "/assets/other-services/photo/img_5172.png";
+const heroMedia = "/assets/other-services/photo/435d8262-052f-48d5-ac76-f3bdd2f45cda_4_5005_c.jpeg";
+const audienceEnterprise = "/assets/other-services/audience-enterprise-japanese-festival.png";
+const audienceMerchant = "/assets/other-services/audience-merchant-pet-tag.png";
 
 export type ServiceChannelId =
   | "websiteAds"

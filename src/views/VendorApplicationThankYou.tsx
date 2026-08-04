@@ -1,4 +1,6 @@
-﻿import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,13 +12,13 @@ const vendorEventCover = "/assets/vendor-event-cover.jpg";
 const IG_URL = "https://www.instagram.com/petwell_hk/";
 const WA_URL =
   "https://wa.me/85255954078?text=" +
-  encodeURIComponent("ä½ å¥½ï¼Œæˆ‘æƒ³æŸ¥è©¢ PetWell x Aquabeat è§€å¡˜å¯µç‰©å¸‚é›†æª”ä¸»å ±åäº‹å®œã€‚");
+  encodeURIComponent("你好，我想查詢 PetWell x Aquabeat 觀塘寵物市集檔主報名事宜。");
 
 const VendorApplicationThankYou = () => {
   useSEO({
-    title: "å¤šè¬å ±åï½œPetWell x Aquabeat è§€å¡˜å¯µç‰©å¸‚é›†",
+    title: "多謝報名｜PetWell x Aquabeat 觀塘寵物市集",
     description:
-      "ä½ çš„æª”ä¸»ï¼è´ŠåŠ©å ±åå·²æˆåŠŸæäº¤ã€‚å¦‚æœ‰ä»»ä½•å•é¡Œï¼Œæ­¡è¿Ž DM PetWell Instagram æˆ– WhatsApp è¯çµ¡æˆ‘å€‘ã€‚",
+      "你的檔主／贊助報名已成功提交。如有任何問題，歡迎 DM PetWell Instagram 或 WhatsApp 聯絡我們。",
     canonicalUrl: "https://petwellhk.com/vendor-application/thank-you",
   });
 
@@ -27,7 +29,7 @@ const VendorApplicationThankYou = () => {
       <div className="w-full overflow-hidden max-h-48 md:max-h-64">
         <img
           src={vendorEventCover}
-          alt="PetWell x Aquabeat è§€å¡˜å¯µç‰©å¸‚é›†"
+          alt="PetWell x Aquabeat 觀塘寵物市集"
           className="w-full h-full object-cover object-center"
         />
       </div>
@@ -38,12 +40,12 @@ const VendorApplicationThankYou = () => {
             <CheckCircle2 className="w-8 h-8 text-primary" />
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-bold mb-3">å¤šè¬ä½ å˜…å ±åï¼</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-3">多謝你嘅報名！</h1>
           <p className="text-muted-foreground mb-2">
-            æˆ‘å“‹å·²æ”¶åˆ°ä½ å˜…ç”³è«‹ï¼Œåœ˜éšŠæœƒç›¡å¿«å¯©æ ¸ï¼Œä¸¦ä»¥é›»éƒµï¼WhatsApp è¯çµ¡ä½ ç¢ºèªè©³æƒ…ã€‚
+            我哋已收到你嘅申請，團隊會盡快審核，並以電郵／WhatsApp 聯絡你確認詳情。
           </p>
           <p className="text-sm text-muted-foreground mb-8">
-            å¦‚æœ‰ä»»ä½•å•é¡Œï¼Œæ­¡è¿Žéš¨æ™‚ DM æˆ‘å“‹ï¼Œæˆ‘å“‹å¥½æ¨‚æ„å¹«æ‰‹è§£ç­”ã€‚
+            如有任何問題，歡迎隨時 DM 我哋，我哋好樂意幫手解答。
           </p>
 
           <div className="grid gap-3 mb-6">
@@ -56,7 +58,7 @@ const VendorApplicationThankYou = () => {
             <Button asChild size="lg" variant="outline" className="w-full gap-2">
               <a href={WA_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp è¯çµ¡æˆ‘å“‹
+                WhatsApp 聯絡我哋
               </a>
             </Button>
           </div>
@@ -64,7 +66,7 @@ const VendorApplicationThankYou = () => {
           <Button asChild variant="ghost" className="gap-2 text-muted-foreground">
             <Link to="/">
               <Home className="w-4 h-4" />
-              è¿”å›žä¸»é 
+              返回主頁
             </Link>
           </Button>
         </Card>

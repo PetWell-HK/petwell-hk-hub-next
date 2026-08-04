@@ -44,7 +44,12 @@ export function buildMetadata({
   articleSection,
   articleTags,
 }: BuildMetadataInput): Metadata {
-  const canonical = canonicalUrl || absoluteUrl(path);
+  // Prefer trailing slash only for the site root.
+  const normalizedPath =
+    path === "/" ? "/" : path.endsWith("/") ? path.slice(0, -1) : path;
+  const canonical =
+    canonicalUrl ||
+    (normalizedPath === "/" ? `${SITE_URL}/` : absoluteUrl(normalizedPath));
   const keywordList = Array.isArray(keywords)
     ? keywords
     : keywords
@@ -65,11 +70,7 @@ export function buildMetadata({
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical,
-      languages: {
-        "zh-HK": canonical,
-        en: canonical,
-        "x-default": canonical,
-      },
+      // No locale-prefixed URLs yet — omit hreflang until real language variants exist.
     },
     robots: noIndex
       ? {

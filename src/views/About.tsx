@@ -1,4 +1,6 @@
-﻿import { useMemo } from "react";
+"use client";
+
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import FAQSection from "@/components/FAQSection";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, MapPin, Calendar } from 'lucide-react';

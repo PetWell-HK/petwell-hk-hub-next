@@ -1,8 +1,9 @@
-﻿const logo = "/assets/logo.png";
+﻿import { assetSrc } from "@/lib/assetSrc";
+import { cn } from "@/lib/utils";
+
+const logo = "/assets/logo.png";
 const appStoreBadge = "/assets/app-store-badge-new.png";
 const googlePlayBadge = "/assets/google-play-badge-new.png";
-import { assetSrc } from "@/lib/assetSrc";
-import { cn } from "@/lib/utils";
 
 export const APP_STORE_URL =
   "https://apps.apple.com/hk/app/petwell-hk/id6747191070?l=en-GB";

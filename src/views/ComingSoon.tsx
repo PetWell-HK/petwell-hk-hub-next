@@ -1,4 +1,6 @@
-﻿import { useNavigate } from "react-router-dom";
+"use client";
+
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Header from "@/components/Header";
@@ -90,9 +92,9 @@ const ComingSoon = () => {
             </p>
             
             <div className="space-y-2 text-sm md:text-base text-muted-foreground mb-5">
-              <p>âœ¨ {t('download.feature1')}</p>
-              <p>âœ¨ {t('download.feature2')}</p>
-              <p>âœ¨ {t('download.feature3')}</p>
+              <p>✨ {t('download.feature1')}</p>
+              <p>✨ {t('download.feature2')}</p>
+              <p>✨ {t('download.feature3')}</p>
             </div>
 
             <Button

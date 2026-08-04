@@ -1,3 +1,5 @@
+"use client";
+
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useMemo, useState, useCallback } from "react";

@@ -92,4 +92,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <AppProviders>
-          <Suspense fallback={null}>{children}</
+          <Suspense fallback={null}>{children}</Suspense>
+        </AppProviders>
+      </body>
+    </html>
+  );
+}

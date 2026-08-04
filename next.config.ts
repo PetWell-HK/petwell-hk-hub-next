@@ -39,6 +39,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/restaurant",
+        destination: "/restaurants",
+        permanent: true,
+      },
+      {
         source: "/merchant",
         destination: "/other-services",
         permanent: true,
@@ -52,6 +57,25 @@ const nextConfig: NextConfig = {
         source: "/food-score",
         destination: "/nutrition",
         permanent: true,
+      },
+      {
+        source: "/%E9%98%B2%E8%B5%B0%E5%A4%B1%E7%8B%97%E7%89%8C",
+        destination: "/nametag",
+        permanent: true,
+      },
+      {
+        source: "/防走失狗牌",
+        destination: "/nametag",
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    // Fallback if a Lovable asset is missing from public/__l5e (run scripts/vendor-l5e-assets.mjs).
+    return [
+      {
+        source: "/__l5e/:path*",
+        destination: "https://petwellhk.com/__l5e/:path*",
       },
     ];
   },

@@ -1,3 +1,5 @@
+"use client";
+
 import { type ComponentProps, type DragEvent, type FormEvent, useEffect, useMemo, useState } from "react";
 import { CheckCircle2, ImagePlus, Loader2, X } from "lucide-react";
 import { useTranslation } from "react-i18next";

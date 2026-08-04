@@ -1,4 +1,6 @@
-﻿import { useParams, Link, Navigate } from "react-router-dom";
+"use client";
+
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Tag, Shield, PawPrint, Loader2, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -58,7 +60,7 @@ const ActivateTag = () => {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-card rounded-2xl shadow-xl p-8 text-center">
         <div className="mb-8">
-          <Link to="/" aria-label="PetWell é¦–é " className="inline-block">
+          <Link to="/" aria-label="PetWell 首頁" className="inline-block">
             <img src={logo} alt="PetWell Logo" className="h-10 w-auto mx-auto mb-6" />
           </Link>
         </div>
@@ -66,7 +68,7 @@ const ActivateTag = () => {
           <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <Tag className="w-10 h-10 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold mb-2">å•Ÿç”¨æ‚¨çš„å¯µç‰©æ¨™ç±¤</h1>
+          <h1 className="text-3xl font-bold mb-2">啟用您的寵物標籤</h1>
           <p className="text-muted-foreground">Activate Your Pet Tag</p>
         </div>
 
@@ -74,9 +76,9 @@ const ActivateTag = () => {
           <div className="flex items-start gap-3 text-left">
             <PawPrint className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-1">ä¿è­·æ¯›å­©å®‰å…¨</h3>
+              <h3 className="font-semibold mb-1">保護毛孩安全</h3>
               <p className="text-sm text-muted-foreground">
-                è¬ä¸€æ¯›å­©èµ°å¤±ï¼Œæœ‰äººç™¼ç¾å°±å¯ä»¥å³åˆ»æµä½ ï¼
+                萬一毛孩走失，有人發現就可以即刻搵你！
               </p>
             </div>
           </div>
@@ -84,23 +86,23 @@ const ActivateTag = () => {
           <div className="flex items-start gap-3 text-left">
             <Lock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold mb-1">å®‰å…¨ä¿å¯†</h3>
+              <h3 className="font-semibold mb-1">安全保密</h3>
               <p className="text-sm text-muted-foreground">
-                åªæœƒé¡¯ç¤ºå¿…éœ€è³‡æ–™
+                只會顯示必需資料
               </p>
             </div>
           </div>
         </div>
 
         <div className="bg-muted/50 rounded-lg p-4 mb-6">
-          <p className="text-sm text-muted-foreground mb-2">ä½ çš„å¯µç‰©</p>
+          <p className="text-sm text-muted-foreground mb-2">你的寵物</p>
           <p className="font-mono font-bold text-lg">{pet?.name || tagId}</p>
         </div>
 
         <Button size="lg" className="w-full" asChild>
           <Link to="/download">
             <Tag className="mr-2 h-5 w-5" />
-            å³åˆ»å•Ÿç”¨åç‰Œï¼Œé é˜²æ¯›å­©èµ°å¤±ï¼
+            即刻啟用名牌，預防毛孩走失！
           </Link>
         </Button>
       </div>

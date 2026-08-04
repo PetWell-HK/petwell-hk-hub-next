@@ -1,3 +1,5 @@
+"use client";
+
 import { memo, useMemo, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {

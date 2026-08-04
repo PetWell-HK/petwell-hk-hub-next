@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "react-router-dom";
 import { ChevronRight, ExternalLink, Heart, Loader2, Scale, Trash2, TrendingDown, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";

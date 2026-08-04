@@ -1,31 +1,35 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
+const SENSITIVE_DISALLOW = [
+  "/signup-login",
+  "/register",
+  "/forgot-password",
+  "/verification-code",
+  "/auth",
+  "/delete-account",
+  "/admin-forms-secret",
+  "/account/",
+  "/wishlist",
+  "/compare",
+  "/test-booking",
+  "/activate/",
+  "/pet/",
+  "/check/",
+];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/signup-login",
-          "/register",
-          "/forgot-password",
-          "/verification-code",
-          "/auth",
-          "/delete-account",
-          "/admin-forms-secret",
-          "/account/",
-          "/wishlist",
-          "/compare",
-          "/test-booking",
-          "/activate/",
-        ],
+        disallow: SENSITIVE_DISALLOW,
       },
-      { userAgent: "Googlebot", allow: "/" },
-      { userAgent: "Bingbot", allow: "/" },
+      // Social preview bots may fetch all public URLs (no sensitive override needed).
       { userAgent: "Twitterbot", allow: "/" },
       { userAgent: "facebookexternalhit", allow: "/" },
+      // AI / training crawlers
       { userAgent: "GPTBot", disallow: "/" },
       { userAgent: "ChatGPT-User", disallow: "/" },
       { userAgent: "OAI-SearchBot", disallow: "/" },

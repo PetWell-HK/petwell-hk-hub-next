@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/data/blogData";
 import { SITE_URL } from "@/lib/seo";
+import { serverGraphqlFetch } from "@/lib/server/graphqlFetch";
 
 const staticRoutes: Array<{
   path: string;
@@ -19,6 +21,7 @@ const staticRoutes: Array<{
   { path: "/nutrition", changeFrequency: "weekly", priority: 0.8 },
   { path: "/nametag", changeFrequency: "weekly", priority: 0.85 },
   { path: "/anti-lost-dog-tag-hk", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/fang-zou-shi-gou-pai", changeFrequency: "weekly", priority: 0.75 },
   { path: "/owner-zone", changeFrequency: "weekly", priority: 0.75 },
   { path: "/ngos", changeFrequency: "monthly", priority: 0.7 },
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
@@ -31,18 +34,55 @@ const staticRoutes: Array<{
   { path: "/vendor-application", changeFrequency: "monthly", priority: 0.5 },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const RESTAURANT_IDS_QUERY = `
+  query DynamoRestaurantSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $verified: Boolean) {
+    dynamoRestaurantSearch(location: $location, limit: $limit, sortMethod: $sortMethod, verified: $verified) {
+      items { id }
+    }
+  }
+`;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  return staticRoutes.map((route) => ({
+
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: `${SITE_URL}${route.path}`,
     lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
-    alternates: {
-      languages: {
-        "zh-HK": `${SITE_URL}${route.path}`,
-        en: `${SITE_URL}${route.path}`,
-      },
-    },
   }));
+
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => {
+    const slug = post.slug.replace(/^blog\//, "");
+    return {
+      url: `${SITE_URL}/${slug}`,
+      lastModified: post.date ? new Date(post.date) : now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    };
+  });
+
+  const restaurantData = await serverGraphqlFetch<{
+    dynamoRestaurantSearch?: { items?: Array<{ id: string }> };
+  }>(
+    RESTAURANT_IDS_QUERY,
+    {
+      location: { lat: 22.3193, lon: 114.1694 },
+      limit: 200,
+      sortMethod: "DISTANCE",
+      verified: true,
+    },
+    86400,
+  );
+
+  const restaurantEntries: MetadataRoute.Sitemap = (
+    restaurantData?.dynamoRestaurantSearch?.items || []
+  ).map((item) => ({
+    url: `${SITE_URL}/restaurants/${item.id}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...blogEntries, ...restaurantEntries];
 }
