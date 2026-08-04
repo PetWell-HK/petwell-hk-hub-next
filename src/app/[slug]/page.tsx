@@ -19,12 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = findPost(slug);
 
   if (!post) {
-    return buildMetadata({
-      title: "找不到頁面 | PetWell HK",
-      description: "你要找的頁面不存在。",
-      path: `/${slug}`,
-      noIndex: true,
-    });
+    notFound();
   }
 
   const canonicalSlug = post.slug.replace(/^blog\//, "");
@@ -44,6 +39,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function RoutePage({ params }: Props) {
   const { slug } = await params;
-  if (!findPost(slug)) notFound();
+  const post = findPost(slug);
+
+  if (!post) {
+    return notFound();
+  }
+
   return <BlogPost />;
 }

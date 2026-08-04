@@ -30,14 +30,15 @@ export default function AppProviders({ children }: { children: ReactNode }) {
               <CompareProvider>
                 <Toaster />
                 <Sonner />
+                {/* Suspense only for searchParams-using chrome — never wrap page children (breaks 404 status). */}
                 <Suspense fallback={null}>
                   <ScrollToTop />
                   <SiteProtection />
                   <AuthPanel />
                   <ContactUsWidget />
                   <NametagDailyPopup />
-                  {children}
                 </Suspense>
+                {children}
               </CompareProvider>
             </WishlistProvider>
           </AuthPanelProvider>

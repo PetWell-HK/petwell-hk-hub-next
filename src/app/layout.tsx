@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Suspense, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import AppProviders from "@/components/providers/AppProviders";
 import JsonLd from "@/components/seo/JsonLd";
 import { buildMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -91,9 +91,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="DotBot" content="noindex, nofollow" />
       </head>
       <body>
-        <AppProviders>
-          <Suspense fallback={null}>{children}</Suspense>
-        </AppProviders>
+        {/* Do not wrap children in Suspense — that forces streaming and makes notFound() return HTTP 200. */}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

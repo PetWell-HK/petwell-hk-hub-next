@@ -169,16 +169,19 @@ async function main() {
     const { res, text } = await fetchText("/robots.txt");
     const ok = res.status === 200 && text.includes("Sitemap:") && text.includes("Disallow:");
     record("GET /robots.txt", ok, `len=${text.length}`);
-    // Critical: Googlebot should not be allow-all without disallows
-    const googlebotAllowsAll =
-      /User-agent:\s*Googlebot[\s\S]*?Allow:\s*\/\s*(?:\n|$)/i.test(text) &&
-      !/User-agent:\s*Googlebot[\s\S]*?Disallow:/i.test(text.split(/User-agent:\s*Googlebot/i)[1]?.split(/User-agent:/i)[0] || "");
+    // Critical: no Googlebot-specific Allow:/ that overrides * disallows
+    const hasGooglebotOverride =
+      /User-agent:\s*Googlebot\b/i.test(text) &&
+      /User-agent:\s*Googlebot[\s\S]*?Allow:\s*\/\s*(?:\n|$)/i.test(text);
+    const starHasDisallow = /User-agent:\s*\*[\s\S]*?Disallow:\s*\/auth/i.test(text);
     record(
       "SEO robots Googlebot inherits sensitive disallows",
-      !googlebotAllowsAll,
-      googlebotAllowsAll
+      !hasGooglebotOverride && starHasDisallow,
+      hasGooglebotOverride
         ? "Googlebot has Allow:/ without Disallow — overrides * rules"
-        : "ok",
+        : starHasDisallow
+          ? "ok"
+          : "missing * Disallow /auth",
     );
   }
 
@@ -209,24 +212,8 @@ async function main() {
     );
   }
 
-  // Duplicate indexable restaurant routes
-  {
-    const a = await fetchText("/restaurants");
-    const b = await fetchText("/restaurant");
-    const ca = hasCanonical(a.text, "/restaurants");
-    const cb = hasCanonical(b.text, "/restaurant");
-    const duplicateIndexable =
-      a.res.status === 200 &&
-      b.res.status === 200 &&
-      ca.href &&
-      cb.href &&
-      ca.href !== cb.href;
-    record(
-      "SEO no duplicate /restaurant vs /restaurants canonicals",
-      !duplicateIndexable,
-      duplicateIndexable ? `a=${ca.href} b=${cb.href}` : "ok or redirected",
-    );
-  }
+  // Duplicate restaurant listing should redirect
+  await expectRedirect("/restaurant", "/restaurants", "redirect /restaurant -> /restaurants");
 
   // Client-only detail metadata inheritance check (forum post fake id)
   await expectHtml("/forum/does-not-exist-smoke", [
@@ -236,19 +223,22 @@ async function main() {
   // 404
   await expectStatus("/this-route-should-404-xyz", 404, "GET unknown 404");
 
-  // Asset smoke: lovable private path should NOT be required for homepage
-  await expectHtml("/", [
-    { type: "notContains", value: "/__l5e/assets-v1/" },
-  ], "Home HTML avoids Lovable private asset paths");
-
-  // Rainy day page may still reference lovable assets — detect
+  // Lovable assets must resolve (vendored under public/__l5e)
   {
-    const { text, res } = await fetchText("/rainy-day-pet-friendly-indoor-hong-kong");
-    const hasLovable = text.includes("/__l5e/assets-v1/");
+    const assetPath =
+      "/__l5e/assets-v1/45a55142-e3d3-4785-9e7b-837ed8ea75d1/blog-24hr-vet-clinic.png";
+    const { res } = await fetchText(assetPath, { skipBody: true });
+    record("Lovable asset served", res.status === 200, `status=${res.status}`);
+  }
+
+  // Dynamic sitemap should include restaurant detail URLs
+  {
+    const { text } = await fetchText("/sitemap.xml");
+    const hasRestaurantIds = /\/restaurants\/[A-Za-z0-9\-]{10,}/.test(text);
     record(
-      "Rainy-day page avoids Lovable private asset URLs in HTML",
-      res.status === 200 && !hasLovable,
-      hasLovable ? "contains /__l5e/assets-v1/" : "ok",
+      "Dynamic sitemap includes restaurant detail URLs",
+      hasRestaurantIds,
+      hasRestaurantIds ? "ok" : "no /restaurants/{id} entries",
     );
   }
 

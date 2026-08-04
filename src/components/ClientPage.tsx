@@ -1,11 +1,15 @@
 "use client";
 
-import type { ComponentType } from "react";
+import { Suspense, type ComponentType } from "react";
 
-/** Marks a legacy page module as a Client Component boundary. */
+/** Client page boundary with local Suspense for useSearchParams — does not wrap the root layout. */
 export default function ClientPage<P extends object>({
   Page,
   ...props
 }: { Page: ComponentType<P> } & P) {
-  return <Page {...(props as P)} />;
+  return (
+    <Suspense fallback={null}>
+      <Page {...(props as P)} />
+    </Suspense>
+  );
 }

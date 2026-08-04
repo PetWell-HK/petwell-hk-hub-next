@@ -1,7 +1,8 @@
-﻿"use client";
+"use client";
 
+import ClientPage from "@/components/ClientPage";
 import Page from "@/views/ChristmasEvents";
 
 export default function RoutePage() {
-  return <Page />;
+  return <ClientPage Page={Page} />;
 }
