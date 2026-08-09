@@ -189,16 +189,25 @@ function getMultilingualString(obj: MultiLang | undefined | null, lang: 'zh' | '
 }
 
 function parseAwsJson<T>(value: unknown): T | null {
-  if (value == null) return null;
-  if (typeof value === 'string') {
-    try {
-      return JSON.parse(value) as T;
-    } catch {
-      return null;
+  // Some writers historically JSON.stringify'd AWSJSON before Dynamo/AppSync,
+  // so GraphQL may return a string that still needs another parse.
+  let current: unknown = value;
+  for (let i = 0; i < 3; i += 1) {
+    if (current == null) return null;
+    if (typeof current === 'string') {
+      const trimmed = current.trim();
+      if (!trimmed) return null;
+      try {
+        current = JSON.parse(trimmed);
+        continue;
+      } catch {
+        return null;
+      }
     }
+    if (typeof current === 'object') return current as T;
+    return null;
   }
-  if (typeof value === 'object') return value as T;
-  return null;
+  return typeof current === 'object' && current != null ? (current as T) : null;
 }
 
 function normalizeCoverageType(raw: unknown): HomeVisitCoverageType | null {
