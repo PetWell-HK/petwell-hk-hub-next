@@ -188,6 +188,31 @@ function getMultilingualString(obj: MultiLang | undefined | null, lang: 'zh' | '
   return obj[lang]?.trim() || obj[other]?.trim() || '';
 }
 
+/**
+ * Prefer a title that keeps the brand. Crawl sometimes stores zh as a generic
+ * service label (到戶寵物美容) while en/companyName holds MeowUp.
+ */
+function resolveHomeVisitDisplayName(
+  name: MultiLang | undefined | null,
+  lang: 'zh' | 'en',
+): string {
+  const zh = name?.zh?.trim() || '';
+  const en = name?.en?.trim() || '';
+  if (lang === 'en') return en || zh;
+
+  if (zh && en) {
+    const brandMatch = en.match(/[A-Za-z][A-Za-z0-9&'.+-]{1,}/);
+    const brand = brandMatch?.[0];
+    if (brand && !zh.toLowerCase().includes(brand.toLowerCase())) {
+      const enWordCount = en.split(/\s+/).filter(Boolean).length;
+      if (enWordCount <= 2) return `${en} ${zh}`.replace(/\s+/g, ' ').trim();
+      if (/[\u4e00-\u9fff]/.test(zh)) return `${zh} ${en}`.replace(/\s+/g, ' ').trim();
+    }
+  }
+
+  return zh || en;
+}
+
 function parseAwsJson<T>(value: unknown): T | null {
   // Some writers historically JSON.stringify'd AWSJSON before Dynamo/AppSync,
   // so GraphQL may return a string that still needs another parse.
@@ -543,7 +568,7 @@ export function transformHomeVisitProvider(
   return {
     id: api.id,
     name:
-      getMultilingualString(api.name, lang) ||
+      resolveHomeVisitDisplayName(api.name, lang) ||
       (lang === 'en' ? 'Unnamed provider' : '未命名服務'),
     region: regionKey,
     regionKey,
