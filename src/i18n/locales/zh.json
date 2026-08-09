@@ -8,6 +8,7 @@
     "salons": "寵物美容",
     "lodging": "寵物寄養",
     "malls": "寵物友善商場",
+    "homeVisits": "寵物上門服務",
     "restaurants": "寵物友善餐廳",
     "restaurantsByDistrict": "按18區搵餐廳",
     "ngos": "動物組織",
@@ -248,6 +249,10 @@
       },
       "lodging": {
         "title": "寵物寄養"
+      },
+      "homeVisits": {
+        "title": "寵物上門服務",
+        "subtitle": "上門診症、疫苗同急症支援"
       }
     },
     "cards": {
@@ -2446,6 +2451,61 @@
         "INDOOR": "室內",
         "MIXED": "室內外"
       }
+    }
+  },
+  "homeVisitPlaces": {
+    "pageTitle": "香港寵物上門服務",
+    "subtitle": "上門診症、疫苗、健康檢查同急症支援 — 按服務範圍搵適合你嘅上門服務",
+    "description": "整理全港寵物上門服務資料，顯示覆蓋範圍、服務項目、聯絡方式，方便主人預約",
+    "searchPlaceholder": "搜尋服務名稱、地區或服務…",
+    "filterByRegion": "按地區篩選",
+    "regions": {
+      "all": "全部地區",
+      "kowloon": "九龍",
+      "hongKong": "香港島",
+      "newTerritories": "新界",
+      "others": "其他"
+    },
+    "loading": "載入中...",
+    "error": "載入上門服務資料時發生錯誤",
+    "errorSubtitle": "請稍後再試或聯絡客服",
+    "noResults": "暫時未有符合條件的上門服務",
+    "noResultsHint": "試下調整地區、寵物種類或服務篩選。",
+    "ctaTitle": "想搵更多寵物服務？",
+    "ctaDescription": "下載 PetWell App 睇診所、美容、寄養同更多寵物友善地點",
+    "filter24Hour": "24小時",
+    "filtersLabel": "篩選",
+    "clearFilters": "清除篩選",
+    "resultsCount": "{{count}} 間上門服務",
+    "trustBadge": "服務範圍優先顯示",
+    "backToList": "返回上門服務列表",
+    "address": "地址",
+    "phone": "電話",
+    "website": "網站",
+    "openingHours": "服務時間",
+    "closed": "休息",
+    "detail": {
+      "notFound": "找不到此上門服務",
+      "homeVisitConfirmed": "確認提供上門",
+      "coverage": "服務範圍",
+      "travelFee": "交通／路程費",
+      "about": "關於",
+      "services": "服務項目",
+      "pricing": "收費參考",
+      "pricingEmpty": "暫未公開收費，建議用 WhatsApp 或電話查詢最新報價。",
+      "pricingService": "項目",
+      "pricingAmount": "收費",
+      "pricingNotes": "備註",
+      "includesTravel": "已含路程",
+      "species": "服務寵物",
+      "contact": "聯絡方式",
+      "whatsapp": "WhatsApp",
+      "call": "致電",
+      "bookOnline": "網上預約",
+      "report": "資料有誤？回報",
+      "reviews": "{{count}} 則評價",
+      "viewFullHours": "查看完整時間",
+      "hideFullHours": "收起時間"
     }
   },
   "userReviews": {

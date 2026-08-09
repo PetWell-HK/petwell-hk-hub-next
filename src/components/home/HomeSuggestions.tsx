@@ -64,6 +64,15 @@ const FEATURED: FeaturedCard[] = [
     imagePosition: "center center",
     size: "medium",
   },
+  {
+    id: "homeVisits",
+    titleKey: "homePortal.sectors.homeVisits.title",
+    subtitleKey: "homePortal.sectors.homeVisits.subtitle",
+    href: "/home-visits",
+    image: clinicsImage,
+    imagePosition: "center 30%",
+    size: "medium",
+  },
 ];
 
 const HomeSuggestions = () => {

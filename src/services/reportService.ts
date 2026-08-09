@@ -1,6 +1,6 @@
 import { graphqlQuery } from "@/services/graphqlClient";
 
-export type WebReportPlaceType = "clinic" | "salon" | "lodging" | "restaurant";
+export type WebReportPlaceType = "clinic" | "salon" | "lodging" | "restaurant" | "homeVisit";
 export type WebSuggestPlaceCategory = WebReportPlaceType | "mall";
 export type WebCorrectionField =
   | "ADDRESS"
@@ -31,6 +31,7 @@ const REPORT_PLACE_TYPE_MAP: Record<WebReportPlaceType, string> = {
   salon: "SALON",
   lodging: "LODGING",
   restaurant: "RESTAURANT",
+  homeVisit: "HOME_VISIT_PROVIDER",
 };
 
 type ReportContactInput = {
@@ -77,6 +78,7 @@ const SUGGEST_CATEGORIES = new Set<WebSuggestPlaceCategory>([
   "lodging",
   "restaurant",
   "mall",
+  "homeVisit",
 ]);
 
 export function buildSuggestNewPlaceMessage(input: {

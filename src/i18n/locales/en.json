@@ -8,6 +8,7 @@
     "salons": "Pet Grooming",
     "lodging": "Pet Lodging",
     "malls": "Pet-friendly Malls",
+    "homeVisits": "Home Visits",
     "restaurants": "Restaurants",
     "restaurantsByDistrict": "By district (18)",
     "ngos": "Animal NGOs",
@@ -248,6 +249,10 @@
       },
       "lodging": {
         "title": "Pet boarding"
+      },
+      "homeVisits": {
+        "title": "Home visit services",
+        "subtitle": "In-home consults, vaccines & urgent care"
       }
     },
     "cards": {
@@ -2446,6 +2451,61 @@
         "INDOOR": "Indoor",
         "MIXED": "Indoor & outdoor"
       }
+    }
+  },
+  "homeVisitPlaces": {
+    "pageTitle": "Pet Home Visit Services in Hong Kong",
+    "subtitle": "In-home consults, vaccines, check-ups and urgent care — find providers by coverage area",
+    "description": "A directory of Hong Kong pet home-visit providers with coverage, services and contact options",
+    "searchPlaceholder": "Search name, area or service…",
+    "filterByRegion": "Filter by region",
+    "regions": {
+      "all": "All regions",
+      "kowloon": "Kowloon",
+      "hongKong": "Hong Kong Island",
+      "newTerritories": "New Territories",
+      "others": "Others"
+    },
+    "loading": "Loading...",
+    "error": "Failed to load home visit providers",
+    "errorSubtitle": "Please try again later or contact support",
+    "noResults": "No home visit providers match these filters",
+    "noResultsHint": "Try adjusting region, species or service filters.",
+    "ctaTitle": "Looking for more pet services?",
+    "ctaDescription": "Download the PetWell app for clinics, grooming, lodging and more",
+    "filter24Hour": "24 hours",
+    "filtersLabel": "Filters",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{{count}} providers",
+    "trustBadge": "Coverage shown first",
+    "backToList": "Back to home visits",
+    "address": "Address",
+    "phone": "Phone",
+    "website": "Website",
+    "openingHours": "Hours",
+    "closed": "Closed",
+    "detail": {
+      "notFound": "Home visit provider not found",
+      "homeVisitConfirmed": "Home visit confirmed",
+      "coverage": "Service coverage",
+      "travelFee": "Travel fee",
+      "about": "About",
+      "services": "Services",
+      "pricing": "Pricing",
+      "pricingEmpty": "Pricing is not listed yet — WhatsApp or call for the latest quote.",
+      "pricingService": "Service",
+      "pricingAmount": "Price",
+      "pricingNotes": "Notes",
+      "includesTravel": "Travel included",
+      "species": "Pets served",
+      "contact": "Contact",
+      "whatsapp": "WhatsApp",
+      "call": "Call",
+      "bookOnline": "Book online",
+      "report": "Report incorrect info",
+      "reviews": "{{count}} reviews",
+      "viewFullHours": "View full hours",
+      "hideFullHours": "Hide hours"
     }
   },
   "userReviews": {

@@ -12,6 +12,7 @@ const staticRoutes: Array<{
   { path: "/restaurants", changeFrequency: "daily", priority: 0.95 },
   { path: "/pet-friendly-restaurants-hk", changeFrequency: "daily", priority: 0.9 },
   { path: "/clinics", changeFrequency: "daily", priority: 0.9 },
+  { path: "/home-visits", changeFrequency: "weekly", priority: 0.85 },
   { path: "/salons", changeFrequency: "weekly", priority: 0.85 },
   { path: "/lodging", changeFrequency: "weekly", priority: 0.85 },
   { path: "/malls", changeFrequency: "weekly", priority: 0.85 },

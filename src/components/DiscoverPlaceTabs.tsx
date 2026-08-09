@@ -1,4 +1,4 @@
-import { BedDouble, Scissors, ShoppingBag, Stethoscope, UtensilsCrossed } from "lucide-react";
+import { BedDouble, House, Scissors, ShoppingBag, Stethoscope, UtensilsCrossed } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +16,12 @@ const discoverPlaces = [
     href: "/clinics",
     labelKey: "nav.clinics",
     icon: Stethoscope,
+  },
+  {
+    key: "homeVisits",
+    href: "/home-visits",
+    labelKey: "nav.homeVisits",
+    icon: House,
   },
   {
     key: "salons",

@@ -5,6 +5,7 @@ import {
   CircleHelp,
   Clock3,
   Globe,
+  House,
   Lightbulb,
   Loader2,
   MapPin,
@@ -87,6 +88,7 @@ const placeTypeConfigs: Record<
   salon: { icon: Scissors, labels: { zh: "美容店", en: "Salon" } },
   lodging: { icon: BedDouble, labels: { zh: "寄養場所", en: "Lodging" } },
   restaurant: { icon: UtensilsCrossed, labels: { zh: "餐廳", en: "Restaurant" } },
+  homeVisit: { icon: House, labels: { zh: "上門服務", en: "Home visit" } },
 };
 
 const suggestCategoryConfigs: Array<{
@@ -96,6 +98,7 @@ const suggestCategoryConfigs: Array<{
 }> = [
   { value: "restaurant", icon: UtensilsCrossed, labels: { zh: "餐廳", en: "Restaurant" } },
   { value: "clinic", icon: Stethoscope, labels: { zh: "診所", en: "Clinic" } },
+  { value: "homeVisit", icon: House, labels: { zh: "上門服務", en: "Home visit" } },
   { value: "salon", icon: Scissors, labels: { zh: "美容店", en: "Salon" } },
   { value: "lodging", icon: BedDouble, labels: { zh: "寄養場所", en: "Lodging" } },
   { value: "mall", icon: ShoppingBag, labels: { zh: "商場", en: "Mall" } },

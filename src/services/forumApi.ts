@@ -1975,13 +1975,7 @@ export const createForumPost = async (input: CreateForumPostInput): Promise<Foru
       throw new Error('Maximum 10 tags allowed');
     }
 
-    // Generate anonymous hash if anonymous mode is enabled
-    let anonHash: string | undefined;
-    if (input.isAnonymous) {
-      // We'll generate the hash after post creation (need postId)
-      // For now, we'll use a temporary hash based on timestamp
-      anonHash = Math.random().toString(36).substring(2, 6).toUpperCase();
-    }
+    // anonHash is generated after create (needs postId). Lambda may set a temp hash.
 
     // Calculate initial hot score (0 for new post, no replies yet)
     const hotScore = calculateHotScore(
@@ -2051,10 +2045,8 @@ export const createForumPost = async (input: CreateForumPostInput): Promise<Foru
       }
     }
 
-    // Add anonHash if anonymous
-    if (input.isAnonymous && anonHash) {
-      postInput.anonHash = anonHash;
-    }
+    // Do not send anonHash here — ModeratedForumPostInput does not define it.
+    // Lambda generates a temporary hash when isAnonymous; we overwrite after create.
 
     const result = await graphqlQuery<{
       createModeratedForumPost: {

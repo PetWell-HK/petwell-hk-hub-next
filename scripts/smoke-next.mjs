@@ -115,6 +115,7 @@ async function main() {
     "/",
     "/restaurants",
     "/clinics",
+    "/home-visits",
     "/salons",
     "/lodging",
     "/malls",

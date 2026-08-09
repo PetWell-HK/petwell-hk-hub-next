@@ -22,7 +22,7 @@ import NameTagBanner from "./NameTagBanner";
 import { useAuth } from "@/contexts/AuthContext";
 import { signOutUser } from "@/services/authService";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
-const PET_FRIENDLY_PATHS = ["/restaurants", "/pet-friendly-restaurants", "/salons", "/lodging", "/clinics", "/malls"];
+const PET_FRIENDLY_PATHS = ["/restaurants", "/pet-friendly-restaurants", "/salons", "/lodging", "/clinics", "/malls", "/home-visits"];
 const SECONDARY_LINKS = [{ to: "/terms", translationKey: "footer.terms" }];
 
 const Header = () => {
@@ -56,6 +56,7 @@ const Header = () => {
       children: [
         { to: "/restaurants", label: t('nav.restaurants') },
         { to: "/clinics", label: t('nav.clinics') },
+        { to: "/home-visits", label: t('nav.homeVisits') },
         { to: "/salons", label: t('nav.salons') },
         { to: "/lodging", label: t('nav.lodging') },
         { to: "/malls", label: t('nav.malls') },

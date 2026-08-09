@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { pickLocalized, serverGraphqlFetch, type Localized } from "@/lib/server/graphqlFetch";
 
-type PlaceKind = "restaurant" | "clinic" | "salon" | "lodging" | "mall";
+type PlaceKind = "restaurant" | "clinic" | "salon" | "lodging" | "mall" | "homeVisit";
 
 const PLACE_QUERY: Record<PlaceKind, string> = {
   restaurant: `
@@ -65,6 +65,18 @@ const PLACE_QUERY: Record<PlaceKind, string> = {
       }
     }
   `,
+  homeVisit: `
+    query GetHomeVisitProvider($id: ID!) {
+      getHomeVisitProvider(id: $id) {
+        id
+        name { zh en }
+        address { zh en }
+        district
+        coverPhoto
+        verified
+      }
+    }
+  `,
 };
 
 const DATA_KEY: Record<PlaceKind, string> = {
@@ -73,6 +85,7 @@ const DATA_KEY: Record<PlaceKind, string> = {
   salon: "getSalon",
   lodging: "getLodging",
   mall: "getMall",
+  homeVisit: "getHomeVisitProvider",
 };
 
 const PATH_PREFIX: Record<PlaceKind, string> = {
@@ -81,6 +94,7 @@ const PATH_PREFIX: Record<PlaceKind, string> = {
   salon: "/salons",
   lodging: "/lodging",
   mall: "/malls",
+  homeVisit: "/home-visits",
 };
 
 type PlaceRecord = {
@@ -115,6 +129,10 @@ function fallbackMeta(kind: PlaceKind, id: string): Metadata {
       title: "寵物友善商場詳情 | PetWell HK",
       description: "查看商場寵物政策與附近餐廳",
     },
+    homeVisit: {
+      title: "寵物上門服務詳情 | PetWell HK",
+      description: "查看香港寵物上門服務詳細資料、服務範圍同聯絡方式",
+    },
   };
 
   return buildMetadata({
@@ -142,52 +160,60 @@ export async function generatePlaceMetadata(
   const address = pickLocalized(place.address);
   const district = place.district || "香港";
 
-  if (kind === "restaurant") {
-    const indoor = place.petAccessArea === "INDOOR_ALLOWED";
-    return buildMetadata({
-      title: `${name} | ${district}寵物友善餐廳 | PetWell HK`,
-      description: `${name}係${district}寵物友善餐廳，經PetWell認證。${indoor ? "可帶狗入室內" : "戶外用餐區"}。地址：${address}。`,
-      keywords: `${name}寵物友善,${district}帶狗餐廳,${name}帶狗,寵物友善餐廳推薦`,
-      path: `/restaurants/${id}`,
-      ogImage: place.coverPhoto || undefined,
-    });
+  switch (kind) {
+    case "restaurant": {
+      const indoor = place.petAccessArea === "INDOOR_ALLOWED";
+      return buildMetadata({
+        title: `${name} | ${district}寵物友善餐廳 | PetWell HK`,
+        description: `${name}係${district}寵物友善餐廳，經PetWell認證。${indoor ? "可帶狗入室內" : "戶外用餐區"}。地址：${address}。`,
+        keywords: `${name}寵物友善,${district}帶狗餐廳,${name}帶狗,寵物友善餐廳推薦`,
+        path: `/restaurants/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    }
+    case "clinic":
+      return buildMetadata({
+        title: `${name} | ${district}獸醫診所 | PetWell HK`,
+        description: `${name}位於${district}。地址：${address}。查看評價、營業時間與聯絡方式。`,
+        keywords: `${name},${district}獸醫,香港獸醫診所`,
+        path: `/clinics/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    case "salon":
+      return buildMetadata({
+        title: `${name} | ${district}寵物美容 | PetWell HK`,
+        description: `${name}位於${district}。地址：${address}。查看服務、評價與聯絡方式。`,
+        keywords: `${name},${district}寵物美容,香港寵物美容`,
+        path: `/salons/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    case "lodging":
+      return buildMetadata({
+        title: `${name} | ${district}寵物寄養 | PetWell HK`,
+        description: `${name}位於${district}。地址：${address}。查看寄養服務與評價。`,
+        keywords: `${name},${district}寵物寄養,香港寵物酒店`,
+        path: `/lodging/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    case "mall":
+      return buildMetadata({
+        title: `${name} | ${district}寵物友善商場 | PetWell HK`,
+        description: `${name}位於${district}。地址：${address}。查看寵物政策與附近友善餐廳。`,
+        keywords: `${name},${district}寵物友善商場,帶狗商場`,
+        path: `/malls/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    case "homeVisit":
+      return buildMetadata({
+        title: `${name}｜香港寵物上門服務｜PetWell HK`,
+        description: `${name}提供寵物上門服務${district ? `（${district}）` : ""}。${address ? `地址：${address}。` : ""}查看服務範圍同聯絡方式。`,
+        keywords: `${name},寵物上門,${district}上門獸醫,home visit`,
+        path: `/home-visits/${id}`,
+        ogImage: place.coverPhoto || undefined,
+      });
+    default: {
+      const _exhaustive: never = kind;
+      return _exhaustive;
+    }
   }
-
-  if (kind === "clinic") {
-    return buildMetadata({
-      title: `${name} | ${district}獸醫診所 | PetWell HK`,
-      description: `${name}位於${district}。地址：${address}。查看評價、營業時間與聯絡方式。`,
-      keywords: `${name},${district}獸醫,香港獸醫診所`,
-      path: `/clinics/${id}`,
-      ogImage: place.coverPhoto || undefined,
-    });
-  }
-
-  if (kind === "salon") {
-    return buildMetadata({
-      title: `${name} | ${district}寵物美容 | PetWell HK`,
-      description: `${name}位於${district}。地址：${address}。查看服務、評價與聯絡方式。`,
-      keywords: `${name},${district}寵物美容,香港寵物美容`,
-      path: `/salons/${id}`,
-      ogImage: place.coverPhoto || undefined,
-    });
-  }
-
-  if (kind === "lodging") {
-    return buildMetadata({
-      title: `${name} | ${district}寵物寄養 | PetWell HK`,
-      description: `${name}位於${district}。地址：${address}。查看寄養服務與評價。`,
-      keywords: `${name},${district}寵物寄養,香港寵物酒店`,
-      path: `/lodging/${id}`,
-      ogImage: place.coverPhoto || undefined,
-    });
-  }
-
-  return buildMetadata({
-    title: `${name} | ${district}寵物友善商場 | PetWell HK`,
-    description: `${name}位於${district}。地址：${address}。查看寵物政策與附近友善餐廳。`,
-    keywords: `${name},${district}寵物友善商場,帶狗商場`,
-    path: `/malls/${id}`,
-    ogImage: place.coverPhoto || undefined,
-  });
 }
