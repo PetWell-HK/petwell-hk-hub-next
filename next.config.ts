@@ -72,10 +72,21 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     // Fallback if a Lovable asset is missing from public/__l5e (run scripts/vendor-l5e-assets.mjs).
+    // Price-review Lambda CORS only allows petwellhk.com + Vite :8080 — proxy for Next local/preview.
+    const priceReviewApi =
+      process.env.NEXT_PUBLIC_PRICE_REVIEW_API_URL ||
+      process.env.VITE_PRICE_REVIEW_API_URL ||
+      "https://kpslufqd7xryrrbi57srhr7zlm0wfezq.lambda-url.ap-southeast-1.on.aws";
+    const priceReviewBase = priceReviewApi.replace(/\/$/, "");
+
     return [
       {
         source: "/__l5e/:path*",
         destination: "https://petwellhk.com/__l5e/:path*",
+      },
+      {
+        source: "/api/price-review/:path*",
+        destination: `${priceReviewBase}/:path*`,
       },
     ];
   },

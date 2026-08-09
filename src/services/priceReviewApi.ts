@@ -6,10 +6,15 @@ import type {
 import { PRICE_REVIEW_API_URL } from "@/config/priceReview";
 import { getPublicEnv } from "@/lib/env";
 
-const API_URL = getPublicEnv("VITE_PRICE_REVIEW_API_URL") || PRICE_REVIEW_API_URL;
+/** Browser uses same-origin rewrite (see next.config) — Lambda CORS blocks Next localhost ports. */
+const BROWSER_PROXY_BASE = "/api/price-review";
 
 function getApiBase() {
-  return API_URL.replace(/\/$/, "");
+  if (typeof window !== "undefined") {
+    return BROWSER_PROXY_BASE;
+  }
+  const apiUrl = getPublicEnv("VITE_PRICE_REVIEW_API_URL") || PRICE_REVIEW_API_URL;
+  return apiUrl.replace(/\/$/, "");
 }
 
 export async function listPriceReviewProducts(query: PriceReviewQuery = {}): Promise<PriceReviewListResponse> {

@@ -13,18 +13,6 @@ const promoArt = "/assets/nametag/paws-port-promo.png";
 const STORAGE_KEY = "petwell:nametagDailyPopup:lastShown:v1";
 const SHOW_DELAY_MS = 900;
 
-/** Routes where the offer page is already the destination â€” popup adds friction only. */
-const SUPPRESSED_PREFIXES = [
-  "/nametag",
-  "/namtag",
-  "/fang-zou-shi-gou-pai",
-  "/anti-lost-dog-tag-hk",
-  "/é˜²èµ°å¤±ç‹—ç‰Œ",
-  "/activate/",
-  "/pet/",
-  "/check/",
-] as const;
-
 function localDateKey(date = new Date()): string {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, "0");
@@ -48,10 +36,8 @@ function markShownToday(): void {
   }
 }
 
-function isSuppressedPath(pathname: string): boolean {
-  return SUPPRESSED_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname.startsWith(prefix),
-  );
+function isHomePath(pathname: string): boolean {
+  return pathname === "/";
 }
 
 const NametagDailyPopup = () => {
@@ -60,7 +46,7 @@ const NametagDailyPopup = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (isSuppressedPath(pathname) || readShownToday()) {
+    if (!isHomePath(pathname) || readShownToday()) {
       setOpen(false);
       return;
     }
