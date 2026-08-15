@@ -26,13 +26,13 @@ const VendorApplicationThankYou = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <div className="w-full overflow-hidden max-h-48 md:max-h-64">
-        <img
-          src={vendorEventCover}
-          alt="PetWell x Aquabeat 觀塘寵物市集"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+      <img
+        src={vendorEventCover}
+        alt="PetWell x Aquabeat 觀塘寵物市集"
+        className="block w-full h-auto"
+        width={1024}
+        height={576}
+      />
 
       <section className="container mx-auto px-4 py-12 md:py-16 max-w-xl">
         <Card className="p-8 md:p-10 text-center">
@@ -58,7 +58,7 @@ const VendorApplicationThankYou = () => {
             <Button asChild size="lg" variant="outline" className="w-full gap-2">
               <a href={WA_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp 聯絡我哋
+                WhatsApp 聯絡我們
               </a>
             </Button>
           </div>

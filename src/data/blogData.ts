@@ -215,7 +215,231 @@ const buildTyphoonMallContent = () => `
       <p style="font-size: 15px; line-height: 1.7; margin-bottom: 20px;">æƒ³ç‡æ›´å¤š<strong>å¯µç‰©å‹å–„é¤å»³</strong>ï¼Ÿå¯åƒè€ƒ<a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;text-decoration:underline;">é£Ÿç’°ç½²é¦–æ‰¹ 1,000 é–“å¯µç‰©å‹å–„é£Ÿè‚†åå–®</a>ã€‚</p>
 `;
 
+const blogSeniorPetTemperCover = "/assets/blog-senior-pet-temper-cover.jpg";
+
 const baseBlogPosts: BlogPost[] = [
+  {
+    id: "32",
+    slug: "senior-dog-cat-irritable-temper-guide-hk",
+    title: "貓狗冇「更年期」？老年毛孩脾氣暴躁嘅真正原因＋完整照顧指南｜PetWell HK",
+    excerpt:
+      "老狗老貓脾氣愈嚟愈差，係咪更年期？科學上貓狗並冇更年期。拆解痛症同感官退化兩大真正原因，附 5 個實用管理方法同即刻睇獸醫警號。",
+    content: `
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 8 月 9 日</p>
+
+      <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">🐾 一分鐘結論</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">科學上，狗同貓<strong>並冇「更年期」</strong>。老年毛孩忽然暴躁，背後通常係兩件事：<strong>痛</strong>，同埋<strong>失去安全感</strong>（感官／認知退化）。佢唔係變壞咗——好多時係講唔出嘅不適。</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">好多主人都有同樣疑問：「屋企隻狗／貓老咗之後，脾氣愈嚟愈差，係咪『更年期』呀？」你喺 Reel comment「old」之後，我哋答應過會教你點處理——呢篇就係完整版。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">原因一：周身痛，但佢哋講唔出</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 20px;">貓狗天生擅長忍痛。身體嘅痛往往先反映喺情緒上，而唔係「叫痛」：</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">① 關節炎／關節退化</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>上落樓梯慢咗、起身遲疑</li>
+            <li>唔再想跳上梳化或床</li>
+            <li>行路步伐改變，活動意欲下降</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">② 腰骨痛／脊椎問題</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>唔想俾人抱</li>
+            <li>摸到腰背就縮開，甚至吠／嘶</li>
+            <li>轉身、低頭食嘢時表現不適</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">③ 牙周病／口腔痛</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0 0 12px;padding-left:22px;color:#374151;">
+            <li>食嘢慢咗、只揀軟食</li>
+            <li>唔想俾人掂塊面或摸嘴邊</li>
+            <li>口臭明顯、流口水或單邊咀嚼</li>
+          </ul>
+          <div style="background:#FFFBEB;border-left:3px solid #F59E0B;padding:10px 14px;border-radius:8px;">
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#92400E;">💡 當佢周身骨痛，你一掂佢就暴躁——唔係性格變壞，係真係痛。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">原因二：感官退化，世界變得可怕</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 20px;">老年毛孩嘅視覺、聽覺、嗅覺會慢慢衰退；認知亦可能改變：</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:24px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li><strong>睇唔清楚＋聽唔到</strong> → 你喺佢後面摸佢，佢會嚇親而彈起甚至咬</li>
+            <li><strong>嗅覺退化</strong> → 認唔到熟悉氣味，對環境失去掌控感</li>
+            <li><strong>認知退化</strong>（類似人嘅認知障礙）→ 半夜游走、對住牆發呆、作息顛倒</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:16px 20px;border-radius:10px;margin-bottom:32px;">
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#1D4ED8;">試想像：你睇唔到、聽唔到，忽然有人喺後面拍你——你都會彈起。暴躁，往往係<strong>驚</strong>，唔係<strong>惡</strong>。</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">點樣 Manage？5 個實用方法</h2>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 1 · 先排除痛症：帶佢做身體檢查</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>老年毛孩建議：<strong>狗約 7 歲起、貓約 10 歲起</strong>，每半年驗身一次</li>
+            <li>好多「脾氣問題」其實係關節炎或者牙周病</li>
+            <li>止痛同治牙之後，性格往往即刻好返一大截</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 2 · 摸佢之前，先俾訊號</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>接近時出聲叫佢個名，等佢知道你要嚟</li>
+            <li>喺<strong>視線範圍內</strong>伸手，唔好喺後面突襲</li>
+            <li>由下巴、胸側開始摸，避開腰背同四肢關節位</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 3 · 改造家居環境</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>鋪<strong>防滑墊</strong>，減少關節壓力同跌倒風險</li>
+            <li>加寵物樓梯上梳化／床，唔使再跳</li>
+            <li>夜燈常開，幫助視力退化嘅佢認路</li>
+            <li>食水、糧碗、貓砂盆放喺<strong>同一層、容易到達</strong>嘅位置</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 4 · 調整飲食同日常護理</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>轉<strong>老年配方糧</strong>，留意關節保健成分（葡萄糖胺、軟骨素、奧米加 3）</li>
+            <li>定期刷牙／洗牙——牙周病係老年貓狗最常見又最易被忽略嘅痛源</li>
+            <li>控制體重，減輕關節負擔</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 5 · 俾多啲耐性，維持規律</div>
+          <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
+            <li>固定作息、固定行路路線，令感官退化嘅佢有預期感</li>
+            <li>佢發脾氣嗰陣<strong>唔好罰佢</strong>——佢唔係曳，係唔舒服或者驚</li>
+            <li>暴躁突然加劇，一定要搵獸醫，而唔係當「老人痴呆」唔理</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">邊啲情況要即刻睇獸醫？</h2>
+      <div style="border:1px solid #FECACA;border-radius:14px;padding:20px;background:#FEF2F2;margin-bottom:32px;">
+        <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#991B1B;">
+          <li>突然攻擊性大增，之前從來冇試過</li>
+          <li>唔食嘢、明顯消瘦、躲埋一邊唔想見人</li>
+          <li>摸某個位置會叫／縮／咬</li>
+          <li>半夜長時間嚎叫、迷失方向</li>
+        </ul>
+        <p style="font-size:14.5px;line-height:1.7;margin:14px 0 0;color:#7F1D1D;">呢啲都可能係痛症或者認知退化嘅訊號，<strong>越早介入越好處理</strong>。</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">PetWell 可以點幫你？</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;background:#fff;">
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#374151;"><strong>🔍 獸醫診所評價：</strong>搵附近邊間診所睇老年寵物最有經驗，睇真實用家評價先預約 → <a href="/clinics" style="color:#FF6B35;font-weight:600;">瀏覽診所</a></p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;background:#fff;">
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#374151;"><strong>🤖 AI 健康檢測：</strong>影相初步了解毛孩狀況，出現異常及早發現</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;background:#fff;">
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#374151;"><strong>🛒 用品格價：</strong>老年糧、關節保健品、防滑墊、寵物樓梯，一次過格晒價錢 → <a href="/review" style="color:#FF6B35;font-weight:600;">睇產品評價</a></p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;background:#fff;">
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#374151;"><strong>💬 討論區：</strong>同其他老年毛孩主人交流照顧心得，你唔係一個人 → <a href="/forum" style="color:#FF6B35;font-weight:600;">去討論區</a></p>
+        </div>
+      </div>
+
+      <div style="background:#F0FDF4;border-left:4px solid #16A34A;padding:16px 20px;border-radius:10px;margin:28px 0;">
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#166534;">老咗嘅佢，細細個就陪住你。而家輪到你，用多啲理解同耐性，陪佢行埋呢段路。🧡</p>
+      </div>
+
+      <div class="blog-cta-app">
+        <div class="cta-app-inner">
+          <div class="cta-app-text">
+            <h3>📱 下載 PetWell App</h3>
+            <ul>
+              <li>✅ 全港獸醫診所地圖 + 真人評價</li>
+              <li>✅ 記錄毛孩病歷、藥物同覆診</li>
+              <li>✅ 老年糧／關節保健品格價同評價</li>
+            </ul>
+            <p class="cta-app-desc">一個 App 搞掂毛孩嘅健康、飲食同生活大小事。</p>
+            <a href="/clinics" class="cta-btn-primary">🏥 即刻搵附近獸醫</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: #666; margin-top: 24px;">聲明：本文僅為一般性參考，唔可以取代獸醫診斷。如毛孩突然攻擊性大增、拒絕進食或明顯痛苦，請盡快求診。資料綜合自獸醫臨床常見老年寵物行為與痛症觀察。</p>
+
+      <div class="seo-hidden" aria-hidden="true">
+        <p>PetWell HK 香港老年狗狗貓咪脾氣暴躁完整指南：貓狗冇更年期、老年寵物關節炎牙痛感官退化認知障礙、senior dog cat aggression irritability、老年寵物照顧、防滑墊寵物樓梯、香港獸醫診所推介。</p>
+      </div>
+    `,
+    author: "PetWell HK",
+    date: "2026-08-09",
+    category: "寵物健康",
+    imageUrl: "/assets/blog-senior-pet-temper-cover.jpg",
+    seoKeywords: [
+      "老年狗脾氣暴躁",
+      "老年貓脾氣差",
+      "貓狗更年期",
+      "老年寵物照顧",
+      "老狗關節炎",
+      "老貓認知退化",
+      "寵物牙周病",
+      "老年狗攻擊性",
+      "老年貓唔開心",
+      "senior dog aggression",
+      "senior cat irritability",
+      "寵物感官退化",
+      "香港獸醫診所",
+      "老年寵物飲食",
+      "PetWell",
+    ],
+    seoDescription:
+      "貓狗並冇更年期。老年毛孩脾氣暴躁通常源於痛症（關節炎、牙周病）或感官／認知退化。附 5 個實用管理方法、家居改造建議，以及即刻要睇獸醫嘅警號。",
+    faqItems: [
+      {
+        question: "貓狗會唔會有更年期？",
+        answer:
+          "科學上狗同貓並冇「更年期」。佢哋唔會好似人咁因為荷爾蒙停經而情緒大變。老年毛孩忽然暴躁，背後通常係痛，或者感官／認知退化令佢失去安全感。",
+      },
+      {
+        question: "老狗老貓點解會忽然脾氣差？",
+        answer:
+          "兩大常見原因：① 周身痛（關節炎、腰骨／脊椎問題、牙周病），但佢哋講唔出；② 視覺、聽覺、嗅覺或認知退化，令世界變得可怕，嚇親就會彈起甚至咬。暴躁好多時係驚，唔係惡。",
+      },
+      {
+        question: "老年毛孩幾耐驗身一次？",
+        answer:
+          "一般建議狗約 7 歲起、貓約 10 歲起，每半年做一次身體檢查。好多「脾氣問題」其實係關節炎或牙周病，止痛同治牙之後性格往往明顯改善。",
+      },
+      {
+        question: "摸老年寵物有咩要注意？",
+        answer:
+          "接近時先出聲叫名，喺視線範圍內伸手，唔好喺後面突襲。由下巴、胸側開始摸，避開腰背同四肢關節位。發脾氣時唔好懲罰——佢可能係痛或者驚。",
+      },
+      {
+        question: "邊啲情況要即刻睇獸醫？",
+        answer:
+          "突然攻擊性大增、唔食嘢／明顯消瘦、躲埋唔想見人、摸某個位置會叫縮咬，或者半夜長時間嚎叫、迷失方向。呢啲可能係痛症或認知退化訊號，越早介入越好。可用 PetWell 搵附近獸醫診所。",
+      },
+    ],
+    relatedTopics: ["老年寵物照顧", "寵物關節炎", "寵物牙周病", "香港獸醫", "寵物認知退化"],
+  },,
   {
     id: "31",
     slug: "pet-ringworm-dog-cat-treatment-hk",

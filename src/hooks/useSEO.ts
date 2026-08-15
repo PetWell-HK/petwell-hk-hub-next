@@ -32,6 +32,16 @@ interface SEOProps {
 const BASE_URL = 'https://petwellhk.com';
 const DEFAULT_OG_IMAGE = 'https://storage.googleapis.com/gpt-engineer-file-uploads/JHL1szBw74V1hbPrOlIVhZq067C3/social-images/social-1759652520246-PetWell Logo (Instagram Post).png';
 
+function resolveOgImageUrl(image?: string | null): string {
+  if (!image || typeof image !== 'string') return DEFAULT_OG_IMAGE;
+  const trimmed = image.trim();
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith('//')) return `https:${trimmed}`;
+  if (trimmed.startsWith('/')) return `${BASE_URL}${trimmed}`;
+  // Bare S3 keys are not scrapeable without a signed URL — fall back.
+  return DEFAULT_OG_IMAGE;
+}
+
 // Store original meta values for cleanup
 let originalTitle = '';
 let originalDescription = '';
@@ -85,9 +95,11 @@ export const useSEO = ({
     }
     
     // Update OG tags
+    const resolvedOgImage = resolveOgImageUrl(ogImage);
     updateOGTag('og:title', title);
     updateOGTag('og:description', description);
-    updateOGTag('og:image', ogImage || DEFAULT_OG_IMAGE);
+    updateOGTag('og:image', resolvedOgImage);
+    updateOGTag('og:image:secure_url', resolvedOgImage);
     updateOGTag('og:type', ogType);
     updateOGTag('og:site_name', 'PetWell HK');
     updateOGTag('og:locale', 'zh_HK');
@@ -117,7 +129,7 @@ export const useSEO = ({
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', ogImage || DEFAULT_OG_IMAGE);
+    updateMetaTag('twitter:image', resolvedOgImage);
     updateMetaTag('twitter:site', '@PetWellHK');
     
     // Set canonical URL
