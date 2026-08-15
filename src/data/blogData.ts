@@ -439,7 +439,7 @@ const baseBlogPosts: BlogPost[] = [
       },
     ],
     relatedTopics: ["老年寵物照顧", "寵物關節炎", "寵物牙周病", "香港獸醫", "寵物認知退化"],
-  },,
+  },
   {
     id: "31",
     slug: "pet-ringworm-dog-cat-treatment-hk",
