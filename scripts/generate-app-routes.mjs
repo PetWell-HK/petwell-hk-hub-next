@@ -1,4 +1,4 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -440,10 +440,11 @@ function esc(str) {
 function renderClientPage(pageName) {
   return `"use client";
 
+import ClientPage from "@/components/ClientPage";
 import Page from "@/views/${pageName}";
 
 export default function RoutePage() {
-  return <Page />;
+  return <ClientPage Page={Page} />;
 }
 `;
 }

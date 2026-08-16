@@ -1,5 +1,6 @@
 import christmasPetParty from '@/assets/christmas-pet-party.jpg';
 import popwalkChristmasMarket from '@/assets/popwalk-christmas-market.jpg';
+import { imageSrc } from '@/lib/imageSrc';
 
 export type Personality = 'party' | 'warm' | 'hea';
 
@@ -379,7 +380,7 @@ export const christmasEvents: ChristmasEvent[] = [
     source: '',
     sourceUrl: '',
     remark: '將軍澳 PopWalk 舉辦聖誕寵物友善市集，由「肉球城市」策劃，集合多個寵物品牌和手作檔，並設有「聖誕糧倉」捐糧活動、免費寵物健康諮詢、領養日及主題講座等。現場設 DIY 工作坊、寵物聖誕造型比賽及 busking 表演，是區內毛孩家庭於聖誕週末的聚腳點。',
-    imageUrl: popwalkChristmasMarket,
+    imageUrl: imageSrc(popwalkChristmasMarket),
     recommendedFor: ['party'],
     latitude: 22.3082447,
     longitude: 114.2595131,
@@ -415,7 +416,7 @@ export const christmasEvents: ChristmasEvent[] = [
     source: '',
     sourceUrl: '',
     remark: '為迎接平安夜，wwwtc mall 於全新 L5 維港空中花園舉辦「萌寵平安夜派對」，讓毛孩與主人一同在維港夜景下過節。現場有泡泡雜耍表演、兒童面部彩繪、寵物訓練互動、寵物攝影及飄雪體驗等，更設寵物食品試食、寵物速寫及聖誕花圈工作坊（憑指定消費報名）。參加者可憑場內消費換領活動入場證，與毛孩在空中花園度過一個別具氣氛的平安夜。',
-    imageUrl: christmasPetParty,
+    imageUrl: imageSrc(christmasPetParty),
     recommendedFor: ['party'],
     latitude: 22.2815279,
     longitude: 114.1842189,
