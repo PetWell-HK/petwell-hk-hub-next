@@ -25,12 +25,32 @@ function detectStorePlatform(): StorePlatform {
   return "desktop";
 }
 
+function storeUrlFor(platform: StorePlatform): string | null {
+  switch (platform) {
+    case "ios":
+      return APP_STORE_URL;
+    case "android":
+      return PLAY_STORE_URL;
+    case "desktop":
+      return null;
+    default: {
+      const _never: never = platform;
+      return _never;
+    }
+  }
+}
+
 const Download = () => {
   const { t } = useTranslation();
   const [platform, setPlatform] = useState<StorePlatform>("desktop");
 
   useEffect(() => {
-    setPlatform(detectStorePlatform());
+    const detected = detectStorePlatform();
+    setPlatform(detected);
+    const storeUrl = storeUrlFor(detected);
+    if (storeUrl) {
+      window.location.href = storeUrl;
+    }
   }, []);
 
   const isDesktop = platform === "desktop";
