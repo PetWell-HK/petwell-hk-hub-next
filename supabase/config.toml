@@ -5,6 +5,3 @@ verify_jwt = true
 
 [functions.getS3ImageUrl]
 verify_jwt = false
-
-[functions.sync-vendor-application-to-notion]
-verify_jwt = false

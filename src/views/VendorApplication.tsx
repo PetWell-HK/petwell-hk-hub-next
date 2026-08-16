@@ -31,7 +31,6 @@ import { toast } from "sonner";
 import { useSEO } from "@/hooks/useSEO";
 import { useAuth } from "@/contexts/AuthContext";
 import { createContactUsReport } from "@/services/reportService";
-import { syncVendorApplicationToNotion } from "@/services/vendorApplicationService";
 import { cn } from "@/lib/utils";
 
 const vendorEventCover = "/assets/vendor-event-cover.jpg";
@@ -409,32 +408,15 @@ const VendorApplication = () => {
 
     setSubmitting(true);
     try {
-      await Promise.all([
-        createContactUsReport({
-          reporterId: isAuthenticated === true ? userInfo?.userId ?? null : null,
-          message,
-          contact: {
-            reporterName: data.contactName,
-            reporterEmail: data.email.trim().toLowerCase(),
-            reporterPhone: data.phone.trim(),
-          },
-        }),
-        syncVendorApplicationToNotion({
-          joinType,
-          joinLabel,
-          brandName: data.brandName,
-          brandIntro: data.brandIntro || undefined,
-          productDesc: data.productDesc,
-          contactName: data.contactName,
-          phone: data.phone.trim(),
-          email: data.email.trim().toLowerCase(),
-          ig: data.ig || undefined,
-          electricity: data.electricity || undefined,
-          equipment: data.equipment || undefined,
-          isSponsorOnly,
-          unitLabel,
-        }),
-      ]);
+      await createContactUsReport({
+        reporterId: isAuthenticated === true ? userInfo?.userId ?? null : null,
+        message,
+        contact: {
+          reporterName: data.contactName,
+          reporterEmail: data.email.trim().toLowerCase(),
+          reporterPhone: data.phone.trim(),
+        },
+      });
       navigate("/vendor-application/thank-you", { replace: true });
     } catch (error) {
       console.error("Failed to submit vendor application:", error);
