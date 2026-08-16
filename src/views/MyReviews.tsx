@@ -20,6 +20,7 @@ const MyReviews = () => {
   const { openPanel } = useAuthPanel();
   const userId = userInfo?.userId;
   const isLoggedIn = isAuthenticated === true && Boolean(userId);
+  const isAuthPending = isAuthenticated !== false && !isLoggedIn;
 
   useSEO({
     title: `${t("userReviews.myReviews")} | PetWell`,
@@ -61,16 +62,16 @@ const MyReviews = () => {
         </section>
 
         <section className="container mx-auto px-4 py-8">
-          {!isLoggedIn ? (
+          {isAuthPending || (isLoggedIn && isLoading) ? (
+            <div className="flex items-center justify-center py-16 text-muted-foreground">
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              {t("userReviews.loading")}
+            </div>
+          ) : isAuthenticated === false ? (
             <div className="mx-auto max-w-lg rounded-xl border border-border bg-card p-8 text-center">
               <h2 className="mb-2 text-lg font-semibold">{t("userReviews.loginRequiredTitle")}</h2>
               <p className="mb-5 text-sm text-muted-foreground">{t("userReviews.loginRequiredBody")}</p>
               <Button onClick={() => openPanel("LANDING")}>{t("auth.login")}</Button>
-            </div>
-          ) : isLoading ? (
-            <div className="flex items-center justify-center py-16 text-muted-foreground">
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-              {t("userReviews.loading")}
             </div>
           ) : (
             <>

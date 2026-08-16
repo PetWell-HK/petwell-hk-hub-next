@@ -15,10 +15,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu, LogIn, LogOut, ChevronDown, MessageSquareText } from "lucide-react";
+import { Menu, LogIn, ChevronDown } from "lucide-react";
 const logo = "/assets/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import NameTagBanner from "./NameTagBanner";
+import UserAccountMenu from "./UserAccountMenu";
 import { useAuth } from "@/contexts/AuthContext";
 import { signOutUser } from "@/services/authService";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
@@ -30,7 +31,9 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
-  const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const { isAuthenticated, userInfo, setIsAuthenticated } = useAuth();
+  const showAccountMenu = isAuthenticated === true && Boolean(userInfo);
+  const authResolved = isAuthenticated !== null;
   const { openPanel } = useAuthPanel();
 
   const isPetFriendlyActive = PET_FRIENDLY_PATHS.some(
@@ -130,25 +133,10 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center gap-4">
             <LanguageSwitcher />
-            {isAuthenticated ? (
-              <>
-                <Button
-                  variant="ghost"
-                  onClick={() => navigate("/account/reviews")}
-                  className="items-center gap-2"
-                >
-                  <MessageSquareText className="h-4 w-4" />
-                  {t("userReviews.myReviews")}
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={handleLogout}
-                  className="items-center gap-2"
-                >
-                  <LogOut className="h-4 w-4" />
-                  {t('auth.logout')}
-                </Button>
-              </>
+            {!authResolved || (isAuthenticated && !userInfo) ? (
+              <span className="h-9 w-9 rounded-full bg-muted animate-pulse" aria-hidden />
+            ) : showAccountMenu ? (
+              <UserAccountMenu variant="desktop" onLogout={handleLogout} />
             ) : (
               <Button
                 variant="outline"
@@ -189,7 +177,16 @@ const Header = () => {
                     <img src={logo} alt={t("nav.logoAlt")} className="h-8 w-auto" />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-6">
+                {showAccountMenu ? (
+                  <div className="mt-6">
+                    <UserAccountMenu
+                      variant="mobile"
+                      onLogout={handleLogout}
+                      onNavigate={() => setIsOpen(false)}
+                    />
+                  </div>
+                ) : null}
+                <nav className={`${showAccountMenu ? "mt-6" : "mt-8"} flex flex-col gap-6`}>
                   {navLinks.map((link) => {
                     if ("petFriendly" in link && link.petFriendly) {
                       return (
@@ -254,32 +251,7 @@ const Header = () => {
                   
                   <div className="pt-4 border-t border-border space-y-4">
                     <div className="flex items-center gap-2 flex-wrap">
-                      {isAuthenticated ? (
-                        <>
-                          <Button
-                            variant="outline"
-                            onClick={() => {
-                              navigate("/account/reviews");
-                              setIsOpen(false);
-                            }}
-                            className="justify-start"
-                          >
-                            <MessageSquareText className="h-4 w-4 mr-2" />
-                            {t("userReviews.myReviews")}
-                          </Button>
-                          <Button
-                            variant="outline"
-                            onClick={() => {
-                              handleLogout();
-                              setIsOpen(false);
-                            }}
-                            className="justify-start"
-                          >
-                            <LogOut className="h-4 w-4 mr-2" />
-                            {t('auth.logout')}
-                          </Button>
-                        </>
-                      ) : (
+                      {isAuthenticated === false ? (
                         <Button
                           variant="outline"
                           onClick={() => {
@@ -291,7 +263,7 @@ const Header = () => {
                           <LogIn className="h-4 w-4 mr-2" />
                           {t('auth.login')}
                         </Button>
-                      )}
+                      ) : null}
                       <LanguageSwitcher />
                     </div>
                   </div>

@@ -381,6 +381,11 @@ const routes = [
     seo: { title: "ç”¢å“æ¯”è¼ƒ | PetWell HK", description: "æ¯”è¼ƒå¯µç‰©é£Ÿå“ç”¢å“ã€‚", path: "/compare", noIndex: true },
   },
   {
+    route: "account",
+    page: "AccountProfile",
+    seo: { title: "個人檔案 | PetWell HK", description: "查看及編輯你的 PetWell 個人檔案。", path: "/account", noIndex: true },
+  },
+  {
     route: "account/reviews",
     page: "MyReviews",
     seo: { title: "æˆ‘çš„è©•åƒ¹ | PetWell HK", description: "ç®¡ç†ä½ çš„è©•åƒ¹ã€‚", path: "/account/reviews", noIndex: true },

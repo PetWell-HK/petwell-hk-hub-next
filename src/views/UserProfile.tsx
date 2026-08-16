@@ -90,7 +90,7 @@ const UserProfile = () => {
   });
 
   if (isOwnProfile) {
-    return <Navigate to="/account/reviews" replace />;
+    return <Navigate to="/account" replace />;
   }
 
   const loading = loadingClient || loadingReviews;
