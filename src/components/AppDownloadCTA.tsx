@@ -2,8 +2,8 @@ import { assetSrc } from "@/lib/assetSrc";
 import { cn } from "@/lib/utils";
 
 const logo = "/assets/logo.png";
-const appStoreBadge = "/assets/app-store-badge-new.png";
-const googlePlayBadge = "/assets/google-play-badge-new.png";
+const appStoreBadge = "/assets/store-badges/app-store.svg";
+const googlePlayBadge = "/assets/store-badges/google-play.svg";
 
 export const APP_STORE_URL =
   "https://apps.apple.com/hk/app/petwell-hk/id6747191070?l=en-GB";
@@ -53,29 +53,29 @@ export function AppDownloadCTA({
           {description}
         </p>
       ) : null}
-      <div className="flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-3">
         <a
           href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-[150px] transition-opacity hover:opacity-80 sm:w-[140px]"
+          className="inline-flex h-12 w-[162px] items-center justify-center transition-opacity hover:opacity-80"
         >
           <img
             src={appStoreBadge}
             alt="Download on the App Store"
-            className="h-auto w-full object-contain"
+            className="h-12 w-[162px] object-contain"
           />
         </a>
         <a
           href={PLAY_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-[150px] transition-opacity hover:opacity-80 sm:w-[140px]"
+          className="inline-flex h-12 w-[162px] items-center justify-center transition-opacity hover:opacity-80"
         >
           <img
             src={googlePlayBadge}
             alt="Get it on Google Play"
-            className="h-auto w-full object-contain"
+            className="h-12 w-[162px] object-contain"
           />
         </a>
       </div>
