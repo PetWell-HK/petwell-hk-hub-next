@@ -2074,7 +2074,10 @@
     "tooManyRequests": "請求過多。請稍候幾分鐘。",
     "accountLocked": "帳戶暫時被鎖定",
     "accountTemporarilyLocked": "帳戶暫時被鎖定。請稍後再試。",
-    "failedToLogin": "登入失敗"
+    "failedToLogin": "登入失敗",
+    "setNewPassword": "設定新密碼",
+    "newPasswordRequiredDesc": "此帳戶需要設定新密碼才能完成登入。",
+    "savingPassword": "儲存中..."
   },
   "authLinking": {
     "signInMethodHint": "請使用您註冊時的登入方式。電郵/密碼與 Google 在連結前視為不同帳戶。",

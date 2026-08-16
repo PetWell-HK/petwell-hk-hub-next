@@ -2074,7 +2074,10 @@
     "tooManyRequests": "Too many requests. Please wait a few minutes.",
     "accountLocked": "Account temporarily locked",
     "accountTemporarilyLocked": "Account temporarily locked. Please try again later.",
-    "failedToLogin": "Failed to login"
+    "failedToLogin": "Failed to login",
+    "setNewPassword": "Set a new password",
+    "newPasswordRequiredDesc": "This account needs a new password before you can sign in.",
+    "savingPassword": "Saving..."
   },
   "authLinking": {
     "signInMethodHint": "Use the same sign-in method you registered with. Email/password and Google are separate until linked.",

@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { signUp, confirmSignUp, resendSignUpCode, resetPassword, confirmResetPassword, getCurrentUser } from "aws-amplify/auth";
+import { signUp, confirmSignUp, resendSignUpCode, resetPassword, confirmResetPassword, getCurrentUser, confirmSignIn, signOut } from "aws-amplify/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -87,6 +87,8 @@ const AuthPanel = () => {
   const [timeRemaining, setTimeRemaining] = useState(60);
   const [confirmationCode, setConfirmationCode] = useState("");
   const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [userType, setUserType] = useState<"NEW" | "EXISTING" | null>(null);
   const [profile, setProfile] = useState(DEFAULT_PROFILE);
   const [hasPendingSignUp, setHasPendingSignUp] = useState(false);
@@ -111,6 +113,8 @@ const AuthPanel = () => {
       setError(null);
       setConfirmationCode("");
       setPassword("");
+      setNewPassword("");
+      setConfirmNewPassword("");
       setSocialProviderLoading(null);
       setCodePaused(false);
       setTimeRemaining(60);
@@ -204,7 +208,7 @@ const AuthPanel = () => {
     setError(null);
 
     try {
-      const { isSignedIn } = await signInWithAutoSignOut({
+      const { isSignedIn, nextStep } = await signInWithAutoSignOut({
         username: email,
         password,
         options: { authFlowType: "USER_PASSWORD_AUTH" }
@@ -215,6 +219,15 @@ const AuthPanel = () => {
         return;
       }
 
+      if (nextStep?.signInStep === "CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED") {
+        setNewPassword("");
+        setConfirmNewPassword("");
+        setView("NEW_PASSWORD");
+        setLoading(false);
+        return;
+      }
+
+      setError(t("auth.unknownError"));
       setLoading(false);
     } catch (error: any) {
       console.error("Existing user login error:", error);
@@ -237,6 +250,52 @@ const AuthPanel = () => {
         return;
       }
 
+      setError(error.message || t("auth.unknownError"));
+      setLoading(false);
+    }
+  };
+
+  const abortPendingSignIn = async () => {
+    try {
+      await signOut();
+    } catch {
+      // Ignore — used to drop an unfinished Cognito challenge.
+    }
+  };
+
+  const handleConfirmNewPassword = async () => {
+    if (!newPassword) {
+      setError(t("auth.passwordRequired"));
+      return;
+    }
+
+    if (!isValidPassword(newPassword)) {
+      setError(t("auth.passwordInvalid"));
+      return;
+    }
+
+    if (newPassword !== confirmNewPassword) {
+      setError(t("auth.passwordsDoNotMatch"));
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { isSignedIn } = await confirmSignIn({
+        challengeResponse: newPassword,
+      });
+
+      if (isSignedIn) {
+        await completeLogin();
+        return;
+      }
+
+      setError(t("auth.unknownError"));
+      setLoading(false);
+    } catch (error: any) {
+      console.error("Confirm new password error:", error);
       setError(error.message || t("auth.unknownError"));
       setLoading(false);
     }
@@ -621,8 +680,12 @@ const AuthPanel = () => {
         return t("auth.verifyEmail");
       case "PROFILE":
         return t("auth.completeProfile");
-      default:
-        return t("auth.welcomeBack");
+      case "NEW_PASSWORD":
+        return t("auth.setNewPassword");
+      default: {
+        const _exhaustive: never = currentView;
+        return _exhaustive;
+      }
     }
   };
 
@@ -636,8 +699,12 @@ const AuthPanel = () => {
         return `${t("auth.otpSentTo")} ${email}`;
       case "PROFILE":
         return t("auth.completeProfileDesc");
-      default:
-        return "";
+      case "NEW_PASSWORD":
+        return t("auth.newPasswordRequiredDesc");
+      default: {
+        const _exhaustive: never = currentView;
+        return _exhaustive;
+      }
     }
   };
 
@@ -647,6 +714,9 @@ const AuthPanel = () => {
         if (isProfileCompletionRequired) {
           void handleForcedProfileClose();
           return;
+        }
+        if (currentView === "NEW_PASSWORD") {
+          void abortPendingSignIn();
         }
         closePanel();
       }
@@ -856,6 +926,94 @@ const AuthPanel = () => {
                   onClick={() => {
                     setView("LANDING");
                     setPassword("");
+                    setError(null);
+                  }}
+                  disabled={loading}
+                >
+                  <ArrowLeft className="h-4 w-4 mr-1" />
+                  {t("auth.back")}
+                </Button>
+              </div>
+            </>
+          )}
+
+          {/* NEW_PASSWORD VIEW - Cognito FORCE_CHANGE_PASSWORD challenge */}
+          {currentView === "NEW_PASSWORD" && (
+            <>
+              <div className="flex items-center gap-2 p-3 rounded-md bg-muted/50 border">
+                <Mail className="h-4 w-4 text-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground truncate">{email}</span>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="new-password">{t("auth.password")}</Label>
+                <Input
+                  id="new-password"
+                  type="password"
+                  value={newPassword}
+                  onChange={(e) => {
+                    setNewPassword(e.target.value);
+                    setError(null);
+                  }}
+                  placeholder={t("auth.passwordPlaceholder")}
+                  disabled={loading}
+                  autoFocus
+                  autoComplete="new-password"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !loading) {
+                      handleConfirmNewPassword();
+                    }
+                  }}
+                />
+                <div className="text-xs text-muted-foreground">{t("auth.passwordHint")}</div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="confirm-new-password">{t("auth.confirmPassword")}</Label>
+                <Input
+                  id="confirm-new-password"
+                  type="password"
+                  value={confirmNewPassword}
+                  onChange={(e) => {
+                    setConfirmNewPassword(e.target.value);
+                    setError(null);
+                  }}
+                  placeholder={t("auth.confirmPasswordPlaceholder")}
+                  disabled={loading}
+                  autoComplete="new-password"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !loading) {
+                      handleConfirmNewPassword();
+                    }
+                  }}
+                />
+              </div>
+
+              <Button
+                onClick={handleConfirmNewPassword}
+                disabled={loading || !newPassword || !confirmNewPassword}
+                className="w-full bg-[#FF902A] hover:bg-[#FF7A1A] text-white"
+                size="lg"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    {t("auth.savingPassword")}
+                  </>
+                ) : (
+                  t("auth.setNewPassword")
+                )}
+              </Button>
+
+              <div className="text-center">
+                <Button
+                  variant="link"
+                  className="text-sm"
+                  onClick={() => {
+                    void abortPendingSignIn();
+                    setView("PASSWORD");
+                    setNewPassword("");
+                    setConfirmNewPassword("");
                     setError(null);
                   }}
                   disabled={loading}
