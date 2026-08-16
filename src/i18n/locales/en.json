@@ -1134,16 +1134,69 @@
     }
   },
   "download": {
-    "title": "Download Now",
+    "seo": {
+      "title": "Download PetWell App | Hong Kong Pet Health",
+      "description": "Free download of PetWell — Hong Kong vet clinic reviews, pet-friendly restaurants, health records and price alerts. Available on iOS and Android.",
+      "keywords": "PetWell App, download pet app, Hong Kong pet health, vet clinic app, pet-friendly restaurants app"
+    },
+    "eyebrow": "Free · iOS and Android",
+    "title": "Hong Kong pet life",
+    "titleHighlight": "in your pocket.",
+    "subtitle": "Clinic reviews, pet-friendly places, health records and price alerts — one app, no credit card.",
     "subtitle1": "Hong Kong's First Pet Health Management Platform",
     "subtitle2": "All-in-One Care for Your Furry Friend",
-    "ctaTitle": "Limited Time Exclusive Offer",
-    "ctaDescription": "Reserve now and get a free smart pet tag to prevent your pet from getting lost!",
+    "primaryIos": "Download on the App Store",
+    "primaryAndroid": "Get it on Google Play",
+    "openStore": "Open the app store",
+    "scanLabel": "Scan to download",
+    "scanHint": "Point your camera at the QR code to open the matching store.",
+    "storesLabel": "Choose your store",
+    "recommended": "Recommended",
+    "appStoreAlt": "Download PetWell on the App Store",
+    "playStoreAlt": "Get PetWell on Google Play",
+    "previewAlt": "PetWell app screens: clinic search, price comparison, and pet-friendly restaurants",
+    "whyEyebrow": "Why the app",
+    "whyTitle": "The web is for browsing. The app is for keeping up.",
+    "reasons": {
+      "alerts": {
+        "title": "Price and emergency alerts",
+        "description": "Deals, wishlists, and 24-hour clinic info reach your phone first."
+      },
+      "records": {
+        "title": "Health records with you",
+        "description": "Vaccines, ER visits, and medications stay on file when you switch vets."
+      },
+      "places": {
+        "title": "Hong Kong, searchable",
+        "description": "200+ clinics and 1,500+ pet-friendly restaurants — maps, phone, reviews."
+      },
+      "free": {
+        "title": "Completely free",
+        "description": "Download, reviews, and health records cost nothing."
+      }
+    },
+    "ctaTitle": "Limited-time offer",
+    "ctaDescription": "After you install the app, reserve a free anti-lost smart pet tag.",
     "feature1": "Real-time GPS tracking",
     "feature2": "One-tap owner contact",
     "feature3": "Lifetime warranty service",
-    "ctaButton": "Get Your Free Smart Pet Tag Now",
-    "disclaimer": "*Limited quantity, while supplies last"
+    "ctaButton": "Claim a free smart pet tag",
+    "disclaimer": "Limited quantity, while supplies last.",
+    "faqTitle": "Download questions",
+    "faq": {
+      "platforms": {
+        "question": "Which phones are supported?",
+        "answer": "iPhone via the App Store and Android via Google Play. Search “PetWell HK” — it’s free."
+      },
+      "needApp": {
+        "question": "Do I have to download the app?",
+        "answer": "The website is enough for browsing restaurants and clinics. The app is for alerts, health records, and checking emergency clinics on the go."
+      },
+      "desktop": {
+        "question": "How do I download from a computer?",
+        "answer": "Scan the QR code on this page with your phone, or open the App Store / Google Play and search PetWell HK."
+      }
+    }
   },
   "event": {
     "status": {
@@ -2513,8 +2566,13 @@
   },
   "userReviews": {
     "myReviews": "My Reviews",
-    "mySubtitle": "All place and product reviews you have written on PetWell.",
+    "mySubtitle": "Places you have been with your pet, written down.",
     "myEmpty": "You have not written any reviews yet.",
+    "myEmptyTitle": "No reviews yet",
+    "myEmptyBody": "Write about a restaurant or clinic you visited with your pet — it helps other owners.",
+    "emptyCtaRestaurants": "Find restaurants",
+    "emptyCtaClinics": "Find clinics",
+    "searchPlaceholder": "Search a place or product",
     "mySeoDescription": "View all reviews you have written on PetWell.",
     "publicEmpty": "This user has not shared any reviews yet.",
     "publicSeoDescription": "View public place and product reviews from this PetWell member.",
@@ -2546,15 +2604,16 @@
   },
   "accountProfile": {
     "title": "Profile",
-    "subtitle": "Your PetWell account, personal details, and pets.",
+    "subtitle": "You and your pets on PetWell.",
     "seoDescription": "View and edit your PetWell profile.",
     "breadcrumb": "Profile",
-    "loginRequiredTitle": "Sign in to view your profile",
-    "loginRequiredBody": "Log in to your PetWell account to see your personal profile and pets.",
+    "sections": "Account sections",
+    "loginRequiredTitle": "Sign in to open your profile",
+    "loginRequiredBody": "Log in to see your details, your pets, and the reviews you have written.",
     "loading": "Loading profile…",
     "loadFailed": "Could not load your profile right now. Please try again later.",
     "personalInfo": "Personal info",
-    "edit": "Edit",
+    "edit": "Edit profile",
     "editProfile": "Edit profile",
     "editProfileDesc": "Update your name, phone, address, and photo.",
     "firstName": "First name",
@@ -2578,12 +2637,19 @@
     "petCount": "{{count}}/{{max}}",
     "sharedBadge": "Shared",
     "sharingBadge": "Sharing",
-    "noPets": "You have not added any pets yet.",
-    "noPetsHint": "Add and manage pets in the PetWell app.",
-    "manageInApp": "Manage pets in the app",
+    "noPets": "No pets on this profile yet",
+    "noPetsHint": "Create their profile in the app so health records stay with you.",
+    "manageInApp": "Manage in the app",
+    "managePetInApp": "Manage {{name}} in the app",
     "addPet": "Add a pet",
+    "appHint": "Add or edit pets in the PetWell app.",
     "downloadGateTitle": "Manage pets in the PetWell app",
-    "downloadGateBody": "Adding, editing, sharing, and vaccine records are available in the PetWell app. Download it to manage your pets.",
+    "downloadGateBody": "Adding, editing, sharing, and vaccine records are available in the PetWell app.",
+    "reviewsTeaser": "Your reviews",
+    "reviewsTeaserCta": "See all",
+    "reviewsTeaserEmpty": "Write your first review to help other pet owners.",
+    "ageYears": "{{count}} years old",
+    "ageMonths": "{{count}} months old",
     "activity": "Activity",
     "account": "Account",
     "deleteAccount": "Delete account",

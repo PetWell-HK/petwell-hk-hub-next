@@ -1,4 +1,4 @@
-﻿/** Customer photos showing received PetWell anti-lost name tags. */
+/** Customer photos showing received PetWell anti-lost name tags. */
 export const NAMETAG_TESTIMONIAL_IMAGES: string[] = [
   "/assets/nametag/testimonials/testimonial-01.png",
   "/assets/nametag/testimonials/testimonial-02.png",

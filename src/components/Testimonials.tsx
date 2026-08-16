@@ -1,4 +1,4 @@
-﻿import { useMemo } from "react";
+import { useMemo } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const elaineAvatar = "/assets/testimonial-elaine.jpg";
 const matthewAvatar = "/assets/testimonial-matthew.jpg";

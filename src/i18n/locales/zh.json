@@ -1134,16 +1134,69 @@
     }
   },
   "download": {
-    "title": "立即下載",
+    "seo": {
+      "title": "下載 PetWell App | 香港寵物健康管理",
+      "description": "免費下載 PetWell。香港獸醫診所評價、寵物友善餐廳、健康紀錄與價格提醒，iOS 與 Android 均適用。",
+      "keywords": "PetWell App,下載寵物App,香港寵物健康,獸醫診所App,寵物友善餐廳App"
+    },
+    "eyebrow": "免費 · iOS 與 Android",
+    "title": "香港寵物生活",
+    "titleHighlight": "放進口袋。",
+    "subtitle": "獸醫評價、友善餐廳、健康紀錄與價格提醒 — 一個 App 搞掂，無需信用卡。",
     "subtitle1": "全港首個寵物健康管理平台",
     "subtitle2": "一站式照顧您的毛孩健康",
+    "primaryIos": "在 App Store 下載",
+    "primaryAndroid": "在 Google Play 下載",
+    "openStore": "開啟應用商店",
+    "scanLabel": "手機掃描下載",
+    "scanHint": "用相機對準 QR Code，會開啟對應的 App Store 或 Google Play。",
+    "storesLabel": "選擇你的商店",
+    "recommended": "建議",
+    "appStoreAlt": "在 App Store 下載 PetWell",
+    "playStoreAlt": "在 Google Play 下載 PetWell",
+    "previewAlt": "PetWell App 介面：診所搜尋、用品格價與寵物友善餐廳",
+    "whyEyebrow": "用 App 更好",
+    "whyTitle": "網站能睇，App 更跟得貼",
+    "reasons": {
+      "alerts": {
+        "title": "價格與急症提醒",
+        "description": "減價、追蹤清單同 24 小時診所資訊，第一時間喺手機收到。"
+      },
+      "records": {
+        "title": "健康紀錄隨身",
+        "description": "針卡、急診、用藥紀錄永久保存，轉醫生都唔使翻箱倒櫃。"
+      },
+      "places": {
+        "title": "全港場所一搜即到",
+        "description": "200+ 診所、1500+ 友善餐廳，地圖、電話、評價一次過。"
+      },
+      "free": {
+        "title": "完全免費",
+        "description": "下載、查評價、記健康紀錄都唔使畀錢。"
+      }
+    },
     "ctaTitle": "限時專屬優惠",
-    "ctaDescription": "搶先預約，免費領取專屬寵物防走失智能名牌！",
+    "ctaDescription": "下載 App 後，可預約免費領取防走失智能名牌。",
     "feature1": "即時定位追蹤功能",
     "feature2": "一鍵聯絡主人",
     "feature3": "終身保固服務",
-    "ctaButton": "立即免費領取防走失智能名牌",
-    "disclaimer": "*數量有限，送完即止"
+    "ctaButton": "免費領取防走失名牌",
+    "disclaimer": "數量有限，送完即止。",
+    "faqTitle": "下載常見問題",
+    "faq": {
+      "platforms": {
+        "question": "支援邊啲手機？",
+        "answer": "iPhone 經 App Store、Android 經 Google Play 免費下載。搜尋「PetWell HK」即可。"
+      },
+      "needApp": {
+        "question": "一定要下載先用到？",
+        "answer": "網站都可以搜尋餐廳同診所。App 適合需要推播提醒、健康紀錄同隨身查急症嘅主人。"
+      },
+      "desktop": {
+        "question": "電腦點樣下載？",
+        "answer": "用手機掃描本頁 QR Code，或喺手機打開 App Store / Google Play 搜尋 PetWell HK。"
+      }
+    }
   },
   "event": {
     "status": {
@@ -2513,8 +2566,13 @@
   },
   "userReviews": {
     "myReviews": "我的評論",
-    "mySubtitle": "你在 PetWell 寫過的所有場所及產品評論。",
+    "mySubtitle": "你帶毛孩去過、寫下來的地方。",
     "myEmpty": "你尚未撰寫任何評論。",
+    "myEmptyTitle": "還沒寫過評論",
+    "myEmptyBody": "帶毛孩去過的餐廳、診所，寫下來可以幫其他家長。",
+    "emptyCtaRestaurants": "搵餐廳",
+    "emptyCtaClinics": "搵診所",
+    "searchPlaceholder": "搜尋場所或產品名稱",
     "mySeoDescription": "查看你在 PetWell 寫過的所有評論。",
     "publicEmpty": "此用戶尚未公開任何評論。",
     "publicSeoDescription": "查看此 PetWell 會員的公開場所及產品評論。",
@@ -2535,7 +2593,7 @@
     "externalUser": "外部用戶",
     "unknownUser": "未知用戶",
     "loginRequiredTitle": "登入後查看你的評論",
-    "loginRequiredBody": "登入 PetWell 帳戶即可查看你寫過的評論。",
+    "loginRequiredBody": "登入後即可看到你寫過的場所與產品評論。",
     "types": {
       "clinic": "診所",
       "salon": "美容院",
@@ -2546,16 +2604,17 @@
   },
   "accountProfile": {
     "title": "個人檔案",
-    "subtitle": "你的 PetWell 帳戶、個人資料與寵物。",
+    "subtitle": "你同毛孩喺 PetWell 的家。",
     "seoDescription": "查看及編輯你的 PetWell 個人檔案。",
     "breadcrumb": "個人檔案",
-    "loginRequiredTitle": "登入後查看個人檔案",
-    "loginRequiredBody": "登入 PetWell 帳戶即可查看你的個人資料與寵物。",
+    "sections": "帳戶分頁",
+    "loginRequiredTitle": "登入後回到你的檔案",
+    "loginRequiredBody": "登入後即可看到你的資料、毛孩，以及你寫過的評論。",
     "loading": "載入個人檔案中…",
     "loadFailed": "暫時無法載入個人檔案，請稍後再試。",
     "personalInfo": "個人資料",
-    "edit": "編輯",
-    "editProfile": "編輯個人資料",
+    "edit": "編輯檔案",
+    "editProfile": "編輯檔案",
     "editProfileDesc": "更新你的姓名、電話、地址及頭像。",
     "firstName": "名字",
     "lastName": "姓氏",
@@ -2574,16 +2633,23 @@
     "firstNameRequired": "請輸入名字。",
     "lastNameRequired": "請輸入姓氏。",
     "phoneInvalid": "請輸入有效的 8 位香港電話號碼。",
-    "myPets": "我的寵物",
+    "myPets": "我的毛孩",
     "petCount": "{{count}}/{{max}}",
     "sharedBadge": "共享",
     "sharingBadge": "分享中",
-    "noPets": "你尚未新增任何寵物。",
-    "noPetsHint": "請在 PetWell App 新增及管理寵物。",
-    "manageInApp": "在 App 管理寵物",
-    "addPet": "新增寵物",
-    "downloadGateTitle": "請在 PetWell App 管理寵物",
-    "downloadGateBody": "新增、編輯、分享寵物及電子針卡只可在 PetWell App 完成。下載 App 即可管理你的寵物。",
+    "noPets": "還沒有毛孩檔案",
+    "noPetsHint": "在 App 為牠建立檔案，健康紀錄同針卡都會跟住你。",
+    "manageInApp": "在 App 管理",
+    "managePetInApp": "在 App 管理 {{name}}",
+    "addPet": "新增毛孩",
+    "appHint": "新增或編輯毛孩請使用 PetWell App。",
+    "downloadGateTitle": "請在 PetWell App 管理毛孩",
+    "downloadGateBody": "新增、編輯、分享寵物及電子針卡只可在 PetWell App 完成。",
+    "reviewsTeaser": "你寫過的評論",
+    "reviewsTeaserCta": "查看全部",
+    "reviewsTeaserEmpty": "寫第一則評論，幫其他毛孩家長。",
+    "ageYears": "{{count}} 歲",
+    "ageMonths": "{{count}} 個月",
     "activity": "動態",
     "account": "帳號",
     "deleteAccount": "刪除帳戶",

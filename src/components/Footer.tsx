@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Facebook, Youtube, Instagram } from "lucide-react";
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <Link to="/" className="flex items-center mb-4">
-                <img src={logo} alt="PetWellé¦™æ¸¯å¯µç‰©å¥åº·App - ç¸é†«è¨ºæ‰€è©•åƒ¹ã€å¯µç‰©å¥åº·ç®¡ç†" className="h-8 w-auto brightness-0 invert" />
+                <img src={logo} alt="PetWell香港寵物健康App - 獸醫診所評價、寵物健康管理" className="h-8 w-auto brightness-0 invert" />
               </Link>
               <p className="text-sm text-background/80">
                 {t("footer.tagline")}

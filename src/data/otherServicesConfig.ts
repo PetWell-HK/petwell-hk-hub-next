@@ -1,4 +1,4 @@
-﻿import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BarChart3,
@@ -69,7 +69,7 @@ export type HeroShowcaseItem = {
 
 export type AudienceCardImage = {
   src: string;
-  /** Mobile object-position â€” crops from bottom first */
+  /** Mobile object-position — crops from bottom first */
   objectPosition: string;
   /** Desktop object-position; falls back to objectPosition when omitted */
   objectPositionDesktop?: string;

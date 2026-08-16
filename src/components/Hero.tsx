@@ -1,4 +1,4 @@
-﻿import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import CountUpStat from "@/components/CountUpStat";
@@ -10,7 +10,7 @@ interface HeroProps {
   previewImage?: string;
   previewWidth?: number;
   previewHeight?: number;
-  /** Landscape triple-phone mockup â€” larger, static, aligned to the hero grid */
+  /** Landscape triple-phone mockup — larger, static, aligned to the hero grid */
   previewLayout?: "default" | "landscape";
 }
 

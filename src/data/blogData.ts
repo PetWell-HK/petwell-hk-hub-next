@@ -1,4 +1,4 @@
-﻿import { blogPostsPetCareHk } from "./blogPostsPetCareHk";
+import { blogPostsPetCareHk } from "./blogPostsPetCareHk";
 import { blogPostsPetCareHkSeo } from "./blogPostsPetCareHkSeo";
 
 export interface BlogPost {
@@ -111,111 +111,110 @@ const blogIamsmartPwStep2 = blogIamsmartPwStep2Asset.url;
 const blogIamsmartPwStep3 = blogIamsmartPwStep3Asset.url;
 import blogPetRingwormCoverAsset from "@/assets/blog-pet-ringworm-cover.png.asset.json";
 const blogPetRingwormCover = blogPetRingwormCoverAsset.url;
+const blogSeniorPetTemperCover = "/assets/blog-senior-pet-temper-cover.jpg";
 
 const buildRainyDayContent = () => `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 6 æœˆ 18 æ—¥</p>
-      <p style="font-size: 18px; line-height: 1.7; margin-bottom: 24px; font-weight: 300;"><strong>å…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´</strong>åå–®ï¼Œå¯æŒ‰åœ°å€ã€å¯µç‰©æ”¿ç­–ã€åœè»Šå ´ç¯©é¸ã€‚æ¯é–“å•†å ´å¯å±•é–‹æŸ¥çœ‹é™„è¿‘<strong>å¯µç‰©å‹å–„é¤å»³</strong>ï¼Œè½é›¨éƒ½å””ä½¿å›°å–ºå±‹ä¼ã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 6 月 18 日</p>
+      <p style="font-size: 18px; line-height: 1.7; margin-bottom: 24px; font-weight: 300;"><strong>全港 45 間寵物友善商場</strong>名單，可按地區、寵物政策、停車場篩選。每間商場可展開查看附近<strong>寵物友善餐廳</strong>，落雨都唔使困喺屋企。</p>
       <div style="background:#FFF4E6;border-left:4px solid #FF6B35;padding:12px 16px;border-radius:8px;margin-bottom:32px;">
-        <p style="font-size:14px;line-height:1.6;margin:0;"><strong>å…¥å ´å‰å¿…è®€ï¼š</strong>éƒ¨åˆ†å•†å ´è¦æ±‚å¯µç‰©å…¥è¢‹æˆ–æŽ¨è»Šï¼›ä¸­å¤§åž‹çŠ¬å»ºè­°æˆ´å£ç½©ã€‚å‡ºç™¼å‰è«‹æŸ¥å•†å ´å®˜æ–¹ IG ç¢ºèªæœ€æ–°å®‰æŽ’ã€‚</p>
+        <p style="font-size:14px;line-height:1.6;margin:0;"><strong>入場前必讀：</strong>部分商場要求寵物入袋或推車；中大型犬建議戴口罩。出發前請查商場官方 IG 確認最新安排。</p>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">å…¨æ¸¯å¯µç‰©å‹å–„å•†å ´åå–®ï¼ˆå¯ç¯©é¸ï¼‰</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">全港寵物友善商場名單（可篩選）</h2>
 
       <div data-component="malls-directory"></div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">å•†å ´å¯µç‰©æ”¿ç­– 3 ç¨®</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">商場寵物政策 3 種</h2>
       <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;">
         <div style="border-left:4px solid #16a34a;padding:10px 16px;background:#f0fdf4;border-radius:8px;">
-          <strong style="color:#15803d;">å¯ç¹«ç¹©è‡ªç”±è¡Œ</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">æœ€å¯¬é¬†ï¼Œä¾‹ï¼šThe Millsã€Stanley Plazaã€Mikikiã€‚</p>
+          <strong style="color:#15803d;">可繫繩自由行</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">最寬鬆，例：The Mills、Stanley Plaza、Mikiki。</p>
         </div>
         <div style="border-left:4px solid #ea580c;padding:10px 16px;background:#fff7ed;border-radius:8px;">
-          <strong style="color:#c2410c;">æŒ‡å®šå€åŸŸãƒ»é ˆç¹«ç¹©</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">åªå¯åœ¨æŒ‡å®šé€šé“ï¼æ¨“å±¤ç¹«ç¹©ï¼Œå…¶ä»–å€åŸŸè¦å…¥è¢‹ã€‚ä¾‹ï¼šTHE SOUTHSIDEã€IFCã€K11 MUSEAã€‚</p>
+          <strong style="color:#c2410c;">指定區域・須繫繩</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">只可在指定通道／樓層繫繩，其他區域要入袋。例：THE SOUTHSIDE、IFC、K11 MUSEA。</p>
         </div>
         <div style="border-left:4px solid #2563eb;padding:10px 16px;background:#eff6ff;border-radius:8px;">
-          <strong style="color:#1d4ed8;">é ˆå…¥è¢‹ï¼æŽ¨è»Š</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">å¯µç‰©å…¨ç¨‹é ˆå…¥è¢‹æˆ–æŽ¨è»Šã€‚ä¾‹ï¼šPacific Placeã€Harbour Cityã€Hysan Placeã€‚</p>
+          <strong style="color:#1d4ed8;">須入袋／推車</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">寵物全程須入袋或推車。例：Pacific Place、Harbour City、Hysan Place。</p>
         </div>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">é›¨å¤©å¸¶å¯µç‰©å‡ºé–€ 5 å€‹è²¼å£«</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">雨天帶寵物出門 5 個貼士</h2>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
-        <li><strong>ç¢ºèªæ”¿ç­–ï¼š</strong>å‡ºç™¼å‰æŸ¥å•†å ´ IG æˆ–è‡´é›»ç¢ºèªã€‚</li>
-        <li><strong>å‚™æ¯›å·¾æ¿•ç´™å·¾ï¼š</strong>å…¥å•†å ´å‰æŠ¹ä¹¾è…³æŽŒï¼Œé¿å…æ¿•æ»‘ã€‚</li>
-        <li><strong>å¸¶å¯µç‰©è¢‹ï¼æŽ¨è»Šï¼š</strong>æ¸¯å³¶å¤§å•†å ´ï¼ˆIFCã€Pacific Place ç­‰ï¼‰å¹¾ä¹Žå…¨è¦æ±‚å…¥è¢‹ã€‚</li>
-        <li><strong>é¿é–‹ç¹å¿™æ™‚æ®µï¼š</strong>é€±æœ« 14:00â€“18:00 äººæµå¤šï¼Œå»ºè­°æ—©æˆ–æ™šå‡ºç™¼ã€‚</li>
-        <li><strong>ç•™æ„å†·æ°£ï¼æ»‘åœ°ï¼š</strong>å¸¶è–„å¤–å¥—å‚™ç”¨ï¼›è€çŠ¬å¯ç©¿é˜²æ»‘è¥ªã€‚</li>
+        <li><strong>確認政策：</strong>出發前查商場 IG 或致電確認。</li>
+        <li><strong>備毛巾濕紙巾：</strong>入商場前抹乾腳掌，避免濕滑。</li>
+        <li><strong>帶寵物袋／推車：</strong>港島大商場（IFC、Pacific Place 等）幾乎全要求入袋。</li>
+        <li><strong>避開繁忙時段：</strong>週末 14:00–18:00 人流多，建議早或晚出發。</li>
+        <li><strong>留意冷氣／滑地：</strong>帶薄外套備用；老犬可穿防滑襪。</li>
       </ul>
-      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 20px;">æƒ³ç‡æ›´å¤š<strong>é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³</strong>ï¼Ÿç€è¦½<a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;text-decoration:underline;">é£Ÿç’°ç½²é¦–æ‰¹ 1,000 é–“å¯µç‰©å‹å–„é£Ÿè‚†åå–®</a>ã€‚</p>
+      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 20px;">想睇更多<strong>香港寵物友善餐廳</strong>？瀏覽<a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;text-decoration:underline;">食環署首批 1,000 間寵物友善食肆名單</a>。</p>
 `;
 
 const buildTyphoonMallContent = () => `
-      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 22 æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 22 日</p>
 
       <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
-        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#1D4ED8;">ðŸŒ€â˜” è½é›¨å¤©ï¼Œæ¯›å­©å””ä½¿å›°å–ºå±‹ä¼</h2>
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">é¦™æ¸¯ä¸€å¹´è½é›¨éŽç™¾æ—¥ï¼ŒT3ã€é»ƒé›¨ã€ç´…é›¨æƒ³å¸¶æ¯›å­©å‡ºè¡—ï¼ŸPetWell å¹«ä½ ä¸€æ¬¡éŽæ•´åˆ<strong>å…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´</strong>â€”â€”é‚Šé–“å¯ä»¥è½åœ°è¡Œã€é‚Šé–“è¦å…¥è¢‹ï¼æŽ¨è»Šã€é‚Šé–“æœ‰åœè»Šå ´ã€é™„è¿‘æœ‰å’©å¯µç‰©å‹å–„é¤å»³ï¼Œå…¨éƒ¨ä¸€ tap ç‡æ›¬ã€‚</p>
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#1D4ED8;">🌀☔ 落雨天，毛孩唔使困喺屋企</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">香港一年落雨過百日，T3、黃雨、紅雨想帶毛孩出街？PetWell 幫你一次過整合<strong>全港 45 間寵物友善商場</strong>——邊間可以落地行、邊間要入袋／推車、邊間有停車場、附近有咩寵物友善餐廳，全部一 tap 睇曬。</p>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;">
-        <a href="/malls" style="display:block;padding:14px 16px;background:#FF6B35;color:#fff;border-radius:10px;text-align:center;font-weight:700;text-decoration:none;">ðŸ¬ å³åˆ»ç‡å•†å ´åˆ—è¡¨</a>
-        <a href="#mall-list" style="display:block;padding:14px 16px;background:#fff;color:#FF6B35;border:2px solid #FF6B35;border-radius:10px;text-align:center;font-weight:700;text-decoration:none;">ðŸ“‹ æ‰“é¢¨è½é›¨å¿…å‚™æ¸…å–®</a>
+        <a href="/malls" style="display:block;padding:14px 16px;background:#FF6B35;color:#fff;border-radius:10px;text-align:center;font-weight:700;text-decoration:none;">🏬 即刻睇商場列表</a>
+        <a href="#mall-list" style="display:block;padding:14px 16px;background:#fff;color:#FF6B35;border:2px solid #FF6B35;border-radius:10px;text-align:center;font-weight:700;text-decoration:none;">📋 打風落雨必備清單</a>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">æ‰“é¢¨è½é›¨å¸¶æ¯›å­©åŽ»å•†å ´ï¼Œé»žè§£ä¿‚é¦–é¸ï¼Ÿ</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">打風落雨帶毛孩去商場，點解係首選？</h2>
       <ul style="font-size: 16px; line-height: 1.85; margin-bottom: 20px; padding-left: 20px;">
-        <li><strong>å®¤å…§å†·æ°£ï¼‹ä¹¾çˆ½åœ°é¢ï¼š</strong>å””ä½¿æ·‹é›¨ï¼Œé¿å…æ¿•æ»‘è·Œå€’åŒç€æ¶¼ã€‚</li>
-        <li><strong>æœ‰å¾—æ”¾é›»ï¼š</strong>å¤§åž‹å•†å ´å¦‚ The Millsã€Stanley Plaza å¯ç¹«ç¹©è‡ªç”±è¡Œï¼Œç‹—ç‹—è¡Œè¶³ä¸€è¼ªéƒ½å¤  tiredã€‚</li>
-        <li><strong>é€£åŸ‹é£Ÿé£¯è¡Œç¨‹ï¼š</strong>å¥½å¤šå•†å ´é™„è¿‘å°±æœ‰å¯µç‰©å‹å–„é¤å»³ï¼Œå””ä½¿å†å‘¨åœæµã€‚</li>
-        <li><strong>æœ‰åœè»Šå ´ï¼š</strong>è½é›¨æ—¥æ­çš„å£«å¥½é›£ï¼Œè‡ªå·±æ¸è»Šç›´å…¥å•†å ´æœ€æ–¹ä¾¿ã€‚</li>
+        <li><strong>室內冷氣＋乾爽地面：</strong>唔使淋雨，避免濕滑跌倒同着涼。</li>
+        <li><strong>有得放電：</strong>大型商場如 The Mills、Stanley Plaza 可繫繩自由行，狗狗行足一輪都夠 tired。</li>
+        <li><strong>連埋食飯行程：</strong>好多商場附近就有寵物友善餐廳，唔使再周圍搵。</li>
+        <li><strong>有停車場：</strong>落雨日搭的士好難，自己揸車直入商場最方便。</li>
       </ul>
 
-      <h2 id="mall-list" style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">å…¨æ¸¯å¯µç‰©å‹å–„å•†å ´åå–®ï¼ˆå¯ç¯©é¸ï¼‰</h2>
-      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 16px; color:#4B5563;">æŒ‰<strong>åœ°å€</strong>ã€<strong>å¯µç‰©æ”¿ç­–</strong>ã€<strong>åœè»Šå ´</strong>ç¯©é¸ï¼Œæ’³å…¥åŽ»ä»²æœƒé¡¯ç¤ºé™„è¿‘å¯µç‰©å‹å–„é¤å»³ã€‚æƒ³ç‡å®Œæ•´äº’å‹•åœ°åœ–åŒå³æ™‚æ›´æ–°ï¼Œè«‹åŽ» <a href="/malls" style="color:#FF6B35;font-weight:600;text-decoration:underline;">PetWell å¯µç‰©å‹å–„å•†å ´å°ˆé </a>ã€‚</p>
+      <h2 id="mall-list" style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">全港寵物友善商場名單（可篩選）</h2>
+      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 16px; color:#4B5563;">按<strong>地區</strong>、<strong>寵物政策</strong>、<strong>停車場</strong>篩選，撳入去仲會顯示附近寵物友善餐廳。想睇完整互動地圖同即時更新，請去 <a href="/malls" style="color:#FF6B35;font-weight:600;text-decoration:underline;">PetWell 寵物友善商場專頁</a>。</p>
 
       <div data-component="malls-directory"></div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">å•†å ´å¯µç‰©æ”¿ç­– 3 ç¨®ï¼ˆå‡ºé–€å‰è¨˜ä½ç‡ï¼‰</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">商場寵物政策 3 種（出門前記住睇）</h2>
       <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;">
         <div style="border-left:4px solid #16a34a;padding:10px 16px;background:#f0fdf4;border-radius:8px;">
-          <strong style="color:#15803d;">å¯ç¹«ç¹©è‡ªç”±è¡Œ</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">æœ€å¯¬é¬†ï¼Œç‹—ç‹—å¯ä»¥è½åœ°è¡Œã€‚ä¾‹ï¼šThe Millsã€Stanley Plazaã€Mikikiã€‚</p>
+          <strong style="color:#15803d;">可繫繩自由行</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">最寬鬆，狗狗可以落地行。例：The Mills、Stanley Plaza、Mikiki。</p>
         </div>
         <div style="border-left:4px solid #ea580c;padding:10px 16px;background:#fff7ed;border-radius:8px;">
-          <strong style="color:#c2410c;">æŒ‡å®šå€åŸŸãƒ»é ˆç¹«ç¹©</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">åªå¯åœ¨æŒ‡å®šé€šé“ï¼æ¨“å±¤ç¹«ç¹©ï¼Œå…¶ä»–è¦å…¥è¢‹ã€‚ä¾‹ï¼šTHE SOUTHSIDEã€IFCã€K11 MUSEAã€‚</p>
+          <strong style="color:#c2410c;">指定區域・須繫繩</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">只可在指定通道／樓層繫繩，其他要入袋。例：THE SOUTHSIDE、IFC、K11 MUSEA。</p>
         </div>
         <div style="border-left:4px solid #2563eb;padding:10px 16px;background:#eff6ff;border-radius:8px;">
-          <strong style="color:#1d4ed8;">é ˆå…¥è¢‹ï¼æŽ¨è»Š</strong>
-          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">å¯µç‰©å…¨ç¨‹é ˆå…¥è¢‹æˆ–æŽ¨è»Šã€‚ä¾‹ï¼šPacific Placeã€Harbour Cityã€Hysan Placeã€‚</p>
+          <strong style="color:#1d4ed8;">須入袋／推車</strong>
+          <p style="font-size:14px;margin:4px 0 0 0;line-height:1.6;">寵物全程須入袋或推車。例：Pacific Place、Harbour City、Hysan Place。</p>
         </div>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">è½é›¨å¤©å‡ºé–€ 6 å€‹è²¼å£«</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">落雨天出門 6 個貼士</h2>
       <ul style="font-size: 16px; line-height: 1.85; margin-bottom: 24px; padding-left: 20px;">
-        <li><strong>ç‡å¯¦å¤©æ°£é è­¦ï¼š</strong>T3ï¼é»ƒï¼ç´…é›¨å‡ºç™¼å‰ï¼Œè¨˜å¾—æŸ¥å•†å ´æœ‰å†‡è‡¨æ™‚å®‰æŽ’ï¼Œäº¤é€šäº¦å¯èƒ½æœƒå—é˜»ã€‚</li>
-        <li><strong>ç¢ºèªæ”¿ç­–ï¼š</strong>å‡ºç™¼å‰æŸ¥å•†å ´ IG æˆ–è‡´é›»ï¼Œæƒ¡åŠ£å¤©æ°£å¯èƒ½æœ‰è‡¨æ™‚å®‰æŽ’ã€‚</li>
-        <li><strong>å‚™æ¯›å·¾æ¿•ç´™å·¾ï¼š</strong>å…¥å•†å ´å‰æŠ¹ä¹¾è…³æŽŒï¼Œé¿å…æ¿•æ»‘ã€‚</li>
-        <li><strong>å¯µç‰©è¢‹ï¼æŽ¨è»Šå¿…å‚™ï¼š</strong>æ¸¯å³¶å¤§å•†å ´ï¼ˆIFCã€Pacific Place ç­‰ï¼‰å¹¾ä¹Žå…¨è¦æ±‚å…¥è¢‹ã€‚</li>
-        <li><strong>è‡ªå·±æ¸è»ŠåŽ»ï¼š</strong>è½é›¨æ—¥çš„å£«é›£æµï¼Œç”¨ PetWell ç‡é‚Šé–“å•†å ´æœ‰è‡ªå·±åœè»Šå ´ã€‚</li>
-        <li><strong>Plan B é¤å»³ï¼š</strong>PetWell App å…§ç½®é™„è¿‘å¯µç‰©å‹å–„é¤å»³æœå°‹ï¼Œå•†å ´é£Ÿæ»¿å†æ•£æ­¥ã€‚</li>
+        <li><strong>睇實天氣預警：</strong>T3／黃／紅雨出發前，記得查商場有冇臨時安排，交通亦可能會受阻。</li>
+        <li><strong>確認政策：</strong>出發前查商場 IG 或致電，惡劣天氣可能有臨時安排。</li>
+        <li><strong>備毛巾濕紙巾：</strong>入商場前抹乾腳掌，避免濕滑。</li>
+        <li><strong>寵物袋／推車必備：</strong>港島大商場（IFC、Pacific Place 等）幾乎全要求入袋。</li>
+        <li><strong>自己揸車去：</strong>落雨日的士難搵，用 PetWell 睇邊間商場有自己停車場。</li>
+        <li><strong>Plan B 餐廳：</strong>PetWell App 內置附近寵物友善餐廳搜尋，商場食滿再散步。</li>
       </ul>
 
       <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:20px;border-radius:12px;margin:32px 0;">
-        <h3 style="font-size:18px;font-weight:700;margin:0 0 12px;color:#C2410C;">ðŸ“± PetWell App å¹«ä½ ä¸€æ¬¡éŽæžæŽ‚</h3>
+        <h3 style="font-size:18px;font-weight:700;margin:0 0 12px;color:#C2410C;">📱 PetWell App 幫你一次過搞掂</h3>
         <ul style="font-size:15px;line-height:1.8;margin:0 0 16px;padding-left:20px;color:#111827;">
-          <li>45 é–“å¯µç‰©å‹å–„å•†å ´å³æ™‚ç¯©é¸ï¼ˆåœ°å€ï¼æ”¿ç­–ï¼åœè»Šå ´ï¼‰</li>
-          <li>æ¯é–“å•†å ´é™„è¿‘å¯µç‰©å‹å–„é¤å»³ä¸€ tap ç‡æ›¬</li>
-          <li>è½é›¨ã€æ‰“é¢¨æ—¥äº¤é€šã€å•†å ´é–‹æ”¾æ™‚é–“å³æ™‚æ›´æ–°</li>
+          <li>45 間寵物友善商場即時篩選（地區／政策／停車場）</li>
+          <li>每間商場附近寵物友善餐廳一 tap 睇曬</li>
+          <li>落雨、打風日交通、商場開放時間即時更新</li>
         </ul>
-        <a href="/malls" style="display:inline-block;padding:12px 24px;background:#FF6B35;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;">ðŸ‘‰ å‰å¾€ PetWell å•†å ´å°ˆé </a>
+        <a href="/malls" style="display:inline-block;padding:12px 24px;background:#FF6B35;color:#fff;border-radius:8px;font-weight:700;text-decoration:none;">👉 前往 PetWell 商場專頁</a>
       </div>
 
-      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 20px;">æƒ³ç‡æ›´å¤š<strong>å¯µç‰©å‹å–„é¤å»³</strong>ï¼Ÿå¯åƒè€ƒ<a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;text-decoration:underline;">é£Ÿç’°ç½²é¦–æ‰¹ 1,000 é–“å¯µç‰©å‹å–„é£Ÿè‚†åå–®</a>ã€‚</p>
+      <p style="font-size: 15px; line-height: 1.7; margin-bottom: 20px;">想睇更多<strong>寵物友善餐廳</strong>？可參考<a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;text-decoration:underline;">食環署首批 1,000 間寵物友善食肆名單</a>。</p>
 `;
-
-const blogSeniorPetTemperCover = "/assets/blog-senior-pet-temper-cover.jpg";
 
 const baseBlogPosts: BlogPost[] = [
   {
@@ -391,7 +390,7 @@ const baseBlogPosts: BlogPost[] = [
     author: "PetWell HK",
     date: "2026-08-09",
     category: "寵物健康",
-    imageUrl: "/assets/blog-senior-pet-temper-cover.jpg",
+    imageUrl: blogSeniorPetTemperCover,
     seoKeywords: [
       "老年狗脾氣暴躁",
       "老年貓脾氣差",
@@ -443,110 +442,110 @@ const baseBlogPosts: BlogPost[] = [
   {
     id: "31",
     slug: "pet-ringworm-dog-cat-treatment-hk",
-    title: "ã€ç”Ÿè˜šæ”»ç•¥ã€‘ç‹—ç‹—è²“è²“ç”Ÿè˜šé»žåˆ†è¾¨ï¼Ÿ3 å¤§ç—‡ç‹€ï¼‹å®¶åº­å‚³æŸ“è™•ç† 5 æ­¥æ›²ï½œPetWell HK",
-    excerpt: "æ¯›å­©ç”©æ¯›ä¸€åœˆåœˆåˆå¥½ç—•ï¼Ÿå¯èƒ½ä¿‚ç”Ÿè˜šï¼ˆçš®è†šçœŸèŒæ„ŸæŸ“ï¼‰ã€‚æ•™ä½  3 å€‹ç—‡ç‹€é»žåˆ†è¾¨ã€UV ç‡ˆè‡ªæ¸¬æ–¹æ³•ï¼ŒåŠ ä¸Šå®¶åº­å‚³æŸ“è™•ç† 5 æ­¥æ›²ï¼Œä¸€æ¬¡éŽæžæŽ‚å¯µç‰©åŒäººé¡žäº¤å‰æ„ŸæŸ“å•é¡Œã€‚",
+    title: "【生蘚攻略】狗狗貓貓生蘚點分辨？3 大症狀＋家庭傳染處理 5 步曲｜PetWell HK",
+    excerpt: "毛孩甩毛一圈圈又好痕？可能係生蘚（皮膚真菌感染）。教你 3 個症狀點分辨、UV 燈自測方法，加上家庭傳染處理 5 步曲，一次過搞掂寵物同人類交叉感染問題。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 24 æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 24 日</p>
 
       <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
-        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">ðŸ¾ ä¸€åˆ†é˜äº†è§£ç”Ÿè˜š</h2>
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">ç”Ÿè˜šï¼ˆRingwormï¼‰å””ä¿‚èŸ²ï¼Œè€Œä¿‚<strong>çš®è†šçœŸèŒæ„ŸæŸ“</strong>ï¼Œæœƒå–ºç‹—ç‹—ã€è²“å’ªåŒäººé¡žä¹‹é–“äº’ç›¸å‚³æŸ“ã€‚å­¢å­å¯ä»¥å–ºå±‹ä¼ç’°å¢ƒå­˜æ´»é•·é” <strong>18 å€‹æœˆ</strong>ï¼Œæ‰€ä»¥é™¤å’—ç‡ç¸é†«ï¼Œå®¶å±…æ¸…æ½”åŒéš”é›¢éƒ½å¥½é—œéµã€‚</p>
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">🐾 一分鐘了解生蘚</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">生蘚（Ringworm）唔係蟲，而係<strong>皮膚真菌感染</strong>，會喺狗狗、貓咪同人類之間互相傳染。孢子可以喺屋企環境存活長達 <strong>18 個月</strong>，所以除咗睇獸醫，家居清潔同隔離都好關鍵。</p>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ç¬¬ä¸€éƒ¨åˆ†ï¼šç”Ÿè˜š 3 å¤§ç—‡ç‹€é»žåˆ†è¾¨</h2>
-      <p style="font-size: 15px; color: #4B5563; margin-bottom: 20px;">æ¯›å­©èº«ä¸Šå‡ºç¾ä»¥ä¸‹ä»»ä½•ä¸€é …ï¼Œå°±è¦æé«˜è­¦è¦ºï¼š</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">第一部分：生蘚 3 大症狀點分辨</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 20px;">毛孩身上出現以下任何一項，就要提高警覺：</p>
 
       <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px;">
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">â‘  åœˆç‹€ç”©æ¯›</div>
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">① 圈狀甩毛</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>ç”©æ¯›ä½é€šå¸¸å‘ˆ<strong>åœ“å½¢ï¼æ©¢åœ“å½¢</strong>ï¼Œä¸­é–“å…‰ç¦¿ã€é‚Šç·£æœ‰ç´…åœˆ</li>
-            <li>æœ€å¸¸è¦‹å–ºé¢ã€è€³ã€å››è‚¢åŒå°¾å·´</li>
-            <li>å¯èƒ½å–®ä¸€å€‹åœˆï¼Œäº¦å¯èƒ½åŒæ™‚å¤šè™•å‡ºç¾</li>
+            <li>甩毛位通常呈<strong>圓形／橢圓形</strong>，中間光禿、邊緣有紅圈</li>
+            <li>最常見喺面、耳、四肢同尾巴</li>
+            <li>可能單一個圈，亦可能同時多處出現</li>
           </ul>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">â‘¡ å¥½ç—•å¥½ç—•</div>
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">② 好痕好痕</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>æ¯›å­©æœƒä¸€ç›´<strong>æŠ“ã€å’¬ã€æ“¦</strong>æŸå€‹ä½</li>
-            <li>çš®è†šå¯èƒ½æœ‰çš®å±‘ã€çµç—‚æˆ–ç´…è…«</li>
-            <li>è¶ŠæŠ“è¶Šå¤§ç¯„åœï¼Œå­¢å­äº¦æœƒæ•£æ’­åˆ°å±‹ä¼å…¶ä»–åœ°æ–¹</li>
+            <li>毛孩會一直<strong>抓、咬、擦</strong>某個位</li>
+            <li>皮膚可能有皮屑、結痂或紅腫</li>
+            <li>越抓越大範圍，孢子亦會散播到屋企其他地方</li>
           </ul>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">â‘¢ UV ç‡ˆè‡ªæ¸¬ï¼ˆèž¢å…‰è—åæ‡‰ï¼‰</div>
+          <div style="display:inline-block;background:#FF6B35;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">③ UV 燈自測（螢光藍反應）</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 12px;padding-left:22px;color:#374151;">
-            <li>è²·ä¸€æ”¯<strong>è—è‰² UV ç‡ˆï¼ˆWood's Lampï¼‰</strong>ï¼Œå–ºé»‘æˆ¿ç…§ç”Ÿè˜šä½ç½®</li>
-            <li>å¦‚æžœä¿‚çŠ¬å°å­¢å­èŒï¼ˆMicrosporum canisï¼‰ï¼Œæœƒç™¼å‡º<strong>èž¢å…‰è—ç¶ è‰²</strong></li>
-            <li>ç´„ 50% å€‹æ¡ˆæœ‰åæ‡‰ï¼Œå†‡èž¢å…‰éƒ½å””ä»£è¡¨å†‡äº‹ï¼Œæœ€çµ‚è¦é ç¸é†«çœŸèŒåŸ¹é¤Šï¼PCR ç¢ºè¨º</li>
+            <li>買一支<strong>藍色 UV 燈（Wood's Lamp）</strong>，喺黑房照生蘚位置</li>
+            <li>如果係犬小孢子菌（Microsporum canis），會發出<strong>螢光藍綠色</strong></li>
+            <li>約 50% 個案有反應，冇螢光都唔代表冇事，最終要靠獸醫真菌培養／PCR 確診</li>
           </ul>
           <div style="background:#FFFBEB;border-left:3px solid #F59E0B;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#92400E;">ðŸ’¡ åœ“å½¢ç”©æ¯›éƒ½å¯èƒ½ä¿‚<strong>ç†±é»žç—‡ã€ç–¥ç™¬æˆ–ç´°èŒæ„ŸæŸ“</strong>ï¼Œå””ä¸€å®šä¿‚ç”Ÿè˜šï¼Œè¦é ç¸é†«ç¢ºè¨ºã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#92400E;">💡 圓形甩毛都可能係<strong>熱點症、疥癬或細菌感染</strong>，唔一定係生蘚，要靠獸醫確診。</p>
           </div>
         </div>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ç¬¬äºŒéƒ¨åˆ†ï¼šå®¶åº­å‚³æŸ“è™•ç† 5 æ­¥æ›²</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">第二部分：家庭傳染處理 5 步曲</h2>
 
       <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:32px;">
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 1 Â· å³åˆ»éš”é›¢å‹•ç‰©</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 1 · 即刻隔離動物</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>å°‡æ‚£ç—…æ¯›å­©é™åˆ¶å–º<strong>æ˜“æ¸…æ½”ã€éžåœ°æ¯¯åœ°æ¿</strong>å˜…ç´°æˆ¿ï¼ˆä¾‹å¦‚æµ´å®¤æˆ–å¤§ç± ï¼‰</li>
-            <li>çŽ©å…·ã€åºŠå¢Šã€æ¢³åªé™ä½¢ä¸€éš»ç”¨ï¼Œå””å¥½åŒå…¶ä»–å¯µç‰©å…±ç”¨</li>
-            <li>å””ä½¿æ£„é¤Šæˆ–æ–·çµ•æŽ¥è§¸ï¼Œé©åº¦çŽ©è€ä»å¯ï¼Œåšå¥½ä¸‹é¢é˜²è­·å°±å¾—</li>
+            <li>將患病毛孩限制喺<strong>易清潔、非地毯地板</strong>嘅細房（例如浴室或大籠）</li>
+            <li>玩具、床墊、梳只限佢一隻用，唔好同其他寵物共用</li>
+            <li>唔使棄養或斷絕接觸，適度玩耍仍可，做好下面防護就得</li>
           </ul>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 2 Â· äººåŒå‹•ç‰©ä¹‹é–“é˜²è­·</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 2 · 人同動物之間防護</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>æ‘¸å®Œå‹•ç‰©æˆ–ä½¢å˜…åºŠèˆ–ï¼æ¯›é«®å¾Œï¼Œä¸€å®šè¦<strong>å¾¹åº•æ´—æ‰‹</strong>æˆ–ç”¨é…’ç²¾æ“æ‰‹æ¶²</li>
-            <li>è™•ç†æ‚£ç—…å‹•ç‰©å»ºè­°<strong>æˆ´æ‰‹å¥— + è‘—å¯æ¸…æ´—å¤–è¡£</strong>ï¼Œé¿å…çš®è†šç›´æŽ¥æŽ¥è§¸</li>
-            <li>å®¶ä¸­<strong>å¹¼ç«¥ã€é•·è€…ã€å­•å©¦ã€å…ç–«åŠ›ä½Žäººå£«</strong>è¦ç›¡é‡é¿å…ç›´æŽ¥æŽ¥è§¸</li>
+            <li>摸完動物或佢嘅床舖／毛髮後，一定要<strong>徹底洗手</strong>或用酒精搓手液</li>
+            <li>處理患病動物建議<strong>戴手套 + 著可清洗外衣</strong>，避免皮膚直接接觸</li>
+            <li>家中<strong>幼童、長者、孕婦、免疫力低人士</strong>要盡量避免直接接觸</li>
           </ul>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 3 Â· å…©æ­¥æ¸…æ½”æ³•ï¼ˆå…ˆé™¤æ¯›é«®ï¼Œå¾Œæ¶ˆæ¯’ï¼‰</div>
-          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#4B5563;">å­¢å­ä¸»è¦é»å–ºè„«è½å˜…æ¯›é«®åŒçš®å±‘ä¸Šï¼Œ<strong>ç‰©ç†æ¸…é™¤</strong>æ¯”æ¶ˆæ¯’æ›´é‡è¦ã€‚</p>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 3 · 兩步清潔法（先除毛髮，後消毒）</div>
+          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#4B5563;">孢子主要黏喺脫落嘅毛髮同皮屑上，<strong>物理清除</strong>比消毒更重要。</p>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 12px;padding-left:22px;color:#374151;">
-            <li><strong>ç¬¬ä¸€æ­¥ï¼š</strong>å¸å¡µæ©Ÿæ¸…èµ°æ‰€æœ‰æ¯›é«®ç¢Žå±‘ï¼ˆå¸å¡µè¢‹å³æ£„ï¼‰ï¼Œå†ç”¨é›»é™¤å¡µæ‹–å¸ƒï¼ˆå¦‚ Swifferï¼‰è™•ç†ç¡¬åœ°æ¿</li>
-            <li><strong>ç¬¬äºŒæ­¥ï¼š</strong>å™´æœ‰æ•ˆæ¶ˆæ¯’åŠ‘ï¼Œéœç½®<strong>5â€“10 åˆ†é˜</strong>å…ˆæŠ¹èµ°</li>
+            <li><strong>第一步：</strong>吸塵機清走所有毛髮碎屑（吸塵袋即棄），再用電除塵拖布（如 Swiffer）處理硬地板</li>
+            <li><strong>第二步：</strong>噴有效消毒劑，靜置<strong>5–10 分鐘</strong>先抹走</li>
           </ul>
           <div style="background:#EFF6FF;border-left:3px solid #2563EB;padding:10px 14px;border-radius:8px;margin-bottom:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#1D4ED8;">âœ… <strong>æœ‰æ•ˆæ¶ˆæ¯’åŠ‘ï¼š</strong>å®¶ç”¨æ¼‚ç™½æ°´ï¼ˆ1:10 è‡³ 1:100 ç¨€é‡‹ï¼‰ã€åŠ é€ŸéŽæ°§åŒ–æ°«ï¼ˆRescueã€Peroxigardï¼‰ã€Virkon-S</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#1D4ED8;">✅ <strong>有效消毒劑：</strong>家用漂白水（1:10 至 1:100 稀釋）、加速過氧化氫（Rescue、Peroxigard）、Virkon-S</p>
           </div>
           <div style="background:#FEF2F2;border-left:3px solid #DC2626;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">âš ï¸ åœ°æ°ˆç›¡é‡é¿å…ä½¿ç”¨ï¼›æ¯æ˜ŸæœŸæœ€å°‘<strong>æ¸…æ½”æ¶ˆæ¯’ 1â€“2 æ¬¡</strong>ï¼Œç›´è‡³ç¸é†«ç¢ºèªç—Šç™’ï¼ˆé€£çºŒå…©æ¬¡çœŸèŒåŸ¹é¤Šï¼PCR é™°æ€§ï¼‰ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">⚠️ 地氈盡量避免使用；每星期最少<strong>清潔消毒 1–2 次</strong>，直至獸醫確認痊癒（連續兩次真菌培養／PCR 陰性）。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 4 Â· æ´—æ»Œç‰©å“ï¼Œæ¨æ£„å””æ¸…æ½”åˆ°å˜…å˜¢</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 4 · 洗滌物品，捨棄唔清潔到嘅嘢</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>å¯µç‰©åºŠå¢Šã€æ¯›å·¾ã€çŽ©å…·ã€é ¸åœˆè¦<strong>åŒå…¶ä»–è¡£ç‰©åˆ†é–‹æ´—</strong>ï¼Œç”¨æœ€é•·æ´—è¡£ç¨‹åº</li>
-            <li>æ´—è¡£æ©Ÿå””å¥½å¡žå¤ªæ»¿ï¼ˆå¹«åŠ©æ²–èµ°æ¯›é«®ï¼‰ï¼Œè™•ç†æ™‚æˆ´æ‰‹å¥—</li>
-            <li>ç„¡æ³•å¾¹åº•æ¸…æ½”å˜…ï¼ˆç ´èˆŠçŽ©å…·ã€å»‰åƒ¹åœ°æ°ˆï¼‰<strong>ç›´æŽ¥æŽ‰å’—</strong>æ›´å®‰å…¨</li>
-            <li>å­¢å­å–ºç’°å¢ƒä¸­å¯å­˜æ´»é•·é” <strong>18 å€‹æœˆ</strong>ï¼Œå¾¹åº•æ¸…æ½”éžå¸¸é‡è¦</li>
+            <li>寵物床墊、毛巾、玩具、頸圈要<strong>同其他衣物分開洗</strong>，用最長洗衣程序</li>
+            <li>洗衣機唔好塞太滿（幫助沖走毛髮），處理時戴手套</li>
+            <li>無法徹底清潔嘅（破舊玩具、廉價地氈）<strong>直接掉咗</strong>更安全</li>
+            <li>孢子喺環境中可存活長達 <strong>18 個月</strong>，徹底清潔非常重要</li>
           </ul>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 5 Â· é›™ç·šæ²»ç™‚ï¼ˆç‡ç¸é†« + ç‡é†«ç”Ÿï¼‰</div>
-          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#111827;"><strong>ðŸ• å¯µç‰©æ–¹é¢ï¼š</strong></p>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">Step 5 · 雙線治療（睇獸醫 + 睇醫生）</div>
+          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#111827;"><strong>🐕 寵物方面：</strong></p>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 12px;padding-left:22px;color:#374151;">
-            <li>åŽ»ç¸é†«åš Wood's ç‡ˆã€çœŸèŒåŸ¹é¤Šæˆ– PCR ç¢ºè¨º</li>
-            <li>é€šå¸¸æœƒè™•æ–¹<strong>å£æœæŠ—çœŸèŒè—¥ï¼ˆitraconazoleã€terbinafineï¼‰</strong> + å¤–ç”¨çŸ³ç°ç¡«ç£ºè—¥æµ´æˆ–æŠ—çœŸèŒæ´—æ¯›æ°´</li>
-            <li>ç™‚ç¨‹ä¸€èˆ¬éœ€ <strong>6â€“12 æ˜ŸæœŸ</strong>ï¼›å®¶ä¸­å…¶ä»–å¯µç‰©äº¦è¦ä¸€ä½µæª¢æ¸¬ï¼ˆå¯èƒ½ä¿‚ç„¡ç—‡ç‹€å¸¶èŒè€…ï¼‰</li>
+            <li>去獸醫做 Wood's 燈、真菌培養或 PCR 確診</li>
+            <li>通常會處方<strong>口服抗真菌藥（itraconazole、terbinafine）</strong> + 外用石灰硫磺藥浴或抗真菌洗毛水</li>
+            <li>療程一般需 <strong>6–12 星期</strong>；家中其他寵物亦要一併檢測（可能係無症狀帶菌者）</li>
           </ul>
-          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#111827;"><strong>ðŸ‘¨â€âš•ï¸ äººæ–¹é¢ï¼š</strong></p>
+          <p style="font-size:14.5px;line-height:1.7;margin:0 0 10px;color:#111827;"><strong>👨‍⚕️ 人方面：</strong></p>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>èº«ä¸Šå¦‚å‡ºç¾<strong>ç’°ç‹€ç´…ç–¹ã€ç—•ç™¢è„«çš®</strong>è¦ç›¡å¿«ç‡é†«ç”Ÿ</li>
-            <li>é€šå¸¸å¤–ç”¨æŠ—çœŸèŒè—¥è†ï¼ˆclotrimazoleã€miconazoleï¼‰å·²å¯ç—Šç™’</li>
-            <li>ç¯„åœå¤§å‰‡å¯èƒ½éœ€è¦å£æœè—¥</li>
+            <li>身上如出現<strong>環狀紅疹、痕癢脫皮</strong>要盡快睇醫生</li>
+            <li>通常外用抗真菌藥膏（clotrimazole、miconazole）已可痊癒</li>
+            <li>範圍大則可能需要口服藥</li>
           </ul>
         </div>
       </div>
@@ -554,507 +553,507 @@ const baseBlogPosts: BlogPost[] = [
       <div class="blog-cta-app">
         <div class="cta-app-inner">
           <div class="cta-app-text">
-            <h3>ðŸ“± ç”¨ PetWell App ä¸€éµæµç¸é†«</h3>
+            <h3>📱 用 PetWell App 一鍵搵獸醫</h3>
             <ul>
-              <li>âœ… å…¨æ¸¯ç¸é†«è¨ºæ‰€åœ°åœ– + GPS å°Žèˆª</li>
-              <li>âœ… çœŸäººè©•åƒ¹ï¼Œé¿é–‹ä¸­ä¼è¨ºæ‰€</li>
-              <li>âœ… è¨˜éŒ„æ¯›å­©ç—…æ­·ã€è—¥ç‰©ã€ç™‚ç¨‹é€²åº¦</li>
+              <li>✅ 全港獸醫診所地圖 + GPS 導航</li>
+              <li>✅ 真人評價，避開中伏診所</li>
+              <li>✅ 記錄毛孩病歷、藥物、療程進度</li>
             </ul>
-            <p class="cta-app-desc">ç”Ÿè˜šè¦ç™‚ç¨‹ 6â€“12 æ˜ŸæœŸï¼Œç”¨ App è¿½è¹¤è¦†è¨ºåŒç”¨è—¥å…ˆå””æœƒæ¼ã€‚</p>
-            <a href="/clinics" class="cta-btn-primary">ðŸ¥ å³åˆ»æµé™„è¿‘ç¸é†«</a>
+            <p class="cta-app-desc">生蘚要療程 6–12 星期，用 App 追蹤覆診同用藥先唔會漏。</p>
+            <a href="/clinics" class="cta-btn-primary">🏥 即刻搵附近獸醫</a>
           </div>
         </div>
       </div>
 
       <div style="background:#F0FDF4;border-left:4px solid #16A34A;padding:16px 20px;border-radius:10px;margin:32px 0;">
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#166534;"><strong>âœ… å¥½æ¶ˆæ¯ï¼š</strong>ç”Ÿè˜šé›–ç„¶å‚³æŸ“æ€§é«˜ï¼Œä½†å–ºäººåŒå‹•ç‰©èº«ä¸Šéƒ½å±¬æ–¼<strong>å¯å®Œå…¨æ²»ç™’ã€éžè‡´å‘½</strong>å˜…çš®è†šç—…ã€‚åªè¦åŒæ­¥æ²»ç™‚ã€æ¸…æ½”åˆ°ä½ï¼Œä¸€èˆ¬æ•¸æ˜ŸæœŸå…§éƒ½å¯ä»¥æžæŽ‚ã€‚</p>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#166534;"><strong>✅ 好消息：</strong>生蘚雖然傳染性高，但喺人同動物身上都屬於<strong>可完全治癒、非致命</strong>嘅皮膚病。只要同步治療、清潔到位，一般數星期內都可以搞掂。</p>
       </div>
 
-      <p style="font-size: 13px; color: #666; margin-top: 24px;">è²æ˜Žï¼šæœ¬æ–‡åƒ…ç‚ºä¸€èˆ¬æ€§åƒè€ƒï¼Œå””å¯ä»¥å–ä»£ç¸é†«æˆ–é†«ç”Ÿè¨ºæ–·ã€‚è³‡æ–™ä¾†æºï¼šToday's Veterinary Nurseã€RSPCA SAã€Clinician's Briefã€VIN Veterinary Partnerã€Worms & Germs Blogã€Merck Veterinary Manualã€WAVD Consensus Guidelinesã€AAFPã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-top: 24px;">聲明：本文僅為一般性參考，唔可以取代獸醫或醫生診斷。資料來源：Today's Veterinary Nurse、RSPCA SA、Clinician's Brief、VIN Veterinary Partner、Worms & Germs Blog、Merck Veterinary Manual、WAVD Consensus Guidelines、AAFP。</p>
 
       <div class="seo-hidden" aria-hidden="true">
-        <p>PetWell HK æä¾›é¦™æ¸¯ç‹—ç‹—è²“å’ªç”Ÿè˜šï¼ˆçš®è†šçœŸèŒæ„ŸæŸ“ ringworm / dermatophytosisï¼‰å®Œæ•´æŒ‡å—ï¼šç—‡ç‹€é»žåˆ†è¾¨ã€UV ç‡ˆ Wood's Lamp è‡ªæ¸¬ã€åœˆç‹€ç”©æ¯›ç—•ç™¢è™•ç†ã€å®¶å±…æ¶ˆæ¯’æ–¹æ³•ã€å£æœæŠ—çœŸèŒè—¥ itraconazole terbinafine ç™‚ç¨‹ã€äººç•œå…±é€šå‚³æŸ“é˜²è­·ï¼Œä»¥åŠé¦™æ¸¯ç¸é†«è¨ºæ‰€æŽ¨ä»‹ã€‚</p>
+        <p>PetWell HK 提供香港狗狗貓咪生蘚（皮膚真菌感染 ringworm / dermatophytosis）完整指南：症狀點分辨、UV 燈 Wood's Lamp 自測、圈狀甩毛痕癢處理、家居消毒方法、口服抗真菌藥 itraconazole terbinafine 療程、人畜共通傳染防護，以及香港獸醫診所推介。</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2026-07-24",
-    category: "å¯µç‰©å¥åº·",
+    category: "寵物健康",
     imageUrl: blogPetRingwormCover,
     seoKeywords: [
-      "ç‹—ç‹—ç”Ÿè˜š", "è²“è²“ç”Ÿè˜š", "å¯µç‰©ç”Ÿè˜š", "å¯µç‰©çš®è†šçœŸèŒ", "ringworm å¯µç‰©",
-      "è²“ç™¬", "ç‹—ç™¬", "è²“ç”Ÿè˜šå‚³æŸ“äºº", "ç‹—ç”Ÿè˜šå‚³æŸ“", "å¯µç‰©ç”©æ¯›ä¸€åœˆ",
-      "UV ç‡ˆç…§ç”Ÿè˜š", "Wood's Lamp", "å¯µç‰©çš®è†šç—…", "çŠ¬å°å­¢å­èŒ", "æŠ—çœŸèŒè—¥",
-      "itraconazole å¯µç‰©", "çŸ³ç°ç¡«ç£ºè—¥æµ´", "ç”Ÿè˜šå®¶å±…æ¶ˆæ¯’", "é¦™æ¸¯ç¸é†«è¨ºæ‰€", "PetWell",
+      "狗狗生蘚", "貓貓生蘚", "寵物生蘚", "寵物皮膚真菌", "ringworm 寵物",
+      "貓癬", "狗癬", "貓生蘚傳染人", "狗生蘚傳染", "寵物甩毛一圈",
+      "UV 燈照生蘚", "Wood's Lamp", "寵物皮膚病", "犬小孢子菌", "抗真菌藥",
+      "itraconazole 寵物", "石灰硫磺藥浴", "生蘚家居消毒", "香港獸醫診所", "PetWell",
     ],
-    seoDescription: "ç‹—ç‹—è²“è²“ç”Ÿè˜š 3 å¤§ç—‡ç‹€ï¼šåœˆç‹€ç”©æ¯›ã€å¥½ç—•ã€UV ç‡ˆèž¢å…‰è—åæ‡‰ã€‚é™„å®¶åº­å‚³æŸ“è™•ç† 5 æ­¥æ›²â€”â€”éš”é›¢ã€é˜²è­·ã€å…©æ­¥æ¸…æ½”æ³•ã€æ´—æ»Œæ¨æ£„ã€é›™ç·šæ²»ç™‚ï¼Œä¸€æ¬¡éŽæžæŽ‚å¯µç‰©åŒäººé¡žäº¤å‰æ„ŸæŸ“ã€‚",
+    seoDescription: "狗狗貓貓生蘚 3 大症狀：圈狀甩毛、好痕、UV 燈螢光藍反應。附家庭傳染處理 5 步曲——隔離、防護、兩步清潔法、洗滌捨棄、雙線治療，一次過搞掂寵物同人類交叉感染。",
     faqItems: [
-      { question: "é»žæ¨£åˆ†è¾¨æ¯›å­©ä¿‚å’ªç”Ÿè˜šï¼Ÿ", answer: "3 å€‹ä¸»è¦ç—‡ç‹€ï¼šâ‘  åœ“å½¢ï¼æ©¢åœ“å½¢ç”©æ¯›ï¼ˆä¸­é–“å…‰ç¦¿ã€é‚Šç·£ç´…åœˆï¼‰â‘¡ æ‚£è™•å¥½ç—•ï¼Œä¸€ç›´æŠ“å’¬ â‘¢ ç”¨è—è‰² UV ç‡ˆï¼ˆWood's Lampï¼‰ç…§ï¼ŒçŠ¬å°å­¢å­èŒæœƒç™¼å‡ºèž¢å…‰è—ç¶ è‰²ã€‚ä½†æœ€çµ‚ç¢ºè¨ºè¦é ç¸é†«åšçœŸèŒåŸ¹é¤Šæˆ– PCRã€‚" },
-      { question: "å¯µç‰©ç”Ÿè˜šæœƒå””æœƒå‚³æŸ“ç•€äººï¼Ÿ", answer: "æœƒï¼Œç”Ÿè˜šä¿‚äººç•œå…±é€šå‚³æŸ“ç—…ã€‚æ‘¸å®Œæ‚£ç—…å¯µç‰©ä¸€å®šè¦å¾¹åº•æ´—æ‰‹ï¼Œå®¶ä¸­å¹¼ç«¥ã€é•·è€…ã€å­•å©¦ã€å…ç–«åŠ›ä½Žäººå£«æ‡‰ç›¡é‡é¿å…ç›´æŽ¥æŽ¥è§¸ã€‚å¦‚èº«ä¸Šå‡ºç¾ç’°ç‹€ç´…ç–¹è¦ç›¡å¿«ç‡é†«ç”Ÿã€‚" },
-      { question: "ç”Ÿè˜šè¦ç™‚ç¨‹å¹¾è€ï¼Ÿ", answer: "ä¸€èˆ¬éœ€è¦ 6â€“12 æ˜ŸæœŸã€‚ç¸é†«æœƒè™•æ–¹å£æœæŠ—çœŸèŒè—¥ï¼ˆitraconazoleã€terbinafineï¼‰é…åˆå¤–ç”¨çŸ³ç°ç¡«ç£ºè—¥æµ´æˆ–æŠ—çœŸèŒæ´—æ¯›æ°´ï¼Œç›´è‡³é€£çºŒå…©æ¬¡çœŸèŒåŸ¹é¤Šï¼PCR å‘ˆé™°æ€§å…ˆç®—ç—Šç™’ã€‚" },
-      { question: "å®¶å±…é»žæ¸…æ½”è‡³æœ‰æ•ˆï¼Ÿ", answer: "æŽ¡ç”¨å…©æ­¥æ¸…æ½”æ³•ï¼šå…ˆç”¨å¸å¡µæ©Ÿæ¸…èµ°æ‰€æœ‰æ¯›é«®ç¢Žå±‘ï¼ˆå¸å¡µè¢‹å³æ£„ï¼‰ï¼Œå†å™´æ¶ˆæ¯’åŠ‘éœç½® 5â€“10 åˆ†é˜ã€‚æœ‰æ•ˆæ¶ˆæ¯’åŠ‘åŒ…æ‹¬æ¼‚ç™½æ°´ï¼ˆ1:10 è‡³ 1:100 ç¨€é‡‹ï¼‰ã€åŠ é€ŸéŽæ°§åŒ–æ°«ï¼ˆRescueã€Peroxigardï¼‰æˆ– Virkon-Sã€‚å­¢å­å¯å­˜æ´»é•·é” 18 å€‹æœˆï¼Œè¦æ¯æ˜ŸæœŸæœ€å°‘æ¸…æ½” 1â€“2 æ¬¡ã€‚" },
-      { question: "é¦™æ¸¯é‚Šåº¦å¯ä»¥æµåˆ°ç¸é†«ç‡ç”Ÿè˜šï¼Ÿ", answer: "å¯ä»¥ç€è¦½ PetWellã€Šé¦™æ¸¯ç¸é†«è¨ºæ‰€ã€‹é é¢æµé™„è¿‘è¨ºæ‰€ï¼Œæˆ–è€…ä¸‹è¼‰ PetWell App ç”¨åœ°åœ–ç‡çœŸäººè©•åƒ¹ã€è¨˜éŒ„æ¯›å­©ç—…æ­·åŒç™‚ç¨‹é€²åº¦ã€‚" },
+      { question: "點樣分辨毛孩係咪生蘚？", answer: "3 個主要症狀：① 圓形／橢圓形甩毛（中間光禿、邊緣紅圈）② 患處好痕，一直抓咬 ③ 用藍色 UV 燈（Wood's Lamp）照，犬小孢子菌會發出螢光藍綠色。但最終確診要靠獸醫做真菌培養或 PCR。" },
+      { question: "寵物生蘚會唔會傳染畀人？", answer: "會，生蘚係人畜共通傳染病。摸完患病寵物一定要徹底洗手，家中幼童、長者、孕婦、免疫力低人士應盡量避免直接接觸。如身上出現環狀紅疹要盡快睇醫生。" },
+      { question: "生蘚要療程幾耐？", answer: "一般需要 6–12 星期。獸醫會處方口服抗真菌藥（itraconazole、terbinafine）配合外用石灰硫磺藥浴或抗真菌洗毛水，直至連續兩次真菌培養／PCR 呈陰性先算痊癒。" },
+      { question: "家居點清潔至有效？", answer: "採用兩步清潔法：先用吸塵機清走所有毛髮碎屑（吸塵袋即棄），再噴消毒劑靜置 5–10 分鐘。有效消毒劑包括漂白水（1:10 至 1:100 稀釋）、加速過氧化氫（Rescue、Peroxigard）或 Virkon-S。孢子可存活長達 18 個月，要每星期最少清潔 1–2 次。" },
+      { question: "香港邊度可以搵到獸醫睇生蘚？", answer: "可以瀏覽 PetWell《香港獸醫診所》頁面搵附近診所，或者下載 PetWell App 用地圖睇真人評價、記錄毛孩病歷同療程進度。" },
     ],
-    relatedTopics: ["å¯µç‰©çš®è†šç—…", "å¯µç‰©çœŸèŒæ„ŸæŸ“", "é¦™æ¸¯ç¸é†«", "äººç•œå…±é€šå‚³æŸ“ç—…", "å¯µç‰©å®¶å±…æ¶ˆæ¯’"],
+    relatedTopics: ["寵物皮膚病", "寵物真菌感染", "香港獸醫", "人畜共通傳染病", "寵物家居消毒"],
   },
   {
     id: "30",
     slug: "typhoon-rainy-day-pet-friendly-malls-hong-kong",
-    title: "ã€æ‰“é¢¨è½é›¨æ”»ç•¥ã€‘T3ï¼è½é›¨å¤©å¸¶ç‹—è²“åŽ»é‚Šå¥½ï¼Ÿå…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´ä¸€è¦½ï¼ˆé™„åœè»Šå ´ï¼‹é™„è¿‘é¤å»³ï¼‰ï½œPetWell HK",
-    excerpt: "è½é›¨å””æƒ³æ¯›å­©å›°å–ºå±‹ä¼ï¼ŸT3ã€é»ƒé›¨ã€ç´…é›¨ç…§æ¨£æœ‰å¾—æ”¾é›»ã€‚PetWell æ•´åˆå…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´ï¼šé‚Šé–“å¯ä»¥è½åœ°è¡Œã€é‚Šé–“æœ‰åœè»Šå ´ã€é™„è¿‘æœ‰å’©å¯µç‰©å‹å–„é¤å»³ï¼Œä¸€ tap ç¯©é¸å³åˆ»å‡ºç™¼ã€‚",
+    title: "【打風落雨攻略】T3／落雨天帶狗貓去邊好？全港 45 間寵物友善商場一覽（附停車場＋附近餐廳）｜PetWell HK",
+    excerpt: "落雨唔想毛孩困喺屋企？T3、黃雨、紅雨照樣有得放電。PetWell 整合全港 45 間寵物友善商場：邊間可以落地行、邊間有停車場、附近有咩寵物友善餐廳，一 tap 篩選即刻出發。",
     content: buildTyphoonMallContent(),
     author: "PetWell HK",
     date: "2026-07-22",
-    category: "æˆ¶å¤–æ´»å‹•",
+    category: "戶外活動",
     imageUrl: blogTyphoonMallsCoverV2,
     seoKeywords: [
-      "è½é›¨å¤©å¸¶ç‹—åŽ»é‚Š", "T3 å¸¶ç‹—", "é»ƒé›¨å¸¶ç‹—", "ç´…é›¨å¸¶ç‹—", "æ‰“é¢¨è½é›¨å¸¶ç‹—åŽ»é‚Š",
-      "é›¨å¤©å¯µç‰©å®¤å…§æ´»å‹•", "é¦™æ¸¯å¯µç‰©å‹å–„å•†å ´", "é›¨å¤©å•†å ´", "å¯µç‰©å‹å–„å•†å ´åœè»Šå ´", "å¸¶ç‹—è¡Œå•†å ´",
-      "Pacific Place å¯µç‰©", "Harbour City å¯µç‰©", "The Mills å¯µç‰©", "K11 MUSEA å¯µç‰©",
-      "IFC å¯µç‰©", "å¸Œæ…Žå»£å ´ å¯µç‰©", "Stanley Plaza å¯µç‰©", "Mikiki å¯µç‰©",
-      "è½é›¨å¤©å¯µç‰©é¤å»³", "å®¤å…§å¯µç‰©å¥½åŽ»è™•",
+      "落雨天帶狗去邊", "T3 帶狗", "黃雨帶狗", "紅雨帶狗", "打風落雨帶狗去邊",
+      "雨天寵物室內活動", "香港寵物友善商場", "雨天商場", "寵物友善商場停車場", "帶狗行商場",
+      "Pacific Place 寵物", "Harbour City 寵物", "The Mills 寵物", "K11 MUSEA 寵物",
+      "IFC 寵物", "希慎廣場 寵物", "Stanley Plaza 寵物", "Mikiki 寵物",
+      "落雨天寵物餐廳", "室內寵物好去處",
     ],
     faqItems: [
-      { question: "è½é›¨å¤©å•†å ´ä»²é–‹å””é–‹ï¼Ÿ", answer: "T3ï¼é»ƒé›¨å¤§éƒ¨åˆ†å•†å ´æ­£å¸¸é‹ä½œï¼›ç´…é›¨æˆ–æ›´é«˜ä¿¡è™Ÿæ™‚éƒ¨åˆ†å•†æˆ¶å¯èƒ½è‡ªè¡Œèª¿æ•´é–‹æ”¾æ™‚é–“ã€‚å‡ºç™¼å‰è«‹æŸ¥å•†å ´å®˜æ–¹ IGï¼FBã€‚" },
-      { question: "æ‰“é¢¨è½é›¨é‚Šé–“å•†å ´å¯ä»¥å¸¶ç‹—è½åœ°è¡Œï¼Ÿ", answer: "å¯ç¹«ç¹©è‡ªç”±è¡Œå˜…å•†å ´åŒ…æ‹¬ The Millsï¼ˆèƒç£ï¼‰ã€Stanley Plazaï¼ˆèµ¤æŸ±ï¼‰ã€Mikikiï¼ˆæ–°è’²å´—ï¼‰ç­‰ã€‚æ¸¯å³¶å¤§åž‹å•†å ´å¦‚ IFCã€Pacific Placeã€Harbour City å‰‡è¦æ±‚å¯µç‰©å…¥è¢‹æˆ–åæŽ¨è»Šã€‚" },
-      { question: "æ‰“é¢¨è½é›¨æ—¥é»žæ¨£åŽ»å•†å ´ï¼Ÿ", answer: "æ‰“é¢¨è½é›¨æ—¥çš„å£«é›£æµï¼Œå»ºè­°è‡ªå·±æ¸è»Šã€‚å¯ç”¨ PetWell ç¯©é¸ã€Œæœ‰åœè»Šå ´ã€å˜…å¯µç‰©å‹å–„å•†å ´ï¼Œç›´æŽ¥ç”±åœè»Šå ´å…¥å•†å ´ï¼Œå””ä½¿æ·‹é›¨ã€‚" },
-      { question: "å•†å ´é™„è¿‘æœ‰å†‡å¯µç‰©å‹å–„é¤å»³ï¼Ÿ", answer: "æœ‰ï¼Œå°–æ²™å’€ï¼ˆHarbour Cityã€K11 MUSEAï¼‰ã€ä¸­ç’°ï¼ˆIFCï¼‰ã€éŠ…é‘¼ç£ï¼ˆHysan Placeï¼‰ä¸€å¸¶å¯†åº¦æœ€é«˜ã€‚PetWell æ¯é–“å•†å ´ä¸‹æ–¹å³æ™‚é¡¯ç¤ºé™„è¿‘å¯µç‰©å‹å–„é¤å»³æ¸…å–®ã€‚" },
+      { question: "落雨天商場仲開唔開？", answer: "T3／黃雨大部分商場正常運作；紅雨或更高信號時部分商戶可能自行調整開放時間。出發前請查商場官方 IG／FB。" },
+      { question: "打風落雨邊間商場可以帶狗落地行？", answer: "可繫繩自由行嘅商場包括 The Mills（荃灣）、Stanley Plaza（赤柱）、Mikiki（新蒲崗）等。港島大型商場如 IFC、Pacific Place、Harbour City 則要求寵物入袋或坐推車。" },
+      { question: "打風落雨日點樣去商場？", answer: "打風落雨日的士難搵，建議自己揸車。可用 PetWell 篩選「有停車場」嘅寵物友善商場，直接由停車場入商場，唔使淋雨。" },
+      { question: "商場附近有冇寵物友善餐廳？", answer: "有，尖沙咀（Harbour City、K11 MUSEA）、中環（IFC）、銅鑼灣（Hysan Place）一帶密度最高。PetWell 每間商場下方即時顯示附近寵物友善餐廳清單。" },
     ],
-    relatedTopics: ["å¯µç‰©å‹å–„å•†å ´", "æ‰“é¢¨è½é›¨å¯µç‰©æ´»å‹•", "å¯µç‰©å‹å–„é¤å»³", "å®¤å…§å¯µç‰©å¥½åŽ»è™•"],
+    relatedTopics: ["寵物友善商場", "打風落雨寵物活動", "寵物友善餐廳", "室內寵物好去處"],
   },
   {
     id: "29",
     slug: "pet-emergency-night-vet-checklist-hk",
-    title: "å¤œé–“æ€¥è¨ºåˆ¤æ–·æ¸…å–®ï½œç‹—ç‹—è²“å’ªå’©æƒ…æ³è¦å³åˆ»è¡æ€¥ç—‡å®¤ï¼Ÿ20å¹´ç¸é†«å¯¦æˆ°ç‰ˆï½œPetWell HK",
-    excerpt: "åŠå¤œæ¯›å­©çªç„¶å””å°è·¯ï¼Œç©¶ç«Ÿä¿‚å†è§€å¯Ÿå®šå³åˆ»è¡å¤œè¨ºï¼Ÿ20 å¹´æ€¥ç—‡ç¸é†«æ•´ç†å˜…ã€Šå¤œé–“æ€¥è¨ºåˆ¤æ–·æ¸…å–®ã€‹ï¼Œé€é …å°ç…§å‘¼å¸ã€å°¿å°¿ã€è‚šè„¹ã€äº‚é£Ÿã€ä¸­æš‘ã€æŠ½ç­‹å¾µç‹€ï¼Œæ•‘è¿”ä½ æ¯›å­©ä¸€å‘½ã€‚",
+    title: "夜間急診判斷清單｜狗狗貓咪咩情況要即刻衝急症室？20年獸醫實戰版｜PetWell HK",
+    excerpt: "半夜毛孩突然唔對路，究竟係再觀察定即刻衝夜診？20 年急症獸醫整理嘅《夜間急診判斷清單》，逐項對照呼吸、尿尿、肚脹、亂食、中暑、抽筋徵狀，救返你毛孩一命。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 20 æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 20 日</p>
 
       <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
-        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">âš ï¸ é¦™æ¸¯æ¯›å­©ä¸»äººæ³¨æ„ï¼šåŠå¤œæ€¥ç—‡å¾—å¹¾å€‹é˜</h2>
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">è²“å’ª 24 å°æ™‚å±™å””å‡ºå°¿ï¼<strong style="color:#DC2626;">è…Žè¡°ç«­</strong>ï¼›ç‹—ç‹—è‚šè„¹ä¸åœä¹¾å˜”ï¼<strong style="color:#DC2626;">èƒƒæ‰­è½‰ï¼ˆGDVï¼‰</strong>ã€‚å‘¢å¼µæ¸…å–®æ•™ä½  30 ç§’å…§åˆ¤æ–·è¦å””è¦å³åˆ»è¡å¤œè¨ºï¼Œæ•‘è¿”æ¯›å­©ä¸€å‘½ã€‚</p>
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">⚠️ 香港毛孩主人注意：半夜急症得幾個鐘</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">貓咪 24 小時屙唔出尿＝<strong style="color:#DC2626;">腎衰竭</strong>；狗狗肚脹不停乾嘔＝<strong style="color:#DC2626;">胃扭轉（GDV）</strong>。呢張清單教你 30 秒內判斷要唔要即刻衝夜診，救返毛孩一命。</p>
       </div>
 
-      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 28px;">ã€Œå‘¢å€‹ç‹€æ³ï¼Œä¿‚å†è§€å¯Ÿä¸€ä¸‹å°±å¥½ï¼Œå®šä¿‚è€Œå®¶é¦¬ä¸Šè¦è¡é†«é™¢ï¼Ÿã€åŠå¤œé‡åˆ°å‘¢å•²æ™‚åˆ»çœŸä¿‚é›£åˆ¤æ–·â€”â€”ä½†å””ä¿‚ä½ å˜…éŒ¯ã€‚ä»¥ä¸‹æ¸…å–®ç”±æ—¥æœ¬æ€¥ç—‡å°ˆç§‘ç¸é†« <strong>PawMedical</strong>ï¼ˆæ€¥è¨ºç¬¬ä¸€ç·š 20 å¹´ç¶“é©—ï¼‰æ•´ç†ï¼ŒPetWell HK ä¸­æ–‡é‡è£½ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 28px;">「呢個狀況，係再觀察一下就好，定係而家馬上要衝醫院？」半夜遇到呢啲時刻真係難判斷——但唔係你嘅錯。以下清單由日本急症專科獸醫 <strong>PawMedical</strong>（急診第一線 20 年經驗）整理，PetWell HK 中文重製。</p>
 
       <div class="blog-cta-app">
         <div class="cta-app-inner">
           <div class="cta-app-text">
-            <h3>ðŸš¨ åŠå¤œæ€¥ç—‡ï¼Œå””å¥½ç­‰åˆ°äº‹ç™¼æžœä¸€åˆ»å…ˆè£</h3>
+            <h3>🚨 半夜急症，唔好等到事發果一刻先裝</h3>
             <ul>
-              <li>âœ… å…¨æ¸¯ 24 å°æ™‚ç¸é†«ä¸€éµå°Žèˆª</li>
-              <li>âœ… ç—…æ­· Â· ç–«è‹— Â· éŽæ•è—¥ç‰©ä¸€ tap å‡ºç¤º</li>
-              <li>âœ… å…§ç½®æ€¥è¨ºåˆ¤æ–·æ¸…å–®ï¼Œå³åˆ»çŸ¥è¦å””è¦è¡å¤œè¨º</li>
+              <li>✅ 全港 24 小時獸醫一鍵導航</li>
+              <li>✅ 病歷 · 疫苗 · 過敏藥物一 tap 出示</li>
+              <li>✅ 內置急診判斷清單，即刻知要唔要衝夜診</li>
             </ul>
-            <p class="cta-app-desc">é»ƒé‡‘æ™‚é–“å¾—å¹¾å€‹é˜ï¼Œå””å¥½ç”¨åšŸ Googleã€‚è€Œå®¶ install å®šï¼Œäº‹ç™¼å—°åˆ»å…ˆå””æœƒæ‰‹å¿™è…³äº‚ã€‚</p>
-            <a href="/download" class="cta-btn-primary">ðŸ“² ç«‹å³å…è²»ä¸‹è¼‰</a>
+            <p class="cta-app-desc">黃金時間得幾個鐘，唔好用嚟 Google。而家 install 定，事發嗰刻先唔會手忙腳亂。</p>
+            <a href="/download" class="cta-btn-primary">📲 立即免費下載</a>
           </div>
         </div>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;">
-        <a href="#zone-1" style="display:block;padding:14px 16px;background:#fff;border:1px solid #FCA5A5;color:#DC2626;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;font-size:14.5px;">ðŸš¨ å³åˆ»è¡å¤œè¨º â†’</a>
-        <a href="#zone-2" style="display:block;padding:14px 16px;background:#fff;border:1px solid #D1D5DB;color:#374151;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;font-size:14.5px;">ðŸ’¡ ç¿Œæ—¥ç‡é†«ç”Ÿ â†’</a>
+        <a href="#zone-1" style="display:block;padding:14px 16px;background:#fff;border:1px solid #FCA5A5;color:#DC2626;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;font-size:14.5px;">🚨 即刻衝夜診 →</a>
+        <a href="#zone-2" style="display:block;padding:14px 16px;background:#fff;border:1px solid #D1D5DB;color:#374151;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;font-size:14.5px;">💡 翌日睇醫生 →</a>
       </div>
 
       <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:32px;">
-        <img src="${blogPetErThread}" alt="PawMedical ç¸é†«å¤œé–“æ€¥è¨ºåˆ¤æ–·æ¸…å–®åŽŸæ–‡ï¼ˆThreads @pawmedical_jpï¼‰" style="width:100%;display:block;" loading="lazy" />
-        <p style="font-size:13px;color:#666;text-align:center;margin:10px 0 14px;">â–² åŽŸæ–‡å‡ºè™•ï¼šThreads <a href="https://www.threads.com/@pawmedical_jp/post/Da9B2bFAXT8" target="_blank" rel="noopener" style="color:#FF6B35;">@pawmedical_jp</a>ï½œPetWell ä¸­æ–‡é‡è£½ç‰ˆ</p>
+        <img src="${blogPetErThread}" alt="PawMedical 獸醫夜間急診判斷清單原文（Threads @pawmedical_jp）" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 0 14px;">▲ 原文出處：Threads <a href="https://www.threads.com/@pawmedical_jp/post/Da9B2bFAXT8" target="_blank" rel="noopener" style="color:#FF6B35;">@pawmedical_jp</a>｜PetWell 中文重製版</p>
       </div>
 
       <div style="background:#FFF7ED;border-left:4px solid #FF6B35;border-radius:10px;padding:16px 20px;margin-bottom:32px;">
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;"><strong style="color:#B45309;">âœ… å¤§åŽŸå‰‡ï¼š</strong>æ‹¿å””å®šä¸»æ„æ™‚ï¼Œ<strong>å…ˆæ‰“é›»è©±</strong>ç•€ç†Ÿæ‚‰å˜…å‹•ç‰©é†«é™¢æˆ–æœ€è¿‘å˜…å¤œé–“æ€¥ç—‡è¨ºæ‰€ï¼Œç”¨é›»è©±è¬›ä½Žç‹€æ³ï¼Œé†«ç”Ÿå¯ä»¥å³æ™‚å¹«ä½ åˆ¤æ–·ã€Œè€Œå®¶é¦¬ä¸Šå¸¶éŽåŽ»ã€å®šã€Œç­‰åˆ°æ—©ä¸Šå…ˆç‡ã€ã€‚</p>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;"><strong style="color:#B45309;">✅ 大原則：</strong>拿唔定主意時，<strong>先打電話</strong>畀熟悉嘅動物醫院或最近嘅夜間急症診所，用電話講低狀況，醫生可以即時幫你判斷「而家馬上帶過去」定「等到早上先睇」。</p>
       </div>
 
-      <h2 id="zone-1" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #DC2626;">ðŸš¨ å€åŸŸ 1ï¼šå‘¢å•²ç‹€æ³ï¼Œå³åˆ»è¡å¤œè¨º</h2>
-      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">åªè¦ä¸­å…¶ä¸­ä¸€é …ï¼Œå””å¥½å†è§€å¯Ÿï¼Œå³åˆ»æ‰“é›»è©±å¸¶åŽ»é†«é™¢ã€‚</p>
+      <h2 id="zone-1" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #DC2626;">🚨 區域 1：呢啲狀況，即刻衝夜診</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">只要中其中一項，唔好再觀察，即刻打電話帶去醫院。</p>
 
       <div style="display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:32px;">
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸ« å‘¼å¸ç•°å¸¸</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🫁 呼吸異常</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>å¼µé–‹å˜´ä¸€ç›´å–˜æ°£åœå””åˆ°ï¼å‘¼å¸æ€¥ä¿ƒã€è²»åŠ›</li>
-            <li>å’³å—½æˆ–ç™¼å‡ºç•°å¸¸å–˜é³´ï¼ˆ<strong>è²“å’ªå¼µå˜´å‘¼å¸å·²ç¶“ä¿‚ç·Šæ€¥ç‹€æ³</strong>ï¼‰</li>
-            <li>èˆŒé ­æˆ–ç‰™é½¦è®Šç´«è—è‰²ã€ç™½è‰²ï¼ˆ<strong>ç¼ºæ°§å¾µå…†</strong>ï¼‰</li>
-            <li>æ¯æ¬¡å‘¼å¸è‚šå­ç”¨åŠ›èµ·ä¼ï¼èƒ¸å£æœ‰å‘¼åš•è²</li>
-            <li>åªèƒ½åä½ä¼¸é•·é ¸ï¼Œå†‡è¾¦æ³•èººä½Ž</li>
+            <li>張開嘴一直喘氣停唔到／呼吸急促、費力</li>
+            <li>咳嗽或發出異常喘鳴（<strong>貓咪張嘴呼吸已經係緊急狀況</strong>）</li>
+            <li>舌頭或牙齦變紫藍色、白色（<strong>缺氧徵兆</strong>）</li>
+            <li>每次呼吸肚子用力起伏／胸口有呼嚕聲</li>
+            <li>只能坐住伸長頸，冇辦法躺低</li>
           </ul>
           <div style="background:#FFF7ED;border-left:3px solid #FF6B35;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">ðŸ’¡ <strong>æ³•é¬¥ã€å·´å“¥ã€å‰å¨ƒå¨ƒ</strong>ç­‰çŸ­å»çŠ¬ï¼Œå‘¼å¸æ€ªæ€ªå˜…è¦æ¥µåº¦æ•æ„Ÿï¼Œæ—©å•²ç‡é†«ç”Ÿå…ˆä¿å¾—ä½å‘½ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">💡 <strong>法鬥、巴哥、吉娃娃</strong>等短吻犬，呼吸怪怪嘅要極度敏感，早啲睇醫生先保得住命。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸ©¸ å°¿å°¿å•é¡Œï¼ˆå…¬è²“è¦ç‰¹åˆ¥ç•¶å¿ƒï¼‰</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🩸 尿尿問題（公貓要特別當心）</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>ä¸€ç›´è·‘å»æ‰€ï¼Œä½†å°¿æ¥µéƒ½å‡ºå””åˆ°</li>
-            <li>å–ºå¹³å¸¸å°¿å˜…åœ°æ–¹ä¸€ç›´å«ã€è¹²æˆä¸€åœ˜</li>
+            <li>一直跑廁所，但尿極都出唔到</li>
+            <li>喺平常尿嘅地方一直叫、蹲成一團</li>
           </ul>
           <div style="background:#FEF2F2;border-left:3px solid #DC2626;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">âš ï¸ <strong>å…¬è²“å°¿é“é˜»å¡ž</strong>æ”¾ä»»å””ç†ï¼Œ<strong>24â€“48 å°æ™‚å…§å¯èƒ½æœ‰ç”Ÿå‘½å±éšª</strong>ã€‚åŠå¤œéƒ½è¦å³åˆ»æ‰“é›»è©±åŽ»æ€¥ç—‡è¨ºæ‰€ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">⚠️ <strong>公貓尿道阻塞</strong>放任唔理，<strong>24–48 小時內可能有生命危險</strong>。半夜都要即刻打電話去急症診所。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸŽˆ è‚šè„¹ï¼ˆå¤§åž‹çŠ¬ã€æ·±èƒ¸çŠ¬ç¨®è¦å°å¿ƒï¼‰</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🎈 肚脹（大型犬、深胸犬種要小心）</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>è‚šå­è„¹åˆ°ç·Šé¼“ã€ç¡¬ç¡¬</li>
-            <li>ä¸€ç›´æƒ³åä½†åªåå£æ°´ã€ä¹œéƒ½åå””å‡º</li>
-            <li>ä¼ç«‹ä¸å®‰ã€æ˜Žé¡¯ä¸èˆ’æœ</li>
+            <li>肚子脹到緊鼓、硬硬</li>
+            <li>一直想吐但只吐口水、乜都吐唔出</li>
+            <li>企立不安、明顯不舒服</li>
           </ul>
           <div style="background:#FFF7ED;border-left:3px solid #FF6B35;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">ðŸ’¡ å‘¢å•²ä¿‚<strong>èƒƒæ‰­è½‰ï¼ˆGDVï¼‰</strong>å¾µå…†ï¼Œå¹¾å€‹é˜å…§å°±æœƒè‡´å‘½ï¼ŒåŠå¤œéƒ½è¦å³åˆ»é€é†«ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">💡 呢啲係<strong>胃扭轉（GDV）</strong>徵兆，幾個鐘內就會致命，半夜都要即刻送醫。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸ« äº‚é£Ÿï¼ˆå¯èƒ½åžè½è‚šæˆ–èˆ”åˆ°ï¼‰</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🍫 亂食（可能吞落肚或舔到）</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>é£Ÿåˆ°<strong>æœ±å¤åŠ›ï¼ç™¾åˆèŠ±ï¼è‘¡è„ï¼æ´‹è”¥è’œï¼æœ¨ç³–é†‡ï¼ˆç„¡ç³–é¦™å£è† ï¼‰ï¼äººé£Ÿå˜…è—¥</strong></li>
-            <li>å°±ç®—ã€Œè€Œå®¶ä»²å¥½ç²¾ç¥žã€éƒ½å””å¯ä»¥å¤§æ„ï¼ˆæœ‰å•²æ¯’ç´ å¹¾å€‹é˜å¾Œå…ˆç™¼ä½œï¼‰</li>
+            <li>食到<strong>朱古力／百合花／葡萄／洋蔥蒜／木糖醇（無糖香口膠）／人食嘅藥</strong></li>
+            <li>就算「而家仲好精神」都唔可以大意（有啲毒素幾個鐘後先發作）</li>
           </ul>
           <div style="background:#FFF7ED;border-left:3px solid #FF6B35;padding:10px 14px;border-radius:8px;margin-bottom:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">ðŸŒ¼ <strong>è²“å’ªå’¬åˆ°ï¼èˆ”åˆ°ç™¾åˆ</strong>éƒ½å¯èƒ½å¼•èµ·æ€¥æ€§è…Žè¡°ç«­ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">🌼 <strong>貓咪咬到／舔到百合</strong>都可能引起急性腎衰竭。</p>
           </div>
           <div style="background:#FEF2F2;border-left:3px solid #DC2626;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">âŒ <strong>å””å¥½è‡ªå·±çŒé¹½æ°´å‚¬å</strong>â€”â€”å¯èƒ½åš´é‡å‚·å®³é£Ÿé“åŒèƒƒã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">❌ <strong>唔好自己灌鹽水催吐</strong>——可能嚴重傷害食道同胃。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">âš¡ å…¨èº«ãƒ»ç¥žç¶“</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">⚡ 全身・神經</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>å«ä½¢å†‡åæ‡‰ã€æ•´å€‹æ”¤å’—ï¼åæ‡‰è®Šå¾—æ¥µæ…¢</li>
-            <li>ç‰™é½¦ç™½åˆ°åš‡äººï¼ˆ<strong>å…§å‡ºè¡€ã€ä¼‘å…‹</strong>å¾µå…†ï¼‰</li>
-            <li>ä¼å””èµ·èº«ï¼è¡Œè·¯æ–æ™ƒã€ä¼å””ç©©</li>
-            <li>çªç„¶æŠ½æã€é©šå«ã€å››è‚¢å†°å†·ï¼ˆ<strong>å‹•è„ˆè¡€æ “</strong>ï¼‰</li>
-            <li>æŠ½ç­‹æŠ½å€‹ä¸åœæˆ–åè¦†ç™¼ä½œ</li>
+            <li>叫佢冇反應、整個攤咗／反應變得極慢</li>
+            <li>牙齦白到嚇人（<strong>內出血、休克</strong>徵兆）</li>
+            <li>企唔起身／行路搖晃、企唔穩</li>
+            <li>突然抽搐、驚叫、四肢冰冷（<strong>動脈血栓</strong>）</li>
+            <li>抽筋抽個不停或反覆發作</li>
           </ul>
           <div style="background:#FEF2F2;border-left:3px solid #DC2626;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">âš ï¸ æŠ½ç­‹æ™‚<strong>å””å¥½å¾’æ‰‹æˆ–å¡žå˜¢å…¥ä½¢å£</strong>ï¼ˆæ˜“è¢«å’¬å‚·ï¼‰ï¼Œè‡ªå·±å…ˆå†·éœï¼Œæœªåœå°±æ‰“é›»è©±ç•€é†«é™¢ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">⚠️ 抽筋時<strong>唔好徒手或塞嘢入佢口</strong>（易被咬傷），自己先冷靜，未停就打電話畀醫院。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸŒ¡ï¸ ä¸­æš‘ï¼ˆå¤å¤©ã€è»Šå»‚å…§ã€é‹å‹•å¾Œï¼‰</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🌡️ 中暑（夏天、車廂內、運動後）</div>
           <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-            <li>è™›å¼±ä¼å””èµ·èº«ã€è¡Œè·¯æ–æ™ƒï¼å…¨èº«è»Ÿè¶´è¶´</li>
+            <li>虛弱企唔起身、行路搖晃／全身軟趴趴</li>
           </ul>
           <div style="background:#FFF7ED;border-left:3px solid #FF6B35;padding:10px 14px;border-radius:8px;margin-bottom:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">ðŸš¿ <strong>é€é†«é€”ä¸­ï¼š</strong>ç”¨æº«æ°´ï¼ˆå””ä¿‚å†°æ°´ï¼‰æ²–èº«ã€æ¿•æ¯›å·¾æŠ¹è‚šåŒé ¸ã€å¹é¢¨æ‰‡ã€æ”¾é™°æ¶¼è™•ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#9A3412;">🚿 <strong>送醫途中：</strong>用溫水（唔係冰水）沖身、濕毛巾抹肚同頸、吹風扇、放陰涼處。</p>
           </div>
           <div style="background:#FEF2F2;border-left:3px solid #DC2626;padding:10px 14px;border-radius:8px;">
-            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">âŒ <strong>å†°æ°´ï¼é…’ç²¾åæ•ˆæžœ</strong>ï¼ˆç†±æ°£æ•£å””å‡ºï¼‰ï¼›å†°è¢‹<strong>å””å¥½ç›´æŽ¥è²¼çš®è†š</strong>ï¼ˆæœƒå‡å‚·ï¼‰ã€‚</p>
+            <p style="margin:0;font-size:13.5px;line-height:1.65;color:#991B1B;">❌ <strong>冰水／酒精反效果</strong>（熱氣散唔出）；冰袋<strong>唔好直接貼皮膚</strong>（會凍傷）。</p>
           </div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
-          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">ðŸ©¹ å—å‚·ãƒ»æµè¡€</div>
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">🩹 受傷・流血</div>
           <ul style="font-size:15px;line-height:1.8;margin:0;padding-left:22px;color:#374151;">
-            <li>ç”±é«˜è™•å¢®ä¸‹ï¼ç•€è»Šæ’žï¼ˆå¤–è¡¨å†‡äº‹éƒ½å¯èƒ½å…§å‚·ï¼‰</li>
-            <li>ä¸€éš»è…³å®Œå…¨å””æ•¢è¸©åœ°ï¼ˆ<strong>éª¨æŠ˜ï¼è„«è‡¼</strong>ï¼‰</li>
-            <li>å‚·å£æ­¢å””åˆ°è¡€</li>
+            <li>由高處墮下／畀車撞（外表冇事都可能內傷）</li>
+            <li>一隻腳完全唔敢踩地（<strong>骨折／脫臼</strong>）</li>
+            <li>傷口止唔到血</li>
           </ul>
         </div>
       </div>
 
-      <h2 id="zone-2" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #F59E0B;">ðŸ’¡ å€åŸŸ 2ï¼šå””ä½¿æ…Œï¼Œä½†ç¿Œæ—¥ä¸€æ—©è¦ç‡é†«ç”Ÿ</h2>
-      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">å†‡å³æ™‚ç”Ÿå‘½å±éšªï¼Œä½†æ”¾ä»»å””ç†å¥½æ˜“è®Šåš´é‡ã€‚</p>
+      <h2 id="zone-2" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #F59E0B;">💡 區域 2：唔使慌，但翌日一早要睇醫生</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">冇即時生命危險，但放任唔理好易變嚴重。</p>
 
       <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;margin-bottom:32px;">
         <ul style="font-size:15px;line-height:1.8;margin:0 0 14px;padding-left:22px;color:#374151;">
-          <li>è¶…éŽåŠæ—¥å®Œå…¨å””é£²æ°´ï¼å””é£Ÿå˜¢</li>
-          <li>ä¸€ç›´åã€ä¸€ç›´è‚šç€‰ï¼åˆååˆç€‰ï¼Œäººéƒ½è®Šç„¡ç²¾ç¥ž</li>
-          <li>å°¿è‰²æ€ªæ€ªï¼ˆåç´…ã€å¤ªé»ƒæˆ–æ¸¾æ¿ï¼‰</li>
-          <li>ä¸€ç›´å’¬ï¼æŠ“èº«æŸå€‹ä½å¥½åŽ²å®³</li>
-          <li>çœ¼å¤šåˆ†æ³Œç‰©ï¼çœ¼ç´…ï¼ä¸€ç›´æ‰çœ¼</li>
+          <li>超過半日完全唔飲水／唔食嘢</li>
+          <li>一直吐、一直肚瀉／又吐又瀉，人都變無精神</li>
+          <li>尿色怪怪（偏紅、太黃或渾濁）</li>
+          <li>一直咬／抓身某個位好厲害</li>
+          <li>眼多分泌物／眼紅／一直揉眼</li>
         </ul>
         <div style="background:#FFFBEB;border-left:3px solid #F59E0B;padding:10px 14px;border-radius:8px;">
-          <p style="margin:0;font-size:13.5px;line-height:1.65;color:#92400E;">ðŸ“ž æ‹¿å””å®šä¸»æ„æ™‚ï¼Œ<strong>å…ˆæ‰“é›»è©±å•å•</strong>æœƒæ¯”è¼ƒå®‰å¿ƒã€‚</p>
+          <p style="margin:0;font-size:13.5px;line-height:1.65;color:#92400E;">📞 拿唔定主意時，<strong>先打電話問問</strong>會比較安心。</p>
         </div>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ðŸ“‹ ç‡é†«ç”Ÿå‰å…ˆè¨˜ä½Žå‘¢å•²è³‡æ–™</h2>
-      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">åŽ»åˆ°è¨ºæ‰€å¯ä»¥è©±ç•€ç¸é†«è½ï¼Œç‡è¨ºæœƒé †æš¢å¥½å¤šï¼š</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">📋 睇醫生前先記低呢啲資料</h2>
+      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">去到診所可以話畀獸醫聽，睇診會順暢好多：</p>
       <div style="border:1px solid #FFE4D1;border-radius:14px;padding:20px;background:#fff;margin-bottom:32px;">
         <ul style="font-size:15px;line-height:1.85;margin:0;padding-left:22px;color:#374151;">
-          <li>ç”±å¹¾æ™‚é–‹å§‹ï¼ä¿‚å’©ç‹€æ³</li>
-          <li>å¯èƒ½é£Ÿåˆ°ï¼èˆ”åˆ°å˜…å˜¢ï¼ˆå¤§æ¦‚å¹¾å¤šï¼Œå¹¾æ™‚ï¼‰</li>
-          <li>å¹³æ™‚é£Ÿå˜…ç³§ã€æ­£åœ¨é£Ÿå˜…è—¥</li>
-          <li>éŽå¾€ç—…å²</li>
+          <li>由幾時開始／係咩狀況</li>
+          <li>可能食到／舔到嘅嘢（大概幾多，幾時）</li>
+          <li>平時食嘅糧、正在食嘅藥</li>
+          <li>過往病史</li>
         </ul>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ç”¨ PetWell App ä¸€æ¬¡éŽæžæŽ‚</h2>
-      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">ç·Šæ€¥æ™‚è¦ä¸€æ¬¡éŽæ‹Žæ™’ç—…æ­·ã€ç–«è‹—ã€24 å°æ™‚ç¸é†«åå–®åŒåˆ¤æ–·æ¸…å–®ï¼ŒPetWell App å…§ç½®å…¨éƒ¨åŠŸèƒ½ï¼Œæ…Œå¼µæ™‚å””ä½¿å†æ‰‹å¿™è…³äº‚ Googleã€‚</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">用 PetWell App 一次過搞掂</h2>
+      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">緊急時要一次過拎晒病歷、疫苗、24 小時獸醫名單同判斷清單，PetWell App 內置全部功能，慌張時唔使再手忙腳亂 Google。</p>
 
       <div class="blog-cta-app">
         <div class="cta-app-inner">
           <div class="cta-app-text">
-            <h3>ðŸ“± PetWell App å¹«ä½ ä¸€æ¬¡éŽæžæŽ‚</h3>
+            <h3>📱 PetWell App 幫你一次過搞掂</h3>
             <ul>
-              <li>âœ… è¨˜éŒ„æ¯›å­©ç—…æ­·ç–«è‹—</li>
-              <li>âœ… 24 å°æ™‚ç¸é†«åå–® + GPS å°Žèˆª</li>
-              <li>âœ… å¯µç‰©å‹å–„é¤å»³ä¸€æ‡‰ä¿±å…¨</li>
+              <li>✅ 記錄毛孩病歷疫苗</li>
+              <li>✅ 24 小時獸醫名單 + GPS 導航</li>
+              <li>✅ 寵物友善餐廳一應俱全</li>
             </ul>
-            <p class="cta-app-desc">ç·Šæ€¥æ™‚å””ä½¿å†æ‰‹å¿™è…³äº‚ã€‚</p>
-            <a href="/download" class="cta-btn-primary">ç«‹å³å…è²»ä¸‹è¼‰</a>
+            <p class="cta-app-desc">緊急時唔使再手忙腳亂。</p>
+            <a href="/download" class="cta-btn-primary">立即免費下載</a>
           </div>
           <div class="cta-app-screenshot cta-app-screenshot--dual">
-            <img src="${blogPetErAppClinics}" alt="PetWell App è¨ºæ‰€é é¢ï¼Œå³ä¸Šè§’æœ‰ã€Žæ€¥è¨ºåˆ¤æ–·æª¢æŸ¥æ¸…å–®ã€ä¸€éµå…¥å£" loading="lazy" />
-            <img src="${blogPetErAppChecklist}" alt="PetWell App å…§ç½®æ€¥è¨ºåˆ¤æ–·æª¢æŸ¥æ¸…å–®ï¼ˆPawMedical ä¸­æ–‡ç‰ˆï¼‰" loading="lazy" />
+            <img src="${blogPetErAppClinics}" alt="PetWell App 診所頁面，右上角有『急診判斷檢查清單』一鍵入口" loading="lazy" />
+            <img src="${blogPetErAppChecklist}" alt="PetWell App 內置急診判斷檢查清單（PawMedical 中文版）" loading="lazy" />
           </div>
         </div>
       </div>
 
-      <p style="font-size:16px;line-height:1.75;margin-bottom:20px;">æƒ³ç‡é¦™æ¸¯ 24 å°æ™‚æ€¥ç—‡ç¸é†«åå–®ï¼Ÿç€è¦½ <a href="/24hr-vet-clinic-hk-list" style="color:#FF6B35;text-decoration:underline;font-weight:700;">é¦™æ¸¯ 24 å°æ™‚ç¸é†«è¨ºæ‰€æ‡¶äººåŒ…</a>ã€‚</p>
+      <p style="font-size:16px;line-height:1.75;margin-bottom:20px;">想睇香港 24 小時急症獸醫名單？瀏覽 <a href="/24hr-vet-clinic-hk-list" style="color:#FF6B35;text-decoration:underline;font-weight:700;">香港 24 小時獸醫診所懶人包</a>。</p>
 
-      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">è²æ˜Žï¼šæœ¬æ¸…å–®åƒ…ç‚ºä¸€èˆ¬æ€§åƒè€ƒï¼Œå””å¯ä»¥å–ä»£ç¸é†«å˜…è¨ºæ–·ã€‚åªè¦è¦ºå¾—æ¯›å­©ã€ŒåŒå¹³æ™‚å””ä¸€æ¨£ã€ï¼Œè«‹å³åˆ»æ‰“é›»è©±ç•€é†«é™¢ã€‚åŽŸæ–‡å‡ºè™•ï¼šThreads <a href="https://www.threads.com/@pawmedical_jp/post/Da9B2bFAXT8" target="_blank" rel="noopener" style="color:#FF6B35;">@pawmedical_jp</a>ï¼ˆPawMedicalï½œæ€¥è¨ºå°ˆè²¬ 20 å¹´ç¸é†«å¸«ï¼‰ã€‚PetWell HK ä¸­æ–‡é‡è£½ï¼Œå…§å®¹æœªç¶“ PawMedical æŽˆæ¬Šï¼Œç‰ˆæ¬Šæ­¸åŽŸä½œè€…æ‰€æœ‰ã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">聲明：本清單僅為一般性參考，唔可以取代獸醫嘅診斷。只要覺得毛孩「同平時唔一樣」，請即刻打電話畀醫院。原文出處：Threads <a href="https://www.threads.com/@pawmedical_jp/post/Da9B2bFAXT8" target="_blank" rel="noopener" style="color:#FF6B35;">@pawmedical_jp</a>（PawMedical｜急診專責 20 年獸醫師）。PetWell HK 中文重製，內容未經 PawMedical 授權，版權歸原作者所有。</p>
 
       <div class="seo-hidden" aria-hidden="true">
-        <p>PetWell HK æä¾›é¦™æ¸¯ç‹—ç‹—è²“å’ªå¤œé–“æ€¥è¨ºåˆ¤æ–·æ¸…å–®ï¼Œæ¶µè“‹å¯µç‰©æ€¥ç—‡å¾µç‹€ã€24 å°æ™‚ç¸é†«ã€è²“å’ªå°¿é“é˜»å¡žã€ç‹—ç‹—èƒƒæ‰­è½‰ GDVã€å¯µç‰©ä¸­æš‘æ€¥æ•‘ã€æŠ½ç­‹è™•ç†ã€äº‚é£Ÿæœ±å¤åŠ›ç™¾åˆç­‰é—œéµè³‡è¨Šï¼Œå¹«åŠ©é¦™æ¸¯æ¯›å­©ä¸»äººç¬¬ä¸€æ™‚é–“åˆ¤æ–·æ˜¯å¦éœ€è¦å³åˆ»é€æ€¥ç—‡ã€‚</p>
+        <p>PetWell HK 提供香港狗狗貓咪夜間急診判斷清單，涵蓋寵物急症徵狀、24 小時獸醫、貓咪尿道阻塞、狗狗胃扭轉 GDV、寵物中暑急救、抽筋處理、亂食朱古力百合等關鍵資訊，幫助香港毛孩主人第一時間判斷是否需要即刻送急症。</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2026-07-20",
-    category: "å¯µç‰©å¥åº·",
+    category: "寵物健康",
     imageUrl: blogPetErCover,
-    seoKeywords: ["å¯µç‰©æ€¥ç—‡", "å¤œé–“æ€¥è¨º", "24å°æ™‚ç¸é†«é¦™æ¸¯", "ç‹—ç‹—æ€¥ç—‡å¾µç‹€", "è²“å’ªå°¿é“é˜»å¡ž", "å¯µç‰©ä¸­æš‘", "èƒƒæ‰­è½‰GDV", "å¯µç‰©æ€¥æ•‘æ¸…å–®", "é¦™æ¸¯æ€¥ç—‡ç¸é†«", "æ¯›å­©æ€¥ç—‡åˆ¤æ–·"],
-    seoDescription: "20 å¹´æ€¥ç—‡ç¸é†«æ•´ç†å˜…ã€Šå¤œé–“æ€¥è¨ºåˆ¤æ–·æ¸…å–®ã€‹ä¸­æ–‡ç‰ˆï¼šå‘¼å¸ã€å°¿å°¿ã€è‚šè„¹ã€äº‚é£Ÿã€ä¸­æš‘ã€æŠ½ç­‹å’©æƒ…æ³è¦å³åˆ»è¡å¤œè¨ºï¼ŸPetWell HK ç‚ºé¦™æ¸¯æ¯›å­©ä¸»äººé‡è£½ï¼Œé™„ 24 å°æ™‚ç¸é†«åå–®ã€‚",
+    seoKeywords: ["寵物急症", "夜間急診", "24小時獸醫香港", "狗狗急症徵狀", "貓咪尿道阻塞", "寵物中暑", "胃扭轉GDV", "寵物急救清單", "香港急症獸醫", "毛孩急症判斷"],
+    seoDescription: "20 年急症獸醫整理嘅《夜間急診判斷清單》中文版：呼吸、尿尿、肚脹、亂食、中暑、抽筋咩情況要即刻衝夜診？PetWell HK 為香港毛孩主人重製，附 24 小時獸醫名單。",
     faqItems: [
-      { question: "é»žæ¨£çŸ¥é“ç‹—ç‹—è²“å’ªéœ€è¦å³åˆ»ç‡æ€¥ç—‡ï¼Ÿ", answer: "å¦‚æžœå‡ºç¾å‘¼å¸æ€¥ä¿ƒã€èˆŒé ­è®Šç´«ã€å…¬è²“å°¿å””åˆ°ã€è‚šè„¹ç¡¬ã€æŠ½ç­‹ã€åžåˆ°æ¯’ç‰©ï¼ˆæœ±å¤åŠ›ï¼ç™¾åˆï¼æœ¨ç³–é†‡ï¼‰ã€æˆ–è€…å«ä½¢å†‡åæ‡‰ï¼Œå°±è¦å³åˆ»æ‰“é›»è©±ç•€å¤œé–“æ€¥ç—‡è¨ºæ‰€ã€‚ä»»ä½•ä¸€é …å‡ºç¾ï¼Œéƒ½å””å¥½ç­‰åˆ°æ—©ä¸Šã€‚" },
-      { question: "å…¬è²“å°¿å””åˆ°æœ‰å¹¾åš´é‡ï¼Ÿ", answer: "å°¿é“é˜»å¡žä¿‚è‡´å‘½æ€¥ç—‡ï¼Œ24 è‡³ 48 å°æ™‚å…§å¯èƒ½å› è…Žè¡°ç«­æˆ–å¿ƒå¾‹ä¸æ•´æ­»äº¡ã€‚ç™¼ç¾å…¬è²“æˆæ—¥è¹²å»æ‰€ä½†å°¿å””åˆ°ã€æˆ–è€…å«ä½è¹²æˆä¸€åœ˜ï¼Œå³åˆ»é€æ€¥ç—‡ã€‚" },
-      { question: "åŠå¤œç‹—ç‹—ä¸­æš‘ï¼ŒåŽ»é†«é™¢é€”ä¸­å¯ä»¥åšå’©ï¼Ÿ", answer: "ç”¨æº«æ°´ï¼ˆçµ•å°å””å¥½ç”¨å†°æ°´ï¼‰æ²–èº«ã€æ¿•æ¯›å·¾æŠ¹è‚šåŒé ¸ã€é–‹å†·æ°£æˆ–é¢¨æ‰‡ã€æ”¾é™°æ¶¼ä½ç½®ã€‚å†°è¢‹å””å¥½ç›´æŽ¥è²¼çš®è†šï¼Œæœƒå‡å‚·ã€‚é‚Šé™æº«é‚Šå³åˆ»é€é†«ã€‚" },
-      { question: "é¦™æ¸¯æœ‰å’© 24 å°æ™‚æ€¥ç—‡ç¸é†«ï¼Ÿ", answer: "é¦™æ¸¯æœ‰å¤šé–“ 24 å°æ™‚æ€¥ç—‡ç¸é†«è¨ºæ‰€ï¼ŒPetWell æ•´ç†å’—å®Œæ•´åå–®åŒ GPS å°Žèˆªï¼Œå¯ä»¥ç€è¦½ã€Šé¦™æ¸¯ 24 å°æ™‚ç¸é†«è¨ºæ‰€æ‡¶äººåŒ…ã€‹ï¼Œæˆ–è€…ä¸‹è¼‰ PetWell App ç”¨åœ°åœ–å³æ™‚æµæœ€è¿‘å˜…æ€¥ç—‡è¨ºæ‰€ã€‚" },
+      { question: "點樣知道狗狗貓咪需要即刻睇急症？", answer: "如果出現呼吸急促、舌頭變紫、公貓尿唔到、肚脹硬、抽筋、吞到毒物（朱古力／百合／木糖醇）、或者叫佢冇反應，就要即刻打電話畀夜間急症診所。任何一項出現，都唔好等到早上。" },
+      { question: "公貓尿唔到有幾嚴重？", answer: "尿道阻塞係致命急症，24 至 48 小時內可能因腎衰竭或心律不整死亡。發現公貓成日蹲廁所但尿唔到、或者叫住蹲成一團，即刻送急症。" },
+      { question: "半夜狗狗中暑，去醫院途中可以做咩？", answer: "用溫水（絕對唔好用冰水）沖身、濕毛巾抹肚同頸、開冷氣或風扇、放陰涼位置。冰袋唔好直接貼皮膚，會凍傷。邊降溫邊即刻送醫。" },
+      { question: "香港有咩 24 小時急症獸醫？", answer: "香港有多間 24 小時急症獸醫診所，PetWell 整理咗完整名單同 GPS 導航，可以瀏覽《香港 24 小時獸醫診所懶人包》，或者下載 PetWell App 用地圖即時搵最近嘅急症診所。" },
     ],
-    relatedTopics: ["å¯µç‰©æ€¥ç—‡", "24å°æ™‚ç¸é†«", "è²“å’ªå°¿é“é˜»å¡ž", "å¯µç‰©ä¸­æš‘", "å¯µç‰©æ€¥æ•‘"],
+    relatedTopics: ["寵物急症", "24小時獸醫", "貓咪尿道阻塞", "寵物中暑", "寵物急救"],
   },
   {
     id: "28",
     slug: "dog-summer-cooling-heatstroke-prevention-hk",
-    title: "ç‹—ç‹—å¤å¤©é™æš‘è²¼å£«ï½œå¯’å¸¶ç‹—é›™å±¤æ¯›æ˜“ä¸­æš‘ï¼Ÿ4 å€‹æ–¹æ³•å¹«æ¯›å­©æ¶¼ä½éŽå¤ï½œPetWell HK",
-    excerpt: "é¦™æ¸¯å¤å¤©ç‚Žç†±ï¼Œå¯’å¸¶ç‹—å› é›™å±¤æ¯›ç‰¹åˆ¥å®¹æ˜“ä¸­æš‘ã€‚äº†è§£ç‹—ç‹—ä¸Šå±¤æ¯›åŒä¸‹å±¤æ¯›åŠŸèƒ½ï¼Œå­¸è­˜å‰ªæ¯›ã€æ¢³åº•æ¯›ã€çŽ©æ°´ã€å†·æ°£ç­‰é™æš‘æ–¹æ³•ï¼Œå¹«æ¯›å­©å®‰å…¨éŽå¤ã€‚",
+    title: "狗狗夏天降暑貼士｜寒帶狗雙層毛易中暑？4 個方法幫毛孩涼住過夏｜PetWell HK",
+    excerpt: "香港夏天炎熱，寒帶狗因雙層毛特別容易中暑。了解狗狗上層毛同下層毛功能，學識剪毛、梳底毛、玩水、冷氣等降暑方法，幫毛孩安全過夏。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 17 æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 17 日</p>
 
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px; font-weight: 300;">é¦™æ¸¯å¤å¤©åˆæ¿•åˆç†±ï¼Œ<strong>å¯’å¸¶ç‹—</strong>ï¼ˆä¾‹å¦‚å“ˆå£«å¥‡ã€é‡‘æ¯›å°‹å›žçŠ¬ã€è–©æ‘©è€¶ç­‰ï¼‰å› ç‚º<strong>é›™å±¤æ¯›</strong>åŽšå¯¦ï¼Œé«”ç†±é›£ä»¥æ•£å‡ºï¼Œç‰¹åˆ¥å®¹æ˜“<strong>ä¸­æš‘</strong>ã€‚å‘¢ç¯‡æ–‡ç« æœƒè¬›è§£ç‹—ç‹—æ¯›é«®å˜…æ§‹é€ ï¼ŒåŒåˆ†äº« 4 å€‹å¯¦ç”¨<strong>é™æš‘</strong>æ–¹æ³•ï¼Œå¹«æ¯›å­©å®‰å…¨éŽå¤ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px; font-weight: 300;">香港夏天又濕又熱，<strong>寒帶狗</strong>（例如哈士奇、金毛尋回犬、薩摩耶等）因為<strong>雙層毛</strong>厚實，體熱難以散出，特別容易<strong>中暑</strong>。呢篇文章會講解狗狗毛髮嘅構造，同分享 4 個實用<strong>降暑</strong>方法，幫毛孩安全過夏。</p>
 
       <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
-        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">âš ï¸ ä¸»äººæ³¨æ„</h2>
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">ç‹—ç‹—å†‡æ±—è…ºï¼Œä¸»è¦é å–˜æ°£æ•£ç†±ã€‚ç•¶å®¤æº«è¶…éŽ 30Â°C åŠ ä¸Šæ¿•åº¦é«˜ï¼Œå¯’å¸¶ç‹—å˜…åŽšæ¯›æœƒéŽ–ä½é«”ç†±ï¼ŒçŸ­çŸ­åå¹¾åˆ†é˜å°±å¯èƒ½ä¸­æš‘ã€‚ä¸­æš‘ä¿‚<strong style="color:#DC2626;">è‡´å‘½</strong>å˜…æ€¥ç—‡ï¼Œå””å¯ä»¥æŽ‰ä»¥è¼•å¿ƒã€‚</p>
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">⚠️ 主人注意</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">狗狗冇汗腺，主要靠喘氣散熱。當室溫超過 30°C 加上濕度高，寒帶狗嘅厚毛會鎖住體熱，短短十幾分鐘就可能中暑。中暑係<strong style="color:#DC2626;">致命</strong>嘅急症，唔可以掉以輕心。</p>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">é»žè§£å¯’å¸¶ç‹—ç‰¹åˆ¥å®¹æ˜“ä¸­æš‘ï¼Ÿ</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">點解寒帶狗特別容易中暑？</h2>
 
-      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">å¯’å¸¶ç‹—å¤©ç”Ÿå…·å‚™<strong>é›™å±¤æ¯›</strong>ä»¥é©æ‡‰å¯’å†·æ°£å€™ã€‚å‘¢ç¨®æ¯›é«®çµæ§‹å–ºå‡å˜…åœ°æ–¹ä¿‚ä¿æš–ç¥žå™¨ï¼Œä½†åŽ»åˆ°é¦™æ¸¯å¤å¤©å°±è®Šæˆæ•£ç†±é˜»ç¤™ã€‚</p>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">寒帶狗天生具備<strong>雙層毛</strong>以適應寒冷氣候。呢種毛髮結構喺凍嘅地方係保暖神器，但去到香港夏天就變成散熱阻礙。</p>
 
       <div style="margin: 24px 0; border-radius: 12px; overflow: hidden;">
-        <img src="${blogDogDoubleCoat}" alt="ç‹—ç‹—é›™å±¤æ¯›ç‰¹å¯« â€” ä¸Šå±¤æ¯›åŒä¸‹å±¤æ¯›çµæ§‹" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
-        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">â–² ç‹—ç‹—å˜…é›™å±¤æ¯›ï¼šä¸Šå±¤å¼·éŸŒä¿è­·ï¼Œä¸‹å±¤æŸ”è»Ÿä¿æš–ã€‚</p>
+        <img src="${blogDogDoubleCoat}" alt="狗狗雙層毛特寫 — 上層毛同下層毛結構" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
+        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">▲ 狗狗嘅雙層毛：上層強韌保護，下層柔軟保暖。</p>
       </div>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">ðŸŸ  ç‹—ç‹—å˜…ä¸Šå±¤æ¯›ï¼ˆGuard Hairï¼‰</h3>
-      <p style="font-size: 15px; color: #666; margin-bottom: 12px;">å–®æ¯›æˆ–é›™æ¯›ç‹—ç‹—éƒ½æœ‰ï¼Œè³ªåœ°å¼·éŸŒä¸”ç”Ÿé•·ç·©æ…¢ã€‚</p>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">🟠 狗狗嘅上層毛（Guard Hair）</h3>
+      <p style="font-size: 15px; color: #666; margin-bottom: 12px;">單毛或雙毛狗狗都有，質地強韌且生長緩慢。</p>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>é˜»éš”é™½å…‰æ›¬å‚·çš®è†š</li>
-        <li>æ¸›å°‘èšŠèŸ²å®å’¬</li>
-        <li>é˜²æ­¢é›¨æ°´ç›´æŽ¥æ·‹æ¿•çš®è†š</li>
-        <li>å¹«åŠ©çš®è†šé€šé¢¨</li>
+        <li>阻隔陽光曬傷皮膚</li>
+        <li>減少蚊蟲叮咬</li>
+        <li>防止雨水直接淋濕皮膚</li>
+        <li>幫助皮膚通風</li>
       </ul>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">ðŸŸ¡ ç‹—ç‹—å˜…ä¸‹å±¤æ¯›ï¼ˆUndercoatï¼‰</h3>
-      <p style="font-size: 15px; color: #666; margin-bottom: 12px;">é›™å±¤æ¯›ç‹—ç‹—ç¨æœ‰ï¼Œè³ªåœ°æŸ”è»ŸåŽšå¯¦ä¸”ç”Ÿé•·å¿«é€Ÿã€‚</p>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">🟡 狗狗嘅下層毛（Undercoat）</h3>
+      <p style="font-size: 15px; color: #666; margin-bottom: 12px;">雙層毛狗狗獨有，質地柔軟厚實且生長快速。</p>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>ä¸»è¦åŠŸèƒ½ä¿‚ä¿æš–</li>
-        <li>å¸æ”¶æ¿•æ°£ï¼Œç¶­æŒçš®è†šä¹¾çˆ½</li>
-        <li>ç‚Žç†±æ™‚æœƒè„«éƒ¨åˆ†æ¯›ï¼Œå¢žåŠ é€æ°£åº¦</li>
+        <li>主要功能係保暖</li>
+        <li>吸收濕氣，維持皮膚乾爽</li>
+        <li>炎熱時會脫部分毛，增加透氣度</li>
       </ul>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">ðŸ”¥ åŽšæ¯›é»žè§£ä»¤ç‹—ç‹—æ›´æ˜“ä¸­æš‘ï¼Ÿ</h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">🔥 厚毛點解令狗狗更易中暑？</h3>
       <div style="background:#FEF2F2;border:1px solid #FECACA;padding:16px 20px;border-radius:10px;margin-bottom:24px;">
-        <p style="font-size: 16px; line-height: 1.8; margin: 0 0 8px;"><strong>1. æ¯›è–„å˜…åœ°æ–¹æº«åº¦ä½Ž</strong> â€” å› ç‚ºç†±é‡å¯ä»¥æ•£å‡ºåšŸã€‚</p>
-        <p style="font-size: 16px; line-height: 1.8; margin: 0 0 8px;"><strong>2. åŽšæ¯›æœƒéŽ–ä½é«”ç†±</strong> â€” ç„¡è«–ç‹—ç‹—ä¿‚éƒå‹•å®šçž“è¦ºï¼Œèº«é«”éƒ½æœƒæŒçºŒç”¢ç”Ÿç†±é‡ã€‚</p>
-        <p style="font-size: 16px; line-height: 1.8; margin: 0;"><strong>3. æ•£ç†±æ•ˆçŽ‡ä½Ž</strong> â€” åŽšå¯¦å˜…ä¸‹å±¤æ¯›ä»¤ç†±é‡å›°å–ºçš®è†šé™„è¿‘ï¼Œå®¹æ˜“å°Žè‡´ä¸­æš‘ã€‚</p>
+        <p style="font-size: 16px; line-height: 1.8; margin: 0 0 8px;"><strong>1. 毛薄嘅地方溫度低</strong> — 因為熱量可以散出嚟。</p>
+        <p style="font-size: 16px; line-height: 1.8; margin: 0 0 8px;"><strong>2. 厚毛會鎖住體熱</strong> — 無論狗狗係郁動定瞓覺，身體都會持續產生熱量。</p>
+        <p style="font-size: 16px; line-height: 1.8; margin: 0;"><strong>3. 散熱效率低</strong> — 厚實嘅下層毛令熱量困喺皮膚附近，容易導致中暑。</p>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">4 å€‹æ–¹æ³•å¹«ç‹—ç‹—é™æš‘</h2>
-      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">é™æš‘å””ä¸€å®šè¦å‰ƒå…‰æ¯›ï¼Œä»¥ä¸‹æ–¹æ³•å®‰å…¨åˆæœ‰æ•ˆï¼š</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">4 個方法幫狗狗降暑</h2>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">降暑唔一定要剃光毛，以下方法安全又有效：</p>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">âœ‚ï¸ æ–¹æ³• 1ï½œå±€éƒ¨ä¿®å‰ª + æ¢³èµ°åº•æ¯›</h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">✂️ 方法 1｜局部修剪 + 梳走底毛</h3>
 
       <div style="margin: 20px 0; border-radius: 12px; overflow: hidden;">
-        <img src="${blogDogGroomingUndercoat}" alt="å¯µç‰©ç¾Žå®¹å¸«ç”¨åŽ»åº•æ¯›æ¢³å¹«ç‹—ç‹—æ¢³èµ°å¤šé¤˜ä¸‹å±¤æ¯›" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
-        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">â–² å¸¶åŽ»å¯µç‰©ç¾Žå®¹å¸«åº¦ç”¨å°ˆç”¨æ¢³æ¢³èµ°åº•æ¯›ï¼Œæ¯”å‰ƒæ¯›æ›´æœ‰æ•ˆã€‚</p>
+        <img src="${blogDogGroomingUndercoat}" alt="寵物美容師用去底毛梳幫狗狗梳走多餘下層毛" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
+        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">▲ 帶去寵物美容師度用專用梳梳走底毛，比剃毛更有效。</p>
       </div>
 
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>å¯ä»¥è€ƒæ…®å–ºç‡å””åˆ°å˜…åœ°æ–¹ï¼ˆä¾‹å¦‚<strong>è‚šåº•ã€è…‹ä¸‹</strong>ï¼‰è¼•è¼•ä¿®å‰ªï¼Œç­‰ç‹—ç‹—å¯ä»¥è²¼ä½æ¶¼å˜…åœ°é¢å¹«è‡ªå·±é™æº«ã€‚</li>
-        <li>å¦‚æžœå””æƒ³å‰ƒæ™’ï¼Œä¸»äººå¯ä»¥å¸¶åŽ»<strong>å¯µç‰©ç¾Žå®¹å¸«</strong>åº¦ç›¡é‡æ¢³èµ°å¤šé¤˜åº•æ¯›ã€‚</li>
-        <li><strong>å””å»ºè­°å®Œå…¨å‰ƒå…‰</strong>ï¼šä¸Šå±¤æ¯›ä¿‚å¤©ç„¶é˜²æ›¬å±¤ï¼Œå‰ƒå…‰åè€Œæœƒå¢žåŠ æ›¬å‚·åŒçš®è†šå•é¡Œå˜…é¢¨éšªã€‚</li>
+        <li>可以考慮喺睇唔到嘅地方（例如<strong>肚底、腋下</strong>）輕輕修剪，等狗狗可以貼住涼嘅地面幫自己降溫。</li>
+        <li>如果唔想剃晒，主人可以帶去<strong>寵物美容師</strong>度盡量梳走多餘底毛。</li>
+        <li><strong>唔建議完全剃光</strong>：上層毛係天然防曬層，剃光反而會增加曬傷同皮膚問題嘅風險。</li>
       </ul>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">ðŸ’¦ æ–¹æ³• 2ï½œçŽ©æ°´ + æ¿•æ½¤é™æº«</h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">💦 方法 2｜玩水 + 濕潤降溫</h3>
 
       <div style="margin: 20px 0; border-radius: 12px; overflow: hidden;">
-        <img src="${blogDogWaterPool}" alt="ç‹—ç‹—å–ºæ°´æ± çŽ©æ°´é™æº«" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
-        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">â–² æ·ºæ°´æ± ä¿‚ç‹—ç‹—å¤å¤©æœ€æ„›ï¼ŒçŽ©å¾—é–‹å¿ƒåˆé™æº«ã€‚</p>
+        <img src="${blogDogWaterPool}" alt="狗狗喺水池玩水降溫" style="width:100%; max-height:420px; object-fit:cover; display:block;" loading="lazy" width="1200" height="675" />
+        <p style="font-size:13px; color:#666; text-align:center; margin:8px 0 0;">▲ 淺水池係狗狗夏天最愛，玩得開心又降溫。</p>
       </div>
 
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>æº–å‚™<strong>æ·ºæ°´æ± </strong>æˆ–å™´æ°´çŽ©å…·ï¼Œè®“ç‹—ç‹—è…³æŽŒåŒè…¹éƒ¨æŽ¥è§¸æ¶¼æ°´ã€‚</li>
-        <li>ç”¨<strong>æ¿•æ¯›å·¾</strong>è¼•æŠ¹è…³æŽŒã€è…¹éƒ¨åŒè€³æœµï¼Œå¹«åŠ©æ•£ç†±ã€‚</li>
-        <li>æä¾›<strong>æ–°é®®é£²æ°´</strong>ï¼Œå¯åŠ å…¥å°‘é‡å†°å¡Šã€‚</li>
+        <li>準備<strong>淺水池</strong>或噴水玩具，讓狗狗腳掌同腹部接觸涼水。</li>
+        <li>用<strong>濕毛巾</strong>輕抹腳掌、腹部同耳朵，幫助散熱。</li>
+        <li>提供<strong>新鮮飲水</strong>，可加入少量冰塊。</li>
       </ul>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">â„ï¸ æ–¹æ³• 3ï½œå†·æ°£ + æ¶¼å¢Š + å†°çµ²è¡£ç‰©</h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">❄️ 方法 3｜冷氣 + 涼墊 + 冰絲衣物</h3>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>æ—¥é–“<strong>é–‹å†·æ°£æˆ–é¢¨æ‰‡</strong>ï¼Œä¿æŒå®¤å…§é€šé¢¨æ¶¼çˆ½ï¼ˆå»ºè­° 25â€“26Â°Cï¼‰ã€‚</li>
-        <li>ä½¿ç”¨å¯µç‰©<strong>æ¶¼å¢Šæˆ–å†°è¢‹</strong>ï¼Œè®“ç‹—ç‹—èººè‡¥é™æº«ã€‚</li>
-        <li>å¤–å‡ºæ™‚å¯ç©¿<strong>å†°çµ²é€æ°£è¡£ç‰©</strong>ï¼Œé¿å…åœ°é¢ç‡™å‚·è…³æŽŒã€‚</li>
+        <li>日間<strong>開冷氣或風扇</strong>，保持室內通風涼爽（建議 25–26°C）。</li>
+        <li>使用寵物<strong>涼墊或冰袋</strong>，讓狗狗躺臥降溫。</li>
+        <li>外出時可穿<strong>冰絲透氣衣物</strong>，避免地面燙傷腳掌。</li>
       </ul>
 
-      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">ðŸŒ… æ–¹æ³• 4ï½œé¿é–‹é«˜æº«æ™‚æ®µå¤–å‡º</h3>
+      <h3 style="font-size: 20px; font-weight: 700; margin: 28px 0 12px;">🌅 方法 4｜避開高溫時段外出</h3>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 24px; padding-left: 20px;">
-        <li>é¸æ“‡<strong>æ¸…æ™¨æˆ–å‚æ™š</strong>å…ˆå¸¶ç‹—ç‹—æ•£æ­¥ï¼Œé¿é–‹æ­£åˆ 12 é»žè‡³ 3 é»žã€‚</li>
-        <li>å‡ºè¡—å‰ç”¨<strong>æ‰‹èƒŒè©¦åœ°é¢æº«åº¦</strong>ï¼Œ5 ç§’éƒ½å—å””åˆ°å°±å””å¥½è½åœ°ã€‚</li>
-        <li>éš¨èº«å¸¶<strong>æ°´åŒæ‘ºç–Šå¼æ°´ç¢—</strong>ï¼Œå®šæ™‚è£œæ°´ã€‚</li>
+        <li>選擇<strong>清晨或傍晚</strong>先帶狗狗散步，避開正午 12 點至 3 點。</li>
+        <li>出街前用<strong>手背試地面溫度</strong>，5 秒都受唔到就唔好落地。</li>
+        <li>隨身帶<strong>水同摺疊式水碗</strong>，定時補水。</li>
       </ul>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ðŸ’¡ ä¸»äººè¨˜ä½å‘¢ 3 é»ž</h2>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">💡 主人記住呢 3 點</h2>
       <div style="background:#FFF4E6;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:24px;">
-        <p style="font-size:15px;line-height:1.8;margin:0 0 8px;">âœ… <strong>å””å¥½å‰ƒå…‰æ¯›ï¼š</strong>ä¸Šå±¤æ¯›ä¿‚å¤©ç„¶é˜²æ›¬å±¤ï¼Œå‰ƒå…‰æœƒå¢žåŠ æ›¬å‚·åŒçš®è†šå•é¡Œé¢¨éšªã€‚</p>
-        <p style="font-size:15px;line-height:1.8;margin:0 0 8px;">âœ… <strong>åº•æ¯›è¦ç–ï¼š</strong>å®šæœŸæ¢³èµ°å¤šé¤˜ä¸‹å±¤æ¯›ï¼Œæ¯”å‰ƒæ¯›æ›´èƒ½å¹«åŠ©æ•£ç†±ã€‚</p>
-        <p style="font-size:15px;line-height:1.8;margin:0;">âœ… <strong>ç’°å¢ƒé™æº«å…ˆä¿‚é—œéµï¼š</strong>å†·æ°£ã€æ¶¼å¢Šã€å……è¶³é£²æ°´æ¯”å–®é å‰ªæ¯›æ›´æœ‰æ•ˆã€‚</p>
+        <p style="font-size:15px;line-height:1.8;margin:0 0 8px;">✅ <strong>唔好剃光毛：</strong>上層毛係天然防曬層，剃光會增加曬傷同皮膚問題風險。</p>
+        <p style="font-size:15px;line-height:1.8;margin:0 0 8px;">✅ <strong>底毛要疏：</strong>定期梳走多餘下層毛，比剃毛更能幫助散熱。</p>
+        <p style="font-size:15px;line-height:1.8;margin:0;">✅ <strong>環境降溫先係關鍵：</strong>冷氣、涼墊、充足飲水比單靠剪毛更有效。</p>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">ðŸš¨ ä¸­æš‘å¾µå…†åŒæ€¥æ•‘</h2>
-      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 12px;">ç•™æ„å‘¢å•²å¾µå…†ï¼Œä¸€æ—¦å‡ºç¾è¦å³åˆ»è™•ç†ï¼š</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">🚨 中暑徵兆同急救</h2>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 12px;">留意呢啲徵兆，一旦出現要即刻處理：</p>
       <ul style="font-size: 16px; line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
-        <li>å¤§å£<strong>å–˜æ°£</strong>ã€èˆŒé ­è®Š<strong>ç´«ç´…è‰²</strong></li>
-        <li>å¤§é‡<strong>æµå£æ°´</strong>ã€ç²¾ç¥žèŽé¡</li>
-        <li>å˜”åã€è…¹ç€‰ã€æ­¥æ…‹ä¸ç©©</li>
-        <li>åš´é‡å¯èƒ½<strong>æŠ½ææˆ–æ˜è¿·</strong></li>
+        <li>大口<strong>喘氣</strong>、舌頭變<strong>紫紅色</strong></li>
+        <li>大量<strong>流口水</strong>、精神萎靡</li>
+        <li>嘔吐、腹瀉、步態不穩</li>
+        <li>嚴重可能<strong>抽搐或昏迷</strong></li>
       </ul>
-      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;"><strong>æ€¥æ•‘æ­¥é©Ÿï¼š</strong>å³åˆ»ç§»åˆ°é™°æ¶¼è™• â†’ ç”¨å®¤æº«æ°´ï¼ˆå””å¥½ç”¨å†°æ°´ï¼‰æ·‹è…³æŽŒã€è…¹éƒ¨åŒé ¸éƒ¨ â†’ æä¾›å°‘é‡é£²æ°´ â†’ <strong>ç›¡å¿«é€ç¸é†«</strong>ã€‚</p>
+      <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;"><strong>急救步驟：</strong>即刻移到陰涼處 → 用室溫水（唔好用冰水）淋腳掌、腹部同頸部 → 提供少量飲水 → <strong>盡快送獸醫</strong>。</p>
 
       <div class="seo-hidden" aria-hidden="true">
-        <p>PetWell HK æä¾›é¦™æ¸¯ç‹—ç‹—å¤å¤©é™æš‘æŒ‡å—ï¼ŒåŒ…æ‹¬å¯’å¸¶ç‹—é›™å±¤æ¯›çµæ§‹ã€ä¸Šå±¤æ¯›ä¸‹å±¤æ¯›åŠŸèƒ½ã€ç‹—ç‹—ä¸­æš‘é é˜²ã€å¯µç‰©å‰ªæ¯›æ¢³æ¯›ã€çŽ©æ°´å†·æ°£å†°çµ²é™æº«ç­‰å¯¦ç”¨è²¼å£«ï¼Œå¹«åŠ©é¦™æ¸¯ç‹—ä¸»å®‰å…¨åº¦éŽç‚Žç†±å¤å¤©ã€‚</p>
+        <p>PetWell HK 提供香港狗狗夏天降暑指南，包括寒帶狗雙層毛結構、上層毛下層毛功能、狗狗中暑預防、寵物剪毛梳毛、玩水冷氣冰絲降溫等實用貼士，幫助香港狗主安全度過炎熱夏天。</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2026-07-17",
-    category: "å¯µç‰©è­·ç†",
+    category: "寵物護理",
     imageUrl: blogDogSummerCooling,
-    seoKeywords: ["ç‹—ç‹—å¤å¤©é™æš‘", "ç‹—ç‹—ä¸­æš‘", "å¯’å¸¶ç‹—", "é›™å±¤æ¯›", "å¯µç‰©é™æº«", "é¦™æ¸¯å¤å¤©", "ç‹—ç‹—å‰ªæ¯›", "ç‹—ç‹—æ¢³æ¯›"],
-    seoDescription: "é¦™æ¸¯å¤å¤©ç‚Žç†±ï¼Œå¯’å¸¶ç‹—å› é›™å±¤æ¯›ç‰¹åˆ¥å®¹æ˜“ä¸­æš‘ã€‚PetWell æ•™ä½ äº†è§£ç‹—ç‹—ä¸Šå±¤æ¯›åŒä¸‹å±¤æ¯›åŠŸèƒ½ï¼Œä¸¦åˆ†äº« 4 å€‹å¯¦ç”¨é™æš‘æ–¹æ³•ï¼Œå¹«æ¯›å­©å®‰å…¨éŽå¤ã€‚",
+    seoKeywords: ["狗狗夏天降暑", "狗狗中暑", "寒帶狗", "雙層毛", "寵物降溫", "香港夏天", "狗狗剪毛", "狗狗梳毛"],
+    seoDescription: "香港夏天炎熱，寒帶狗因雙層毛特別容易中暑。PetWell 教你了解狗狗上層毛同下層毛功能，並分享 4 個實用降暑方法，幫毛孩安全過夏。",
   },
   {
     id: "27",
     slug: "iamsmart-dog-electronic-licence-hk-guide",
-    title: "ã€æ™ºæ–¹ä¾¿ Ã— é›»å­ç‹—ç‰Œã€‘æ•™ä½  5 åˆ†é˜ç¶²ä¸Šä¸‹è¼‰ç‹—éš»é›»å­ç‰Œç…§ï¼Œé¿é–‹æ¼è¾²ç½²$1\u00A0è¬ç½°æ¬¾ï½œPetWell HK",
-    excerpt: "æ¼è¾²ç½²äººå“¡æœƒå–ºç‹—å…¬åœ’å®šæœŸæŠ½æŸ¥ï¼Œç™¼ç¾è¶…éŽ 5 å€‹æœˆå¤§å˜…ç‹—éš»æœªé ˜ç‰Œç…§ã€æœªæ¤èŠ¯ç‰‡æˆ–æœªæ‰“ç‹‚çŠ¬ç–«è‹—ï¼Œæœƒç›´æŽ¥æª¢æŽ§ç‹—ä¸»ã€‚æ•™ä½ é»žç”¨ã€Œæ™ºæ–¹ä¾¿ã€App ä¸€æ¬¡éŽç¶²ä¸Šä¸‹è¼‰ç‹—éš»é›»å­ç‰Œç…§ã€‚",
+    title: "【智方便 × 電子狗牌】教你 5 分鐘網上下載狗隻電子牌照，避開漁農署$1\u00A0萬罰款｜PetWell HK",
+    excerpt: "漁農署人員會喺狗公園定期抽查，發現超過 5 個月大嘅狗隻未領牌照、未植芯片或未打狂犬疫苗，會直接檢控狗主。教你點用「智方便」App 一次過網上下載狗隻電子牌照。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 9 æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 9 日</p>
 
       <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
-        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">âš ï¸ é¦™æ¸¯ç‹—ä¸»æ³¨æ„ï¼šæ¼è¾²ç½²æœƒæŠ½æŸ¥ï¼</h2>
-        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">æ¼è¾²ç½²äººå“¡æœƒå–ºç‹—å…¬åœ’ç­‰å…¬çœ¾åœ°æ–¹å®šæœŸæŠ½æŸ¥ï¼Œå¦‚æžœç™¼ç¾è¶…éŽ 5 å€‹æœˆå¤§å˜…ç‹—éš»æœªé ˜ç‰Œã€æœªæ¤æ™¶ç‰‡æˆ–è€…æœªæ‰“ç‹‚çŠ¬ç—…ç–«è‹—ï¼Œç½²æ–¹æœƒç›´æŽ¥æª¢æŽ§ç‹—ä¸»ï¼Œæœ€é«˜ç½°æ¬¾å¯é” <strong style="color:#DC2626;">$10,000</strong>ã€‚</p>
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#991B1B;">⚠️ 香港狗主注意：漁農署會抽查！</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">漁農署人員會喺狗公園等公眾地方定期抽查，如果發現超過 5 個月大嘅狗隻未領牌、未植晶片或者未打狂犬病疫苗，署方會直接檢控狗主，最高罰款可達 <strong style="color:#DC2626;">$10,000</strong>。</p>
       </div>
 
-      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 28px;">å¥½æ¶ˆæ¯ä¿‚ï¼Œ<strong>è€Œå®¶</strong>æ¼è¾²ç½²å·²ç¶“æŽ¥é€šã€Œ<strong>æ™ºæ–¹ä¾¿ iAM Smart</strong>ã€ï¼Œç‹—ä¸»å¯ä»¥å–ºå±‹ä¼ç”¨æ‰‹æ©Ÿå¹¾åˆ†é˜æžæŽ‚ç‹—éš»ç‰Œç…§ä¸‹è¼‰ï¼Œå””ä½¿å†è¦ªèº«åŽ»è¨ºæ‰€æˆ–è€…è¾¦äº‹è™•æŽ’éšŠã€‚ä»¥ä¸‹ä¿‚é€æ­¥æ•™å­¸ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 28px;">好消息係，<strong>而家</strong>漁農署已經接通「<strong>智方便 iAM Smart</strong>」，狗主可以喺屋企用手機幾分鐘搞掂狗隻牌照下載，唔使再親身去診所或者辦事處排隊。以下係逐步教學。</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;">
-        <a href="#apply" style="display:block;padding:14px 16px;background:#10B981;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">é¦–æ¬¡ä¸‹è¼‰æ•™å­¸ â†’</a>
-        <a href="#check" style="display:block;padding:14px 16px;background:#0D9488;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">å·²ä¸‹è¼‰ï¼ŸæŸ¥è©¢ç´€éŒ„ â†’</a>
+        <a href="#apply" style="display:block;padding:14px 16px;background:#10B981;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">首次下載教學 →</a>
+        <a href="#check" style="display:block;padding:14px 16px;background:#0D9488;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">已下載？查詢紀錄 →</a>
       </div>
 
-      <h2 id="apply" style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #10B981;">ç”¨ã€Œæ™ºæ–¹ä¾¿ã€ç¶²ä¸Šä¸‹è¼‰ç‹—éš»é›»å­ç‰Œç…§</h2>
-      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">é–‹å§‹ä¹‹å‰ï¼Œè¨˜å¾—ç¢ºèªä»¥ä¸‹å¹¾æ¨£å˜¢å·²ç¶“æº–å‚™å¥½ï¼šæ‰‹æ©Ÿè£å¥½ã€Œæ™ºæ–¹ä¾¿ã€ï¼ã€Œæ™ºæ–¹ä¾¿ï¼‹ã€ã€ç‹—ä»”å·²æ¤æ™¶ç‰‡ã€ç‹‚çŠ¬ç—…ç–«è‹—å·²ç¶“æ‰“å’—ã€‚</p>
+      <h2 id="apply" style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #10B981;">用「智方便」網上下載狗隻電子牌照</h2>
+      <p style="font-size: 15px; color: #4B5563; margin-bottom: 24px;">開始之前，記得確認以下幾樣嘢已經準備好：手機裝好「智方便」／「智方便＋」、狗仔已植晶片、狂犬病疫苗已經打咗。</p>
 
       <div style="display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:32px;">
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:inline-block;background:#10B981;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">STEP 1</div>
-          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">æ‰“é–‹ã€Œæ™ºæ–¹ä¾¿ã€App</h3>
-          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">å–ºæ‰‹æ©Ÿæ‰“é–‹ã€Œæ™ºæ–¹ä¾¿ iAM Smartã€ï¼Œç”¨ç”Ÿç‰©èªè­‰ï¼ˆFace IDï¼æŒ‡ç´‹ï¼‰ç™»å…¥ã€‚æœªæœ‰å¸³æˆ¶å˜…è©±ï¼Œå¯ä»¥å…ˆåŽ»è‡ªåŠ©ç™»è¨˜ç«™æˆ–éƒµæ”¿å±€é–‹æˆ¶ã€‚</p>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep1}" alt="æ™ºæ–¹ä¾¿ iAM Smart App ç™»å…¥ç•«é¢" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">打開「智方便」App</h3>
+          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">喺手機打開「智方便 iAM Smart」，用生物認證（Face ID／指紋）登入。未有帳戶嘅話，可以先去自助登記站或郵政局開戶。</p>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep1}" alt="智方便 iAM Smart App 登入畫面" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:inline-block;background:#10B981;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">STEP 2</div>
-          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">ã€Œæœå‹™ã€ï¼žã€Œæ”¿åºœåŠæœ‰é—œæ©Ÿæ§‹ã€ï¼žæ€ã€Œæ¼è¾²è‡ªç„¶è­·ç†ç½²ã€</h3>
-          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">å–ºåº•éƒ¨æ€ã€Œ<strong>æœå‹™</strong>ã€ï¼Œå†å–ºé ‚éƒ¨åˆ‡æ›åˆ°ã€Œ<strong>æ”¿åºœåŠæœ‰é—œæ©Ÿæ§‹</strong>ã€åˆ†é ï¼Œå‘ä¸‹æ²å‹•æµã€Œ<strong>æ¼è¾²è‡ªç„¶è­·ç†ç½² AFCD</strong>ã€ï¼Œé»žå…¥åŽ»ã€‚</p>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep2}" alt="æ™ºæ–¹ä¾¿é¸æ“‡æ¼è¾²è‡ªç„¶è­·ç†ç½² AFCD" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">「服務」＞「政府及有關機構」＞揀「漁農自然護理署」</h3>
+          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">喺底部揀「<strong>服務</strong>」，再喺頂部切換到「<strong>政府及有關機構</strong>」分頁，向下捲動搵「<strong>漁農自然護理署 AFCD</strong>」，點入去。</p>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep2}" alt="智方便選擇漁農自然護理署 AFCD" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:inline-block;background:#10B981;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">STEP 3</div>
-          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">å–ºã€Œæ”¿åºœè³‡è¨ŠåŠæœå‹™ã€æ€ã€Œå¯µç‰©ç‰Œç…§ã€</h3>
-          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">é€²å…¥æ¼è¾²ç½²é é¢å¾Œï¼Œå‘ä¸‹æ‹‰åˆ°ã€Œ<strong>æ”¿åºœè³‡è¨ŠåŠæœå‹™</strong>ã€ï¼Œé»žã€Œ<strong>å¯µç‰©ç‰Œç…§</strong>ã€å…¥åŽ»ã€‚</p>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep3}" alt="æ™ºæ–¹ä¾¿ å¯µç‰©ç‰Œç…§ é¸é …" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">喺「政府資訊及服務」揀「寵物牌照」</h3>
+          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">進入漁農署頁面後，向下拉到「<strong>政府資訊及服務</strong>」，點「<strong>寵物牌照</strong>」入去。</p>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep3}" alt="智方便 寵物牌照 選項" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:inline-block;background:#10B981;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">STEP 4</div>
-          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">æ€ã€Œç‹—éš»ç‰Œç…§ä¸‹è¼‰æ›¸ (å€‹äºº)ã€å¡«è¡¨</h3>
-          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">é»žã€Œ<strong>ç‹—éš»ç‰Œç…§ä¸‹è¼‰æ›¸ (å€‹äºº)</strong>ã€ï¼Œã€Œæ™ºæ–¹ä¾¿ã€æœƒè‡ªå‹•å¹«ä½ å¡«å¥½å€‹äººè³‡æ–™ï¼ˆå§“åã€åœ°å€ã€èº«ä»½è­‰è™Ÿç¢¼ï¼‰ã€‚ä½ åªéœ€è¦è¼¸å…¥ç‹—éš»è³‡æ–™ï¼ˆå“ç¨®ã€æ€§åˆ¥ã€æ™¶ç‰‡ç·¨è™Ÿã€ç‹‚çŠ¬ç—…ç–«è‹—æ‰¹æ¬¡åŒæŽ¥ç¨®æ—¥æœŸï¼‰ï¼Œæ ¸å°ä¹‹å¾Œå°±å¯ä»¥æäº¤ã€‚</p>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep4}" alt="ç‹—éš»ç‰Œç…§ä¸‹è¼‰æ›¸ (å€‹äºº)" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">揀「狗隻牌照下載書 (個人)」填表</h3>
+          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">點「<strong>狗隻牌照下載書 (個人)</strong>」，「智方便」會自動幫你填好個人資料（姓名、地址、身份證號碼）。你只需要輸入狗隻資料（品種、性別、晶片編號、狂犬病疫苗批次同接種日期），核對之後就可以提交。</p>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep4}" alt="狗隻牌照下載書 (個人)" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:inline-block;background:#10B981;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">STEP 5</div>
-          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">ä¸‹è¼‰ã€Œé›»å­ç‹—ç‰Œã€PDF â€” å®Œæˆï¼</h3>
-          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">å¯©æ‰¹é€šéŽå¾Œï¼Œæ”¿åºœç¶²ç«™æœƒç”Ÿæˆä¸€ä»½<strong>é›»å­ç‹—ç‰Œ PDF (Electronic Dog Licence)</strong>ï¼Œä¸Šé¢æœ‰ç‹—ä»”ç›¸ç‰‡ã€ç‰Œç…§ç·¨è™ŸåŒ QR codeã€‚è¨˜å¾—ä¸‹è¼‰ä¿å­˜ä»½ PDFï¼Œä¹‹å¾Œå°±å¯ä»¥ä¸Šå‚³åˆ° PetWell Appï¼Œéš¨æ™‚ä¸€æ’³ show ç•€æ¼è¾²ç½²äººå“¡ç‡ï¼Œå””æ´—å†å¸¶ç´™æœ¬ã€‚</p>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep5}" alt="æ¼è¾²ç½²é›»å­ç‹—ç‰Œ Electronic Dog Licence" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
+          <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;">下載「電子狗牌」PDF — 完成！</h3>
+          <p style="font-size:15px;line-height:1.7;margin:0 0 14px;color:#374151;">審批通過後，政府網站會生成一份<strong>電子狗牌 PDF (Electronic Dog Licence)</strong>，上面有狗仔相片、牌照編號同 QR code。記得下載保存份 PDF，之後就可以上傳到 PetWell App，隨時一撳 show 畀漁農署人員睇，唔洗再帶紙本。</p>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;"><img src="${blogIamsmartStep5}" alt="漁農署電子狗牌 Electronic Dog Licence" style="width:100%;max-height:420px;object-fit:contain;display:block;" loading="lazy"/></div>
         </div>
       </div>
 
-      <h2 id="check" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">å·²ç¶“æœ‰ç‹—ç‰Œï¼Ÿç”¨ PetWell App å„²ä½Ž PDFï¼Œéš¨æ™‚ show ç•€æ¼è¾²ç½²äººå“¡ç‡</h2>
-      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">ä¸‹è¼‰å®Œæˆå¾Œï¼Œã€Œæ™ºæ–¹ä¾¿ã€æœƒç”Ÿæˆä¸€ä»½<strong>é›»å­ç‹—ç‰Œ PDF</strong>ã€‚å¦‚æžœæ¯æ¬¡æŠ½æŸ¥éƒ½è¦å³å ´é–‹æ™ºæ–¹ä¾¿ã€è¼¸å…¥ç”Ÿç‰©èªè­‰ï¼Œå…¶å¯¦å¹¾éº»ç…©ã€‚<strong>æˆ‘å“‹å»ºè­°ä½ å°‡ PDF ä¸Šå‚³åˆ° PetWell Appã€Œé›»å­ç‹—ç‰Œã€å…¥é¢</strong>ï¼Œä¹‹å¾Œä¸€æ’³å°± show åˆ°ï¼Œæ¯”é–‹æ™ºæ–¹ä¾¿æ›´å¿«ã€æ›´æ–¹ä¾¿ã€‚</p>
+      <h2 id="check" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">已經有狗牌？用 PetWell App 儲低 PDF，隨時 show 畀漁農署人員睇</h2>
+      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">下載完成後，「智方便」會生成一份<strong>電子狗牌 PDF</strong>。如果每次抽查都要即場開智方便、輸入生物認證，其實幾麻煩。<strong>我哋建議你將 PDF 上傳到 PetWell App「電子狗牌」入面</strong>，之後一撳就 show 到，比開智方便更快、更方便。</p>
 
       <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:24px;">
         <div style="border:1px solid #FFE4D1;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
             <div style="flex-shrink:0;width:36px;height:36px;background:#FF6B35;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;">1</div>
             <div>
-              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">æ‰“é–‹ PetWell Appï¼Œå…¥ã€Œæ¯›å­©æª”æ¡ˆã€</h3>
-              <p style="font-size:14.5px;line-height:1.7;margin:0;color:#4B5563;">æ’³ä¸‹é¢å€‹é¸å–®å…¥ã€Œ<strong>æ¯›å­©æª”æ¡ˆ</strong>ã€ï¼Œå¦‚æžœæœªå»ºç«‹éŽå¯µç‰©è³‡æ–™ï¼Œå…ˆæ–°å¢žä¸€éš»ç‹—ä»”ï¼ˆè¼¸å…¥åã€å“ç¨®ã€ç”Ÿæ—¥ï¼‰ã€‚å·²å»ºç«‹å°±ç›´æŽ¥é»žå…¥åŽ»ï¼Œæ’³é ­åƒä¸‹é¢å˜…ã€Œ<strong>é›»å­ç‹—ç‰Œ</strong>ã€æŒ‰éˆ•ã€‚</p>
+              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">打開 PetWell App，入「毛孩檔案」</h3>
+              <p style="font-size:14.5px;line-height:1.7;margin:0;color:#4B5563;">撳下面個選單入「<strong>毛孩檔案</strong>」，如果未建立過寵物資料，先新增一隻狗仔（輸入名、品種、生日）。已建立就直接點入去，撳頭像下面嘅「<strong>電子狗牌</strong>」按鈕。</p>
             </div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep1}" alt="PetWell App æ¯›å­©æª”æ¡ˆ é›»å­ç‹—ç‰Œ æŒ‰éˆ•" style="width:100%;display:block;" loading="lazy"/></div>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep1}" alt="PetWell App 毛孩檔案 電子狗牌 按鈕" style="width:100%;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #FFE4D1;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
             <div style="flex-shrink:0;width:36px;height:36px;background:#FF6B35;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;">2</div>
             <div>
-              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">é€²å…¥ã€Œé›»å­ç‹—ç‰Œã€ï¼Œæ’³ã€Œä¸Šå‚³ç‹—ç‰Œã€</h3>
-              <p style="font-size:14.5px;line-height:1.7;margin:0;color:#4B5563;">ç•«é¢æœƒ showã€Œ<strong>å°šæœªä¸Šå‚³ç‹—ç‰Œ</strong>ã€ï¼Œæ’³æ©™è‰²å˜…ã€Œ<strong>ä¸Šå‚³ç‹—ç‰Œ</strong>ã€æŒ‰éˆ•ï¼Œæœƒå½ˆå‡ºä¸‰å€‹é¸æ“‡ï¼š<strong>æ‹ç…§</strong>ã€<strong>å¾žç›¸ç°¿é¸æ“‡</strong>ã€æˆ–<strong>ä¸Šå‚³ PDF</strong>ã€‚æ€ã€Œä¸Šå‚³ PDFã€ã€‚</p>
+              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">進入「電子狗牌」，撳「上傳狗牌」</h3>
+              <p style="font-size:14.5px;line-height:1.7;margin:0;color:#4B5563;">畫面會 show「<strong>尚未上傳狗牌</strong>」，撳橙色嘅「<strong>上傳狗牌</strong>」按鈕，會彈出三個選擇：<strong>拍照</strong>、<strong>從相簿選擇</strong>、或<strong>上傳 PDF</strong>。揀「上傳 PDF」。</p>
             </div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep2}" alt="PetWell App é›»å­ç‹—ç‰Œ ä¸Šå‚³ç‹—ç‰Œ é¸æ“‡ PDF" style="width:100%;display:block;" loading="lazy"/></div>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep2}" alt="PetWell App 電子狗牌 上傳狗牌 選擇 PDF" style="width:100%;display:block;" loading="lazy"/></div>
         </div>
 
         <div style="border:1px solid #FFE4D1;border-radius:14px;padding:20px;background:#fff;">
           <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
             <div style="flex-shrink:0;width:36px;height:36px;background:#FF6B35;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;">3</div>
             <div>
-              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">æ€æ™ºæ–¹ä¾¿å—°ä»½ PDFï¼Œå„²å­˜å°± OK</h3>
-              <p style="font-size:14.5px;line-height:1.7;margin:0 0 8px;color:#4B5563;">å–ºæ‰‹æ©Ÿæª”æ¡ˆå…¥é¢æ€ä½ ä¹‹å‰å–ºæ™ºæ–¹ä¾¿ä¸‹è¼‰å˜…é›»å­ç‹—ç‰Œ PDFï¼Œå¡«ã€Œ<strong>æœ‰æ•ˆè‡³</strong>ã€æ—¥æœŸï¼Œé–‹å•Ÿã€Œ<strong>è¨­ç‚ºç›®å‰æœ‰æ•ˆç‹—ç‰Œ</strong>ã€å†æ’³ã€Œå„²å­˜ã€ã€‚ä¹‹å¾Œä½ æœƒè¦‹åˆ°ç‰Œç…§ç•«é¢é€£ã€Œ<strong>å‡ºç¤ºçµ¦åŸ·æ³•äººå“¡</strong>ã€æŒ‰éˆ•ï¼ŒApp ä»²æœƒå–ºåˆ°æœŸå‰æä½ çºŒç‰Œã€‚</p>
+              <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;color:#1F2937;">揀智方便嗰份 PDF，儲存就 OK</h3>
+              <p style="font-size:14.5px;line-height:1.7;margin:0 0 8px;color:#4B5563;">喺手機檔案入面揀你之前喺智方便下載嘅電子狗牌 PDF，填「<strong>有效至</strong>」日期，開啟「<strong>設為目前有效狗牌</strong>」再撳「儲存」。之後你會見到牌照畫面連「<strong>出示給執法人員</strong>」按鈕，App 仲會喺到期前提你續牌。</p>
               <div style="background:#FFF7ED;border-left:3px solid #FF6B35;padding:10px 14px;border-radius:8px;">
-                <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9A3412;"><strong>æŠ½æŸ¥æ™‚ï¼š</strong>å–º PetWell App ä¸€æ’³ã€Œå‡ºç¤ºçµ¦åŸ·æ³•äººå“¡ã€å°± show åˆ° PDF ç•€æ¼è¾²ç½²äººå“¡ç‡ï¼Œæ¯”å³å ´é–‹æ™ºæ–¹ä¾¿å¿«å¥½å¤šã€‚</p>
+                <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9A3412;"><strong>抽查時：</strong>喺 PetWell App 一撳「出示給執法人員」就 show 到 PDF 畀漁農署人員睇，比即場開智方便快好多。</p>
               </div>
             </div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep3}" alt="PetWell App é›»å­ç‹—ç‰Œ ä¸Šå‚³å®Œæˆ å‡ºç¤ºçµ¦åŸ·æ³•äººå“¡" style="width:100%;display:block;" loading="lazy"/></div>
+          <div style="border-radius:10px;overflow:hidden;background:#F9FAFB;max-width:320px;margin:0 auto;"><img src="${blogIamsmartPwStep3}" alt="PetWell App 電子狗牌 上傳完成 出示給執法人員" style="width:100%;display:block;" loading="lazy"/></div>
         </div>
       </div>
 
-      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">é ˜å®Œç‹—ç‰Œï¼Œç”¨ PetWell App å¸¶æ¯›å­©å‡ºè¡—</h2>
-      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">ç‹—ä»”çµ‚æ–¼æœ‰åˆæ³•èº«ä»½ï¼Œæ¢—ä¿‚è¦å¸¶ä½¢å‘¨åœåŽ»çŽ©ï¼<strong>PetWell App</strong> æ”¶éŒ„å’—<strong>å…¨æ¸¯è¶…éŽ 1,000 é–“å·²èªè­‰å˜…å¯µç‰©å‹å–„é¤å»³</strong>ï¼Œå¯ä»¥æŒ‰åœ°å€ã€å®¤å…§ï¼å®¤å¤–ã€éœ€å””éœ€è¦é ç´„ç­‰æ¢ä»¶ç¯©é¸ï¼Œä»²æœ‰çœŸå¯¦ç”¨å®¶è©•åƒ¹ã€‚</p>
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">領完狗牌，用 PetWell App 帶毛孩出街</h2>
+      <p style="font-size: 16px; line-height: 1.75; margin-bottom: 20px;">狗仔終於有合法身份，梗係要帶佢周圍去玩！<strong>PetWell App</strong> 收錄咗<strong>全港超過 1,000 間已認證嘅寵物友善餐廳</strong>，可以按地區、室內／室外、需唔需要預約等條件篩選，仲有真實用家評價。</p>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
-        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellHome}" alt="PetWell App ä¸»é  å¯µç‰©å‹å–„é¤å»³åœ°åœ–" style="width:100%;display:block;" loading="lazy"/></div>
-        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellRest}" alt="PetWell App é¤å»³è©³æƒ… The Salted Pig åœ–åº«" style="width:100%;display:block;" loading="lazy"/></div>
-        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellInfo}" alt="PetWell App é¤å»³è³‡è¨Š å¯µç‰©æ”¿ç­– åƒ¹ä½ è©•åˆ†" style="width:100%;display:block;" loading="lazy"/></div>
+        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellHome}" alt="PetWell App 主頁 寵物友善餐廳地圖" style="width:100%;display:block;" loading="lazy"/></div>
+        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellRest}" alt="PetWell App 餐廳詳情 The Salted Pig 圖庫" style="width:100%;display:block;" loading="lazy"/></div>
+        <div style="border:1px solid #FFE4D1;border-radius:12px;overflow:hidden;background:#fff;"><img src="${blogIamsmartPetwellInfo}" alt="PetWell App 餐廳資訊 寵物政策 價位 評分" style="width:100%;display:block;" loading="lazy"/></div>
       </div>
 
 
@@ -1063,654 +1062,654 @@ const baseBlogPosts: BlogPost[] = [
 
 
       <div style="background:#FFF7ED;border-left:4px solid #FF6B35;border-radius:10px;padding:20px;margin-bottom:32px;">
-        <h3 style="font-size:18px;font-weight:700;margin:0 0 10px;color:#B45309;">PetWell App ä»²å¯ä»¥å¹«ä½ åšâ€¦</h3>
+        <h3 style="font-size:18px;font-weight:700;margin:0 0 10px;color:#B45309;">PetWell App 仲可以幫你做…</h3>
         <ul style="line-height:1.8;margin:0;padding-left:20px;font-size:15px;">
-          <li><strong>å…¨æ¸¯æœ€è©³ç´°å¯µç‰©å‹å–„å•†å ´è³‡æ–™</strong>ï¼šåŒ…æ‹¬å®¤å…§å®¤å¤–ã€å¤§å°åž‹çŠ¬æ”¿ç­–</li>
-          <li><strong>å½±é‡å¡å³æŽƒå³è¨˜</strong>ï¼šæ‹ä½Žç‹‚çŠ¬ç—…é‡å¡ï¼ŒApp è‡ªå‹•æé†’ä¸‹æ¬¡æ‰“é‡æ—¥æœŸ</li>
-          <li><strong>é›»å­ç‹—ç‰Œä¸Šè¼‰</strong>ï¼šé€£åŒæ™ºæ–¹ä¾¿é›»å­ç‰Œä¸€é½Šå„²å–º Appï¼Œéš¨æ™‚å±•ç¤ºç•€æ¼è¾²ç½²äººå“¡ç‡</li>
-          <li><strong>å®¶äººå…±äº«</strong>ï¼šåŒå±‹ä¼äººä¸€é½Šç…§é¡§åŒä¸€éš»å¯µç‰©ï¼Œè¨˜éŒ„åŒæ­¥</li>
-          <li><strong>ç¸é†«åŠé¤å»³è©•åƒ¹</strong>ï¼šç‡çœŸå¯¦è©•åˆ†ï¼Œä»²å¯ä»¥åŒ¿åç™¼è¡¨æ„è¦‹</li>
+          <li><strong>全港最詳細寵物友善商場資料</strong>：包括室內室外、大小型犬政策</li>
+          <li><strong>影針卡即掃即記</strong>：拍低狂犬病針卡，App 自動提醒下次打針日期</li>
+          <li><strong>電子狗牌上載</strong>：連同智方便電子牌一齊儲喺 App，隨時展示畀漁農署人員睇</li>
+          <li><strong>家人共享</strong>：同屋企人一齊照顧同一隻寵物，記錄同步</li>
+          <li><strong>獸醫及餐廳評價</strong>：睇真實評分，仲可以匿名發表意見</li>
         </ul>
       </div>
 
-      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">è²æ˜Žï¼šæœ¬æ–‡åƒ…ä¾›è³‡è¨Šåƒè€ƒï¼Œæ‰€æœ‰ä¸‹è¼‰ç´°ç¯€ã€è²»ç”¨åŠè¦æ±‚ä»¥æ¼è¾²è‡ªç„¶è­·ç†ç½²ï¼ˆAFCDï¼‰å®˜æ–¹å…¬ä½ˆç‚ºæº–ã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">聲明：本文僅供資訊參考，所有下載細節、費用及要求以漁農自然護理署（AFCD）官方公佈為準。</p>
     `,
     author: "PetWell HK",
     date: "2026-07-09",
-    category: "æ³•ä¾‹ç‰Œç…§",
+    category: "法例牌照",
     imageUrl: blogIamsmartCover,
     seoKeywords: [
-      "é›»å­ç‹—ç‰Œ", "ç‹—éš»é›»å­ç‰Œç…§", "é¦™æ¸¯ç‹—ç‰Œä¸‹è¼‰", "æ¼è¾²ç½² ç‹—ç‰Œ", "AFCD dog licence",
-      "æ™ºæ–¹ä¾¿ ç‹—ç‰Œ", "iAM Smart ç‹—ç‰Œ", "æ™ºæ–¹ä¾¿ä¸‹è¼‰ç‹—ç‰Œ", "ç¶²ä¸Šä¸‹è¼‰ç‹—ç‰Œ é¦™æ¸¯",
-      "ç‹—ç‰ŒçºŒæœŸ", "ç‹—éš»ç‰Œç…§å’Œå–®æ¬¡è¨±å¯è­‰æŸ¥è©¢", "ç‹—ç‰Œåˆ°æœŸæŸ¥è©¢",
-      "æ¼è¾²ç½²æŠ½æŸ¥", "ç„¡ç‰Œç‹— ç½°æ¬¾", "ç‹—ç‰Œ ç½°æ¬¾ ä¸€è¬",
-      "ç‹—éš»æ™¶ç‰‡", "ç‹‚çŠ¬ç—…ç–«è‹— é¦™æ¸¯", "5 å€‹æœˆå¤§ ç‹— ç‰Œç…§",
-      "é¦™æ¸¯ç‹—ä¸»å¿…è®€", "PetWell å¯µç‰©å‹å–„é¤å»³",
+      "電子狗牌", "狗隻電子牌照", "香港狗牌下載", "漁農署 狗牌", "AFCD dog licence",
+      "智方便 狗牌", "iAM Smart 狗牌", "智方便下載狗牌", "網上下載狗牌 香港",
+      "狗牌續期", "狗隻牌照和單次許可證查詢", "狗牌到期查詢",
+      "漁農署抽查", "無牌狗 罰款", "狗牌 罰款 一萬",
+      "狗隻晶片", "狂犬病疫苗 香港", "5 個月大 狗 牌照",
+      "香港狗主必讀", "PetWell 寵物友善餐廳",
     ],
-    seoDescription: "2026 æœ€æ–°ï¼šç”¨ã€Œæ™ºæ–¹ä¾¿ iAM Smartã€5 åˆ†é˜ç¶²ä¸Šä¸‹è¼‰ç‹—éš»é›»å­ç‰Œç…§å…¨æ•™å­¸ã€‚é™„æ¼è¾²ç½²æŠ½æŸ¥ç½°æ¬¾ã€ç‹—ç‰ŒæŸ¥è©¢æ–¹æ³•ã€é›»å­ç‹—ç‰Œ QR code ä½¿ç”¨ï¼Œé¿é–‹ $10,000 ç½°æ¬¾ã€‚",
+    seoDescription: "2026 最新：用「智方便 iAM Smart」5 分鐘網上下載狗隻電子牌照全教學。附漁農署抽查罰款、狗牌查詢方法、電子狗牌 QR code 使用，避開 $10,000 罰款。",
     faqItems: [
-      { question: "ç„¡é ˜ç‹—ç‰Œæœƒæœ‰å’©å¾Œæžœï¼Ÿ", answer: "æ¼è¾²ç½²äººå“¡æœƒå–ºç‹—å…¬åœ’ç­‰å…¬çœ¾åœ°æ–¹å®šæœŸæŠ½æŸ¥ï¼Œç™¼ç¾è¶…éŽ 5 å€‹æœˆå¤§å˜…ç‹—éš»æœªé ˜ç‰Œç…§ã€æœªæ¤æ™¶ç‰‡æˆ–æœªæ‰“ç‹‚çŠ¬ç—…ç–«è‹—ï¼Œæœƒç›´æŽ¥æª¢æŽ§ç‹—ä¸»ï¼Œæœ€é«˜ç½°æ¬¾ $10,000ã€‚" },
-      { question: "é»žè§£è¦ç”¨æ™ºæ–¹ä¾¿ä¸‹è¼‰ï¼Ÿå¯ä»¥è¦ªèº«åŽ»å—Žï¼Ÿ", answer: "å¯ä»¥è¦ªèº«åŽ»æ¼è¾²ç½²èªå¯è¨ºæ‰€æˆ–è¾¦äº‹è™•ä¸‹è¼‰ï¼Œä½†ç”¨ã€Œæ™ºæ–¹ä¾¿ã€ç¶²ä¸Šä¸‹è¼‰å¯ä»¥çœå»æŽ’éšŠæ™‚é–“ï¼Œ5 åˆ†é˜æžæŽ‚ï¼Œä»²æœƒå³æ™‚ç”Ÿæˆé›»å­ç‹—ç‰Œ PDFã€‚" },
-      { question: "ç‹—ç‰Œæ”¶è²»å¹¾å¤šï¼Ÿå¹¾è€è¦çºŒæœŸï¼Ÿ", answer: "ç‹—ç‰Œè²»ç‚º $80ï¼Œæœ‰æ•ˆæœŸ 3 å¹´ã€‚åˆ°æœŸå‰å»ºè­°ç™»å…¥ã€Œæ™ºæ–¹ä¾¿ã€æŸ¥è©¢ä¸¦çºŒæœŸï¼Œé¿å…æ–·ç‰Œã€‚" },
-      { question: "ä¸‹è¼‰å‰éœ€è¦æº–å‚™å’©ï¼Ÿ", answer: "3 æ¨£å˜¢ï¼šâ‘  å·²ç™»è¨˜å˜…ã€Œæ™ºæ–¹ä¾¿ã€ï¼ã€Œæ™ºæ–¹ä¾¿ï¼‹ã€å¸³æˆ¶ï¼›â‘¡ ç‹—éš»å·²æ¤å…¥æ™¶ç‰‡ï¼›â‘¢ å·²å®Œæˆæœ‰æ•ˆç‹‚çŠ¬ç—…é é˜²æ³¨å°„ã€‚" },
-      { question: "é»žæ¨£æŸ¥å·²ç¶“æœ‰å˜…ç‹—ç‰Œç‹€æ…‹ï¼Ÿ", answer: "æ‰“é–‹æ™ºæ–¹ä¾¿ â†’ æœå‹™ â†’ æ¼è¾²è‡ªç„¶è­·ç†ç½² â†’ å¯µç‰©ç‰Œç…§ â†’ æ’³ã€Œç‹—éš»ç‰Œç…§å’Œå–®æ¬¡è¨±å¯è­‰æŸ¥è©¢ã€ï¼Œå°±å¯ä»¥ç‡åˆ°ç‰Œç…§æœ‰æ•ˆæœŸåŒå–®æ¬¡è¨±å¯è­‰ç´€éŒ„ã€‚" },
-      { question: "é›»å­ç‹—ç‰Œå¯ä»¥å–ä»£å¯¦é«”ç‹—ç‰Œå—Žï¼Ÿ", answer: "é›»å­ç‹—ç‰Œ PDF èˆ‡å¯¦é«”ç‰Œå…·åŒç­‰æ³•å¾‹æ•ˆåŠ›ã€‚æ¼è¾²ç½²äººå“¡æŠ½æŸ¥æ™‚ï¼Œå¯ä»¥ show ä»½ PDF ç•€ä½¢å“‹ç‡ï¼Œä¸Šé¢å˜… QR code å¯ä»¥æ ¸å¯¦è³‡æ–™ã€‚" },
+      { question: "無領狗牌會有咩後果？", answer: "漁農署人員會喺狗公園等公眾地方定期抽查，發現超過 5 個月大嘅狗隻未領牌照、未植晶片或未打狂犬病疫苗，會直接檢控狗主，最高罰款 $10,000。" },
+      { question: "點解要用智方便下載？可以親身去嗎？", answer: "可以親身去漁農署認可診所或辦事處下載，但用「智方便」網上下載可以省卻排隊時間，5 分鐘搞掂，仲會即時生成電子狗牌 PDF。" },
+      { question: "狗牌收費幾多？幾耐要續期？", answer: "狗牌費為 $80，有效期 3 年。到期前建議登入「智方便」查詢並續期，避免斷牌。" },
+      { question: "下載前需要準備咩？", answer: "3 樣嘢：① 已登記嘅「智方便」／「智方便＋」帳戶；② 狗隻已植入晶片；③ 已完成有效狂犬病預防注射。" },
+      { question: "點樣查已經有嘅狗牌狀態？", answer: "打開智方便 → 服務 → 漁農自然護理署 → 寵物牌照 → 撳「狗隻牌照和單次許可證查詢」，就可以睇到牌照有效期同單次許可證紀錄。" },
+      { question: "電子狗牌可以取代實體狗牌嗎？", answer: "電子狗牌 PDF 與實體牌具同等法律效力。漁農署人員抽查時，可以 show 份 PDF 畀佢哋睇，上面嘅 QR code 可以核實資料。" },
     ],
-    relatedTopics: ["ç‹—ç‰Œä¸‹è¼‰", "æ™ºæ–¹ä¾¿", "æ¼è¾²ç½²", "å¯µç‰©å‹å–„é¤å»³"],
+    relatedTopics: ["狗牌下載", "智方便", "漁農署", "寵物友善餐廳"],
   },
   {
     id: "26",
     slug: "hk-dog-training-classes-guide-2026",
-    title: "ã€2026 é¦™æ¸¯ç‹—ç‹—è¨“ç·´ç­å…¨æŒ‡å—ã€‘æ¼è¾²ç½²å…è²»èª²ç¨‹ vs SPCA ä»˜è²»ç­ï½œPetWell HK",
-    excerpt: "å…è²»å­¸æ­£å‘è¨“ç·´ â€” ä½ åŒç‹—ç‹—å˜…ç¬¬ä¸€æ­¥ã€‚æ•´åˆæ¼è¾²è‡ªç„¶è­·ç†ç½²ï¼ˆAFCDï¼‰å…è²»çŠ¬éš»æ­£å‘è¨“ç·´èª²ç¨‹ï¼ŒåŒ SPCA é¦™æ¸¯æ„›è­·å‹•ç‰©å”æœƒä»˜è²»è¨“ç·´ç­è³‡è¨Šã€æ”¶è²»ã€å ±åé€£çµã€‚",
+    title: "【2026 香港狗狗訓練班全指南】漁農署免費課程 vs SPCA 付費班｜PetWell HK",
+    excerpt: "免費學正向訓練 — 你同狗狗嘅第一步。整合漁農自然護理署（AFCD）免費犬隻正向訓練課程，同 SPCA 香港愛護動物協會付費訓練班資訊、收費、報名連結。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 7 æœˆ 8 æ—¥</p>
-      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 24px;"><strong>å…è²»å­¸æ­£å‘è¨“ç·´ â€” ä½ åŒç‹—ç‹—å˜…ç¬¬ä¸€æ­¥ã€‚</strong>é¦™æ¸¯ç‹—ä¸»å¯ä»¥æ€<strong>æ¼è¾²ç½²å…è²»ç­</strong>ï¼ˆAFCD å…¨é¡è³‡åŠ©ï¼‰æˆ–è€… <strong>SPCA ä»˜è²»è¨“ç·´ç­</strong>ï¼Œå…©è€…éƒ½æŽ¡ç”¨<strong>æ­£å‘è¨“ç·´ï¼ˆPositive Reinforcementï¼‰</strong>æ–¹æ³•ã€‚ä»¥ä¸‹å¹«ä½ ä¸€æ¬¡éŽç‡æ¸…æ¥šé»žæ€ã€é»žå ±åã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 7 月 8 日</p>
+      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 24px;"><strong>免費學正向訓練 — 你同狗狗嘅第一步。</strong>香港狗主可以揀<strong>漁農署免費班</strong>（AFCD 全額資助）或者 <strong>SPCA 付費訓練班</strong>，兩者都採用<strong>正向訓練（Positive Reinforcement）</strong>方法。以下幫你一次過睇清楚點揀、點報名。</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;">
-        <a href="#afcd" style="display:block;padding:14px 16px;background:#10B981;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">æ¼è¾²ç½²å…è²»ç­ â†’</a>
-        <a href="#spca" style="display:block;padding:14px 16px;background:#0D9488;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">SPCA è¨“ç·´ç­ â†’</a>
+        <a href="#afcd" style="display:block;padding:14px 16px;background:#10B981;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">漁農署免費班 →</a>
+        <a href="#spca" style="display:block;padding:14px 16px;background:#0D9488;color:#fff;border-radius:10px;text-align:center;font-weight:600;text-decoration:none;">SPCA 訓練班 →</a>
       </div>
 
-      <h2 id="afcd" style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #10B981;">æ¼è¾²ç½²å…è²»çŠ¬éš»æ­£å‘è¨“ç·´èª²ç¨‹</h2>
+      <h2 id="afcd" style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #10B981;">漁農署免費犬隻正向訓練課程</h2>
       <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Agriculture, Fisheries and Conservation Department (AFCD)</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:28px;">
         <div style="border:1px solid #A7F3D0;background:#ECFDF5;border-radius:12px;padding:16px;text-align:center;">
-          <div style="font-size:22px;font-weight:700;color:#047857;">å…è²»</div>
-          <div style="font-size:13px;color:#374151;margin-top:4px;">æ¼è¾²ç½²å…¨é¡è³‡åŠ©</div>
+          <div style="font-size:22px;font-weight:700;color:#047857;">免費</div>
+          <div style="font-size:13px;color:#374151;margin-top:4px;">漁農署全額資助</div>
         </div>
         <div style="border:1px solid #A7F3D0;background:#ECFDF5;border-radius:12px;padding:16px;text-align:center;">
-          <div style="font-size:22px;font-weight:700;color:#047857;">20 åé¡</div>
-          <div style="font-size:13px;color:#374151;margin-top:4px;">æ¯æœŸï¼Œå¯å¸¶ 1 ä½ 12+ æ­²å®¶äºº</div>
+          <div style="font-size:22px;font-weight:700;color:#047857;">20 名額</div>
+          <div style="font-size:13px;color:#374151;margin-top:4px;">每期，可帶 1 位 12+ 歲家人</div>
         </div>
         <div style="border:1px solid #A7F3D0;background:#ECFDF5;border-radius:12px;padding:16px;text-align:center;">
-          <div style="font-size:22px;font-weight:700;color:#047857;">2 å ‚</div>
-          <div style="font-size:13px;color:#374151;margin-top:4px;">ç†è«– 2h + å¯¦è¸ 2.5h</div>
+          <div style="font-size:22px;font-weight:700;color:#047857;">2 堂</div>
+          <div style="font-size:13px;color:#374151;margin-top:4px;">理論 2h + 實踐 2.5h</div>
         </div>
       </div>
 
-      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">èª²ç¨‹å…§å®¹</h3>
-      <p style="font-weight:600;margin-bottom:6px;">ç†è«–èª²ï¼ˆç„¡éœ€å¸¶ç‹—ï¼‰</p>
+      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">課程內容</h3>
+      <p style="font-weight:600;margin-bottom:6px;">理論課（無需帶狗）</p>
       <ul style="line-height:1.8;margin-bottom:16px;padding-left:20px;">
-        <li>é¦™æ¸¯çŠ¬éš»ç›¸é—œæ³•ä¾‹</li>
-        <li>è² è²¬ä»»ç‹—ä¸»çš„è²¬ä»»ï¼ˆDuty of Careï¼‰</li>
-        <li>äº†è§£çŠ¬éš»èº«é«”èªžè¨€åŠè¡Œç‚º</li>
-        <li>æ­£å‘è¨“ç·´æ–¹æ³•åŠåŽŸç†</li>
-        <li>åŠ å¼·èˆ‡ç‹—ç‹—çš„é—œä¿‚</li>
+        <li>香港犬隻相關法例</li>
+        <li>負責任狗主的責任（Duty of Care）</li>
+        <li>了解犬隻身體語言及行為</li>
+        <li>正向訓練方法及原理</li>
+        <li>加強與狗狗的關係</li>
       </ul>
-      <p style="font-weight:600;margin-bottom:6px;">å¯¦è¸èª²ï¼ˆéœ€å¸¶ç‹—å‡ºå¸­ï¼‰</p>
+      <p style="font-weight:600;margin-bottom:6px;">實踐課（需帶狗出席）</p>
       <ul style="line-height:1.8;margin-bottom:20px;padding-left:20px;">
-        <li>åŸºæœ¬æœå¾žè¨“ç·´ç·´ç¿’</li>
-        <li>å…¬å…±å ´æ‰€ç¦®å„€</li>
-        <li>è¼•é¬†æ‡‰è¨ºè¨“ç·´</li>
-        <li>ç¹©ç´¢ç¦®å„€</li>
+        <li>基本服從訓練練習</li>
+        <li>公共場所禮儀</li>
+        <li>輕鬆應診訓練</li>
+        <li>繩索禮儀</li>
       </ul>
 
-      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">å ±åè³‡è¨Š</h3>
+      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">報名資訊</h3>
       <ul style="line-height:1.8;margin-bottom:20px;padding-left:20px;">
-        <li><strong>é–‹èª²é »çŽ‡ï¼š</strong>ä¸å®šæœŸï¼Œç´„æ¯ 2â€“3 å€‹æœˆä¸€æœŸï¼Œé¡æ»¿å³æ­¢</li>
-        <li><strong>åƒåŠ è³‡æ ¼ï¼š</strong>ç‹—éš»é ˆæ»¿ 5 å€‹æœˆå¤§ã€æŒæœ‰æœ‰æ•ˆç‰Œç…§åŠé‡å¡</li>
-        <li><strong>ä¸Šèª²åœ°é»žï¼š</strong>SPCA è³½é¦¬æœƒç™¾å‘¨å¹´ä¸­å¿ƒï¼ˆé’è¡£é•·è¼è·¯ 38 è™Ÿï¼‰</li>
-        <li><strong>èª²ç¨‹èªžè¨€ï¼š</strong>å»£æ±è©±</li>
-        <li><strong>æŸ¥è©¢é›»è©±ï¼š</strong>2593 5490ï¼ˆæ˜ŸæœŸä¸€è‡³äº” 9amâ€“6pmï¼Œå…¬çœ¾å‡æœŸé™¤å¤–ï¼‰</li>
-        <li><strong>æœ€æ–°ä¸€æœŸï¼š</strong>ç†è«– 2026 å¹´ 8 æœˆ 22 æ—¥ï¼ˆå…­ï¼‰14:30â€“16:30ï¼›å¯¦è¸ 8 æœˆ 29 æ—¥ï¼ˆå…­ï¼‰09:30â€“12:00 æˆ– 14:30â€“17:00</li>
+        <li><strong>開課頻率：</strong>不定期，約每 2–3 個月一期，額滿即止</li>
+        <li><strong>參加資格：</strong>狗隻須滿 5 個月大、持有有效牌照及針卡</li>
+        <li><strong>上課地點：</strong>SPCA 賽馬會百周年中心（青衣長輝路 38 號）</li>
+        <li><strong>課程語言：</strong>廣東話</li>
+        <li><strong>查詢電話：</strong>2593 5490（星期一至五 9am–6pm，公眾假期除外）</li>
+        <li><strong>最新一期：</strong>理論 2026 年 8 月 22 日（六）14:30–16:30；實踐 8 月 29 日（六）09:30–12:00 或 14:30–17:00</li>
       </ul>
 
-      <a href="https://www.hkafcddogtraining.hk" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 24px;background:#10B981;color:#fff;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:32px;">å‰å¾€æ¼è¾²ç½²å ±å â†’</a>
+      <a href="https://www.hkafcddogtraining.hk" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 24px;background:#10B981;color:#fff;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:32px;">前往漁農署報名 →</a>
 
-      <h2 id="spca" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #0D9488;">SPCA è¨“ç·´ç­</h2>
-      <p style="font-size: 14px; color: #666; margin-bottom: 20px;">é¦™æ¸¯æ„›è­·å‹•ç‰©å”æœƒ Dog Training Courses</p>
+      <h2 id="spca" style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #0D9488;">SPCA 訓練班</h2>
+      <p style="font-size: 14px; color: #666; margin-bottom: 20px;">香港愛護動物協會 Dog Training Courses</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:24px;">
         ${[
-          ["BB è¨“ç·´ç­ï¼ˆPuppy Socializationï¼‰", "$2,200", "$2,600", "5 å ‚ / 5 é€±"],
-          ["åŸºæœ¬æœå¾žè¨“ç·´ç­ï¼ˆå¤§åž‹çŠ¬ï¼‰", "$2,200", "$2,600", "5 å ‚ / 5 é€±"],
-          ["åŸºæœ¬æœå¾žè¨“ç·´ç­ï¼ˆå°åž‹çŠ¬ï¼‰", "$2,200", "$2,600", "5 å ‚ / 5 é€±"],
-          ["è¶£å‘³å—…èžéŠæˆ²ï¼ˆFun Scent Gamesï¼‰", "$2,000", "$3,000", "4 å ‚ / 4 é€±"],
-          ["ç‹—éš»éŸ¿ç‰‡æ‡‰ç”¨ç­ï¼ˆClicker Trainingï¼‰", "$1,500", "$1,800", "3 å ‚ / 3 é€±"],
-          ["ç‹—éš»è¡Œç‚ºè¨“ç·´ç­ï¼ˆå«ä¸Šé–€è©•ä¼°ï¼‰", "$1,700", "$2,100", "2 å ‚ / 2 é€±"],
-          ["ç‹—éš»éšœç¤™è³½é«”é©—ç­ï¼ˆAgilityï¼‰", "$2,200", "$2,600", "4 å ‚ / 4 é€±"],
-          ["è‰¯å¥½ç‹—ç‹—å¸‚æ°‘è¨“ç·´ç­ï¼ˆDog Etiquetteï¼‰", "$2,100", "$2,400", "3 å ‚ / 3 é€±"],
-          ["ç‹—ç‹—æ‡‰è¨ºå·¥ä½œåŠ", "$500", "$800", "1 å ‚"],
-          ["ç‹—ç‹—é¤æ¡Œç¦®å„€å·¥ä½œåŠ", "$500", "$600", "1 å ‚"],
-          ["å¹¼çŠ¬è¡Œç‚ºäº†è§£åŠæ­£å‘è¨“ç·´", "$1,800", "$2,200", "4 å ‚ / 4 é€±"],
+          ["BB 訓練班（Puppy Socialization）", "$2,200", "$2,600", "5 堂 / 5 週"],
+          ["基本服從訓練班（大型犬）", "$2,200", "$2,600", "5 堂 / 5 週"],
+          ["基本服從訓練班（小型犬）", "$2,200", "$2,600", "5 堂 / 5 週"],
+          ["趣味嗅聞遊戲（Fun Scent Games）", "$2,000", "$3,000", "4 堂 / 4 週"],
+          ["狗隻響片應用班（Clicker Training）", "$1,500", "$1,800", "3 堂 / 3 週"],
+          ["狗隻行為訓練班（含上門評估）", "$1,700", "$2,100", "2 堂 / 2 週"],
+          ["狗隻障礙賽體驗班（Agility）", "$2,200", "$2,600", "4 堂 / 4 週"],
+          ["良好狗狗市民訓練班（Dog Etiquette）", "$2,100", "$2,400", "3 堂 / 3 週"],
+          ["狗狗應診工作坊", "$500", "$800", "1 堂"],
+          ["狗狗餐桌禮儀工作坊", "$500", "$600", "1 堂"],
+          ["幼犬行為了解及正向訓練", "$1,800", "$2,200", "4 堂 / 4 週"],
         ]
           .map(
             ([name, member, nonMember, sessions]) => `
           <div style="border:1px solid #E5E7EB;border-radius:12px;padding:14px 16px;background:#fff;">
             <div style="font-size:15px;font-weight:600;color:#0F172A;margin-bottom:10px;line-height:1.4;">${name}</div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>æœƒå“¡åƒ¹</span><span style="font-weight:600;color:#0D9488;">${member}</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>éžæœƒå“¡åƒ¹</span><span style="font-weight:600;">${nonMember}</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>å ‚æ•¸</span><span>${sessions}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>會員價</span><span style="font-weight:600;color:#0D9488;">${member}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>非會員價</span><span style="font-weight:600;">${nonMember}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#475569;padding:4px 0;border-top:1px dashed #E5E7EB;"><span>堂數</span><span>${sessions}</span></div>
           </div>`,
           )
           .join("")}
       </div>
 
 
-      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">å¦‚ä½•å ±å SPCA èª²ç¨‹</h3>
+      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">如何報名 SPCA 課程</h3>
       <ol style="line-height:1.8;margin-bottom:20px;padding-left:20px;">
-        <li>å¡«å¯«ç¶²ä¸Šå ±åè¡¨æ ¼</li>
-        <li>ä¸Šè¼‰çŠ¬éš»é˜²ç–«æ³¨å°„è¨˜éŒ„</li>
-        <li>ç­‰å€™ç¢ºèªä¸¦ç¹³è²»ï¼ˆSPCA æœƒè¯çµ¡å®‰æŽ’ï¼‰</li>
+        <li>填寫網上報名表格</li>
+        <li>上載犬隻防疫注射記錄</li>
+        <li>等候確認並繳費（SPCA 會聯絡安排）</li>
       </ol>
 
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
-        <a href="https://dogtrainbook.spca.org.hk/?locale=zh_hk" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#0D9488;color:#fff;border-radius:10px;font-weight:600;text-decoration:none;">SPCA ç¶²ä¸Šå ±å â†’</a>
-        <a href="https://www.spca.org.hk/zh-hant/animal-care-services/dog-behaviour-and-training/dog-behaviour-training-courses/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#fff;color:#0D9488;border:2px solid #0D9488;border-radius:10px;font-weight:600;text-decoration:none;">æŸ¥çœ‹èª²ç¨‹è©³æƒ… â†’</a>
+        <a href="https://dogtrainbook.spca.org.hk/?locale=zh_hk" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#0D9488;color:#fff;border-radius:10px;font-weight:600;text-decoration:none;">SPCA 網上報名 →</a>
+        <a href="https://www.spca.org.hk/zh-hant/animal-care-services/dog-behaviour-and-training/dog-behaviour-training-courses/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:14px 22px;background:#fff;color:#0D9488;border:2px solid #0D9488;border-radius:10px;font-weight:600;text-decoration:none;">查看課程詳情 →</a>
       </div>
 
-      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">è¯çµ¡æ–¹å¼</h3>
+      <h3 style="font-size:18px;font-weight:700;margin:24px 0 10px;">聯絡方式</h3>
       <ul style="line-height:1.8;margin-bottom:16px;padding-left:20px;">
-        <li>é›»è©±ï¼š2232 5567</li>
-        <li>WhatsAppï¼š6272 4493</li>
-        <li>Emailï¼šbt@spca.org.hk</li>
+        <li>電話：2232 5567</li>
+        <li>WhatsApp：6272 4493</li>
+        <li>Email：bt@spca.org.hk</li>
       </ul>
 
-      <h3 style="font-size:18px;font-weight:700;margin:20px 0 10px;">ä¸Šèª²åœ°é»ž</h3>
+      <h3 style="font-size:18px;font-weight:700;margin:20px 0 10px;">上課地點</h3>
       <ul style="line-height:1.8;margin-bottom:16px;padding-left:20px;">
-        <li>é¦™æ¸¯ç¸½éƒ¨ï¼šç£ä»”ç£ç››è¡— 5 è™Ÿ 2 æ¨“å¹³å°ï¼ˆ2802 0501ï¼‰</li>
-        <li>é’è¡£ä¸­å¿ƒï¼šé’è¡£é•·è¼è·¯ 38 è™Ÿ SPCA è³½é¦¬æœƒç™¾å‘¨å¹´ä¸­å¿ƒï¼ˆ2232 5555ï¼‰</li>
+        <li>香港總部：灣仔灣盛街 5 號 2 樓平台（2802 0501）</li>
+        <li>青衣中心：青衣長輝路 38 號 SPCA 賽馬會百周年中心（2232 5555）</li>
       </ul>
 
-      <h3 style="font-size:18px;font-weight:700;margin:20px 0 10px;">å„ªæƒ </h3>
+      <h3 style="font-size:18px;font-weight:700;margin:20px 0 10px;">優惠</h3>
       <ul style="line-height:1.8;margin-bottom:32px;padding-left:20px;">
-        <li>SPCA é ˜é¤ŠçŠ¬éš»å¯äº«ç‰¹åƒ¹ï¼ˆé ˜é¤Šå¾Œ 3 å€‹æœˆå…§ï¼‰</li>
-        <li>åŒæ™‚å ±å 2 éš»çŠ¬éš»ï¼Œç¬¬ 2 éš»æ¸› $200</li>
-        <li>SPCA æœƒå“¡å¯äº«æœƒå“¡åƒ¹</li>
+        <li>SPCA 領養犬隻可享特價（領養後 3 個月內）</li>
+        <li>同時報名 2 隻犬隻，第 2 隻減 $200</li>
+        <li>SPCA 會員可享會員價</li>
       </ul>
 
-      <h2 style="font-size: 22px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #F59E0B;">å ±åå‰æ³¨æ„äº‹é …</h2>
+      <h2 style="font-size: 22px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #F59E0B;">報名前注意事項</h2>
       <ul style="line-height:1.8;margin-bottom:28px;padding-left:20px;">
-        <li><strong>ç–«è‹—è¦æ±‚ï¼š</strong>5 å€‹æœˆä»¥ä¸ŠçŠ¬éš»éœ€å®Œæˆ DHPPi åŠç‹‚çŠ¬ç—…ç–«è‹—ï¼Œé–‹èª²å‰æœ€å°‘ 7 å¤©å®ŒæˆæŽ¥ç¨®</li>
-        <li><strong>ç‰Œç…§è¦æ±‚ï¼š</strong>æ¼è¾²ç½²èª²ç¨‹è¦æ±‚çŠ¬éš»æŒæœ‰æœ‰æ•ˆç‰Œç…§</li>
-        <li><strong>å…ˆåˆ°å…ˆå¾—ï¼š</strong>åé¡æœ‰é™ï¼Œå»ºè­°å¯†åˆ‡ç•™æ„é–‹ç­å…¬å‘Š</li>
-        <li><strong>ä¸»äººå¿…é ˆå‡ºå¸­ï¼š</strong>è¨“ç·´èª²ç¨‹è¦æ±‚ç‹—ä¸»è¦ªè‡ªå‡ºå¸­</li>
-        <li><strong>ç†è«–èª²ç„¡éœ€å¸¶ç‹—ï¼š</strong>é¦–å ‚ç†è«–èª²åªéœ€ç‹—ä¸»å‡ºå¸­</li>
-        <li><strong>æ­£å‘è¨“ç·´æ–¹æ³•ï¼š</strong>æ‰€æœ‰æŽ¨è–¦èª²ç¨‹å‡æŽ¡ç”¨æ­£å‘è¨“ç·´ï¼ˆPositive Reinforcementï¼‰</li>
+        <li><strong>疫苗要求：</strong>5 個月以上犬隻需完成 DHPPi 及狂犬病疫苗，開課前最少 7 天完成接種</li>
+        <li><strong>牌照要求：</strong>漁農署課程要求犬隻持有有效牌照</li>
+        <li><strong>先到先得：</strong>名額有限，建議密切留意開班公告</li>
+        <li><strong>主人必須出席：</strong>訓練課程要求狗主親自出席</li>
+        <li><strong>理論課無需帶狗：</strong>首堂理論課只需狗主出席</li>
+        <li><strong>正向訓練方法：</strong>所有推薦課程均採用正向訓練（Positive Reinforcement）</li>
       </ul>
 
       <div style="background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:10px;padding:18px 20px;margin-bottom:20px;">
-        <h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#B45309;">ç”¨ PetWell App å…¨æ–¹ä½ç…§é¡§æ¯›å­©</h3>
-        <p style="font-size:15px;line-height:1.7;margin:0 0 10px;">ç”±æµè¨“ç·´ç­åˆ°æ—¥å¸¸ç…§é¡§ï¼ŒPetWell App å¹«ä½ ä¸€ç«™å¼ç®¡ç†æ¯›å­©ç”Ÿæ´»ï¼š</p>
+        <h3 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#B45309;">用 PetWell App 全方位照顧毛孩</h3>
+        <p style="font-size:15px;line-height:1.7;margin:0 0 10px;">由搵訓練班到日常照顧，PetWell App 幫你一站式管理毛孩生活：</p>
         <ul style="line-height:1.75;margin:0;padding-left:20px;font-size:14px;">
-          <li><strong>å…¨æ¸¯æœ€è©³ç´°å¯µç‰©å‹å–„å•†å ´è³‡æ–™</strong>ï¼ŒåŒ…æ‹¬å®¤å…§å®¤å¤–ã€å¯å…¥é£Ÿè‚†ç­‰è³‡è¨Š</li>
-          <li><strong>å¯µç‰©å‹å–„é¤å»³æœå°‹</strong>ï¼šå®¤å…§å®šå®¤å¤–ã€éœ€å””éœ€è¦é ç´„ï¼Œä¸€ç›®äº†ç„¶</li>
-          <li><strong>åƒ¹æ ¼ç¶²</strong>ï¼šæ¯”è¼ƒå¯µç‰©ç”¨å“åŒæœå‹™åƒ¹æ ¼ï¼Œå””æ´—å†æ ¼åƒ¹</li>
-          <li><strong>å®¶äººå…±äº«</strong>ï¼šåŒå±‹ä¼äººä¸€é½Šç…§é¡§åŒä¸€éš»å¯µç‰©ï¼Œè¨˜éŒ„åŒæ­¥</li>
-          <li><strong>å½±é‡å¡å³æŽƒå³è¨˜</strong>ï¼šæ‹ä½Žé‡å¡ï¼ŒApp è‡ªå‹•æé†’ä¸‹æ¬¡æ‰“é‡æ—¥æœŸ</li>
-          <li><strong>ç¸é†«åŠå…¨æ–¹ä½è©•åƒ¹</strong>ï¼šç‡çœŸå¯¦ç”¨å®¶è©•åƒ¹ï¼Œä»²å¯ä»¥åŒ¿åç™¼è¡¨æ„è¦‹</li>
-          <li><strong>é›»å­ç‹—ç‰Œ</strong>ï¼šä¸Šè¼‰ç‹—ç‰Œï¼Œéš¨æ™‚éš¨åœ°å±•ç¤ºç•€äººç‡</li>
+          <li><strong>全港最詳細寵物友善商場資料</strong>，包括室內室外、可入食肆等資訊</li>
+          <li><strong>寵物友善餐廳搜尋</strong>：室內定室外、需唔需要預約，一目了然</li>
+          <li><strong>價格網</strong>：比較寵物用品同服務價格，唔洗再格價</li>
+          <li><strong>家人共享</strong>：同屋企人一齊照顧同一隻寵物，記錄同步</li>
+          <li><strong>影針卡即掃即記</strong>：拍低針卡，App 自動提醒下次打針日期</li>
+          <li><strong>獸醫及全方位評價</strong>：睇真實用家評價，仲可以匿名發表意見</li>
+          <li><strong>電子狗牌</strong>：上載狗牌，隨時隨地展示畀人睇</li>
         </ul>
       </div>
-      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">è²æ˜Žï¼šæœ¬æ–‡åƒ…ä¾›è³‡è¨Šåƒè€ƒï¼Œæ‰€æœ‰èª²ç¨‹è©³æƒ…ä»¥ä¸»è¾¦æ©Ÿæ§‹å®˜æ–¹å…¬ä½ˆç‚ºæº–ã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 8px;">聲明：本文僅供資訊參考，所有課程詳情以主辦機構官方公佈為準。</p>
     `,
     author: "PetWell HK",
     date: "2026-07-08",
-    category: "è¨“ç·´è¡Œç‚º",
+    category: "訓練行為",
     imageUrl: blogHkDogTraining,
     seoKeywords: [
-      "é¦™æ¸¯ç‹—ç‹—è¨“ç·´ç­", "é¦™æ¸¯ç‹—è¨“ç·´ç­ 2026", "æ¼è¾²ç½²ç‹—è¨“ç·´", "AFCD å…è²»ç‹—è¨“ç·´", "AFCD dog training",
-      "SPCA ç‹—è¨“ç·´ç­", "SPCA dog training HK", "é¦™æ¸¯æ„›è­·å‹•ç‰©å”æœƒè¨“ç·´ç­", "é¦™æ¸¯ç‹—è¨“ç·´é‚Šé–“å¥½",
-      "æ­£å‘è¨“ç·´", "æ­£å‘å¼·åŒ–è¨“ç·´", "Positive Reinforcement dog training",
-      "å¹¼çŠ¬è¨“ç·´ç­", "BB è¨“ç·´ç­", "puppy socialization HK", "é¦™æ¸¯ puppy training",
-      "ç‹—ç‹—åŸºæœ¬æœå¾žè¨“ç·´", "é¦™æ¸¯ç‹—è¡Œç‚ºè¨“ç·´", "ç‹—ç‹—éŸ¿ç‰‡è¨“ç·´", "clicker training HK",
-      "ç‹—ç‹—å—…èžéŠæˆ²", "ç‹—ç‹—éšœç¤™è³½", "agility HK", "è‰¯å¥½ç‹—ç‹—å¸‚æ°‘è¨“ç·´",
-      "é¦™æ¸¯ç‹—è¨“ç·´è²»ç”¨", "SPCA è¨“ç·´ç­æ”¶è²»", "é’è¡£ SPCA è¨“ç·´ä¸­å¿ƒ", "ç£ä»” SPCA è¨“ç·´",
+      "香港狗狗訓練班", "香港狗訓練班 2026", "漁農署狗訓練", "AFCD 免費狗訓練", "AFCD dog training",
+      "SPCA 狗訓練班", "SPCA dog training HK", "香港愛護動物協會訓練班", "香港狗訓練邊間好",
+      "正向訓練", "正向強化訓練", "Positive Reinforcement dog training",
+      "幼犬訓練班", "BB 訓練班", "puppy socialization HK", "香港 puppy training",
+      "狗狗基本服從訓練", "香港狗行為訓練", "狗狗響片訓練", "clicker training HK",
+      "狗狗嗅聞遊戲", "狗狗障礙賽", "agility HK", "良好狗狗市民訓練",
+      "香港狗訓練費用", "SPCA 訓練班收費", "青衣 SPCA 訓練中心", "灣仔 SPCA 訓練",
     ],
-    seoDescription: "2026 é¦™æ¸¯ç‹—ç‹—è¨“ç·´ç­å…¨æŒ‡å—ï½œæ¯”è¼ƒæ¼è¾²ç½² AFCD å…è²»çŠ¬éš»æ­£å‘è¨“ç·´èª²ç¨‹ vs SPCA é¦™æ¸¯æ„›è­·å‹•ç‰©å”æœƒä»˜è²»ç­ï¼šBB ç­ã€åŸºæœ¬æœå¾žã€éŸ¿ç‰‡ã€å—…èžã€Agility æ”¶è²»ã€å ‚æ•¸ã€åœ°é»žã€å ±åé€£çµä¸€æ¬¡ç‡æ¸…ã€‚",
+    seoDescription: "2026 香港狗狗訓練班全指南｜比較漁農署 AFCD 免費犬隻正向訓練課程 vs SPCA 香港愛護動物協會付費班：BB 班、基本服從、響片、嗅聞、Agility 收費、堂數、地點、報名連結一次睇清。",
     faqItems: [
-      { question: "æ¼è¾²ç½²ç‹—è¨“ç·´ç­ä¿‚å’ªçœŸä¿‚å…è²»ï¼Ÿ", answer: "ä¿‚ï¼Œæ¼è¾²è‡ªç„¶è­·ç†ç½²ï¼ˆAFCDï¼‰å…¨é¡è³‡åŠ©ï¼Œç‹—ä¸»å®Œå…¨å…è²»ï¼Œæ¯æœŸ 20 åé¡ï¼Œå…ˆåˆ°å…ˆå¾—ã€‚" },
-      { question: "SPCA ç‹—è¨“ç·´ç­æ”¶è²»å¹¾å¤šï¼Ÿ", answer: "SPCA å¤§éƒ¨åˆ†èª²ç¨‹æœƒå“¡åƒ¹ $1,500â€“$2,200ï¼Œéžæœƒå“¡åƒ¹ $1,800â€“$3,000ï¼Œè¦–ä¹Žèª²ç¨‹é¡žåž‹åŒå ‚æ•¸ã€‚" },
-      { question: "å ±åç‹—è¨“ç·´ç­æœ‰å’©è¦æ±‚ï¼Ÿ", answer: "ç‹—éš»é€šå¸¸éœ€æ»¿ 5 å€‹æœˆå¤§ã€å®Œæˆ DHPPi åŠç‹‚çŠ¬ç—…ç–«è‹—ï¼ˆé–‹èª²å‰è‡³å°‘ 7 å¤©ï¼‰ã€æŒæœ‰æœ‰æ•ˆç‹—ç‰Œã€‚æ¼è¾²ç½²èª²ç¨‹å°ç‰Œç…§è¦æ±‚è¼ƒåš´æ ¼ã€‚" },
-      { question: "æ¼è¾²ç½² vs SPCA é‚Šå€‹å¥½ï¼Ÿ", answer: "é ç®—æœ‰é™ã€æƒ³è©¦æ°´å¯æ€æ¼è¾²ç½² 2 å ‚å…è²»ç­ï¼›æƒ³æ·±å…¥å­¸ç¿’ç‰¹å®šæŠ€èƒ½ï¼ˆå¦‚ Agilityã€å—…èžã€è¡Œç‚ºå•é¡Œï¼‰æˆ–éœ€è¦æ›´å¤šç·´ç¿’æ™‚é–“ï¼Œå»ºè­°å ± SPCA 4â€“5 é€±èª²ç¨‹ã€‚" },
-      { question: "å¹¾å€‹æœˆå¤§å˜…å¹¼çŠ¬å¯ä»¥é–‹å§‹è¨“ç·´ï¼Ÿ", answer: "8 é€±å¾Œå®Œæˆç¬¬ä¸€è¼ªç–«è‹—å³å¯é–‹å§‹ç¤¾æœƒåŒ–è¨“ç·´ï¼ŒSPCA BB ç­æ”¶ 8â€“20 é€±å¤§å¹¼çŠ¬ï¼›æ­£å¼æœå¾žè¨“ç·´å»ºè­° 5 å€‹æœˆä»¥ä¸Šã€‚" },
-      { question: "é‚Šåº¦å¯ä»¥å ±åï¼Ÿ", answer: "æ¼è¾²ç½²ï¼šhttps://www.hkafcddogtraining.hkï¼›SPCAï¼šhttps://dogtrainbook.spca.org.hk/?locale=zh_hk" },
+      { question: "漁農署狗訓練班係咪真係免費？", answer: "係，漁農自然護理署（AFCD）全額資助，狗主完全免費，每期 20 名額，先到先得。" },
+      { question: "SPCA 狗訓練班收費幾多？", answer: "SPCA 大部分課程會員價 $1,500–$2,200，非會員價 $1,800–$3,000，視乎課程類型同堂數。" },
+      { question: "報名狗訓練班有咩要求？", answer: "狗隻通常需滿 5 個月大、完成 DHPPi 及狂犬病疫苗（開課前至少 7 天）、持有有效狗牌。漁農署課程對牌照要求較嚴格。" },
+      { question: "漁農署 vs SPCA 邊個好？", answer: "預算有限、想試水可揀漁農署 2 堂免費班；想深入學習特定技能（如 Agility、嗅聞、行為問題）或需要更多練習時間，建議報 SPCA 4–5 週課程。" },
+      { question: "幾個月大嘅幼犬可以開始訓練？", answer: "8 週後完成第一輪疫苗即可開始社會化訓練，SPCA BB 班收 8–20 週大幼犬；正式服從訓練建議 5 個月以上。" },
+      { question: "邊度可以報名？", answer: "漁農署：https://www.hkafcddogtraining.hk；SPCA：https://dogtrainbook.spca.org.hk/?locale=zh_hk" },
     ],
 
-    relatedTopics: ["ç‹—ç‹—è¨“ç·´", "æ­£å‘è¨“ç·´", "å¹¼çŠ¬ç¤¾æœƒåŒ–", "é¦™æ¸¯ç‹—ä¸»"],
+    relatedTopics: ["狗狗訓練", "正向訓練", "幼犬社會化", "香港狗主"],
   },
   {
     id: "25",
     slug: "hong-kong-pet-friendly-restaurants-guide-2026",
-    title: "2026 é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³å®Œæ•´æŒ‡å—ï¼šé£Ÿç’°ç½²åå–® vs çœŸãƒ»èªè­‰é¤å»³ | PetWell HK",
-    excerpt: "é£Ÿç’°ç½² 1,000 é–“ç²æ‰¹é£Ÿè‚†ç«ç†±è¨Žè«–ä¸­ï¼æœ¬æ–‡æ•´ç† FEHD è¦å‰‡ã€PetWell çœŸãƒ»å¯µç‰©å‹å–„èªè­‰åˆ†åˆ¥ï¼Œä»¥åŠå…¨æ¸¯ 18 å€å¯µç‰©å‹å–„é¤å»³æµé£Ÿæ”»ç•¥ã€‚",
+    title: "2026 香港寵物友善餐廳完整指南：食環署名單 vs 真・認證餐廳 | PetWell HK",
+    excerpt: "食環署 1,000 間獲批食肆火熱討論中！本文整理 FEHD 規則、PetWell 真・寵物友善認證分別，以及全港 18 區寵物友善餐廳搵食攻略。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px;">æœ€å¾Œæ›´æ–°ï¼š2026 å¹´ 6 æœˆ 28 æ—¥</p>
-      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 24px;">æƒ³å¸¶ç‹—é£Ÿé£¯ä½†å””çŸ¥é‚Šé–“çœŸãƒ»å¯µç‰©å‹å–„ï¼Ÿ<strong>é£Ÿç’°ç½²é¦–æ‰¹ 1,000 é–“ç²æ‰¹é£Ÿè‚†</strong>åŒ <strong>PetWell è‡´é›»ç¢ºèªèªè­‰é¤å»³</strong>å¯ä»¥ä¸€é½Šç”¨ â€” æœ¬æ–‡å¹«ä½ åˆ†æ¸…å…©è€…ï¼Œå†æŒ‰é¦™æ¸¯<strong>18 å€</strong>æµ restaurantã€‚</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px;">最後更新：2026 年 6 月 28 日</p>
+      <p style="font-size: 18px; line-height: 1.75; margin-bottom: 24px;">想帶狗食飯但唔知邊間真・寵物友善？<strong>食環署首批 1,000 間獲批食肆</strong>同 <strong>PetWell 致電確認認證餐廳</strong>可以一齊用 — 本文幫你分清兩者，再按香港<strong>18 區</strong>搵 restaurant。</p>
 
-      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">é£Ÿç’°ç½²åå–® vs PetWell èªè­‰</h2>
+      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">食環署名單 vs PetWell 認證</h2>
       <ul style="line-height: 1.8; margin-bottom: 24px;">
-        <li><strong>é£Ÿç’°ç½²ï¼ˆFEHDï¼‰</strong>ï¼šæ”¿åºœæŠ½ç±¤çµæžœï¼Œä»£è¡¨ç‰Œç…§å…è¨±ç‹—éš»é€²å…¥ï¼Œé ˆéµå®ˆç‰½ç¹©ã€ä¸ä¸Šæž±ç­‰è¦å®šã€‚</li>
-        <li><strong>PetWell èªè­‰</strong>ï¼šåœ˜éšŠè‡´é›»ç¢ºèªï¼Œæ¨™ç¤ºå®¤å…§ï¼å®¤å¤–ã€walk-inï¼é ç´„ç­‰å¯¦ç”¨æ”¿ç­–ã€‚</li>
+        <li><strong>食環署（FEHD）</strong>：政府抽籤結果，代表牌照允許狗隻進入，須遵守牽繩、不上枱等規定。</li>
+        <li><strong>PetWell 認證</strong>：團隊致電確認，標示室內／室外、walk-in／預約等實用政策。</li>
       </ul>
-      <p style="margin-bottom: 24px;"><a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;font-weight:600;">â†’ é£Ÿç’°ç½² 1,000 é–“æ•´åˆåå–®</a>ã€€<a href="/restaurants" style="color:#FF6B35;font-weight:600;">â†’ PetWell èªè­‰é¤å»³ä¸»åˆ—è¡¨</a></p>
+      <p style="margin-bottom: 24px;"><a href="/hk-fehd-pet-friendly-restaurants-1000-list" style="color:#FF6B35;font-weight:600;">→ 食環署 1,000 間整合名單</a>　<a href="/restaurants" style="color:#FF6B35;font-weight:600;">→ PetWell 認證餐廳主列表</a></p>
 
-      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">æŒ‰ 18 å€æµå¯µç‰©å‹å–„é¤å»³</h2>
-      <p style="line-height: 1.7; margin-bottom: 16px;">ä»¥ä¸‹é€£çµç›´è¾¾å„å€ PetWell èªè­‰é¤å»³é é¢ï¼ˆå« FEHD åƒè€ƒï¼‰ï¼š</p>
+      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">按 18 區搵寵物友善餐廳</h2>
+      <p style="line-height: 1.7; margin-bottom: 16px;">以下連結直达各區 PetWell 認證餐廳頁面（含 FEHD 參考）：</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:32px;font-size:14px;">
-        <a href="/pet-friendly-restaurants/central-and-western" style="color:#FF6B35">ä¸­è¥¿å€</a>
-        <a href="/pet-friendly-restaurants/wan-chai" style="color:#FF6B35">ç£ä»”å€</a>
-        <a href="/pet-friendly-restaurants/eastern" style="color:#FF6B35">æ±å€</a>
-        <a href="/pet-friendly-restaurants/southern" style="color:#FF6B35">å—å€</a>
-        <a href="/pet-friendly-restaurants/yau-tsim-mong" style="color:#FF6B35">æ²¹å°–æ—ºå€</a>
-        <a href="/pet-friendly-restaurants/sham-shui-po" style="color:#FF6B35">æ·±æ°´åŸ—å€</a>
-        <a href="/pet-friendly-restaurants/kowloon-city" style="color:#FF6B35">ä¹é¾åŸŽå€</a>
-        <a href="/pet-friendly-restaurants/wong-tai-sin" style="color:#FF6B35">é»ƒå¤§ä»™å€</a>
-        <a href="/pet-friendly-restaurants/kwun-tong" style="color:#FF6B35">è§€å¡˜å€</a>
-        <a href="/pet-friendly-restaurants/kwai-tsing" style="color:#FF6B35">è‘µé’å€</a>
-        <a href="/pet-friendly-restaurants/tsuen-wan" style="color:#FF6B35">èƒç£å€</a>
-        <a href="/pet-friendly-restaurants/tuen-mun" style="color:#FF6B35">å±¯é–€å€</a>
-        <a href="/pet-friendly-restaurants/yuen-long" style="color:#FF6B35">å…ƒæœ—å€</a>
-        <a href="/pet-friendly-restaurants/north" style="color:#FF6B35">åŒ—å€</a>
-        <a href="/pet-friendly-restaurants/tai-po" style="color:#FF6B35">å¤§åŸ”å€</a>
-        <a href="/pet-friendly-restaurants/sha-tin" style="color:#FF6B35">æ²™ç”°å€</a>
-        <a href="/pet-friendly-restaurants/sai-kung" style="color:#FF6B35">è¥¿è²¢å€</a>
-        <a href="/pet-friendly-restaurants/islands" style="color:#FF6B35">é›¢å³¶å€</a>
+        <a href="/pet-friendly-restaurants/central-and-western" style="color:#FF6B35">中西區</a>
+        <a href="/pet-friendly-restaurants/wan-chai" style="color:#FF6B35">灣仔區</a>
+        <a href="/pet-friendly-restaurants/eastern" style="color:#FF6B35">東區</a>
+        <a href="/pet-friendly-restaurants/southern" style="color:#FF6B35">南區</a>
+        <a href="/pet-friendly-restaurants/yau-tsim-mong" style="color:#FF6B35">油尖旺區</a>
+        <a href="/pet-friendly-restaurants/sham-shui-po" style="color:#FF6B35">深水埗區</a>
+        <a href="/pet-friendly-restaurants/kowloon-city" style="color:#FF6B35">九龍城區</a>
+        <a href="/pet-friendly-restaurants/wong-tai-sin" style="color:#FF6B35">黃大仙區</a>
+        <a href="/pet-friendly-restaurants/kwun-tong" style="color:#FF6B35">觀塘區</a>
+        <a href="/pet-friendly-restaurants/kwai-tsing" style="color:#FF6B35">葵青區</a>
+        <a href="/pet-friendly-restaurants/tsuen-wan" style="color:#FF6B35">荃灣區</a>
+        <a href="/pet-friendly-restaurants/tuen-mun" style="color:#FF6B35">屯門區</a>
+        <a href="/pet-friendly-restaurants/yuen-long" style="color:#FF6B35">元朗區</a>
+        <a href="/pet-friendly-restaurants/north" style="color:#FF6B35">北區</a>
+        <a href="/pet-friendly-restaurants/tai-po" style="color:#FF6B35">大埔區</a>
+        <a href="/pet-friendly-restaurants/sha-tin" style="color:#FF6B35">沙田區</a>
+        <a href="/pet-friendly-restaurants/sai-kung" style="color:#FF6B35">西貢區</a>
+        <a href="/pet-friendly-restaurants/islands" style="color:#FF6B35">離島區</a>
       </div>
-      <p style="margin-bottom: 24px;"><a href="/pet-friendly-restaurants/districts" style="color:#FF6B35;font-weight:600;">â†’ 18 å€å®Œæ•´ç´¢å¼•é </a></p>
+      <p style="margin-bottom: 24px;"><a href="/pet-friendly-restaurants/districts" style="color:#FF6B35;font-weight:600;">→ 18 區完整索引頁</a></p>
 
-      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">é»žæ¨£ç”¨ PetWell ç¯©é¸ï¼Ÿ</h2>
+      <h2 style="font-size: 22px; font-weight: 700; margin: 32px 0 16px; border-bottom: 2px solid #FF6B35; padding-bottom: 8px;">點樣用 PetWell 篩選？</h2>
       <ol style="line-height: 1.8; margin-bottom: 24px;">
-        <li>æŒ‰ 18 å€æˆ–æ¸¯å³¶ï¼ä¹é¾ï¼æ–°ç•Œæ€å€</li>
-        <li>é–‹ã€Œå¯å…¥å®¤å…§ã€æµçœŸæ­£ indoor dining</li>
-        <li>é–‹ã€Œå¯å³å ´å…¥åº§ã€é¿å…ç„¡é ç´„ç™½è·‘</li>
-        <li>å‡ºç™¼å‰å†è‡´é›»é¤å»³ç¢ºèªæœ€æ–°æ”¿ç­–</li>
+        <li>按 18 區或港島／九龍／新界揀區</li>
+        <li>開「可入室內」搵真正 indoor dining</li>
+        <li>開「可即場入座」避免無預約白跑</li>
+        <li>出發前再致電餐廳確認最新政策</li>
       </ol>
-      <p style="margin-bottom: 24px;">è½é›¨æƒ³ indoorï¼Ÿå¯åƒè€ƒ <a href="/rainy-day-pet-friendly-indoor-hong-kong" style="color:#FF6B35">45 é–“å¯µç‰©å‹å–„å•†å ´ï¼‹é™„è¿‘é¤å»³</a>ã€‚</p>
+      <p style="margin-bottom: 24px;">落雨想 indoor？可參考 <a href="/rainy-day-pet-friendly-indoor-hong-kong" style="color:#FF6B35">45 間寵物友善商場＋附近餐廳</a>。</p>
     `,
     author: "PetWell HK",
     date: "2026-06-28",
-    category: "é£²é£Ÿç‡Ÿé¤Š",
+    category: "飲食營養",
     imageUrl: blogFehdPetFriendly,
     seoKeywords: [
-      "å¯µç‰©å‹å–„é¤å»³", "2026 å¯µç‰©å‹å–„é¤å»³", "é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³æŒ‡å—", "é£Ÿç’°ç½²å¯µç‰©é¤å»³",
-      "18å€å¯µç‰©å‹å–„é¤å»³", "å¸¶ç‹—é£Ÿé£¯", "pet friendly restaurant guide hk", "FEHD vs PetWell",
+      "寵物友善餐廳", "2026 寵物友善餐廳", "香港寵物友善餐廳指南", "食環署寵物餐廳",
+      "18區寵物友善餐廳", "帶狗食飯", "pet friendly restaurant guide hk", "FEHD vs PetWell",
     ],
-    seoDescription: "2026 é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³å®Œæ•´æŒ‡å—ï¼šé£Ÿç’°ç½² 1,000 é–“ç²æ‰¹åå–® vs PetWell çœŸãƒ»èªè­‰é¤å»³ã€‚é™„å…¨æ¸¯ 18 å€æµé£Ÿé€£çµã€å®¤å…§ï¼walk-in ç¯©é¸æ”»ç•¥ã€‚",
+    seoDescription: "2026 香港寵物友善餐廳完整指南：食環署 1,000 間獲批名單 vs PetWell 真・認證餐廳。附全港 18 區搵食連結、室內／walk-in 篩選攻略。",
     faqItems: [
-      { question: "é£Ÿç’°ç½²åå–®åŒ PetWell èªè­‰æœ‰å’©åˆ†åˆ¥ï¼Ÿ", answer: "é£Ÿç’°ç½²åå–®ä¿‚ç‰Œç…§å…è¨±ç‹—éš»é€²å…¥ï¼›PetWell èªè­‰ä¿‚åœ˜éšŠè‡´é›»ç¢ºèªå®¤å…§ï¼å®¤å¤–ã€é ç´„ï¼walk-in ç­‰å¯¦éš›æ”¿ç­–ã€‚" },
-      { question: "é»žæ¨£æŒ‰å€æµå¯µç‰©å‹å–„é¤å»³ï¼Ÿ", answer: "ç€è¦½ PetWell 18 å€å°ˆé ï¼Œä¾‹å¦‚ /pet-friendly-restaurants/sha-tin æµæ²™ç”°å€ï¼Œæˆ–åŽ» /pet-friendly-restaurants/districts ç‡å®Œæ•´åˆ—è¡¨ã€‚" },
-      { question: "é‚Šåº¦å¯ä»¥æµå¯å…¥å®¤å…§å˜…é¤å»³ï¼Ÿ", answer: "å–º /restaurants æˆ–å„ 18 å€é é¢é–‹å•Ÿã€Œå¯å…¥å®¤å…§ã€ç¯©é¸å³å¯ã€‚" },
+      { question: "食環署名單同 PetWell 認證有咩分別？", answer: "食環署名單係牌照允許狗隻進入；PetWell 認證係團隊致電確認室內／室外、預約／walk-in 等實際政策。" },
+      { question: "點樣按區搵寵物友善餐廳？", answer: "瀏覽 PetWell 18 區專頁，例如 /pet-friendly-restaurants/sha-tin 搵沙田區，或去 /pet-friendly-restaurants/districts 睇完整列表。" },
+      { question: "邊度可以搵可入室內嘅餐廳？", answer: "喺 /restaurants 或各 18 區頁面開啟「可入室內」篩選即可。" },
     ],
-    relatedTopics: ["å¯µç‰©å‹å–„é¤å»³", "å¸¶ç‹—æ´»å‹•", "å¯µç‰©å¥½åŽ»è™•", "é¦™æ¸¯å¯µç‰©æ”¿ç­–"],
+    relatedTopics: ["寵物友善餐廳", "帶狗活動", "寵物好去處", "香港寵物政策"],
   },
   {
     id: "24",
     slug: "rainy-day-pet-friendly-indoor-hong-kong",
-    title: "ã€2026 é›¨å¤©æ”»ç•¥ã€‘è½é›¨å¤©å¸¶å¯µç‰©åŽ»é‚Šå¥½ï¼Ÿå…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´ï¼‹é™„è¿‘é¤å»³ä¸€è¦½ | PetWell HK",
-    excerpt: "é»ƒé›¨é»‘é›¨éƒ½å””ä½¿å›°å±‹ä¼ï¼å…¨æ¸¯ 45 é–“å¯µç‰©å‹å–„å•†å ´å®Œæ•´åå–®ï¼Œå¯æŒ‰åœ°å€ï¼å¯µç‰©æ”¿ç­–ï¼åœè»Šå ´ç¯©é¸ï¼Œæ¯é–“å³æ™‚å±•é–‹é™„è¿‘å¯µç‰©å‹å–„é¤å»³æ¸…å–®ï¼Œé›¨å¤©ä¸€æ¨£å¯ä»¥åŒæ¯›å­© chill è¶³å…¨æ—¥ã€‚",
+    title: "【2026 雨天攻略】落雨天帶寵物去邊好？全港 45 間寵物友善商場＋附近餐廳一覽 | PetWell HK",
+    excerpt: "黃雨黑雨都唔使困屋企！全港 45 間寵物友善商場完整名單，可按地區／寵物政策／停車場篩選，每間即時展開附近寵物友善餐廳清單，雨天一樣可以同毛孩 chill 足全日。",
     content: buildRainyDayContent(),
     author: "PetWell HK",
     date: "2026-06-18",
-    category: "æˆ¶å¤–æ´»å‹•",
+    category: "戶外活動",
     imageUrl: blogRainyDayPets,
     seoKeywords: [
-      "è½é›¨å¤©å¸¶ç‹—åŽ»é‚Š", "é›¨å¤©å¯µç‰©æ´»å‹•", "é¦™æ¸¯å¯µç‰©å‹å–„å•†å ´", "å®¤å…§å¯µç‰©å‹å–„",
-      "é›¨å¤©ç‹—ç‹—åŽ»é‚Šå¥½", "å¯µç‰©å‹å–„å•†å ´", "å¸¶ç‹—è¡Œå•†å ´", "é»ƒé›¨å¸¶å¯µç‰©",
-      "Pacific Place å¯µç‰©", "Harbour City å¯µç‰©", "D2 Place å¯µç‰©", "K11 MUSEA å¯µç‰©",
-      "æ–°åŸŽå¸‚å»£å ´ å¯µç‰©", "IFC å¯µç‰©", "å¸Œæ…Žå»£å ´ å¯µç‰©", "å—è±ç´—å»  å¯µç‰©",
+      "落雨天帶狗去邊", "雨天寵物活動", "香港寵物友善商場", "室內寵物友善",
+      "雨天狗狗去邊好", "寵物友善商場", "帶狗行商場", "黃雨帶寵物",
+      "Pacific Place 寵物", "Harbour City 寵物", "D2 Place 寵物", "K11 MUSEA 寵物",
+      "新城市廣場 寵物", "IFC 寵物", "希慎廣場 寵物", "南豐紗廠 寵物",
     ],
     faqItems: [
-      { question: "è½é›¨å¤©å¯ä»¥å¸¶ç‹—åŽ»å•†å ´å—Žï¼Ÿ", answer: "å¯ä»¥ï¼Œé¦™æ¸¯æœ‰ 30+ é–“å•†å ´å®¹è¨±å¯µç‰©å…¥å…§ï¼Œä¾‹å¦‚ THE SOUTHSIDEã€Pacific Placeã€Harbour Cityã€D2 Place ç­‰ã€‚éƒ¨åˆ†å•†å ´è¦æ±‚å¯µç‰©å…¨ç¨‹åæŽ¨è»Šæˆ–å…¥è¢‹ï¼Œéƒ¨åˆ†ï¼ˆå¦‚ The Millsã€Mikikiï¼‰å®¹è¨±ç¹«ç¹©å…¥å ´ã€‚å‡ºç™¼å‰å»ºè­°å…ˆæŸ¥å•†å ´æœ€æ–°æ”¿ç­–ã€‚" },
-      { question: "å¸¶å¯µç‰©å…¥å•†å ´å‰è¦æº–å‚™å’©ï¼Ÿ", answer: "å»ºè­°å¸¶ï¼šå¯µç‰©è¢‹ï¼æŽ¨è»Šï¼ˆæ¸¯å³¶å¤§å•†å ´å¿…éœ€ï¼‰ã€ç‰½ç¹©ã€æ¯›å·¾æŠ¹è…³ã€æ¿•ç´™å·¾ã€é£²æ°´ã€é›¶é£Ÿã€å¯µç‰©å°¿å¢Šã€‚ä¸­å¤§åž‹çŠ¬ï¼ˆ>20kgï¼‰å»ºè­°æˆ´å£ç½©ï¼Œè€çŠ¬å¯ç©¿é˜²æ»‘è¥ªä»¥é˜²ç“·ç£šåœ°é¢æ‰“æ»‘ã€‚" },
-      { question: "é‚Šé–“å•†å ´é™„è¿‘å¯µç‰©å‹å–„é¤å»³æœ€å¤šï¼Ÿ", answer: "å°–æ²™å’€ï¼ˆHarbour Cityã€K11 MUSEAï¼‰ã€ä¸­ç’°ï¼ˆIFC Mallï¼‰åŠéŠ…é‘¼ç£ï¼ˆHysan Placeï¼‰ä¸€å¸¶å¯µç‰©å‹å–„é¤å»³å¯†åº¦æœ€é«˜ï¼Œ5 å…¬é‡Œå…§é€šå¸¸æœ‰ 20 é–“ä»¥ä¸Šé¸æ“‡ã€‚æœ¬æ–‡æ¯é–“å•†å ´ä¸‹æ–¹å³æ™‚é¡¯ç¤ºé™„è¿‘é¤å»³æ¸…å–®ã€‚" },
+      { question: "落雨天可以帶狗去商場嗎？", answer: "可以，香港有 30+ 間商場容許寵物入內，例如 THE SOUTHSIDE、Pacific Place、Harbour City、D2 Place 等。部分商場要求寵物全程坐推車或入袋，部分（如 The Mills、Mikiki）容許繫繩入場。出發前建議先查商場最新政策。" },
+      { question: "帶寵物入商場前要準備咩？", answer: "建議帶：寵物袋／推車（港島大商場必需）、牽繩、毛巾抹腳、濕紙巾、飲水、零食、寵物尿墊。中大型犬（>20kg）建議戴口罩，老犬可穿防滑襪以防瓷磚地面打滑。" },
+      { question: "邊間商場附近寵物友善餐廳最多？", answer: "尖沙咀（Harbour City、K11 MUSEA）、中環（IFC Mall）及銅鑼灣（Hysan Place）一帶寵物友善餐廳密度最高，5 公里內通常有 20 間以上選擇。本文每間商場下方即時顯示附近餐廳清單。" },
     ],
   },
   {
     id: "23",
     slug: "hk-fehd-pet-friendly-restaurants-1000-list",
-    title: "ã€26/5 æœ€æ–°æ›´æ–°ã€‘å…¨æ¸¯ç²å‡†è¨±ç‹—éš»é€²å…¥é£Ÿè‚†åå–®ï½œé£Ÿç’°ç½²å®˜æ–¹è³‡æ–™æ•´åˆï½œPetWell HK",
-    excerpt: "é£Ÿç’°ç½²æœ€æ–°å…¬ä½ˆç²å‡†è¨±ç‹—éš»é€²å…¥çš„é£Ÿè‚†åå–®ï¼ŒPetWell HK ç‚ºä½ æ•´åˆå¯æœå°‹ç‰ˆæœ¬ï¼Œé™„åœ°å€ç¯©é¸åŠå¸¶ç‹—åŽ»é¤å»³å¿…è®€è¦æ¢ã€‚",
+    title: "【26/5 最新更新】全港獲准許狗隻進入食肆名單｜食環署官方資料整合｜PetWell HK",
+    excerpt: "食環署最新公佈獲准許狗隻進入的食肆名單，PetWell HK 為你整合可搜尋版本，附地區篩選及帶狗去餐廳必讀規條。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026å¹´5æœˆ26æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026年5月26日</p>
 
       <div style="background: #FFF5F0; border: 2px solid #FF6B35; border-radius: 12px; padding: 18px 22px; margin: 0 0 28px 0; text-align: center;">
-        <p style="font-size: 16px; font-weight: 700; color: #FF6B35; margin: 0 0 8px 0;">ðŸ¾ ç”¨ PetWell App æœå°‹é™„è¿‘å¯µç‰©å‹å–„é¤å»³ã€è¨ºæ‰€åŠæ›´å¤š</p>
-        <p style="font-size: 14px; line-height: 1.6; margin: 0 0 12px 0; color: #333;">ç‡å®Œåå–®æƒ³æµæ›´å¤šï¼ŸPetWell å¹«ä½ æœå°‹é™„è¿‘å¯µç‰©å‹å–„é¤å»³è©³ç´°è³‡æ–™ï¼ˆåœ°å€/èªè­‰ç‹€æ…‹/å®¤å…§ï¼æˆ¶å¤–ï¼‰ã€ç¸é†«è¨ºæ‰€ã€å¯µç‰©ç¾Žå®¹ç­‰ï¼Œä¸€éµå°Žèˆªã€‚</p>
-        <a href="/restaurants" style="display:inline-block;background:#FF6B35;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;margin-right:8px;">æŸ¥çœ‹æ›´å¤šé¤å»³</a>
-        <a href="https://petwellhk.com" style="display:inline-block;background:#fff;color:#FF6B35;border:2px solid #FF6B35;font-size:14px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none;">ç«‹å³ä¸‹è¼‰ App</a>
+        <p style="font-size: 16px; font-weight: 700; color: #FF6B35; margin: 0 0 8px 0;">🐾 用 PetWell App 搜尋附近寵物友善餐廳、診所及更多</p>
+        <p style="font-size: 14px; line-height: 1.6; margin: 0 0 12px 0; color: #333;">睇完名單想搵更多？PetWell 幫你搜尋附近寵物友善餐廳詳細資料（地址/認證狀態/室內／戶外）、獸醫診所、寵物美容等，一鍵導航。</p>
+        <a href="/restaurants" style="display:inline-block;background:#FF6B35;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;margin-right:8px;">查看更多餐廳</a>
+        <a href="https://petwellhk.com" style="display:inline-block;background:#fff;color:#FF6B35;border:2px solid #FF6B35;font-size:14px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none;">立即下載 App</a>
       </div>
 
       <div style="background: #F0F8FF; border-left: 4px solid #1E88E5; border-radius: 8px; padding: 18px 22px; margin: 0 0 32px 0;">
-        <p style="font-size: 15px; font-weight: 700; color: #1565C0; margin: 0 0 8px 0; line-height: 1.5;">ðŸ“Œ å®˜æ–¹è³‡æ–™ä¾†æº</p>
-        <p style="font-size: 15px; line-height: 1.75; margin: 0; color: #333;">æœ¬é åå–®æ•´åˆè‡ªé£Ÿç’°ç½²ï¼ˆFEHDï¼‰å…¬ä½ˆçš„ã€Œç²å‡†è¨±ç‹—éš»é€²å…¥é£Ÿè‚†åå–®ã€ã€‚å¦‚æœ‰ç–‘å•ï¼Œè«‹ä»¥å®˜æ–¹åŽŸå§‹åå–®ç‚ºæº–ï¼š<br/><a href="https://www.fehd.gov.hk/tc_chi/licensing/license_general_restaurant_dog.html" target="_blank" rel="noopener noreferrer" style="color:#1565C0;text-decoration:underline;font-weight:600;">å‰å¾€é£Ÿç’°ç½²å®˜æ–¹ç¶²ç«™ â†’</a></p>
+        <p style="font-size: 15px; font-weight: 700; color: #1565C0; margin: 0 0 8px 0; line-height: 1.5;">📌 官方資料來源</p>
+        <p style="font-size: 15px; line-height: 1.75; margin: 0; color: #333;">本頁名單整合自食環署（FEHD）公佈的「獲准許狗隻進入食肆名單」。如有疑問，請以官方原始名單為準：<br/><a href="https://www.fehd.gov.hk/tc_chi/licensing/license_general_restaurant_dog.html" target="_blank" rel="noopener noreferrer" style="color:#1565C0;text-decoration:underline;font-weight:600;">前往食環署官方網站 →</a></p>
       </div>
 
-      <p style="font-size: 19px; line-height: 1.8; margin-bottom: 32px; font-weight: 300;">é£Ÿç’°ç½²ã€Œå®¹è¨±ç‹—éš»é€²å…¥é£Ÿè‚†ã€è¨ˆåŠƒæ­£å¼è½åœ°ï¼Œæ¯›å­©çµ‚æ–¼å¯ä»¥å…‰æ˜Žæ­£å¤§åœ°èˆ‡ä¸»äººå…±æ™‰æ™šé¤ã€‚PetWell HK å°‡å®˜æ–¹åå–®æ•´åˆæˆå¯æœå°‹ç‰ˆæœ¬ï¼Œæ–¹ä¾¿å¤§å®¶æŒ‰åœ°å€ã€é¤å»³åç¨±å³æ™‚æŸ¥é–±ã€‚</p>
+      <p style="font-size: 19px; line-height: 1.8; margin-bottom: 32px; font-weight: 300;">食環署「容許狗隻進入食肆」計劃正式落地，毛孩終於可以光明正大地與主人共晉晚餐。PetWell HK 將官方名單整合成可搜尋版本，方便大家按地區、餐廳名稱即時查閱。</p>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;" id="directory">ç²å‡†è¨±é£Ÿè‚†åå–®æœå°‹å™¨</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 40px 0 20px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;" id="directory">獲准許食肆名單搜尋器</h2>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">å¯æŒ‰ <strong>18 å€</strong> ç¯©é¸ï¼Œæˆ–ç›´æŽ¥æœå°‹é¤å»³åç¨±ã€åœ°å€ã€‚åå–®æœƒæ ¹æ“šé£Ÿç’°ç½²æœ€æ–°å…¬ä½ˆæŒçºŒæ›´æ–°ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">可按 <strong>18 區</strong> 篩選，或直接搜尋餐廳名稱、地址。名單會根據食環署最新公佈持續更新。</p>
 
       <div style="background: #FFF5F0; border-left: 4px solid #FF6B35; border-radius: 8px; padding: 18px 22px; margin: 16px 0 28px 0;">
-        <p style="font-size: 15px; line-height: 1.75; margin: 0; color: #444;">âš ï¸ æœ¬åå–®ç‚º PetWell HK æ•´åˆç‰ˆæœ¬ï¼Œåƒ…ä¾›åƒè€ƒã€‚æœ€çµ‚ç²æ‰¹ç‹€æ³åŠç´°ç¯€ï¼Œè«‹ä»¥<a href="https://www.fehd.gov.hk/tc_chi/licensing/license_general_restaurant_dog.html" target="_blank" rel="noopener noreferrer" style="color:#FF6B35;text-decoration:underline;font-weight:600;">é£Ÿç’°ç½²å®˜æ–¹åå–®</a>ç‚ºæº–ã€‚</p>
+        <p style="font-size: 15px; line-height: 1.75; margin: 0; color: #444;">⚠️ 本名單為 PetWell HK 整合版本，僅供參考。最終獲批狀況及細節，請以<a href="https://www.fehd.gov.hk/tc_chi/licensing/license_general_restaurant_dog.html" target="_blank" rel="noopener noreferrer" style="color:#FF6B35;text-decoration:underline;font-weight:600;">食環署官方名單</a>為準。</p>
       </div>
 
       <div data-component="fehd-directory"></div>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">å¸¶ç‹—ç‹—åŽ»é¤å»³å‰å¿…è®€ã€Œå…­å¤§è¦æ¢ã€</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">帶狗狗去餐廳前必讀「六大規條」</h2>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">ç‚ºäº†ä¿éšœæ‰€æœ‰äººåŠæ¯›å­©çš„å®‰å…¨ï¼Œé£Ÿç’°ç½²ç‚ºé€™é …æ–°æ”¿ç­–è¨‚ç«‹äº†åš´æ ¼çš„æŒç‰Œæ¢ä»¶ã€‚åŽ»é€™ 1,000 é–“é¤å»³æ‰“å¡å‰ï¼Œä¸»äººå¿…é ˆéµå®ˆä»¥ä¸‹è¦å‰‡ï¼š</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">為了保障所有人及毛孩的安全，食環署為這項新政策訂立了嚴格的持牌條件。去這 1,000 間餐廳打卡前，主人必須遵守以下規則：</p>
 
       <ol style="font-size: 17px; line-height: 2; margin-bottom: 32px; padding-left: 24px;">
-        <li><strong>ç‹—ç‹—çµ•å°ä¸èƒ½ä¸Šæž±ï¼š</strong>ç‹—éš»åš´ç¦æ”¾ä¸Šé¤æ¡Œï¼Œå¿…é ˆç•™åœ¨åœ°é¢æˆ–æŒ‡å®šçš„å¯µç‰©è»Šï¼è¢‹å…§ã€‚</li>
-        <li><strong>ä¸å¯æŽ¥è§¸äººé¡žé¤å…·ï¼š</strong>ç‹—éš»ä¸èƒ½æŽ¥è§¸é£Ÿç‰©æˆ–é¤å»³çš„é¤å…·ï¼Œé¤å»³äº¦ä¸å¯æä¾›å¯é‡ç”¨é¤å…·ï¼ˆå¦‚äººé¡žç”¨çš„ç¢—ç¢Ÿï¼‰çµ¦ç‹—ç‹—ä½¿ç”¨ã€‚</li>
-        <li><strong>æˆäººå…¨ç¨‹çœ‹ç®¡ï¼š</strong>ç‹—éš»å¿…é ˆç”±æˆäººå…¨ç¨‹çœ‹ç®¡ã€‚</li>
-        <li><strong>ç‰½ç¹©é•·åº¦é™åˆ¶ï¼š</strong>å¿…é ˆä½¿ç”¨é•·åº¦ä¸è¶…éŽ <strong>1.5 ç±³</strong> çš„ç‹—å¸¶ç‰½å¼•ã€‚</li>
-        <li><strong>ç•™åœ¨æŒ‡å®šç¯„åœï¼š</strong>ç‹—éš»åªèƒ½åœ¨é¤å»³åŠƒå®šçš„ã€Œå¯µç‰©å‹å–„å€åŸŸã€å…§æ´»å‹•ã€‚</li>
-        <li><strong>ä¿æŒç’°å¢ƒè¡žç”Ÿï¼š</strong>ä¸»äººéœ€ç¢ºä¿ç‹—ç‹—ä¸æœƒå°å…¶ä»–é£Ÿå®¢é€ æˆæ»‹æ“¾ã€‚</li>
+        <li><strong>狗狗絕對不能上枱：</strong>狗隻嚴禁放上餐桌，必須留在地面或指定的寵物車／袋內。</li>
+        <li><strong>不可接觸人類餐具：</strong>狗隻不能接觸食物或餐廳的餐具，餐廳亦不可提供可重用餐具（如人類用的碗碟）給狗狗使用。</li>
+        <li><strong>成人全程看管：</strong>狗隻必須由成人全程看管。</li>
+        <li><strong>牽繩長度限制：</strong>必須使用長度不超過 <strong>1.5 米</strong> 的狗帶牽引。</li>
+        <li><strong>留在指定範圍：</strong>狗隻只能在餐廳劃定的「寵物友善區域」內活動。</li>
+        <li><strong>保持環境衞生：</strong>主人需確保狗狗不會對其他食客造成滋擾。</li>
       </ol>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">é€™æ¬¡æ”¿ç­–è¢«è¦–ç‚ºé¦™æ¸¯é¤é£²æ¥­åŠå¯µç‰©ç•Œçš„é‡è¦é‡Œç¨‹ç¢‘ã€‚PetWell HK å°‡æŒçºŒè¿½è¹¤åå–®æ›´æ–°ã€æ‰¹å‡†é€²åº¦åŠä¸»äººå¯¦æ¸¬å¿ƒå¾—ï¼Œè¨˜å¾—æ”¶è—æœ¬é ï¼Œæ–¹ä¾¿éš¨æ™‚æŸ¥é–±æœ€æ–°è³‡è¨Šï¼</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">這次政策被視為香港餐飲業及寵物界的重要里程碑。PetWell HK 將持續追蹤名單更新、批准進度及主人實測心得，記得收藏本頁，方便隨時查閱最新資訊！</p>
 
       <div style="background: #FFF5F0; border: 2px solid #FF6B35; border-radius: 12px; padding: 18px 22px; margin: 32px 0 0 0; text-align: center;">
-        <p style="font-size: 16px; font-weight: 700; color: #FF6B35; margin: 0 0 8px 0;">ðŸ¾ ç”¨ PetWell App æœå°‹é™„è¿‘å¯µç‰©å‹å–„é¤å»³ã€è¨ºæ‰€åŠæ›´å¤š</p>
-        <p style="font-size: 14px; line-height: 1.6; margin: 0 0 12px 0; color: #333;">ç‡å®Œåå–®æƒ³æµæ›´å¤šï¼ŸPetWell å¹«ä½ æœå°‹é™„è¿‘å¯µç‰©å‹å–„é¤å»³è©³ç´°è³‡æ–™ï¼ˆåœ°å€/èªè­‰ç‹€æ…‹/å®¤å…§ï¼æˆ¶å¤–ï¼‰ã€ç¸é†«è¨ºæ‰€ã€å¯µç‰©ç¾Žå®¹ç­‰ï¼Œä¸€éµå°Žèˆªã€‚</p>
-        <a href="/restaurants" style="display:inline-block;background:#FF6B35;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;margin-right:8px;">æŸ¥çœ‹æ›´å¤šé¤å»³</a>
-        <a href="https://petwellhk.com" style="display:inline-block;background:#fff;color:#FF6B35;border:2px solid #FF6B35;font-size:14px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none;">ç«‹å³ä¸‹è¼‰ App</a>
+        <p style="font-size: 16px; font-weight: 700; color: #FF6B35; margin: 0 0 8px 0;">🐾 用 PetWell App 搜尋附近寵物友善餐廳、診所及更多</p>
+        <p style="font-size: 14px; line-height: 1.6; margin: 0 0 12px 0; color: #333;">睇完名單想搵更多？PetWell 幫你搜尋附近寵物友善餐廳詳細資料（地址/認證狀態/室內／戶外）、獸醫診所、寵物美容等，一鍵導航。</p>
+        <a href="/restaurants" style="display:inline-block;background:#FF6B35;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;margin-right:8px;">查看更多餐廳</a>
+        <a href="https://petwellhk.com" style="display:inline-block;background:#fff;color:#FF6B35;border:2px solid #FF6B35;font-size:14px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none;">立即下載 App</a>
       </div>
     `,
-    author: "PetWell HK ç·¨è¼¯éƒ¨",
+    author: "PetWell HK 編輯部",
     date: "2026-06-12",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogFehdPetFriendly,
     seoKeywords: [
-      "å¯µç‰©å‹å–„é¤å»³", "å¯µç‰©å‹å–„é¤å»³é¦™æ¸¯", "é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³", "ç‹—ç‹—å‹å–„é¤å»³", "å¸¶ç‹—é£Ÿé£¯",
-      "é£Ÿç’°ç½²å¯µç‰©é¤å»³", "é£Ÿç’°ç½²ç‹—éš»é€²å…¥é£Ÿè‚†", "é£Ÿç’°ç½²1000é–“é¤å»³", "FEHD pet friendly restaurants",
-      "1000é–“å¯µç‰©é¤å»³", "é¦–æ‰¹1000é–“å¯µç‰©é¤å»³", "ç²å‡†è¨±ç‹—éš»é€²å…¥é£Ÿè‚†", "ç‹—éš»é€²å…¥é£Ÿè‚†åå–®",
-      "å¯µç‰©é¤å»³åå–®", "å¯µç‰©é¤å»³æœå°‹", "å¯µç‰©é¤å»³åœ°å€æœå°‹", "æ¸¯å³¶å¯µç‰©é¤å»³", "ä¹é¾å¯µç‰©é¤å»³",
-      "æ–°ç•Œå¯µç‰©é¤å»³", "é›¢å³¶å¯µç‰©é¤å»³", "ä¸­ç’°å¯µç‰©é¤å»³", "å°–æ²™å’€å¯µç‰©é¤å»³", "éŠ…é‘¼ç£å¯µç‰©é¤å»³",
-      "è¥¿è²¢å¯µç‰©é¤å»³", "å¯µç‰©å‹å–„å’–å•¡åº—", "dog friendly restaurant hk", "pet friendly cafe hk",
-      "å¸¶ç‹—åŽ»é¤å»³è¦å‰‡", "ç‹—ç‹—é¤å»³è¦å®š", "PetWell HK å¯µç‰©é¤å»³", "2026 å¯µç‰©å‹å–„é¤å»³"
+      "寵物友善餐廳", "寵物友善餐廳香港", "香港寵物友善餐廳", "狗狗友善餐廳", "帶狗食飯",
+      "食環署寵物餐廳", "食環署狗隻進入食肆", "食環署1000間餐廳", "FEHD pet friendly restaurants",
+      "1000間寵物餐廳", "首批1000間寵物餐廳", "獲准許狗隻進入食肆", "狗隻進入食肆名單",
+      "寵物餐廳名單", "寵物餐廳搜尋", "寵物餐廳地區搜尋", "港島寵物餐廳", "九龍寵物餐廳",
+      "新界寵物餐廳", "離島寵物餐廳", "中環寵物餐廳", "尖沙咀寵物餐廳", "銅鑼灣寵物餐廳",
+      "西貢寵物餐廳", "寵物友善咖啡店", "dog friendly restaurant hk", "pet friendly cafe hk",
+      "帶狗去餐廳規則", "狗狗餐廳規定", "PetWell HK 寵物餐廳", "2026 寵物友善餐廳"
     ],
-    seoDescription: "ã€2026å¹´6æœˆ12æ—¥æ›´æ–°ã€‘é£Ÿç’°ç½²æ­£å¼æŠ½å‡ºå…¨æ¸¯é¦–æ‰¹ 1,000 é–“ã€Œå®¹è¨±ç‹—éš»é€²å…¥é£Ÿè‚†ã€ç²å‡†è¨±é¤å»³åå–®ï¼PetWell HK æ•´åˆé£Ÿç’°ç½²ç‰Œç…§è³‡æ–™ (data.gov.hk) åŠä»Šæ—¥æŠ½ç±¤çµæžœï¼Œæä¾›åœ°å€æœå°‹å™¨ã€é¤å»³åç¨±æŸ¥è©¢ï¼Œä»¥åŠå¸¶ç‹—ç‹—åŽ»é¤å»³å¿…è®€çš„å…­å¤§è¦æ¢ï¼ˆç‰½ç¹©é•·åº¦ã€ä¸å¯ä¸Šæž±ã€ä¸å¯æŽ¥è§¸é¤å…·ç­‰ï¼‰ã€‚æ¶µè“‹æ¸¯å³¶ã€ä¹é¾ã€æ–°ç•Œã€é›¢å³¶å¯µç‰©å‹å–„é¤å»³ã€‚éžå®˜æ–¹æ•´åˆåå–®ï¼Œä»¥é£Ÿç’°ç½²æ­£å¼å…¬ä½ˆç‚ºæº–ã€‚",
-    relatedTopics: ["å¯µç‰©å‹å–„é¤å»³", "å¸¶ç‹—æ´»å‹•", "å¯µç‰©å¥½åŽ»è™•", "å¯µç‰©ç”Ÿæ´»å¨›æ¨‚", "é¦™æ¸¯å¯µç‰©æ”¿ç­–"],
+    seoDescription: "【2026年6月12日更新】食環署正式抽出全港首批 1,000 間「容許狗隻進入食肆」獲准許餐廳名單！PetWell HK 整合食環署牌照資料 (data.gov.hk) 及今日抽籤結果，提供地區搜尋器、餐廳名稱查詢，以及帶狗狗去餐廳必讀的六大規條（牽繩長度、不可上枱、不可接觸餐具等）。涵蓋港島、九龍、新界、離島寵物友善餐廳。非官方整合名單，以食環署正式公佈為準。",
+    relatedTopics: ["寵物友善餐廳", "帶狗活動", "寵物好去處", "寵物生活娛樂", "香港寵物政策"],
     faqItems: [
       {
-        question: "é£Ÿç’°ç½²é¦–æ‰¹1,000é–“å¯µç‰©å‹å–„é¤å»³åå–®å¹¾æ™‚å…¬ä½ˆï¼Ÿ",
-        answer: "é£Ÿç’°ç½²å·²æ–¼ 2026 å¹´ 6 æœˆ 12 æ—¥æ—©ä¸Šå®Œæˆé¦–éšŽæ®µã€Œå®¹è¨±ç‹—éš»é€²å…¥ç²å‡†é£Ÿè‚†ã€é›»è…¦æŠ½ç±¤ï¼Œå¾ž 1,616 å®—åˆè³‡æ ¼ç”³è«‹ä¸­æŠ½å‡ºé¦–æ‰¹ 1,000 å€‹ç²æ‰¹åé¡ã€‚ç²æ‰¹é¤å»³å°‡æ–¼ 6 æœˆä¸­æ—¬é™¸çºŒæ”¶åˆ°é£Ÿç’°ç½²æ‰¹å‡†ä¿¡ï¼Œé è¨ˆæœ€å¿«å¯æ–¼ 2026 å¹´ 7 æœˆ 6 æ—¥ï¼ˆæš«å®šï¼‰æ­£å¼ç”Ÿæ•ˆï¼Œå±†æ™‚æ¯›å­©èˆ‡ä¸»äººä¾¿å¯åœ¨å®¤å…§æˆ–æŒ‡å®šå€åŸŸå…±æ™‰æ™šé¤ã€‚"
+        question: "食環署首批1,000間寵物友善餐廳名單幾時公佈？",
+        answer: "食環署已於 2026 年 6 月 12 日早上完成首階段「容許狗隻進入獲准食肆」電腦抽籤，從 1,616 宗合資格申請中抽出首批 1,000 個獲批名額。獲批餐廳將於 6 月中旬陸續收到食環署批准信，預計最快可於 2026 年 7 月 6 日（暫定）正式生效，屆時毛孩與主人便可在室內或指定區域共晉晚餐。"
       },
       {
-        question: "é»žæ¨£æœå°‹å…¨æ¸¯ 1,000 é–“å¯µç‰©å‹å–„é¤å»³åå–®ï¼Ÿ",
-        answer: "ä½ å¯ä»¥ä½¿ç”¨ PetWell HK çš„é£Ÿè‚†åå–®æœå°‹å™¨ï¼ŒæŒ‰ 18 å€ï¼ˆå¦‚ä¸­ç’°ã€éŠ…é‘¼ç£ã€å°–æ²™å’€ã€æ—ºè§’ã€æ²™ç”°ã€è¥¿è²¢ç­‰ï¼‰åœ°å€ç¯©é¸ï¼Œæˆ–ç›´æŽ¥è¼¸å…¥é¤å»³åç¨±æœå°‹ã€‚æ•¸æ“šæ•´åˆè‡ªé£Ÿç’°ç½²ç‰Œç…§è³‡æ–™ (data.gov.hk) åŠæœ€æ–°æŠ½ç±¤çµæžœï¼ŒæœƒæŒçºŒæ›´æ–°ã€‚ç‚ºéžå®˜æ–¹æ•´åˆåå–®ï¼Œæœ€çµ‚ä»¥é£Ÿç’°ç½²æ­£å¼å…¬ä½ˆç‚ºæº–ã€‚"
+        question: "點樣搜尋全港 1,000 間寵物友善餐廳名單？",
+        answer: "你可以使用 PetWell HK 的食肆名單搜尋器，按 18 區（如中環、銅鑼灣、尖沙咀、旺角、沙田、西貢等）地區篩選，或直接輸入餐廳名稱搜尋。數據整合自食環署牌照資料 (data.gov.hk) 及最新抽籤結果，會持續更新。為非官方整合名單，最終以食環署正式公佈為準。"
       },
       {
-        question: "å¸¶ç‹—ç‹—åŽ»é£Ÿç’°ç½²ç²æ‰¹çš„å¯µç‰©å‹å–„é¤å»³è¦éµå®ˆå’©è¦çŸ©ï¼Ÿ",
-        answer: "é£Ÿç’°ç½²ç‚ºé€™é …æ”¿ç­–è¨‚ç«‹å…­å¤§è¦æ¢ï¼š1) ç‹—éš»åš´ç¦æ”¾ä¸Šé¤æ¡Œï¼Œå¿…é ˆç•™åœ¨åœ°é¢æˆ–å¯µç‰©è»Šï¼è¢‹å…§ï¼›2) ç‹—éš»ä¸èƒ½æŽ¥è§¸é£Ÿç‰©æˆ–é¤å»³é¤å…·ï¼Œé¤å»³äº¦ä¸å¯æä¾›å¯é‡ç”¨é¤å…·äºˆç‹—ç‹—ï¼›3) å¿…é ˆç”±æˆäººå…¨ç¨‹çœ‹ç®¡ï¼›4) å¿…é ˆä½¿ç”¨é•·åº¦ä¸è¶…éŽ 1.5 ç±³çš„ç‹—å¸¶ç‰½å¼•ï¼›5) ç‹—éš»åªèƒ½åœ¨åŠƒå®šçš„ã€Œå¯µç‰©å‹å–„å€åŸŸã€å…§æ´»å‹•ï¼›6) ä¸»äººéœ€ç¢ºä¿ç‹—ç‹—ä¸æœƒå°å…¶ä»–é£Ÿå®¢é€ æˆæ»‹æ“¾ã€‚"
+        question: "帶狗狗去食環署獲批的寵物友善餐廳要遵守咩規矩？",
+        answer: "食環署為這項政策訂立六大規條：1) 狗隻嚴禁放上餐桌，必須留在地面或寵物車／袋內；2) 狗隻不能接觸食物或餐廳餐具，餐廳亦不可提供可重用餐具予狗狗；3) 必須由成人全程看管；4) 必須使用長度不超過 1.5 米的狗帶牽引；5) 狗隻只能在劃定的「寵物友善區域」內活動；6) 主人需確保狗狗不會對其他食客造成滋擾。"
       },
       {
-        question: "é£Ÿç’°ç½²å¯µç‰©å‹å–„é¤å»³è¨ˆåŠƒå…±æœ‰å¹¾å¤šé–“ç”³è«‹ï¼Ÿ",
-        answer: "é¦–éšŽæ®µã€Œå®¹è¨±ç‹—éš»é€²å…¥ç²å‡†é£Ÿè‚†ã€è¨ˆåŠƒå…±æŽ¥ç² 2,205 å®—ç”³è«‹ï¼Œç•¶ä¸­ 1,616 å®—ç‚ºåˆè³‡æ ¼ç”³è«‹é€²å…¥é›»è…¦æŠ½ç±¤ç¨‹åºï¼Œæœ€çµ‚æŠ½å‡ºé¦–æ‰¹ 1,000 å€‹ç²æ‰¹åé¡ã€‚ç²æ‰¹åé¡æ¶µè“‹æ¸¯å³¶å€ã€ä¹é¾å€ã€æ–°ç•Œå€åŠé›¢å³¶å€å„é¡žé£Ÿè‚†ã€‚"
+        question: "食環署寵物友善餐廳計劃共有幾多間申請？",
+        answer: "首階段「容許狗隻進入獲准食肆」計劃共接獲 2,205 宗申請，當中 1,616 宗為合資格申請進入電腦抽籤程序，最終抽出首批 1,000 個獲批名額。獲批名額涵蓋港島區、九龍區、新界區及離島區各類食肆。"
       },
       {
-        question: "è²“å’ªå¯ä»¥é€²å…¥é€™äº›é£Ÿç’°ç½²ç²æ‰¹é£Ÿè‚†å—Žï¼Ÿ",
-        answer: "ç¾éšŽæ®µé£Ÿç’°ç½²çš„ã€Œå®¹è¨±ç‹—éš»é€²å…¥é£Ÿè‚†ã€è¨ˆåŠƒåªé©ç”¨æ–¼ç‹—éš»ï¼Œä¸¦ä¸åŒ…æ‹¬è²“å’ªæˆ–å…¶ä»–å¯µç‰©ã€‚å¦‚å¸¶å…¶ä»–å¯µç‰©é€²å…¥é¤å»³ï¼Œé ˆå…ˆå‘å€‹åˆ¥é¤å»³æŸ¥è©¢å…¶æ”¿ç­–ã€‚PetWell HK æœƒæŒçºŒè¿½è¹¤é£Ÿç’°ç½²æ”¿ç­–æ›´æ–°ã€‚"
+        question: "貓咪可以進入這些食環署獲批食肆嗎？",
+        answer: "現階段食環署的「容許狗隻進入食肆」計劃只適用於狗隻，並不包括貓咪或其他寵物。如帶其他寵物進入餐廳，須先向個別餐廳查詢其政策。PetWell HK 會持續追蹤食環署政策更新。"
       },
       {
-        question: "1,000 é–“å¯µç‰©å‹å–„é¤å»³åå–®æœƒæ›´æ–°å—Žï¼Ÿ",
-        answer: "æœƒã€‚æœ¬é æœƒæ ¹æ“šé£Ÿç’°ç½²æœ€æ–°å…¬ä½ˆæŒçºŒæ›´æ–°ï¼Œæœ€è¿‘ä¸€æ¬¡æ›´æ–°ç‚º 2026 å¹´ 5 æœˆ 26 æ—¥ã€‚å»ºè­°å°‡æœ¬é åŠ å…¥æ›¸ç±¤ï¼Œæˆ–å‰å¾€é£Ÿç’°ç½²å®˜æ–¹ç¶²ç«™æŸ¥é–±æœ€æ–°åå–®ã€‚"
+        question: "1,000 間寵物友善餐廳名單會更新嗎？",
+        answer: "會。本頁會根據食環署最新公佈持續更新，最近一次更新為 2026 年 5 月 26 日。建議將本頁加入書籤，或前往食環署官方網站查閱最新名單。"
       }
     ],
   },
   {
     id: "22",
     slug: "pet-joint-pain-home-check-guide",
-    title: "æ¯›å­©é—œç¯€ç—›è‡ªæŸ¥æŒ‡å—ï¼šå±…å®¶è¾¨è­˜ã€æª¢æŸ¥èˆ‡èˆ’ç·©è­·ç†ï½œPetWell HK",
-    excerpt: "é—œç¯€ç—›æ˜¯ä¸­è€å¹´è²“ç‹—å¸¸è¦‹å•é¡Œï¼Œä½†æ¯›å­©å¤©ç”Ÿæœƒéš±è—ä¸é©ã€‚å­¸æœƒå¾žæ—¥å¸¸è¡Œç‚ºè¾¨è­˜å¾µå…†ã€åœ¨å®¶é€²è¡Œè§¸æ‘¸æª¢æŸ¥ï¼Œä»¥åŠé€éŽç’°å¢ƒæ”¹å–„å’Œç‡Ÿé¤Šè£œå……èˆ’ç·©é—œç¯€è² æ“”ã€‚",
+    title: "毛孩關節痛自查指南：居家辨識、檢查與舒緩護理｜PetWell HK",
+    excerpt: "關節痛是中老年貓狗常見問題，但毛孩天生會隱藏不適。學會從日常行為辨識徵兆、在家進行觸摸檢查，以及透過環境改善和營養補充舒緩關節負擔。",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026å¹´5æœˆ3æ—¥</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026年5月3日</p>
 
-      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">é—œç¯€ç—›æ˜¯ä¸­è€å¹´è²“ç‹—å¸¸è¦‹çš„å¥åº·å•é¡Œï¼Œä½†å› ç‚ºæ¯›å­©å¤©ç”Ÿæœƒéš±è—ä¸é©ï¼Œå¾ˆå¤šä¸»äººå¾€å¾€åˆ°äº†é—œç¯€å•é¡Œç›¸ç•¶åš´é‡æ™‚æ‰å¯Ÿè¦ºã€‚å…¶å¯¦ï¼Œåªè¦æ‡‚å¾—ç•™æ„æ—¥å¸¸ç´°ç¯€ï¼Œæˆ‘å€‘åœ¨å®¶ä¸­ä¹Ÿèƒ½åŠæ—©ç™¼ç¾è‹—é ­ã€‚</p>
+      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">關節痛是中老年貓狗常見的健康問題，但因為毛孩天生會隱藏不適，很多主人往往到了關節問題相當嚴重時才察覺。其實，只要懂得留意日常細節，我們在家中也能及早發現苗頭。</p>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">å¾žæ—¥å¸¸è¡Œç‚ºè¾¨è­˜é—œç¯€ç—›</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">從日常行為辨識關節痛</h2>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">ðŸ± è²“å’ªç¯‡</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">🐱 貓咪篇</h3>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">å¦‚æžœä½ ç™¼ç¾è²“å’ªçš„æ¯›é«®çªç„¶è®Šå¾—æ‰“çµã€é›œäº‚ï¼Œç”šè‡³çœ‹èµ·ä¾†ã€Œå¥½åƒè¢«æ±¡ç©¢äº†ã€ï¼Œé€™ä¸ä¸€å®šä»£è¡¨ç‰ æ‡¶å¾—æ¢³æ´—ï¼Œåè€Œå¯èƒ½æ˜¯ä¸€å€‹è­¦è™Ÿã€‚è²“å’ªå¤©ç”Ÿæ„›ä¹¾æ·¨ï¼Œç¿’æ…£å±ˆè†å½Žèº«èˆ”æ¯›ã€‚ä¸€æ—¦é—œç¯€ç–¼ç—›ï¼Œç‰ å€‘ä¾¿ç„¡æ³•åšå‡ºé€™å€‹å‹•ä½œï¼Œæ¯›é«®è‡ªç„¶å› ç–æ–¼æ‰“ç†è€Œè®Šå·®ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">如果你發現貓咪的毛髮突然變得打結、雜亂，甚至看起來「好像被污穢了」，這不一定代表牠懶得梳洗，反而可能是一個警號。貓咪天生愛乾淨，習慣屈膝彎身舔毛。一旦關節疼痛，牠們便無法做出這個動作，毛髮自然因疏於打理而變差。</p>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">ðŸ¶ ç‹—ç‹—ç¯‡</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">🐶 狗狗篇</h3>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">ç‹—ç‹—çš„é—œç¯€ç—›å¾µå…†å‰‡å¤šè¦‹æ–¼ç¡å§¿å’Œæ—¥å¸¸æ´»å‹•ï¼š</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">狗狗的關節痛徵兆則多見於睡姿和日常活動：</p>
 
       <ul style="font-size: 17px; line-height: 2; margin-bottom: 24px; padding-left: 24px;">
-        <li>ç¡è¦ºæ™‚ä¸é¡˜å±ˆè†ï¼Œç¿’æ…£<strong>æ”¤é–‹å››è‚¢å¹³èºº</strong></li>
-        <li>ç¡å§¿æ˜Žé¡¯èˆ‡ä»¥å¾€ä¸åŒï¼Œä¸å†èœ·ç¸®æˆä¸€åœ˜</li>
-        <li>åŽŸæœ¬å–œæ­¡<strong>è·³ä¸Šæ²™ç™¼æˆ–åºŠ</strong>ï¼Œä½†çªç„¶é–“é–‹å§‹çŒ¶è±«æˆ–åœæ­¢è·³èº</li>
+        <li>睡覺時不願屈膝，習慣<strong>攤開四肢平躺</strong></li>
+        <li>睡姿明顯與以往不同，不再蜷縮成一團</li>
+        <li>原本喜歡<strong>跳上沙發或床</strong>，但突然間開始猶豫或停止跳躍</li>
       </ul>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">ä»¥ä¸Šé€™äº›çœ‹ä¼¼ç´°å¾®çš„è®ŠåŒ–ï¼Œå…¶å¯¦éƒ½å¯èƒ½æ˜¯é—œç¯€ä¸é©çš„è¨Šè™Ÿï¼Œå€¼å¾—ä¸»äººç‰¹åˆ¥ç•™å¿ƒã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">以上這些看似細微的變化，其實都可能是關節不適的訊號，值得主人特別留心。</p>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">å±…å®¶è§¸æ‘¸æª¢æŸ¥æ–¹æ³•</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">居家觸摸檢查方法</h2>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">å¦‚æžœä½ æ‡·ç–‘æ¯›å­©æœ‰é—œç¯€å•é¡Œï¼Œå¯ä»¥åœ¨ç‰ å€‘æ”¾é¬†çš„æ™‚å€™ï¼Œè¼•æŸ”åœ°é€²è¡Œä»¥ä¸‹æª¢æŸ¥ã€‚åˆ‡è¨˜å‹•ä½œè¦ç·©æ…¢æº«æŸ”ï¼Œä¸¦å¯†åˆ‡è§€å¯Ÿç‰ å€‘çš„åæ‡‰ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">如果你懷疑毛孩有關節問題，可以在牠們放鬆的時候，輕柔地進行以下檢查。切記動作要緩慢溫柔，並密切觀察牠們的反應。</p>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">å››è‚¢é—œç¯€æª¢æŸ¥</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">四肢關節檢查</h3>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">å¾žæ‰‹æŽŒæˆ–è…³æŽŒä½ç½®é–‹å§‹ï¼Œé€ç¯€å‘ä¸Šï¼ˆä¾‹å¦‚æ‰‹è…•ã€æ‰‹è‚˜ï¼‰è¼•è¼•åšå±ˆæ›²å’Œä¼¸å±•å‹•ä½œï¼š</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">從手掌或腳掌位置開始，逐節向上（例如手腕、手肘）輕輕做屈曲和伸展動作：</p>
 
       <ul style="font-size: 17px; line-height: 2; margin-bottom: 24px; padding-left: 24px;">
-        <li><strong>æœ‰åæ‡‰</strong>ï¼ˆä¾‹å¦‚ç¸®æ‰‹ã€å«å–šã€æŠ—æ‹’ï¼‰â†’ è©²é—œç¯€å¯èƒ½æœ‰ç—›æ¥š</li>
-        <li><strong>æ²’æœ‰åæ‡‰</strong> â†’ è©²é—œç¯€é€šå¸¸æ²’æœ‰å•é¡Œ</li>
+        <li><strong>有反應</strong>（例如縮手、叫喚、抗拒）→ 該關節可能有痛楚</li>
+        <li><strong>沒有反應</strong> → 該關節通常沒有問題</li>
       </ul>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">é€ç¯€æª¢æŸ¥å¯ä»¥å¹«åŠ©ä½ æº–ç¢ºæ‰¾å‡ºæ˜¯å“ªå€‹é—œç¯€å‡ºç¾å•é¡Œï¼Œè®“å¾ŒçºŒçš„ç¸é†«è¨ºæ–·æ›´æœ‰åƒè€ƒåƒ¹å€¼ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">逐節檢查可以幫助你準確找出是哪個關節出現問題，讓後續的獸醫診斷更有參考價值。</p>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">è„Šæ¤Žæª¢æŸ¥</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">脊椎檢查</h3>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">ç”¨æ‰‹æŒ‡æ²¿è‘—è…°éª¨é€ç¯€è¼•è¼•æŒ‰å£“ï¼š</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">用手指沿著腰骨逐節輕輕按壓：</p>
 
       <ul style="font-size: 17px; line-height: 2; margin-bottom: 24px; padding-left: 24px;">
-        <li>å¦‚æžœæŒ‰åˆ°æŸä¸€ç¯€æ™‚ï¼Œæ¯›å­©çš„èƒŒéƒ¨çªç„¶<strong>å‘ä¸‹ç¸®ï¼ˆdipï¼‰</strong>ï¼Œæˆ–ç‰ è©¦åœ–é–ƒé¿ä½ çš„æ‰‹æŒ‡ï¼Œä»£è¡¨è©²ä½ç½®å¯èƒ½æœ‰ç—›æ¥š</li>
-        <li>å¦‚æžœæ•´æ¢è„Šæ¤ŽæŒ‰ä¸‹åŽ»éƒ½æ²’æœ‰ä»»ä½•ä½ç½®ç¸®é€²åŽ»ï¼Œé€šå¸¸ä»£è¡¨è„Šæ¤Žæ²’æœ‰æ˜Žé¡¯ä¸é©</li>
+        <li>如果按到某一節時，毛孩的背部突然<strong>向下縮（dip）</strong>，或牠試圖閃避你的手指，代表該位置可能有痛楚</li>
+        <li>如果整條脊椎按下去都沒有任何位置縮進去，通常代表脊椎沒有明顯不適</li>
       </ul>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">å±…å®¶èˆ’ç·©èˆ‡è­·ç†å»ºè­°</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">居家舒緩與護理建議</h2>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">ç™¼ç¾æ¯›å­©æœ‰é—œç¯€å•é¡Œå¾Œï¼Œé™¤äº†ç›¡å¿«è«®è©¢ç¸é†«ï¼Œæˆ‘å€‘ä¹Ÿå¯ä»¥å¾žç’°å¢ƒæ”¹å–„å’Œè£œå……ç‡Ÿé¤Šå…¥æ‰‹ï¼Œæ¸›è¼•ç‰ å€‘çš„æ—¥å¸¸ä¸é©ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">發現毛孩有關節問題後，除了盡快諮詢獸醫，我們也可以從環境改善和補充營養入手，減輕牠們的日常不適。</p>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">ç’°å¢ƒæ”¹å–„ï¼ˆå°¤å…¶é©åˆç‹—ç‹—ï¼‰</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">環境改善（尤其適合狗狗）</h3>
 
       <ul style="font-size: 17px; line-height: 2; margin-bottom: 24px; padding-left: 24px;">
-        <li><strong>é‹ªè¨­é˜²æ»‘å¢Šæˆ–åœ°å¢Šï¼š</strong>åœ¨å®¶ä¸­å¸¸èµ°å‹•çš„å€åŸŸé‹ªä¸Šé˜²æ»‘å¢Šï¼Œè®“ç‹—ç‹—èµ°è·¯æ™‚ä¸æ˜“æ»‘å€’ï¼Œæ¸›å°‘ç‚ºç©©å®šèº«é«”è€ŒéŽåº¦ç”¨åŠ›æ‹‰æ‰¯é—œç¯€</li>
-        <li><strong>æ›ä¸€å¼µå¯¬å¤§çš„åºŠï¼š</strong>è®“ç‹—ç‹—èƒ½å¤ èˆ’æœåœ°ä¼¸å±•å››è‚¢ç¡è¦ºï¼Œç„¡éœ€å‹‰å¼·èœ·ç¸®ï¼Œæœ‰æ•ˆæ¸›ä½Žé—œç¯€å£“åŠ›</li>
+        <li><strong>鋪設防滑墊或地墊：</strong>在家中常走動的區域鋪上防滑墊，讓狗狗走路時不易滑倒，減少為穩定身體而過度用力拉扯關節</li>
+        <li><strong>換一張寬大的床：</strong>讓狗狗能夠舒服地伸展四肢睡覺，無需勉強蜷縮，有效減低關節壓力</li>
       </ul>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">ç‡Ÿé¤Šè£œå……ï¼ˆè²“ç‹—å‡é©ç”¨ï¼‰</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 36px 0 16px 0;">營養補充（貓狗均適用）</h3>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">è²“å’ªçš„ç’°å¢ƒæ”¹é€ ç›¸å°å›°é›£ï¼Œä½†ç‡Ÿé¤Šè£œå……æ˜¯ä¸€å€‹å¾ˆå¥½çš„åˆ‡å…¥é»žã€‚ä»¥ä¸‹æˆåˆ†æœ‰åŠ©æ”¯æ´é—œç¯€å¥åº·ï¼š</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 16px;">貓咪的環境改造相對困難，但營養補充是一個很好的切入點。以下成分有助支援關節健康：</p>
 
       <ul style="font-size: 17px; line-height: 2; margin-bottom: 24px; padding-left: 24px;">
-        <li><strong>é’å£æå–ç‰©ï¼ˆGreen Lipped Musselï¼‰ï¼š</strong>å¤©ç„¶æ¶ˆç‚Žï¼Œæ”¯æ´é—œç¯€éˆæ´»åº¦</li>
-        <li><strong>è‘¡è„ç³–èƒºï¼ˆGlucosamineï¼‰ï¼š</strong>æœ‰åŠ©ä¿®å¾©è»Ÿéª¨çµ„ç¹”</li>
-        <li><strong>è»Ÿéª¨ç´ ï¼ˆChondroitinï¼‰ï¼š</strong>ç¶­æŒé—œç¯€æ¶²å¥åº·ï¼Œæ¸›å°‘ç£¨æ</li>
-        <li><strong>ç¶œåˆè£œå……å“ï¼š</strong>ä¾‹å¦‚ YuMOVE ç­‰å“ç‰Œæä¾›é‡å°è²“ç‹—çš„é—œç¯€è£œå……å“ï¼Œä½¿ç”¨æ–¹ä¾¿</li>
+        <li><strong>青口提取物（Green Lipped Mussel）：</strong>天然消炎，支援關節靈活度</li>
+        <li><strong>葡萄糖胺（Glucosamine）：</strong>有助修復軟骨組織</li>
+        <li><strong>軟骨素（Chondroitin）：</strong>維持關節液健康，減少磨損</li>
+        <li><strong>綜合補充品：</strong>例如 YuMOVE 等品牌提供針對貓狗的關節補充品，使用方便</li>
       </ul>
 
       <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 32px 0;">
-        <p style="font-size: 16px; line-height: 1.8; margin: 0;"><strong>âš ï¸ é‡è¦æç¤ºï¼š</strong>é¸è³¼ä¿å¥å“æ™‚ï¼Œå‹™å¿…ä»”ç´°é–±è®€ç‡Ÿé¤Šæ¨™ç±¤ï¼Œç¢ºèªå„æˆåˆ†çš„æ¿ƒåº¦å’Œåˆ†é‡æ˜¯å¦è¶³å¤ ã€‚æ¿ƒåº¦ä¸è¶³çš„ç”¢å“æ•ˆæžœæœ‰é™ï¼Œé¸æ“‡æ™‚ä¸è¦åªçœ‹å“ç‰Œæˆ–åƒ¹æ ¼ã€‚</p>
+        <p style="font-size: 16px; line-height: 1.8; margin: 0;"><strong>⚠️ 重要提示：</strong>選購保健品時，務必仔細閱讀營養標籤，確認各成分的濃度和分量是否足夠。濃度不足的產品效果有限，選擇時不要只看品牌或價格。</p>
       </div>
 
-      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">æœ€å¾Œæé†’</h2>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 48px 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #FF6B35;">最後提醒</h2>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">å±…å®¶æª¢æŸ¥åªæ˜¯åˆæ­¥è©•ä¼°ï¼Œä¸¦ä¸èƒ½å–ä»£å°ˆæ¥­ç¸é†«è¨ºæ–·ã€‚å¦‚æžœä½ ç™¼ç¾æ¯›å­©æœ‰ä»¥ä¸Šä»»ä½•å¾µå…†ï¼Œæˆ–åœ¨è§¸æ‘¸æª¢æŸ¥æ™‚å‡ºç¾æ˜Žé¡¯åæ‡‰ï¼Œå»ºè­°ç›¡æ—©é ç´„ç¸é†«é€²è¡Œè©³ç´°è©•ä¼°ï¼ŒåŠæ—©ä»‹å…¥æ²»ç™‚ï¼Œè®“æ¯›å­©é‡æ‹¾èˆ’é©ç”Ÿæ´»ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">居家檢查只是初步評估，並不能取代專業獸醫診斷。如果你發現毛孩有以上任何徵兆，或在觸摸檢查時出現明顯反應，建議盡早預約獸醫進行詳細評估，及早介入治療，讓毛孩重拾舒適生活。</p>
 
-      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">ðŸ¾ æƒ³äº†è§£æ›´å¤šå¯µç‰©å¥åº·è³‡è¨Šï¼Ÿç€è¦½ <a href="/owner-zone" style="color: #FF6B35; text-decoration: underline;">PetWell ä¸»äººå°ˆå€</a> ç²å–æ›´å¤šå¯¦ç”¨æŒ‡å—ã€‚</p>
+      <p style="font-size: 17px; line-height: 1.9; margin-bottom: 24px;">🐾 想了解更多寵物健康資訊？瀏覽 <a href="/owner-zone" style="color: #FF6B35; text-decoration: underline;">PetWell 主人專區</a> 獲取更多實用指南。</p>
     `,
     author: "PetWell HK",
     date: "2026-05-03",
-    category: "å¯µç‰©å¥åº·",
+    category: "寵物健康",
     imageUrl: blogPetJointPain,
-    seoKeywords: ["æ¯›å­©é—œç¯€ç—›", "ç‹—é—œç¯€ç—›", "è²“é—œç¯€ç—›", "å¯µç‰©é—œç¯€æª¢æŸ¥", "å¯µç‰©ä¿å¥å“", "Green Lipped Mussel", "Glucosamine", "YuMOVE"],
-    seoDescription: "æ¯›å­©é—œç¯€ç—›è‡ªæŸ¥æŒ‡å—ï¼šå­¸æœƒå¾žæ—¥å¸¸è¡Œç‚ºè¾¨è­˜è²“ç‹—é—œç¯€ç—›å¾µå…†ã€åœ¨å®¶é€²è¡Œè§¸æ‘¸æª¢æŸ¥æ–¹æ³•ï¼Œä»¥åŠé€éŽé˜²æ»‘å¢Šã€ç‡Ÿé¤Šè£œå……å“èˆ’ç·©é—œç¯€è² æ“”ã€‚",
+    seoKeywords: ["毛孩關節痛", "狗關節痛", "貓關節痛", "寵物關節檢查", "寵物保健品", "Green Lipped Mussel", "Glucosamine", "YuMOVE"],
+    seoDescription: "毛孩關節痛自查指南：學會從日常行為辨識貓狗關節痛徵兆、在家進行觸摸檢查方法，以及透過防滑墊、營養補充品舒緩關節負擔。",
     faqItems: [
-      { question: "å¦‚ä½•çŸ¥é“è²“å’ªæœ‰é—œç¯€ç—›ï¼Ÿ", answer: "è²“å’ªæ¯›é«®çªç„¶æ‰“çµã€é›œäº‚ï¼Œå¯èƒ½æ˜¯å› ç‚ºé—œç¯€ç—›å°Žè‡´ç„¡æ³•å±ˆè†å½Žèº«èˆ”æ¯›ã€‚" },
-      { question: "ç‹—ç‹—é—œç¯€ç—›æœ‰ä»€éº¼å¾µå…†ï¼Ÿ", answer: "ç¡è¦ºæ™‚æ”¤é–‹å››è‚¢ä¸é¡˜èœ·ç¸®ã€çªç„¶åœæ­¢è·³ä¸Šæ²™ç™¼æˆ–åºŠï¼Œéƒ½å¯èƒ½æ˜¯é—œç¯€ç—›çš„è¨Šè™Ÿã€‚" },
-      { question: "å¦‚ä½•åœ¨å®¶æª¢æŸ¥æ¯›å­©é—œç¯€ï¼Ÿ", answer: "å¾žæ‰‹æŽŒæˆ–è…³æŽŒé–‹å§‹é€ç¯€åšå±ˆæ›²ä¼¸å±•ï¼Œè§€å¯Ÿæ˜¯å¦æœ‰ç¸®æ‰‹æˆ–å«å–šåæ‡‰ï¼›æ²¿è…°éª¨é€ç¯€æŒ‰å£“ï¼Œè§€å¯Ÿæ˜¯å¦æœ‰dipåæ‡‰ã€‚" },
-      { question: "ä»€éº¼ä¿å¥å“å°é—œç¯€ç—›æœ‰å¹«åŠ©ï¼Ÿ", answer: "é’å£æå–ç‰©ï¼ˆGreen Lipped Musselï¼‰ã€è‘¡è„ç³–èƒºï¼ˆGlucosamineï¼‰ã€è»Ÿéª¨ç´ ï¼ˆChondroitinï¼‰ç­‰æˆåˆ†æœ‰åŠ©æ”¯æ´é—œç¯€å¥åº·ã€‚" }
+      { question: "如何知道貓咪有關節痛？", answer: "貓咪毛髮突然打結、雜亂，可能是因為關節痛導致無法屈膝彎身舔毛。" },
+      { question: "狗狗關節痛有什麼徵兆？", answer: "睡覺時攤開四肢不願蜷縮、突然停止跳上沙發或床，都可能是關節痛的訊號。" },
+      { question: "如何在家檢查毛孩關節？", answer: "從手掌或腳掌開始逐節做屈曲伸展，觀察是否有縮手或叫喚反應；沿腰骨逐節按壓，觀察是否有dip反應。" },
+      { question: "什麼保健品對關節痛有幫助？", answer: "青口提取物（Green Lipped Mussel）、葡萄糖胺（Glucosamine）、軟骨素（Chondroitin）等成分有助支援關節健康。" }
     ]
   },
   {
     id: "21",
     slug: "blog/hong-kong-dog-trainer-licence-guide",
-    title: "é¦™æ¸¯å¯µç‰©è¨“ç·´å¸«éœ€è¦ç‰Œç…§å—Žï¼Ÿ2026å¹´å®Œæ•´æŒ‡å—",
-    excerpt: "é¦™æ¸¯æ³•å¾‹ä¸Šä¸éœ€è¦å¯µç‰©è¨“ç·´å¸«æŒç‰Œâ€”â€”ä½†é€™å°ä½ çš„æ¯›å­©æœ‰ä»€éº¼å½±éŸ¿ï¼ŸPetWell ç‚ºä½ è§£æžæ¥­ç•Œèªè­‰ã€æ¼è¾²ç½²è¦ç®¡ç¯„åœåŠé¸å¸«è²¼å£«ã€‚",
-    content: `<p>è«‹ç€è¦½å°ˆé äº†è§£è©³æƒ…ã€‚</p>`,
+    title: "香港寵物訓練師需要牌照嗎？2026年完整指南",
+    excerpt: "香港法律上不需要寵物訓練師持牌——但這對你的毛孩有什麼影響？PetWell 為你解析業界認證、漁農署規管範圍及選師貼士。",
+    content: `<p>請瀏覽專頁了解詳情。</p>`,
     author: "PetWell HK",
     date: "2026-03-06",
-    category: "å¯µç‰©å¥åº·",
+    category: "寵物健康",
     imageUrl: blogDogTrainerLicence
   },
   {
     id: "19",
     slug: "cny-pet-fair-hong-kong-2026",
-    title: "ã€2026å¯µç‰©å‹å–„å¹´å®µã€‘å…¨æ¸¯13å¤§å¯µç‰©å¹´å®µå¸‚é›†åˆé›†ï½œæ¸¯ä¹æ–°ç•Œé½Šé½Šè¡Œï½œPetWell HK",
-    excerpt: "2026è¾²æ›†æ–°å¹´å¯µç‰©å‹å–„å¹´å®µå¸‚é›†å¤§åˆé›†ï¼æ¸¯å³¶å€ç¶­åœ’èŒå¯µå¸‚é›†ã€åˆ©åœ’æ–°æ˜¥å¸‚é›†ï¼Œä¹é¾å€å•Ÿå¾·é«”è‚²åœ’æ–°æ˜¥ç››æœƒã€æœ—è±ªåŠï¼Œæ–°ç•Œå€å—è±ç´—å» ã€DÂ·Parkå¹´å®µå¸‚é›†ã€‚å¸¶æ¯›å­©è¡Œå¹´å®µå¿…ç‡ï¼",
+    title: "【2026寵物友善年宵】全港13大寵物年宵市集合集｜港九新界齊齊行｜PetWell HK",
+    excerpt: "2026農曆新年寵物友善年宵市集大合集！港島區維園萌寵市集、利園新春市集，九龍區啟德體育園新春盛會、朗豪坊，新界區南豐紗廠、D·Park年宵市集。帶毛孩行年宵必睇！",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026å¹´2æœˆ10æ—¥ï¼ˆæ˜ŸæœŸäºŒï¼‰</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026年2月10日（星期二）</p>
 
-      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">è¾²æ›†æ–°å¹´å°±åˆ°ï¼Œæƒ³å¸¶æ¯›å­©ä¸€é½Šè¡Œå¹´å®µï¼ŸPetWell ç‚ºä½ æ•´ç†å…¨æ¸¯<strong>13å€‹å¯µç‰©å‹å–„å¹´å®µå¸‚é›†</strong>ï¼Œæ¶µè“‹æ¸¯å³¶ã€ä¹é¾ã€æ–°ç•Œä¸‰å¤§å€åŸŸï¼Œå³ç‡é‚Šå€‹å•±ä½ åŒæ¯›å­©ï¼</p>
+      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">農曆新年就到，想帶毛孩一齊行年宵？PetWell 為你整理全港<strong>13個寵物友善年宵市集</strong>，涵蓋港島、九龍、新界三大區域，即睇邊個啱你同毛孩！</p>
 
       <!-- Quick Navigation -->
       <nav style="background: #fafafa; border: 1px solid #e5e5e5; border-radius: 8px; padding: 24px; margin-bottom: 48px;">
-        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin: 0 0 16px 0; font-weight: 600;">å¹´å®µå¸‚é›†é€Ÿè¦½ï¼ˆ13å€‹åœ°é»žï¼‰</p>
+        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin: 0 0 16px 0; font-weight: 600;">年宵市集速覽（13個地點）</p>
         <div style="display: grid; gap: 8px;">
           <a href="#region-hk" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-            <span><strong style="color: hsl(24, 100%, 50%);">æ¸¯å³¶å€</strong> â€” 5å€‹å¹´å®µå¸‚é›†</span>
-            <span style="color: #999; font-size: 14px;">ç¶­åœ’ãƒ»åˆ©åœ’ãƒ»åˆå’Œãƒ»åˆ©æ±è¡—ãƒ»ä¸­ç’°è¡—å¸‚ â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">港島區</strong> — 5個年宵市集</span>
+            <span style="color: #999; font-size: 14px;">維園・利園・合和・利東街・中環街市 →</span>
           </a>
           <a href="#region-kln" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-            <span><strong style="color: hsl(24, 100%, 50%);">ä¹é¾å€</strong> â€” 5å€‹å¹´å®µå¸‚é›†</span>
-            <span style="color: #999; font-size: 14px;">å•Ÿå¾·ãƒ»æœ—è±ªåŠãƒ»APMãƒ»Mikiki â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">九龍區</strong> — 5個年宵市集</span>
+            <span style="color: #999; font-size: 14px;">啟德・朗豪坊・APM・Mikiki →</span>
           </a>
           <a href="#region-nt" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-            <span><strong style="color: hsl(24, 100%, 50%);">æ–°ç•Œå€</strong> â€” 4å€‹å¹´å®µå¸‚é›†</span>
-            <span style="color: #999; font-size: 14px;">èƒç£å»£å ´ãƒ»å—è±ç´—å» ãƒ»DÂ·Parkãƒ»è¥¿æ²™ â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">新界區</strong> — 4個年宵市集</span>
+            <span style="color: #999; font-size: 14px;">荃灣廣場・南豐紗廠・D·Park・西沙 →</span>
           </a>
         </div>
       </nav>
 
-      <!-- ===== æ¸¯å³¶å€ ===== -->
+      <!-- ===== 港島區 ===== -->
       <section id="region-hk" style="scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogCnyFairHkIsland}" alt="æ¸¯å³¶å€å¯µç‰©å‹å–„å¹´å®µå¸‚é›† 2026" style="width: 100%; border-radius: 8px;" />
+          <img src="${blogCnyFairHkIsland}" alt="港島區寵物友善年宵市集 2026" style="width: 100%; border-radius: 8px;" />
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 32px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">æ¸¯å³¶å€</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">æ¸¯å³¶å€å¹´å®µå¸‚é›†ï¼ˆ5å€‹ï¼‰</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">港島區</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">港島區年宵市集（5個）</h2>
         </div>
 
-        <!-- 1. ç¶­åœ’ -->
+        <!-- 1. 維園 -->
         <article id="fair-1" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">éŠ…é‘¼ç£</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">éŠ…é‘¼ç£ç¶­åœ’æ–°æ˜¥èŒå¯µå¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">銅鑼灣</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">銅鑼灣維園新春萌寵市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ1ã€7-8ã€14ã€18-19ã€21-22æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月1、7-8、14、18-19、21-22日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 21:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">éŠ…é‘¼ç£ç¶­å¤šåˆ©äºžå…¬åœ’ï¼ˆå™´æ°´æ± æ—åŠå—äº­å»£å ´ï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">銅鑼灣維多利亞公園（噴水池旁及南亭廣場）</p>
             </div>
           </div>
         </article>
 
-        <!-- 2. åˆ©åœ’ -->
+        <!-- 2. 利園 -->
         <article id="fair-2" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">éŠ…é‘¼ç£</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">åˆ©åœ’ä¸€æœŸåˆ©åœ’æ–°æ˜¥å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">銅鑼灣</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">利園一期利園新春市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ13-15æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月13-15日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 19:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">åˆ©åœ’ä¸€æœŸï¼ˆæ­£é–€åœ°é¢ç§å®¶è·¯ï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">利園一期（正門地面私家路）</p>
             </div>
           </div>
         </article>
 
-        <!-- 3. åˆå’Œ -->
+        <!-- 3. 合和 -->
         <article id="fair-3" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">ç£ä»”</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">åˆå’Œå•†å ´ç¦é¦¬è¿Žæ˜¥å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">灣仔</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">合和商場福馬迎春市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ6-15æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月6-15日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">14:00 - 18:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">åˆå’Œå•†å ´3æ¨“ä¸­åº­ï¼ˆé¦™æ¸¯ç£ä»”çš‡åŽå¤§é“æ±183è™Ÿï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">合和商場3樓中庭（香港灣仔皇后大道東183號）</p>
             </div>
           </div>
         </article>
 
-        <!-- 4. åˆ©æ±è¡— -->
+        <!-- 4. 利東街 -->
         <article id="fair-4" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">ç£ä»”</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">åˆ©æ±è¡—æ–°æ˜¥ä¸»é¡Œé€±æœ«å¸‚é›†ã€ŒWeekCommuneã€</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">灣仔</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">利東街新春主題週末市集「WeekCommune」</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">å³æ—¥èµ·è‡³3æœˆ22æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">即日起至3月22日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 20:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">ç£ä»”åˆ©æ±è¡—</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">灣仔利東街</p>
             </div>
           </div>
           <div style="background: #fff8f0; padding: 16px; border-radius: 6px; border-left: 4px solid hsl(24, 100%, 50%);">
-            <p style="margin: 0; font-size: 14px;"><strong>äº¤é€šï¼š</strong>æ¸¯éµç£ä»”ç«™B2å‡ºå£æ­¥è¡Œç´„5åˆ†é˜</p>
+            <p style="margin: 0; font-size: 14px;"><strong>交通：</strong>港鐵灣仔站B2出口步行約5分鐘</p>
           </div>
         </article>
 
-        <!-- 5. ä¸­ç’°è¡—å¸‚ -->
+        <!-- 5. 中環街市 -->
         <article id="fair-5" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">ä¸­ç’°</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">ä¸­ç’°è¡—å¸‚é¦¬ä¸Šé–‹é‹æ–°å¹´å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">中環</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">中環街市馬上開運新年市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ3-16æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月3-16日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 20:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">ä¸­ç’°è¡—å¸‚1æ¨“ Event Space</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">中環街市1樓 Event Space</p>
             </div>
           </div>
         </article>
@@ -1718,79 +1717,79 @@ const baseBlogPosts: BlogPost[] = [
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
 
-      <!-- ===== ä¹é¾å€ ===== -->
+      <!-- ===== 九龍區 ===== -->
       <section id="region-kln" style="scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogCnyFairKowloon}" alt="ä¹é¾å€å¯µç‰©å‹å–„å¹´å®µå¸‚é›† 2026" style="width: 100%; border-radius: 8px;" />
+          <img src="${blogCnyFairKowloon}" alt="九龍區寵物友善年宵市集 2026" style="width: 100%; border-radius: 8px;" />
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 32px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">ä¹é¾å€</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">ä¹é¾å€å¹´å®µå¸‚é›†ï¼ˆ5å€‹ï¼‰</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">九龍區</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">九龍區年宵市集（5個）</h2>
         </div>
 
-        <!-- 6. å•Ÿå¾·é›™å­åŒ¯ -->
+        <!-- 6. 啟德雙子匯 -->
         <article id="fair-6" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">å•Ÿå¾·</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">å•Ÿå¾·é›™å­åŒ¯äºŒæœŸæ–°æ˜¥å¥½ç‰©å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">啟德</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">啟德雙子匯二期新春好物市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ13-15æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月13-15日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">13:00 - 20:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">å•Ÿå¾·é›™å­åŒ¯äºŒæœŸSNDOä¸‰é“G/F åœ°ä¸‹</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">啟德雙子匯二期SNDO三道G/F 地下</p>
             </div>
           </div>
         </article>
 
-        <!-- 7. å•Ÿå¾·é«”è‚²åœ’ -->
+        <!-- 7. 啟德體育園 -->
         <article id="fair-7" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">å•Ÿå¾·</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">å•Ÿå¾·é«”è‚²åœ’æ–°æ˜¥ç››æœƒ</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">啟德</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">啟德體育園新春盛會</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ10-16æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月10-16日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ10-12æ—¥ 15:00-20:00<br/>2æœˆ13-16æ—¥ 15:00-23:00</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月10-12日 15:00-20:00<br/>2月13-16日 15:00-23:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">å•Ÿå¾·é«”è‚²åœ’ç¾Žé£Ÿæµ·ç£</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">啟德體育園美食海灣</p>
             </div>
           </div>
         </article>
 
-        <!-- 8. æœ—è±ªåŠ -->
+        <!-- 8. 朗豪坊 -->
         <article id="fair-8" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">æ—ºè§’</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">æœ—è±ªåŠç†±é¬¥å¤§éº»æˆ</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">旺角</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">朗豪坊熱鬥大麻成</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ7æ—¥è‡³3æœˆ1æ—¥<br/>ï¼ˆé€¢å…­ã€æ—¥ï¼‰<br/>2æœˆ12-16æ—¥ï¼ˆå¹´å®µå ´æ¬¡ï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月7日至3月1日<br/>（逢六、日）<br/>2月12-16日（年宵場次）</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 21:00<br/>ï¼ˆ2/16ï¼š12:00-22:00ï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 21:00<br/>（2/16：12:00-22:00）</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">æ—ºè§’æœ—è±ªåŠ L2-L12</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">旺角朗豪坊 L2-L12</p>
             </div>
           </div>
         </article>
@@ -1798,21 +1797,21 @@ const baseBlogPosts: BlogPost[] = [
         <!-- 9. APM -->
         <article id="fair-9" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">è§€å¡˜</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">APMæ–°æ˜¥å¹´å®µå¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">觀塘</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">APM新春年宵市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ10-16æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月10-16日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 23:00<br/>ï¼ˆ2/16ï¼š12:00-00:00ï¼‰</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 23:00<br/>（2/16：12:00-00:00）</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">APMå¤§å ‚åŠå¤§å ‚é«˜å±¤</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">APM大堂及大堂高層</p>
             </div>
           </div>
         </article>
@@ -1820,21 +1819,21 @@ const baseBlogPosts: BlogPost[] = [
         <!-- 10. Mikiki -->
         <article id="fair-10" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">æ–°è’²å´—</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">Mikiki X æŸ´èªžéŒ„è³€å¹´å±•éŠ·</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">新蒲崗</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">Mikiki X 柴語錄賀年展銷</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ11-17æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月11-17日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">11:00 - 21:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">æ–°è’²å´—Mikikiåœ°ä¸‹ä¸­åº­Aå€</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">新蒲崗Mikiki地下中庭A區</p>
             </div>
           </div>
         </article>
@@ -1842,101 +1841,101 @@ const baseBlogPosts: BlogPost[] = [
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
 
-      <!-- ===== æ–°ç•Œå€ ===== -->
+      <!-- ===== 新界區 ===== -->
       <section id="region-nt" style="scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogCnyFairNt}" alt="æ–°ç•Œå€å¯µç‰©å‹å–„å¹´å®µå¸‚é›† 2026" style="width: 100%; border-radius: 8px;" />
+          <img src="${blogCnyFairNt}" alt="新界區寵物友善年宵市集 2026" style="width: 100%; border-radius: 8px;" />
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 32px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">æ–°ç•Œå€</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">æ–°ç•Œå€å¹´å®µå¸‚é›†ï¼ˆ4å€‹ï¼‰</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">新界區</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">新界區年宵市集（4個）</h2>
         </div>
 
-        <!-- 11. èƒç£å»£å ´ -->
+        <!-- 11. 荃灣廣場 -->
         <article id="fair-11" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">èƒç£</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">èƒç£å»£å ´ã€Œé–‹å¿ƒæžœç”œå“Xæ‰‹ä½œå¸‚é›†ã€</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">荃灣</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">荃灣廣場「開心果甜品X手作市集」</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">1æœˆ22æ—¥è‡³2æœˆ22æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">1月22日至2月22日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">11:30 - 21:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">èƒç£å»£å ´L1ä¸­åº­</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">荃灣廣場L1中庭</p>
             </div>
           </div>
         </article>
 
-        <!-- 12. å—è±ç´—å»  -->
+        <!-- 12. 南豐紗廠 -->
         <article id="fair-12" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">èƒç£</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">å—è±ç´—å» æµé‡èœœé¦¬æ–°æ˜¥å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">荃灣</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">南豐紗廠流量蜜馬新春市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ14-22æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月14-22日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 19:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">å—è±ç´—å» å…­å»  1/F</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">南豐紗廠六廠 1/F</p>
             </div>
           </div>
         </article>
 
-        <!-- 13. DÂ·Park -->
+        <!-- 13. D·Park -->
         <article id="fair-13" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">èƒç£</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">DÂ·Parkã€Œè±è¡£è¶³é£Ÿã€å¹´å®µå¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">荃灣</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">D·Park「豐衣足食」年宵市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ7-8ã€11-16ã€21-22ã€29-3æœˆ1æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月7-8、11-16、21-22、29-3月1日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 20:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">DÂ·Parkæ„‰æ™¯æ–°åŸŽåœ°ä¸‹ä¸­åº­</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">D·Park愉景新城地下中庭</p>
             </div>
           </div>
         </article>
 
-        <!-- 14. è¥¿æ²™GO PARK -->
+        <!-- 14. 西沙GO PARK -->
         <article id="fair-14" style="margin-bottom: 48px; scroll-margin-top: 100px;">
           <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">è¥¿è²¢</p>
-            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">è¥¿æ²™GO PARK äººå¯µè¿Žç¦é¦¬æ–°æ˜¥å¸‚é›†</h3>
+            <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">西貢</p>
+            <h3 style="font-size: 22px; font-weight: 700; margin: 0; line-height: 1.3;">西沙GO PARK 人寵迎福馬新春市集</h3>
           </div>
           <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">2æœˆ7-8ã€14-15ã€21-22æ—¥</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">2月7-8、14-15、21-22日</p>
             </div>
             <div>
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
               <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 20:00</p>
             </div>
             <div style="grid-column: span 2;">
-              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-              <p style="font-size: 15px; margin: 0; font-weight: 500;">è¥¿æ²™GO PARKåœ°é¢ä¸­å¤®å»£å ´</p>
+              <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+              <p style="font-size: 15px; margin: 0; font-weight: 500;">西沙GO PARK地面中央廣場</p>
             </div>
           </div>
         </article>
@@ -1946,146 +1945,146 @@ const baseBlogPosts: BlogPost[] = [
 
       <!-- Back to weekly updates -->
       <div style="background: #fff8f0; padding: 24px; border-radius: 8px; border-left: 4px solid hsl(24, 100%, 50%); margin-bottom: 32px;">
-        <p style="font-size: 18px; font-weight: 600; margin: 0 0 8px 0;">ðŸ“… æƒ³ç‡æ›´å¤šæ¯é€±å¯µç‰©æ´»å‹•æ›´æ–°ï¼Ÿ</p>
-        <p style="margin: 0 0 16px 0; color: #666;">PetWell æ¯é€±æ›´æ–°æ˜ŸæœŸäº”å…­æ—¥å¯µç‰©å¥½åŽ»è™•ï¼Œç‚ºä½ ç²¾é¸å…¨æ¸¯å¯µç‰©å‹å–„æ´»å‹•ï¼</p>
-        <a href="/weekend-pet-events-hong-kong-2026" style="display: inline-block; background: hsl(24, 100%, 50%); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">ç‡æ¯é€±å¯µç‰©æ´»å‹•æ›´æ–° â†’</a>
+        <p style="font-size: 18px; font-weight: 600; margin: 0 0 8px 0;">📅 想睇更多每週寵物活動更新？</p>
+        <p style="margin: 0 0 16px 0; color: #666;">PetWell 每週更新星期五六日寵物好去處，為你精選全港寵物友善活動！</p>
+        <a href="/weekend-pet-events-hong-kong-2026" style="display: inline-block; background: hsl(24, 100%, 50%); color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">睇每週寵物活動更新 →</a>
       </div>
 
       <!-- Footer CTA -->
       <div style="background: #1a1a1a; color: white; padding: 32px; border-radius: 8px; text-align: center;">
-        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin: 0 0 12px 0;">PetWell 2026 å¯µç‰©å‹å–„å¹´å®µ</p>
-        <p style="font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">å…¨æ¸¯13å¤§å¹´å®µå¸‚é›†ãƒ»å¸¶æ¯›å­©ä¸€é½Šè¡Œ</p>
-        <p style="font-size: 14px; color: #999; margin: 0;">ç¥å„ä½å¯µç‰©ä¸»äººåŒæ¯›å­©æ–°å¹´å¿«æ¨‚ ðŸ§§</p>
+        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin: 0 0 12px 0;">PetWell 2026 寵物友善年宵</p>
+        <p style="font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">全港13大年宵市集・帶毛孩一齊行</p>
+        <p style="font-size: 14px; color: #999; margin: 0;">祝各位寵物主人同毛孩新年快樂 🧧</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2026-02-10",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogCnyFairCover,
     seoKeywords: [
-      "å¯µç‰©å‹å–„å¹´å®µ",
-      "å¯µç‰©å¹´å®µå¸‚é›†",
-      "å¹´å®µ2026",
-      "å¸¶ç‹—è¡Œå¹´å®µ",
-      "ç¶­åœ’å¹´å®µ",
-      "æœ—è±ªåŠå¹´å®µ",
-      "å•Ÿå¾·é«”è‚²åœ’æ–°æ˜¥",
-      "åˆ©æ±è¡—å¸‚é›†",
-      "ä¸­ç’°è¡—å¸‚æ–°å¹´",
-      "å—è±ç´—å» å¸‚é›†",
-      "D Parkå¹´å®µ",
-      "é¦™æ¸¯å¹´å®µå¸‚é›†",
-      "å¯µç‰©å‹å–„å¸‚é›†",
-      "æ–°æ˜¥å¯µç‰©æ´»å‹•"
+      "寵物友善年宵",
+      "寵物年宵市集",
+      "年宵2026",
+      "帶狗行年宵",
+      "維園年宵",
+      "朗豪坊年宵",
+      "啟德體育園新春",
+      "利東街市集",
+      "中環街市新年",
+      "南豐紗廠市集",
+      "D Park年宵",
+      "香港年宵市集",
+      "寵物友善市集",
+      "新春寵物活動"
     ],
-    seoDescription: "2026è¾²æ›†æ–°å¹´å¯µç‰©å‹å–„å¹´å®µå¸‚é›†å¤§åˆé›†ï¼å…¨æ¸¯13å€‹å¹´å®µå¸‚é›†ï¼Œæ¸¯å³¶å€ç¶­åœ’èŒå¯µå¸‚é›†ã€åˆ©åœ’æ–°æ˜¥å¸‚é›†ã€åˆå’Œå•†å ´ï¼Œä¹é¾å€å•Ÿå¾·é«”è‚²åœ’ã€æœ—è±ªåŠã€APMï¼Œæ–°ç•Œå€å—è±ç´—å» ã€DÂ·Parkã€‚å¸¶æ¯›å­©è¡Œå¹´å®µå¿…ç‡ï¼",
+    seoDescription: "2026農曆新年寵物友善年宵市集大合集！全港13個年宵市集，港島區維園萌寵市集、利園新春市集、合和商場，九龍區啟德體育園、朗豪坊、APM，新界區南豐紗廠、D·Park。帶毛孩行年宵必睇！",
     faqItems: [
       {
-        question: "2026å¹´é‚Šåº¦æœ‰å¯µç‰©å‹å–„å¹´å®µå¸‚é›†ï¼Ÿ",
-        answer: "2026å¹´å…¨æ¸¯æœ‰13å€‹å¯µç‰©å‹å–„å¹´å®µå¸‚é›†ï¼Œæ¸¯å³¶å€åŒ…æ‹¬ç¶­åœ’èŒå¯µå¸‚é›†ã€åˆ©åœ’æ–°æ˜¥å¸‚é›†ã€åˆå’Œå•†å ´ã€åˆ©æ±è¡—ã€ä¸­ç’°è¡—å¸‚ï¼›ä¹é¾å€æœ‰å•Ÿå¾·é›™å­åŒ¯ã€å•Ÿå¾·é«”è‚²åœ’ã€æœ—è±ªåŠã€APMã€Mikikiï¼›æ–°ç•Œå€æœ‰èƒç£å»£å ´ã€å—è±ç´—å» ã€DÂ·Parkã€è¥¿æ²™GO PARKã€‚"
+        question: "2026年邊度有寵物友善年宵市集？",
+        answer: "2026年全港有13個寵物友善年宵市集，港島區包括維園萌寵市集、利園新春市集、合和商場、利東街、中環街市；九龍區有啟德雙子匯、啟德體育園、朗豪坊、APM、Mikiki；新界區有荃灣廣場、南豐紗廠、D·Park、西沙GO PARK。"
       },
       {
-        question: "å¸¶å¯µç‰©è¡Œå¹´å®µè¦æ³¨æ„å’©ï¼Ÿ",
-        answer: "å¸¶å¯µç‰©è¡Œå¹´å®µæ‡‰æ³¨æ„ï¼šä½¿ç”¨ç‰½ç¹©ã€é¿é–‹äººå¤šæ“æ“ æ™‚æ®µã€å¸¶å‚™é£²æ°´å’Œé›¶é£Ÿã€æ³¨æ„åœ°é¢æº«åº¦ï¼ˆå°¤å…¶ä¿‚å®¤å¤–å¸‚é›†ï¼‰ã€ç•™æ„æ¯›å­©æƒ…ç·’ã€‚éƒ¨åˆ†å•†å ´å¸‚é›†å¯èƒ½æœ‰å¯µç‰©å…¥å ´é™åˆ¶ï¼Œå»ºè­°å‡ºç™¼å‰å…ˆæŸ¥è©¢ã€‚"
+        question: "帶寵物行年宵要注意咩？",
+        answer: "帶寵物行年宵應注意：使用牽繩、避開人多擁擠時段、帶備飲水和零食、注意地面溫度（尤其係室外市集）、留意毛孩情緒。部分商場市集可能有寵物入場限制，建議出發前先查詢。"
       }
     ]
   },
   {
     id: "18",
     slug: "weekend-pet-events-hong-kong-2026",
-    title: "ã€2026å¹´2æœˆ1æ—¥è‡³7æ—¥ã€‘æ˜ŸæœŸäº”å…­æ—¥å¯µç‰©å¥½åŽ»è™•ï½œæœ¬å‘¨å››å¤§å¯µç‰©æ´»å‹•ç²¾é¸ï½œPetWell HK",
-    excerpt: "æ¯é€±æ›´æ–°ï¼æœ¬é€±ç²¾é¸å››å¤§å¯µç‰©å‹å–„æ´»å‹•ï¼šæ±æ¶Œå¯µç‰©å˜‰å¹´è¯ã€å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æã€å°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥ã€ç£ä»”å…‰å½±æ¨‚åœ’å¯µç‰©ä¹‹å¤œã€‚å³ç‡è©³æƒ…åŒå ±åæ–¹æ³•ï¼",
+    title: "【2026年2月1日至7日】星期五六日寵物好去處｜本周四大寵物活動精選｜PetWell HK",
+    excerpt: "每週更新！本週精選四大寵物友善活動：東涌寵物嘉年華、元朗戶外普拉提、將軍澳開運和服貓の日、灣仔光影樂園寵物之夜。即睇詳情同報名方法！",
     content: `
-      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">æœ€å¾Œæ›´æ–°ï¼š2026å¹´2æœˆ4æ—¥ï¼ˆæ˜ŸæœŸä¸‰ï¼‰ï½œæ¯é€±æ›´æ–°</p>
+      <p style="font-size: 13px; color: #666; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026年2月4日（星期三）｜每週更新</p>
 
-      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">æ¯é€±ç²¾é¸é¦™æ¸¯å››å¤§åœ°å€<strong>å¯µç‰©å‹å–„æ´»å‹•</strong>ï¼Œæ¶µè“‹å¸‚é›†ã€å·¥ä½œåŠã€å•†å ´æ´»å‹•åŠå¤œé–“é«”é©—ï¼Œç‚ºä½ åŒæ¯›å­©è¦åŠƒå®Œç¾Žé€±æœ«ã€‚</p>
+      <p style="font-size: 20px; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">每週精選香港四大地區<strong>寵物友善活動</strong>，涵蓋市集、工作坊、商場活動及夜間體驗，為你同毛孩規劃完美週末。</p>
 
       <!-- Quick Navigation -->
       <nav style="background: #fafafa; border: 1px solid #e5e5e5; border-radius: 8px; padding: 24px; margin-bottom: 48px;">
-        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin: 0 0 16px 0; font-weight: 600;">æœ¬é€±æ´»å‹•é€Ÿè¦½</p>
+        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin: 0 0 16px 0; font-weight: 600;">本週活動速覽</p>
         <div style="display: grid; gap: 8px;">
           <a href="#activity-1" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <span><strong style="color: hsl(24, 100%, 50%);">é›¢å³¶å€</strong> â€” æ±æ¶Œå¯µç‰©å˜‰å¹´è¯</span>
-            <span style="color: #999; font-size: 14px;">2æœˆ8æ—¥ â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">離島區</strong> — 東涌寵物嘉年華</span>
+            <span style="color: #999; font-size: 14px;">2月8日 →</span>
           </a>
           <a href="#activity-2" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <span><strong style="color: hsl(24, 100%, 50%);">å…ƒæœ—å€</strong> â€” æˆ¶å¤–æ™®æ‹‰æ x æ‰‹ä½œå’–å•¡</span>
-            <span style="color: #999; font-size: 14px;">2æœˆ7æ—¥ â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">元朗區</strong> — 戶外普拉提 x 手作咖啡</span>
+            <span style="color: #999; font-size: 14px;">2月7日 →</span>
           </a>
           <a href="#activity-3" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <span><strong style="color: hsl(24, 100%, 50%);">å°‡è»æ¾³å€</strong> â€” é–‹é‹å’ŒæœÂ·è²“ã®æ—¥</span>
-            <span style="color: #999; font-size: 14px;">é€¢é€±æœ« â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">將軍澳區</strong> — 開運和服·貓の日</span>
+            <span style="color: #999; font-size: 14px;">逢週末 →</span>
           </a>
           <a href="#activity-4" style="color: #1a1a1a; text-decoration: none; padding: 12px 16px; background: white; border: 1px solid #eee; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <span><strong style="color: hsl(24, 100%, 50%);">æ¸¯å³¶å€</strong> â€” Festilumi å…‰å½±æ¨‚åœ’</span>
-            <span style="color: #999; font-size: 14px;">æ¯é€±æ—¥ â†’</span>
+            <span><strong style="color: hsl(24, 100%, 50%);">港島區</strong> — Festilumi 光影樂園</span>
+            <span style="color: #999; font-size: 14px;">每週日 →</span>
           </a>
         </div>
         <div style="border-top: 1px solid #e5e5e5; margin-top: 16px; padding-top: 16px;">
-          <a href="/restaurants" style="color: hsl(24, 100%, 50%); text-decoration: none; font-weight: 500; font-size: 14px;">çŽ©å®Œæ´»å‹•ï¼Ÿç€è¦½ã€ŒçœŸ å¯µç‰©å‹å–„é¤å»³ã€â†’</a>
+          <a href="/restaurants" style="color: hsl(24, 100%, 50%); text-decoration: none; font-weight: 500; font-size: 14px;">玩完活動？瀏覽「真 寵物友善餐廳」→</a>
         </div>
       </nav>
 
       <!-- Activity 1 -->
       <article id="activity-1" style="margin-bottom: 64px; scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogWeekendEvent1}" alt="æ±æ¶Œå¯µç‰©å˜‰å¹´è¯ 2026 - é›¢å³¶å€å¯µç‰©æ´»å‹•" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
-          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">æ±æ¶Œæ±æµ·æ¿±é•·å»Šå¯µç‰©å˜‰å¹´è¯</figcaption>
+          <img src="${blogWeekendEvent1}" alt="東涌寵物嘉年華 2026 - 離島區寵物活動" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
+          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">東涌東海濱長廊寵物嘉年華</figcaption>
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">é›¢å³¶å€ Â· æ±æ¶Œ</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">é›¢å³¶å€å¯µç‰©å˜‰å¹´è¯ 2026</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">離島區 · 東涌</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">離島區寵物嘉年華 2026</h2>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">2026å¹´2æœˆ8æ—¥ï¼ˆæ—¥ï¼‰</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">2026年2月8日（日）</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
             <p style="font-size: 15px; margin: 0; font-weight: 500;">12:00 - 20:00</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">æ±æ¶Œæ±æµ·æ¿±é•·å»Š</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">東涌東海濱長廊</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">å…¥å ´</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">å…è²»ï¼ˆéœ€ç¶²ä¸Šç™»è¨˜ï¼‰</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">入場</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">免費（需網上登記）</p>
           </div>
         </div>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">æ´»å‹•äº®é»ž</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">活動亮點</h3>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px;">
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>æ˜Ÿç´šå˜‰è³“</strong> â€” ç¾…å¤©å®‡ã€æ²ˆéœ‡è»’èˆ‡æ„›å¯µç™»å°</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>ç¶²ç´…å¯µç‰©</strong> â€” Mochaã€ç´°ä½¬ã€è›‹å·å“¥å“¥</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>å¯µå¯µæ˜Ÿå…‰å¤§é“</strong> â€” æ¯›å­©åŒ–èº«ä¸€æ—¥æ˜Žæ˜Ÿ</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>å¯µå¯µæ¨‚åœ’</strong> â€” å·¨åž‹äº’å‹•éŠæˆ²æŒ‘æˆ°</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>å¯µå¯µå¸‚é›†</strong> â€” å„å¼å¯µç‰©å°é£ŸåŠç”¨å“</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>éšœç¤™æŒ‘æˆ°è³½</strong> â€” å‹å‡ºéšŠä¼ç²çŽå“åŠè­‰æ›¸</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>å¯µç‰©é ˜é¤Š</strong> â€” ç¾å ´é ˜é¤Šæœå‹™</div>
-          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>Doga ç‘œä¼½</strong> â€” ç‹—ç‹—ç‘œä¼½å·¥ä½œåŠ</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>星級嘉賓</strong> — 羅天宇、沈震軒與愛寵登台</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>網紅寵物</strong> — Mocha、細佬、蛋卷哥哥</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>寵寵星光大道</strong> — 毛孩化身一日明星</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>寵寵樂園</strong> — 巨型互動遊戲挑戰</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>寵寵市集</strong> — 各式寵物小食及用品</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>障礙挑戰賽</strong> — 勝出隊伍獲獎品及證書</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>寵物領養</strong> — 現場領養服務</div>
+          <div style="padding: 12px 16px; background: #fafafa; border-radius: 6px; border: 1px solid #e5e5e5;"><strong>Doga 瑜伽</strong> — 狗狗瑜伽工作坊</div>
         </div>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">å ±åæ–¹æ³•</h3>
-        <p style="margin: 0 0 8px 0;"><strong>å…¥å ´ç™»è¨˜ï¼š</strong><a href="http://petcarnival.hk/" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">petcarnival.hk</a>ï¼ˆå…è²»å…¥å ´ï¼‰</p>
-        <p style="margin: 0; color: #666;"><strong>ç‹—ç‹—ç‘œä¼½å·¥ä½œåŠï¼š</strong>éœ€æ–¼ç¶²ç«™å¦å¤–ç™»è¨˜å ±å</p>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">報名方法</h3>
+        <p style="margin: 0 0 8px 0;"><strong>入場登記：</strong><a href="http://petcarnival.hk/" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">petcarnival.hk</a>（免費入場）</p>
+        <p style="margin: 0; color: #666;"><strong>狗狗瑜伽工作坊：</strong>需於網站另外登記報名</p>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">å…¥å ´ç¦®é‡</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">入場禮遇</h3>
         <ul style="margin: 0; padding-left: 20px; color: #444;">
-          <li>ã€Œé›¢å³¶å€äººå¯µéŠ Passportã€ä¸€ä»½</li>
-          <li>ã€Œå¯µç‰©å¯¦ç”¨ç¦®å“åŒ…ã€ä¸€ä»½</li>
-          <li>å…è²»å¯µç‰©å°¿å¢Šï¼ˆå…¥å£è™•æ´¾ç™¼ï¼Œæ•¸é‡æœ‰é™ï¼‰</li>
+          <li>「離島區人寵遊 Passport」一份</li>
+          <li>「寵物實用禮品包」一份</li>
+          <li>免費寵物尿墊（入口處派發，數量有限）</li>
         </ul>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">äº¤é€šå®‰æŽ’</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">交通安排</h3>
         <div style="background: #fff8f0; padding: 16px; border-radius: 6px; margin-bottom: 16px; border-left: 4px solid hsl(24, 100%, 50%);">
-          <p style="margin: 0 0 8px 0; font-weight: 600;">å…è²»ç©¿æ¢­å·´å£«</p>
-          <p style="margin: 0; font-size: 14px;">æ±æ¶Œæ¸¯éµç«™ â‡„ æ±æ¶Œæ±æµ·æ¿±é•·å»Šï½œ12:00 - 18:45ï½œå…ˆåˆ°å…ˆå¾—</p>
+          <p style="margin: 0 0 8px 0; font-weight: 600;">免費穿梭巴士</p>
+          <p style="margin: 0; font-size: 14px;">東涌港鐵站 ⇄ 東涌東海濱長廊｜12:00 - 18:45｜先到先得</p>
         </div>
-        <p style="margin: 0; font-size: 14px; color: #666;"><strong>æ­¥è¡Œï¼š</strong>æ±æ¶Œæ¸¯éµç«™ C å‡ºå£æ­¥è¡Œç´„ 10-15 åˆ†é˜ï¼›æ±æ¶Œç™¼å±•ç¢¼é ­æ­¥è¡Œç´„ 3 åˆ†é˜</p>
+        <p style="margin: 0; font-size: 14px; color: #666;"><strong>步行：</strong>東涌港鐵站 C 出口步行約 10-15 分鐘；東涌發展碼頭步行約 3 分鐘</p>
       </article>
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
@@ -2093,51 +2092,51 @@ const baseBlogPosts: BlogPost[] = [
       <!-- Activity 2 -->
       <article id="activity-2" style="margin-bottom: 64px; scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogWeekendEvent2}" alt="å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æ x æ‰‹ä½œå’–å•¡ - å¯µç‰©å‹å–„æ´»å‹•" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
-          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">å…ƒæœ—ä¸«Â·å’–å•¡ç ”ç©¶æ‰€æˆ¶å¤–æ™®æ‹‰æ</figcaption>
+          <img src="${blogWeekendEvent2}" alt="元朗戶外普拉提 x 手作咖啡 - 寵物友善活動" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
+          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">元朗丫·咖啡研究所戶外普拉提</figcaption>
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">å…ƒæœ—å€</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">ä¸«Â·å’–å•¡ç ”ç©¶æ‰€ x æˆ¶å¤–æ™®æ‹‰æ</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">元朗區</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">丫·咖啡研究所 x 戶外普拉提</h2>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">2026å¹´2æœˆ7æ—¥ï¼ˆå…­ï¼‰</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">2026年2月7日（六）</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
             <p style="font-size: 15px; margin: 0; font-weight: 500;">15:30 - 17:00</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">å…ƒæœ—å±å±±ä¸‹çœ‰å±±æ‘ 128 è™Ÿ</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">元朗屏山下眉山村 128 號</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">è²»ç”¨</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">費用</p>
             <p style="font-size: 15px; margin: 0; font-weight: 500;">HK$380</p>
           </div>
         </div>
 
-        <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">æˆ¶å¤–æ™®æ‹‰æé…åˆæ‰‹ä½œå’–å•¡é«”é©—ï¼Œåœ¨å¾®é¢¨èˆ‡é³¥é³´ä¸­é‹å‹•ï¼Œèª²å¾Œäº«ç”¨æ¸…çˆ½å’–å•¡ã€‚æ´»å‹•æä¾›å°ˆæ¥­æ”å½±æœå‹™ï¼Œæ­¡è¿Žå¸¶åŒæ¯›å­©ä¸€èµ·åƒèˆ‡ã€‚</p>
+        <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">戶外普拉提配合手作咖啡體驗，在微風與鳥鳴中運動，課後享用清爽咖啡。活動提供專業攝影服務，歡迎帶同毛孩一起參與。</p>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">æ´»å‹•åŒ…æ‹¬</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">活動包括</h3>
         <ul style="margin: 0; padding-left: 20px; color: #444;">
-          <li>å°ˆæ¥­æˆ¶å¤–æ™®æ‹‰æèª²ç¨‹ï¼ˆè¨­å‚™å·²åŒ…å«ï¼‰</li>
-          <li>æ‰‹ä½œå’–å•¡é«”é©—</li>
-          <li>å°ˆæ¥­æ”å½±æœå‹™ï¼ˆç…§ç‰‡åŠå½±ç‰‡ï¼‰</li>
+          <li>專業戶外普拉提課程（設備已包含）</li>
+          <li>手作咖啡體驗</li>
+          <li>專業攝影服務（照片及影片）</li>
         </ul>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">å ±åæ–¹æ³•</h3>
-        <p style="margin: 0;">ç›´æŽ¥è¯çµ¡ä¸«Â·å’–å•¡ç ”ç©¶æ‰€ æˆ– è¦ªè‡¨é–€å¸‚å ±åï½œ<strong>Instagram:</strong> <a href="https://www.instagram.com/a.kafe.hk/" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">@ya_coffee_lab</a></p>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">報名方法</h3>
+        <p style="margin: 0;">直接聯絡丫·咖啡研究所 或 親臨門市報名｜<strong>Instagram:</strong> <a href="https://www.instagram.com/a.kafe.hk/" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">@ya_coffee_lab</a></p>
 
         <div style="background: #fff8f0; padding: 16px; border-radius: 6px; margin-top: 24px; border-left: 4px solid hsl(24, 100%, 50%);">
-          <p style="margin: 0; font-size: 14px;"><strong>å…¬ç›Šæ‰¿è«¾ï¼š</strong>æ´»å‹•æ‰£é™¤å¿…è¦é–‹æ”¯å¾Œï¼Œå…¨æ•¸æè´ˆäºˆæµæµªå‹•ç‰©çµ„ç¹”ã€Œæ¯›å®ˆæ•‘æ´ã€</p>
+          <p style="margin: 0; font-size: 14px;"><strong>公益承諾：</strong>活動扣除必要開支後，全數捐贈予流浪動物組織「毛守救援」</p>
         </div>
 
-        <p style="margin: 24px 0 0 0; font-size: 14px; color: #666;"><strong>åœè»Šï¼š</strong>å…è²»åœè»Šä½ï¼ˆæ•¸é‡æœ‰é™ï¼Œå…ˆåˆ°å…ˆå¾—ï¼‰</p>
+        <p style="margin: 24px 0 0 0; font-size: 14px; color: #666;"><strong>停車：</strong>免費停車位（數量有限，先到先得）</p>
       </article>
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
@@ -2145,52 +2144,52 @@ const baseBlogPosts: BlogPost[] = [
       <!-- Activity 3 -->
       <article id="activity-3" style="margin-bottom: 64px; scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogWeekendEvent3}" alt="å°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥ - å•†å ´å¯µç‰©æ´»å‹•" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
-          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">å°‡è»æ¾³ä¸­å¿ƒæŸ‘æŸ‘è²“æ–°å¹´è£ç½®ï½œðŸ“· <a href="https://www.instagram.com/hkmodelplus/" target="_blank" rel="noopener noreferrer" style="color: #999;">@hkmodelplus</a></figcaption>
+          <img src="${blogWeekendEvent3}" alt="將軍澳開運和服貓の日 - 商場寵物活動" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
+          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">將軍澳中心柑柑貓新年裝置｜📷 <a href="https://www.instagram.com/hkmodelplus/" target="_blank" rel="noopener noreferrer" style="color: #999;">@hkmodelplus</a></figcaption>
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">å°‡è»æ¾³å€</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">å°‡è»æ¾³ä¸­å¿ƒã€Œé–‹é‹å’ŒæœÂ·è²“ã®æ—¥ã€</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">將軍澳區</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">將軍澳中心「開運和服·貓の日」</h2>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr; gap: 12px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 12px;">
-            <span style="font-size: 14px; color: #666;">æŸ‘æŸ‘è²“èŒå¯µè³€é¦¬å¹´</span>
-            <span style="font-size: 14px; font-weight: 500;">1æœˆ21æ—¥ - 2æœˆ24æ—¥</span>
+            <span style="font-size: 14px; color: #666;">柑柑貓萌寵賀馬年</span>
+            <span style="font-size: 14px; font-weight: 500;">1月21日 - 2月24日</span>
           </div>
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 12px;">
-            <span style="font-size: 14px; color: #666;">é–‹é‹å’ŒæœÂ·è²“ã®æ—¥</span>
-            <span style="font-size: 14px; font-weight: 500;">é€¢æ˜ŸæœŸå…­ã€æ—¥ï¼ˆè‡³2æœˆ15æ—¥ï¼‰</span>
+            <span style="font-size: 14px; color: #666;">開運和服·貓の日</span>
+            <span style="font-size: 14px; font-weight: 500;">逢星期六、日（至2月15日）</span>
           </div>
           <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 12px;">
-            <span style="font-size: 14px; color: #666;">äººå¯µé€±æœ«æ‰‹ä½œå¸‚é›†</span>
-            <span style="font-size: 14px; font-weight: 500;">1/31-2/1ã€2/7-8</span>
+            <span style="font-size: 14px; color: #666;">人寵週末手作市集</span>
+            <span style="font-size: 14px; font-weight: 500;">1/31-2/1、2/7-8</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span style="font-size: 14px; color: #666;">ç‡Ÿæ¥­æ™‚é–“</span>
-            <span style="font-size: 14px; font-weight: 500;">11:00 - 20:30ï½œG/F ä¸­åº­åŠ L1</span>
+            <span style="font-size: 14px; color: #666;">營業時間</span>
+            <span style="font-size: 14px; font-weight: 500;">11:00 - 20:30｜G/F 中庭及 L1</span>
           </div>
         </div>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">æ´»å‹•äº®é»ž</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">活動亮點</h3>
         <ul style="margin: 0; padding-left: 20px; color: #444;">
-          <li>3ç±³é«˜å·¨åž‹æŸ‘æŸ‘è²“è£ç½®ï¼ˆæˆ´è¶…èŒé§¿é¦¬é ­å¥—ï¼‰</li>
-          <li>é›»å­è¨±é¡˜äº’å‹•é«”é©—</li>
-          <li>å…¨æ¸¯é¦–å€‹ã€Œé–‹é‹å’ŒæœÂ·è²“ã®æ—¥ã€å€Ÿç”¨æœå‹™</li>
-          <li>èŒå¯µå¸‚é›†è³€é¦¬å¹´ï¼šå¹´èŠ±ã€è³€å¹´ç²¾å“ã€æ‡·èˆŠç¾Žé£Ÿ</li>
-          <li>äººå¯µé€±æœ«æ‰‹ä½œå¸‚é›†ï¼šå¯µç‰©å°ˆç”¨ç²¾å“ã€å¥åº·é£Ÿå“</li>
+          <li>3米高巨型柑柑貓裝置（戴超萌駿馬頭套）</li>
+          <li>電子許願互動體驗</li>
+          <li>全港首個「開運和服·貓の日」借用服務</li>
+          <li>萌寵市集賀馬年：年花、賀年精品、懷舊美食</li>
+          <li>人寵週末手作市集：寵物專用精品、健康食品</li>
         </ul>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">å’Œæœå€Ÿç”¨è©³æƒ…</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">和服借用詳情</h3>
         <div style="background: #fff8f0; padding: 16px; border-radius: 6px; border-left: 4px solid hsl(24, 100%, 50%);">
-          <p style="margin: 0 0 8px 0;"><strong>è³‡æ ¼ï¼š</strong>The Point æœƒå“¡æ–¼æŒ‡å®šå•†æˆ¶æ¶ˆè²»æ»¿ HK$300</p>
-          <p style="margin: 0 0 8px 0;"><strong>å€Ÿç”¨æ™‚é–“ï¼š</strong>1å°æ™‚ï½œ<strong>æŒ‰é‡‘ï¼š</strong>HK$200ï¼ˆæ­¸é‚„å¾Œå…¨é¡é€€é‚„ï¼‰</p>
-          <p style="margin: 0; font-size: 14px; color: #666;">å»ºè­°å€Ÿç”¨å‰å…ˆé‡å¥½æ¯›å­©çš„é ¸åœåŠèƒ¸åœ</p>
+          <p style="margin: 0 0 8px 0;"><strong>資格：</strong>The Point 會員於指定商戶消費滿 HK$300</p>
+          <p style="margin: 0 0 8px 0;"><strong>借用時間：</strong>1小時｜<strong>按金：</strong>HK$200（歸還後全額退還）</p>
+          <p style="margin: 0; font-size: 14px; color: #666;">建議借用前先量好毛孩的頸圍及胸圍</p>
         </div>
 
-        <p style="margin: 24px 0 0 0;"><strong>è©³æƒ…ï¼š</strong><a href="https://bit.ly/49E4fKj" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">bit.ly/49E4fKj</a></p>
-        <p style="margin: 8px 0 0 0; font-size: 14px; color: #666;"><strong>äº¤é€šï¼š</strong>æ¸¯éµå°‡è»æ¾³ç«™ A å‡ºå£ç›´é”ï½œè¨­æœ‰æ”¶è²»åœè»Šå ´</p>
+        <p style="margin: 24px 0 0 0;"><strong>詳情：</strong><a href="https://bit.ly/49E4fKj" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%);">bit.ly/49E4fKj</a></p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #666;"><strong>交通：</strong>港鐵將軍澳站 A 出口直達｜設有收費停車場</p>
       </article>
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
@@ -2198,68 +2197,68 @@ const baseBlogPosts: BlogPost[] = [
       <!-- Activity 4 -->
       <article id="activity-4" style="margin-bottom: 64px; scroll-margin-top: 100px;">
         <figure style="margin: 0 0 24px 0;">
-          <img src="${blogWeekendEvent4}" alt="Festilumi å…‰å½±æ¨‚åœ’å¯µç‰©ä¹‹å¤œ - ç£ä»”æµ·æ¿±æ´»å‹•" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
-          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">ç£ä»”æµ·æ¿± Festilumi å…‰å½±æ¨‚åœ’</figcaption>
+          <img src="${blogWeekendEvent4}" alt="Festilumi 光影樂園寵物之夜 - 灣仔海濱活動" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;" />
+          <figcaption style="font-size: 12px; color: #999; margin-top: 8px; text-align: center;">灣仔海濱 Festilumi 光影樂園</figcaption>
         </figure>
 
         <div style="border-left: 4px solid hsl(24, 100%, 50%); padding-left: 20px; margin-bottom: 24px;">
-          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">æ¸¯å³¶å€ Â· ç£ä»”</p>
-          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">Festilumi æ²‰æµ¸å¼å…‰å½±æ¨‚åœ’</h2>
+          <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin: 0 0 8px 0; font-weight: 600;">港島區 · 灣仔</p>
+          <h2 style="font-size: 28px; font-weight: 700; margin: 0; line-height: 1.3;">Festilumi 沉浸式光影樂園</h2>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e5e5e5;">
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ—¥æœŸ</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">ç¾æ­£èˆ‰è¡Œï¼ˆ2æœˆæŒçºŒï¼‰</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">日期</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">現正舉行（2月持續）</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">å¯µç‰©ä¹‹å¤œ</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">æ¯é€±æ—¥</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">寵物之夜</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">每週日</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">æ™‚é–“</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">時間</p>
             <p style="font-size: 15px; margin: 0; font-weight: 500;">18:30 - 21:30</p>
           </div>
           <div>
-            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">åœ°é»ž</p>
-            <p style="font-size: 15px; margin: 0; font-weight: 500;">ç£ä»”æµ·æ¿±æ´»å‹•ç©ºé–“ Cå€</p>
+            <p style="font-size: 12px; color: #999; margin: 0 0 4px 0; text-transform: uppercase;">地點</p>
+            <p style="font-size: 15px; margin: 0; font-weight: 500;">灣仔海濱活動空間 C區</p>
           </div>
         </div>
 
-        <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">éœ‡æ’¼ç‡ˆå…‰é›•å¡‘èˆ‡å·¨åž‹è—è¡“è£ç½®ï¼Œæ²‰æµ¸å¼å…‰å½±å ´æ™¯æ…¶ç¥è—è¡“ã€æ­¡æ¨‚èˆ‡åœ˜èšã€‚æ¯é€±æ—¥ç‰¹è¨­å¯µç‰©ä¹‹å¤œï¼Œå¸¶æ¯›å­©é«”é©—å¤¢å¹»å…‰å½±ä¸–ç•Œï¼ˆéœ€æ‹´ç¹©åŠæŒè­‰ä»¶ï¼‰ã€‚</p>
+        <p style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">震撼燈光雕塑與巨型藝術裝置，沉浸式光影場景慶祝藝術、歡樂與團聚。每週日特設寵物之夜，帶毛孩體驗夢幻光影世界（需拴繩及持證件）。</p>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">ç¥¨åƒ¹</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">票價</h3>
         <div style="overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             <thead>
               <tr style="background: #f5f5f5;">
-                <th style="padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #ddd;">ç¥¨ç¨®</th>
-                <th style="padding: 12px 16px; text-align: right; font-weight: 600; border-bottom: 2px solid #ddd;">åƒ¹éŒ¢</th>
+                <th style="padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #ddd;">票種</th>
+                <th style="padding: 12px 16px; text-align: right; font-weight: 600; border-bottom: 2px solid #ddd;">價錢</th>
               </tr>
             </thead>
             <tbody>
               <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px 16px;">æˆäººç¥¨ï¼ˆ12æ­²+ï¼‰</td>
-                <td style="padding: 12px 16px; text-align: right;">HK$168 èµ·</td>
+                <td style="padding: 12px 16px;">成人票（12歲+）</td>
+                <td style="padding: 12px 16px; text-align: right;">HK$168 起</td>
               </tr>
               <tr style="border-bottom: 1px solid #eee; background: #fafafa;">
-                <td style="padding: 12px 16px;">å…’ç«¥ç¥¨ï¼ˆ3-11æ­²ï¼‰</td>
-                <td style="padding: 12px 16px; text-align: right;">HK$98 èµ·</td>
+                <td style="padding: 12px 16px;">兒童票（3-11歲）</td>
+                <td style="padding: 12px 16px; text-align: right;">HK$98 起</td>
               </tr>
               <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px 16px;">é•·è€…ç¥¨ï¼ˆ60æ­²+ï¼‰</td>
-                <td style="padding: 12px 16px; text-align: right;">HK$128 èµ·</td>
+                <td style="padding: 12px 16px;">長者票（60歲+）</td>
+                <td style="padding: 12px 16px; text-align: right;">HK$128 起</td>
               </tr>
               <tr style="border-bottom: 1px solid #eee; background: #fafafa;">
-                <td style="padding: 12px 16px;">å¬°å¹¼å…’ï¼ˆ0-2æ­²ï¼‰</td>
-                <td style="padding: 12px 16px; text-align: right;">å…è²»</td>
+                <td style="padding: 12px 16px;">嬰幼兒（0-2歲）</td>
+                <td style="padding: 12px 16px; text-align: right;">免費</td>
               </tr>
               <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px 16px; font-weight: 600;">å¯µç‰©ç¥¨</td>
-                <td style="padding: 12px 16px; text-align: right; font-weight: 600;">å…è²»ï¼ˆéœ€é è¨‚ï¼‰</td>
+                <td style="padding: 12px 16px; font-weight: 600;">寵物票</td>
+                <td style="padding: 12px 16px; text-align: right; font-weight: 600;">免費（需預訂）</td>
               </tr>
               <tr style="background: #fafafa;">
-                <td style="padding: 12px 16px;">VIP é«”é©—</td>
+                <td style="padding: 12px 16px;">VIP 體驗</td>
                 <td style="padding: 12px 16px; text-align: right;">HK$508</td>
               </tr>
             </tbody>
@@ -2267,2060 +2266,2060 @@ const baseBlogPosts: BlogPost[] = [
         </div>
 
         <div style="background: #fff8f0; padding: 16px; border-radius: 6px; margin: 24px 0; border-left: 4px solid hsl(24, 100%, 50%);">
-          <p style="margin: 0; font-weight: 600;">é™æ™‚å„ªæƒ ï¼ˆè‡³2æœˆ13æ—¥ï¼‰ï¼šè³¼è²· 3-8 å¼µé–€ç¥¨å³äº« 75æŠ˜</p>
+          <p style="margin: 0; font-weight: 600;">限時優惠（至2月13日）：購買 3-8 張門票即享 75折</p>
         </div>
 
-        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">è³¼ç¥¨</h3>
+        <h3 style="font-size: 16px; font-weight: 600; margin: 32px 0 16px 0; text-transform: uppercase; letter-spacing: 0.5px;">購票</h3>
         <p style="margin: 0;"><a href="https://feverup.com/m/502352" target="_blank" rel="noopener noreferrer" style="color: hsl(24, 100%, 50%); font-weight: 500;">feverup.com/m/502352</a></p>
-        <p style="margin: 8px 0 0 0; font-size: 14px; color: #666;">åœ˜é«”é è¨‚ï¼ˆ20å¼µ+ï¼‰ï¼šgroup@festiluminongkong.com.hk</p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; color: #666;">團體預訂（20張+）：group@festiluminongkong.com.hk</p>
 
         <div style="background: #fafafa; padding: 16px; border-radius: 6px; margin-top: 24px; border: 1px solid #e5e5e5;">
-          <p style="margin: 0 0 8px 0; font-weight: 600;">é¡§å®¢è©•åˆ†ï¼š4.5/5ï¼ˆ523 å‰‡è©•è«–ï¼‰</p>
-          <p style="margin: 0; font-size: 14px; font-style: italic; color: #666;">"è¶…ç´šè¶…ç´šéšï¼Œso amazing" Â· "Children like it very much" Â· "å¤§äººå°æœ‹å‹éƒ½è¦ºå¾—å¥½çŽ©"</p>
+          <p style="margin: 0 0 8px 0; font-weight: 600;">顧客評分：4.5/5（523 則評論）</p>
+          <p style="margin: 0; font-size: 14px; font-style: italic; color: #666;">"超級超級靚，so amazing" · "Children like it very much" · "大人小朋友都覺得好玩"</p>
         </div>
 
-        <p style="margin: 24px 0 0 0; font-size: 14px; color: #666;"><strong>äº¤é€šï¼š</strong>æ¸¯éµç£ä»”ç«™ A1 å‡ºå£æ­¥è¡Œç´„ 10 åˆ†é˜ï¼›ç£ä»”ç¢¼é ­æ­¥è¡Œç´„ 5 åˆ†é˜</p>
+        <p style="margin: 24px 0 0 0; font-size: 14px; color: #666;"><strong>交通：</strong>港鐵灣仔站 A1 出口步行約 10 分鐘；灣仔碼頭步行約 5 分鐘</p>
       </article>
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 48px 0;" />
 
       <!-- Footer CTA -->
       <div style="background: #1a1a1a; color: white; padding: 32px; border-radius: 8px; text-align: center;">
-        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin: 0 0 12px 0;">PetWell é€±æœ«å¥½åŽ»è™•ç³»åˆ—</p>
-        <p style="font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">æ¯é€±æ›´æ–°ãƒ»å…¨éƒ¨å¯µç‰©å‹å–„</p>
-        <p style="font-size: 14px; color: #999; margin: 0;">Bookmark å‘¢å€‹é é¢ï¼Œä¸‹é€±å†åšŸç‡æœ€æ–°æ´»å‹•</p>
+        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin: 0 0 12px 0;">PetWell 週末好去處系列</p>
+        <p style="font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">每週更新・全部寵物友善</p>
+        <p style="font-size: 14px; color: #999; margin: 0;">Bookmark 呢個頁面，下週再嚟睇最新活動</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2026-02-03",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogWeekendPetEvents,
     seoKeywords: [
-      "æ˜ŸæœŸäº”å…­æ—¥å¯µç‰©å¥½åŽ»è™•", 
-      "é€±æœ«å¯µç‰©æ´»å‹•", 
-      "å¯µç‰©å˜‰å¹´è¯", 
-      "å¯µç‰©å‹å–„æ´»å‹•", 
-      "é¦™æ¸¯å¯µç‰©æ´»å‹•", 
-      "æ±æ¶Œå¯µç‰©å˜‰å¹´è¯", 
-      "å°‡è»æ¾³å¯µç‰©æ´»å‹•", 
-      "ç£ä»”å¯µç‰©æ´»å‹•", 
-      "å¯µç‰©å¸‚é›†", 
-      "ç‹—ç‹—æ´»å‹•",
-      "2026å¯µç‰©æ´»å‹•",
-      "é¦™æ¸¯å¯µç‰©å¥½åŽ»è™•",
-      "å¯µç‰©æ´¾å°",
-      "å¯µç‰©å·¥ä½œåŠ",
-      "å¯µç‰©æˆ¶å¤–æ´»å‹•",
-      "å…ƒæœ—å¯µç‰©æ´»å‹•",
-      "é›¢å³¶å¯µç‰©æ´»å‹•",
-      "æ¸¯å³¶å¯µç‰©æ´»å‹•"
+      "星期五六日寵物好去處", 
+      "週末寵物活動", 
+      "寵物嘉年華", 
+      "寵物友善活動", 
+      "香港寵物活動", 
+      "東涌寵物嘉年華", 
+      "將軍澳寵物活動", 
+      "灣仔寵物活動", 
+      "寵物市集", 
+      "狗狗活動",
+      "2026寵物活動",
+      "香港寵物好去處",
+      "寵物派對",
+      "寵物工作坊",
+      "寵物戶外活動",
+      "元朗寵物活動",
+      "離島寵物活動",
+      "港島寵物活動"
     ],
-    seoDescription: "æ¯é€±æ›´æ–°ï¼PetWellç²¾é¸é¦™æ¸¯å››å¤§åœ°å€å¯µç‰©å‹å–„æ´»å‹•ï¼ŒåŒ…æ‹¬æ±æ¶Œå¯µç‰©å˜‰å¹´è¯ã€å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æã€å°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥ã€ç£ä»”å…‰å½±æ¨‚åœ’å¯µç‰©ä¹‹å¤œã€‚æ¶µè“‹å¸‚é›†ã€å·¥ä½œåŠã€å•†å ´æ´»å‹•åŠå¤œé–“é«”é©—ï¼Œç‚ºä½ åŒæ¯›å­©è¦åŠƒå®Œç¾Žé€±æœ«ã€‚å…¨éƒ¨æ´»å‹•å¯µç‰©å‹å–„ï¼Œå³ç‡è©³æƒ…åŒå ±åæ–¹æ³•ï¼",
+    seoDescription: "每週更新！PetWell精選香港四大地區寵物友善活動，包括東涌寵物嘉年華、元朗戶外普拉提、將軍澳開運和服貓の日、灣仔光影樂園寵物之夜。涵蓋市集、工作坊、商場活動及夜間體驗，為你同毛孩規劃完美週末。全部活動寵物友善，即睇詳情同報名方法！",
     faqItems: [
       {
-        question: "æœ¬é€±æœ‰å’©å¯µç‰©æ´»å‹•æŽ¨ä»‹ï¼Ÿ",
-        answer: "æœ¬é€±ç²¾é¸å››å¤§æ´»å‹•ï¼šæ±æ¶Œå¯µç‰©å˜‰å¹´è¯ï¼ˆ2æœˆ8æ—¥ï¼Œå…è²»å…¥å ´éœ€ç¶²ä¸Šç™»è¨˜ï¼‰ã€å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æ x æ‰‹ä½œå’–å•¡ï¼ˆ2æœˆ7æ—¥ï¼ŒHK$380ï¼‰ã€å°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥ï¼ˆé€¢é€±æœ«ï¼Œå…è²»ï¼‰ã€ç£ä»” Festilumi å…‰å½±æ¨‚åœ’å¯µç‰©ä¹‹å¤œï¼ˆæ¯é€±æ—¥ï¼Œå¯µç‰©ç¥¨å…è²»éœ€é è¨‚ï¼‰ã€‚å…¨éƒ¨æ´»å‹•å¯µç‰©å‹å–„ï¼Œæ­¡è¿Žå¸¶æ¯›å­©åƒèˆ‡ï¼"
+        question: "本週有咩寵物活動推介？",
+        answer: "本週精選四大活動：東涌寵物嘉年華（2月8日，免費入場需網上登記）、元朗戶外普拉提 x 手作咖啡（2月7日，HK$380）、將軍澳開運和服貓の日（逢週末，免費）、灣仔 Festilumi 光影樂園寵物之夜（每週日，寵物票免費需預訂）。全部活動寵物友善，歡迎帶毛孩參與！"
       },
       {
-        question: "å‘¢å€‹é é¢å¹¾æ™‚æ›´æ–°ï¼Ÿ",
-        answer: "PetWell æ¯é€±æ›´æ–°æ˜ŸæœŸäº”å…­æ—¥å¯µç‰©å¥½åŽ»è™•ï¼Œé€šå¸¸æ–¼æ¯é€±ä¸€è‡³ä¸‰æ›´æ–°ä¸‹é€±æ´»å‹•è³‡è¨Šã€‚è¨˜å¾— bookmark å‘¢å€‹é é¢ï¼Œæˆ–ä¸‹è¼‰ PetWell App ç²å–æœ€æ–°å¯µç‰©æ´»å‹•é€šçŸ¥ï¼"
+        question: "呢個頁面幾時更新？",
+        answer: "PetWell 每週更新星期五六日寵物好去處，通常於每週一至三更新下週活動資訊。記得 bookmark 呢個頁面，或下載 PetWell App 獲取最新寵物活動通知！"
       },
       {
-        question: "é‚Šå€‹æ´»å‹•ä¿‚å…è²»å…¥å ´ï¼Ÿ",
-        answer: "æ±æ¶Œå¯µç‰©å˜‰å¹´è¯ï¼ˆéœ€ç¶²ä¸Šç™»è¨˜ petcarnival.hkï¼‰åŒå°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥éƒ½ä¿‚å…è²»å…¥å ´ã€‚ç£ä»” Festilumi å¯µç‰©ç¥¨äº¦ä¿‚å…è²»ï¼ˆéœ€é è¨‚ï¼Œæˆäººç¥¨HK$168èµ·ï¼‰ã€‚å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æéœ€ä»˜è²»HK$380ï¼Œä½†æ‰£é™¤å¿…è¦é–‹æ”¯å¾Œå…¨æ•¸æè´ˆäºˆæµæµªå‹•ç‰©çµ„ç¹”ã€Œæ¯›å®ˆæ•‘æ´ã€ã€‚"
+        question: "邊個活動係免費入場？",
+        answer: "東涌寵物嘉年華（需網上登記 petcarnival.hk）同將軍澳開運和服貓の日都係免費入場。灣仔 Festilumi 寵物票亦係免費（需預訂，成人票HK$168起）。元朗戶外普拉提需付費HK$380，但扣除必要開支後全數捐贈予流浪動物組織「毛守救援」。"
       },
       {
-        question: "å¸¶å¯µç‰©åŽ»æ´»å‹•è¦æ³¨æ„å’©ï¼Ÿ",
-        answer: "å¸¶å¯µç‰©åŽ»æ´»å‹•å‰ï¼Œæ‡‰ç¢ºèªæ´»å‹•æ˜¯å¦å¯µç‰©å‹å–„ã€æ˜¯å¦éœ€è¦é ç´„æˆ–ç™»è¨˜ã€æœ‰ç„¡ç‰¹åˆ¥è¦æ±‚ï¼ˆå¦‚ç‰½ç¹©ã€ç–«è‹—è­‰æ˜Žç­‰ï¼‰ã€‚å»ºè­°æº–å‚™å……è¶³é£²æ°´ã€ç‰½å¼•ç¹©ã€å¯µç‰©å°¿å¢Šã€å°é£ŸçŽå‹µç­‰ã€‚æ´»å‹•æœŸé–“è¦ç•™æ„å¯µç‰©ç‹€æ³ï¼Œç¢ºä¿å®‰å…¨ã€‚éƒ¨åˆ†æ´»å‹•å¦‚Festilumiå…‰å½±æ¨‚åœ’è¦æ±‚å¯µç‰©éœ€æ‹´ç¹©åŠæŒè­‰ä»¶ã€‚"
+        question: "帶寵物去活動要注意咩？",
+        answer: "帶寵物去活動前，應確認活動是否寵物友善、是否需要預約或登記、有無特別要求（如牽繩、疫苗證明等）。建議準備充足飲水、牽引繩、寵物尿墊、小食獎勵等。活動期間要留意寵物狀況，確保安全。部分活動如Festilumi光影樂園要求寵物需拴繩及持證件。"
       },
       {
-        question: "é¦™æ¸¯é‚Šåº¦æœ‰å¯µç‰©æ´»å‹•ï¼Ÿ",
-        answer: "é¦™æ¸¯å„å€éƒ½æœ‰å¯µç‰©å‹å–„æ´»å‹•ï¼ŒåŒ…æ‹¬é›¢å³¶å€ï¼ˆæ±æ¶Œå¯µç‰©å˜‰å¹´è¯ï¼‰ã€å…ƒæœ—å€ï¼ˆæˆ¶å¤–æ™®æ‹‰æã€å’–å•¡é«”é©—ï¼‰ã€å°‡è»æ¾³å€ï¼ˆå•†å ´å¯µç‰©æ´»å‹•ï¼‰ã€æ¸¯å³¶å€ï¼ˆç£ä»”å…‰å½±æ¨‚åœ’ï¼‰ç­‰ã€‚PetWellæ¯é€±æ›´æ–°å…¨æ¸¯å¯µç‰©æ´»å‹•è³‡è¨Šï¼Œæ¶µè“‹å¸‚é›†ã€å·¥ä½œåŠã€å•†å ´æ´»å‹•åŠå¤œé–“é«”é©—ï¼Œå¹«ä½ åŒæ¯›å­©è¦åŠƒå®Œç¾Žé€±æœ«ã€‚"
+        question: "香港邊度有寵物活動？",
+        answer: "香港各區都有寵物友善活動，包括離島區（東涌寵物嘉年華）、元朗區（戶外普拉提、咖啡體驗）、將軍澳區（商場寵物活動）、港島區（灣仔光影樂園）等。PetWell每週更新全港寵物活動資訊，涵蓋市集、工作坊、商場活動及夜間體驗，幫你同毛孩規劃完美週末。"
       },
       {
-        question: "å¯µç‰©æ´»å‹•è¦å¹¾éŒ¢ï¼Ÿ",
-        answer: "å¯µç‰©æ´»å‹•è²»ç”¨å› æ´»å‹•è€Œç•°ã€‚éƒ¨åˆ†æ´»å‹•å¦‚æ±æ¶Œå¯µç‰©å˜‰å¹´è¯ã€å°‡è»æ¾³é–‹é‹å’Œæœè²“ã®æ—¥ä¿‚å…è²»å…¥å ´ï¼ˆéœ€ç¶²ä¸Šç™»è¨˜ï¼‰ã€‚éƒ¨åˆ†æ´»å‹•å¦‚å…ƒæœ—æˆ¶å¤–æ™®æ‹‰æéœ€ä»˜è²»ï¼ˆç´„HK$380ï¼‰ï¼Œç£ä»”Festilumiå…‰å½±æ¨‚åœ’æˆäººç¥¨HK$168èµ·ï¼Œä½†å¯µç‰©ç¥¨å…è²»ï¼ˆéœ€é è¨‚ï¼‰ã€‚å»ºè­°å‡ºç™¼å‰æŸ¥çœ‹æ´»å‹•è©³æƒ…ï¼Œäº†è§£è²»ç”¨å’Œå ±åæ–¹æ³•ã€‚"
+        question: "寵物活動要幾錢？",
+        answer: "寵物活動費用因活動而異。部分活動如東涌寵物嘉年華、將軍澳開運和服貓の日係免費入場（需網上登記）。部分活動如元朗戶外普拉提需付費（約HK$380），灣仔Festilumi光影樂園成人票HK$168起，但寵物票免費（需預訂）。建議出發前查看活動詳情，了解費用和報名方法。"
       }
     ]
   },
   {
     id: "17",
     slug: "pet-clothing-uniqlo-adidas-gap-hk-2026",
-    title: "ã€2026å¯µç‰©æœé£¾ã€‘Uniqloã€Adidasã€Gap å¯µç‰©è¡«è³¼è²·æ”»ç•¥ï½œå°ºå¯¸å°ç…§è¡¨ | PetWell HK",
-    excerpt: "æƒ³å¹«æ¯›å­©è²·éšè¡«ï¼Ÿ2026å¹´Uniqloã€Adidasã€Gapéƒ½æœ‰å¯µç‰©æœé£¾ï¼æœ¬æ–‡è©³è§£å„å“ç‰Œå°ºå¯¸å°ç…§è¡¨ã€è³¼è²·æ–¹æ³•ï¼Œæ•™ä½ é»žæ€å•±sizeå˜…å¯µç‰©è¡«ã€‚",
+    title: "【2026寵物服飾】Uniqlo、Adidas、Gap 寵物衫購買攻略｜尺寸對照表 | PetWell HK",
+    excerpt: "想幫毛孩買靚衫？2026年Uniqlo、Adidas、Gap都有寵物服飾！本文詳解各品牌尺寸對照表、購買方法，教你點揀啱size嘅寵物衫。",
     content: `
-      <h2>ðŸ‘• 2026å¹´å¯µç‰©æœé£¾ç†±æ½®ï¼Uniqloã€Adidasã€Gap å¯µç‰©è¡«è³¼è²·å…¨æ”»ç•¥</h2>
-      <p>è¿‘å¹´è¶Šä¾†è¶Šå¤šä¸»äººé¾æ„å¹«æ¯›å­©æ‰“æ‰®ï¼Œè€Œåœ‹éš›çŸ¥åå“ç‰Œå¦‚ Uniqloã€Adidasã€Gap éƒ½æŽ¨å‡ºå’—å¯µç‰©æœé£¾ç³»åˆ—ï¼æƒ³çŸ¥é“é»žæ¨£å¹«ç‹—ç‹—æ€å•±å°ºå¯¸å˜…è¡«ï¼Ÿå³ç‡ä»¥ä¸‹å…¨é¢æ”»ç•¥ï¼</p>
+      <h2>👕 2026年寵物服飾熱潮！Uniqlo、Adidas、Gap 寵物衫購買全攻略</h2>
+      <p>近年越來越多主人鍾意幫毛孩打扮，而國際知名品牌如 Uniqlo、Adidas、Gap 都推出咗寵物服飾系列！想知道點樣幫狗狗揀啱尺寸嘅衫？即睇以下全面攻略！</p>
 
-      <h2>ðŸª Uniqlo å¯µç‰©æœé£¾ â€”â€” ç”¨ BB è¡«ä»£æ›¿</h2>
-      <p>Uniqlo é›–ç„¶å†‡å®˜æ–¹<strong>å¯µç‰©æœé£¾</strong>ç·šï¼Œä½†å¥½å¤šä¸»äººéƒ½ç™¼ç¾ä½¢å“‹å˜… <strong>BB è¡«ï¼ˆ80cm-100cmï¼‰</strong> éžå¸¸é©åˆä¸­å°åž‹<strong>ç‹—ç‹—</strong>è‘—ç”¨ï¼<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼ŒUniqlo BBè¡«ä¿‚å¥½é¸æ“‡ã€‚</p>
+      <h2>🏪 Uniqlo 寵物服飾 —— 用 BB 衫代替</h2>
+      <p>Uniqlo 雖然冇官方<strong>寵物服飾</strong>線，但好多主人都發現佢哋嘅 <strong>BB 衫（80cm-100cm）</strong> 非常適合中小型<strong>狗狗</strong>著用！<strong>寵物服飾點揀</strong>時，Uniqlo BB衫係好選擇。</p>
       
-      <h2>ðŸ“ Uniqlo BB è¡«å°ºå¯¸å°ç…§è¡¨ï¼ˆé©ç”¨æ–¼ç‹—ç‹—ï¼‰ï¼šå¯µç‰©æœé£¾é»žæ€</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼ŒUniqlo BBè¡«<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸å°ç…§è¡¨ï¼š</p>
+      <h2>📏 Uniqlo BB 衫尺寸對照表（適用於狗狗）：寵物服飾點揀</h2>
+      <p>以下係<strong>寵物服飾點揀</strong>時，Uniqlo BB衫<strong>寵物服飾</strong>尺寸對照表：</p>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç‹—ç‹—é«”é‡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å»ºè­° Uniqlo å°ºå¯¸</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é©åˆå“ç¨®ä¾‹å­</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">狗狗體重</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">建議 Uniqlo 尺寸</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">適合品種例子</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">3-4kg</td>
               <td style="border: 1px solid #ddd; padding: 10px;">80cm</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">èŠå¨ƒå¨ƒã€ç´„ç‘Ÿçˆ¹åˆ©</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">芝娃娃、約瑟爹利</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">5-6kg</td>
               <td style="border: 1px solid #ddd; padding: 10px;">90cm</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">è²´å©¦ç‹—ã€æŸ´çŠ¬å¹¼çŠ¬</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">貴婦狗、柴犬幼犬</td>
             </tr>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">7-8kg</td>
               <td style="border: 1px solid #ddd; padding: 10px;">100cm</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æ³•é¬¥ã€å…«å“¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">法鬥、八哥</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">9-10kg+</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">110cm æˆ–ä»¥ä¸Š</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æŸ´çŠ¬æˆçŠ¬ã€å“¥åŸº</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">110cm 或以上</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">柴犬成犬、哥基</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h3>ðŸ“¸ çœŸå¯¦ç¤ºç¯„</h3>
-      <p style="font-size: 14px; color: #666; margin-bottom: 12px;">ðŸ“· åœ–ç‰‡ä¾†æºï¼š<a href="https://www.threads.net/@hidakwong" target="_blank" rel="noopener noreferrer" style="color: #1877F2; text-decoration: underline;">@hidakwong</a></p>
+      <h3>📸 真實示範</h3>
+      <p style="font-size: 14px; color: #666; margin-bottom: 12px;">📷 圖片來源：<a href="https://www.threads.net/@hidakwong" target="_blank" rel="noopener noreferrer" style="color: #1877F2; text-decoration: underline;">@hidakwong</a></p>
       <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
-        <img src="${uniqloPet1}" alt="Uniqlo BBè¡«å¯µç‰©ç¤ºç¯„ - åº—å…§æ¬¾å¼" style="width: 100%; max-width: 400px; border-radius: 12px;" />
-        <img src="${uniqloPet2}" alt="Uniqlo BBè¡«å¯µç‰©ç¤ºç¯„ - ç©¿è‘—æ•ˆæžœ" style="width: 100%; max-width: 400px; border-radius: 12px;" />
-        <img src="${uniqloPet3}" alt="Uniqlo BBè¡«å¯µç‰©ç¤ºç¯„ - ä¸åŒæ¬¾å¼å°æ¯”" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+        <img src="${uniqloPet1}" alt="Uniqlo BB衫寵物示範 - 店內款式" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+        <img src="${uniqloPet2}" alt="Uniqlo BB衫寵物示範 - 穿著效果" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+        <img src="${uniqloPet3}" alt="Uniqlo BB衫寵物示範 - 不同款式對比" style="width: 100%; max-width: 400px; border-radius: 12px;" />
       </div>
 
-      <h3>ðŸ’¡ è³¼è²·è²¼å£«</h3>
+      <h3>💡 購買貼士</h3>
       <ul>
-        <li>âœ… é¸æ“‡æœ‰å½ˆæ€§å˜…æ£‰è³ªææ–™</li>
-        <li>âœ… é¿å…æœ‰å¤ªå¤šéˆ•æ‰£æˆ–è£é£¾å˜…æ¬¾å¼</li>
-        <li>ðŸ“ è³¼è²·åœ°é»žï¼šUniqlo å„å¤§é–€å¸‚æˆ–å®˜ç¶²</li>
+        <li>✅ 選擇有彈性嘅棉質材料</li>
+        <li>✅ 避免有太多鈕扣或裝飾嘅款式</li>
+        <li>📍 購買地點：Uniqlo 各大門市或官網</li>
       </ul>
 
-      <h2>âš½ Adidas Originals å¯µç‰©æœé£¾é‹å‹•Tæ¤</h2>
-      <p>Adidas Originals æŽ¨å‡ºå’— <strong>æ–°å¹´é™å®šå¯µç‰©æœé£¾é‹å‹•Tæ¤</strong>ï¼Œè¨­è¨ˆæ™‚å°šåˆå¯¦ç”¨ï¼<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼ŒAdidas<strong>å¯µç‰©æœé£¾</strong>ä¿‚å¥½é¸æ“‡ã€‚</p>
+      <h2>⚽ Adidas Originals 寵物服飾運動T恤</h2>
+      <p>Adidas Originals 推出咗 <strong>新年限定寵物服飾運動T恤</strong>，設計時尚又實用！<strong>寵物服飾點揀</strong>時，Adidas<strong>寵物服飾</strong>係好選擇。</p>
       
       <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
-        <img src="${adidasPetRed}" alt="Adidas Originals å¯µç‰©Tæ¤ - ç´…è‰²" style="width: 100%; max-width: 400px; border-radius: 12px;" />
-        <img src="${adidasPetYellow}" alt="Adidas Originals å¯µç‰©Tæ¤ - é»ƒè‰²" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+        <img src="${adidasPetRed}" alt="Adidas Originals 寵物T恤 - 紅色" style="width: 100%; max-width: 400px; border-radius: 12px;" />
+        <img src="${adidasPetYellow}" alt="Adidas Originals 寵物T恤 - 黃色" style="width: 100%; max-width: 400px; border-radius: 12px;" />
       </div>
       
-      <h3>ðŸ“ å°ºå¯¸åƒè€ƒ</h3>
-      <img src="${adidasPetExamples}" alt="Adidas å¯µç‰©Tæ¤å°ºå¯¸åƒè€ƒ - çœŸå¯¦å¯µç‰©ç¤ºç¯„" style="width: 100%; max-width: 800px; border-radius: 12px; margin: 20px 0;" />
+      <h3>📏 尺寸參考</h3>
+      <img src="${adidasPetExamples}" alt="Adidas 寵物T恤尺寸參考 - 真實寵物示範" style="width: 100%; max-width: 800px; border-radius: 12px; margin: 20px 0;" />
       
-      <h3>ðŸ“ å®˜æ–¹å°ºç¢¼è¡¨</h3>
-      <img src="${adidasPetSizeChart}" alt="Adidas å¯µç‰©Tæ¤å®˜æ–¹å°ºç¢¼è¡¨" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
+      <h3>📐 官方尺碼表</h3>
+      <img src="${adidasPetSizeChart}" alt="Adidas 寵物T恤官方尺碼表" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
 
-      <h3>ðŸ›’ è³¼è²·æ–¹æ³•</h3>
+      <h3>🛒 購買方法</h3>
       <ul>
-        <li>ðŸ›ï¸ æ­¤ç‚ºä¸Šæµ·é™å®šç™¼å”®æ¬¾å¼ï¼Œå»ºè­°æµ <strong>ä»£è³¼</strong> å¹«æ‰‹è³¼è²·</li>
-        <li>ðŸ“± å¯æ–¼ <strong>WeChat å°ç¨‹å¼</strong> æœå°‹ Adidas å®˜ç¶²ä¸‹å–®</li>
-        <li>ðŸ“¦ ä¸‹å–®å¾Œå¯„åˆ° <strong>é›†é‹å€‰</strong>ï¼Œå†è½‰é‹åˆ°é¦™æ¸¯</li>
+        <li>🛍️ 此為上海限定發售款式，建議搵 <strong>代購</strong> 幫手購買</li>
+        <li>📱 可於 <strong>WeChat 小程式</strong> 搜尋 Adidas 官網下單</li>
+        <li>📦 下單後寄到 <strong>集運倉</strong>，再轉運到香港</li>
       </ul>
 
-      <h2>ðŸ‘– Gap Logo å¯µç‰©æœé£¾è¡›è¡£</h2>
-      <p>Gap å˜…ç¶“å…¸ Logo <strong>å¯µç‰©æœé£¾</strong>è¡›è¡£è¨­è¨ˆç°¡ç´„åˆæ˜“è¥¯ï¼<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼ŒGap<strong>å¯µç‰©æœé£¾</strong>ä¿‚å¥½é¸æ“‡ã€‚</p>
+      <h2>👖 Gap Logo 寵物服飾衛衣</h2>
+      <p>Gap 嘅經典 Logo <strong>寵物服飾</strong>衛衣設計簡約又易襯！<strong>寵物服飾點揀</strong>時，Gap<strong>寵物服飾</strong>係好選擇。</p>
       
-      <img src="${blogGapPetHoodie}" alt="Gap Logo å¯µç‰©é€£å¸½ä¸Šè¡£" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
+      <img src="${blogGapPetHoodie}" alt="Gap Logo 寵物連帽上衣" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
       
-      <h3>ðŸŽ¨ é¡è‰²é¸æ“‡</h3>
+      <h3>🎨 顏色選擇</h3>
       <ul>
-        <li>âšª ç´”ç™½è‰²</li>
-        <li>âš« ç¶“å…¸é»‘è‰²</li>
-        <li>ðŸ”µ æµ·è»è—</li>
-        <li>ðŸ”´ é…’ç´…è‰²</li>
+        <li>⚪ 純白色</li>
+        <li>⚫ 經典黑色</li>
+        <li>🔵 海軍藍</li>
+        <li>🔴 酒紅色</li>
       </ul>
 
-      <h3>ðŸ“ Gap å¯µç‰©è¡›è¡£å°ºå¯¸</h3>
+      <h3>📏 Gap 寵物衛衣尺寸</h3>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å°ºå¯¸</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é©åˆé«”é‡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é©åˆå“ç¨®</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">尺寸</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">適合體重</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">適合品種</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">XS</td>
               <td style="border: 1px solid #ddd; padding: 10px;">1-3kg</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">èŠå¨ƒå¨ƒã€çŽ©å…·è²´å©¦</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">芝娃娃、玩具貴婦</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">S</td>
               <td style="border: 1px solid #ddd; padding: 10px;">3-5kg</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç´„ç‘Ÿçˆ¹åˆ©ã€æ¯”ç†Š</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">約瑟爹利、比熊</td>
             </tr>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">M</td>
               <td style="border: 1px solid #ddd; padding: 10px;">5-8kg</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æ³•é¬¥ã€å…«å“¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">法鬥、八哥</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">L</td>
               <td style="border: 1px solid #ddd; padding: 10px;">8-15kg</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æŸ´çŠ¬ã€å“¥åŸº</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">柴犬、哥基</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h3>ðŸ›’ è³¼è²·æ–¹æ³•</h3>
+      <h3>🛒 購買方法</h3>
       <ul>
-        <li>ðŸ›ï¸ å»ºè­°æµ <strong>ä»£è³¼</strong> å¹«æ‰‹è³¼è²·</li>
-        <li>ðŸ“± å¯æ–¼ <strong>WeChat å°ç¨‹å¼</strong> æœå°‹ç›¸é—œä»£è³¼åº—é‹ªä¸‹å–®</li>
-        <li>ðŸ“¦ ä¸‹å–®å¾Œå¯„åˆ° <strong>é›†é‹å€‰</strong>ï¼Œå†è½‰é‹åˆ°é¦™æ¸¯</li>
+        <li>🛍️ 建議搵 <strong>代購</strong> 幫手購買</li>
+        <li>📱 可於 <strong>WeChat 小程式</strong> 搜尋相關代購店鋪下單</li>
+        <li>📦 下單後寄到 <strong>集運倉</strong>，再轉運到香港</li>
       </ul>
 
-      <h2>ðŸ“Š ä¸‰å¤§å“ç‰Œæ¯”è¼ƒè¡¨</h2>
+      <h2>📊 三大品牌比較表</h2>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å“ç‰Œ</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å°ºå¯¸é¸æ“‡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é¢¨æ ¼</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">è³¼è²·æ–¹æ³•</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">品牌</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">尺寸選擇</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">風格</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">購買方法</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">Uniqlo</td>
               <td style="border: 1px solid #ddd; padding: 10px;">80-110cm</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç°¡ç´„æ—¥ç³»</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">é–€å¸‚æœ‰å”®</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">簡約日系</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">門市有售</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">Adidas</td>
               <td style="border: 1px solid #ddd; padding: 10px;">XS-2XL</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">é‹å‹•æ½®æµ</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä»£è³¼ + é›†é‹</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">運動潮流</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">代購 + 集運</td>
             </tr>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">Gap</td>
               <td style="border: 1px solid #ddd; padding: 10px;">XS-L</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç¾Žå¼ä¼‘é–’</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä»£è³¼ + é›†é‹</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">美式休閒</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">代購 + 集運</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>ðŸ“ å¯µç‰©æœé£¾é»žæ€ï¼Ÿé»žæ¨£å¹«ç‹—ç‹—åº¦èº«ï¼Ÿ</h2>
-      <p>è²·<strong>å¯µç‰©æœé£¾</strong>æœ€é‡è¦ä¿‚é‡åº¦æº–ç¢ºï¼<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œä»¥ä¸‹ä¿‚ä¸‰å€‹é—œéµå°ºå¯¸ï¼š</p>
+      <h2>📐 寵物服飾點揀？點樣幫狗狗度身？</h2>
+      <p>買<strong>寵物服飾</strong>最重要係量度準確！<strong>寵物服飾點揀</strong>時，以下係三個關鍵尺寸：</p>
       
-      <h3>1ï¸âƒ£ èƒ¸åœï¼šå¯µç‰©æœé£¾é»žæ€é—œéµå°ºå¯¸</h3>
-      <p>ç”¨è»Ÿå°ºé‡åº¦<strong>ç‹—ç‹—</strong>å‰è…¿å¾Œé¢ã€èƒ¸éƒ¨æœ€é—Šå˜…ä½ç½®ç’°ç¹žä¸€åœˆï¼Œ<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚æœ€é‡è¦ã€‚</p>
+      <h3>1️⃣ 胸圍：寵物服飾點揀關鍵尺寸</h3>
+      <p>用軟尺量度<strong>狗狗</strong>前腿後面、胸部最闊嘅位置環繞一圈，<strong>寵物服飾點揀</strong>時最重要。</p>
       
-      <h3>2ï¸âƒ£ èƒŒé•·ï¼šå¯µç‰©æœé£¾é»žæ€é—œéµå°ºå¯¸</h3>
-      <p>ç”±<strong>ç‹—ç‹—</strong>é ¸éƒ¨åº•éƒ¨ï¼ˆè¡«é ˜ä½ç½®ï¼‰é‡åˆ°<strong>ç‹—ç‹—</strong>å°¾å·´æ ¹éƒ¨ï¼Œ<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚å¿…éœ€ã€‚</p>
+      <h3>2️⃣ 背長：寵物服飾點揀關鍵尺寸</h3>
+      <p>由<strong>狗狗</strong>頸部底部（衫領位置）量到<strong>狗狗</strong>尾巴根部，<strong>寵物服飾點揀</strong>時必需。</p>
       
-      <h3>3ï¸âƒ£ é ¸åœï¼šå¯µç‰©æœé£¾é»žæ€é—œéµå°ºå¯¸</h3>
-      <p>é‡åº¦<strong>ç‹—ç‹—</strong>é ¸éƒ¨æœ€ç²—å˜…ä½ç½®ï¼Œé€šå¸¸ä¿‚<strong>ç‹—ç‹—</strong>é ¸é …åº•éƒ¨ï¼Œ<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚æ‡‰æ³¨æ„ã€‚</p>
+      <h3>3️⃣ 頸圍：寵物服飾點揀關鍵尺寸</h3>
+      <p>量度<strong>狗狗</strong>頸部最粗嘅位置，通常係<strong>狗狗</strong>頸項底部，<strong>寵物服飾點揀</strong>時應注意。</p>
 
-      <h2>ðŸ’¡ å¯µç‰©æœé£¾é»žæ€åº¦èº«å°è²¼å£«</h2>
-      <p><strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œä»¥ä¸‹ä¿‚åº¦èº«å°è²¼å£«ï¼š</p>
+      <h2>💡 寵物服飾點揀度身小貼士</h2>
+      <p><strong>寵物服飾點揀</strong>時，以下係度身小貼士：</p>
       <ul>
-        <li>âœ… <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œæ‰€æœ‰å°ºå¯¸å»ºè­° <strong>åŠ  2-3cm</strong> é ç•™<strong>ç‹—ç‹—</strong>æ´»å‹•ç©ºé–“</li>
-        <li>âœ… <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œå¦‚æžœå–ºå…©å€‹å°ºå¯¸ä¹‹é–“ï¼Œå»ºè­°é¸æ“‡è¼ƒå¤§å˜…<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸</li>
-        <li>âœ… <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œèƒ¸åœä¿‚æœ€é‡è¦å˜…å°ºå¯¸ï¼Œä¸€å®šè¦é‡æº–ï¼</li>
-        <li>âš ï¸ <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œæ³•é¬¥ã€å…«å“¥ç­‰å“ç¨®èƒ¸åœè¼ƒé—Šï¼Œè¨˜å¾—é ç•™æ›´å¤š<strong>å¯µç‰©æœé£¾</strong>ç©ºé–“</li>
+        <li>✅ <strong>寵物服飾點揀</strong>時，所有尺寸建議 <strong>加 2-3cm</strong> 預留<strong>狗狗</strong>活動空間</li>
+        <li>✅ <strong>寵物服飾點揀</strong>時，如果喺兩個尺寸之間，建議選擇較大嘅<strong>寵物服飾</strong>尺寸</li>
+        <li>✅ <strong>寵物服飾點揀</strong>時，胸圍係最重要嘅尺寸，一定要量準！</li>
+        <li>⚠️ <strong>寵物服飾點揀</strong>時，法鬥、八哥等品種胸圍較闊，記得預留更多<strong>寵物服飾</strong>空間</li>
       </ul>
 
-      <h2>âš ï¸ å¯µç‰©æœé£¾è³¼è²·æ³¨æ„äº‹é …</h2>
-      <p>è³¼è²·<strong>å¯µç‰©æœé£¾</strong>æ™‚ï¼Œæ‡‰æ³¨æ„ä»¥ä¸‹äº‹é …ï¼š</p>
+      <h2>⚠️ 寵物服飾購買注意事項</h2>
+      <p>購買<strong>寵物服飾</strong>時，應注意以下事項：</p>
       <ul>
-        <li>ðŸ• å””ä¿‚æ‰€æœ‰<strong>ç‹—ç‹—</strong>éƒ½é©åˆè‘—<strong>å¯µç‰©æœé£¾</strong>ï¼Œéƒ¨åˆ†<strong>ç‹—ç‹—</strong>æœƒæ„Ÿåˆ°ä¸é©</li>
-        <li>ðŸŒ¡ï¸ é¦™æ¸¯å¤©æ°£æ¿•ç†±ï¼Œé¿å…<strong>ç‹—ç‹—</strong>é•·æ™‚é–“è‘—ä½<strong>å¯µç‰©æœé£¾</strong></li>
-        <li>ðŸ‘€ <strong>ç‹—ç‹—</strong>ç¬¬ä¸€æ¬¡è‘—<strong>å¯µç‰©æœé£¾</strong>è¦ç•™æ„<strong>ç‹—ç‹—</strong>åæ‡‰</li>
-        <li>ðŸ§¼ å®šæœŸæ¸…æ´—<strong>å¯µç‰©æœé£¾</strong>ï¼Œä¿æŒ<strong>å¯µç‰©æœé£¾</strong>è¡›ç”Ÿ</li>
-        <li>ðŸ“ <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œå””åŒå“ç‰Œ<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸æœ‰å·®ç•°ï¼Œå»ºè­°åƒè€ƒå¯¦éš›å°ºå¯¸è€Œéžåªç‡ S/M/L</li>
+        <li>🐕 唔係所有<strong>狗狗</strong>都適合著<strong>寵物服飾</strong>，部分<strong>狗狗</strong>會感到不適</li>
+        <li>🌡️ 香港天氣濕熱，避免<strong>狗狗</strong>長時間著住<strong>寵物服飾</strong></li>
+        <li>👀 <strong>狗狗</strong>第一次著<strong>寵物服飾</strong>要留意<strong>狗狗</strong>反應</li>
+        <li>🧼 定期清洗<strong>寵物服飾</strong>，保持<strong>寵物服飾</strong>衛生</li>
+        <li>📏 <strong>寵物服飾點揀</strong>時，唔同品牌<strong>寵物服飾</strong>尺寸有差異，建議參考實際尺寸而非只睇 S/M/L</li>
       </ul>
 
-      <h2>ðŸ’¡ å¯µç‰©æœé£¾å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: å¯µç‰©æœé£¾é»žæ€ï¼Ÿ</strong></p>
-      <p>A: <strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚ï¼Œæ‡‰å…ˆé‡åº¦<strong>ç‹—ç‹—</strong>èƒ¸åœã€èƒŒé•·ã€é ¸åœï¼Œåƒè€ƒ<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸å°ç…§è¡¨ï¼Œé¸æ“‡åˆé©çš„<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸ã€‚å»ºè­°é¸æ“‡æœ‰å½ˆæ€§ã€é€æ°£çš„<strong>å¯µç‰©æœé£¾</strong>ææ–™ã€‚</p>
+      <h2>💡 寵物服飾常見問題</h2>
+      <p><strong>Q: 寵物服飾點揀？</strong></p>
+      <p>A: <strong>寵物服飾點揀</strong>時，應先量度<strong>狗狗</strong>胸圍、背長、頸圍，參考<strong>寵物服飾</strong>尺寸對照表，選擇合適的<strong>寵物服飾</strong>尺寸。建議選擇有彈性、透氣的<strong>寵物服飾</strong>材料。</p>
       
-      <p><strong>Q: é»žæ¨£å¹«ç‹—ç‹—é¸æ“‡åˆé©å°ºå¯¸çš„å¯µç‰©æœé£¾ï¼Ÿ</strong></p>
-      <p>A: å¹«<strong>ç‹—ç‹—</strong>é¸æ“‡<strong>å¯µç‰©æœé£¾</strong>æ™‚ï¼Œä¸»è¦æ¸¬é‡<strong>ç‹—ç‹—</strong>é ¸åœã€èƒ¸åœå’ŒèƒŒé•·ã€‚ç¢ºä¿<strong>å¯µç‰©æœé£¾</strong>ä¸æœƒéŽç·Šæˆ–éŽé¬†ï¼Œå½±éŸ¿<strong>ç‹—ç‹—</strong>æ´»å‹•æˆ–é€ æˆä¸é©ã€‚ä¸åŒå“ç‰Œ<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸æ¨™æº–ä¸åŒï¼Œå»ºè­°åƒè€ƒå„å“ç‰Œçš„<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸å°ç…§è¡¨ã€‚</p>
+      <p><strong>Q: 點樣幫狗狗選擇合適尺寸的寵物服飾？</strong></p>
+      <p>A: 幫<strong>狗狗</strong>選擇<strong>寵物服飾</strong>時，主要測量<strong>狗狗</strong>頸圍、胸圍和背長。確保<strong>寵物服飾</strong>不會過緊或過鬆，影響<strong>狗狗</strong>活動或造成不適。不同品牌<strong>寵物服飾</strong>尺寸標準不同，建議參考各品牌的<strong>寵物服飾</strong>尺寸對照表。</p>
       
-      <p><strong>Q: Uniqloæœ‰å¯µç‰©æœé£¾è³£å—Žï¼Ÿ</strong></p>
-      <p>A: Uniqloç›®å‰æ²’æœ‰å®˜æ–¹<strong>å¯µç‰©æœé£¾</strong>ç³»åˆ—ï¼Œä½†è¨±å¤šä¸»äººç™¼ç¾å…¶BBè¡«ï¼ˆ80cm-100cmï¼‰éžå¸¸é©åˆä¸­å°åž‹<strong>ç‹—ç‹—</strong>ç©¿è‘—ã€‚å¯åƒè€ƒæ–‡ç« ä¸­çš„<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸å°ç…§è¡¨ï¼Œæ ¹æ“š<strong>ç‹—ç‹—</strong>é«”é‡é¸æ“‡åˆé©çš„BBè¡«å°ºå¯¸ã€‚</p>
+      <p><strong>Q: Uniqlo有寵物服飾賣嗎？</strong></p>
+      <p>A: Uniqlo目前沒有官方<strong>寵物服飾</strong>系列，但許多主人發現其BB衫（80cm-100cm）非常適合中小型<strong>狗狗</strong>穿著。可參考文章中的<strong>寵物服飾</strong>尺寸對照表，根據<strong>狗狗</strong>體重選擇合適的BB衫尺寸。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong>æƒ³å¹«<strong>æ¯›å­©</strong>è²·éš<strong>å¯µç‰©æœé£¾</strong>ï¼Œè¨˜å¾—å…ˆåº¦å¥½<strong>æ¯›å­©</strong>èº«ã€åƒè€ƒ<strong>å¯µç‰©æœé£¾</strong>å°ºå¯¸è¡¨ï¼Œ<strong>å¯µç‰©æœé£¾é»žæ€</strong>æ™‚æ€å•±sizeå…ˆä¿‚æœ€ç·Šè¦ï¼å¸Œæœ›å‘¢ç¯‡<strong>å¯µç‰©æœé£¾</strong>æ”»ç•¥å¹«åˆ°ä½ åŒ<strong>æ¯›å­©</strong>æµåˆ°æœ€å•±å˜…<strong>å¯µç‰©æœé£¾</strong>ï¼</p>
+      <p>🐾 <strong>總結：</strong>想幫<strong>毛孩</strong>買靚<strong>寵物服飾</strong>，記得先度好<strong>毛孩</strong>身、參考<strong>寵物服飾</strong>尺寸表，<strong>寵物服飾點揀</strong>時揀啱size先係最緊要！希望呢篇<strong>寵物服飾</strong>攻略幫到你同<strong>毛孩</strong>搵到最啱嘅<strong>寵物服飾</strong>！</p>
     `,
     author: "PetWell HK",
     date: "2026-02-01",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogPetClothing
   },
   {
     id: "16",
     slug: "dog-ear-smell-causes-treatment-guide-hk",
-    title: "ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³é»žç®—å¥½ï¼Ÿç‹—ç‹—è€³ç‚Žã€é…µæ¯èŒæ„ŸæŸ“æˆå› èˆ‡é é˜²å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³é»žç®—å¥½ï¼Ÿç‹—ç‹—è€³ä»”ç™¼å‡ºç•°å‘³å¯èƒ½ä¿‚ç‹—ç‹—è€³ç‚Žã€é…µæ¯èŒæˆ–ç´°èŒæ„ŸæŸ“è­¦è™Ÿã€‚æœ¬æ–‡è©³è§£ç‹—ç‹—è€³æœµè‡­å‘³æˆå› ã€ç‹—ç‹—è€³ç‚Žè™•ç†æ–¹æ³•ã€ç‹—ç‹—è€³æœµæ¸…æ½”æŠ€å·§åŠé é˜²è²¼å£«ï¼Œæ•™ä½ åŠæ—©ç™¼ç¾ç‹—ç‹—è€³éƒ¨å•é¡Œï¼Œå®ˆè­·æ¯›å­©è€³æœµå¥åº·ã€‚",
+    title: "狗狗耳仔有臭味點算好？狗狗耳炎、酵母菌感染成因與預防全攻略 | PetWell HK",
+    excerpt: "狗狗耳仔有臭味點算好？狗狗耳仔發出異味可能係狗狗耳炎、酵母菌或細菌感染警號。本文詳解狗狗耳朵臭味成因、狗狗耳炎處理方法、狗狗耳朵清潔技巧及預防貼士，教你及早發現狗狗耳部問題，守護毛孩耳朵健康。",
     content: `
-      <h2>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³é»žç®—å¥½ï¼Ÿç‹—ç‹—è€³ç‚Žå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡è©¦éŽèžåˆ°<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ï¼Ÿé›–ç„¶æœ‰æ™‚å¯èƒ½åªä¿‚è€³åž¢ï¼Œä½†æœ‰æ©Ÿæœƒä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€é…µæ¯èŒæ„ŸæŸ“ï¼Œç”šè‡³æ›´åš´é‡å˜…å•é¡Œã€‚<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ä¿‚å¸¸è¦‹å¥åº·è­¦è™Ÿï¼ŒåŠæ—©ç™¼ç¾å’Œè™•ç†<strong>ç‹—ç‹—è€³ç‚Ž</strong>å¯ä»¥é¿å…åš´é‡å¾Œæžœã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>çš„åŽŸå› ã€<strong>ç‹—ç‹—è€³ç‚Ž</strong>çš„è™•ç†æ–¹æ³•ï¼Œä»¥åŠå¦‚ä½•é é˜²<strong>ç‹—ç‹—è€³æœµ</strong>å•é¡Œã€‚</p>
+      <h2>狗狗耳仔有臭味點算好？狗狗耳炎完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇試過聞到<strong>狗狗耳仔有臭味</strong>？雖然有時可能只係耳垢，但有機會係<strong>狗狗耳炎</strong>、酵母菌感染，甚至更嚴重嘅問題。<strong>狗狗耳仔有臭味</strong>係常見健康警號，及早發現和處理<strong>狗狗耳炎</strong>可以避免嚴重後果。本文為你詳細講解<strong>狗狗耳仔有臭味</strong>的原因、<strong>狗狗耳炎</strong>的處理方法，以及如何預防<strong>狗狗耳朵</strong>問題。</p>
       
-      <h2>ðŸ¶ ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³ï¼Ÿèžåˆ°é™£å‘³å°±è¦ç•™æ„ï¼</h2>
-      <p>ä½ æœ‰å†‡è©¦éŽèžåˆ°<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ï¼Ÿé›–ç„¶æœ‰æ™‚å¯èƒ½åªä¿‚è€³åž¢ï¼Œä½†æœ‰æ©Ÿæœƒä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€é…µæ¯èŒæ„ŸæŸ“ï¼Œç”šè‡³æ›´åš´é‡å˜…å•é¡Œã€‚</p>
+      <h2>🐶 狗狗耳仔有臭味？聞到陣味就要留意！</h2>
+      <p>你有冇試過聞到<strong>狗狗耳仔有臭味</strong>？雖然有時可能只係耳垢，但有機會係<strong>狗狗耳炎</strong>、酵母菌感染，甚至更嚴重嘅問題。</p>
 
-      <h2>ðŸ‘ƒ é»žè§£ç‹—ç‹—è€³ä»”æœƒç™¼è‡­ï¼Ÿç‹—ç‹—è€³ç‚Žå¸¸è¦‹åŽŸå› </h2>
-      <p>ç•¶ä½ ç™¼ç¾<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ï¼Œå¯èƒ½ä¿‚ä»¥ä¸‹åŽŸå› å°Žè‡´<strong>ç‹—ç‹—è€³ç‚Ž</strong>ï¼š</p>
+      <h2>👃 點解狗狗耳仔會發臭？狗狗耳炎常見原因</h2>
+      <p>當你發現<strong>狗狗耳仔有臭味</strong>，可能係以下原因導致<strong>狗狗耳炎</strong>：</p>
       <ul>
-        <li><strong>è€³åž¢ç©èšï¼š</strong>é»ƒè‰²è€³åž¢å¦‚æžœæ¸…å””åˆ°ï¼Œå°±æœƒç”¢ç”Ÿç•°å‘³ï¼Œå°Žè‡´<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ã€‚</li>
-        <li><strong>é…µæ¯èŒæ„ŸæŸ“ï¼š</strong>æœ‰ã€Œç„—ç²Ÿç±³ç‰‡å‘³ã€ï¼Œ<strong>ç‹—ç‹—è€³æœµ</strong>ç´…è…«ã€æœ‰å•¡è‰²åˆ†æ³Œç‰©ï¼Œä¿‚å¸¸è¦‹<strong>ç‹—ç‹—è€³ç‚Ž</strong>é¡žåž‹ã€‚</li>
-        <li><strong>ç´°èŒæ„ŸæŸ“ï¼š</strong>åš´é‡æ™‚ï¼Œä¼é å°‘å°‘éƒ½èžåˆ°<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ï¼Œ<strong>ç‹—ç‹—è€³é“</strong>å¯èƒ½æ½°çˆ›æµè†¿ã€‚</li>
-        <li><strong>æ··åˆåž‹è€³ç‚Žï¼š</strong>é…µæ¯èŒ + ç´°èŒä¸€é½Šç™¼ä½œï¼Œå¥½å¸¸è¦‹<strong>ç‹—ç‹—è€³ç‚Ž</strong>é¡žåž‹ï¼Œéœ€è¦ç¸é†«è™•ç†ã€‚</li>
+        <li><strong>耳垢積聚：</strong>黃色耳垢如果清唔到，就會產生異味，導致<strong>狗狗耳仔有臭味</strong>。</li>
+        <li><strong>酵母菌感染：</strong>有「焗粟米片味」，<strong>狗狗耳朵</strong>紅腫、有啡色分泌物，係常見<strong>狗狗耳炎</strong>類型。</li>
+        <li><strong>細菌感染：</strong>嚴重時，企遠少少都聞到<strong>狗狗耳仔有臭味</strong>，<strong>狗狗耳道</strong>可能潰爛流膿。</li>
+        <li><strong>混合型耳炎：</strong>酵母菌 + 細菌一齊發作，好常見<strong>狗狗耳炎</strong>類型，需要獸醫處理。</li>
       </ul>
 
-      <h2>ðŸ§¼ é»žæ¨£è™•ç†ç‹—ç‹—è‡­è€³ä»”ï¼Ÿç‹—ç‹—è€³ç‚Žæ²»ç™‚æ–¹æ³•</h2>
-      <p>å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ï¼Œæ‡‰æ ¹æ“š<strong>ç‹—ç‹—è€³ç‚Ž</strong>åš´é‡ç¨‹åº¦è™•ç†ï¼š</p>
+      <h2>🧼 點樣處理狗狗臭耳仔？狗狗耳炎治療方法</h2>
+      <p>如果發現<strong>狗狗耳仔有臭味</strong>，應根據<strong>狗狗耳炎</strong>嚴重程度處理：</p>
       <ul>
-        <li>âœ… è¼•å¾®è€³åž¢ï¼šç”¨ç¸é†«æŽ¨è–¦è€³æ°´æ¸…æ½”ã€‚</li>
-        <li>âœ‚ï¸ è€³æ¯›å¤šï¼šå¯æµç¾Žå®¹å¸«ä¿®å‰ªæ¸›å°‘è€³åž¢ç©èšã€‚</li>
-        <li>ðŸš« å¦‚æžœæœ‰ç´…è…«ã€ç—›æ¥šã€åˆ†æ³Œç‰©ï¼šå””å¥½è‡ªå·±æ¸…ï¼Œæ‡‰è©²å³åˆ»ç‡ç¸é†«ï¼</li>
+        <li>✅ 輕微耳垢：用獸醫推薦耳水清潔。</li>
+        <li>✂️ 耳毛多：可搵美容師修剪減少耳垢積聚。</li>
+        <li>🚫 如果有紅腫、痛楚、分泌物：唔好自己清，應該即刻睇獸醫！</li>
       </ul>
 
-      <h3>â“ æ‡‰å””æ‡‰è©²å®šæœŸæ¸…è€³ï¼Ÿ</h3>
-      <p>ç‹—ç‹—è€³ä»”æœ¬èº«æœ‰è‡ªæˆ‘æ¸…æ½”æ©Ÿåˆ¶ï¼Œé™¤éžï¼š</p>
+      <h3>❓ 應唔應該定期清耳？</h3>
+      <p>狗狗耳仔本身有自我清潔機制，除非：</p>
       <ul>
-        <li>è€³ä»”æ˜Žé¡¯æ±¡ç³Ÿ</li>
-        <li>æ¸¸å®Œæ°´ / æ²–å®Œæ¶¼</li>
-        <li>ç¸é†«æŒ‡ç¤ºä¸‹é€²è¡Œæ²»ç™‚</li>
+        <li>耳仔明顯污糟</li>
+        <li>游完水 / 沖完涼</li>
+        <li>獸醫指示下進行治療</li>
       </ul>
-      <p>âš ï¸ <strong>å””å¥½ç”¨ï¼š</strong>é›™æ°§æ°´ã€é†‹ã€é…’ç²¾è‡ªè£½è€³æ°´<br>
-         âš ï¸ <strong>å””å¥½ç”¨ï¼š</strong>æ£‰èŠ±æ£’æ·±å…¥è€³é“ï¼Œå¯èƒ½æŽ¨æ·±è€³åž¢ã€‚</p>
+      <p>⚠️ <strong>唔好用：</strong>雙氧水、醋、酒精自製耳水<br>
+         ⚠️ <strong>唔好用：</strong>棉花棒深入耳道，可能推深耳垢。</p>
 
-      <h2>ðŸ›¡ å¦‚ä½•é é˜²ç‹—ç‹—è€³ä»”ç™¼è‡­ï¼Ÿç‹—ç‹—è€³ç‚Žé é˜²æŒ‡å—</h2>
-      <p>é é˜²<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>å’Œ<strong>ç‹—ç‹—è€³ç‚Ž</strong>ï¼Œå»ºè­°æŽ¡å–ä»¥ä¸‹æŽªæ–½ï¼š</p>
+      <h2>🛡 如何預防狗狗耳仔發臭？狗狗耳炎預防指南</h2>
+      <p>預防<strong>狗狗耳仔有臭味</strong>和<strong>狗狗耳炎</strong>，建議採取以下措施：</p>
       <ul>
-        <li>âœ… æ¯æ˜ŸæœŸæª¢æŸ¥ä¸€æ¬¡<strong>ç‹—ç‹—è€³æœµ</strong>ï¼ŒåŠæ—©ç™¼ç¾<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong></li>
-        <li>ðŸ‘‚ ç•™æ„<strong>ç‹—ç‹—è€³æœµ</strong>ç•°å‘³ã€åˆ†æ³Œç‰©ã€ç´…è…«ã€æŠ“è€³ã€ç”©é ­ç­‰<strong>ç‹—ç‹—è€³ç‚Ž</strong>ç—‡ç‹€</li>
-        <li>ðŸš¿ æ²–æ¶¼æˆ–æ¸¸æ°´å¾Œå¹«<strong>ç‹—ç‹—</strong>æŠ¹ä¹¾<strong>è€³æœµ</strong>ï¼Œé¿å…<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
-        <li>âœ‚ï¸ å®šæœŸä¿®<strong>ç‹—ç‹—</strong>è€³æ¯›ï¼ˆå°¤å…¶ä¿‚<strong>ç‹—ç‹—è€³é“</strong>çª„å˜…å“ç¨®ï¼‰ï¼Œæ¸›å°‘<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>æ©Ÿæœƒ</li>
-        <li>ðŸŒ¿ æœ‰æ•æ„Ÿé«”è³ªå˜…<strong>ç‹—ç‹—</strong>è¦æŽ§åˆ¶é£²é£Ÿ / ç”¨è—¥ï¼Œé é˜²<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
-        <li>ðŸ§´ æä¾›è¶³å¤  omega è„‚è‚ªé…¸ï¼Œå¼·åŒ–<strong>ç‹—ç‹—</strong>çš®è†šå±éšœï¼Œé™ä½Ž<strong>ç‹—ç‹—è€³ç‚Ž</strong>é¢¨éšª</li>
+        <li>✅ 每星期檢查一次<strong>狗狗耳朵</strong>，及早發現<strong>狗狗耳仔有臭味</strong></li>
+        <li>👂 留意<strong>狗狗耳朵</strong>異味、分泌物、紅腫、抓耳、甩頭等<strong>狗狗耳炎</strong>症狀</li>
+        <li>🚿 沖涼或游水後幫<strong>狗狗</strong>抹乾<strong>耳朵</strong>，避免<strong>狗狗耳炎</strong></li>
+        <li>✂️ 定期修<strong>狗狗</strong>耳毛（尤其係<strong>狗狗耳道</strong>窄嘅品種），減少<strong>狗狗耳仔有臭味</strong>機會</li>
+        <li>🌿 有敏感體質嘅<strong>狗狗</strong>要控制飲食 / 用藥，預防<strong>狗狗耳炎</strong></li>
+        <li>🧴 提供足夠 omega 脂肪酸，強化<strong>狗狗</strong>皮膚屏障，降低<strong>狗狗耳炎</strong>風險</li>
       </ul>
 
-      <h2>ðŸ’¡ ç‹—ç‹—è€³ç‚Žå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³ä¿‚å’ªä¸€å®šä¿‚ç‹—ç‹—è€³ç‚Žï¼Ÿ</strong></p>
-      <p>A: <strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>å¯èƒ½ä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>ï¼Œä½†äº¦å¯èƒ½ä¿‚è€³åž¢ç©èšã€‚å¦‚æžœ<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ä¼´éš¨ç´…è…«ã€åˆ†æ³Œç‰©ã€æŠ“è€³ç­‰ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶å¾€ç¸é†«æª¢æŸ¥<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€‚</p>
+      <h2>💡 狗狗耳炎常見問題</h2>
+      <p><strong>Q: 狗狗耳仔有臭味係咪一定係狗狗耳炎？</strong></p>
+      <p>A: <strong>狗狗耳仔有臭味</strong>可能係<strong>狗狗耳炎</strong>，但亦可能係耳垢積聚。如果<strong>狗狗耳仔有臭味</strong>伴隨紅腫、分泌物、抓耳等症狀，應立即帶往獸醫檢查<strong>狗狗耳炎</strong>。</p>
       
-      <p><strong>Q: ç‹—ç‹—è€³ç‚Žæœƒè‡ªå·±å¥½å—Žï¼Ÿ</strong></p>
-      <p>A: è¼•å¾®<strong>ç‹—ç‹—è€³ç‚Ž</strong>å¯èƒ½è‡ªè¡Œå¥½è½‰ï¼Œä½†å¤§éƒ¨åˆ†<strong>ç‹—ç‹—è€³ç‚Ž</strong>éœ€è¦ç¸é†«æ²»ç™‚ã€‚å¦‚æžœ<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>æŒçºŒï¼Œæ‡‰è«®è©¢ç¸é†«ï¼Œé¿å…<strong>ç‹—ç‹—è€³ç‚Ž</strong>æƒ¡åŒ–ã€‚</p>
+      <p><strong>Q: 狗狗耳炎會自己好嗎？</strong></p>
+      <p>A: 輕微<strong>狗狗耳炎</strong>可能自行好轉，但大部分<strong>狗狗耳炎</strong>需要獸醫治療。如果<strong>狗狗耳仔有臭味</strong>持續，應諮詢獸醫，避免<strong>狗狗耳炎</strong>惡化。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>å””å¯ä»¥å¿½è¦–ï¼Œå› ç‚ºå¯èƒ½ä»£è¡¨<strong>ç‹—ç‹—è€³ç‚Ž</strong>ç­‰ç·Šæ€¥è€³éƒ¨å•é¡Œã€‚ææ—©ç™¼ç¾<strong>ç‹—ç‹—è€³ä»”æœ‰è‡­å‘³</strong>ã€æ­£ç¢ºæ¸…æ½”<strong>ç‹—ç‹—è€³æœµ</strong>åŒåŸ‹å®šæœŸæª¢æŸ¥ï¼Œå°±å¯ä»¥ä»¤æ¯›å­©é é›¢<strong>ç‹—ç‹—è€³ç‚Ž</strong>ç—›è‹¦ï¼</p>
+      <p>🐾 <strong>總結：</strong><strong>狗狗耳仔有臭味</strong>唔可以忽視，因為可能代表<strong>狗狗耳炎</strong>等緊急耳部問題。提早發現<strong>狗狗耳仔有臭味</strong>、正確清潔<strong>狗狗耳朵</strong>同埋定期檢查，就可以令毛孩遠離<strong>狗狗耳炎</strong>痛苦！</p>
     `,
     author: "PetWell HK",
     date: "2025-04-01",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogDogEarOdor
   },
   {
     id: "1",
     slug: "dog-head-shaking-warning-signs",
-    title: "ç‹—ç‹—æˆæ—¥æ–é ­é»žç®—å¥½ï¼Ÿç‹—ç‹—æ–é ­åŽŸå› ã€å¹¾æ™‚è¦æ“”å¿ƒã€è™•ç†æ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "ç‹—ç‹—æˆæ—¥æ–é ­é»žç®—å¥½ï¼Ÿå¥½å¤šä¸»äººéƒ½è©¦éŽï¼Œå¤œæ™šè½åˆ°ç‹—ç‹—ä¸åœæ–é ­æˆ–è€…æŠ“è€³ä»”ã€‚å¤§å¤šæ•¸æ™‚å€™å¯èƒ½åªä¿‚å°ç—•ï¼Œä½†æœ‰æ™‚å€™èƒŒå¾Œå…¶å¯¦ä¿‚å¥åº·è­¦è™Ÿã€‚æœ¬æ–‡è©³è§£ç‹—ç‹—æ–é ­åŽŸå› ã€ç‹—ç‹—æ–é ­å¹¾æ™‚è¦æ“”å¿ƒã€ç‹—ç‹—æ–é ­è™•ç†æ–¹æ³•ï¼Œå®ˆè­·æ¯›å­©å¥åº·ã€‚",
+    title: "狗狗成日搖頭點算好？狗狗搖頭原因、幾時要擔心、處理方法全攻略 | PetWell HK",
+    excerpt: "狗狗成日搖頭點算好？好多主人都試過，夜晚聽到狗狗不停搖頭或者抓耳仔。大多數時候可能只係小痕，但有時候背後其實係健康警號。本文詳解狗狗搖頭原因、狗狗搖頭幾時要擔心、狗狗搖頭處理方法，守護毛孩健康。",
     content: `
-      <h2>ç‹—ç‹—æˆæ—¥æ–é ­é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡ç™¼ç¾<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ï¼Ÿ<strong>ç‹—ç‹—æ–é ­</strong>ä¿‚å¸¸è¦‹è¡Œç‚ºï¼Œä½†å¦‚æžœ<strong>ç‹—ç‹—ä¸åœæ–é ­</strong>ï¼Œå¯èƒ½ä¿‚å¥åº·è­¦è™Ÿã€‚<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>å¯èƒ½ä¿‚å› ç‚º<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€æ•æ„Ÿã€å…¥å’—ç•°ç‰©ç”šè‡³ç¥žç¶“å•é¡Œã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>ç‹—ç‹—æ–é ­</strong>åŽŸå› ã€<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>å¹¾æ™‚è¦æ“”å¿ƒï¼Œä»¥åŠ<strong>ç‹—ç‹—æ–é ­</strong>è™•ç†æ–¹æ³•ã€‚</p>
+      <h2>狗狗成日搖頭點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇發現<strong>狗狗成日搖頭</strong>？<strong>狗狗搖頭</strong>係常見行為，但如果<strong>狗狗不停搖頭</strong>，可能係健康警號。<strong>狗狗成日搖頭</strong>可能係因為<strong>狗狗耳炎</strong>、敏感、入咗異物甚至神經問題。本文為你詳細講解<strong>狗狗搖頭</strong>原因、<strong>狗狗成日搖頭</strong>幾時要擔心，以及<strong>狗狗搖頭</strong>處理方法。</p>
       
-      <h2>ðŸ¶ ç‹—ç‹—ä¸åœæ–é ­ï¼Ÿå¹¾æ™‚å…ˆéœ€è¦æ“”å¿ƒï¼Ÿ</h2>
-      <p><strong>ç‹—ç‹—å¶çˆ¾æ–é ­</strong>å¥½æ­£å¸¸ï¼Œä½†å¦‚æžœ<strong>ç‹—ç‹—ä¸åœæ–é ­</strong>ï¼Œå¯èƒ½å””ä¿‚å–®ç´”ç™¢å’ç°¡å–®ï¼ŒèƒŒå¾Œæœ‰æ©Ÿæœƒä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€æ•æ„Ÿã€å…¥å’—ç•°ç‰©ç”šè‡³ç¥žç¶“å•é¡Œã€‚å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ï¼Œæ‡‰åŠæ—©æª¢æŸ¥ã€‚</p>
+      <h2>🐶 狗狗不停搖頭？幾時先需要擔心？</h2>
+      <p><strong>狗狗偶爾搖頭</strong>好正常，但如果<strong>狗狗不停搖頭</strong>，可能唔係單純癢咁簡單，背後有機會係<strong>狗狗耳炎</strong>、敏感、入咗異物甚至神經問題。如果<strong>狗狗成日搖頭</strong>，應及早檢查。</p>
 
-      <h2>ðŸ¤” é»žè§£ç‹—ç‹—æœƒæ–é ­ï¼Ÿç‹—ç‹—æ–é ­åŽŸå› åˆ†æž</h2>
-      <p>ç•¶<strong>ç‹—ç‹—æ„Ÿè¦ºè€³ä»”</strong>ç—•æˆ–è€…å””èˆ’æœæ™‚ï¼Œæœƒæœ¬èƒ½å’<strong>æ–é ­</strong>ï¼Œæƒ³å°‡å…¥é¢å•²å˜¢ç”©å‡ºåšŸã€‚å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ï¼Œå¯èƒ½ä¿‚ä»¥ä¸‹åŽŸå› ï¼š</p>
+      <h2>🤔 點解狗狗會搖頭？狗狗搖頭原因分析</h2>
+      <p>當<strong>狗狗感覺耳仔</strong>痕或者唔舒服時，會本能咁<strong>搖頭</strong>，想將入面啲嘢甩出嚟。如果<strong>狗狗成日搖頭</strong>，可能係以下原因：</p>
 
-      <h3>ðŸ§¼ ç‹—ç‹—è€³ç‚Žä¿‚æœ€å¸¸è¦‹åŽŸå› </h3>
-      <p><strong>ç‹—ç‹—è€³ç‚Ž</strong>é€šå¸¸æœƒä»¤<strong>ç‹—ç‹—è€³ä»”</strong>ç—•ã€æœ‰åˆ†æ³Œç‰©ã€ç´…è…«ï¼Œä»¤ä½¢å“‹å¿å””ä½<strong>ç‹‚æ–é ­</strong>ã€‚å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ä¼´éš¨<strong>ç‹—ç‹—è€³ä»”</strong>æœ‰è‡­å‘³ï¼Œå¾ˆå¯èƒ½ä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>ã€‚</p>
+      <h3>🧼 狗狗耳炎係最常見原因</h3>
+      <p><strong>狗狗耳炎</strong>通常會令<strong>狗狗耳仔</strong>痕、有分泌物、紅腫，令佢哋忍唔住<strong>狂搖頭</strong>。如果<strong>狗狗成日搖頭</strong>伴隨<strong>狗狗耳仔</strong>有臭味，很可能係<strong>狗狗耳炎</strong>。</p>
 
-      <h3>ðŸŒ¾ æ•æ„Ÿéƒ½æœƒä»¤ç‹—ç‹—è€³ä»”ç—•</h3>
-      <p><strong>ç‹—ç‹—</strong>å¯èƒ½å°é£Ÿç‰©ã€èŠ±ç²‰ã€å¡µèŸŽç­‰æ•æ„Ÿï¼Œé™¤å’—<strong>ç‹—ç‹—è€³ä»”</strong>ç—•ï¼Œä»²å¯èƒ½æœ‰ç”©æ¯›ã€èˆ”è…³ã€æ“é¢ç­‰è¡Œç‚ºï¼Œå°Žè‡´<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ã€‚</p>
+      <h3>🌾 敏感都會令狗狗耳仔痕</h3>
+      <p><strong>狗狗</strong>可能對食物、花粉、塵蟎等敏感，除咗<strong>狗狗耳仔</strong>痕，仲可能有甩毛、舔腳、搓面等行為，導致<strong>狗狗成日搖頭</strong>。</p>
 
-      <h3>ðŸ’§ æ²–æ¶¼å…¥æ°´é»žç®—å¥½ï¼Ÿ</h3>
-      <p>è¨˜å¾—å¹«<strong>ç‹—ç‹—</strong>å¡žæ£‰èŠ±ä¿è­·<strong>è€³ä»”</strong>ï¼Œæ´—å®Œå¯ä»¥ç”¨ä¹¾è€³æ°´æ¸…æ½”ï¼Œæ¸›å°‘<strong>ç‹—ç‹—è€³ç‚Ž</strong>æ©Ÿæœƒï¼Œé¿å…<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ã€‚</p>
+      <h3>💧 沖涼入水點算好？</h3>
+      <p>記得幫<strong>狗狗</strong>塞棉花保護<strong>耳仔</strong>，洗完可以用乾耳水清潔，減少<strong>狗狗耳炎</strong>機會，避免<strong>狗狗成日搖頭</strong>。</p>
 
-      <h3>ðŸªµ å…¥å’—ç•°ç‰© / ðŸ§  ç¥žç¶“ç—…è®Š / ðŸ§¬ è‡ªé«”å…ç–«å•é¡Œ</h3>
-      <p><strong>ç‹—ç‹—è€³é“</strong>å…¥å’—è‰ã€æ˜†èŸ²ã€ç¨®å­ç­‰éƒ½æœƒä»¤<strong>ç‹—ç‹—</strong>ä¸é©ï¼Œå°Žè‡´<strong>ç‹—ç‹—ä¸åœæ–é ­</strong>ã€‚æŸå•²ç¥žç¶“å•é¡Œæœƒä»¤<strong>ç‹—ç‹—</strong>ä¸è‡ªä¸»éœ‡é ­ï¼ˆé ­éƒ¨é¡«æŠ–ï¼‰ï¼Œè¦é ç¸é†«åˆ¤æ–·ã€‚</p>
+      <h3>🪵 入咗異物 / 🧠 神經病變 / 🧬 自體免疫問題</h3>
+      <p><strong>狗狗耳道</strong>入咗草、昆蟲、種子等都會令<strong>狗狗</strong>不適，導致<strong>狗狗不停搖頭</strong>。某啲神經問題會令<strong>狗狗</strong>不自主震頭（頭部顫抖），要靠獸醫判斷。</p>
 
-      <h2>ðŸ“… ç‹—ç‹—æ–é ­å¹¾æ™‚è¦ç‡é†«ç”Ÿï¼Ÿ</h2>
-      <p>å¦‚æžœ<strong>ç‹—ç‹—æŒçºŒæ–é ­</strong>è¶…éŽä¸€æ—¥ï¼Œæˆ–è€…ä½ è¦‹åˆ°<strong>ç‹—ç‹—è€³ä»”</strong>ç´…è…«ã€æœ‰è‡­å‘³ã€æœ‰åˆ†æ³Œç‰©ï¼Œå°±è¦å³åˆ»ç´„ç¸é†«æª¢æŸ¥ã€‚å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ä¼´éš¨å…¶ä»–ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å°±é†«ã€‚</p>
+      <h2>📅 狗狗搖頭幾時要睇醫生？</h2>
+      <p>如果<strong>狗狗持續搖頭</strong>超過一日，或者你見到<strong>狗狗耳仔</strong>紅腫、有臭味、有分泌物，就要即刻約獸醫檢查。如果<strong>狗狗成日搖頭</strong>伴隨其他症狀，應立即就醫。</p>
 
-      <h3>ðŸ©º ç¸é†«æœƒé»žæª¢æŸ¥ï¼Ÿ</h3>
-      <p>ç•¶<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>æ™‚ï¼Œç¸é†«æœƒé€²è¡Œä»¥ä¸‹æª¢æŸ¥ï¼š</p>
+      <h3>🩺 獸醫會點檢查？</h3>
+      <p>當<strong>狗狗成日搖頭</strong>時，獸醫會進行以下檢查：</p>
       <ul>
-        <li>ðŸ” ç”¨è€³é¡æ·±å…¥æª¢æŸ¥<strong>ç‹—ç‹—è€³é“</strong>ï¼Œè¨ºæ–·<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
-        <li>ðŸ§« æ‹Ž<strong>ç‹—ç‹—è€³æœµ</strong>åˆ†æ³Œç‰©åŒ–é©—ç‡æœ‰ç„¡ç´°èŒ/çœŸèŒ</li>
-        <li>ðŸ˜· åš´é‡<strong>ç‹—ç‹—è€³ç‚Ž</strong>æƒ…æ³å¯èƒ½éœ€è¦éŽ®éœæ¸…è€³</li>
-        <li>ðŸ– å¦‚æ‡·ç–‘<strong>ç‹—ç‹—</strong>æ•æ„Ÿï¼Œå¯èƒ½æœƒå»ºè­°é£Ÿç‰©è½‰æ›è©¦é©—æˆ–æŠ½è¡€æª¢æŸ¥</li>
+        <li>🔍 用耳鏡深入檢查<strong>狗狗耳道</strong>，診斷<strong>狗狗耳炎</strong></li>
+        <li>🧫 拎<strong>狗狗耳朵</strong>分泌物化驗睇有無細菌/真菌</li>
+        <li>😷 嚴重<strong>狗狗耳炎</strong>情況可能需要鎮靜清耳</li>
+        <li>🍖 如懷疑<strong>狗狗</strong>敏感，可能會建議食物轉換試驗或抽血檢查</li>
       </ul>
 
-      <h2>ðŸŽ¯ å°è²¼å£«ï¼šé»žæ¨£é é˜²ç‹—ç‹—è€³ç‚Žï¼Ÿé¿å…ç‹—ç‹—æˆæ—¥æ–é ­</h2>
-      <p>é é˜²<strong>ç‹—ç‹—è€³ç‚Ž</strong>å¯ä»¥æ¸›å°‘<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>çš„æƒ…æ³ï¼š</p>
+      <h2>🎯 小貼士：點樣預防狗狗耳炎？避免狗狗成日搖頭</h2>
+      <p>預防<strong>狗狗耳炎</strong>可以減少<strong>狗狗成日搖頭</strong>的情況：</p>
       <ul>
-        <li>ðŸ› æ¯æ¬¡æ²–æ¶¼/æ¸¸æ°´å¾Œå¹«<strong>ç‹—ç‹—</strong>æŠ¹<strong>è€³ä»”</strong>ï¼Œé¿å…<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
-        <li>ðŸ‘ƒ å®šæœŸæª¢æŸ¥<strong>ç‹—ç‹—è€³ä»”</strong>æœ‰å†‡ç•°å‘³æˆ–ç´…è…«ï¼ŒåŠæ—©ç™¼ç¾<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
-        <li>ðŸ§´ ç”¨é©åˆ<strong>ç‹—ç‹—è€³é“</strong>çš„ä¹¾è€³æ°´æ¸…æ½”ï¼Œé é˜²<strong>ç‹—ç‹—è€³ç‚Ž</strong></li>
+        <li>🛁 每次沖涼/游水後幫<strong>狗狗</strong>抹<strong>耳仔</strong>，避免<strong>狗狗耳炎</strong></li>
+        <li>👃 定期檢查<strong>狗狗耳仔</strong>有冇異味或紅腫，及早發現<strong>狗狗耳炎</strong></li>
+        <li>🧴 用適合<strong>狗狗耳道</strong>的乾耳水清潔，預防<strong>狗狗耳炎</strong></li>
       </ul>
 
-      <h2>ðŸ’¡ ç‹—ç‹—æ–é ­å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: ç‹—ç‹—æˆæ—¥æ–é ­ä¿‚å’ªä¸€å®šæœ‰å•é¡Œï¼Ÿ</strong></p>
-      <p>A: <strong>ç‹—ç‹—å¶çˆ¾æ–é ­</strong>ä¿‚æ­£å¸¸ï¼Œä½†å¦‚æžœ<strong>ç‹—ç‹—ä¸åœæ–é ­</strong>æˆ–<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ï¼Œå¯èƒ½ä¿‚<strong>ç‹—ç‹—è€³ç‚Ž</strong>æˆ–å…¶ä»–å¥åº·å•é¡Œï¼Œæ‡‰è«®è©¢ç¸é†«ã€‚</p>
+      <h2>💡 狗狗搖頭常見問題</h2>
+      <p><strong>Q: 狗狗成日搖頭係咪一定有問題？</strong></p>
+      <p>A: <strong>狗狗偶爾搖頭</strong>係正常，但如果<strong>狗狗不停搖頭</strong>或<strong>狗狗成日搖頭</strong>，可能係<strong>狗狗耳炎</strong>或其他健康問題，應諮詢獸醫。</p>
       
-      <p><strong>Q: ç‹—ç‹—æ–é ­æœƒè‡ªå·±å¥½å—Žï¼Ÿ</strong></p>
-      <p>A: å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ä¿‚å› ç‚º<strong>ç‹—ç‹—è€³ç‚Ž</strong>ï¼Œé€šå¸¸éœ€è¦ç¸é†«æ²»ç™‚ã€‚è¼•å¾®<strong>ç‹—ç‹—æ–é ­</strong>å¯èƒ½è‡ªè¡Œå¥½è½‰ï¼Œä½†æŒçºŒ<strong>ç‹—ç‹—ä¸åœæ–é ­</strong>æ‡‰å°±é†«ã€‚</p>
+      <p><strong>Q: 狗狗搖頭會自己好嗎？</strong></p>
+      <p>A: 如果<strong>狗狗成日搖頭</strong>係因為<strong>狗狗耳炎</strong>，通常需要獸醫治療。輕微<strong>狗狗搖頭</strong>可能自行好轉，但持續<strong>狗狗不停搖頭</strong>應就醫。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>ç‹—ç‹—æ–é ­</strong>æœªå¿…ä¿‚æžç¬‘è¡Œç‚ºï¼Œæœ‰æ™‚ä¿‚æ±‚æ•‘è¨Šè™Ÿã€‚å¦‚æžœ<strong>ç‹—ç‹—æˆæ—¥æ–é ­</strong>ï¼Œç•™æ„<strong>ç‹—ç‹—</strong>è¡¨ç¾ï¼Œæœ‰æ‡·ç–‘å°±è¦æµå°ˆæ¥­ç¸é†«å¹«æ‰‹ï¼</p>
+      <p>🐾 <strong>總結：</strong><strong>狗狗搖頭</strong>未必係搞笑行為，有時係求救訊號。如果<strong>狗狗成日搖頭</strong>，留意<strong>狗狗</strong>表現，有懷疑就要搵專業獸醫幫手！</p>
     `,
     author: "PetWell HK",
     date: "2025-03-20",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogDogShake
   },
   {
     id: "2",
     slug: "pet-insurance-hk-2025",
-    title: "å¯µç‰©ä¿éšªé‚Šé–“å¥½ï¼Ÿ2025é¦™æ¸¯å¯µç‰©ä¿éšªæ¯”è¼ƒï½œæœ€æŠµè²·æŽ¨è–¦+Planè©³æƒ…+ä¿é¡è‡ªä»˜ä¸€è¦½ | PetWell HK",
-    excerpt: "å¯µç‰©ä¿éšªé‚Šé–“å¥½ï¼Ÿ2025æœ€æ–°å¯µç‰©ä¿éšªæ¯”è¼ƒè¡¨ï¼Œå¹«ä½ ä¸€æ–‡ç‡æ¸…6å¤§é¦™æ¸¯å¯µç‰©ä¿éšªå…¬å¸ï¼šä¿é¡ã€è‡ªä»˜æ¯”çŽ‡ã€ç‰¹è‰²ä¿éšœã€çºŒä¿å¹´é½¡ã€ç­‰å€™æœŸå…¨é¢åˆ—å‡ºï¼Œå¦é™„æ‡¶äººé¸æ“‡å»ºè­°ã€‚",
+    title: "寵物保險邊間好？2025香港寵物保險比較｜最抵買推薦+Plan詳情+保額自付一覽 | PetWell HK",
+    excerpt: "寵物保險邊間好？2025最新寵物保險比較表，幫你一文睇清6大香港寵物保險公司：保額、自付比率、特色保障、續保年齡、等候期全面列出，另附懶人選擇建議。",
     content: `
-      <h2>å¯µç‰©ä¿éšªé‚Šé–“å¥½ï¼Ÿ2025é¦™æ¸¯å¯µç‰©ä¿éšªå®Œæ•´æ¯”è¼ƒæŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">é¸æ“‡åˆé©çš„<strong>å¯µç‰©ä¿éšª</strong>å¯ä»¥ç‚ºæ¯›å­©æä¾›é†«ç™‚ä¿éšœï¼Œåˆ†æ“”æ„å¤–å’Œç–¾ç—…é–‹æ”¯ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°æ¯”è¼ƒ2025å¹´é¦™æ¸¯ä¸»è¦<strong>å¯µç‰©ä¿éšª</strong>å…¬å¸ï¼ŒåŒ…æ‹¬One Degreeã€BlueCrossã€MSIGã€Prudentialç­‰ï¼ŒåŠ©ä½ é¸æ“‡æœ€é©åˆçš„<strong>å¯µç‰©ä¿éšª</strong>è¨ˆåŠƒã€‚</p>
+      <h2>寵物保險邊間好？2025香港寵物保險完整比較指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">選擇合適的<strong>寵物保險</strong>可以為毛孩提供醫療保障，分擔意外和疾病開支。本文為你詳細比較2025年香港主要<strong>寵物保險</strong>公司，包括One Degree、BlueCross、MSIG、Prudential等，助你選擇最適合的<strong>寵物保險</strong>計劃。</p>
       
-      <h2>ðŸŽ¯ å¯µç‰©ä¿éšªé‚Šé–“å¥½ï¼Ÿå¿«é€Ÿç­”æ¡ˆ</h2>
+      <h2>🎯 寵物保險邊間好？快速答案</h2>
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 24px; border-radius: 12px; margin-bottom: 32px;">
-        <p style="font-size: 18px; font-weight: bold; margin-bottom: 16px;">é¸æ“‡<strong>å¯µç‰©ä¿éšª</strong>è¦æ¯”è¼ƒä¿é¡ã€è‡ªä»˜æ¯”çŽ‡ã€ä¿éšœç¯„åœã€çºŒä¿å¹´é½¡é™åˆ¶å’Œç­‰å€™æœŸã€‚</p>
+        <p style="font-size: 18px; font-weight: bold; margin-bottom: 16px;">選擇<strong>寵物保險</strong>要比較保額、自付比率、保障範圍、續保年齡限制和等候期。</p>
         <ul style="font-size: 16px; line-height: 1.8; margin-left: 20px;">
-          <li><strong>å¹´è¼•å¥åº·å¯µç‰©ï¼š</strong>å¯é¸æ“‡ <strong>One Degree</strong> æˆ– <strong>MSIG</strong>ï¼ˆçµ‚èº«çºŒä¿ã€ç¶²çµ¡è¨ºæ‰€å„ªæƒ ï¼‰</li>
-          <li><strong>é«˜é½¡å¯µç‰©ï¼š</strong>å¯è€ƒæ…® <strong>Prudential</strong> æˆ– <strong>BlueCross</strong>ï¼ˆç„¡å¹´é½¡é™åˆ¶æˆ–è¼ƒå¯¬é¬†ï¼‰</li>
-          <li><strong>æœ‰æ…¢æ€§ç—…å²ï¼š</strong>å¯é¸ <strong>MSIG</strong> æˆ– <strong>Prudential</strong>ï¼ˆç‰¹æ®Šç—…ä¿éšœè¼ƒä½³ï¼‰</li>
-          <li><strong>å¸¸çœ‹ç¶²çµ¡è¨ºæ‰€ï¼š</strong>å¯é¸ <strong>One Degree</strong> æˆ– <strong>MSIG</strong>ï¼ˆè‡ªä»˜é¡å„ªæƒ ã€ç¶²çµ¡æ–¹ä¾¿ï¼‰</li>
+          <li><strong>年輕健康寵物：</strong>可選擇 <strong>One Degree</strong> 或 <strong>MSIG</strong>（終身續保、網絡診所優惠）</li>
+          <li><strong>高齡寵物：</strong>可考慮 <strong>Prudential</strong> 或 <strong>BlueCross</strong>（無年齡限制或較寬鬆）</li>
+          <li><strong>有慢性病史：</strong>可選 <strong>MSIG</strong> 或 <strong>Prudential</strong>（特殊病保障較佳）</li>
+          <li><strong>常看網絡診所：</strong>可選 <strong>One Degree</strong> 或 <strong>MSIG</strong>（自付額優惠、網絡方便）</li>
         </ul>
-        <p style="font-size: 16px; margin-top: 16px; opacity: 0.95;">å»ºè­°æ ¹æ“šå¯µç‰©å“ç¨®ã€å¹´é½¡ã€å¥åº·ç‹€æ³å’Œå°±é†«ç¿’æ…£é¸æ“‡æœ€é©åˆçš„è¨ˆåŠƒã€‚è©³ç´°æ¯”è¼ƒè¡¨è¦‹ä¸‹æ–¹ðŸ‘‡</p>
+        <p style="font-size: 16px; margin-top: 16px; opacity: 0.95;">建議根據寵物品種、年齡、健康狀況和就醫習慣選擇最適合的計劃。詳細比較表見下方👇</p>
       </div>
 
-      <h2>ðŸ“Œ 2025é¦™æ¸¯å¯µç‰©ä¿éšªåŸºæœ¬è³‡æ–™æ¯”è¼ƒ</h2>
-      <p style="margin-bottom: 20px;">ä»¥ä¸‹ç‚º2025å¹´é¦™æ¸¯ä¸»è¦<strong>å¯µç‰©ä¿éšª</strong>å…¬å¸çš„åŸºæœ¬è³‡æ–™æ¯”è¼ƒï¼ŒåŒ…æ‹¬å¹´åº¦ä¿é¡ã€è‡ªä»˜æ¯”çŽ‡ã€çºŒä¿å¹´é½¡é™åˆ¶ç­‰é—œéµè³‡è¨Šã€‚é¸æ“‡<strong>å¯µç‰©ä¿éšª</strong>æ™‚ï¼Œé€™äº›éƒ½æ˜¯é‡è¦çš„è€ƒæ…®å› ç´ ã€‚</p>
+      <h2>📌 2025香港寵物保險基本資料比較</h2>
+      <p style="margin-bottom: 20px;">以下為2025年香港主要<strong>寵物保險</strong>公司的基本資料比較，包括年度保額、自付比率、續保年齡限制等關鍵資訊。選擇<strong>寵物保險</strong>時，這些都是重要的考慮因素。</p>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¯µç‰©ä¿éšªå…¬å¸</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">è¨ˆåŠƒç³»åˆ—</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¹´åº¦ç¸½ä¿é¡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é¦–æ¬¡æŠ•ä¿å¹´é½¡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">çºŒä¿å¹´é½¡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">è‡ªä»˜é¡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç­‰å€™æœŸ</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">寵物保險公司</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">計劃系列</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">年度總保額</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">首次投保年齡</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">續保年齡</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">自付額</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">等候期</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">One Degree</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç²¾é¸ / å…¨æ–¹ä½ / å°Šå¯µ / çå¯µ</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">精選 / 全方位 / 尊寵 / 珍寵</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$30K--100K</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">13é€±--11æ­²</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">çµ‚èº«</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç¶²çµ¡è¨ºæ‰€ 10%,éžç¶²çµ¡ 30%</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä¸€èˆ¬:28æ—¥ï½œç™Œç—‡:180æ—¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">13週--11歲</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">終身</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">網絡診所 10%,非網絡 30%</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">一般:28日｜癌症:180日</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">BlueCross</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æ™ºå¯µé¸ A+ / é¾ãƒ»å¯µç‰©</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">智寵選 A+ / 龍・寵物</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$20K--80K</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">6å€‹æœˆ--9æ­²</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">13æ­²å¾Œå€‹åˆ¥è€ƒæ…®</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">0--8æ­²:30%,9æ­²ä»¥ä¸Š:40%</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä¸€èˆ¬:30æ—¥ï½œç™Œç—‡:90æ—¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">6個月--9歲</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">13歲後個別考慮</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">0--8歲:30%,9歲以上:40%</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">一般:30日｜癌症:90日</td>
             </tr>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">MSIG</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">åŸºæœ¬ / ç¶“æ¿Ÿ / è¶…å“</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">基本 / 經濟 / 超卓</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$19K--69K</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">16é€±--9æ­²</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">çµ‚èº«</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">4æ­²å‰:20%,7æ­²å‰:30%,9æ­²å¾Œ:40%</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">90æ—¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">16週--9歲</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">終身</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">4歲前:20%,7歲前:30%,9歲後:40%</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">90日</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">Prudential</td>
               <td style="border: 1px solid #ddd; padding: 10px;">Plan A / B</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$35K--90K</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">13é€±--9æ­²</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç„¡ä¸Šé™</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">13週--9歲</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">無上限</td>
               <td style="border: 1px solid #ddd; padding: 10px;">30%</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä¸€èˆ¬:30æ—¥ï½œç™Œç—‡:180æ—¥</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">一般:30日｜癌症:180日</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>â­ å¯µç‰©ä¿éšªç‰¹è‰²ä¿éšœæ¯”è¼ƒ</h2>
-      <p style="margin-bottom: 20px;">ä¸åŒ<strong>å¯µç‰©ä¿éšª</strong>å…¬å¸æä¾›ä¸åŒçš„ç‰¹è‰²ä¿éšœï¼ŒåŒ…æ‹¬å±ç–¾ç¾é‡‘ã€è¨ºæ–·è£œå„Ÿã€ç‰©ç†æ²»ç™‚ã€æµ·å¤–ä¿éšœç­‰ã€‚äº†è§£é€™äº›ç‰¹è‰²ä¿éšœå¯ä»¥å¹«åŠ©ä½ é¸æ“‡æœ€é©åˆçš„<strong>å¯µç‰©ä¿éšª</strong>è¨ˆåŠƒã€‚</p>
+      <h2>⭐ 寵物保險特色保障比較</h2>
+      <p style="margin-bottom: 20px;">不同<strong>寵物保險</strong>公司提供不同的特色保障，包括危疾現金、診斷補償、物理治療、海外保障等。了解這些特色保障可以幫助你選擇最適合的<strong>寵物保險</strong>計劃。</p>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¯µç‰©ä¿éšªå…¬å¸</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç‰¹æ®Šä¿éšœ</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">è¨ºæ–·è£œå„Ÿ</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é™„åŠ æ²»ç™‚</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">æµ·å¤–ä¿éšœ</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç¬¬ä¸‰è€…è²¬ä»»</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">寵物保險公司</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">特殊保障</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">診斷補償</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">附加治療</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">海外保障</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">第三者責任</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">One Degree</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">å±ç–¾ç¾é‡‘$10K</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">MRI/CT åŒ…å«åœ¨åŒ–é©—è²»</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç‰©ç†æ²»ç™‚/é‡ç¸</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">90å¤©</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä¸é©ç”¨</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">危疾現金$10K</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">MRI/CT 包含在化驗費</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">物理治療/針灸</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">90天</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">不適用</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">BlueCross</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">åŸºæœ¬é†«ç™‚ä¿éšœ</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">åŒ…å«å…¨å¹´ä¿é¡</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç‰©ç†æ²»ç™‚/é‡ç¸</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">90å¤©</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">基本醫療保障</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">包含全年保額</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">物理治療/針灸</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">90天</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$1M</td>
             </tr>
             <tr>
               <td style="border: 1px solid #ddd; padding: 10px;">MSIG</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">éºå‚³ç—…/å…ˆå¤©ç—…</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">é™MRI/CT</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æ‰‹è¡“ç›¸é—œæ²»ç™‚</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ä¸é©ç”¨</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">遺傳病/先天病</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">限MRI/CT</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">手術相關治療</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">不適用</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$2.75M</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
               <td style="border: 1px solid #ddd; padding: 10px;">Prudential</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">åŸºæœ¬é†«ç™‚ä¿éšœ</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">è¨‚æ˜Žæª¢æ¸¬</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">æ‰‹è¡“ç›¸é—œæ²»ç™‚</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">90å¤©</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">基本醫療保障</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">訂明檢測</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">手術相關治療</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">90天</td>
               <td style="border: 1px solid #ddd; padding: 10px;">$3M</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>ðŸ‘ª å¦‚ä½•é¸æ“‡é©åˆçš„å¯µç‰©ä¿éšªï¼Ÿå»ºè­°é¸æ“‡æ—ç¾¤</h2>
-      <p style="margin-bottom: 20px;">é¸æ“‡<strong>å¯µç‰©ä¿éšª</strong>æ™‚ï¼Œæ‡‰æ ¹æ“šå¯µç‰©çš„å¹´é½¡ã€å¥åº·ç‹€æ³ã€å“ç¨®å’Œå°±é†«ç¿’æ…£ä¾†æ±ºå®šã€‚ä»¥ä¸‹ç‚ºä¸åŒæƒ…æ³ä¸‹çš„<strong>å¯µç‰©ä¿éšª</strong>æŽ¨è–¦ï¼š</p>
+      <h2>👪 如何選擇適合的寵物保險？建議選擇族群</h2>
+      <p style="margin-bottom: 20px;">選擇<strong>寵物保險</strong>時，應根據寵物的年齡、健康狀況、品種和就醫習慣來決定。以下為不同情況下的<strong>寵物保險</strong>推薦：</p>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <thead>
             <tr style="background-color: #f2f2f2;">
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¯µç‰©æƒ…æ³</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">æœ€ä½³å¯µç‰©ä¿éšªé¸æ“‡</th>
-              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åŽŸå› </th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">寵物情況</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">最佳寵物保險選擇</th>
+              <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">原因</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="border: 1px solid #ddd; padding: 10px;">å¹´è¼•å¥åº·ç‹—</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">One Degree / MSIG å¯µç‰©ä¿éšª</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">çµ‚èº«çºŒä¿ã€ç¶²çµ¡å„ªæƒ ï¼Œé©åˆé•·æœŸæŠ•ä¿çš„å¯µç‰©ä¿éšªè¨ˆåŠƒ</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">年輕健康狗</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">One Degree / MSIG 寵物保險</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">終身續保、網絡優惠，適合長期投保的寵物保險計劃</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-              <td style="border: 1px solid #ddd; padding: 10px;">é«˜é½¡ç‹—</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">Prudential / BlueCross å¯µç‰©ä¿éšª</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç„¡å¹´é½¡é™åˆ¶ã€ä¿éšœå…¨é¢ï¼Œé©åˆé«˜é½¡å¯µç‰©çš„å¯µç‰©ä¿éšª</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">高齡狗</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">Prudential / BlueCross 寵物保險</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">無年齡限制、保障全面，適合高齡寵物的寵物保險</td>
             </tr>
             <tr>
-              <td style="border: 1px solid #ddd; padding: 10px;">æœ‰æ…¢æ€§ç—…å²</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">MSIG / Prudential å¯µç‰©ä¿éšª</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">ç‰¹æ®Šç—…ä¿éšœè¼ƒä½³ï¼Œé©åˆæœ‰ç—…å²å¯µç‰©çš„å¯µç‰©ä¿éšªè¨ˆåŠƒ</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">有慢性病史</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">MSIG / Prudential 寵物保險</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">特殊病保障較佳，適合有病史寵物的寵物保險計劃</td>
             </tr>
             <tr style="background-color: #f9f9f9;">
-              <td style="border: 1px solid #ddd; padding: 10px;">å¸¸çœ‹ç¶²çµ¡è¨ºæ‰€</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">One Degree / MSIG å¯µç‰©ä¿éšª</td>
-              <td style="border: 1px solid #ddd; padding: 10px;">è‡ªä»˜é¡å„ªæƒ ã€ç¶²çµ¡æ–¹ä¾¿ï¼Œé©åˆå¸¸çœ‹ç¶²çµ¡è¨ºæ‰€çš„å¯µç‰©ä¿éšª</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">常看網絡診所</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">One Degree / MSIG 寵物保險</td>
+              <td style="border: 1px solid #ddd; padding: 10px;">自付額優惠、網絡方便，適合常看網絡診所的寵物保險</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>ðŸ’¡ å¯µç‰©ä¿éšªæŠ•ä¿æ³¨æ„äº‹é …</h2>
-      <p style="margin-bottom: 16px;">æŠ•ä¿<strong>å¯µç‰©ä¿éšª</strong>å‰ï¼Œæ‡‰æ³¨æ„ä»¥ä¸‹äº‹é …ï¼š</p>
+      <h2>💡 寵物保險投保注意事項</h2>
+      <p style="margin-bottom: 16px;">投保<strong>寵物保險</strong>前，應注意以下事項：</p>
       <ul style="line-height: 1.8; margin-bottom: 24px;">
-        <li><strong>ç­‰å€™æœŸï¼š</strong>å¤§éƒ¨åˆ†<strong>å¯µç‰©ä¿éšª</strong>éƒ½æœ‰ç­‰å€™æœŸï¼Œä¸€èˆ¬ç–¾ç—…ç‚º28-90æ—¥ï¼Œç™Œç—‡ç‚º90-180æ—¥ã€‚ç­‰å€™æœŸå…§ç™¼ç”Ÿçš„ç–¾ç—…ä¸æœƒç²å¾—è³ å„Ÿã€‚</li>
-        <li><strong>å·²æœ‰ç–¾ç—…ï¼š</strong>æŠ•ä¿å‰å·²å­˜åœ¨çš„ç–¾ç—…é€šå¸¸ä¸åœ¨<strong>å¯µç‰©ä¿éšª</strong>ä¿éšœç¯„åœå…§ã€‚</li>
-        <li><strong>çºŒä¿é™åˆ¶ï¼š</strong>éƒ¨åˆ†<strong>å¯µç‰©ä¿éšª</strong>æœ‰å¹´é½¡é™åˆ¶ï¼Œé«˜é½¡å¯µç‰©å¯èƒ½ç„¡æ³•çºŒä¿ã€‚</li>
-        <li><strong>è‡ªä»˜æ¯”çŽ‡ï¼š</strong>ä¸åŒ<strong>å¯µç‰©ä¿éšª</strong>è¨ˆåŠƒçš„è‡ªä»˜æ¯”çŽ‡ä¸åŒï¼Œç¶²çµ¡è¨ºæ‰€é€šå¸¸æœ‰å„ªæƒ ã€‚</li>
-        <li><strong>å¹´åº¦ä¿é¡ï¼š</strong>äº†è§£<strong>å¯µç‰©ä¿éšª</strong>çš„å¹´åº¦ä¿é¡ä¸Šé™ï¼Œç¢ºä¿è¶³å¤ æ‡‰ä»˜é†«ç™‚é–‹æ”¯ã€‚</li>
-        <li><strong>ä¿éšœç¯„åœï¼š</strong>ä»”ç´°é–±è®€<strong>å¯µç‰©ä¿éšª</strong>æ¢æ¬¾ï¼Œäº†è§£ä¿éšœç¯„åœå’Œé™¤å¤–è²¬ä»»ã€‚</li>
+        <li><strong>等候期：</strong>大部分<strong>寵物保險</strong>都有等候期，一般疾病為28-90日，癌症為90-180日。等候期內發生的疾病不會獲得賠償。</li>
+        <li><strong>已有疾病：</strong>投保前已存在的疾病通常不在<strong>寵物保險</strong>保障範圍內。</li>
+        <li><strong>續保限制：</strong>部分<strong>寵物保險</strong>有年齡限制，高齡寵物可能無法續保。</li>
+        <li><strong>自付比率：</strong>不同<strong>寵物保險</strong>計劃的自付比率不同，網絡診所通常有優惠。</li>
+        <li><strong>年度保額：</strong>了解<strong>寵物保險</strong>的年度保額上限，確保足夠應付醫療開支。</li>
+        <li><strong>保障範圍：</strong>仔細閱讀<strong>寵物保險</strong>條款，了解保障範圍和除外責任。</li>
       </ul>
 
-      <h2>ðŸ“Š å¯µç‰©ä¿éšªè²»ç”¨åƒè€ƒ</h2>
-      <p style="margin-bottom: 16px;"><strong>å¯µç‰©ä¿éšª</strong>ä¿è²»å› è¨ˆåŠƒã€å¯µç‰©å¹´é½¡ã€å“ç¨®å’Œå¥åº·ç‹€æ³è€Œç•°ã€‚ä¸€èˆ¬å¹´åº¦ä¿é¡ç”±$19,000è‡³$100,000ä¸ç­‰ï¼Œè‡ªä»˜æ¯”çŽ‡ç”±10%è‡³40%ã€‚å¹´è¼•å¥åº·å¯µç‰©æŠ•ä¿<strong>å¯µç‰©ä¿éšª</strong>ä¿è²»è¼ƒä½Žï¼Œå»ºè­°åŠæ—©æŠ•ä¿ã€‚é«˜é½¡æˆ–æœ‰ç—…å²å¯µç‰©æŠ•ä¿<strong>å¯µç‰©ä¿éšª</strong>ä¿è²»è¼ƒé«˜ï¼Œä¸”éœ€æ³¨æ„çºŒä¿é™åˆ¶ã€‚</p>
+      <h2>📊 寵物保險費用參考</h2>
+      <p style="margin-bottom: 16px;"><strong>寵物保險</strong>保費因計劃、寵物年齡、品種和健康狀況而異。一般年度保額由$19,000至$100,000不等，自付比率由10%至40%。年輕健康寵物投保<strong>寵物保險</strong>保費較低，建議及早投保。高齡或有病史寵物投保<strong>寵物保險</strong>保費較高，且需注意續保限制。</p>
 
-      <p style="margin-top: 2em; font-style: italic; color: #666;">âš  æœ¬<strong>å¯µç‰©ä¿éšª</strong>æ¯”è¼ƒè¡¨åƒ…ä¾›åƒè€ƒï¼Œæ‰€æœ‰ä¿éšœå…§å®¹åŠæ¢æ¬¾ä»¥ä¿éšªå…¬å¸æœ€æ–°å…¬å¸ƒç‚ºæº–ï¼Œå»ºè­°æŠ•ä¿å‰è©³ç´°é–±è¦½<strong>å¯µç‰©ä¿éšª</strong>æ¢æ¬¾ã€‚</p>
+      <p style="margin-top: 2em; font-style: italic; color: #666;">⚠ 本<strong>寵物保險</strong>比較表僅供參考，所有保障內容及條款以保險公司最新公布為準，建議投保前詳細閱覽<strong>寵物保險</strong>條款。</p>
       <p style="font-style: italic; color: #666;">Credit: @wanchinggg, @s.a.a.m.group (Instagram)</p>
     `,
     author: "PetWell HK",
     date: "2025-03-15",
-    category: "å¯µç‰©ä¿éšª",
+    category: "寵物保險",
     imageUrl: blogPetInsurance
   },
   {
     id: "3",
     slug: "pet-weight-management-guide-hk",
-    title: "å¯µç‰©é«”é‡ç®¡ç†é»žç®—å¥½ï¼Ÿå¯µç‰©è‚¥èƒ–ã€å¯µç‰©æ¸›é‡å…¨æ”»ç•¥ï½œè®“æ¯›å­©é é›¢ç–¾ç—… | PetWell HK",
-    excerpt: "å¯µç‰©é«”é‡ç®¡ç†é»žç®—å¥½ï¼Ÿä½ çš„ç‹—ç‹—æˆ–è²“å’ªæ˜¯å¦è¶…é‡ï¼Ÿå¯µç‰©è‚¥èƒ–æœƒå¢žåŠ ç³–å°¿ç—…ã€é—œç¯€ç‚Žç­‰ç–¾ç—…é¢¨éšªã€‚æœ¬æ–‡åˆ†äº«ç¸é†«å°ˆæ¥­çš„å¯µç‰©é«”é‡ç®¡ç†ã€å¯µç‰©æ¸›é‡é£²é£Ÿèˆ‡é‹å‹•å»ºè­°ï¼Œæ•™ä½ å¦‚ä½•å¹«åŠ©æ¯›å­©å¥åº·æ¸›é‡ã€å»¶é•·å£½å‘½ã€‚",
+    title: "寵物體重管理點算好？寵物肥胖、寵物減重全攻略｜讓毛孩遠離疾病 | PetWell HK",
+    excerpt: "寵物體重管理點算好？你的狗狗或貓咪是否超重？寵物肥胖會增加糖尿病、關節炎等疾病風險。本文分享獸醫專業的寵物體重管理、寵物減重飲食與運動建議，教你如何幫助毛孩健康減重、延長壽命。",
     content: `
-      <h2>å¯µç‰©é«”é‡ç®¡ç†é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡ç™¼ç¾ä½ å˜…<strong>å¯µç‰©</strong>è¶Šä¾†è¶Šé‡ï¼Ÿ<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>ä¿‚ä¿æŒ<strong>å¯µç‰©</strong>å¥åº·å˜…é—œéµã€‚<strong>å¯µç‰©è‚¥èƒ–</strong>æœƒå¢žåŠ <strong>å¯µç‰©</strong>æ‚£ä¸Šç³–å°¿ç—…ã€é—œç¯€ç‚Žã€å¿ƒè‡Ÿç—…ç­‰ç–¾ç—…é¢¨éšªï¼Œç¸®çŸ­<strong>å¯µç‰©</strong>å£½å‘½ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ–¹æ³•ã€<strong>å¯µç‰©è‚¥èƒ–</strong>çš„å±å®³ï¼Œä»¥åŠå¦‚ä½•é€²è¡Œ<strong>å¯µç‰©æ¸›é‡</strong>ï¼Œå¹«åŠ©æ¯›å­©é é›¢ç–¾ç—…ï¼Œå»¶é•·å£½å‘½ã€‚</p>
+      <h2>寵物體重管理點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇發現你嘅<strong>寵物</strong>越來越重？<strong>寵物體重管理</strong>係保持<strong>寵物</strong>健康嘅關鍵。<strong>寵物肥胖</strong>會增加<strong>寵物</strong>患上糖尿病、關節炎、心臟病等疾病風險，縮短<strong>寵物</strong>壽命。本文為你詳細講解<strong>寵物體重管理</strong>方法、<strong>寵物肥胖</strong>的危害，以及如何進行<strong>寵物減重</strong>，幫助毛孩遠離疾病，延長壽命。</p>
       
-      <h2>ðŸ¶ é»žè§£å¯µç‰©é«”é‡ç®¡ç†å’é‡è¦ï¼Ÿå¯µç‰©è‚¥èƒ–çš„å±å®³</h2>
-      <p>ä½ å˜…<strong>ç‹—ç‹—æˆ–è²“å’ª</strong>æ˜¯å¦è¶…é‡ï¼Ÿ<strong>å¯µç‰©è‚¥èƒ–</strong>å””åªä¿‚å¤–è§€å•é¡Œï¼Œæ›´ä¿‚åš´é‡å¥åº·å¨è„…ã€‚<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>ä¸ç•¶æœƒå°Žè‡´ï¼š</p>
+      <h2>🐶 點解寵物體重管理咁重要？寵物肥胖的危害</h2>
+      <p>你嘅<strong>狗狗或貓咪</strong>是否超重？<strong>寵物肥胖</strong>唔只係外觀問題，更係嚴重健康威脅。<strong>寵物體重管理</strong>不當會導致：</p>
       <ul>
-        <li><strong>ç³–å°¿ç—…ï¼š</strong><strong>å¯µç‰©è‚¥èƒ–</strong>æœƒå¢žåŠ <strong>å¯µç‰©</strong>æ‚£ä¸Šç³–å°¿ç—…é¢¨éšªï¼Œéœ€è¦çµ‚èº«æ²»ç™‚ã€‚</li>
-        <li><strong>é—œç¯€ç‚Žï¼š</strong>éŽé‡æœƒå¢žåŠ <strong>å¯µç‰©</strong>é—œç¯€è² æ“”ï¼Œå°Žè‡´é—œç¯€ç‚Žå’Œè¡Œå‹•å›°é›£ã€‚</li>
-        <li><strong>å¿ƒè‡Ÿç—…ï¼š</strong><strong>å¯µç‰©è‚¥èƒ–</strong>æœƒå¢žåŠ <strong>å¯µç‰©</strong>å¿ƒè‡Ÿè² æ“”ï¼Œå°Žè‡´å¿ƒè‡Ÿç—…ã€‚</li>
-        <li><strong>å‘¼å¸å•é¡Œï¼š</strong>éŽé‡<strong>å¯µç‰©</strong>å®¹æ˜“å‡ºç¾å‘¼å¸å›°é›£ï¼Œç‰¹åˆ¥ä¿‚çŸ­é¼»å“ç¨®ã€‚</li>
-        <li><strong>å£½å‘½ç¸®çŸ­ï¼š</strong>ç ”ç©¶é¡¯ç¤º<strong>å¯µç‰©è‚¥èƒ–</strong>å¯ç¸®çŸ­<strong>å¯µç‰©</strong>å£½å‘½å¤šé”2å¹´ã€‚</li>
+        <li><strong>糖尿病：</strong><strong>寵物肥胖</strong>會增加<strong>寵物</strong>患上糖尿病風險，需要終身治療。</li>
+        <li><strong>關節炎：</strong>過重會增加<strong>寵物</strong>關節負擔，導致關節炎和行動困難。</li>
+        <li><strong>心臟病：</strong><strong>寵物肥胖</strong>會增加<strong>寵物</strong>心臟負擔，導致心臟病。</li>
+        <li><strong>呼吸問題：</strong>過重<strong>寵物</strong>容易出現呼吸困難，特別係短鼻品種。</li>
+        <li><strong>壽命縮短：</strong>研究顯示<strong>寵物肥胖</strong>可縮短<strong>寵物</strong>壽命多達2年。</li>
       </ul>
-      <p>æ­£ç¢ºå˜…<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>å¯ä»¥é é˜²é€™äº›å•é¡Œï¼Œè®“<strong>å¯µç‰©</strong>æ›´å¥åº·ã€æ›´å¿«æ¨‚ã€æ›´é•·å£½ã€‚</p>
+      <p>正確嘅<strong>寵物體重管理</strong>可以預防這些問題，讓<strong>寵物</strong>更健康、更快樂、更長壽。</p>
 
-      <h2>ðŸ“Š é»žæ¨£çŸ¥é“å¯µç‰©æ˜¯å¦è¶…é‡ï¼Ÿå¯µç‰©é«”é‡æ¨™æº–</h2>
-      <p>é€²è¡Œ<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>å‰ï¼Œé¦–å…ˆè¦åˆ¤æ–·<strong>å¯µç‰©</strong>æ˜¯å¦è¶…é‡ã€‚ä»¥ä¸‹ä¿‚åˆ¤æ–·<strong>å¯µç‰©è‚¥èƒ–</strong>çš„æ–¹æ³•ï¼š</p>
+      <h2>📊 點樣知道寵物是否超重？寵物體重標準</h2>
+      <p>進行<strong>寵物體重管理</strong>前，首先要判斷<strong>寵物</strong>是否超重。以下係判斷<strong>寵物肥胖</strong>的方法：</p>
       <ul>
-        <li><strong>é«”åž‹è©•åˆ†ï¼ˆBCSï¼‰ï¼š</strong>ç¸é†«æœƒç”¨1-9åˆ†è©•åˆ†ï¼Œ5åˆ†ä¿‚ç†æƒ³é«”é‡ï¼Œ6-7åˆ†ä¿‚è¶…é‡ï¼Œ8-9åˆ†ä¿‚<strong>å¯µç‰©è‚¥èƒ–</strong>ã€‚</li>
-        <li><strong>è‚‹éª¨è§¸æ‘¸ï¼š</strong>ç†æƒ³é«”é‡<strong>å¯µç‰©</strong>å¯ä»¥è¼•æ˜“æ‘¸åˆ°è‚‹éª¨ï¼Œä½†å””æœƒæ˜Žé¡¯çªå‡ºã€‚</li>
-        <li><strong>è…°ç·šï¼š</strong>å¾žä¸Šæ–¹çœ‹ï¼Œ<strong>å¯µç‰©</strong>æ‡‰è©²æœ‰æ˜Žé¡¯è…°ç·šï¼Œå¾žå´é¢çœ‹æ‡‰è©²æœ‰è…¹éƒ¨æ”¶ç¸®ã€‚</li>
-        <li><strong>é«”é‡å°ç…§è¡¨ï¼š</strong>åƒè€ƒ<strong>å¯µç‰©</strong>å“ç¨®æ¨™æº–é«”é‡ç¯„åœï¼Œä½†è¦æ³¨æ„å€‹é«”å·®ç•°ã€‚</li>
+        <li><strong>體型評分（BCS）：</strong>獸醫會用1-9分評分，5分係理想體重，6-7分係超重，8-9分係<strong>寵物肥胖</strong>。</li>
+        <li><strong>肋骨觸摸：</strong>理想體重<strong>寵物</strong>可以輕易摸到肋骨，但唔會明顯突出。</li>
+        <li><strong>腰線：</strong>從上方看，<strong>寵物</strong>應該有明顯腰線，從側面看應該有腹部收縮。</li>
+        <li><strong>體重對照表：</strong>參考<strong>寵物</strong>品種標準體重範圍，但要注意個體差異。</li>
       </ul>
-      <p>å¦‚æžœæ‡·ç–‘<strong>å¯µç‰©</strong>è¶…é‡ï¼Œæ‡‰å¸¶å¾€ç¸é†«é€²è¡Œå°ˆæ¥­è©•ä¼°ï¼Œåˆ¶å®š<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>è¨ˆåŠƒã€‚</p>
+      <p>如果懷疑<strong>寵物</strong>超重，應帶往獸醫進行專業評估，制定<strong>寵物體重管理</strong>計劃。</p>
 
-      <h2>ðŸ– å¯µç‰©é«”é‡ç®¡ç†é£²é£Ÿå»ºè­°ï¼šå¦‚ä½•å¹«åŠ©å¯µç‰©æ¸›é‡</h2>
-      <p>é€²è¡Œ<strong>å¯µç‰©æ¸›é‡</strong>æ™‚ï¼Œé£²é£ŸæŽ§åˆ¶ä¿‚æœ€é‡è¦å˜…ä¸€ç’°ã€‚ä»¥ä¸‹ä¿‚<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>é£²é£Ÿå»ºè­°ï¼š</p>
+      <h2>🍖 寵物體重管理飲食建議：如何幫助寵物減重</h2>
+      <p>進行<strong>寵物減重</strong>時，飲食控制係最重要嘅一環。以下係<strong>寵物體重管理</strong>飲食建議：</p>
       
-      <h3>1. è¨ˆç®—æ­£ç¢ºé£Ÿé‡</h3>
-      <p>æ ¹æ“š<strong>å¯µç‰©</strong>ç†æƒ³é«”é‡è¨ˆç®—æ¯æ—¥æ‰€éœ€ç†±é‡ï¼Œè€Œéžç¾æœ‰é«”é‡ã€‚ä¸€èˆ¬<strong>å¯µç‰©</strong>æ¯æ—¥æ‰€éœ€ç†±é‡ç‚ºï¼šç†æƒ³é«”é‡ï¼ˆkgï¼‰Ã— 30 + 70ï¼ˆç‹—ç‹—ï¼‰æˆ–ç†æƒ³é«”é‡ï¼ˆkgï¼‰Ã— 30 + 70ï¼ˆè²“å’ªï¼‰ã€‚<strong>å¯µç‰©æ¸›é‡</strong>æ™‚ï¼Œæ‡‰æ¸›å°‘10-20%ç†±é‡æ”å–ã€‚</p>
+      <h3>1. 計算正確食量</h3>
+      <p>根據<strong>寵物</strong>理想體重計算每日所需熱量，而非現有體重。一般<strong>寵物</strong>每日所需熱量為：理想體重（kg）× 30 + 70（狗狗）或理想體重（kg）× 30 + 70（貓咪）。<strong>寵物減重</strong>時，應減少10-20%熱量攝取。</p>
       
-      <h3>2. é¸æ“‡æ¸›é‡ç³§é£Ÿ</h3>
-      <p>é¸æ“‡å°ˆç‚º<strong>å¯µç‰©æ¸›é‡</strong>è¨­è¨ˆçš„è™•æ–¹ç³§ï¼Œé€šå¸¸é«˜çº–ç¶­ã€ä½Žè„‚è‚ªï¼Œå¯ä»¥å¢žåŠ é£½è¶³æ„ŸåŒæ™‚æ¸›å°‘ç†±é‡ã€‚é¿å…é«˜ç†±é‡é›¶é£Ÿï¼Œé¸æ“‡ä½Žç†±é‡<strong>å¯µç‰©</strong>é›¶é£Ÿæˆ–è”¬èœä½œç‚ºçŽå‹µã€‚</p>
+      <h3>2. 選擇減重糧食</h3>
+      <p>選擇專為<strong>寵物減重</strong>設計的處方糧，通常高纖維、低脂肪，可以增加飽足感同時減少熱量。避免高熱量零食，選擇低熱量<strong>寵物</strong>零食或蔬菜作為獎勵。</p>
       
-      <h3>3. å®šæ™‚å®šé‡é¤µé£Ÿ</h3>
-      <p>å»ºç«‹å›ºå®šé¤µé£Ÿæ™‚é–“ï¼Œé¿å…è‡ªç”±æŽ¡é£Ÿã€‚å°‡æ¯æ—¥é£Ÿé‡åˆ†æˆ2-3é¤ï¼Œæœ‰åŠ©<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>ã€‚ä½¿ç”¨é‡æ¯æº–ç¢ºé‡åº¦ï¼Œé¿å…éŽé‡é¤µé£Ÿã€‚</p>
+      <h3>3. 定時定量餵食</h3>
+      <p>建立固定餵食時間，避免自由採食。將每日食量分成2-3餐，有助<strong>寵物體重管理</strong>。使用量杯準確量度，避免過量餵食。</p>
       
-      <h3>4. å¢žåŠ æ¿•ç³§æ¯”ä¾‹</h3>
-      <p>æ¿•ç³§å«æ°´é‡é«˜ï¼Œå¯ä»¥å¢žåŠ é£½è¶³æ„Ÿï¼Œæœ‰åŠ©<strong>å¯µç‰©æ¸›é‡</strong>ã€‚å¯ä»¥å°‡éƒ¨åˆ†ä¹¾ç³§æ›æˆæ¿•ç³§ï¼Œä½†è¦è¨ˆç®—ç¸½ç†±é‡ã€‚</p>
+      <h3>4. 增加濕糧比例</h3>
+      <p>濕糧含水量高，可以增加飽足感，有助<strong>寵物減重</strong>。可以將部分乾糧換成濕糧，但要計算總熱量。</p>
 
-      <h2>ðŸƒ å¯µç‰©é«”é‡ç®¡ç†é‹å‹•å»ºè­°</h2>
-      <p>é…åˆé£²é£ŸæŽ§åˆ¶ï¼Œé©ç•¶é‹å‹•ä¿‚<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>å˜…é‡è¦ä¸€ç’°ï¼š</p>
+      <h2>🏃 寵物體重管理運動建議</h2>
+      <p>配合飲食控制，適當運動係<strong>寵物體重管理</strong>嘅重要一環：</p>
       <ul>
-        <li><strong>é€æ­¥å¢žåŠ é‹å‹•é‡ï¼š</strong>å¦‚æžœ<strong>å¯µç‰©</strong>å¹³æ™‚å°‘é‹å‹•ï¼Œæ‡‰é€æ­¥å¢žåŠ ï¼Œé¿å…çªç„¶åŠ‡çƒˆé‹å‹•ã€‚</li>
-        <li><strong>æ¯æ—¥æ•£æ­¥ï¼š</strong>ç‹—ç‹—æ¯æ—¥è‡³å°‘æ•£æ­¥30-60åˆ†é˜ï¼Œå¯ä»¥åˆ†å¤šæ¬¡é€²è¡Œã€‚</li>
-        <li><strong>äº’å‹•éŠæˆ²ï¼š</strong>ç”¨çŽ©å…·ã€çƒé¡žç­‰èˆ‡<strong>å¯µç‰©</strong>äº’å‹•ï¼Œå¢žåŠ æ´»å‹•é‡ã€‚</li>
-        <li><strong>å®¤å…§é‹å‹•ï¼š</strong>è²“å’ªå¯ä»¥ç”¨é€—è²“æ£’ã€æ¿€å…‰ç­†ç­‰å¢žåŠ æ´»å‹•ï¼Œæ¯æ—¥è‡³å°‘15-30åˆ†é˜ã€‚</li>
-        <li><strong>æ¸¸æ³³ï¼š</strong>é©åˆé—œç¯€å•é¡Œ<strong>å¯µç‰©</strong>ï¼Œå¯ä»¥æ¶ˆè€—ç†±é‡è€Œä¸å¢žåŠ é—œç¯€è² æ“”ã€‚</li>
+        <li><strong>逐步增加運動量：</strong>如果<strong>寵物</strong>平時少運動，應逐步增加，避免突然劇烈運動。</li>
+        <li><strong>每日散步：</strong>狗狗每日至少散步30-60分鐘，可以分多次進行。</li>
+        <li><strong>互動遊戲：</strong>用玩具、球類等與<strong>寵物</strong>互動，增加活動量。</li>
+        <li><strong>室內運動：</strong>貓咪可以用逗貓棒、激光筆等增加活動，每日至少15-30分鐘。</li>
+        <li><strong>游泳：</strong>適合關節問題<strong>寵物</strong>，可以消耗熱量而不增加關節負擔。</li>
       </ul>
-      <p>è¨˜ä½ï¼š<strong>å¯µç‰©æ¸›é‡</strong>ä¿‚ä¸€å€‹é•·æœŸéŽç¨‹ï¼Œéœ€è¦è€å¿ƒå’Œå …æŒã€‚</p>
+      <p>記住：<strong>寵物減重</strong>係一個長期過程，需要耐心和堅持。</p>
 
-      <h2>ðŸ“ˆ å¯µç‰©é«”é‡ç®¡ç†é€²åº¦è¿½è¹¤</h2>
-      <p>é€²è¡Œ<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ™‚ï¼Œæ‡‰å®šæœŸè¿½è¹¤é€²åº¦ï¼š</p>
+      <h2>📈 寵物體重管理進度追蹤</h2>
+      <p>進行<strong>寵物體重管理</strong>時，應定期追蹤進度：</p>
       <ul>
-        <li><strong>æ¯é€±é‡é‡ï¼š</strong>æ¯é€±åŒä¸€æ™‚é–“ã€åŒä¸€æ¢ä»¶ä¸‹é‡é‡ï¼Œè¨˜éŒ„<strong>å¯µç‰©</strong>é«”é‡è®ŠåŒ–ã€‚</li>
-        <li><strong>é«”åž‹è©•åˆ†ï¼š</strong>æ¯æœˆé€²è¡Œé«”åž‹è©•åˆ†ï¼Œè©•ä¼°<strong>å¯µç‰©</strong>é«”åž‹æ”¹å–„æƒ…æ³ã€‚</li>
-        <li><strong>ç…§ç‰‡è¨˜éŒ„ï¼š</strong>æ¯æœˆæ‹æ”<strong>å¯µç‰©</strong>ç…§ç‰‡ï¼Œå°æ¯”é«”åž‹è®ŠåŒ–ã€‚</li>
-        <li><strong>ç¸é†«æª¢æŸ¥ï¼š</strong>æ¯3-6å€‹æœˆå¸¶<strong>å¯µç‰©</strong>åˆ°ç¸é†«æª¢æŸ¥ï¼Œè©•ä¼°<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ•ˆæžœå’Œå¥åº·ç‹€æ³ã€‚</li>
+        <li><strong>每週量重：</strong>每週同一時間、同一條件下量重，記錄<strong>寵物</strong>體重變化。</li>
+        <li><strong>體型評分：</strong>每月進行體型評分，評估<strong>寵物</strong>體型改善情況。</li>
+        <li><strong>照片記錄：</strong>每月拍攝<strong>寵物</strong>照片，對比體型變化。</li>
+        <li><strong>獸醫檢查：</strong>每3-6個月帶<strong>寵物</strong>到獸醫檢查，評估<strong>寵物體重管理</strong>效果和健康狀況。</li>
       </ul>
-      <p>ç†æƒ³<strong>å¯µç‰©æ¸›é‡</strong>é€Ÿåº¦ç‚ºæ¯é€±æ¸›å°‘é«”é‡1-2%ï¼ŒéŽå¿«æ¸›é‡å¯èƒ½å½±éŸ¿<strong>å¯µç‰©</strong>å¥åº·ã€‚</p>
+      <p>理想<strong>寵物減重</strong>速度為每週減少體重1-2%，過快減重可能影響<strong>寵物</strong>健康。</p>
 
-      <h2>âš ï¸ å¯µç‰©é«”é‡ç®¡ç†æ³¨æ„äº‹é …</h2>
-      <p>é€²è¡Œ<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ™‚ï¼Œæ‡‰æ³¨æ„ä»¥ä¸‹äº‹é …ï¼š</p>
+      <h2>⚠️ 寵物體重管理注意事項</h2>
+      <p>進行<strong>寵物體重管理</strong>時，應注意以下事項：</p>
       <ul>
-        <li><strong>ä¸è¦éŽåº¦æ¸›é‡ï¼š</strong><strong>å¯µç‰©æ¸›é‡</strong>æ‡‰å¾ªåºæ¼¸é€²ï¼Œé¿å…éŽåº¦é™åˆ¶å°Žè‡´ç‡Ÿé¤Šä¸è‰¯ã€‚</li>
-        <li><strong>ç›£æŽ§å¥åº·ç‹€æ³ï¼š</strong>å¦‚æžœ<strong>å¯µç‰©</strong>å‡ºç¾ç„¡ç²¾ç¥žã€é£Ÿæ…¾ä¸æŒ¯ç­‰æƒ…æ³ï¼Œæ‡‰ç«‹å³è«®è©¢ç¸é†«ã€‚</li>
-        <li><strong>é«˜é½¡å¯µç‰©ï¼š</strong>é«˜é½¡<strong>å¯µç‰©</strong>é€²è¡Œ<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ™‚æ‡‰æ›´åŠ è¬¹æ…Žï¼Œå»ºè­°åœ¨ç¸é†«æŒ‡å°Žä¸‹é€²è¡Œã€‚</li>
-        <li><strong>ç–¾ç—…å› ç´ ï¼š</strong>æŸäº›ç–¾ç—…ï¼ˆå¦‚ç”²ç‹€è…ºåŠŸèƒ½ä½Žä¸‹ï¼‰æœƒå°Žè‡´<strong>å¯µç‰©è‚¥èƒ–</strong>ï¼Œæ‡‰å…ˆæ²»ç™‚ç–¾ç—…å†é€²è¡Œ<strong>å¯µç‰©æ¸›é‡</strong>ã€‚</li>
-        <li><strong>ä¿æŒè€å¿ƒï¼š</strong><strong>å¯µç‰©æ¸›é‡</strong>éœ€è¦æ™‚é–“ï¼Œé€šå¸¸éœ€è¦3-6å€‹æœˆæ‰èƒ½çœ‹åˆ°æ˜Žé¡¯æ•ˆæžœã€‚</li>
+        <li><strong>不要過度減重：</strong><strong>寵物減重</strong>應循序漸進，避免過度限制導致營養不良。</li>
+        <li><strong>監控健康狀況：</strong>如果<strong>寵物</strong>出現無精神、食慾不振等情況，應立即諮詢獸醫。</li>
+        <li><strong>高齡寵物：</strong>高齡<strong>寵物</strong>進行<strong>寵物體重管理</strong>時應更加謹慎，建議在獸醫指導下進行。</li>
+        <li><strong>疾病因素：</strong>某些疾病（如甲狀腺功能低下）會導致<strong>寵物肥胖</strong>，應先治療疾病再進行<strong>寵物減重</strong>。</li>
+        <li><strong>保持耐心：</strong><strong>寵物減重</strong>需要時間，通常需要3-6個月才能看到明顯效果。</li>
       </ul>
 
-      <h2>ðŸ’¡ å¯µç‰©é«”é‡ç®¡ç†å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: å¯µç‰©é«”é‡ç®¡ç†é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>å¯µç‰©é«”é‡ç®¡ç†</strong>åŒ…æ‹¬é£²é£ŸæŽ§åˆ¶ã€å¢žåŠ é‹å‹•ã€å®šæœŸè¿½è¹¤ã€‚é¦–å…ˆå¸¶<strong>å¯µç‰©</strong>åˆ°ç¸é†«è©•ä¼°ï¼Œåˆ¶å®š<strong>å¯µç‰©æ¸›é‡</strong>è¨ˆåŠƒï¼Œç„¶å¾Œåš´æ ¼åŸ·è¡Œé£²é£Ÿå’Œé‹å‹•è¨ˆåŠƒï¼Œå®šæœŸè¿½è¹¤é€²åº¦ã€‚</p>
+      <h2>💡 寵物體重管理常見問題</h2>
+      <p><strong>Q: 寵物體重管理點算好？</strong></p>
+      <p>A: <strong>寵物體重管理</strong>包括飲食控制、增加運動、定期追蹤。首先帶<strong>寵物</strong>到獸醫評估，制定<strong>寵物減重</strong>計劃，然後嚴格執行飲食和運動計劃，定期追蹤進度。</p>
       
-      <p><strong>Q: å¯µç‰©æ¸›é‡è¦å¹¾è€ï¼Ÿ</strong></p>
-      <p>A: <strong>å¯µç‰©æ¸›é‡</strong>é€šå¸¸éœ€è¦3-6å€‹æœˆï¼Œè¦–ä¹Ž<strong>å¯µç‰©è‚¥èƒ–</strong>ç¨‹åº¦è€Œå®šã€‚ç†æƒ³æ¸›é‡é€Ÿåº¦ç‚ºæ¯é€±æ¸›å°‘é«”é‡1-2%ï¼ŒéŽå¿«å¯èƒ½å½±éŸ¿<strong>å¯µç‰©</strong>å¥åº·ã€‚</p>
+      <p><strong>Q: 寵物減重要幾耐？</strong></p>
+      <p>A: <strong>寵物減重</strong>通常需要3-6個月，視乎<strong>寵物肥胖</strong>程度而定。理想減重速度為每週減少體重1-2%，過快可能影響<strong>寵物</strong>健康。</p>
       
-      <p><strong>Q: å¯µç‰©è‚¥èƒ–æœƒå°Žè‡´å’©ç–¾ç—…ï¼Ÿ</strong></p>
-      <p>A: <strong>å¯µç‰©è‚¥èƒ–</strong>æœƒå¢žåŠ <strong>å¯µç‰©</strong>æ‚£ä¸Šç³–å°¿ç—…ã€é—œç¯€ç‚Žã€å¿ƒè‡Ÿç—…ã€å‘¼å¸å•é¡Œç­‰ç–¾ç—…é¢¨éšªï¼Œä¸¦å¯èƒ½ç¸®çŸ­<strong>å¯µç‰©</strong>å£½å‘½å¤šé”2å¹´ã€‚</p>
+      <p><strong>Q: 寵物肥胖會導致咩疾病？</strong></p>
+      <p>A: <strong>寵物肥胖</strong>會增加<strong>寵物</strong>患上糖尿病、關節炎、心臟病、呼吸問題等疾病風險，並可能縮短<strong>寵物</strong>壽命多達2年。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>å¯µç‰©é«”é‡ç®¡ç†</strong>ä¿‚ä¿æŒ<strong>å¯µç‰©</strong>å¥åº·å˜…é—œéµã€‚<strong>å¯µç‰©è‚¥èƒ–</strong>æœƒå°Žè‡´å¤šç¨®ç–¾ç—…ï¼Œç¸®çŸ­<strong>å¯µç‰©</strong>å£½å‘½ã€‚é€šéŽæ­£ç¢ºå˜…<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>æ–¹æ³•ï¼ŒåŒ…æ‹¬é£²é£ŸæŽ§åˆ¶ã€å¢žåŠ é‹å‹•ã€å®šæœŸè¿½è¹¤ï¼Œå¯ä»¥å¹«åŠ©<strong>å¯µç‰©</strong>å¥åº·æ¸›é‡ï¼Œé é›¢ç–¾ç—…ï¼Œå»¶é•·å£½å‘½ã€‚å¦‚æœ‰ç–‘å•ï¼Œæ‡‰è«®è©¢å°ˆæ¥­ç¸é†«ï¼Œåˆ¶å®šé©åˆä½ <strong>å¯µç‰©</strong>å˜…<strong>å¯µç‰©é«”é‡ç®¡ç†</strong>è¨ˆåŠƒã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>寵物體重管理</strong>係保持<strong>寵物</strong>健康嘅關鍵。<strong>寵物肥胖</strong>會導致多種疾病，縮短<strong>寵物</strong>壽命。通過正確嘅<strong>寵物體重管理</strong>方法，包括飲食控制、增加運動、定期追蹤，可以幫助<strong>寵物</strong>健康減重，遠離疾病，延長壽命。如有疑問，應諮詢專業獸醫，制定適合你<strong>寵物</strong>嘅<strong>寵物體重管理</strong>計劃。</p>
     `,
     author: "PetWell HK",
     date: "2025-03-10",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogPetWeight
   },
   {
     id: "4",
-    slug: "æ«»æ¡ƒçœ¼-ç‹—-è²“-æ²»ç™‚",
-    title: "ç‹—ç‹—æ«»æ¡ƒçœ¼é»žç®—å¥½ï¼Ÿæ«»æ¡ƒçœ¼ç—‡ç‹€ã€æˆå› ã€æ²»ç™‚æ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "ç‹—ç‹—æ«»æ¡ƒçœ¼é»žç®—å¥½ï¼Ÿæ«»æ¡ƒçœ¼ä¿‚å¸¸è¦‹éºå‚³æ€§çœ¼ç–¾ï¼Œç¬¬ä¸‰çœ¼çž¼æ·šè…ºè…«è„¹çªå‡ºã€‚æœ¬æ–‡è©³è§£æ«»æ¡ƒçœ¼ç—‡ç‹€ã€é«˜å±çŠ¬ç¨®ï¼ˆè‹±é¬¥ã€æ³•é¬¥ã€è¥¿æ–½ç­‰ï¼‰ã€æ«»æ¡ƒçœ¼æ²»ç™‚æ–¹æ³•åŠæ‰‹è¡“é¸æ“‡ï¼Œæ•™ä½ åŠæ—©ç™¼ç¾å®ˆè­·æ¯›å­©çœ¼ç›å¥åº·ã€‚",
+    slug: "櫻桃眼-狗-貓-治療",
+    title: "狗狗櫻桃眼點算好？櫻桃眼症狀、成因、治療方法全攻略 | PetWell HK",
+    excerpt: "狗狗櫻桃眼點算好？櫻桃眼係常見遺傳性眼疾，第三眼瞼淚腺腫脹突出。本文詳解櫻桃眼症狀、高危犬種（英鬥、法鬥、西施等）、櫻桃眼治療方法及手術選擇，教你及早發現守護毛孩眼睛健康。",
     content: `
-      <h2>ç‹—ç‹—æ«»æ¡ƒçœ¼é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡ç™¼ç¾ä½ å˜…<strong>ç‹—ç‹—</strong>çœ¼è§’å‡ºç¾ç²‰ç´…è‰²è…«å¡Šï¼Ÿå¯èƒ½ä¿‚<strong>æ«»æ¡ƒçœ¼</strong>ï¼<strong>æ«»æ¡ƒçœ¼</strong>ä¿‚å¸¸è¦‹éºå‚³æ€§çœ¼ç–¾ï¼Œä¸»è¦å½±éŸ¿æŸäº›<strong>ç‹—ç‹—</strong>å“ç¨®ï¼Œæœ‰æ™‚ä¹Ÿæœƒå‡ºç¾åœ¨<strong>è²“å’ª</strong>èº«ä¸Šã€‚ç•¶<strong>ç‹—ç‹—</strong>ç¬¬ä¸‰çœ¼çž¼å…§çš„æ·šè…ºè…«è„¹ä¸¦è®Šç´…ï¼Œç”šè‡³è¦†è“‹éƒ¨åˆ†çœ¼ç›æ™‚ï¼Œå°±æœƒå‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>æ«»æ¡ƒçœ¼</strong>ç—‡ç‹€ã€æˆå› ã€<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>æ–¹æ³•ï¼Œå¹«åŠ©ä½ åŠæ—©ç™¼ç¾å’Œè™•ç†<strong>ç‹—ç‹—æ«»æ¡ƒçœ¼</strong>å•é¡Œã€‚</p>
+      <h2>狗狗櫻桃眼點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇發現你嘅<strong>狗狗</strong>眼角出現粉紅色腫塊？可能係<strong>櫻桃眼</strong>！<strong>櫻桃眼</strong>係常見遺傳性眼疾，主要影響某些<strong>狗狗</strong>品種，有時也會出現在<strong>貓咪</strong>身上。當<strong>狗狗</strong>第三眼瞼內的淚腺腫脹並變紅，甚至覆蓋部分眼睛時，就會出現<strong>櫻桃眼</strong>。本文為你詳細講解<strong>櫻桃眼</strong>症狀、成因、<strong>櫻桃眼治療</strong>方法，幫助你及早發現和處理<strong>狗狗櫻桃眼</strong>問題。</p>
       
-      <h2>ä»€éº¼æ˜¯æ«»æ¡ƒçœ¼ï¼ˆCherry Eyeï¼‰ï¼Ÿ</h2>
-      <p><strong>æ«»æ¡ƒçœ¼</strong>ä¿‚ä¸€ç¨®å¸¸è¦‹çš„éºå‚³æ€§ç–¾ç—…ï¼Œä¸»è¦å½±éŸ¿æŸäº›<strong>ç‹—ç‹—</strong>å“ç¨®ï¼Œæœ‰æ™‚ä¹Ÿæœƒå‡ºç¾åœ¨<strong>è²“å’ª</strong>èº«ä¸Šã€‚ç•¶<strong>ç‹—ç‹—</strong>ç¬¬ä¸‰çœ¼çž¼å…§çš„æ·šè…ºè…«è„¹ä¸¦è®Šç´…ï¼Œç”šè‡³è¦†è“‹éƒ¨åˆ†çœ¼ç›æ™‚ï¼Œå°±æœƒå‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ã€‚</p>
-      <p>é€™å€‹æ·šè…ºå°æ–¼ç¶­æŒ<strong>ç‹—ç‹—</strong>çœ¼ç›å¥åº·èˆ‡ç”¢ç”Ÿæ·šæ°´è‡³é—œé‡è¦ï¼Œå› æ­¤å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>å•é¡Œæ™‚æ‡‰ç›¡å¿«è™•ç†ï¼Œé¿å…å½±éŸ¿<strong>ç‹—ç‹—</strong>è¦–åŠ›å’Œçœ¼ç›å¥åº·ã€‚</p>
+      <h2>什麼是櫻桃眼（Cherry Eye）？</h2>
+      <p><strong>櫻桃眼</strong>係一種常見的遺傳性疾病，主要影響某些<strong>狗狗</strong>品種，有時也會出現在<strong>貓咪</strong>身上。當<strong>狗狗</strong>第三眼瞼內的淚腺腫脹並變紅，甚至覆蓋部分眼睛時，就會出現<strong>櫻桃眼</strong>。</p>
+      <p>這個淚腺對於維持<strong>狗狗</strong>眼睛健康與產生淚水至關重要，因此出現<strong>櫻桃眼</strong>問題時應盡快處理，避免影響<strong>狗狗</strong>視力和眼睛健康。</p>
 
-      <h2>æ«»æ¡ƒçœ¼ç—‡ç‹€ï¼šå¦‚ä½•è­˜åˆ¥ç‹—ç‹—æ«»æ¡ƒçœ¼</h2>
-      <p><strong>æ«»æ¡ƒçœ¼</strong>éžå¸¸å®¹æ˜“è¾¨èªï¼Œæœƒåœ¨<strong>ç‹—ç‹—</strong>é è¿‘é¼»å­çš„çœ¼è§’å½¢æˆä¸€å€‹ç²‰ç´…è‰²è…«å¡Šï¼Œçªå‡ºä¸¦è“‹ä½éƒ¨åˆ†çœ¼ç›ã€‚<strong>æ«»æ¡ƒçœ¼</strong>å¯å–®çœ¼æˆ–é›™çœ¼å‡ºç¾ã€‚å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—</strong>å‡ºç¾é€™äº›<strong>æ«»æ¡ƒçœ¼</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶å¾€ç¸é†«æª¢æŸ¥ã€‚</p>
+      <h2>櫻桃眼症狀：如何識別狗狗櫻桃眼</h2>
+      <p><strong>櫻桃眼</strong>非常容易辨認，會在<strong>狗狗</strong>靠近鼻子的眼角形成一個粉紅色腫塊，突出並蓋住部分眼睛。<strong>櫻桃眼</strong>可單眼或雙眼出現。如果發現<strong>狗狗</strong>出現這些<strong>櫻桃眼</strong>症狀，應立即帶往獸醫檢查。</p>
 
-      <h2>æ«»æ¡ƒçœ¼æˆå› èˆ‡é«˜é¢¨éšªçŠ¬ç¨®</h2>
-      <p><strong>æ«»æ¡ƒçœ¼</strong>é€šå¸¸èˆ‡éºå‚³æœ‰é—œï¼Œå°¤å…¶å¸¸è¦‹æ–¼å…©æ­²ä»¥ä¸‹<strong>ç‹—ç‹—</strong>å¹¼çŠ¬ï¼Œä»¥åŠä¸€äº›æ‰è‡‰<strong>ç‹—ç‹—</strong>å“ç¨®ã€‚ä»¥ä¸‹ä¿‚<strong>æ«»æ¡ƒçœ¼</strong>é«˜é¢¨éšª<strong>ç‹—ç‹—</strong>å“ç¨®ï¼š</p>
+      <h2>櫻桃眼成因與高風險犬種</h2>
+      <p><strong>櫻桃眼</strong>通常與遺傳有關，尤其常見於兩歲以下<strong>狗狗</strong>幼犬，以及一些扁臉<strong>狗狗</strong>品種。以下係<strong>櫻桃眼</strong>高風險<strong>狗狗</strong>品種：</p>
       <ul>
-        <li>è‹±åœ‹é¬¥ç‰›çŠ¬</li>
-        <li>æ³•åœ‹é¬¥ç‰›çŠ¬</li>
-        <li>ç¾©å¤§åˆ©çµè­·çŠ¬ï¼ˆCane Corsoï¼‰</li>
-        <li>ç±³æ ¼é­¯ï¼ˆBeagleï¼‰</li>
-        <li>æ‹‰è–©çŠ¬ï¼ˆLhasa Apsoï¼‰</li>
-        <li>æŸ¥ç†çŽ‹å°çµçŠ¬ï¼ˆCavalier King Charles Spanielï¼‰</li>
-        <li>è¥¿æ–½çŠ¬ï¼ˆShih Tzuï¼‰</li>
-        <li>è¥¿é«˜åœ°ç™½æ¢—ï¼ˆWest Highland White Terrierï¼‰</li>
-        <li>å·´å“¥çŠ¬ï¼ˆPugï¼‰</li>
-        <li>è¡€çµçŠ¬ï¼ˆBloodhoundï¼‰</li>
-        <li>æ³¢å£«é “ã¹´ï¼ˆBoston Terrierï¼‰</li>
+        <li>英國鬥牛犬</li>
+        <li>法國鬥牛犬</li>
+        <li>義大利獵護犬（Cane Corso）</li>
+        <li>米格魯（Beagle）</li>
+        <li>拉薩犬（Lhasa Apso）</li>
+        <li>查理王小獵犬（Cavalier King Charles Spaniel）</li>
+        <li>西施犬（Shih Tzu）</li>
+        <li>西高地白梗（West Highland White Terrier）</li>
+        <li>巴哥犬（Pug）</li>
+        <li>血獵犬（Bloodhound）</li>
+        <li>波士頓㹴（Boston Terrier）</li>
       </ul>
-      <p>éƒ¨åˆ†ä¸»äººæŒ‡å‡ºï¼Œå¯µç‰©åœ¨æƒ…ç·’æ¿€å‹•ã€å—é©šæˆ–ææ‡¼æ™‚ï¼Œä¹Ÿå¯èƒ½çªç„¶å‡ºç¾æ«»æ¡ƒçœ¼ã€‚</p>
+      <p>部分主人指出，寵物在情緒激動、受驚或恐懼時，也可能突然出現櫻桃眼。</p>
 
-      <h2>æ«»æ¡ƒçœ¼æœƒç—›å—Žï¼Ÿ</h2>
-      <p>é›–ç„¶<strong>æ«»æ¡ƒçœ¼</strong>çœ‹èµ·ä¾†åš´é‡ï¼Œä½†å¤§å¤šæ•¸æƒ…æ³ä¸‹<strong>æ«»æ¡ƒçœ¼</strong>ä¸¦ä¸æœƒé€ æˆ<strong>ç‹—ç‹—</strong>ç–¼ç—›ï¼Œé™¤éžé•·æœŸæœªæ²»ç™‚<strong>æ«»æ¡ƒçœ¼</strong>å°Žè‡´ä½µç™¼ç—‡ã€‚ä½†å¦‚æžœ<strong>ç‹—ç‹—</strong>å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ï¼Œä»æ‡‰åŠæ—©æ²»ç™‚ï¼Œé¿å…å½±éŸ¿<strong>ç‹—ç‹—</strong>è¦–åŠ›ã€‚</p>
+      <h2>櫻桃眼會痛嗎？</h2>
+      <p>雖然<strong>櫻桃眼</strong>看起來嚴重，但大多數情況下<strong>櫻桃眼</strong>並不會造成<strong>狗狗</strong>疼痛，除非長期未治療<strong>櫻桃眼</strong>導致併發症。但如果<strong>狗狗</strong>出現<strong>櫻桃眼</strong>，仍應及早治療，避免影響<strong>狗狗</strong>視力。</p>
 
-      <h2>æ«»æ¡ƒçœ¼æ²»ç™‚æ–¹æ³•ï¼šå¦‚ä½•è™•ç†ç‹—ç‹—æ«»æ¡ƒçœ¼</h2>
-      <p>ç•¶ç™¼ç¾<strong>ç‹—ç‹—</strong>å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>æ™‚ï¼Œæ‡‰ç«‹å³å¸¶å¾€ç¸é†«æª¢æŸ¥ã€‚ä»¥ä¸‹ä¿‚<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>æ–¹æ³•ï¼š</p>
+      <h2>櫻桃眼治療方法：如何處理狗狗櫻桃眼</h2>
+      <p>當發現<strong>狗狗</strong>出現<strong>櫻桃眼</strong>時，應立即帶往獸醫檢查。以下係<strong>櫻桃眼治療</strong>方法：</p>
       
-      <h3>1. è‡ªè¡Œå¾©ä½æˆ–è—¥ç‰©æ²»ç™‚</h3>
-      <p>å¶çˆ¾ï¼Œ<strong>æ«»æ¡ƒçœ¼</strong>æ·šè…ºå¯èƒ½æœƒè‡ªè¡Œå¾©ä½ï¼Œæˆ–ä½¿ç”¨è—¥ç‰©èˆ‡é¡žå›ºé†‡æ”¹å–„ã€‚ä½†å¤§éƒ¨åˆ†<strong>æ«»æ¡ƒçœ¼</strong>æƒ…æ³ä»éœ€è¦é€éŽå¤–ç§‘æ‰‹è¡“å°‡è…ºé«”æ­¸ä½ã€‚</p>
+      <h3>1. 自行復位或藥物治療</h3>
+      <p>偶爾，<strong>櫻桃眼</strong>淚腺可能會自行復位，或使用藥物與類固醇改善。但大部分<strong>櫻桃眼</strong>情況仍需要透過外科手術將腺體歸位。</p>
       
-      <h3>2. å¤–ç§‘æ‰‹è¡“æ²»ç™‚</h3>
-      <p>å¤§éƒ¨åˆ†<strong>æ«»æ¡ƒçœ¼</strong>éœ€è¦é€éŽå¤–ç§‘æ‰‹è¡“æ²»ç™‚ã€‚éŽåŽ»ç¸é†«æœƒå°‡<strong>æ«»æ¡ƒçœ¼</strong>è…«è„¹çš„è…ºé«”åˆ‡é™¤ï¼Œä½†ç¾åœ¨å·²çŸ¥é€™æ¨£åšæœƒå°Žè‡´<strong>ç‹—ç‹—</strong>ä¹¾çœ¼ç—‡ç”šè‡³å¤±æ˜Žã€‚å› æ­¤ï¼Œæœ€å®‰å…¨å˜…<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>æ–¹å¼ä¿‚å°‡è…ºé«”ç¸«å›žåŽŸä½ã€‚</p>
-      <p>é›–ç„¶<strong>æ«»æ¡ƒçœ¼</strong>æ‰‹è¡“æ–¹å¼å¤šæ¨£ï¼Œä½†ä¸ä¿è­‰æ°¸ä¹…ä¸å¾©ç™¼ï¼Œéƒ¨åˆ†<strong>ç‹—ç‹—</strong>å¯èƒ½éœ€è¦å†æ¬¡é€²è¡Œ<strong>æ«»æ¡ƒçœ¼</strong>æ‰‹è¡“ã€‚</p>
+      <h3>2. 外科手術治療</h3>
+      <p>大部分<strong>櫻桃眼</strong>需要透過外科手術治療。過去獸醫會將<strong>櫻桃眼</strong>腫脹的腺體切除，但現在已知這樣做會導致<strong>狗狗</strong>乾眼症甚至失明。因此，最安全嘅<strong>櫻桃眼治療</strong>方式係將腺體縫回原位。</p>
+      <p>雖然<strong>櫻桃眼</strong>手術方式多樣，但不保證永久不復發，部分<strong>狗狗</strong>可能需要再次進行<strong>櫻桃眼</strong>手術。</p>
       
-      <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin: 20px 0;"><strong>âš ï¸ æé†’ï¼š</strong>å¦‚æžœä½ å˜…<strong>ç‹—ç‹—</strong>æœ‰<strong>æ«»æ¡ƒçœ¼</strong>ï¼Œè«‹é¿å…ä½¢é€²è¡Œç¹æ®–ï¼Œä»¥é˜²å°‡æ­¤éºå‚³å•é¡Œå‚³çµ¦ä¸‹ä¸€ä»£ã€‚</div>
+      <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin: 20px 0;"><strong>⚠️ 提醒：</strong>如果你嘅<strong>狗狗</strong>有<strong>櫻桃眼</strong>，請避免佢進行繁殖，以防將此遺傳問題傳給下一代。</div>
 
-      <h2>æ«»æ¡ƒçœ¼æœƒå†å¾©ç™¼å—Žï¼Ÿ</h2>
-      <p>æœ‰äº›<strong>ç‹—ç‹—</strong>åœ¨æŽ¥å—<strong>æ«»æ¡ƒçœ¼</strong>æ‰‹è¡“å¾Œä»å¯èƒ½å†æ¬¡å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ï¼Œè‹¥<strong>æ«»æ¡ƒçœ¼</strong>å¾©ç™¼ï¼Œå¯é‡è¤‡é€²è¡Œç›¸åŒå˜…<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>ç¨‹åºã€‚å®šæœŸæª¢æŸ¥<strong>ç‹—ç‹—</strong>çœ¼ç›ï¼ŒåŠæ—©ç™¼ç¾<strong>æ«»æ¡ƒçœ¼</strong>å¾©ç™¼ã€‚</p>
+      <h2>櫻桃眼會再復發嗎？</h2>
+      <p>有些<strong>狗狗</strong>在接受<strong>櫻桃眼</strong>手術後仍可能再次出現<strong>櫻桃眼</strong>，若<strong>櫻桃眼</strong>復發，可重複進行相同嘅<strong>櫻桃眼治療</strong>程序。定期檢查<strong>狗狗</strong>眼睛，及早發現<strong>櫻桃眼</strong>復發。</p>
 
-      <h2>ðŸ’¡ æ«»æ¡ƒçœ¼å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: ç‹—ç‹—æ«»æ¡ƒçœ¼é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—</strong>å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ï¼Œæ‡‰ç«‹å³å¸¶å¾€ç¸é†«æª¢æŸ¥ã€‚<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>æ–¹æ³•åŒ…æ‹¬è—¥ç‰©æ²»ç™‚å’Œå¤–ç§‘æ‰‹è¡“ï¼Œå¤§éƒ¨åˆ†<strong>æ«»æ¡ƒçœ¼</strong>éœ€è¦æ‰‹è¡“å°‡è…ºé«”ç¸«å›žåŽŸä½ã€‚</p>
+      <h2>💡 櫻桃眼常見問題</h2>
+      <p><strong>Q: 狗狗櫻桃眼點算好？</strong></p>
+      <p>A: 如果發現<strong>狗狗</strong>出現<strong>櫻桃眼</strong>，應立即帶往獸醫檢查。<strong>櫻桃眼治療</strong>方法包括藥物治療和外科手術，大部分<strong>櫻桃眼</strong>需要手術將腺體縫回原位。</p>
       
-      <p><strong>Q: æ«»æ¡ƒçœ¼æœƒè‡ªå·±å¥½å—Žï¼Ÿ</strong></p>
-      <p>A: å°‘æ•¸<strong>æ«»æ¡ƒçœ¼</strong>å¯èƒ½æœƒè‡ªè¡Œå¾©ä½ï¼Œä½†å¤§éƒ¨åˆ†<strong>æ«»æ¡ƒçœ¼</strong>éœ€è¦<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>ã€‚å¦‚æžœ<strong>ç‹—ç‹—</strong>å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ï¼Œæ‡‰è«®è©¢ç¸é†«ï¼Œé¿å…å»¶èª¤<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>ã€‚</p>
+      <p><strong>Q: 櫻桃眼會自己好嗎？</strong></p>
+      <p>A: 少數<strong>櫻桃眼</strong>可能會自行復位，但大部分<strong>櫻桃眼</strong>需要<strong>櫻桃眼治療</strong>。如果<strong>狗狗</strong>出現<strong>櫻桃眼</strong>，應諮詢獸醫，避免延誤<strong>櫻桃眼治療</strong>。</p>
       
-      <p><strong>Q: æ«»æ¡ƒçœ¼æ‰‹è¡“å¹¾éŒ¢ï¼Ÿ</strong></p>
-      <p>A: <strong>æ«»æ¡ƒçœ¼</strong>æ‰‹è¡“è²»ç”¨å› è¨ºæ‰€å’Œ<strong>ç‹—ç‹—</strong>æƒ…æ³è€Œç•°ï¼Œä¸€èˆ¬ç”±æ•¸åƒè‡³éŽè¬å…ƒä¸ç­‰ã€‚å»ºè­°å‘ç¸é†«æŸ¥è©¢<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>è²»ç”¨ã€‚</p>
+      <p><strong>Q: 櫻桃眼手術幾錢？</strong></p>
+      <p>A: <strong>櫻桃眼</strong>手術費用因診所和<strong>狗狗</strong>情況而異，一般由數千至過萬元不等。建議向獸醫查詢<strong>櫻桃眼治療</strong>費用。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>æ«»æ¡ƒçœ¼</strong>ä¿‚å¸¸è¦‹éºå‚³æ€§çœ¼ç–¾ï¼Œä¸»è¦å½±éŸ¿æŸäº›<strong>ç‹—ç‹—</strong>å“ç¨®ã€‚å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—</strong>å‡ºç¾<strong>æ«»æ¡ƒçœ¼</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶å¾€ç¸é†«æª¢æŸ¥ï¼Œé€²è¡Œé©ç•¶å˜…<strong>æ«»æ¡ƒçœ¼æ²»ç™‚</strong>ã€‚å¤§éƒ¨åˆ†<strong>æ«»æ¡ƒçœ¼</strong>éœ€è¦å¤–ç§‘æ‰‹è¡“æ²»ç™‚ï¼ŒåŠæ—©è™•ç†å¯ä»¥é¿å…å½±éŸ¿<strong>ç‹—ç‹—</strong>è¦–åŠ›å’Œçœ¼ç›å¥åº·ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>櫻桃眼</strong>係常見遺傳性眼疾，主要影響某些<strong>狗狗</strong>品種。如果發現<strong>狗狗</strong>出現<strong>櫻桃眼</strong>症狀，應立即帶往獸醫檢查，進行適當嘅<strong>櫻桃眼治療</strong>。大部分<strong>櫻桃眼</strong>需要外科手術治療，及早處理可以避免影響<strong>狗狗</strong>視力和眼睛健康。</p>
     `,
     author: "PetWell HK",
     date: "2025-03-05",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogCherryEye
   },
   {
     id: "5",
-    slug: "è²“å’ªæ´—æ¾¡æŒ‡å—",
-    title: "è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼ï¼Ÿè²“å’ªæ´—æ¾¡å¹¾è€ä¸€æ¬¡ï¼Ÿå®Œæ•´æ´—è²“æŒ‡å— | PetWell HK",
-    excerpt: "è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼ï¼Ÿè²“å’ªç©¶ç«Ÿè¦å””è¦æ²–æ¶¼ï¼Ÿåœ‹éš›è²“å’ªç¾Žå®¹å¸«å”æœƒå»ºè­°æ¯4-6æ˜ŸæœŸä¸€æ¬¡ã€‚æœ¬æ–‡æ•™ä½ åˆ¤æ–·è²“å’ªæ´—æ¾¡æ™‚æ©Ÿã€è²“å’ªæ´—æ¾¡å®‰æ’«æŠ€å·§ã€ç„¡æ°´ä¹¾æ´—é¸æ“‡ï¼Œä»¥åŠæ—¥å¸¸ä¿æŒæ¸…æ½”çš„æ¢³æ¯›ã€æ¸…çœ¼è€³æ–¹æ³•ã€‚",
+    slug: "貓咪洗澡指南",
+    title: "貓咪需唔需要沖涼？貓咪洗澡幾耐一次？完整洗貓指南 | PetWell HK",
+    excerpt: "貓咪需唔需要沖涼？貓咪究竟要唔要沖涼？國際貓咪美容師協會建議每4-6星期一次。本文教你判斷貓咪洗澡時機、貓咪洗澡安撫技巧、無水乾洗選擇，以及日常保持清潔的梳毛、清眼耳方法。",
     content: `
-      <h2>è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">å¥½å¤šä¸»äººæœƒå•ï¼š<strong>è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼</strong>ï¼Ÿé›–ç„¶<strong>è²“å’ª</strong>è‡ªå·±æœƒèˆ”ä¹¾æ·¨èº«é«”ï¼Œä½†<strong>è²“å’ªæ´—æ¾¡</strong>ä»ç„¶ä¿‚å¿…è¦å˜…ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼</strong>ã€<strong>è²“å’ªæ´—æ¾¡</strong>å¹¾è€ä¸€æ¬¡ã€<strong>è²“å’ªæ´—æ¾¡</strong>æ–¹æ³•å’ŒæŠ€å·§ï¼Œå¹«åŠ©ä½ æ­£ç¢ºç…§é¡§<strong>è²“å’ª</strong>æ¸…æ½”è¡›ç”Ÿã€‚</p>
+      <h2>貓咪需唔需要沖涼？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">好多主人會問：<strong>貓咪需唔需要沖涼</strong>？雖然<strong>貓咪</strong>自己會舔乾淨身體，但<strong>貓咪洗澡</strong>仍然係必要嘅。本文為你詳細講解<strong>貓咪需唔需要沖涼</strong>、<strong>貓咪洗澡</strong>幾耐一次、<strong>貓咪洗澡</strong>方法和技巧，幫助你正確照顧<strong>貓咪</strong>清潔衛生。</p>
       
-      <h2>ðŸ§¼ è²“å’ªç©¶ç«Ÿéœ€å””éœ€è¦æ²–æ¶¼ï¼Ÿ</h2>
-      <p>ç­”æ¡ˆä¿‚ï¼š<strong>éœ€è¦ï¼Œä½†å””ä¿‚æˆæ—¥éƒ½è¦æ²–ã€‚</strong></p>
-      <p>é›–ç„¶è²“å’ªè‡ªå·±æœƒèˆ”ä¹¾æ·¨èº«é«”ï¼Œä½†å¦‚æžœé‡åˆ°ä»¥ä¸‹æƒ…æ³ï¼Œ<strong>ä½ å°±å¯èƒ½è¦å¹«ä½¢æ´—ä¸€æ´—å•¦ï¼š</strong></p>
+      <h2>🧼 貓咪究竟需唔需要沖涼？</h2>
+      <p>答案係：<strong>需要，但唔係成日都要沖。</strong></p>
+      <p>雖然貓咪自己會舔乾淨身體，但如果遇到以下情況，<strong>你就可能要幫佢洗一洗啦：</strong></p>
       <ul>
-        <li>å…¨èº«æ²¾åˆ°æ³¥ã€é»æ¶²ã€æ²¹æ±¡ã€æ¨¹æ±ç­‰é›£ä»¥æ¸…é™¤å˜…æ±¡æ¼¬</li>
-        <li>ä¿¾è‡­é¼¬å™´ä¸­ï¼ˆä¿‚ï¼ŒçœŸä¿‚æœ‰æ©Ÿæœƒï¼‰</li>
-        <li>æˆæ—¥å‡ºè¡—æŽ¢éšªå˜…è²“ï¼Œæ¯”èµ·å±‹ä¼è²“æ›´åŠ éœ€è¦å®šæœŸæ¸…æ½”</li>
+        <li>全身沾到泥、黏液、油污、樹汁等難以清除嘅污漬</li>
+        <li>俾臭鼬噴中（係，真係有機會）</li>
+        <li>成日出街探險嘅貓，比起屋企貓更加需要定期清潔</li>
       </ul>
-      <p>å¦å¤–ï¼Œå¦‚æžœè²“å’ªå‡ºç¾ä»¥ä¸‹æƒ…æ³ï¼Œä½¢è‡ªå·±éƒ½æœªå¿…æœ‰èƒ½åŠ›æ¸…æ½”æ™’ï¼š</p>
+      <p>另外，如果貓咪出現以下情況，佢自己都未必有能力清潔晒：</p>
       <ul>
-        <li>è‚¥èƒ–ã€å¹´è€æˆ–æœ‰é—œç¯€ç‚Žï¼Œèˆ”å””åˆ°å…¨èº«</li>
-        <li>é•·æ¯›è²“å®¹æ˜“æ‰“çµã€é›£æ•´ç†</li>
-        <li>ç„¡æ¯›è²“ï¼ˆå¦‚æ–¯èŠ¬å…‹æ–¯è²“ï¼‰æœƒç©èšæ²¹è„‚ï¼Œè¦å®šæœŸæ¸…æ½”</li>
-        <li>å±‹ä¼æœ‰äººå°è²“æ•æ„Ÿï¼Œå®šæœŸæ²–æ¶¼å¯ä»¥æ¸›å°‘è‡´æ•åŽŸ</li>
+        <li>肥胖、年老或有關節炎，舔唔到全身</li>
+        <li>長毛貓容易打結、難整理</li>
+        <li>無毛貓（如斯芬克斯貓）會積聚油脂，要定期清潔</li>
+        <li>屋企有人對貓敏感，定期沖涼可以減少致敏原</li>
       </ul>
 
       <hr />
 
-      <h2>â° è²“å’ªæ´—æ¾¡å¹¾è€ä¸€æ¬¡æœ€å¥½ï¼Ÿ</h2>
-      <p>æ ¹æ“šåœ‹éš›<strong>è²“å’ª</strong>ç¾Žå®¹å¸«å”æœƒå»ºè­°ï¼š</p>
-      <p><strong>è²“å’ªæ´—æ¾¡</strong><strong>æ¯ 4 è‡³ 6 æ˜ŸæœŸä¸€æ¬¡</strong> å·²ç¶“è¶³å¤ å¤§å¤šæ•¸<strong>è²“å’ª</strong>ã€‚</p>
-      <p>ä½†æœ€é‡è¦å˜…ä¿‚ï¼š<strong>æœ‰éœ€è¦å…ˆæ´—ï¼</strong>ä¾‹å¦‚ï¼š</p>
+      <h2>⏰ 貓咪洗澡幾耐一次最好？</h2>
+      <p>根據國際<strong>貓咪</strong>美容師協會建議：</p>
+      <p><strong>貓咪洗澡</strong><strong>每 4 至 6 星期一次</strong> 已經足夠大多數<strong>貓咪</strong>。</p>
+      <p>但最重要嘅係：<strong>有需要先洗！</strong>例如：</p>
       <ul>
-        <li>æ¯›æœ‰ç•°å‘³</li>
-        <li>å‡ºç¾æ²¹è†©ï¼æ‰“çµ</li>
-        <li>æ„ŸæŸ“è·³èš¤æˆ–èœ±èŸ²ï¼ˆéœ€è·Ÿç¸é†«å»ºè­°æ´—æ¾¡æ¬¡æ•¸ï¼‰</li>
+        <li>毛有異味</li>
+        <li>出現油膩／打結</li>
+        <li>感染跳蚤或蜱蟲（需跟獸醫建議洗澡次數）</li>
       </ul>
-      <p><strong>â— åƒç¥ˆå””å¥½æ´—å¾—å¤ªå¯†ï¼Œæœƒå°Žè‡´çš®è†šä¹¾ç‡¥ã€ç™¼ç™¢ï¼</strong></p>
+      <p><strong>❗ 千祈唔好洗得太密，會導致皮膚乾燥、發癢！</strong></p>
 
       <hr />
 
-      <h2>ðŸ˜¾ é»žæ¨£å¹«è²“å’ªä¿æŒå†·éœæ²–æ¶¼ï¼Ÿè²“å’ªæ´—æ¾¡æŠ€å·§</h2>
-      <p>é€²è¡Œ<strong>è²“å’ªæ´—æ¾¡</strong>æ™‚ï¼Œä»¥ä¸‹æŠ€å·§å¯ä»¥å¹«åŠ©<strong>è²“å’ª</strong>ä¿æŒå†·éœï¼š</p>
+      <h2>😾 點樣幫貓咪保持冷靜沖涼？貓咪洗澡技巧</h2>
+      <p>進行<strong>貓咪洗澡</strong>時，以下技巧可以幫助<strong>貓咪</strong>保持冷靜：</p>
       
-      <h3>ðŸª¶ 1. å…ˆæ”¾é›»å†æ´—æ¾¡</h3>
-      <p>å–º<strong>è²“å’ªæ´—æ¾¡</strong>å‰çŽ©ä¸€é™£ï¼Œæ”¾æ™’é›»ä¹‹å¾Œ<strong>è²“å’ª</strong>æœƒå†‡å’é©šã€‚</p>
+      <h3>🪶 1. 先放電再洗澡</h3>
+      <p>喺<strong>貓咪洗澡</strong>前玩一陣，放晒電之後<strong>貓咪</strong>會冇咁驚。</p>
       
-      <h3>ðŸ˜Œ 2. ä¸»äººå†·éœ = è²“å†·éœ</h3>
-      <p>é€²è¡Œ<strong>è²“å’ªæ´—æ¾¡</strong>æ™‚ï¼Œä¸»äººå””å¥½ç·Šå¼µã€å””å¥½çªç„¶éƒï¼ŒéŽç¨‹ä¸­è¦å¤šå•²é¼“å‹µã€‚<strong>è²“å’ªæ´—æ¾¡</strong>å®Œç•€è¿”Treatï¼Œ<strong>è²“å’ª</strong>æœƒè¨˜å¾—<strong>è²“å’ªæ´—æ¾¡</strong>æœ‰çŽã€‚</p>
+      <h3>😌 2. 主人冷靜 = 貓冷靜</h3>
+      <p>進行<strong>貓咪洗澡</strong>時，主人唔好緊張、唔好突然郁，過程中要多啲鼓勵。<strong>貓咪洗澡</strong>完畀返Treat，<strong>貓咪</strong>會記得<strong>貓咪洗澡</strong>有獎。</p>
       
-      <h3>ðŸ§´ 3. ç”¨ç„¡æ°´æ´—è²“ç”¢å“</h3>
-      <p>å¦‚æžœ<strong>è²“å’ª</strong>å¥½æŠ—æ‹’<strong>è²“å’ªæ´—æ¾¡</strong>ï¼Œå¯ä»¥è©¦ä¸‹ç„¡æ°´ä¹¾æ´—æ³¡æ²«ï¼Œæº«å’Œåˆå””æœƒå…¥çœ¼ï¼Œä¿‚<strong>è²“å’ªæ´—æ¾¡</strong>å˜…å¥½é¸æ“‡ã€‚</p>
-      <p>ðŸ’¡ <strong>è²“å’ªæ´—æ¾¡</strong>å°è²¼å£«ï¼š<strong>è²“å’ªæ´—æ¾¡</strong>å‰å¯æ”¾æ£‰èŠ±å…¥<strong>è²“å’ª</strong>è€³ä»”ï¼Œé˜²æ­¢å…¥æ°´ã€‚</p>
+      <h3>🧴 3. 用無水洗貓產品</h3>
+      <p>如果<strong>貓咪</strong>好抗拒<strong>貓咪洗澡</strong>，可以試下無水乾洗泡沫，溫和又唔會入眼，係<strong>貓咪洗澡</strong>嘅好選擇。</p>
+      <p>💡 <strong>貓咪洗澡</strong>小貼士：<strong>貓咪洗澡</strong>前可放棉花入<strong>貓咪</strong>耳仔，防止入水。</p>
 
       <hr />
 
-      <h2>ðŸ§¤ å””æ²–æ¶¼æœ‰å†‡å…¶ä»–æ–¹æ³•ä¿æŒè²“å’ªä¹¾æ·¨ï¼Ÿ</h2>
-      <p>å¦‚æžœ<strong>è²“å’ª</strong>å¥½æŠ—æ‹’<strong>è²“å’ªæ´—æ¾¡</strong>ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹æ–¹æ³•ä¿æŒ<strong>è²“å’ª</strong>ä¹¾æ·¨ï¼š</p>
+      <h2>🧤 唔沖涼有冇其他方法保持貓咪乾淨？</h2>
+      <p>如果<strong>貓咪</strong>好抗拒<strong>貓咪洗澡</strong>，可以用以下方法保持<strong>貓咪</strong>乾淨：</p>
       
-      <h3>ðŸª® å®šæœŸæ¢³æ¯›</h3>
-      <p>ç”¨ slicker brush å¹«<strong>è²“å’ª</strong>åŽ»æ­»æ¯›ï¼Œåˆºæ¿€<strong>è²“å’ª</strong>æ²¹è„‚åˆ†æ³Œã€‚äº¦å¯ä»¥ç”¨ Love Glove ä¸€é‚Š groom ä¸€é‚ŠæŒ‰æ‘©<strong>è²“å’ª</strong>ï¼Œæ¸›å°‘<strong>è²“å’ªæ´—æ¾¡</strong>éœ€è¦ã€‚</p>
+      <h3>🪮 定期梳毛</h3>
+      <p>用 slicker brush 幫<strong>貓咪</strong>去死毛，刺激<strong>貓咪</strong>油脂分泌。亦可以用 Love Glove 一邊 groom 一邊按摩<strong>貓咪</strong>，減少<strong>貓咪洗澡</strong>需要。</p>
       
-      <h3>ðŸ‘ï¸ æ¸…æ½”çœ¼è€³</h3>
-      <p>ç”¨å°ˆç”¨æ¿•ç´™å·¾å®šæœŸæŠ¹<strong>è²“å’ª</strong>çœ¼è§’ã€è€³é“å¤–åœï¼Œä¿æŒ<strong>è²“å’ª</strong>æ¸…æ½”ï¼Œæ¸›å°‘<strong>è²“å’ªæ´—æ¾¡</strong>é »çŽ‡ã€‚</p>
+      <h3>👁️ 清潔眼耳</h3>
+      <p>用專用濕紙巾定期抹<strong>貓咪</strong>眼角、耳道外圍，保持<strong>貓咪</strong>清潔，減少<strong>貓咪洗澡</strong>頻率。</p>
       
-      <h3>âœ‚ï¸ ä¿®å‰ªæŒ‡ç”²</h3>
-      <p><strong>è²“å’ªæ´—æ¾¡</strong>å‰å‰ªå¥½<strong>è²“å’ª</strong>æŒ‡ç”²ï¼Œé¿å…<strong>è²“å’ªæ´—æ¾¡</strong>æ™‚æŠ“å‚·ã€‚è¼•æŒ‰<strong>è²“å’ª</strong>è…³å¢Šï¼Œæ…¢æ…¢å‰ªèµ°å°–å°–éƒ¨ä»½å°±å¯ä»¥ã€‚</p>
+      <h3>✂️ 修剪指甲</h3>
+      <p><strong>貓咪洗澡</strong>前剪好<strong>貓咪</strong>指甲，避免<strong>貓咪洗澡</strong>時抓傷。輕按<strong>貓咪</strong>腳墊，慢慢剪走尖尖部份就可以。</p>
 
-      <h2>ðŸ’¡ è²“å’ªæ´—æ¾¡å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼ï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªéœ€å””éœ€è¦æ²–æ¶¼</strong>è¦–ä¹Žæƒ…æ³è€Œå®šã€‚é›–ç„¶<strong>è²“å’ª</strong>è‡ªå·±æœƒèˆ”ä¹¾æ·¨ï¼Œä½†å¦‚æžœ<strong>è²“å’ª</strong>å…¨èº«æ²¾åˆ°æ±¡æ¼¬ã€è‚¥èƒ–ã€å¹´è€ã€é•·æ¯›ã€ç„¡æ¯›æˆ–å±‹ä¼æœ‰äººå°<strong>è²“å’ª</strong>æ•æ„Ÿï¼Œå°±éœ€è¦<strong>è²“å’ªæ´—æ¾¡</strong>ã€‚</p>
+      <h2>💡 貓咪洗澡常見問題</h2>
+      <p><strong>Q: 貓咪需唔需要沖涼？</strong></p>
+      <p>A: <strong>貓咪需唔需要沖涼</strong>視乎情況而定。雖然<strong>貓咪</strong>自己會舔乾淨，但如果<strong>貓咪</strong>全身沾到污漬、肥胖、年老、長毛、無毛或屋企有人對<strong>貓咪</strong>敏感，就需要<strong>貓咪洗澡</strong>。</p>
       
-      <p><strong>Q: è²“å’ªæ´—æ¾¡å¹¾è€ä¸€æ¬¡ï¼Ÿ</strong></p>
-      <p>A: æ ¹æ“šåœ‹éš›<strong>è²“å’ª</strong>ç¾Žå®¹å¸«å”æœƒå»ºè­°ï¼Œ<strong>è²“å’ªæ´—æ¾¡</strong>æ¯4-6æ˜ŸæœŸä¸€æ¬¡å·²ç¶“è¶³å¤ å¤§å¤šæ•¸<strong>è²“å’ª</strong>ã€‚ä½†æœ€é‡è¦ä¿‚æœ‰éœ€è¦å…ˆæ´—ï¼Œä¾‹å¦‚<strong>è²“å’ª</strong>æ¯›æœ‰ç•°å‘³ã€å‡ºç¾æ²¹è†©æˆ–æ‰“çµã€‚</p>
+      <p><strong>Q: 貓咪洗澡幾耐一次？</strong></p>
+      <p>A: 根據國際<strong>貓咪</strong>美容師協會建議，<strong>貓咪洗澡</strong>每4-6星期一次已經足夠大多數<strong>貓咪</strong>。但最重要係有需要先洗，例如<strong>貓咪</strong>毛有異味、出現油膩或打結。</p>
       
-      <p><strong>Q: è²“å’ªæ´—æ¾¡è¦æ³¨æ„å’©ï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªæ´—æ¾¡</strong>æ™‚è¦æ³¨æ„ï¼šå…ˆæ”¾é›»å†<strong>è²“å’ªæ´—æ¾¡</strong>ã€ä¸»äººä¿æŒå†·éœã€ç”¨æº«å’Œ<strong>è²“å’ªæ´—æ¾¡</strong>ç”¢å“ã€<strong>è²“å’ªæ´—æ¾¡</strong>å‰æ”¾æ£‰èŠ±å…¥<strong>è²“å’ª</strong>è€³ä»”ã€<strong>è²“å’ªæ´—æ¾¡</strong>å¾Œå¾¹åº•å¹ä¹¾ã€‚</p>
+      <p><strong>Q: 貓咪洗澡要注意咩？</strong></p>
+      <p>A: <strong>貓咪洗澡</strong>時要注意：先放電再<strong>貓咪洗澡</strong>、主人保持冷靜、用溫和<strong>貓咪洗澡</strong>產品、<strong>貓咪洗澡</strong>前放棉花入<strong>貓咪</strong>耳仔、<strong>貓咪洗澡</strong>後徹底吹乾。</p>
 
-      <h2>ðŸ“Œ ç¸½çµä¸€ä¸‹ï¼š</h2>
+      <h2>📌 總結一下：</h2>
       <table border="1" cellspacing="0" cellpadding="8">
         <thead>
           <tr>
-            <th>å¸¸è¦‹å•é¡Œ</th>
-            <th>å»ºè­°åšæ³•</th>
+            <th>常見問題</th>
+            <th>建議做法</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>è²“å’ªéœ€å””éœ€è¦æ´—æ¾¡ï¼Ÿ</td>
-            <td>è¦æ´—ï¼Œä¸éŽè¦ç‡æƒ…æ³</td>
+            <td>貓咪需唔需要洗澡？</td>
+            <td>要洗，不過要睇情況</td>
           </tr>
           <tr>
-            <td>å¹¾è€æ´—ä¸€æ¬¡ï¼Ÿ</td>
-            <td>æ¯ 4â€“6 æ˜ŸæœŸä¸€æ¬¡å·²è¶³å¤ </td>
+            <td>幾耐洗一次？</td>
+            <td>每 4–6 星期一次已足夠</td>
           </tr>
           <tr>
-            <td>å””æƒ³æ´—ï¼Œé»žä¿æŒä¹¾æ·¨ï¼Ÿ</td>
-            <td>å®šæœŸæ¢³æ¯›ï¼‹æ¸…çœ¼è€³ï¼‹ä¿®ç”²</td>
+            <td>唔想洗，點保持乾淨？</td>
+            <td>定期梳毛＋清眼耳＋修甲</td>
           </tr>
         </tbody>
       </table>
 
       <hr />
 
-      <p><em>#è²“å’ªæ²–æ¶¼ #æ´—è²“æ•™å­¸ #è²“å’ªè­·ç† #ä¸»å­ç¾Žå®¹æ—¥ #æ–°æ‰‹è²“å¥´ #PetWellHK</em></p>
+      <p><em>#貓咪沖涼 #洗貓教學 #貓咪護理 #主子美容日 #新手貓奴 #PetWellHK</em></p>
     `,
     author: "PetWell HK",
     date: "2025-03-01",
-    category: "å¯µç‰©è­·ç†",
+    category: "寵物護理",
     imageUrl: blogCatBathing
   },
   {
     id: "6",
-    slug: "è²“å’ªå¤œæ™šå¤§æš´èµ°",
-    title: "è²“å’ªå¤œæ™šå¤§æš´èµ°é»žç®—å¥½ï¼Ÿè²“å’ªå¤œæ™šæ´»èºã€è²“å’ªå¤œæ™šå«è§£æ±ºæ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "è²“å’ªå¤œæ™šå¤§æš´èµ°é»žç®—å¥½ï¼Ÿä½ éš»è²“å¤œæ™šçªç„¶è®Šç«ç®­ï¼Ÿè²“å’ªå±¬æ›™æš®è¡Œæ€§å‹•ç‰©ï¼Œæœ¬èƒ½ä»¤ä½¢å“‹å¤œæ™šæ´»èºã€‚æœ¬æ–‡æ•™ä½ 5å€‹å¯¦ç”¨æ–¹æ³•è§£æ±ºè²“å’ªå¤œæ™šå¤§æš´èµ°ã€è²“å’ªå¤œæ™šå«å•é¡Œï¼šåŠ å¼·æ—¥é–“æ´»å‹•ã€ç¡å‰éŠæˆ²ã€æ¨¡æ“¬ç‹©çµé¤µé£Ÿã€ç‡Ÿé€ èˆ’é©ç’°å¢ƒï¼Œå¹«è²“å’ªèª¿æ•´ä½œæ¯ã€‚",
+    slug: "貓咪夜晚大暴走",
+    title: "貓咪夜晚大暴走點算好？貓咪夜晚活躍、貓咪夜晚叫解決方法全攻略 | PetWell HK",
+    excerpt: "貓咪夜晚大暴走點算好？你隻貓夜晚突然變火箭？貓咪屬曙暮行性動物，本能令佢哋夜晚活躍。本文教你5個實用方法解決貓咪夜晚大暴走、貓咪夜晚叫問題：加強日間活動、睡前遊戲、模擬狩獵餵食、營造舒適環境，幫貓咪調整作息。",
     content: `
-      <h2>è²“å’ªå¤œæ™šå¤§æš´èµ°é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡è©¦éŽå¤œæ™šè¢«<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>åµé†’ï¼Ÿ<strong>è²“å’ªå¤œæ™šæ´»èº</strong>ä¿‚å¸¸è¦‹å•é¡Œï¼Œå¥½å¤šä¸»äººéƒ½é‡éŽï¼šä¸€åˆ°å¤œæ™šï¼Œ<strong>è²“å’ª</strong>çªç„¶è®Šæˆç«ç®­ï¼Œå–ºå±‹ä¼çˆ†è¡ã€è¿½å°¾å·´ã€å¤§è²<strong>è²“å’ªå¤œæ™šå«</strong>â€¦â€¦æžåˆ°ä½ è¨“å””ç€ï¼<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ä¿‚å› ç‚º<strong>è²“å’ª</strong>å±¬æ›™æš®è¡Œæ€§å‹•ç‰©ï¼Œæœ¬èƒ½ä»¤ä½¢å“‹<strong>å¤œæ™šæ´»èº</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>åŽŸå› ã€<strong>è²“å’ªå¤œæ™šå«</strong>è§£æ±ºæ–¹æ³•ï¼Œå¹«åŠ©ä½ æ”¹å–„<strong>è²“å’ªå¤œæ™šæ´»èº</strong>å•é¡Œã€‚</p>
+      <h2>貓咪夜晚大暴走點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇試過夜晚被<strong>貓咪夜晚大暴走</strong>吵醒？<strong>貓咪夜晚活躍</strong>係常見問題，好多主人都遇過：一到夜晚，<strong>貓咪</strong>突然變成火箭，喺屋企爆衝、追尾巴、大聲<strong>貓咪夜晚叫</strong>……搞到你訓唔着！<strong>貓咪夜晚大暴走</strong>係因為<strong>貓咪</strong>屬曙暮行性動物，本能令佢哋<strong>夜晚活躍</strong>。本文為你詳細講解<strong>貓咪夜晚大暴走</strong>原因、<strong>貓咪夜晚叫</strong>解決方法，幫助你改善<strong>貓咪夜晚活躍</strong>問題。</p>
       
-      <h2>è²“å’ªå¤œæ™šå¤§æš´èµ°ï¼Ÿä¸»äººå¿…å­¸5å€‹å®‰æ’«æ–¹æ³•</h2>
-      <p>ä½ æˆæ—¥å¤œæ™šè½åˆ°ã€Œå’šå’šå’šã€ä»¥ç‚ºé¬§é¬¼ï¼Ÿå…¶å¯¦ä¿‚ä½ éš»<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ï¼ðŸˆðŸŒ™</p>
-      <p>å¥½å¤šä¸»äººéƒ½é‡éŽï¼šä¸€åˆ°å¤œæ™šï¼Œ<strong>è²“å’ª</strong>çªç„¶è®Šæˆç«ç®­ï¼Œå–ºå±‹ä¼çˆ†è¡ã€è¿½å°¾å·´ã€å¤§è²<strong>è²“å’ªå¤œæ™šå«</strong>â€¦â€¦æžåˆ°ä½ è¨“å””ç€ï¼</p>
-      <p>ä½†é»žè§£æœƒå’ï¼Ÿé»žæ¨£å¯ä»¥ä»¤<strong>è²“å’ªå¤œæ™šæ´»èº</strong>å•é¡Œæ”¹å–„ï¼Ÿå…¶å¯¦ï¼Œåªè¦æŽŒæ¡å¹¾å€‹é‡é»žï¼Œä¿‚å¯ä»¥æ…¢æ…¢æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å˜…ã€‚</p>
+      <h2>貓咪夜晚大暴走？主人必學5個安撫方法</h2>
+      <p>你成日夜晚聽到「咚咚咚」以為鬧鬼？其實係你隻<strong>貓咪夜晚大暴走</strong>！🐈🌙</p>
+      <p>好多主人都遇過：一到夜晚，<strong>貓咪</strong>突然變成火箭，喺屋企爆衝、追尾巴、大聲<strong>貓咪夜晚叫</strong>……搞到你訓唔着！</p>
+      <p>但點解會咁？點樣可以令<strong>貓咪夜晚活躍</strong>問題改善？其實，只要掌握幾個重點，係可以慢慢改善<strong>貓咪夜晚大暴走</strong>嘅。</p>
 
       <hr />
 
-      <h2>ðŸ§  1. ç†è§£ã€Œè²“å’ªç”Ÿç†æ™‚é˜ã€å…ˆï¼šé»žè§£è²“å’ªå¤œæ™šå¤§æš´èµ°ï¼Ÿ</h2>
-      <p><strong>è²“å’ª</strong>å±¬æ–¼ã€Œæ›™æš®è¡Œæ€§ã€ï¼Œå³ä¿‚æ—¥å‡ºæ—¥è½æœ€æ´»èºï¼Œå‘¢å€‹ä¿‚<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å˜…æ ¹æœ¬åŽŸå› ã€‚</p>
-      <p>ä½¢å“‹å¤©ç”Ÿå””ä¿‚æ™šæ™šéƒ½æœƒä¹–ä¹–çž“è¦ºï¼Œä¿‚å› ç‚ºæœ¬èƒ½è©±ä½¢å“‹ï¼šé»ƒæ˜å…ˆè¦ç‹©çµå‘€ï¼æ‰€ä»¥<strong>è²“å’ªå¤œæ™šæ´»èº</strong>ä¿‚æ­£å¸¸è¡Œç‚ºã€‚</p>
-      <p>æ‰€ä»¥è¦æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ï¼Œå°±è¦å¹«<strong>è²“å’ª</strong>èª¿æ•´æ´»å‹•ç¯€å¥ï¼Œæ¸›å°‘<strong>è²“å’ªå¤œæ™šå«</strong>ã€‚</p>
+      <h2>🧠 1. 理解「貓咪生理時鐘」先：點解貓咪夜晚大暴走？</h2>
+      <p><strong>貓咪</strong>屬於「曙暮行性」，即係日出日落最活躍，呢個係<strong>貓咪夜晚大暴走</strong>嘅根本原因。</p>
+      <p>佢哋天生唔係晚晚都會乖乖瞓覺，係因為本能話佢哋：黃昏先要狩獵呀！所以<strong>貓咪夜晚活躍</strong>係正常行為。</p>
+      <p>所以要改善<strong>貓咪夜晚大暴走</strong>，就要幫<strong>貓咪</strong>調整活動節奏，減少<strong>貓咪夜晚叫</strong>。</p>
 
-      <h2>ðŸŽ¯ 2. åŠ å¼·æ—¥é–“æ´»å‹•é‡ï¼šæ¸›å°‘è²“å’ªå¤œæ™šæ´»èº</h2>
-      <p>è¦è§£æ±º<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ï¼Œé¦–å…ˆè¦å¢žåŠ <strong>è²“å’ª</strong>æ—¥é–“æ´»å‹•é‡ï¼š</p>
+      <h2>🎯 2. 加強日間活動量：減少貓咪夜晚活躍</h2>
+      <p>要解決<strong>貓咪夜晚大暴走</strong>，首先要增加<strong>貓咪</strong>日間活動量：</p>
       <ul>
-        <li>é–‹<strong>è²“å’ª</strong>äº’å‹•çŽ©å…·ï¼ˆç¾½æ¯›æ£’ï¼è€é¼ ï¼è¿½æ³¢æ³¢ï¼‰ï¼Œæ¶ˆè€—<strong>è²“å’ª</strong>ç²¾åŠ›</li>
-        <li>è—é£Ÿå°éŠæˆ²ï¼ˆè—å°‘é‡ä¹¾ç³§ç­‰<strong>è²“å’ª</strong>æµï¼‰ï¼Œå¢žåŠ <strong>è²“å’ª</strong>æ´»å‹•</li>
-        <li>æœ€å¥½å–ºç¡å‰ 1â€“2 å°æ™‚å¤§çŽ©ç‰¹çŽ©ï¼Œæ¶ˆè€—æ™’<strong>è²“å’ª</strong>ç²¾åŠ›ï¼Œå¹«åŠ©<strong>è²“å’ªå¤œæ™šæ´»èº</strong>å•é¡Œæ”¹å–„</li>
+        <li>開<strong>貓咪</strong>互動玩具（羽毛棒／老鼠／追波波），消耗<strong>貓咪</strong>精力</li>
+        <li>藏食小遊戲（藏少量乾糧等<strong>貓咪</strong>搵），增加<strong>貓咪</strong>活動</li>
+        <li>最好喺睡前 1–2 小時大玩特玩，消耗晒<strong>貓咪</strong>精力，幫助<strong>貓咪夜晚活躍</strong>問題改善</li>
       </ul>
-      <p>æ—¥é–“æ´»å‹•å……è¶³ï¼Œå¯ä»¥æ¸›å°‘<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å’Œ<strong>è²“å’ªå¤œæ™šå«</strong>ã€‚</p>
+      <p>日間活動充足，可以減少<strong>貓咪夜晚大暴走</strong>和<strong>貓咪夜晚叫</strong>。</p>
 
-      <h2>ðŸ½ï¸ 3. çž“å‰ä¸€é¤ = ç‹©çµå®Œé£Ÿé£¯çž“è¦ºï¼šæ”¹å–„è²“å’ªå¤œæ™šå¤§æš´èµ°</h2>
-      <p>æ¨¡æ“¬<strong>è²“å’ª</strong>è‡ªç„¶ç¿’æ€§ï¼šã€ŒçŽ© â†’ é£Ÿ â†’ çž“ã€ä¿‚æœ€å¤©ç„¶å˜…æ¨¡å¼ï¼Œå¯ä»¥æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ã€‚</p>
-      <p>çŽ©å®ŒéŠæˆ²å°±é¤µè¿”<strong>è²“å’ª</strong>æ™šé¤æˆ– snackï¼Œä»¤<strong>è²“å’ª</strong>è…¦å…¥é¢æœ‰ signalï¼šå¤œæ™šå¯ä»¥ä¼‘æ¯å•¦ï½žæ¸›å°‘<strong>è²“å’ªå¤œæ™šå«</strong>ã€‚</p>
+      <h2>🍽️ 3. 瞓前一餐 = 狩獵完食飯瞓覺：改善貓咪夜晚大暴走</h2>
+      <p>模擬<strong>貓咪</strong>自然習性：「玩 → 食 → 瞓」係最天然嘅模式，可以改善<strong>貓咪夜晚大暴走</strong>。</p>
+      <p>玩完遊戲就餵返<strong>貓咪</strong>晚餐或 snack，令<strong>貓咪</strong>腦入面有 signal：夜晚可以休息啦～減少<strong>貓咪夜晚叫</strong>。</p>
 
-      <h2>ðŸ›ï¸ 4. å‰µé€ èˆ’æœå˜…å¤œæ™šç’°å¢ƒï¼šæ¸›å°‘è²“å’ªå¤œæ™šæ´»èº</h2>
-      <p>å‰µé€ èˆ’é©ç’°å¢ƒå¯ä»¥å¹«åŠ©æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ï¼š</p>
+      <h2>🛏️ 4. 創造舒服嘅夜晚環境：減少貓咪夜晚活躍</h2>
+      <p>創造舒適環境可以幫助改善<strong>貓咪夜晚大暴走</strong>：</p>
       <ul>
-        <li>æº«æš–å˜…åºŠï¼è²“çª©ï¼Œè®“<strong>è²“å’ª</strong>æ„Ÿåˆ°å®‰å…¨</li>
-        <li>é™ä½Žè²éŸ³åˆºæ¿€ï¼ˆä¾‹å¦‚å””å¥½é–‹é›»è¦–ï¼‰ï¼Œæ¸›å°‘<strong>è²“å’ªå¤œæ™šæ´»èº</strong></li>
-        <li>æ‹‰åŸ‹çª—ç°¾ï¼Œæ¸›å°‘è¡—å¤–ç‡ˆå…‰å¹²æ“¾ï¼Œæ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong></li>
-        <li>å””å»ºè­°é—œé–€éŽ–ä½<strong>è²“å’ª</strong>ï¼ŒæœƒåŠ é‡<strong>è²“å’ª</strong>ç„¦æ…®ï¼Œåè€Œæœƒ<strong>è²“å’ªå¤œæ™šå«</strong>å¾—æ›´å‹</li>
+        <li>溫暖嘅床／貓窩，讓<strong>貓咪</strong>感到安全</li>
+        <li>降低聲音刺激（例如唔好開電視），減少<strong>貓咪夜晚活躍</strong></li>
+        <li>拉埋窗簾，減少街外燈光干擾，改善<strong>貓咪夜晚大暴走</strong></li>
+        <li>唔建議關門鎖住<strong>貓咪</strong>，會加重<strong>貓咪</strong>焦慮，反而會<strong>貓咪夜晚叫</strong>得更勁</li>
       </ul>
 
-      <h2>ðŸ™ˆ 5. å¿ä½å””å›žæ‡‰å¤œæ™šã€Œç„¡äº‹å–µå«ã€ï¼šè§£æ±ºè²“å’ªå¤œæ™šå«</h2>
-      <p>æœ€é›£ä½†æœ€é‡è¦ï¼š<strong>å””å¯ä»¥è¨“ç·´åˆ°<strong>è²“å’ª</strong>è¦ºå¾—å¤œæ™šå«å°±æœ‰å›žæ‡‰ï¼</strong></p>
-      <p><strong>è²“å’ª</strong>å¥½è°æ˜Žï¼Œå¦‚æžœ<strong>è²“å’ª</strong>çŸ¥é“å–µä¸€è²ä½ å°±æœƒé–‹é–€ï¼æ‘¸<strong>è²“å’ª</strong>ï¼é¤µ<strong>è²“å’ª</strong>â€¦â€¦</p>
-      <p><strong>è²“å’ª</strong>å°±æœƒæ—¥æ—¥<strong>è²“å’ªå¤œæ™šå«</strong>ï¼</p>
-      <p>æ‰€ä»¥ï¼šç„¡äº‹å°±å””å¥½ç†<strong>è²“å’ªå¤œæ™šå«</strong>ï¼Œå …æŒè½åŽ»<strong>è²“å’ª</strong>æœƒæ˜Žå˜…ï¼Œå¯ä»¥æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong> ðŸ™‰</p>
+      <h2>🙈 5. 忍住唔回應夜晚「無事喵叫」：解決貓咪夜晚叫</h2>
+      <p>最難但最重要：<strong>唔可以訓練到<strong>貓咪</strong>覺得夜晚叫就有回應！</strong></p>
+      <p><strong>貓咪</strong>好聰明，如果<strong>貓咪</strong>知道喵一聲你就會開門／摸<strong>貓咪</strong>／餵<strong>貓咪</strong>……</p>
+      <p><strong>貓咪</strong>就會日日<strong>貓咪夜晚叫</strong>！</p>
+      <p>所以：無事就唔好理<strong>貓咪夜晚叫</strong>，堅持落去<strong>貓咪</strong>會明嘅，可以改善<strong>貓咪夜晚大暴走</strong> 🙉</p>
 
       <hr />
 
-      <h2>âœ… å¿«é€Ÿç¸½çµï¼šè²“å’ªå¤œæ™šå¤§æš´èµ°é»žæ‡‰å°ï¼Ÿ</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å•é¡ŒåŽŸå› å’Œè§£æ±ºæ–¹æ³•ï¼š</p>
+      <h2>✅ 快速總結：貓咪夜晚大暴走點應對？</h2>
+      <p>以下係<strong>貓咪夜晚大暴走</strong>問題原因和解決方法：</p>
       <table style="border-collapse: collapse;" border="1">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th>å•é¡ŒåŽŸå› </th>
-            <th>è§£æ±ºæ–¹æ³•</th>
+            <th>問題原因</th>
+            <th>解決方法</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>å¤©ç”Ÿç¿’æ€§ï¼ˆ<strong>è²“å’ªå¤œæ™šæ´»èº</strong>ï¼‰</td>
-            <td>ç™½å¤©åŠ å¼·<strong>è²“å’ª</strong>çŽ©æ¨‚ã€è¨“ç·´<strong>è²“å’ª</strong>ç”Ÿæ´»ç¯€å¥ï¼Œæ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong></td>
+            <td>天生習性（<strong>貓咪夜晚活躍</strong>）</td>
+            <td>白天加強<strong>貓咪</strong>玩樂、訓練<strong>貓咪</strong>生活節奏，改善<strong>貓咪夜晚大暴走</strong></td>
           </tr>
           <tr>
-            <td><strong>è²“å’ª</strong>ç²¾åŠ›æœªæ¶ˆè€—</td>
-            <td>æ™šä¸Šå‰çŽ©ä¸€è¼ªï¼ŒçŽ©åˆ°<strong>è²“å’ª</strong>æ”°ç‚ºæ­¢ï¼Œæ¸›å°‘<strong>è²“å’ªå¤œæ™šå«</strong></td>
+            <td><strong>貓咪</strong>精力未消耗</td>
+            <td>晚上前玩一輪，玩到<strong>貓咪</strong>攰為止，減少<strong>貓咪夜晚叫</strong></td>
           </tr>
           <tr>
-            <td><strong>è²“å’ª</strong>ç„¡äº‹åšå¤ªç„¡èŠ</td>
-            <td>è—é£ŸéŠæˆ²ã€è·³å°ã€çŽ©å…·åˆºæ¿€<strong>è²“å’ª</strong>ï¼Œæ”¹å–„<strong>è²“å’ªå¤œæ™šæ´»èº</strong></td>
+            <td><strong>貓咪</strong>無事做太無聊</td>
+            <td>藏食遊戲、跳台、玩具刺激<strong>貓咪</strong>，改善<strong>貓咪夜晚活躍</strong></td>
           </tr>
           <tr>
-            <td><strong>è²“å’ªå¤œæ™šå«</strong>å°±æœ‰åæ‡‰ï¼ˆèª¤æœƒè¨“ç·´ï¼‰</td>
-            <td>å¤œæ™šå””ç†<strong>è²“å’ªå¤œæ™šå«</strong>ï¼Œæ…¢æ…¢ä»¤<strong>è²“å’ª</strong>çŸ¥é“å†‡å˜¢æžéƒ½å””æœƒæœ‰å›žæ‡‰ï¼Œè§£æ±º<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong></td>
+            <td><strong>貓咪夜晚叫</strong>就有反應（誤會訓練）</td>
+            <td>夜晚唔理<strong>貓咪夜晚叫</strong>，慢慢令<strong>貓咪</strong>知道冇嘢搞都唔會有回應，解決<strong>貓咪夜晚大暴走</strong></td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸ’¡ è²“å’ªå¤œæ™šå¤§æš´èµ°å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: è²“å’ªå¤œæ™šå¤§æš´èµ°é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å¯ä»¥é€šéŽåŠ å¼·æ—¥é–“æ´»å‹•ã€ç¡å‰éŠæˆ²ã€æ¨¡æ“¬ç‹©çµé¤µé£Ÿã€ç‡Ÿé€ èˆ’é©ç’°å¢ƒç­‰æ–¹æ³•æ”¹å–„ã€‚å¦‚æžœ<strong>è²“å’ªå¤œæ™šå«</strong>æŒçºŒï¼Œæ‡‰è«®è©¢ç¸é†«æˆ–è¡Œç‚ºå°ˆå®¶ã€‚</p>
+      <h2>💡 貓咪夜晚大暴走常見問題</h2>
+      <p><strong>Q: 貓咪夜晚大暴走點算好？</strong></p>
+      <p>A: <strong>貓咪夜晚大暴走</strong>可以通過加強日間活動、睡前遊戲、模擬狩獵餵食、營造舒適環境等方法改善。如果<strong>貓咪夜晚叫</strong>持續，應諮詢獸醫或行為專家。</p>
       
-      <p><strong>Q: é»žè§£è²“å’ªå¤œæ™šæ´»èºï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªå¤œæ™šæ´»èº</strong>ä¿‚å› ç‚º<strong>è²“å’ª</strong>å±¬æ›™æš®è¡Œæ€§å‹•ç‰©ï¼Œæœ¬èƒ½ä»¤ä½¢å“‹å¤œæ™šæ´»èºã€‚è¦æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ï¼Œéœ€è¦èª¿æ•´<strong>è²“å’ª</strong>æ´»å‹•ç¯€å¥ã€‚</p>
+      <p><strong>Q: 點解貓咪夜晚活躍？</strong></p>
+      <p>A: <strong>貓咪夜晚活躍</strong>係因為<strong>貓咪</strong>屬曙暮行性動物，本能令佢哋夜晚活躍。要改善<strong>貓咪夜晚大暴走</strong>，需要調整<strong>貓咪</strong>活動節奏。</p>
       
-      <p><strong>Q: è²“å’ªå¤œæ™šå«ä¿‚å’ªæœ‰ç—…ï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªå¤œæ™šå«</strong>å¯èƒ½ä¿‚<strong>è²“å’ªå¤œæ™šæ´»èº</strong>çš„æ­£å¸¸è¡¨ç¾ï¼Œä½†å¦‚æžœ<strong>è²“å’ªå¤œæ™šå«</strong>æŒçºŒæˆ–ä¼´éš¨å…¶ä»–ç—‡ç‹€ï¼Œæ‡‰è«®è©¢ç¸é†«æª¢æŸ¥æ˜¯å¦æœ‰å¥åº·å•é¡Œã€‚</p>
+      <p><strong>Q: 貓咪夜晚叫係咪有病？</strong></p>
+      <p>A: <strong>貓咪夜晚叫</strong>可能係<strong>貓咪夜晚活躍</strong>的正常表現，但如果<strong>貓咪夜晚叫</strong>持續或伴隨其他症狀，應諮詢獸醫檢查是否有健康問題。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>ä¿‚å¸¸è¦‹å•é¡Œï¼Œä¿‚å› ç‚º<strong>è²“å’ªå¤œæ™šæ´»èº</strong>çš„å¤©æ€§ã€‚é€šéŽåŠ å¼·æ—¥é–“æ´»å‹•ã€ç¡å‰éŠæˆ²ã€æ¨¡æ“¬ç‹©çµé¤µé£Ÿã€ç‡Ÿé€ èˆ’é©ç’°å¢ƒã€å¿ä½å””å›žæ‡‰<strong>è²“å’ªå¤œæ™šå«</strong>ç­‰æ–¹æ³•ï¼Œå¯ä»¥æ”¹å–„<strong>è²“å’ªå¤œæ™šå¤§æš´èµ°</strong>å•é¡Œã€‚å¦‚æœ‰ç–‘å•ï¼Œæ‡‰è«®è©¢å°ˆæ¥­ç¸é†«æˆ–è¡Œç‚ºå°ˆå®¶ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>貓咪夜晚大暴走</strong>係常見問題，係因為<strong>貓咪夜晚活躍</strong>的天性。通過加強日間活動、睡前遊戲、模擬狩獵餵食、營造舒適環境、忍住唔回應<strong>貓咪夜晚叫</strong>等方法，可以改善<strong>貓咪夜晚大暴走</strong>問題。如有疑問，應諮詢專業獸醫或行為專家。</p>
     `,
     author: "PetWell HK",
     date: "2025-02-25",
-    category: "å¯µç‰©è¡Œç‚º",
+    category: "寵物行為",
     imageUrl: blogCatNightActivity
   },
   {
     id: "7",
-    slug: "è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Ž",
-    title: "è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Žï¼Ÿè²“å’ªæ¯›çƒç—‡é»žç®—å¥½ï¼Ÿé é˜²æ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Žï¼Ÿè²“å’ªæ¯æœˆå˜”1-2æ¬¡æ¯›çƒå±¬æ­£å¸¸ï¼Œä½†é »ç¹å˜”åã€ä¹¾å˜”ã€ä¾¿ç§˜å¯èƒ½ä¿‚è²“å’ªæ¯›çƒç—‡ã€è…¸é“é˜»å¡žè­¦è™Ÿï¼æœ¬æ–‡æ•™ä½ è­˜åˆ¥è²“å’ªæ¯›çƒç—‡å±éšªä¿¡è™Ÿã€è²“å’ªæ¯›çƒç—‡é é˜²æ–¹æ³•ï¼ˆæ¢³æ¯›ã€é«˜çº–ç¶­ã€æ¯›çƒè†ï¼‰ï¼Œå®ˆè­·ä¸»å­æ¶ˆåŒ–å¥åº·ã€‚",
+    slug: "貓咪嘔毛球正常嗎",
+    title: "貓咪嘔毛球正常嗎？貓咪毛球症點算好？預防方法全攻略 | PetWell HK",
+    excerpt: "貓咪嘔毛球正常嗎？貓咪每月嘔1-2次毛球屬正常，但頻繁嘔吐、乾嘔、便秘可能係貓咪毛球症、腸道阻塞警號！本文教你識別貓咪毛球症危險信號、貓咪毛球症預防方法（梳毛、高纖維、毛球膏），守護主子消化健康。",
     content: `
-      <h2>è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Žï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡è¦‹éŽä½ å˜…<strong>è²“å’ªå˜”æ¯›çƒ</strong>ï¼Ÿå¥½å¤šä¸»äººéƒ½æœƒå•ï¼š<strong>è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Ž</strong>ï¼Ÿ<strong>è²“å’ªå˜”æ¯›çƒ</strong>ä¿‚å¸¸è¦‹ç¾è±¡ï¼Œä½†å¦‚æžœé »ç¹å‡ºç¾ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>è­¦è™Ÿã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Ž</strong>ã€<strong>è²“å’ªæ¯›çƒç—‡</strong>ç—‡ç‹€ã€<strong>è²“å’ªæ¯›çƒç—‡é»žç®—å¥½</strong>ï¼Œä»¥åŠå¦‚ä½•é é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>ã€‚</p>
+      <h2>貓咪嘔毛球正常嗎？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇見過你嘅<strong>貓咪嘔毛球</strong>？好多主人都會問：<strong>貓咪嘔毛球正常嗎</strong>？<strong>貓咪嘔毛球</strong>係常見現象，但如果頻繁出現，可能係<strong>貓咪毛球症</strong>警號。本文為你詳細講解<strong>貓咪嘔毛球正常嗎</strong>、<strong>貓咪毛球症</strong>症狀、<strong>貓咪毛球症點算好</strong>，以及如何預防<strong>貓咪毛球症</strong>。</p>
       
-      <h2>ðŸ§  å’©ä¿‚æ¯›çƒï¼Ÿè²“å’ªæ¯›çƒç—‡æˆå› </h2>
-      <p><strong>è²“å’ª</strong>å¤©ç”Ÿå¥½æ„›ä¹¾æ·¨ï¼Œå¹³å‡æ¯æ—¥æœ‰ 4% æ™‚é–“éƒ½ç”¨åšŸèˆ”æ¯›æ¯›ðŸ‘…ã€‚</p>
-      <p>ä½¢å“‹æ¢èˆŒé ­æœ‰å€’éˆŽè¨­è¨ˆï¼Œå•²è„«è½å’—å˜…æ¯›å¥½å®¹æ˜“æœƒè¢«<strong>è²“å’ª</strong>èˆ”å…¥è‚šã€‚</p>
-      <p>å¹³æ™‚åžè½è‚šå˜…æ¯›æœƒéš¨<strong>è²“å’ª</strong>å¤§ä¾¿æŽ’èµ°ï¼Œä½†æœ‰æ™‚å•²æ¯›èšåŸ‹ä¸€é½Šï¼Œè®Šæˆ <strong>æ¯›çƒï¼ˆHairballï¼‰</strong>ï¼Œ<strong>è²“å’ª</strong>å°±æœƒå‡ºç¾ã€Œgag gagè²ã€ã€<strong>è²“å’ªå˜”æ¯›çƒ</strong>ç­‰æƒ…æ³ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>ã€‚</p>
+      <h2>🧠 咩係毛球？貓咪毛球症成因</h2>
+      <p><strong>貓咪</strong>天生好愛乾淨，平均每日有 4% 時間都用嚟舔毛毛👅。</p>
+      <p>佢哋條舌頭有倒鈎設計，啲脫落咗嘅毛好容易會被<strong>貓咪</strong>舔入肚。</p>
+      <p>平時吞落肚嘅毛會隨<strong>貓咪</strong>大便排走，但有時啲毛聚埋一齊，變成 <strong>毛球（Hairball）</strong>，<strong>貓咪</strong>就會出現「gag gag聲」、<strong>貓咪嘔毛球</strong>等情況，可能係<strong>貓咪毛球症</strong>。</p>
 
       <hr />
 
-      <h2>ðŸ˜¿ è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Žï¼Ÿæ¯›çƒå˜”ä¸€å˜” = æ­£å¸¸ï¼Ÿ</h2>
-      <p><strong>è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Ž</strong>ï¼Ÿ<strong>å¶çˆ¾å‡ºç¾ï¼šæ­£å¸¸ï¼</strong></p>
-      <p><strong>è²“å’ªå˜”æ¯›çƒ</strong><strong>ä¸€å€‹æœˆ 1-2 æ¬¡éƒ½å¯ä»¥æŽ¥å—ã€‚</strong></p>
-      <p>ä½†å¦‚æžœä½ å˜…<strong>è²“å’ª</strong>å‡ºç¾ä»¥ä¸‹æƒ…æ³ï¼Œå°±è¦å°å¿ƒå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>å•é¡Œè®Šåš´é‡ðŸ‘‡ï¼š</p>
+      <h2>😿 貓咪嘔毛球正常嗎？毛球嘔一嘔 = 正常？</h2>
+      <p><strong>貓咪嘔毛球正常嗎</strong>？<strong>偶爾出現：正常！</strong></p>
+      <p><strong>貓咪嘔毛球</strong><strong>一個月 1-2 次都可以接受。</strong></p>
+      <p>但如果你嘅<strong>貓咪</strong>出現以下情況，就要小心可能係<strong>貓咪毛球症</strong>問題變嚴重👇：</p>
       <ul>
-        <li><strong>è²“å’ª</strong>æˆæ—¥ dry gagï¼æ“˜å¤§å£ dry heaveï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong></li>
-        <li><strong>è²“å’ª</strong>æˆæ—¥èˆ”èº«é«”ï¼Œç”šè‡³èˆ”åˆ°ç”©æ¯›ï¼ç”©çš®è†šï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>é¢¨éšªå¢žåŠ </li>
-        <li><strong>è²“å’ªå˜”æ¯›çƒ</strong>å®Œéƒ½ç„¡ç²¾ç¥žã€å””é£Ÿå˜¢ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>åš´é‡</li>
-        <li><strong>è²“å’ª</strong>æœ‰ä¾¿ç§˜ã€è»Ÿä¾¿ã€æ¶ˆåŒ–å·®ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>å°Žè‡´</li>
-        <li><strong>è²“å’ª</strong>æˆæ—¥è¹­åœ°ã€å””é¡˜é£Ÿæ¿•ç³§ï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>ç—‡ç‹€</li>
+        <li><strong>貓咪</strong>成日 dry gag／擘大口 dry heave，可能係<strong>貓咪毛球症</strong></li>
+        <li><strong>貓咪</strong>成日舔身體，甚至舔到甩毛／甩皮膚，<strong>貓咪毛球症</strong>風險增加</li>
+        <li><strong>貓咪嘔毛球</strong>完都無精神、唔食嘢，可能係<strong>貓咪毛球症</strong>嚴重</li>
+        <li><strong>貓咪</strong>有便秘、軟便、消化差，可能係<strong>貓咪毛球症</strong>導致</li>
+        <li><strong>貓咪</strong>成日蹭地、唔願食濕糧，<strong>貓咪毛球症</strong>症狀</li>
       </ul>
 
-      <h2>ðŸ›Ÿ è²“å’ªæ¯›çƒç—‡é»žç®—å¥½ï¼Ÿé»žæ¨£å¹«è²“å’ªé é˜²æ¯›çƒå•é¡Œï¼Ÿ</h2>
-      <p>è¦é é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼Œå¯ä»¥æŽ¡å–ä»¥ä¸‹æ–¹æ³•ï¼š</p>
+      <h2>🛟 貓咪毛球症點算好？點樣幫貓咪預防毛球問題？</h2>
+      <p>要預防<strong>貓咪毛球症</strong>，可以採取以下方法：</p>
       
-      <h3>âœ… 1. æ¯æ—¥æ¢³æ¯›ï¼šé é˜²è²“å’ªæ¯›çƒç—‡</h3>
-      <p>ç‰¹åˆ¥ä¿‚é•·æ¯›<strong>è²“å’ª</strong>ï¼äººæ‰‹å¹«<strong>è²“å’ª</strong>ã€Œé å…ˆæ¸…æ¯›ã€ï¼Œåžå…¥è‚šå˜…è‡ªç„¶å°‘ï¼Œæ¸›å°‘<strong>è²“å’ªæ¯›çƒç—‡</strong>é¢¨éšªã€‚</p>
+      <h3>✅ 1. 每日梳毛：預防貓咪毛球症</h3>
+      <p>特別係長毛<strong>貓咪</strong>！人手幫<strong>貓咪</strong>「預先清毛」，吞入肚嘅自然少，減少<strong>貓咪毛球症</strong>風險。</p>
       
-      <h3>âœ… 2. å¢žåŠ çº–ç¶­ï¼šæ”¹å–„è²“å’ªæ¯›çƒç—‡</h3>
-      <p><strong>è²“å’ª</strong>é£Ÿç‰©å…¥é¢åŠ å…¥é©é‡é«˜çº–ç¶­æˆä»½ï¼ˆä¾‹å¦‚å—ç“œæ³¥ã€æ³Œå°¿è…¸é“æ”¯æ´è²“ç³§ï¼‰å¹«åŠ©<strong>è²“å’ª</strong>æ¯›çƒæŽ’å‡ºï¼Œé é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>ã€‚</p>
+      <h3>✅ 2. 增加纖維：改善貓咪毛球症</h3>
+      <p><strong>貓咪</strong>食物入面加入適量高纖維成份（例如南瓜泥、泌尿腸道支援貓糧）幫助<strong>貓咪</strong>毛球排出，預防<strong>貓咪毛球症</strong>。</p>
       
-      <h3>âœ… 3. é¼“å‹µé£²æ°´ï¼šæ¸›å°‘è²“å’ªæ¯›çƒç—‡</h3>
-      <p><strong>è²“å’ª</strong>é£²æ°´é‡å¤ ï¼Œè…¸é“æµå‹•æ€§å…ˆæœƒå¥½ï¼ŒæŽ’æ¯›å…ˆé †åˆ©ï¼Œå¯ä»¥é é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>ã€‚</p>
+      <h3>✅ 3. 鼓勵飲水：減少貓咪毛球症</h3>
+      <p><strong>貓咪</strong>飲水量夠，腸道流動性先會好，排毛先順利，可以預防<strong>貓咪毛球症</strong>。</p>
       
-      <h3>âœ… 4. æ¯›çƒè†ï¼ˆHairball Pasteï¼‰ï¼šæ²»ç™‚è²“å’ªæ¯›çƒç—‡</h3>
-      <p>å¸‚é¢æœ‰å°ˆç‚º<strong>è²“å’ª</strong>æŽ’æ¯›è¨­è¨ˆå˜…è£œå……åŠ‘ï¼ˆæ½¤æ»‘ï¼‹è¼•ç€‰æ•ˆæžœï¼‰ï¼Œå¯ä»¥å¹«åŠ©<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼Œä¸éŽè¦éµå¾žç¸é†«å»ºè­°ä½¿ç”¨ã€‚</p>
+      <h3>✅ 4. 毛球膏（Hairball Paste）：治療貓咪毛球症</h3>
+      <p>市面有專為<strong>貓咪</strong>排毛設計嘅補充劑（潤滑＋輕瀉效果），可以幫助<strong>貓咪毛球症</strong>，不過要遵從獸醫建議使用。</p>
 
-      <h2>ðŸš¨ è²“å’ªæ¯›çƒç—‡å¹¾æ™‚è¦ç‡ç¸é†«ï¼Ÿ</h2>
-      <p>ç•¶ä½ å˜…<strong>è²“å’ª</strong>å‡ºç¾ä»¥ä¸‹æƒ…æ³æ™‚ï¼Œ<strong>å°±å””ä¿‚æ™®é€š<strong>è²“å’ªå˜”æ¯›çƒ</strong>å’ç°¡å–®ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>å°Žè‡´è…¸é“é˜»å¡žï¼ç‚Žç—‡ï¼š</strong></p>
+      <h2>🚨 貓咪毛球症幾時要睇獸醫？</h2>
+      <p>當你嘅<strong>貓咪</strong>出現以下情況時，<strong>就唔係普通<strong>貓咪嘔毛球</strong>咁簡單，可能係<strong>貓咪毛球症</strong>導致腸道阻塞／炎症：</strong></p>
       <ul>
-        <li><strong>è²“å’ª</strong>å˜”å’—å¥½å¤šæ¬¡éƒ½ç„¡å˜”å‡ºæ¯›çƒï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>å¯èƒ½åš´é‡</li>
-        <li><strong>è²“å’ª</strong>å˜”å‡ºé€æ˜Žæ¶²é«”ï¼èƒƒé…¸ï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>è­¦è™Ÿ</li>
-        <li><strong>è²“å’ª</strong>å””éƒã€å””é£Ÿã€çž“åˆ°å””é†’ï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>ç·Šæ€¥æƒ…æ³</li>
-        <li><strong>è²“å’ª</strong>è‚šè„¹ã€å«ç—›ã€å””ä¿¾äººæ‘¸è‚šï¼Œ<strong>è²“å’ªæ¯›çƒç—‡</strong>å¯èƒ½é˜»å¡ž</li>
+        <li><strong>貓咪</strong>嘔咗好多次都無嘔出毛球，<strong>貓咪毛球症</strong>可能嚴重</li>
+        <li><strong>貓咪</strong>嘔出透明液體／胃酸，<strong>貓咪毛球症</strong>警號</li>
+        <li><strong>貓咪</strong>唔郁、唔食、瞓到唔醒，<strong>貓咪毛球症</strong>緊急情況</li>
+        <li><strong>貓咪</strong>肚脹、叫痛、唔俾人摸肚，<strong>貓咪毛球症</strong>可能阻塞</li>
       </ul>
-      <p>âž¡ï¸ <strong>è«‹ç«‹å³å¸¶<strong>è²“å’ª</strong>åŽ»ç‡ç¸é†«ï¼Œå””å¥½å†ç­‰ï¼<strong>è²“å’ªæ¯›çƒç—‡</strong>å¯èƒ½å±åŠ<strong>è²“å’ª</strong>ç”Ÿå‘½ï¼</strong></p>
+      <p>➡️ <strong>請立即帶<strong>貓咪</strong>去睇獸醫，唔好再等！<strong>貓咪毛球症</strong>可能危及<strong>貓咪</strong>生命！</strong></p>
 
-      <h2>ðŸ’¡ è²“å’ªå˜”æ¯›çƒå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Žï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªå˜”æ¯›çƒ</strong>ä¸€å€‹æœˆ1-2æ¬¡ä¿‚æ­£å¸¸ï¼Œä½†å¦‚æžœ<strong>è²“å’ªå˜”æ¯›çƒ</strong>é »ç¹ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼Œæ‡‰è«®è©¢ç¸é†«ã€‚</p>
+      <h2>💡 貓咪嘔毛球常見問題</h2>
+      <p><strong>Q: 貓咪嘔毛球正常嗎？</strong></p>
+      <p>A: <strong>貓咪嘔毛球</strong>一個月1-2次係正常，但如果<strong>貓咪嘔毛球</strong>頻繁，可能係<strong>貓咪毛球症</strong>，應諮詢獸醫。</p>
       
-      <p><strong>Q: è²“å’ªæ¯›çƒç—‡é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>è²“å’ªæ¯›çƒç—‡</strong>å¯ä»¥é€šéŽæ¯æ—¥æ¢³æ¯›ã€å¢žåŠ çº–ç¶­ã€é¼“å‹µé£²æ°´ã€ä½¿ç”¨æ¯›çƒè†ç­‰æ–¹æ³•é é˜²ã€‚å¦‚æžœ<strong>è²“å’ªæ¯›çƒç—‡</strong>åš´é‡ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«æª¢æŸ¥ã€‚</p>
+      <p><strong>Q: 貓咪毛球症點算好？</strong></p>
+      <p>A: <strong>貓咪毛球症</strong>可以通過每日梳毛、增加纖維、鼓勵飲水、使用毛球膏等方法預防。如果<strong>貓咪毛球症</strong>嚴重，應立即帶<strong>貓咪</strong>到獸醫檢查。</p>
       
-      <p><strong>Q: é»žæ¨£é é˜²è²“å’ªæ¯›çƒç—‡ï¼Ÿ</strong></p>
-      <p>A: é é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>æ–¹æ³•åŒ…æ‹¬ï¼šæ¯æ—¥å¹«<strong>è²“å’ª</strong>æ¢³æ¯›ã€å¢žåŠ <strong>è²“å’ª</strong>é£Ÿç‰©çº–ç¶­ã€é¼“å‹µ<strong>è²“å’ª</strong>é£²æ°´ã€ä½¿ç”¨æ¯›çƒè†ç­‰ã€‚</p>
+      <p><strong>Q: 點樣預防貓咪毛球症？</strong></p>
+      <p>A: 預防<strong>貓咪毛球症</strong>方法包括：每日幫<strong>貓咪</strong>梳毛、增加<strong>貓咪</strong>食物纖維、鼓勵<strong>貓咪</strong>飲水、使用毛球膏等。</p>
 
-      <h2>â¤ï¸ ä½ å˜…è§€å¯Ÿï¼ä½¢å˜…æ•‘å‘½é—œéµï¼</h2>
-      <p>å¥½å¤šä¸»äººä»¥ç‚ºã€Œ<strong>è²“å’ªå˜”æ¯›çƒ</strong>ã€ä¿‚<strong>è²“å’ª</strong>æ­£å¸¸è¡Œç‚ºï¼Œå””ç†ä½¢ï¼Œ</p>
-      <p>ä½†äº‹å¯¦ä¿‚ï¼š<strong>å¤ªé »å¯†ã€å””è‡ªç„¶å˜…<strong>è²“å’ªå˜”æ¯›çƒ</strong>ä¿‚ä¸€ç¨®èº«é«”æ±‚æ•‘è¨Šè™Ÿï¼å¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼</strong></p>
-      <p>ðŸ“Œ ææ—©å¯Ÿè¦º<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼‹é©ç•¶è­·ç†ï¼Œå¯ä»¥ä»¤<strong>è²“å’ª</strong>é é›¢è…¸é˜»å¡žã€æ¶ˆåŒ–ç–¾ç—…ç­‰é¢¨éšªï¼</p>
+      <h2>❤️ 你嘅觀察＝佢嘅救命關鍵！</h2>
+      <p>好多主人以為「<strong>貓咪嘔毛球</strong>」係<strong>貓咪</strong>正常行為，唔理佢，</p>
+      <p>但事實係：<strong>太頻密、唔自然嘅<strong>貓咪嘔毛球</strong>係一種身體求救訊號！可能係<strong>貓咪毛球症</strong>！</strong></p>
+      <p>📌 提早察覺<strong>貓咪毛球症</strong>＋適當護理，可以令<strong>貓咪</strong>遠離腸阻塞、消化疾病等風險！</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>è²“å’ªå˜”æ¯›çƒæ­£å¸¸å—Ž</strong>ï¼Ÿ<strong>è²“å’ªå˜”æ¯›çƒ</strong>ä¸€å€‹æœˆ1-2æ¬¡ä¿‚æ­£å¸¸ï¼Œä½†å¦‚æžœé »ç¹å‡ºç¾ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªæ¯›çƒç—‡</strong>ã€‚è¦é é˜²<strong>è²“å’ªæ¯›çƒç—‡</strong>ï¼Œæ‡‰æ¯æ—¥å¹«<strong>è²“å’ª</strong>æ¢³æ¯›ã€å¢žåŠ çº–ç¶­ã€é¼“å‹µé£²æ°´ã€ä½¿ç”¨æ¯›çƒè†ã€‚å¦‚æžœ<strong>è²“å’ªæ¯›çƒç—‡</strong>åš´é‡ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«æª¢æŸ¥ï¼Œé¿å…å±åŠ<strong>è²“å’ª</strong>ç”Ÿå‘½ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>貓咪嘔毛球正常嗎</strong>？<strong>貓咪嘔毛球</strong>一個月1-2次係正常，但如果頻繁出現，可能係<strong>貓咪毛球症</strong>。要預防<strong>貓咪毛球症</strong>，應每日幫<strong>貓咪</strong>梳毛、增加纖維、鼓勵飲水、使用毛球膏。如果<strong>貓咪毛球症</strong>嚴重，應立即帶<strong>貓咪</strong>到獸醫檢查，避免危及<strong>貓咪</strong>生命。</p>
     `,
     author: "PetWell HK",
     date: "2025-02-20",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogCatHairball
   },
   {
     id: "8",
-    slug: "å¯µç‰©ç”¨å“å±éšªæˆä»½",
-    title: "å¯µç‰©ç”¨å“å±éšªæˆä»½æœ‰å“ªäº›ï¼Ÿå¯µç‰©ç”¨å“å®‰å…¨ã€å¯µç‰©ä¸­æ¯’é é˜²å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "å¯µç‰©ç”¨å“å±éšªæˆä»½æœ‰å“ªäº›ï¼Ÿã€Œå¤©ç„¶ã€ã€ã€Œå¯µç‰©å®‰å¿ƒã€æœªå¿…çœŸæ­£å®‰å…¨ï¼é™¤èŸ²èŠã€è‹¯é…šã€ç²¾æ²¹ã€æ¼‚ç™½åŠ‘ã€DEETå°è²“ç‹—æœ‰è‡´å‘½é¢¨éšªã€‚æœ¬æ–‡è©³åˆ—5å¤§å¯µç‰©ç”¨å“å±éšªæˆä»½æ¸…å–®ã€å¸¸è¦‹ç”¢å“ã€å¯µç‰©ä¸­æ¯’ç—‡ç‹€åŠå¯µç‰©ç”¨å“å®‰å…¨å»ºè­°ã€‚",
+    slug: "寵物用品危險成份",
+    title: "寵物用品危險成份有哪些？寵物用品安全、寵物中毒預防全攻略 | PetWell HK",
+    excerpt: "寵物用品危險成份有哪些？「天然」、「寵物安心」未必真正安全！除蟲菊、苯酚、精油、漂白劑、DEET對貓狗有致命風險。本文詳列5大寵物用品危險成份清單、常見產品、寵物中毒症狀及寵物用品安全建議。",
     content: `
-      <h2>å¯µç‰©ç”¨å“å±éšªæˆä»½æœ‰å“ªäº›ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡æª¢æŸ¥éŽ<strong>å¯µç‰©ç”¨å“</strong>æˆä»½è¡¨ï¼Ÿå¸‚é¢ä¸Šå¥½å¤šæ¸…æ½”åŠ‘ã€é©…èŸ²ç”¨å“ã€é¦™æ°›ç”¢å“ï¼Œéƒ½æœƒå°ä½ã€Œå¤©ç„¶ã€ã€ã€Œ<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ä½¿ç”¨ã€ï¼Œä½†<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>å¯èƒ½éš±è—å…¶ä¸­ã€‚<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>å°<strong>å¯µç‰©</strong>æœ‰è‡´å‘½é¢¨éšªï¼Œå¯èƒ½å°Žè‡´<strong>å¯µç‰©ä¸­æ¯’</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>æœ‰å“ªäº›ã€<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>é¸æ“‡æ–¹æ³•ï¼Œä»¥åŠå¦‚ä½•é é˜²<strong>å¯µç‰©ä¸­æ¯’</strong>ã€‚</p>
+      <h2>寵物用品危險成份有哪些？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇檢查過<strong>寵物用品</strong>成份表？市面上好多清潔劑、驅蟲用品、香氛產品，都會印住「天然」、「<strong>寵物用品安全</strong>使用」，但<strong>寵物用品危險成份</strong>可能隱藏其中。<strong>寵物用品危險成份</strong>對<strong>寵物</strong>有致命風險，可能導致<strong>寵物中毒</strong>。本文為你詳細講解<strong>寵物用品危險成份</strong>有哪些、<strong>寵物用品安全</strong>選擇方法，以及如何預防<strong>寵物中毒</strong>。</p>
       
-      <p>å¸‚é¢ä¸Šå¥½å¤šæ¸…æ½”åŠ‘ã€é©…èŸ²ç”¨å“ã€é¦™æ°›ç”¢å“ï¼Œéƒ½æœƒå°ä½ã€Œå¤©ç„¶ã€ã€ã€Œ<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ä½¿ç”¨ã€â€”â€”<br />ä½†ä½ çœŸä¿‚ç‡éŽ<strong>å¯µç‰©ç”¨å“</strong>æˆä»½è¡¨æœªï¼ŸðŸ§¾</p>
-      <p>å¥½å¤š<strong>å¯µç‰©ç”¨å“</strong>å°ç‹—ç‹—ã€Œå¯èƒ½ã€å†‡äº‹ï¼Œ<br />ä½†å° <strong>è²“å’ªã€è€ç‹—ã€ç´°è·¯ç‹—</strong> å…¶å¯¦å¥½æ˜“å‡ºäº‹ï¼Œåš´é‡ç”šè‡³<strong>å¯µç‰©ä¸­æ¯’</strong>æ­»äº¡ã€‚</p>
-      <p><strong>å””ä¿‚åš‡ä½ ï¼Œè€Œä¿‚çœŸå¯¦ç™¼ç”ŸéŽï¼</strong><br />ä»Šæ—¥å°±åŒä½ é€å€‹æ‹†è§£ <strong>5ç¨®æœ€å¸¸è¦‹ä½†è¦é¿é–‹å˜…<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>ðŸ‘‡</strong></p>
+      <p>市面上好多清潔劑、驅蟲用品、香氛產品，都會印住「天然」、「<strong>寵物用品安全</strong>使用」——<br />但你真係睇過<strong>寵物用品</strong>成份表未？🧾</p>
+      <p>好多<strong>寵物用品</strong>對狗狗「可能」冇事，<br />但對 <strong>貓咪、老狗、細路狗</strong> 其實好易出事，嚴重甚至<strong>寵物中毒</strong>死亡。</p>
+      <p><strong>唔係嚇你，而係真實發生過！</strong><br />今日就同你逐個拆解 <strong>5種最常見但要避開嘅<strong>寵物用品危險成份</strong>👇</strong></p>
 
       <hr />
 
-      <h2>âŒã€è²“ç‹—ä¸é©ç”¨æˆä»½æ¸…å–®ã€‘PetWell æŽ¨è–¦ç‰ˆðŸ“‹ï¼šå¯µç‰©ç”¨å“å±éšªæˆä»½</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>æ¸…å–®ï¼Œé¸æ“‡<strong>å¯µç‰©ç”¨å“</strong>æ™‚æ‡‰é¿å…ï¼š</p>
+      <h2>❌【貓狗不適用成份清單】PetWell 推薦版📋：寵物用品危險成份</h2>
+      <p>以下係<strong>寵物用品危險成份</strong>清單，選擇<strong>寵物用品</strong>時應避免：</p>
       <table style="height: 416px;" border="1" cellspacing="0" cellpadding="10">
         <thead>
           <tr>
-            <th>â—æˆä»½åç¨±</th>
-            <th>ðŸ§´å¸¸è¦‹ç”¢å“é¡žåž‹</th>
-            <th>ðŸŽ¯é¢¨éšªå°è±¡</th>
-            <th>âš ï¸å¯èƒ½ç—‡ç‹€</th>
-            <th>âœ…å»ºè­°è¡Œå‹•</th>
+            <th>❗成份名稱</th>
+            <th>🧴常見產品類型</th>
+            <th>🎯風險對象</th>
+            <th>⚠️可能症狀</th>
+            <th>✅建議行動</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>é™¤èŸ²èŠ Pyrethrins / Pyrethroids</strong><br />(å¦‚ï¼šPermethrin)</td>
-            <td>é©…èŸ²å™´éœ§ã€é¦™æ°›æ¸…æ½”åŠ‘ã€è·³èš¤è—¥</td>
-            <td>è²“ï¼ˆæ¥µé«˜é¢¨éšªï¼‰<br />ç‹—ï¼ˆéœ€ç•™æ„åŠ‘é‡ï¼‰</td>
-            <td>æµå£æ°´ã€æŠ½æã€ç™²ç™‡ã€æ­»äº¡</td>
-            <td>çµ•å°é¿å…è²“æŽ¥è§¸ï¼ç‹—éœ€æŒ‰ç¸é†«æŒ‡ç¤ºä½¿ç”¨</td>
+            <td><strong>除蟲菊 Pyrethrins / Pyrethroids</strong><br />(如：Permethrin)</td>
+            <td>驅蟲噴霧、香氛清潔劑、跳蚤藥</td>
+            <td>貓（極高風險）<br />狗（需留意劑量）</td>
+            <td>流口水、抽搐、癲癇、死亡</td>
+            <td>絕對避免貓接觸／狗需按獸醫指示使用</td>
           </tr>
           <tr>
-            <td><strong>è‹¯é…š Phenol / Carbolic Acid</strong></td>
-            <td>Lysolæ¶ˆæ¯’æ¿•ç´™å·¾ã€æ¾æ²¹åœ°æ¿æ°´</td>
-            <td>è²“ã€ç‹—</td>
-            <td>è‚è‡Ÿæå‚·ã€ç¥žç¶“ç³»çµ±ä¸­æ¯’</td>
-            <td>é¿å…ä½¿ç”¨ï¼Œé¸ç„¡æ¯’æ¨™ç¤ºç”¢å“</td>
+            <td><strong>苯酚 Phenol / Carbolic Acid</strong></td>
+            <td>Lysol消毒濕紙巾、松油地板水</td>
+            <td>貓、狗</td>
+            <td>肝臟損傷、神經系統中毒</td>
+            <td>避免使用，選無毒標示產品</td>
           </tr>
           <tr>
-            <td><strong>ç²¾æ²¹ Essential Oils</strong><br />(èŒ¶æ¨¹æ²¹ã€å°¤åŠ åˆ©ã€è‚‰æ¡‚ç­‰)</td>
-            <td>é¦™è–°æ©Ÿã€å¯µç‰©å™´éœ§ã€è²“ç ‚é™¤è‡­åŠ‘</td>
-            <td>è²“ï¼ˆæ¥µé«˜é¢¨éšªï¼‰<br />å°åž‹ç‹—</td>
-            <td>å‘¼å¸å›°é›£ã€è‚è…Žè² æ“”ã€ç¥žç¶“ç—‡ç‹€</td>
-            <td>ä¸å»ºè­°å®¤å…§æ“´é¦™æˆ–å¡—æ–¼å¯µç‰©èº«é«”</td>
+            <td><strong>精油 Essential Oils</strong><br />(茶樹油、尤加利、肉桂等)</td>
+            <td>香薰機、寵物噴霧、貓砂除臭劑</td>
+            <td>貓（極高風險）<br />小型狗</td>
+            <td>呼吸困難、肝腎負擔、神經症狀</td>
+            <td>不建議室內擴香或塗於寵物身體</td>
           </tr>
           <tr>
-            <td><strong>æ¼‚ç™½åŠ‘ Sodium Hypochlorite</strong></td>
-            <td>å»æ‰€æ¸…æ½”åŠ‘ã€æ¼‚ç™½æ°´ã€æ‹–åœ°æ°´</td>
-            <td>è²“ã€ç‹—</td>
-            <td>å˜”åã€å£è…”æ½°çˆ›ã€ç¼å‚·</td>
-            <td>æ¸…æ½”å¾Œå¿…æ²–æ´—ï¼Œå‹¿è®“å¯µç‰©è¸©éŽèˆ”è…³</td>
+            <td><strong>漂白劑 Sodium Hypochlorite</strong></td>
+            <td>廁所清潔劑、漂白水、拖地水</td>
+            <td>貓、狗</td>
+            <td>嘔吐、口腔潰爛、灼傷</td>
+            <td>清潔後必沖洗，勿讓寵物踩過舔腳</td>
           </tr>
           <tr>
-            <td><strong>èšŠæ€•æ°´æˆåˆ† DEET</strong><br />(äºŒç”²åŸºè‹¯èƒº)</td>
-            <td>äººé¡žèšŠæ€•æ°´ã€é˜²èŸ²è²¼</td>
-            <td>ç‹—ï¼ˆè¼•è‡³ä¸­æ¯’ï¼‰<br />è²“ï¼ˆæ¥µé«˜é¢¨éšªï¼‰</td>
-            <td>ç¥žç¶“æ¯’æ€§ã€æŠ½æã€éŽæ•åæ‡‰</td>
-            <td>åˆ‡å‹¿ç”¨åœ¨äººæˆ–å¯µç‰©èº«ä¸Šï¼Œè½‰ç”¨å¯µç‰©å°ˆç”¨ç”¢å“</td>
+            <td><strong>蚊怕水成分 DEET</strong><br />(二甲基苯胺)</td>
+            <td>人類蚊怕水、防蟲貼</td>
+            <td>狗（輕至中毒）<br />貓（極高風險）</td>
+            <td>神經毒性、抽搐、過敏反應</td>
+            <td>切勿用在人或寵物身上，轉用寵物專用產品</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸ’¡ å¦‚ä½•é¸æ“‡å®‰å…¨çš„å¯µç‰©ç”¨å“ï¼Ÿå¯µç‰©ç”¨å“å®‰å…¨å»ºè­°</h2>
-      <p>é¸æ“‡<strong>å¯µç‰©ç”¨å“</strong>æ™‚ï¼Œæ‡‰æ³¨æ„ä»¥ä¸‹<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>å»ºè­°ï¼š</p>
+      <h2>💡 如何選擇安全的寵物用品？寵物用品安全建議</h2>
+      <p>選擇<strong>寵物用品</strong>時，應注意以下<strong>寵物用品安全</strong>建議：</p>
       <ul>
-        <li>âœ… ä»”ç´°é–±è®€<strong>å¯µç‰©ç”¨å“</strong>æˆä»½è¡¨ï¼Œé¿å…<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong></li>
-        <li>âœ… é¸æ“‡æ¨™ç¤ºã€Œ<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ã€ã€ã€Œç„¡æ¯’ã€ä¸”æˆä»½ç°¡å–®çš„<strong>å¯µç‰©ç”¨å“</strong></li>
-        <li>âœ… é¿å…å«æœ‰é™¤èŸ²èŠã€è‹¯é…šã€æ¼‚ç™½åŠ‘ã€ç²¾æ²¹ç­‰<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>çš„æ¸…æ½”åŠ‘</li>
-        <li>âœ… æ¸…æ½”å¾Œå‹™å¿…å¾¹åº•æ²–æ´—ï¼Œé¿å…<strong>å¯µç‰©</strong>æŽ¥è§¸æ®˜ç•™ç‰©ï¼Œé é˜²<strong>å¯µç‰©ä¸­æ¯’</strong></li>
-        <li>âœ… å¦‚æœ‰ç–‘å•ï¼Œæ‡‰è«®è©¢ç¸é†«æˆ–é¸æ“‡ç¸é†«æŽ¨è–¦çš„<strong>å¯µç‰©ç”¨å“</strong></li>
+        <li>✅ 仔細閱讀<strong>寵物用品</strong>成份表，避免<strong>寵物用品危險成份</strong></li>
+        <li>✅ 選擇標示「<strong>寵物用品安全</strong>」、「無毒」且成份簡單的<strong>寵物用品</strong></li>
+        <li>✅ 避免含有除蟲菊、苯酚、漂白劑、精油等<strong>寵物用品危險成份</strong>的清潔劑</li>
+        <li>✅ 清潔後務必徹底沖洗，避免<strong>寵物</strong>接觸殘留物，預防<strong>寵物中毒</strong></li>
+        <li>✅ 如有疑問，應諮詢獸醫或選擇獸醫推薦的<strong>寵物用品</strong></li>
       </ul>
 
-      <h2>âš ï¸ å¯µç‰©ä¸­æ¯’ç—‡ç‹€ï¼šå¦‚ä½•è­˜åˆ¥å¯µç‰©ä¸­æ¯’</h2>
-      <p>å¦‚æžœ<strong>å¯µç‰©</strong>æŽ¥è§¸<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>ï¼Œå¯èƒ½å‡ºç¾ä»¥ä¸‹<strong>å¯µç‰©ä¸­æ¯’</strong>ç—‡ç‹€ï¼š</p>
+      <h2>⚠️ 寵物中毒症狀：如何識別寵物中毒</h2>
+      <p>如果<strong>寵物</strong>接觸<strong>寵物用品危險成份</strong>，可能出現以下<strong>寵物中毒</strong>症狀：</p>
       <ul>
-        <li>æµå£æ°´ã€æŠ½æã€ç™²ç™‡ï¼ˆé™¤èŸ²èŠ<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼‰</li>
-        <li>è‚è‡Ÿæå‚·ã€ç¥žç¶“ç³»çµ±ä¸­æ¯’ï¼ˆè‹¯é…š<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼‰</li>
-        <li>å‘¼å¸å›°é›£ã€è‚è…Žè² æ“”ã€ç¥žç¶“ç—‡ç‹€ï¼ˆç²¾æ²¹<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼‰</li>
-        <li>å˜”åã€å£è…”æ½°çˆ›ã€ç¼å‚·ï¼ˆæ¼‚ç™½åŠ‘<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼‰</li>
-        <li>ç¥žç¶“æ¯’æ€§ã€æŠ½æã€éŽæ•åæ‡‰ï¼ˆDEET<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼‰</li>
+        <li>流口水、抽搐、癲癇（除蟲菊<strong>寵物中毒</strong>）</li>
+        <li>肝臟損傷、神經系統中毒（苯酚<strong>寵物中毒</strong>）</li>
+        <li>呼吸困難、肝腎負擔、神經症狀（精油<strong>寵物中毒</strong>）</li>
+        <li>嘔吐、口腔潰爛、灼傷（漂白劑<strong>寵物中毒</strong>）</li>
+        <li>神經毒性、抽搐、過敏反應（DEET<strong>寵物中毒</strong>）</li>
       </ul>
-      <p>å¦‚æžœç™¼ç¾<strong>å¯µç‰©ä¸­æ¯’</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶<strong>å¯µç‰©</strong>åˆ°ç¸é†«è¨ºæ‰€ï¼Œä¸¦å¸¶ä¸Š<strong>å¯µç‰©ç”¨å“</strong>åŒ…è£ä»¥ä¾¿è¨ºæ–·ã€‚</p>
+      <p>如果發現<strong>寵物中毒</strong>症狀，應立即帶<strong>寵物</strong>到獸醫診所，並帶上<strong>寵物用品</strong>包裝以便診斷。</p>
 
-      <h2>ðŸ’¡ å¯µç‰©ç”¨å“å®‰å…¨å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: å¯µç‰©ç”¨å“å±éšªæˆä»½æœ‰å“ªäº›ï¼Ÿ</strong></p>
-      <p>A: <strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>åŒ…æ‹¬é™¤èŸ²èŠã€è‹¯é…šã€ç²¾æ²¹ã€æ¼‚ç™½åŠ‘ã€DEETç­‰ã€‚é¸æ“‡<strong>å¯µç‰©ç”¨å“</strong>æ™‚æ‡‰ä»”ç´°é–±è®€æˆä»½è¡¨ï¼Œé¿å…<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>ã€‚</p>
+      <h2>💡 寵物用品安全常見問題</h2>
+      <p><strong>Q: 寵物用品危險成份有哪些？</strong></p>
+      <p>A: <strong>寵物用品危險成份</strong>包括除蟲菊、苯酚、精油、漂白劑、DEET等。選擇<strong>寵物用品</strong>時應仔細閱讀成份表，避免<strong>寵物用品危險成份</strong>。</p>
       
-      <p><strong>Q: å¦‚ä½•é¸æ“‡å®‰å…¨çš„å¯µç‰©ç”¨å“ï¼Ÿ</strong></p>
-      <p>A: é¸æ“‡<strong>å¯µç‰©ç”¨å“</strong>æ™‚ï¼Œæ‡‰é¸æ“‡æ¨™ç¤ºã€Œ<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ã€ã€ã€Œç„¡æ¯’ã€ä¸”æˆä»½ç°¡å–®çš„ç”¢å“ï¼Œé¿å…<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>ï¼Œå¦‚æœ‰ç–‘å•æ‡‰è«®è©¢ç¸é†«ã€‚</p>
+      <p><strong>Q: 如何選擇安全的寵物用品？</strong></p>
+      <p>A: 選擇<strong>寵物用品</strong>時，應選擇標示「<strong>寵物用品安全</strong>」、「無毒」且成份簡單的產品，避免<strong>寵物用品危險成份</strong>，如有疑問應諮詢獸醫。</p>
       
-      <p><strong>Q: å¯µç‰©ä¸­æ¯’é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: å¦‚æžœç™¼ç¾<strong>å¯µç‰©ä¸­æ¯’</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶<strong>å¯µç‰©</strong>åˆ°ç¸é†«è¨ºæ‰€ï¼Œä¸¦å¸¶ä¸Š<strong>å¯µç‰©ç”¨å“</strong>åŒ…è£ä»¥ä¾¿è¨ºæ–·ã€‚ä¸è¦è‡ªè¡Œè™•ç†<strong>å¯µç‰©ä¸­æ¯’</strong>ã€‚</p>
+      <p><strong>Q: 寵物中毒點算好？</strong></p>
+      <p>A: 如果發現<strong>寵物中毒</strong>症狀，應立即帶<strong>寵物</strong>到獸醫診所，並帶上<strong>寵物用品</strong>包裝以便診斷。不要自行處理<strong>寵物中毒</strong>。</p>
 
-      <p>å””å¥½å†ä»¥ç‚ºã€Œå¤©ç„¶ã€ã€ã€Œ<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ã€ï¼çœŸæ­£ç„¡å®³ã€‚<br /><strong>å°ç‹—å®‰å…¨ â‰  å°è²“å®‰å…¨</strong><br /><strong>å°äººç„¡æ¯’ â‰  å°å¯µç‰©ç„¡å®³</strong></p>
-      <p>ðŸ’¡ ä½ å¤šç‡ä¸€æ¬¡<strong>å¯µç‰©ç”¨å“</strong>æˆä»½ï¼Œå¯èƒ½å°±å¯ä»¥ <strong>æ•‘ä½ ä¸»å­ä¸€å‘½ï¼é¿å…<strong>å¯µç‰©ä¸­æ¯’</strong>ï¼</strong></p>
-      <p>ðŸ“¢ åˆ†äº«ä¿¾æ‰€æœ‰æœ‰é¤Šè²“ç‹—å˜…æœ‹å‹ï¼Œä¸€é½Šå®ˆè­·æ¯›å­©å¥åº·ï¼Œé¸æ“‡<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ç”¢å“ï¼</p>
+      <p>唔好再以為「天然」、「<strong>寵物用品安全</strong>」＝真正無害。<br /><strong>對狗安全 ≠ 對貓安全</strong><br /><strong>對人無毒 ≠ 對寵物無害</strong></p>
+      <p>💡 你多睇一次<strong>寵物用品</strong>成份，可能就可以 <strong>救你主子一命！避免<strong>寵物中毒</strong>！</strong></p>
+      <p>📢 分享俾所有有養貓狗嘅朋友，一齊守護毛孩健康，選擇<strong>寵物用品安全</strong>產品！</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>å°<strong>å¯µç‰©</strong>æœ‰è‡´å‘½é¢¨éšªï¼Œå¯èƒ½å°Žè‡´<strong>å¯µç‰©ä¸­æ¯’</strong>ã€‚é¸æ“‡<strong>å¯µç‰©ç”¨å“</strong>æ™‚ï¼Œæ‡‰ä»”ç´°é–±è®€æˆä»½è¡¨ï¼Œé¿å…<strong>å¯µç‰©ç”¨å“å±éšªæˆä»½</strong>ï¼Œé¸æ“‡<strong>å¯µç‰©ç”¨å“å®‰å…¨</strong>ç”¢å“ã€‚å¦‚æžœç™¼ç¾<strong>å¯µç‰©ä¸­æ¯’</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶<strong>å¯µç‰©</strong>åˆ°ç¸é†«è¨ºæ‰€ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>寵物用品危險成份</strong>對<strong>寵物</strong>有致命風險，可能導致<strong>寵物中毒</strong>。選擇<strong>寵物用品</strong>時，應仔細閱讀成份表，避免<strong>寵物用品危險成份</strong>，選擇<strong>寵物用品安全</strong>產品。如果發現<strong>寵物中毒</strong>症狀，應立即帶<strong>寵物</strong>到獸醫診所。</p>
     `,
     author: "PetWell HK",
     date: "2025-02-15",
-    category: "å¯µç‰©å®‰å…¨",
+    category: "寵物安全",
     imageUrl: blogPetSafetyProducts
   },
   {
     id: "9",
-    slug: "è²“å’ªå°¿é“é˜»å¡žæ€¥ç—‡",
-    title: "è²“å’ªå°¿é“é˜»å¡žé»žç®—å¥½ï¼Ÿè²“å’ªå°¿å””å‡ºæ€¥ç—‡è™•ç†ã€é é˜²æ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "è²“å’ªå°¿é“é˜»å¡žé»žç®—å¥½ï¼Ÿè²“å’ªå°¿é“é˜»å¡ž24-48å°æ™‚å…§å¯è‡´å‘½ï¼é›„æ€§è²“ã€è‚¥èƒ–è²“é¢¨éšªæœ€é«˜ã€‚æœ¬æ–‡æ•™ä½ è­˜åˆ¥è²“å’ªå°¿å””å‡ºç·Šæ€¥ç—‡ç‹€ï¼ˆåŽ»å»æ‰€å°¿å””å‡ºã€æ’å°¿å‡ºè²ã€å˜”åè‚šè„¹ï¼‰ã€è²“å’ªå°¿é“é˜»å¡žç¸é†«æ²»ç™‚æµç¨‹åŠè²“å’ªå°¿é“é˜»å¡žé é˜²å¾©ç™¼æ–¹æ³•ã€‚",
+    slug: "貓咪尿道阻塞急症",
+    title: "貓咪尿道阻塞點算好？貓咪尿唔出急症處理、預防方法全攻略 | PetWell HK",
+    excerpt: "貓咪尿道阻塞點算好？貓咪尿道阻塞24-48小時內可致命！雄性貓、肥胖貓風險最高。本文教你識別貓咪尿唔出緊急症狀（去廁所尿唔出、撐尿出聲、嘔吐肚脹）、貓咪尿道阻塞獸醫治療流程及貓咪尿道阻塞預防復發方法。",
     content: `
-      <h2>è²“å’ªå°¿é“é˜»å¡žé»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡ç™¼ç¾ä½ å˜…<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Ÿ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¿‚ç·Šæ€¥æƒ…æ³ï¼Œ24-48å°æ™‚å…§å¯è‡´å‘½ï¼<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¿‚å› ç‚º<strong>è²“å’ª</strong>å°¿é“è¢«é˜»å¡žï¼Œå°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>è²“å’ªå°¿é“é˜»å¡žé»žç®—å¥½</strong>ã€<strong>è²“å’ªå°¿å””å‡º</strong>ç—‡ç‹€ã€<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>è™•ç†æ–¹æ³•ï¼Œä»¥åŠå¦‚ä½•é é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ã€‚</p>
+      <h2>貓咪尿道阻塞點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇發現你嘅<strong>貓咪尿唔出</strong>？<strong>貓咪尿道阻塞</strong>係緊急情況，24-48小時內可致命！<strong>貓咪尿道阻塞</strong>係因為<strong>貓咪</strong>尿道被阻塞，導致<strong>貓咪尿唔出</strong>。本文為你詳細講解<strong>貓咪尿道阻塞點算好</strong>、<strong>貓咪尿唔出</strong>症狀、<strong>貓咪尿道阻塞</strong>處理方法，以及如何預防<strong>貓咪尿道阻塞</strong>。</p>
       
-      <h2>ðŸ§  ä¹œå˜¢ä¿‚ã€Œè²“å’ªå°¿é“é˜»å¡žã€ï¼Ÿ</h2>
-      <p>æ‰€è¬‚ <strong>Blocked Cat</strong> å³ä¿‚ <strong>è²“å’ªå°¿é“é˜»å¡žï¼ˆUrinary Obstructionï¼‰</strong>ï¼Œå³ä¿‚<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œå°¿æ¶²å‡ºå””åˆ°èº«é«”ã€‚<br>
-      å¤§å¤šæ•¸<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æƒ…æ³ä¿‚å› ç‚º<strong>è²“å’ª</strong>å°¿é“å…§æœ‰çµæ™¶ã€è† ç‹€é»æ¶²ã€ç™¼ç‚Žç´°èƒžç”šè‡³è¡€å¡Šï¼Œå¡žå’—æ¢ã€Œå°¿ç®¡ã€ï¼Œå°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ã€‚</p>
-      <p><strong>é›„æ€§è²“ï¼ˆç‰¹åˆ¥ä¿‚æœªé–¹å‰²æˆ–è‚¥èƒ–è€…ï¼‰æœ€å®¹æ˜“ä¸­æ‹›<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></strong>ï¼Œå› ç‚ºä½¢å“‹æ¢å°¿é“æ¯”è¼ƒçª„ï¼Œç‰¹åˆ¥å®¹æ˜“è¢«é˜»å¡žï¼Œå°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ã€‚</p>
+      <h2>🧠 乜嘢係「貓咪尿道阻塞」？</h2>
+      <p>所謂 <strong>Blocked Cat</strong> 即係 <strong>貓咪尿道阻塞（Urinary Obstruction）</strong>，即係<strong>貓咪尿唔出</strong>，尿液出唔到身體。<br>
+      大多數<strong>貓咪尿道阻塞</strong>情況係因為<strong>貓咪</strong>尿道內有結晶、膠狀黏液、發炎細胞甚至血塊，塞咗條「尿管」，導致<strong>貓咪尿唔出</strong>。</p>
+      <p><strong>雄性貓（特別係未閹割或肥胖者）最容易中招<strong>貓咪尿道阻塞</strong></strong>，因為佢哋條尿道比較窄，特別容易被阻塞，導致<strong>貓咪尿唔出</strong>。</p>
 
       <hr />
 
-      <h2>ðŸš© è²“å’ªå°¿é“é˜»å¡žå¸¸è¦‹é«˜å±å› ç´ </h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>å¸¸è¦‹é«˜å±å› ç´ ï¼Œå¯èƒ½å°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ï¼š</p>
+      <h2>🚩 貓咪尿道阻塞常見高危因素</h2>
+      <p>以下係<strong>貓咪尿道阻塞</strong>常見高危因素，可能導致<strong>貓咪尿唔出</strong>：</p>
       <ul>
-        <li>â¬‡ï¸ <strong>è²“å’ª</strong>é£²æ°´é‡å¤ªå°‘ï¼Œå¢žåŠ <strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é¢¨éšª</li>
-        <li>ðŸ§‚ <strong>è²“å’ª</strong>é«˜éˆ‰ä¹¾ç³§ç‚ºä¸»é£²é£Ÿï¼Œå®¹æ˜“å°Žè‡´<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>ðŸ˜¾ <strong>è²“å’ª</strong>å¿ƒç†å£“åŠ›å¤§ï¼ˆè½‰å±‹ã€æ–°è²“ç‹—ã€ä¸»äººå””å–ºå±‹ä¼ï¼‰ï¼Œå¯èƒ½å¼•ç™¼<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>ðŸˆâ€â¬› <strong>è²“å’ª</strong>æ´»å‹•é‡ä½Žæˆ–è‚¥èƒ–ï¼Œ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é¢¨éšªå¢žåŠ </li>
-        <li>ðŸ§¬ é«˜é¢¨éšªå“ç¨®å¦‚æ³¢æ–¯ã€è‹±çŸ­ã€ç·¬å› è²“ï¼Œæ›´å®¹æ˜“å‡ºç¾<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
+        <li>⬇️ <strong>貓咪</strong>飲水量太少，增加<strong>貓咪尿道阻塞</strong>風險</li>
+        <li>🧂 <strong>貓咪</strong>高鈉乾糧為主飲食，容易導致<strong>貓咪尿道阻塞</strong></li>
+        <li>😾 <strong>貓咪</strong>心理壓力大（轉屋、新貓狗、主人唔喺屋企），可能引發<strong>貓咪尿道阻塞</strong></li>
+        <li>🐈‍⬛ <strong>貓咪</strong>活動量低或肥胖，<strong>貓咪尿道阻塞</strong>風險增加</li>
+        <li>🧬 高風險品種如波斯、英短、緬因貓，更容易出現<strong>貓咪尿道阻塞</strong></li>
       </ul>
-      <p>å°±ç®—ä½ éš»<strong>è²“å’ª</strong>ç‡è½å¥½å¥åº·ï¼Œéƒ½æœ‰æ©Ÿæœƒã€Œçªç„¶<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ã€å°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ï¼</p>
+      <p>就算你隻<strong>貓咪</strong>睇落好健康，都有機會「突然<strong>貓咪尿道阻塞</strong>」導致<strong>貓咪尿唔出</strong>！</p>
 
-      <h2>ðŸ‘€ è²“å’ªå°¿å””å‡ºæœ‰å’©å¾µç‹€è¦å³åˆ»è­¦è¦ºï¼Ÿ</h2>
-      <p>å¦‚æžœ<strong>è²“å’ª</strong>å‡ºç¾ä»¥ä¸‹<strong>è²“å’ªå°¿å””å‡º</strong>ç—‡ç‹€ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ï¼š</p>
+      <h2>👀 貓咪尿唔出有咩徵狀要即刻警覺？</h2>
+      <p>如果<strong>貓咪</strong>出現以下<strong>貓咪尿唔出</strong>症狀，可能係<strong>貓咪尿道阻塞</strong>：</p>
       <ul>
-        <li>ðŸš½ <strong>è²“å’ª</strong>æˆæ—¥åŽ»å»æ‰€ä½†<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>å…¸åž‹ç—‡ç‹€</li>
-        <li>ðŸ˜¿ <strong>è²“å’ª</strong>æ’å°¿å‡ºè²ï¼Œæ¨£è¾›è‹¦ï¼Œ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>è­¦è™Ÿ</li>
-        <li>ðŸ¾ <strong>è²“å’ª</strong>ç‹‚èˆ”ä¸‹é«”ï¼Œå¯èƒ½ä¿‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¸é©</li>
-        <li>ðŸª« <strong>è²“å’ª</strong>å””éƒã€å†‡ç²¾ç¥žã€å””é£Ÿå˜¢ï¼Œ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>åš´é‡ç—‡ç‹€</li>
-        <li>ðŸ¤¢ <strong>è²“å’ª</strong>å˜”åã€è‚šè„¹ï¼ˆåš´é‡éšŽæ®µï¼‰ï¼Œ<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ç·Šæ€¥æƒ…æ³</li>
+        <li>🚽 <strong>貓咪</strong>成日去廁所但<strong>貓咪尿唔出</strong>，<strong>貓咪尿道阻塞</strong>典型症狀</li>
+        <li>😿 <strong>貓咪</strong>撐尿出聲，樣辛苦，<strong>貓咪尿道阻塞</strong>警號</li>
+        <li>🐾 <strong>貓咪</strong>狂舔下體，可能係<strong>貓咪尿道阻塞</strong>不適</li>
+        <li>🪫 <strong>貓咪</strong>唔郁、冇精神、唔食嘢，<strong>貓咪尿道阻塞</strong>嚴重症狀</li>
+        <li>🤢 <strong>貓咪</strong>嘔吐、肚脹（嚴重階段），<strong>貓咪尿道阻塞</strong>緊急情況</li>
       </ul>
-      <p><strong>â€¼ï¸ åƒç¥ˆå””å¥½èª¤æœƒä¿‚ä¾¿ç§˜ï¼å…¶å¯¦å¯èƒ½ä¿‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>å°Žè‡´<strong>è²“å’ªå°¿å””å‡º</strong>ï¼</strong></p>
+      <p><strong>‼️ 千祈唔好誤會係便秘！其實可能係<strong>貓咪尿道阻塞</strong>導致<strong>貓咪尿唔出</strong>！</strong></p>
 
-      <h2>ðŸ¥ è²“å’ªå°¿é“é˜»å¡žå¹¾æ™‚è¦ç‡ç¸é†«ï¼Ÿ</h2>
-      <p><strong>å³åˆ»ï¼å””å¥½ç­‰ï¼<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¿‚ç·Šæ€¥æƒ…æ³ï¼</strong><br>
-      ä¸€æ—¦<strong>è²“å’ª</strong>æ¢å°¿é“å®Œå…¨å¡žä½ï¼Œ<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œå°¿æ¶²æœƒå€’çŒè¿”<strong>è²“å’ª</strong>è†€èƒ±ç”šè‡³è…Žè‡Ÿï¼Œå¯èƒ½å¼•ç™¼<strong>è²“å’ª</strong>ä¸­æ¯’ã€è…Žè¡°ç«­ç”šè‡³æ­»äº¡ã€‚</p>
-      <p><strong>â³ <strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æœ€å¿«24â€“48å°æ™‚å…§å¯ä»¥è‡´å‘½ï¼å¦‚æžœç™¼ç¾<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«è¨ºæ‰€ï¼</strong></p>
+      <h2>🏥 貓咪尿道阻塞幾時要睇獸醫？</h2>
+      <p><strong>即刻！唔好等！<strong>貓咪尿道阻塞</strong>係緊急情況！</strong><br>
+      一旦<strong>貓咪</strong>條尿道完全塞住，<strong>貓咪尿唔出</strong>，尿液會倒灌返<strong>貓咪</strong>膀胱甚至腎臟，可能引發<strong>貓咪</strong>中毒、腎衰竭甚至死亡。</p>
+      <p><strong>⏳ <strong>貓咪尿道阻塞</strong>最快24–48小時內可以致命！如果發現<strong>貓咪尿唔出</strong>，應立即帶<strong>貓咪</strong>到獸醫診所！</strong></p>
 
       <hr />
 
-      <h2>ðŸ©º è²“å’ªå°¿é“é˜»å¡žåŽ»åˆ°ç¸é†«æœƒåšå•²å’©ï¼Ÿ</h2>
-      <p>ç•¶<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æ™‚ï¼Œç¸é†«æœƒé€²è¡Œä»¥ä¸‹<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æ²»ç™‚ï¼š</p>
+      <h2>🩺 貓咪尿道阻塞去到獸醫會做啲咩？</h2>
+      <p>當<strong>貓咪尿道阻塞</strong>時，獸醫會進行以下<strong>貓咪尿道阻塞</strong>治療：</p>
       <ol>
-        <li>å…ˆç©©å®š<strong>è²“å’ª</strong>ç‹€æ³ï¼ˆè£œæ°´ã€èª¿æ•´é›»è§£è³ªï¼‰ï¼Œè™•ç†<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>æ’å°¿å–‰ç–é€š<strong>è²“å’ª</strong>å°¿é“ï¼Œè§£æ±º<strong>è²“å’ªå°¿å””å‡º</strong>å•é¡Œ</li>
-        <li><strong>è²“å’ª</strong>ç•™é™¢è§€å¯Ÿï¼æ»´é¹½æ°´ï¼æŠ—ç”Ÿç´ ï¼æ­¢ç—›ï¼Œæ²»ç™‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>éœ€è¦æ™‚æœƒå®‰æŽ’<strong>è²“å’ª</strong>è†€èƒ±æ²–æ´—ã€Xå…‰æˆ–è¶…è²æ³¢ï¼Œè¨ºæ–·<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>é‡è¤‡<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>è€…å¯èƒ½è¦åš <strong>å°¿é“é€ å£æ‰‹è¡“ï¼ˆPUæ‰‹è¡“ï¼‰</strong>ï¼Œé é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>å¾©ç™¼</li>
+        <li>先穩定<strong>貓咪</strong>狀況（補水、調整電解質），處理<strong>貓咪尿道阻塞</strong></li>
+        <li>插尿喉疏通<strong>貓咪</strong>尿道，解決<strong>貓咪尿唔出</strong>問題</li>
+        <li><strong>貓咪</strong>留院觀察／滴鹽水／抗生素／止痛，治療<strong>貓咪尿道阻塞</strong></li>
+        <li>需要時會安排<strong>貓咪</strong>膀胱沖洗、X光或超聲波，診斷<strong>貓咪尿道阻塞</strong></li>
+        <li>重複<strong>貓咪尿道阻塞</strong>者可能要做 <strong>尿道造口手術（PU手術）</strong>，預防<strong>貓咪尿道阻塞</strong>復發</li>
       </ol>
 
-      <h2>ðŸ” è²“å’ªå°¿é“é˜»å¡žæœƒå””æœƒå¾©ç™¼ï¼Ÿå¦‚ä½•é é˜²è²“å’ªå°¿é“é˜»å¡ž</h2>
-      <p>æœƒã€‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æœ‰ç ”ç©¶é¡¯ç¤º<strong>ç´„35â€“50%æœƒå†ç™¼</strong>ï¼Œæ‰€ä»¥ä¹‹å¾Œè¦é é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ï¼š</p>
+      <h2>🔁 貓咪尿道阻塞會唔會復發？如何預防貓咪尿道阻塞</h2>
+      <p>會。<strong>貓咪尿道阻塞</strong>有研究顯示<strong>約35–50%會再發</strong>，所以之後要預防<strong>貓咪尿道阻塞</strong>：</p>
       <ul>
-        <li>âœ… <strong>è²“å’ª</strong>åƒæ³Œå°¿è™•æ–¹ç³§ï¼ˆä¾‹å¦‚ Hill's C/D æˆ– Royal Canin Urinaryï¼‰ï¼Œé é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>âœ… å¢žåŠ <strong>è²“å’ª</strong>é£²æ°´é‡ï¼ˆæ´»æ°´æ©Ÿã€æ¿•ç³§ã€åŠ æ¹¯æ°´ï¼‰ï¼Œæ¸›å°‘<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é¢¨éšª</li>
-        <li>âœ… æ¸›å£“ï¼å®šæ™‚äº’å‹•<strong>è²“å’ª</strong>ï¼Œé é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong></li>
-        <li>âœ… æŽ§åˆ¶<strong>è²“å’ª</strong>é«”é‡ï¼Œé™ä½Ž<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é¢¨éšª</li>
-        <li>âœ… å®šæœŸé©—<strong>è²“å’ª</strong>å°¿è¿½è¹¤pHå€¼ï¼‹çµæ™¶ï¼ŒåŠæ—©ç™¼ç¾<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é¢¨éšª</li>
+        <li>✅ <strong>貓咪</strong>吃泌尿處方糧（例如 Hill's C/D 或 Royal Canin Urinary），預防<strong>貓咪尿道阻塞</strong></li>
+        <li>✅ 增加<strong>貓咪</strong>飲水量（活水機、濕糧、加湯水），減少<strong>貓咪尿道阻塞</strong>風險</li>
+        <li>✅ 減壓／定時互動<strong>貓咪</strong>，預防<strong>貓咪尿道阻塞</strong></li>
+        <li>✅ 控制<strong>貓咪</strong>體重，降低<strong>貓咪尿道阻塞</strong>風險</li>
+        <li>✅ 定期驗<strong>貓咪</strong>尿追蹤pH值＋結晶，及早發現<strong>貓咪尿道阻塞</strong>風險</li>
       </ul>
 
-      <h2>ðŸ’¡ è²“å’ªå°¿é“é˜»å¡žå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: è²“å’ªå°¿é“é˜»å¡žé»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: å¦‚æžœç™¼ç¾<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æˆ–<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«è¨ºæ‰€ã€‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¿‚ç·Šæ€¥æƒ…æ³ï¼Œ24-48å°æ™‚å…§å¯è‡´å‘½ã€‚</p>
+      <h2>💡 貓咪尿道阻塞常見問題</h2>
+      <p><strong>Q: 貓咪尿道阻塞點算好？</strong></p>
+      <p>A: 如果發現<strong>貓咪尿道阻塞</strong>或<strong>貓咪尿唔出</strong>，應立即帶<strong>貓咪</strong>到獸醫診所。<strong>貓咪尿道阻塞</strong>係緊急情況，24-48小時內可致命。</p>
       
-      <p><strong>Q: é»žæ¨£é é˜²è²“å’ªå°¿é“é˜»å¡žï¼Ÿ</strong></p>
-      <p>A: é é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>æ–¹æ³•åŒ…æ‹¬ï¼š<strong>è²“å’ª</strong>åƒæ³Œå°¿è™•æ–¹ç³§ã€å¢žåŠ <strong>è²“å’ª</strong>é£²æ°´é‡ã€æ¸›å£“ã€æŽ§åˆ¶<strong>è²“å’ª</strong>é«”é‡ã€å®šæœŸé©—<strong>è²“å’ª</strong>å°¿ç­‰ã€‚</p>
+      <p><strong>Q: 點樣預防貓咪尿道阻塞？</strong></p>
+      <p>A: 預防<strong>貓咪尿道阻塞</strong>方法包括：<strong>貓咪</strong>吃泌尿處方糧、增加<strong>貓咪</strong>飲水量、減壓、控制<strong>貓咪</strong>體重、定期驗<strong>貓咪</strong>尿等。</p>
       
-      <p><strong>Q: è²“å’ªå°¿å””å‡ºä¿‚å’ªç·Šæ€¥ï¼Ÿ</strong></p>
-      <p>A: ä¿‚ï¼<strong>è²“å’ªå°¿å””å‡º</strong>å¯èƒ½ä¿‚<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ï¼Œä¿‚ç·Šæ€¥æƒ…æ³ï¼Œ24-48å°æ™‚å…§å¯è‡´å‘½ã€‚å¦‚æžœç™¼ç¾<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«è¨ºæ‰€ã€‚</p>
+      <p><strong>Q: 貓咪尿唔出係咪緊急？</strong></p>
+      <p>A: 係！<strong>貓咪尿唔出</strong>可能係<strong>貓咪尿道阻塞</strong>，係緊急情況，24-48小時內可致命。如果發現<strong>貓咪尿唔出</strong>，應立即帶<strong>貓咪</strong>到獸醫診所。</p>
 
-      <h2>â¤ï¸ çœŸå¯¦å€‹æ¡ˆæé†’ä½ ï¼šå””å¥½èª¤åˆ¤è²“å’ªå°¿é“é˜»å¡žï¼</h2>
-      <p>æœ‰è²“å¥´ä»¥ç‚º<strong>è²“å’ª</strong>ä¾¿ç§˜ï¼Œé²å’—ä¸€æ™šå…ˆåŽ»ç‡é†«ç”Ÿï¼Œçµæžœç™¼ç¾<strong>è²“å’ª</strong>å·²ç¶“<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>é€²å…¥å±éšªç‹€æ…‹ï¼Œå·®å•²æ•‘å””ç•ªã€‚</p>
-      <p><strong>å””ä¿‚é©šå¤§å®¶ï¼Œä½†çœŸä¿‚å¿«ä¸€æ­¥ï¼æ•‘ä¸€å‘½ã€‚å¦‚æžœç™¼ç¾<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œæ‡‰ç«‹å³è™•ç†<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ï¼</strong></p>
+      <h2>❤️ 真實個案提醒你：唔好誤判貓咪尿道阻塞！</h2>
+      <p>有貓奴以為<strong>貓咪</strong>便秘，遲咗一晚先去睇醫生，結果發現<strong>貓咪</strong>已經<strong>貓咪尿道阻塞</strong>進入危險狀態，差啲救唔番。</p>
+      <p><strong>唔係驚大家，但真係快一步＝救一命。如果發現<strong>貓咪尿唔出</strong>，應立即處理<strong>貓咪尿道阻塞</strong>！</strong></p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ä¿‚ç·Šæ€¥æƒ…æ³ï¼Œ24-48å°æ™‚å…§å¯è‡´å‘½ã€‚å¦‚æžœç™¼ç¾<strong>è²“å’ªå°¿å””å‡º</strong>ï¼Œæ‡‰ç«‹å³å¸¶<strong>è²“å’ª</strong>åˆ°ç¸é†«è¨ºæ‰€è™•ç†<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ã€‚è¦é é˜²<strong>è²“å’ªå°¿é“é˜»å¡ž</strong>ï¼Œæ‡‰è®“<strong>è²“å’ª</strong>åƒæ³Œå°¿è™•æ–¹ç³§ã€å¢žåŠ é£²æ°´é‡ã€æ¸›å£“ã€æŽ§åˆ¶é«”é‡ã€å®šæœŸé©—å°¿ã€‚ä½ å˜…è­¦è¦ºï¼Œå¯èƒ½å°±ä¿‚<strong>è²“å’ª</strong>æ¢å‘½ã€‚ ðŸ™ðŸ¾</p>
+      <p>🐾 <strong>總結：</strong><strong>貓咪尿道阻塞</strong>係緊急情況，24-48小時內可致命。如果發現<strong>貓咪尿唔出</strong>，應立即帶<strong>貓咪</strong>到獸醫診所處理<strong>貓咪尿道阻塞</strong>。要預防<strong>貓咪尿道阻塞</strong>，應讓<strong>貓咪</strong>吃泌尿處方糧、增加飲水量、減壓、控制體重、定期驗尿。你嘅警覺，可能就係<strong>貓咪</strong>條命。 🙏🐾</p>
     `,
     author: "PetWell HK",
     date: "2025-02-10",
-    category: "æ€¥ç—‡è­·ç†",
+    category: "急症護理",
     imageUrl: blogCatUrinaryBlockage
   },
   {
     id: "10",
-    slug: "ç‹—ç‹—æ¸¸æ°´æ‡¶äººåŒ…",
-    title: "ç‹—ç‹—æ¸¸æ°´é»žç®—å¥½ï¼Ÿç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´æº–å‚™ã€ç‹—ç‹—æ¸¸æ°´å®‰å…¨å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "ç‹—ç‹—æ¸¸æ°´é»žç®—å¥½ï¼Ÿç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´è¦æº–å‚™ä¹œï¼Ÿæ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ã€æ¯›å·¾ç¼ºä¸€ä¸å¯ï¼æœ¬æ–‡æä¾›å®Œæ•´ç‹—ç‹—æ¸¸æ°´è£å‚™æ¸…å–®ã€ç‹—ç‹—æ¸¸æ°´å®‰å…¨æ³¨æ„äº‹é …ã€ç‹—ç‹—æ¸¸æ°´å¾Œè­·ç†æ­¥é©Ÿï¼Œæ•™ä½ åšå€‹æœ‰æº–å‚™å˜…ä¸»äººã€‚",
+    slug: "狗狗游水懶人包",
+    title: "狗狗游水點算好？狗狗第一次游水準備、狗狗游水安全全攻略 | PetWell HK",
+    excerpt: "狗狗游水點算好？狗狗第一次游水要準備乜？救生衣、防曬、清水、毛巾缺一不可！本文提供完整狗狗游水裝備清單、狗狗游水安全注意事項、狗狗游水後護理步驟，教你做個有準備嘅主人。",
     content: `
-      <h2>ç‹—ç‹—æ¸¸æ°´é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡å¸¶éŽ<strong>ç‹—ç‹—æ¸¸æ°´</strong>ï¼Ÿ<strong>ç‹—ç‹—æ¸¸æ°´</strong>ä¿‚å¥½å˜…æ´»å‹•ï¼Œä½†<strong>ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´</strong>éœ€è¦å……åˆ†æº–å‚™ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ã€‚ä½ ä»¥ç‚º<strong>ç‹—ç‹—</strong>å¤©ç”Ÿè­˜æ¸¸æ°´å°±ã€Œä¸€æ‹‹è½æµ·æžæŽ‚ã€ï¼ŸéŒ¯æ™’å•¦ï¼çœŸä¿‚æ„›<strong>ç‹—ç‹—</strong>ï¼Œå°±å¹«<strong>ç‹—ç‹—</strong>æº–å‚™å¥½ä»¥ä¸‹æ¯ä¸€æ¨£ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å®‰å…¨ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>ç‹—ç‹—æ¸¸æ°´é»žç®—å¥½</strong>ã€<strong>ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´</strong>æº–å‚™ã€<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>æ³¨æ„äº‹é …ï¼Œä»¥åŠ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œè­·ç†æ–¹æ³•ã€‚</p>
+      <h2>狗狗游水點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇帶過<strong>狗狗游水</strong>？<strong>狗狗游水</strong>係好嘅活動，但<strong>狗狗第一次游水</strong>需要充分準備，確保<strong>狗狗游水安全</strong>。你以為<strong>狗狗</strong>天生識游水就「一拋落海搞掂」？錯晒啦！真係愛<strong>狗狗</strong>，就幫<strong>狗狗</strong>準備好以下每一樣，確保<strong>狗狗游水</strong>安全。本文為你詳細講解<strong>狗狗游水點算好</strong>、<strong>狗狗第一次游水</strong>準備、<strong>狗狗游水安全</strong>注意事項，以及<strong>狗狗游水</strong>後護理方法。</p>
       
-      <p>ä½ ä»¥ç‚º<strong>ç‹—ç‹—</strong>å¤©ç”Ÿè­˜æ¸¸æ°´å°±ã€Œä¸€æ‹‹è½æµ·æžæŽ‚ã€ï¼ŸðŸ‘€<br>éŒ¯æ™’å•¦ï¼çœŸä¿‚æ„›<strong>ç‹—ç‹—</strong>ï¼Œå°±å¹«<strong>ç‹—ç‹—</strong>æº–å‚™å¥½ä»¥ä¸‹æ¯ä¸€æ¨£ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å®‰å…¨ï¼š</p>
+      <p>你以為<strong>狗狗</strong>天生識游水就「一拋落海搞掂」？👀<br>錯晒啦！真係愛<strong>狗狗</strong>，就幫<strong>狗狗</strong>準備好以下每一樣，確保<strong>狗狗游水</strong>安全：</p>
 
       <hr />
 
-      <h2>âœ… ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´å‡ºç™¼å‰Checklistï¼šç‹—ç‹—æ¸¸æ°´è£å‚™ï¼‹å®‰å…¨æº–å‚™</h2>
-      <p>é€²è¡Œ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å‰ï¼Œæ‡‰æº–å‚™ä»¥ä¸‹<strong>ç‹—ç‹—æ¸¸æ°´</strong>è£å‚™ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼š</p>
+      <h2>✅ 狗狗第一次游水出發前Checklist：狗狗游水裝備＋安全準備</h2>
+      <p>進行<strong>狗狗游水</strong>前，應準備以下<strong>狗狗游水</strong>裝備，確保<strong>狗狗游水安全</strong>：</p>
       <ul>
-        <li>ðŸ¦º <strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ï¼ˆå¿…å‚™ï¼å””ä¿‚æ¯éš»<strong>ç‹—ç‹—</strong>éƒ½è­˜æ¸¸ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼‰</li>
-        <li>ðŸ§´ å¯µç‰©å°ˆç”¨é˜²æ›¬ï¼ˆ<strong>ç‹—ç‹—</strong>é¼»é ­ã€è€³ä»”ã€è‚šçš®è¦æ½ï¼Œä¿è­·<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚çš®è†šï¼‰</li>
-        <li>ðŸ’§ æ¸…æ°´ï¼‹ç¢—ï¼ˆ<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚éš¨æ™‚è£œæ°´ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼‰</li>
-        <li>ðŸ§» å¤§æ¯›å·¾ï¼ˆ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œå¸æ°´å¿«å˜…æœ€å¥½ï¼‰</li>
-        <li>ðŸ©¹ ç°¡å–®æ€¥æ•‘åŒ…ï¼ˆ<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚æ‡‰æ€¥ç”¨ï¼‰</li>
-        <li>ðŸ• ç‰½å¼•ç¹©ï¼ˆ<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚é¿å…<strong>ç‹—ç‹—</strong>å¤±æŽ§ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼‰</li>
-        <li>ðŸ– å°é£ŸçŽå‹µï¼ˆ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾ŒçŽå‹µ<strong>ç‹—ç‹—</strong>ï¼‰</li>
+        <li>🦺 <strong>狗狗</strong>救生衣（必備！唔係每隻<strong>狗狗</strong>都識游，確保<strong>狗狗游水安全</strong>）</li>
+        <li>🧴 寵物專用防曬（<strong>狗狗</strong>鼻頭、耳仔、肚皮要搽，保護<strong>狗狗游水</strong>時皮膚）</li>
+        <li>💧 清水＋碗（<strong>狗狗游水</strong>時隨時補水，確保<strong>狗狗游水安全</strong>）</li>
+        <li>🧻 大毛巾（<strong>狗狗游水</strong>後吸水快嘅最好）</li>
+        <li>🩹 簡單急救包（<strong>狗狗游水</strong>時應急用）</li>
+        <li>🐕 牽引繩（<strong>狗狗游水</strong>時避免<strong>狗狗</strong>失控，確保<strong>狗狗游水安全</strong>）</li>
+        <li>🍖 小食獎勵（<strong>狗狗游水</strong>後獎勵<strong>狗狗</strong>）</li>
       </ul>
 
-      <h2>â›”ï¸ ç‹—ç‹—æ¸¸æ°´åƒç¥ˆå””å¥½åšï¼šç¢ºä¿ç‹—ç‹—æ¸¸æ°´å®‰å…¨</h2>
-      <p>é€²è¡Œ<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚ï¼Œä»¥ä¸‹è¡Œç‚ºæœƒå½±éŸ¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼Œæ‡‰é¿å…ï¼š</p>
+      <h2>⛔️ 狗狗游水千祈唔好做：確保狗狗游水安全</h2>
+      <p>進行<strong>狗狗游水</strong>時，以下行為會影響<strong>狗狗游水安全</strong>，應避免：</p>
       <ul>
-        <li>ðŸš« ç›´æŽ¥æŠ±èµ·<strong>ç‹—ç‹—</strong>ä¸Ÿå…¥æ°´ï¼Œå½±éŸ¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong></li>
-        <li>ðŸš« å¼·è¡Œæ‹‰<strong>ç‹—ç‹—</strong>å…¥æ°´ï¼Œå¯èƒ½åš‡åˆ°<strong>ç‹—ç‹—</strong>ï¼Œå½±éŸ¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>é«”é©—</li>
-        <li>ðŸš« ç„¡å¹ä¹¾å°±å¸¶èµ°<strong>ç‹—ç‹—</strong>ï¼æ¿•è€³æ˜“ç™¼ç‚ŽðŸ‘‚ï¼Œå½±éŸ¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œå¥åº·</li>
-        <li>ðŸš« çŽ©å®Œå””æ´—èº«<strong>ç‹—ç‹—</strong>â†’æµ·æ°´ï¼æ± æ°´æ®˜ç•™æœƒç—•åˆ°ç”©çš®ðŸ¶ï¼Œå½±éŸ¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œå¥åº·</li>
+        <li>🚫 直接抱起<strong>狗狗</strong>丟入水，影響<strong>狗狗游水安全</strong></li>
+        <li>🚫 強行拉<strong>狗狗</strong>入水，可能嚇到<strong>狗狗</strong>，影響<strong>狗狗游水</strong>體驗</li>
+        <li>🚫 無吹乾就帶走<strong>狗狗</strong>＝濕耳易發炎👂，影響<strong>狗狗游水</strong>後健康</li>
+        <li>🚫 玩完唔洗身<strong>狗狗</strong>→海水／池水殘留會痕到甩皮🐶，影響<strong>狗狗游水</strong>後健康</li>
       </ul>
 
-      <h2>ðŸ’¦ ç‹—ç‹—æ¸¸æ°´å¾Œè¦åšä¹œï¼Ÿç‹—ç‹—æ¸¸æ°´å¾Œè­·ç†</h2>
-      <p><strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œï¼Œæ‡‰é€²è¡Œä»¥ä¸‹<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œè­·ç†ï¼š</p>
+      <h2>💦 狗狗游水後要做乜？狗狗游水後護理</h2>
+      <p><strong>狗狗游水</strong>後，應進行以下<strong>狗狗游水</strong>後護理：</p>
       <ul>
-        <li>ðŸ”¹ æ¸…æ°´æ²–<strong>ç‹—ç‹—</strong>èº«ï¼ŒåŽ»é™¤<strong>ç‹—ç‹—æ¸¸æ°´</strong>æ™‚æ®˜ç•™ç‰©</li>
-        <li>ðŸ”¹ æ¯›å·¾æŠ¹ä¹¾<strong>ç‹—ç‹—</strong>ï¼‹å¹é¢¨æ©Ÿï¼ˆ<strong>ç‹—ç‹—</strong>è€³ä»”è¦å¹ï¼‰ï¼Œé¿å…<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œç™¼ç‚Ž</li>
-        <li>ðŸ”¹ æª¢æŸ¥<strong>ç‹—ç‹—</strong>çš®è†šè…³æŽŒç´…è…«ï¼æ•æ„Ÿï¼ç•°ç‰©ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œå¥åº·</li>
-        <li>ðŸ”¹ è£œ<strong>ç‹—ç‹—</strong>æ°´ï¼‹å°é£Ÿè£œ<strong>ç‹—ç‹—</strong>èƒ½é‡ï¼Œæ¢å¾©<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œé«”åŠ›</li>
-        <li>ðŸ”¹ <strong>ç‹—ç‹—</strong>å›žå®¶å¥½å¥½ä¼‘æ¯ï¼</li>
+        <li>🔹 清水沖<strong>狗狗</strong>身，去除<strong>狗狗游水</strong>時殘留物</li>
+        <li>🔹 毛巾抹乾<strong>狗狗</strong>＋吹風機（<strong>狗狗</strong>耳仔要吹），避免<strong>狗狗游水</strong>後發炎</li>
+        <li>🔹 檢查<strong>狗狗</strong>皮膚腳掌紅腫／敏感／異物，確保<strong>狗狗游水</strong>後健康</li>
+        <li>🔹 補<strong>狗狗</strong>水＋小食補<strong>狗狗</strong>能量，恢復<strong>狗狗游水</strong>後體力</li>
+        <li>🔹 <strong>狗狗</strong>回家好好休息！</li>
       </ul>
 
-      <h2>ðŸ’¡ ç‹—ç‹—æ¸¸æ°´å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: ç‹—ç‹—æ¸¸æ°´é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>ç‹—ç‹—æ¸¸æ°´</strong>å‰æ‡‰æº–å‚™æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ã€æ¯›å·¾ç­‰è£å‚™ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ã€‚<strong>ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´</strong>æ™‚æ‡‰é€æ­¥å¼•å°Žï¼Œé¿å…å¼·è¡Œæ‹‰<strong>ç‹—ç‹—</strong>å…¥æ°´ã€‚<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œæ‡‰å¾¹åº•æ²–æ´—å’Œå¹ä¹¾ï¼Œé¿å…ç™¼ç‚Žã€‚</p>
+      <h2>💡 狗狗游水常見問題</h2>
+      <p><strong>Q: 狗狗游水點算好？</strong></p>
+      <p>A: <strong>狗狗游水</strong>前應準備救生衣、防曬、清水、毛巾等裝備，確保<strong>狗狗游水安全</strong>。<strong>狗狗第一次游水</strong>時應逐步引導，避免強行拉<strong>狗狗</strong>入水。<strong>狗狗游水</strong>後應徹底沖洗和吹乾，避免發炎。</p>
       
-      <p><strong>Q: ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´è¦æ³¨æ„å’©ï¼Ÿ</strong></p>
-      <p>A: <strong>ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´</strong>æ™‚æ‡‰æº–å‚™æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ç­‰è£å‚™ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ã€‚ä¸è¦å¼·è¡Œæ‹‰<strong>ç‹—ç‹—</strong>å…¥æ°´ï¼Œæ‡‰é€æ­¥å¼•å°Žã€‚<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œæ‡‰å¾¹åº•æ²–æ´—å’Œå¹ä¹¾ã€‚</p>
+      <p><strong>Q: 狗狗第一次游水要注意咩？</strong></p>
+      <p>A: <strong>狗狗第一次游水</strong>時應準備救生衣、防曬、清水等裝備，確保<strong>狗狗游水安全</strong>。不要強行拉<strong>狗狗</strong>入水，應逐步引導。<strong>狗狗游水</strong>後應徹底沖洗和吹乾。</p>
       
-      <p><strong>Q: é»žæ¨£ç¢ºä¿ç‹—ç‹—æ¸¸æ°´å®‰å…¨ï¼Ÿ</strong></p>
-      <p>A: ç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>æ–¹æ³•åŒ…æ‹¬ï¼šæº–å‚™<strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ç­‰è£å‚™ï¼Œé¿å…å¼·è¡Œæ‹‰<strong>ç‹—ç‹—</strong>å…¥æ°´ï¼Œ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œå¾¹åº•æ²–æ´—å’Œå¹ä¹¾ï¼Œæª¢æŸ¥<strong>ç‹—ç‹—</strong>çš®è†šå’Œè…³æŽŒã€‚</p>
+      <p><strong>Q: 點樣確保狗狗游水安全？</strong></p>
+      <p>A: 確保<strong>狗狗游水安全</strong>方法包括：準備<strong>狗狗</strong>救生衣、防曬、清水等裝備，避免強行拉<strong>狗狗</strong>入水，<strong>狗狗游水</strong>後徹底沖洗和吹乾，檢查<strong>狗狗</strong>皮膚和腳掌。</p>
 
-      <p>ðŸ—£ <strong>ä¸‹æ¬¡<strong>ç‹—ç‹—æ¸¸æ°´</strong>å‰ä¸€æ™šï¼Œè¨˜å¾—æ‹Žè¿”å‘¢ä»½<strong>ç‹—ç‹—æ¸¸æ°´</strong>Checklistå‡ºåšŸç‡ä¸€ç‡ï¼ç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ï¼</strong></p>
-      <p>ðŸ“² è½‰ç™¼æ¯”æœ‹å‹ï¼Œç­‰ä½¢å“‹éƒ½åšå€‹æœ‰æº–å‚™å˜…ä¸»äººï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´</strong>å®‰å…¨ï¼</p>
+      <p>🗣 <strong>下次<strong>狗狗游水</strong>前一晚，記得拎返呢份<strong>狗狗游水</strong>Checklist出嚟睇一睇！確保<strong>狗狗游水安全</strong>！</strong></p>
+      <p>📲 轉發比朋友，等佢哋都做個有準備嘅主人，確保<strong>狗狗游水</strong>安全！</p>
       
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>ç‹—ç‹—æ¸¸æ°´</strong>ä¿‚å¥½å˜…æ´»å‹•ï¼Œä½†<strong>ç‹—ç‹—ç¬¬ä¸€æ¬¡æ¸¸æ°´</strong>éœ€è¦å……åˆ†æº–å‚™ï¼Œç¢ºä¿<strong>ç‹—ç‹—æ¸¸æ°´å®‰å…¨</strong>ã€‚æ‡‰æº–å‚™æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ã€æ¯›å·¾ç­‰è£å‚™ï¼Œé¿å…å¼·è¡Œæ‹‰<strong>ç‹—ç‹—</strong>å…¥æ°´ï¼Œ<strong>ç‹—ç‹—æ¸¸æ°´</strong>å¾Œæ‡‰å¾¹åº•æ²–æ´—å’Œå¹ä¹¾ã€‚å¦‚æœ‰ç–‘å•ï¼Œæ‡‰è«®è©¢å°ˆæ¥­ç¸é†«æˆ–è¨“ç·´å¸«ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>狗狗游水</strong>係好嘅活動，但<strong>狗狗第一次游水</strong>需要充分準備，確保<strong>狗狗游水安全</strong>。應準備救生衣、防曬、清水、毛巾等裝備，避免強行拉<strong>狗狗</strong>入水，<strong>狗狗游水</strong>後應徹底沖洗和吹乾。如有疑問，應諮詢專業獸醫或訓練師。</p>
     `,
     author: "PetWell HK",
     date: "2025-02-05",
-    category: "æˆ¶å¤–æ´»å‹•",
+    category: "戶外活動",
     imageUrl: blogDogSwimming
   },
   {
     id: "11",
-    slug: "è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—æ”»ç•¥",
-    title: "è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é»žç®—å¥½ï¼Ÿè¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç§Ÿå€Ÿã€è·¯ç·šã€è£å‚™å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é»žç®—å¥½ï¼Ÿè¥¿è²¢æ²™ä¸‹æ°´ä¸Šæ´»å‹•ç‹—ç‹—å‹å–„ï¼æœ¬æ–‡æ•´ç†è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ/SUPç§Ÿå€Ÿåº—èˆ–åƒ¹éŒ¢æ¯”è¼ƒã€è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é©åˆè·¯ç·šï¼ˆæ²™ä¸‹â†’åžƒåœ¾æ´²/é³¶æ´²ï¼‰ã€æ½®æ±æé†’åŠå®Œæ•´è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸè£å‚™æ¸…å–®ï¼Œå¸¶æ¯›å­©chillä½çŽ©æ°´ã€‚",
+    slug: "西貢沙下獨木舟狗狗攻略",
+    title: "西貢沙下獨木舟狗狗點算好？西貢沙下獨木舟租借、路線、裝備全攻略 | PetWell HK",
+    excerpt: "西貢沙下獨木舟狗狗點算好？西貢沙下水上活動狗狗友善！本文整理西貢沙下獨木舟/SUP租借店舖價錢比較、西貢沙下獨木舟狗狗適合路線（沙下→垃圾洲/鳶洲）、潮汐提醒及完整西貢沙下獨木舟裝備清單，帶毛孩chill住玩水。",
     content: `
-      <h2>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">æƒ³æµå€‹å””æ´—è¡Œå±±ã€åˆå¯ä»¥æ”¾é›»åŒæ‰“å¡å˜…æˆ¶å¤–æ´»å‹•ï¼Ÿ<strong>è¥¿è²¢æ²™ä¸‹</strong>æ²™ç˜å°±å•±æ™’ä½ åŒ<strong>ç‹—ç‹—</strong>ï¼<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ä¿‚å¥½å˜…æ´»å‹•ï¼Œå¯ä»¥å¸¶<strong>ç‹—ç‹—</strong>ä¸€é½ŠçŽ©ã€‚<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿæ–¹ä¾¿ï¼Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šé©åˆ<strong>ç‹—ç‹—</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é»žç®—å¥½</strong>ã€<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿã€<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šï¼Œä»¥åŠ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è£å‚™æ¸…å–®ã€‚</p>
+      <h2>西貢沙下獨木舟狗狗點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">想搵個唔洗行山、又可以放電同打卡嘅戶外活動？<strong>西貢沙下</strong>沙灘就啱晒你同<strong>狗狗</strong>！<strong>西貢沙下獨木舟</strong>係好嘅活動，可以帶<strong>狗狗</strong>一齊玩。<strong>西貢沙下獨木舟</strong>租借方便，<strong>西貢沙下獨木舟</strong>路線適合<strong>狗狗</strong>。本文為你詳細講解<strong>西貢沙下獨木舟狗狗點算好</strong>、<strong>西貢沙下獨木舟</strong>租借、<strong>西貢沙下獨木舟</strong>路線，以及<strong>西貢沙下獨木舟</strong>裝備清單。</p>
       
-      <p>æƒ³æµå€‹å””æ´—è¡Œå±±ã€åˆå¯ä»¥æ”¾é›»åŒæ‰“å¡å˜…æˆ¶å¤–æ´»å‹•ï¼Ÿ<strong>è¥¿è²¢æ²™ä¸‹</strong>æ²™ç˜å°±å•±æ™’ä½ åŒ<strong>ç‹—ç‹—</strong>ï¼</p>
-      <p>å‘¢ç¯‡æ–‡å¹«ä½ ä¸€æ¬¡éŽæ•´ç†<strong>è¥¿è²¢æ²™ä¸‹</strong>çŽ©&nbsp;<strong>ç¨æœ¨èˆŸï¼SUPï¼ˆç›´ç«‹æ¿ï¼‰</strong>&nbsp;å˜…å¯¦ç”¨è³‡æ–™ï¼ŒåŒ…<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿåº—èˆ–æ¯”è¼ƒã€<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong><strong>ç‹—ç‹—</strong>å‹å–„è·¯ç·šã€<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>æ³¨æ„äº‹é …ï¼‹é˜²æš‘è£å‚™checklistï¼Œæ”¾<strong>ç‹—ç‹—</strong>éƒ½å¯ä»¥å¥½chillï½žðŸ¾ðŸŒž</p>
+      <p>想搵個唔洗行山、又可以放電同打卡嘅戶外活動？<strong>西貢沙下</strong>沙灘就啱晒你同<strong>狗狗</strong>！</p>
+      <p>呢篇文幫你一次過整理<strong>西貢沙下</strong>玩&nbsp;<strong>獨木舟／SUP（直立板）</strong>&nbsp;嘅實用資料，包<strong>西貢沙下獨木舟</strong>租借店舖比較、<strong>西貢沙下獨木舟</strong><strong>狗狗</strong>友善路線、<strong>西貢沙下獨木舟</strong>注意事項＋防暑裝備checklist，放<strong>狗狗</strong>都可以好chill～🐾🌞</p>
 
-      <h2>ðŸ“ è¥¿è²¢æ²™ä¸‹æ²™ç˜åœ¨å“ªï¼Ÿé»žè§£å’é©åˆçŽ©æ°´ï¼Ÿ</h2>
-      <p><strong>è¥¿è²¢æ²™ä¸‹</strong>æ²™ç˜ä½æ–¼è¥¿è²¢å¸‚ä¸­å¿ƒé™„è¿‘ï¼Œå±¬æ–¼å…§ç£åœ°å€ï¼Œæ°´é¢å¹³éœç©©å®šï¼Œå°±ç®—ä¿‚ç¬¬ä¸€æ¬¡çŽ©<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>éƒ½å¥½å®¹æ˜“ä¸Šæ‰‹ã€‚<br />æœ€é‡è¦ä¿‚ â€”â€” <strong>ç‹—ç‹—å¯ä»¥ä¸€é½Šä¸Š<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong></strong>ï¼ŒçŽ©æ°´ä¹‹é¤˜åˆå¯ä»¥æ‰“å¡ï¼Œçµ•å°ä¿‚ä»Šå¤ must-tryï¼</p>
+      <h2>📍 西貢沙下沙灘在哪？點解咁適合玩水？</h2>
+      <p><strong>西貢沙下</strong>沙灘位於西貢市中心附近，屬於內灣地區，水面平靜穩定，就算係第一次玩<strong>西貢沙下獨木舟</strong>都好容易上手。<br />最重要係 —— <strong>狗狗可以一齊上<strong>西貢沙下獨木舟</strong></strong>，玩水之餘又可以打卡，絕對係今夏 must-try！</p>
 
-      <h2>ðŸ›¶ è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸæœ‰å’©æ´»å‹•å¯ä»¥çŽ©ï¼Ÿ</h2>
-      <p>åœ¨<strong>è¥¿è²¢æ²™ä¸‹</strong>ï¼Œå¯ä»¥é€²è¡Œä»¥ä¸‹<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>æ´»å‹•ï¼š</p>
+      <h2>🛶 西貢沙下獨木舟有咩活動可以玩？</h2>
+      <p>在<strong>西貢沙下</strong>，可以進行以下<strong>西貢沙下獨木舟</strong>活動：</p>
       <ul>
-        <li><strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸï¼ˆKayakï¼‰</strong>ï¼šå¯å1è‡³3äººï¼Œ<strong>ç‹—ç‹—</strong>éƒ½å¯ä»¥ä¸€é½Šå<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ã€‚</li>
-        <li><strong>è¥¿è²¢æ²™ä¸‹</strong>ç›´ç«‹æ¿ï¼ˆSUPï¼‰ï¼šæŒ‘æˆ°å¹³è¡¡åŒæ™‚å¸¶ä½<strong>ç‹—ç‹—</strong>ä¸€é½ŠçŽ©ï¼</li>
+        <li><strong>西貢沙下獨木舟（Kayak）</strong>：可坐1至3人，<strong>狗狗</strong>都可以一齊坐<strong>西貢沙下獨木舟</strong>。</li>
+        <li><strong>西貢沙下</strong>直立板（SUP）：挑戰平衡同時帶住<strong>狗狗</strong>一齊玩！</li>
       </ul>
 
-      <h2>ðŸ“Š è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç§Ÿå€Ÿåº—èˆ–æ¯”è¼ƒè¡¨</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿåº—èˆ–æ¯”è¼ƒï¼Œé¸æ“‡<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿæ™‚å¯åƒè€ƒï¼š</p>
+      <h2>📊 西貢沙下獨木舟租借店舖比較表</h2>
+      <p>以下係<strong>西貢沙下獨木舟</strong>租借店舖比較，選擇<strong>西貢沙下獨木舟</strong>租借時可參考：</p>
       <table style="height: 387px;" border="1" cellspacing="0" cellpadding="8">
         <thead>
           <tr>
-            <th>ç§Ÿå€Ÿå•†åº—</th>
-            <th>åƒ¹éŒ¢ï¼ˆåŠæ—¥ï¼‰</th>
-            <th>åŒ…æ‹¬é …ç›®</th>
+            <th>租借商店</th>
+            <th>價錢（半日）</th>
+            <th>包括項目</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>é´»é‹æ°´ä¸Šæ´»å‹•ä¸­å¿ƒ</td>
-            <td>å–®äººç¨æœ¨èˆŸï¼š$100+<br />é›™äººç¨æœ¨èˆŸï¼šç´„$180+</td>
-            <td>ç¨æœ¨èˆŸï¼SUPã€æ•‘ç”Ÿè¡£ã€æ§³ã€æ›´è¡£å®¤ã€å…è²»æ²–èº«ã€å„²ç‰©æ«ƒï¼ˆ$30ï¼‰</td>
+            <td>鴻運水上活動中心</td>
+            <td>單人獨木舟：$100+<br />雙人獨木舟：約$180+</td>
+            <td>獨木舟／SUP、救生衣、槳、更衣室、免費沖身、儲物櫃（$30）</td>
           </tr>
           <tr>
-            <td>è¥¿è²¢åˆ’è‰‡ä»”</td>
-            <td>å–®äººè‰‡ï¼šç´„$150<br />é›™äººè‰‡ï¼šç´„$250</td>
-            <td>è‰‡ã€æ§³ã€æ•‘ç”Ÿè¡£ã€å„²ç‰©æ«ƒï¼ˆä¸è² è²¬ä¿ç®¡ï¼‰</td>
+            <td>西貢划艇仔</td>
+            <td>單人艇：約$150<br />雙人艇：約$250</td>
+            <td>艇、槳、救生衣、儲物櫃（不負責保管）</td>
           </tr>
           <tr>
             <td>Wake 2 Chill</td>
-            <td>å–®äººè‰‡ï¼š$150<br />é›™äººè‰‡ï¼š$220<br />è…³è¸è‰‡ï¼š$280â€“$380</td>
-            <td>è‰‡ã€æ§³ã€æ•‘ç”Ÿè¡£ã€æ²–èº«ç”¨å“ã€é£²å“ã€é˜²æ°´æ‰‹æ©Ÿè¢‹ã€å……é›»ç­‰</td>
+            <td>單人艇：$150<br />雙人艇：$220<br />腳踏艇：$280–$380</td>
+            <td>艇、槳、救生衣、沖身用品、飲品、防水手機袋、充電等</td>
           </tr>
         </tbody>
       </table>
 
       <hr />
 
-      <h2>ðŸŒŠ è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é©åˆåˆ’è‰‡è·¯ç·šæŽ¨è–¦</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong><strong>ç‹—ç‹—</strong>é©åˆè·¯ç·šï¼š</p>
+      <h2>🌊 西貢沙下獨木舟狗狗適合划艇路線推薦</h2>
+      <p>以下係<strong>西貢沙下獨木舟</strong><strong>狗狗</strong>適合路線：</p>
       <ul>
-        <li><strong>è¥¿è²¢æ²™ä¸‹ â†’ åžƒåœ¾æ´²ï¼ˆLap Sap Chauï¼‰</strong><br />è·é›¢çŸ­ï¼ˆ10-15åˆ†é˜ï¼‰ï¼Œé©åˆæ–°æ‰‹ï¼‹<strong>ç‹—ç‹—</strong>åˆé«”é©—<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ï¼Œæœ‰æ²™ç˜å¯è½åœ°çŽ©æ°´</li>
-        <li><strong>è¥¿è²¢æ²™ä¸‹ â†’ é³¶æ´²ï¼ˆYeung Chauï¼‰</strong><br />è·é›¢ç¨é ï¼ˆ25-40åˆ†é˜ï¼‰ï¼Œé©åˆæœ‰é«”åŠ›æˆ–ç¶“é©—çš„ä¸»äººï¼Œè¨˜å¾—å•æ¸…æ¥š<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿç¯„åœé™åˆ¶</li>
+        <li><strong>西貢沙下 → 垃圾洲（Lap Sap Chau）</strong><br />距離短（10-15分鐘），適合新手＋<strong>狗狗</strong>初體驗<strong>西貢沙下獨木舟</strong>，有沙灘可落地玩水</li>
+        <li><strong>西貢沙下 → 鳶洲（Yeung Chau）</strong><br />距離稍遠（25-40分鐘），適合有體力或經驗的主人，記得問清楚<strong>西貢沙下獨木舟</strong>租借範圍限制</li>
       </ul>
 
-      <h2>ðŸš¨ è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸæ½®æ±å°æé†’</h2>
-      <p><strong>è¥¿è²¢æ²™ä¸‹</strong>å±¬æ–¼å…§ç£ï¼Œ<strong>ä¸­åˆè‡³ä¸‹åˆ</strong> é€€æ½®æ™‚ï¼Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è‰‡èº«æœ‰æ©Ÿæœƒæ“±æ·ºå–ºæ³¥åœ°ï¼Œè¿”å””åˆ°å²¸ã€‚</p>
-      <p>âœ… å‡ºç™¼å‰è«‹æŸ¥ Appï¼ˆ<em>My Tide Timesï¼é¦™æ¸¯æ½®æ±è¡¨</em>ï¼‰ï¼Œå»ºè­°æ—©å•²å‡ºç™¼ã€æ—©å•²è¿”å²¸ï¼Œç¢ºä¿<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å®‰å…¨</p>
+      <h2>🚨 西貢沙下獨木舟潮汐小提醒</h2>
+      <p><strong>西貢沙下</strong>屬於內灣，<strong>中午至下午</strong> 退潮時，<strong>西貢沙下獨木舟</strong>艇身有機會擱淺喺泥地，返唔到岸。</p>
+      <p>✅ 出發前請查 App（<em>My Tide Times／香港潮汐表</em>），建議早啲出發、早啲返岸，確保<strong>西貢沙下獨木舟</strong>安全</p>
 
-      <h2>âœ… è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸå‡ºç™¼ Checklistï¼ˆäººç‹—éƒ½å•±ç”¨ï¼‰</h2>
-      <p>é€²è¡Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>æ´»å‹•å‰ï¼Œæ‡‰æº–å‚™ä»¥ä¸‹è£å‚™ï¼š</p>
+      <h2>✅ 西貢沙下獨木舟出發 Checklist（人狗都啱用）</h2>
+      <p>進行<strong>西貢沙下獨木舟</strong>活動前，應準備以下裝備：</p>
       <table style="height: 380px;" border="1" cellspacing="0" cellpadding="8">
         <thead>
           <tr>
-            <th>è£å‚™</th>
+            <th>裝備</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="text-align: center;">ðŸ¦º <strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ï¼ˆ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å¿…å‚™ï¼‰</td>
+            <td style="text-align: center;">🦺 <strong>狗狗</strong>救生衣（<strong>西貢沙下獨木舟</strong>必備）</td>
           </tr>
           <tr>
-            <td style="text-align: center;">ðŸ’§ é˜²æ°´è¢‹ï¼æ‰‹æ©Ÿé˜²æ°´å¥—ï¼ˆ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ä¿è­·ç‰©å“ï¼‰</td>
+            <td style="text-align: center;">💧 防水袋／手機防水套（<strong>西貢沙下獨木舟</strong>保護物品）</td>
           </tr>
           <tr>
-            <td style="text-align: center;">ðŸ§» æ¯›å·¾ï¼æ¿•ç´™å·¾ï¼ˆ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å¾Œæ¸…æ½”ï¼‰</td>
+            <td style="text-align: center;">🧻 毛巾／濕紙巾（<strong>西貢沙下獨木舟</strong>後清潔）</td>
           </tr>
           <tr>
-            <td style="text-align: center;">ðŸ¼ é£²ç”¨æ°´ï¼ˆäºº<strong>ç‹—ç‹—</strong>éƒ½è¦ï¼Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è£œæ°´ï¼‰</td>
+            <td style="text-align: center;">🍼 飲用水（人<strong>狗狗</strong>都要，<strong>西貢沙下獨木舟</strong>補水）</td>
           </tr>
           <tr>
-            <td style="text-align: center;">ðŸŒž <strong>ç‹—ç‹—</strong>é˜²æ›¬æŽªæ–½ï¼ˆ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ä¿è­·<strong>ç‹—ç‹—</strong>ï¼‰</td>
+            <td style="text-align: center;">🌞 <strong>狗狗</strong>防曬措施（<strong>西貢沙下獨木舟</strong>保護<strong>狗狗</strong>）</td>
           </tr>
           <tr>
-            <td style="text-align: center;">ðŸŒŠ æ½®æ±æ™‚é–“ Appï¼ˆ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å®‰å…¨å¿…å‚™ï¼‰</td>
+            <td style="text-align: center;">🌊 潮汐時間 App（<strong>西貢沙下獨木舟</strong>安全必備）</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸ’¡ è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç‹—ç‹—é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: é€²è¡Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>æ´»å‹•æ™‚ï¼Œæ‡‰æº–å‚™<strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ç­‰è£å‚™ï¼Œé¸æ“‡é©åˆ<strong>ç‹—ç‹—</strong>çš„<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šï¼Œæ³¨æ„æ½®æ±æ™‚é–“ï¼Œç¢ºä¿<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å®‰å…¨ã€‚</p>
+      <h2>💡 西貢沙下獨木舟常見問題</h2>
+      <p><strong>Q: 西貢沙下獨木舟狗狗點算好？</strong></p>
+      <p>A: 進行<strong>西貢沙下獨木舟</strong>活動時，應準備<strong>狗狗</strong>救生衣、防曬、清水等裝備，選擇適合<strong>狗狗</strong>的<strong>西貢沙下獨木舟</strong>路線，注意潮汐時間，確保<strong>西貢沙下獨木舟</strong>安全。</p>
       
-      <p><strong>Q: è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸç§Ÿå€Ÿé‚Šé–“å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿåº—èˆ–åŒ…æ‹¬é´»é‹æ°´ä¸Šæ´»å‹•ä¸­å¿ƒã€è¥¿è²¢åˆ’è‰‡ä»”ã€Wake 2 Chillç­‰ï¼Œé¸æ“‡<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿæ™‚å¯æ¯”è¼ƒåƒ¹éŒ¢ã€æœå‹™å’Œè£å‚™ã€‚</p>
+      <p><strong>Q: 西貢沙下獨木舟租借邊間好？</strong></p>
+      <p>A: <strong>西貢沙下獨木舟</strong>租借店舖包括鴻運水上活動中心、西貢划艇仔、Wake 2 Chill等，選擇<strong>西貢沙下獨木舟</strong>租借時可比較價錢、服務和裝備。</p>
       
-      <p><strong>Q: è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸè·¯ç·šæœ‰å’©æŽ¨è–¦ï¼Ÿ</strong></p>
-      <p>A: <strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šæŽ¨è–¦åŒ…æ‹¬æ²™ä¸‹â†’åžƒåœ¾æ´²ï¼ˆé©åˆæ–°æ‰‹å’Œ<strong>ç‹—ç‹—</strong>ï¼‰å’Œæ²™ä¸‹â†’é³¶æ´²ï¼ˆé©åˆæœ‰ç¶“é©—çš„ä¸»äººï¼‰ï¼Œé¸æ“‡<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šæ™‚æ‡‰è€ƒæ…®<strong>ç‹—ç‹—</strong>é«”åŠ›å’Œç¶“é©—ã€‚</p>
+      <p><strong>Q: 西貢沙下獨木舟路線有咩推薦？</strong></p>
+      <p>A: <strong>西貢沙下獨木舟</strong>路線推薦包括沙下→垃圾洲（適合新手和<strong>狗狗</strong>）和沙下→鳶洲（適合有經驗的主人），選擇<strong>西貢沙下獨木舟</strong>路線時應考慮<strong>狗狗</strong>體力和經驗。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ä¿‚å¥½å˜…æ´»å‹•ï¼Œå¯ä»¥å¸¶<strong>ç‹—ç‹—</strong>ä¸€é½ŠçŽ©ã€‚<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>ç§Ÿå€Ÿæ–¹ä¾¿ï¼Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šé©åˆ<strong>ç‹—ç‹—</strong>ã€‚é€²è¡Œ<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>æ´»å‹•æ™‚ï¼Œæ‡‰æº–å‚™<strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ã€é˜²æ›¬ã€æ¸…æ°´ç­‰è£å‚™ï¼Œé¸æ“‡é©åˆ<strong>ç‹—ç‹—</strong>çš„<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>è·¯ç·šï¼Œæ³¨æ„æ½®æ±æ™‚é–“ï¼Œç¢ºä¿<strong>è¥¿è²¢æ²™ä¸‹ç¨æœ¨èˆŸ</strong>å®‰å…¨ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>西貢沙下獨木舟</strong>係好嘅活動，可以帶<strong>狗狗</strong>一齊玩。<strong>西貢沙下獨木舟</strong>租借方便，<strong>西貢沙下獨木舟</strong>路線適合<strong>狗狗</strong>。進行<strong>西貢沙下獨木舟</strong>活動時，應準備<strong>狗狗</strong>救生衣、防曬、清水等裝備，選擇適合<strong>狗狗</strong>的<strong>西貢沙下獨木舟</strong>路線，注意潮汐時間，確保<strong>西貢沙下獨木舟</strong>安全。</p>
     `,
     author: "PetWell HK",
     date: "2025-02-01",
-    category: "æˆ¶å¤–æ´»å‹•",
+    category: "戶外活動",
     imageUrl: blogSaiKungKayak
   },
   {
     id: "12",
-    slug: "å¤å¤©æ”¾ç‹—å¿…è®€-5å¤§æ³¨æ„äº‹é …-ä¸­æš‘å¾µç‹€",
-    title: "å¤å¤©æ”¾ç‹—é»žç®—å¥½ï¼Ÿç‹—ç‹—ä¸­æš‘å¾µç‹€ã€å¤å¤©æ”¾ç‹—æ³¨æ„äº‹é …ã€é˜²æš‘æ–¹æ³•å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "å¤å¤©æ”¾ç‹—é»žç®—å¥½ï¼Ÿé¦™æ¸¯å¤å¤©ç‚Žç†±ï¼Œç‹—ç‹—å®¹æ˜“ä¸­æš‘ï¼æœ¬æ–‡æ•™ä½ é¿é–‹é«˜æº«æ™‚æ®µã€æ¸¬è©¦åœ°é¢æº«åº¦ã€æº–å‚™é™æº«è£å‚™ï¼Œä¸¦è­˜åˆ¥ç‹—ç‹—ä¸­æš‘å¾µç‹€ï¼ˆæ°£å–˜ã€æµå£æ°´ã€æ­¥ä¼ä¸ç©©ç­‰ï¼‰ï¼Œå®ˆè­·æ¯›å­©å¥åº·å®‰å…¨åº¦å¤ã€‚",
+    slug: "夏天放狗必讀-5大注意事項-中暑徵狀",
+    title: "夏天放狗點算好？狗狗中暑徵狀、夏天放狗注意事項、防暑方法全攻略 | PetWell HK",
+    excerpt: "夏天放狗點算好？香港夏天炎熱，狗狗容易中暑！本文教你避開高溫時段、測試地面溫度、準備降溫裝備，並識別狗狗中暑徵狀（氣喘、流口水、步伐不穩等），守護毛孩健康安全度夏。",
     content: `
-      <h2>å¤å¤©æ”¾ç‹—é»žç®—å¥½ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">é¦™æ¸¯å¤å¤©åˆç„—åˆç†±ï¼Œå””åªäººæœƒä¸­æš‘ï¼Œ<strong>ç‹—ç‹—</strong>éƒ½ä¸€æ¨£æœ‰å±æ©Ÿï¼<strong>å¤å¤©æ”¾ç‹—</strong>éœ€è¦ç‰¹åˆ¥æ³¨æ„ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚å°¤å…¶é•·æ¯›å“ç¨®ã€é¼»çŸ­<strong>ç‹—ç‹—</strong>ï¼ˆå¦‚æ³•é¬¥ã€å·´å“¥ï¼‰æ›´åŠ å®¹æ˜“éŽç†±ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚å®¹æ˜“<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>å¤å¤©æ”¾ç‹—é»žç®—å¥½</strong>ã€<strong>å¤å¤©æ”¾ç‹—</strong>æ³¨æ„äº‹é …ã€<strong>ç‹—ç‹—ä¸­æš‘</strong>å¾µç‹€ï¼Œä»¥åŠå¦‚ä½•é é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚</p>
+      <h2>夏天放狗點算好？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">香港夏天又焗又熱，唔只人會中暑，<strong>狗狗</strong>都一樣有危機！<strong>夏天放狗</strong>需要特別注意，避免<strong>狗狗中暑</strong>。尤其長毛品種、鼻短<strong>狗狗</strong>（如法鬥、巴哥）更加容易過熱，<strong>夏天放狗</strong>時容易<strong>狗狗中暑</strong>。本文為你詳細講解<strong>夏天放狗點算好</strong>、<strong>夏天放狗</strong>注意事項、<strong>狗狗中暑</strong>徵狀，以及如何預防<strong>狗狗中暑</strong>。</p>
       
-      <h5>é¦™æ¸¯å¤å¤©åˆç„—åˆç†±ï¼Œå””åªäººæœƒä¸­æš‘ï¼Œ<strong>ç‹—ç‹—éƒ½ä¸€æ¨£æœ‰å±æ©Ÿï¼</strong><br>å°¤å…¶é•·æ¯›å“ç¨®ã€é¼»çŸ­<strong>ç‹—ç‹—</strong>ï¼ˆå¦‚æ³•é¬¥ã€å·´å“¥ï¼‰æ›´åŠ å®¹æ˜“éŽç†±ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚å®¹æ˜“<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚<br>å¦‚æžœä½ ä¿‚ä¸€ä½ç¨±è·å˜…ä¸»äººï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>å‰å°±ä¸€å®šè¦ç‡æ¸…æ¥šä»¥ä¸‹å¹¾å€‹é‡é»ž âš ï¸</h5>
+      <h5>香港夏天又焗又熱，唔只人會中暑，<strong>狗狗都一樣有危機！</strong><br>尤其長毛品種、鼻短<strong>狗狗</strong>（如法鬥、巴哥）更加容易過熱，<strong>夏天放狗</strong>時容易<strong>狗狗中暑</strong>。<br>如果你係一位稱職嘅主人，<strong>夏天放狗</strong>前就一定要睇清楚以下幾個重點 ⚠️</h5>
 
-      <h2>ðŸ•“ 1. å¤å¤©æ”¾ç‹—é¿é–‹æ­£åˆæ™‚æ®µï½œæ¸…æ™¨ or æ™šä¸Šå…ˆå‡ºé–€</h2>
-      <p><strong>å¤å¤©æ”¾ç‹—</strong>æ™‚ï¼Œå¤å¤©å˜…å¤ªé™½éžå¸¸çŒ›çƒˆï¼Œ<strong>æœ€å¥½é¿å…ä¸­åˆ12é»žè‡³ä¸‹åˆ4é»ž<strong>å¤å¤©æ”¾ç‹—</strong></strong>ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚<br />å»ºè­°<strong>å¤å¤©æ”¾ç‹—</strong>é¸æ“‡ï¼š</p>
+      <h2>🕓 1. 夏天放狗避開正午時段｜清晨 or 晚上先出門</h2>
+      <p><strong>夏天放狗</strong>時，夏天嘅太陽非常猛烈，<strong>最好避免中午12點至下午4點<strong>夏天放狗</strong></strong>，避免<strong>狗狗中暑</strong>。<br />建議<strong>夏天放狗</strong>選擇：</p>
       <ul>
-        <li>ðŸŒ… <strong>æ¸…æ™¨ï¼ˆ7amå‰ï¼‰<strong>å¤å¤©æ”¾ç‹—</strong></strong></li>
-        <li>ðŸŒ† <strong>æ—¥è½å¾Œï¼ˆ6:30pmå¾Œï¼‰<strong>å¤å¤©æ”¾ç‹—</strong></strong></li>
+        <li>🌅 <strong>清晨（7am前）<strong>夏天放狗</strong></strong></li>
+        <li>🌆 <strong>日落後（6:30pm後）<strong>夏天放狗</strong></strong></li>
       </ul>
-      <p>ðŸ¶ ç‚ºå’—<strong>ç‹—ç‹—</strong>å¥åº·ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚å¯§é¡˜ä½ æ‡¶å•²å””å¥½è¡Œï¼Œéƒ½å¥½éŽ<strong>ç‹—ç‹—</strong>ç†±åˆ°<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼</p>
+      <p>🐶 為咗<strong>狗狗</strong>健康，<strong>夏天放狗</strong>時寧願你懶啲唔好行，都好過<strong>狗狗</strong>熱到<strong>狗狗中暑</strong>！</p>
 
-      <h2>ðŸŒ¡ï¸ 2. å¤å¤©æ”¾ç‹—åœ°é¢æº«åº¦è¶…é©šäººï¼è©¦ä¸‹æ‰‹æŽŒ10ç§’æ³•</h2>
-      <p><strong>å¤å¤©æ”¾ç‹—</strong>æ™‚ï¼ŒçŸ³å±Žåœ°ã€ç£šåœ°ã€é¦¬è·¯è¡¨é¢å¯ä»¥å¸ç†±åˆ° <strong>è¶…éŽ60Â°C</strong>ï¼<strong>ç‹—ç‹—</strong>ç„¡éž‹è‘—ï¼Œæœƒç‡™å‚·<strong>ç‹—ç‹—</strong>è‚‰å¢Šï¼</p>
-      <p><strong>âœ… <strong>å¤å¤©æ”¾ç‹—</strong>10ç§’æ¸¬è©¦æ³•ï¼š</strong><br />ç”¨æ‰‹æŽŒè²¼ä½åœ°é¢ï¼Œè©¦ä¸‹æ±å””æ±åˆ°10ç§’ï¼š</p>
+      <h2>🌡️ 2. 夏天放狗地面溫度超驚人！試下手掌10秒法</h2>
+      <p><strong>夏天放狗</strong>時，石屎地、磚地、馬路表面可以吸熱到 <strong>超過60°C</strong>！<strong>狗狗</strong>無鞋著，會燙傷<strong>狗狗</strong>肉墊！</p>
+      <p><strong>✅ <strong>夏天放狗</strong>10秒測試法：</strong><br />用手掌貼住地面，試下捱唔捱到10秒：</p>
       <ul>
-        <li>âœ… æ±å¾—ä½ï¼šä»£è¡¨<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚<strong>ç‹—ç‹—</strong>å¯ä»¥è¡Œ</li>
-        <li>âŒ æ±å””ä½ï¼šåƒç¥ˆå””å¥½<strong>å¤å¤©æ”¾ç‹—</strong>ï¼ç«‹å³æ”¹è¡Œè‰åœ°æˆ–æ”¹æ™‚é–“ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼</li>
-      </ul>
-
-      <h2>ðŸ’§ 3. å¤å¤©æ”¾ç‹—è¨˜ä½å¸¶æ°´ + é™æº«å¦™æ³•ï¼šé é˜²ç‹—ç‹—ä¸­æš‘</h2>
-      <p><strong>å¤å¤©æ”¾ç‹—</strong>æ™‚ï¼Œ<strong>ç‹—ç‹—</strong>å†‡æ±—è…ºï¼Œåªå¯ä»¥é <strong>å–˜æ°£ + èˆŒé ­</strong>é™æº«ï¼Œå¥½å®¹æ˜“å£æ¸´ï¼Œå®¹æ˜“<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚</p>
-      <p><strong>âœ… <strong>å¤å¤©æ”¾ç‹—</strong>å‡ºé–€å¿…å‚™ï¼š</strong></p>
-      <ul>
-        <li>é£²æ°´æ¨½ï¼ˆäºº+<strong>ç‹—ç‹—</strong>ç”¨ï¼‰ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>è£œæ°´</li>
-        <li><strong>ç‹—ç‹—</strong>ç”¨é£²æ°´ç¢—æˆ–å’€åš¼åž‹æ°´è¢‹ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚éš¨æ™‚è£œæ°´</li>
-      </ul>
-      <p><strong>âœ¨ <strong>å¤å¤©æ”¾ç‹—</strong>é™æº«å°è²¼å£«ï¼š</strong><br />æå‰å°‡æ°´æ¨½æ”¾å…¥å†°æ ¼ï¼Œçµæˆå†°å¡Š â†’ <strong>å¤å¤©æ”¾ç‹—</strong>å¸¶å‡ºè¡—ä¸€è·¯è¡Œä¸€è·¯æº¶ï¼Œ<strong>éš¨æ™‚æœ‰å‡æ°´å¹«<strong>ç‹—ç‹—</strong>é™æº«ï¼Œé é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼</strong></p>
-
-      <h2>ðŸ‘Ÿ 4. å¤å¤©æ”¾ç‹—ç©¿éž‹å””ä¸€å®šå¥½ï¼Ÿå°å¿ƒå½±éŸ¿ç‹—ç‹—æ•£ç†±ï¼</h2>
-      <p><strong>å¤å¤©æ”¾ç‹—</strong>æ™‚ï¼Œæœ‰å•²ä¸»äººæœƒå¹«<strong>ç‹—ç‹—</strong>è‘—éž‹ä¿è­·<strong>ç‹—ç‹—</strong>è‚‰å¢Šï¼Œä½†è¦æ³¨æ„ï¼š</p>
-      <ul>
-        <li><strong>ç‹—ç‹—</strong>ä¿‚<strong>é è…³æŽŒæŽ’æ±—é™æº«</strong>ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚éœ€è¦æ•£ç†±</li>
-        <li><strong>å¤å¤©æ”¾ç‹—</strong>ç©¿éž‹å¯èƒ½é˜»ç¤™<strong>ç‹—ç‹—</strong>æ•£ç†±ï¼Œåè€Œ<strong>æ›´æ˜“<strong>ç‹—ç‹—ä¸­æš‘</strong></strong></li>
-      </ul>
-      <p><strong>âœ… <strong>å¤å¤©æ”¾ç‹—</strong>å»ºè­°ï¼š</strong></p>
-      <ul>
-        <li>å¦‚éœ€<strong>å¤å¤©æ”¾ç‹—</strong>ç©¿éž‹ï¼Œé¸æ“‡<strong>é€æ°£åž‹ã€é˜²ç†±ç‹—éž‹</strong></li>
-        <li><strong>å¤å¤©æ”¾ç‹—</strong>å‡ºé–€æ™‚é–“ç¸®çŸ­ï¼Œèµ°è‰åœ°æˆ–è¡Œæ¨¹è”­ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong></li>
+        <li>✅ 捱得住：代表<strong>夏天放狗</strong>時<strong>狗狗</strong>可以行</li>
+        <li>❌ 捱唔住：千祈唔好<strong>夏天放狗</strong>！立即改行草地或改時間，避免<strong>狗狗中暑</strong>！</li>
       </ul>
 
-      <h2>ðŸ†˜ 5. ç‹—ç‹—ä¸­æš‘å¾µç‹€ï½œè­˜å¾—ç‡ï¼Œæ•‘å¾—å¿«ï¼</h2>
-      <p><strong>å¤å¤©æ”¾ç‹—</strong>æ™‚ï¼Œ<strong>ç‹—ç‹—</strong>å””è­˜è¬›å˜¢ï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>å‰ä¿‚æœ‰å¾µç‹€ã—Žï¼ä½ è¦è­˜ç‡<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼š</p>
-      <p><strong>ðŸš¨ <strong>ç‹—ç‹—ä¸­æš‘</strong>å¸¸è¦‹ç—‡ç‹€ï¼š</strong></p>
+      <h2>💧 3. 夏天放狗記住帶水 + 降溫妙法：預防狗狗中暑</h2>
+      <p><strong>夏天放狗</strong>時，<strong>狗狗</strong>冇汗腺，只可以靠<strong>喘氣 + 舌頭</strong>降溫，好容易口渴，容易<strong>狗狗中暑</strong>。</p>
+      <p><strong>✅ <strong>夏天放狗</strong>出門必備：</strong></p>
       <ul>
-        <li><strong>ç‹—ç‹—</strong>å‘¼å¸æ€¥ä¿ƒ / æ°£å–˜ä¸åœï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>ç—‡ç‹€</li>
-        <li><strong>ç‹—ç‹—</strong>éŽåº¦æµå£æ°´ / ç‰™è‚‰è®Šè‰²ï¼ˆè’¼ç™½ã€é®®ç´…æˆ–ç™¼ç´«ï¼‰ï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>è­¦è™Ÿ</li>
-        <li><strong>ç‹—ç‹—</strong>å¿ƒè·³åŠ å¿« / æ­¥ä¼ä¸ç©©ï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>åš´é‡ç—‡ç‹€</li>
-        <li><strong>ç‹—ç‹—</strong>è®Šå¾—ç„¡åŠ›ã€å””éƒã€é•·æ™‚é–“è¶´åœ°ï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>ç·Šæ€¥æƒ…æ³</li>
-        <li><strong>ç‹—ç‹—</strong>æœ‰ç™²ç™‡ç—‡ç‹€ã€çªç„¶æ˜å€’ï¼Œ<strong>ç‹—ç‹—ä¸­æš‘</strong>å±éšª</li>
+        <li>飲水樽（人+<strong>狗狗</strong>用），<strong>夏天放狗</strong>補水</li>
+        <li><strong>狗狗</strong>用飲水碗或咀嚼型水袋，<strong>夏天放狗</strong>時隨時補水</li>
       </ul>
-      <p>ðŸ‘‰ ä¸€æœ‰ä¸Šè¿°<strong>ç‹—ç‹—ä¸­æš‘</strong>æƒ…æ³ â†’ <strong>ç«‹å³å¸¶<strong>ç‹—ç‹—</strong>åŽ»æœ€è¿‘ç¸é†«è¨ºæ‰€ï¼<strong>ç‹—ç‹—ä¸­æš‘</strong>ä¿‚ç·Šæ€¥æƒ…æ³ï¼</strong></p>
+      <p><strong>✨ <strong>夏天放狗</strong>降溫小貼士：</strong><br />提前將水樽放入冰格，結成冰塊 → <strong>夏天放狗</strong>帶出街一路行一路溶，<strong>隨時有凍水幫<strong>狗狗</strong>降溫，預防<strong>狗狗中暑</strong>！</strong></p>
 
-      <h2>ðŸ’¡ å¤å¤©æ”¾ç‹—å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: å¤å¤©æ”¾ç‹—é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: <strong>å¤å¤©æ”¾ç‹—</strong>æ™‚æ‡‰é¿é–‹é«˜æº«æ™‚æ®µï¼ˆä¸­åˆ12é»žè‡³ä¸‹åˆ4é»žï¼‰ï¼Œé¸æ“‡æ¸…æ™¨æˆ–æ™šä¸Šã€‚<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚æ‡‰æ¸¬è©¦åœ°é¢æº«åº¦ï¼Œæº–å‚™é™æº«è£å‚™ï¼Œè­˜åˆ¥<strong>ç‹—ç‹—ä¸­æš‘</strong>å¾µç‹€ï¼Œç¢ºä¿<strong>å¤å¤©æ”¾ç‹—</strong>å®‰å…¨ã€‚</p>
+      <h2>👟 4. 夏天放狗穿鞋唔一定好？小心影響狗狗散熱！</h2>
+      <p><strong>夏天放狗</strong>時，有啲主人會幫<strong>狗狗</strong>著鞋保護<strong>狗狗</strong>肉墊，但要注意：</p>
+      <ul>
+        <li><strong>狗狗</strong>係<strong>靠腳掌排汗降溫</strong>，<strong>夏天放狗</strong>時需要散熱</li>
+        <li><strong>夏天放狗</strong>穿鞋可能阻礙<strong>狗狗</strong>散熱，反而<strong>更易<strong>狗狗中暑</strong></strong></li>
+      </ul>
+      <p><strong>✅ <strong>夏天放狗</strong>建議：</strong></p>
+      <ul>
+        <li>如需<strong>夏天放狗</strong>穿鞋，選擇<strong>透氣型、防熱狗鞋</strong></li>
+        <li><strong>夏天放狗</strong>出門時間縮短，走草地或行樹蔭，避免<strong>狗狗中暑</strong></li>
+      </ul>
+
+      <h2>🆘 5. 狗狗中暑徵狀｜識得睇，救得快！</h2>
+      <p><strong>夏天放狗</strong>時，<strong>狗狗</strong>唔識講嘢，<strong>狗狗中暑</strong>前係有徵狀㗎！你要識睇<strong>狗狗中暑</strong>：</p>
+      <p><strong>🚨 <strong>狗狗中暑</strong>常見症狀：</strong></p>
+      <ul>
+        <li><strong>狗狗</strong>呼吸急促 / 氣喘不停，<strong>狗狗中暑</strong>症狀</li>
+        <li><strong>狗狗</strong>過度流口水 / 牙肉變色（蒼白、鮮紅或發紫），<strong>狗狗中暑</strong>警號</li>
+        <li><strong>狗狗</strong>心跳加快 / 步伐不穩，<strong>狗狗中暑</strong>嚴重症狀</li>
+        <li><strong>狗狗</strong>變得無力、唔郁、長時間趴地，<strong>狗狗中暑</strong>緊急情況</li>
+        <li><strong>狗狗</strong>有癲癇症狀、突然昏倒，<strong>狗狗中暑</strong>危險</li>
+      </ul>
+      <p>👉 一有上述<strong>狗狗中暑</strong>情況 → <strong>立即帶<strong>狗狗</strong>去最近獸醫診所！<strong>狗狗中暑</strong>係緊急情況！</strong></p>
+
+      <h2>💡 夏天放狗常見問題</h2>
+      <p><strong>Q: 夏天放狗點算好？</strong></p>
+      <p>A: <strong>夏天放狗</strong>時應避開高溫時段（中午12點至下午4點），選擇清晨或晚上。<strong>夏天放狗</strong>時應測試地面溫度，準備降溫裝備，識別<strong>狗狗中暑</strong>徵狀，確保<strong>夏天放狗</strong>安全。</p>
       
-      <p><strong>Q: ç‹—ç‹—ä¸­æš‘æœ‰å’©å¾µç‹€ï¼Ÿ</strong></p>
-      <p>A: <strong>ç‹—ç‹—ä¸­æš‘</strong>å¸¸è¦‹ç—‡ç‹€åŒ…æ‹¬å‘¼å¸æ€¥ä¿ƒã€æ°£å–˜ä¸åœã€éŽåº¦æµå£æ°´ã€ç‰™è‚‰è®Šè‰²ã€å¿ƒè·³åŠ å¿«ã€æ­¥ä¼ä¸ç©©ã€è®Šå¾—ç„¡åŠ›ã€é•·æ™‚é–“è¶´åœ°ã€ç™²ç™‡ç—‡ç‹€ã€çªç„¶æ˜å€’ç­‰ã€‚å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—ä¸­æš‘</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶<strong>ç‹—ç‹—</strong>åˆ°ç¸é†«è¨ºæ‰€ã€‚</p>
+      <p><strong>Q: 狗狗中暑有咩徵狀？</strong></p>
+      <p>A: <strong>狗狗中暑</strong>常見症狀包括呼吸急促、氣喘不停、過度流口水、牙肉變色、心跳加快、步伐不穩、變得無力、長時間趴地、癲癇症狀、突然昏倒等。如果發現<strong>狗狗中暑</strong>症狀，應立即帶<strong>狗狗</strong>到獸醫診所。</p>
       
-      <p><strong>Q: é»žæ¨£é é˜²ç‹—ç‹—ä¸­æš‘ï¼Ÿ</strong></p>
-      <p>A: é é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>æ–¹æ³•åŒ…æ‹¬ï¼š<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚é¿é–‹é«˜æº«æ™‚æ®µã€æ¸¬è©¦åœ°é¢æº«åº¦ã€æº–å‚™é™æº«è£å‚™ï¼ˆå†°æ°´ã€æ¯›å·¾ç­‰ï¼‰ã€ç¸®çŸ­<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚é–“ã€èµ°è‰åœ°æˆ–æ¨¹è”­ç­‰ã€‚</p>
+      <p><strong>Q: 點樣預防狗狗中暑？</strong></p>
+      <p>A: 預防<strong>狗狗中暑</strong>方法包括：<strong>夏天放狗</strong>時避開高溫時段、測試地面溫度、準備降溫裝備（冰水、毛巾等）、縮短<strong>夏天放狗</strong>時間、走草地或樹蔭等。</p>
 
-      <h2>ðŸ“ å¤å¤©æ”¾ç‹—å¤æ—¥Checklist</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>å¤å¤©æ”¾ç‹—</strong>å¿…å‚™è£å‚™å’Œæ³¨æ„äº‹é …ï¼š</p>
+      <h2>📝 夏天放狗夏日Checklist</h2>
+      <p>以下係<strong>夏天放狗</strong>必備裝備和注意事項：</p>
       <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th style="border: 1px solid #ddd; padding: 12px;">âœ… å¿…å‚™è£å‚™</th>
-            <th style="border: 1px solid #ddd; padding: 12px;">âš ï¸ å»ºè­°æ³¨æ„</th>
+            <th style="border: 1px solid #ddd; padding: 12px;">✅ 必備裝備</th>
+            <th style="border: 1px solid #ddd; padding: 12px;">⚠️ 建議注意</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;"><strong>ç‹—ç‹—</strong>æ°´æ¨½ï¼ç¢—ï¼ˆ<strong>å¤å¤©æ”¾ç‹—</strong>è£œæ°´ï¼Œé é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">é¿é–‹ä¸­åˆé™½å…‰æ™‚é–“<strong>å¤å¤©æ”¾ç‹—</strong>ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong></td>
+            <td style="border: 1px solid #ddd; padding: 10px;"><strong>狗狗</strong>水樽／碗（<strong>夏天放狗</strong>補水，預防<strong>狗狗中暑</strong>）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">避開中午陽光時間<strong>夏天放狗</strong>，避免<strong>狗狗中暑</strong></td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">å†°æ°´ï¼ˆå‡æ°´æ¨½ï¼‰ï¼ˆ<strong>å¤å¤©æ”¾ç‹—</strong>é™æº«ï¼Œé é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ¸¬è©¦åœ°é¢ç†±å””ç†±ï¼Œç¢ºä¿<strong>å¤å¤©æ”¾ç‹—</strong>å®‰å…¨</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">冰水（凍水樽）（<strong>夏天放狗</strong>降溫，預防<strong>狗狗中暑</strong>）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">測試地面熱唔熱，確保<strong>夏天放狗</strong>安全</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ¯›å·¾ï¼é™æº«å™´éœ§ï¼ˆ<strong>å¤å¤©æ”¾ç‹—</strong>é™æº«ï¼Œé é˜²<strong>ç‹—ç‹—ä¸­æš‘</strong>ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">ç‡å¯¦<strong>ç‹—ç‹—</strong>å‘¼å¸ï¼†ç‹€æ…‹ï¼Œè­˜åˆ¥<strong>ç‹—ç‹—ä¸­æš‘</strong>å¾µç‹€</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">毛巾／降溫噴霧（<strong>夏天放狗</strong>降溫，預防<strong>狗狗中暑</strong>）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">睇實<strong>狗狗</strong>呼吸＆狀態，識別<strong>狗狗中暑</strong>徵狀</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">é˜²èšŠç”¨å“ï¼ˆ<strong>å¤å¤©æ”¾ç‹—</strong>ä¿è­·<strong>ç‹—ç‹—</strong>ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è‰åœ°æˆ–æ¨¹è”­è¡Œå¤šå•²ï¼Œ<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚é¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong></td>
+            <td style="border: 1px solid #ddd; padding: 10px;">防蚊用品（<strong>夏天放狗</strong>保護<strong>狗狗</strong>）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">草地或樹蔭行多啲，<strong>夏天放狗</strong>時避免<strong>狗狗中暑</strong></td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;"><strong>ç‹—ç‹—</strong>æ•‘ç”Ÿè¡£ï¼ˆ<strong>å¤å¤©æ”¾ç‹—</strong>çŽ©æ°´ç”¨ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å””å»ºè­°<strong>å¤å¤©æ”¾ç‹—</strong>è‘—éž‹å¤ªè€ï¼Œå½±éŸ¿<strong>ç‹—ç‹—</strong>æ•£ç†±</td>
+            <td style="border: 1px solid #ddd; padding: 10px;"><strong>狗狗</strong>救生衣（<strong>夏天放狗</strong>玩水用）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">唔建議<strong>夏天放狗</strong>著鞋太耐，影響<strong>狗狗</strong>散熱</td>
           </tr>
         </tbody>
       </table>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>å¤å¤©æ”¾ç‹—</strong>éœ€è¦ç‰¹åˆ¥æ³¨æ„ï¼Œé¿å…<strong>ç‹—ç‹—ä¸­æš‘</strong>ã€‚<strong>å¤å¤©æ”¾ç‹—</strong>æ™‚æ‡‰é¿é–‹é«˜æº«æ™‚æ®µã€æ¸¬è©¦åœ°é¢æº«åº¦ã€æº–å‚™é™æº«è£å‚™ã€è­˜åˆ¥<strong>ç‹—ç‹—ä¸­æš‘</strong>å¾µç‹€ã€‚å¦‚æžœç™¼ç¾<strong>ç‹—ç‹—ä¸­æš‘</strong>ç—‡ç‹€ï¼Œæ‡‰ç«‹å³å¸¶<strong>ç‹—ç‹—</strong>åˆ°ç¸é†«è¨ºæ‰€ã€‚ä½ å˜…è­¦è¦ºï¼Œå¯èƒ½å°±ä¿‚<strong>ç‹—ç‹—</strong>æ¢å‘½ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>夏天放狗</strong>需要特別注意，避免<strong>狗狗中暑</strong>。<strong>夏天放狗</strong>時應避開高溫時段、測試地面溫度、準備降溫裝備、識別<strong>狗狗中暑</strong>徵狀。如果發現<strong>狗狗中暑</strong>症狀，應立即帶<strong>狗狗</strong>到獸醫診所。你嘅警覺，可能就係<strong>狗狗</strong>條命。</p>
     `,
     author: "PetWell HK",
     date: "2025-06-15",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blogSummerDogSafety
   },
   {
     id: "13",
     slug: "24hr-vet-clinic-hk-list",
-    title: "24å°æ™‚ç¸é†«é‚Šåº¦æœ‰ï¼Ÿå…¨æ¸¯24å°æ™‚ç¸é†«è¨ºæ‰€ã€å¤œè¨ºæ”¶è²»ç¸½æ•´ç†ï¼ˆé™„åœ°å€é›»è©±ï¼‰| PetWell HK",
-    excerpt: "24å°æ™‚ç¸é†«é‚Šåº¦æœ‰ï¼Ÿæ¯›å­©åŠå¤œæ€¥ç—‡é»žç®—å¥½ï¼Ÿå…¨æ¸¯ä¸‰å€24å°æ™‚ç¸é†«è¨ºæ‰€æ¸…å–®ï¼šè¨ºæ‰€åç¨±ã€åœ°å€ã€é›»è©±ã€å¤œé–“æ”¶è²»ä¸€è¦½ï¼Œæ¸¯å³¶ã€ä¹é¾ã€æ–°ç•Œ24å°æ™‚ç¸é†«æ€¥ç—‡è³‡è¨Šå…¨æ”¶éŒ„ï¼Œç·Šæ€¥æ™‚åˆ»å³æ™‚æµåˆ°æœ€è¿‘24å°æ™‚ç¸é†«è¨ºæ‰€ã€‚",
+    title: "24小時獸醫邊度有？全港24小時獸醫診所、夜診收費總整理（附地址電話）| PetWell HK",
+    excerpt: "24小時獸醫邊度有？毛孩半夜急症點算好？全港三區24小時獸醫診所清單：診所名稱、地址、電話、夜間收費一覽，港島、九龍、新界24小時獸醫急症資訊全收錄，緊急時刻即時搵到最近24小時獸醫診所。",
     content: `
-      <h2>24å°æ™‚ç¸é†«é‚Šåº¦æœ‰ï¼Ÿå…¨æ¸¯å¤œè¨ºæ€¥ç—‡è¨ºæ‰€ç¸½è¦½</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">æ¯›å­©åŠå¤œçªç„¶å””å¦¥ï¼Œç¬¬ä¸€æ™‚é–“åŽ»é‚Šåº¦ï¼Ÿå‘¢ç¯‡æ–‡å¹«ä½ ä¸€æ¬¡éŽæ•´ç†å…¨æ¸¯æ¸¯å³¶ã€ä¹é¾ã€æ–°ç•Œå˜…<strong>24å°æ™‚ç¸é†«</strong>åŒå¤œè¨ºè³‡æ–™ï¼ŒåŒ…æ‹¬åœ°å€ã€é›»è©±åŒå¤œé–“åŸºæœ¬æ”¶è²»ï¼Œç­‰ä½ ç·Šæ€¥æ™‚å””ä½¿äº‚å’ Googleï¼Œç›´æŽ¥æµåˆ°æœ€è¿‘å˜…æ€¥ç—‡è¨ºæ‰€ã€‚</p>
+      <h2>24小時獸醫邊度有？全港夜診急症診所總覽</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">毛孩半夜突然唔妥，第一時間去邊度？呢篇文幫你一次過整理全港港島、九龍、新界嘅<strong>24小時獸醫</strong>同夜診資料，包括地址、電話同夜間基本收費，等你緊急時唔使亂咁 Google，直接搵到最近嘅急症診所。</p>
 
-      <h5>Bookmark å®šå‘¢ç¯‡æ–‡ï¼Œé—œéµæ™‚åˆ»å¯èƒ½å°±ä¿‚æ•‘æ¯›å­©ä¸€å‘½å˜…å—°å¹¾åˆ†é˜ã€‚</h5>
+      <h5>Bookmark 定呢篇文，關鍵時刻可能就係救毛孩一命嘅嗰幾分鐘。</h5>
 
       <blockquote>
-        <p>ðŸ”” ç‹—ç‹—åŠå¤œçªç„¶å˜”è¡€ï¼Ÿè²“å’ªå‡Œæ™¨ç™¼ç‡’å””è‚¯é£Ÿå˜¢ï¼Ÿå‘¢å•²æƒ…æ³ï¼Œå””å¯ä»¥ç­‰åˆ°è½æ—¥å…ˆåŽ»è¨ºæ‰€ã€‚</p>
-        <p>åšæ¯›å­©å®¶é•·ï¼Œé™¤å’—æ—¥å¸¸ç…§é¡§ï¼Œæ›´åŠ è¦<strong>é å…ˆçŸ¥é“å±‹ä¼é™„è¿‘é‚Šåº¦æœ‰å¤œè¨ºï¼æ€¥ç—‡ç¸é†«</strong>ï¼Œå…ˆå””æœƒè‡¨æ€¥æŠ±ä½›è…³ã€‚</p>
-        <p>ä¸‹é¢æŒ‰åœ°å€åˆ†å¥½ï¼Œé™„ä¸Šè¨ºæ‰€åã€åœ°å€ã€é›»è©±åŒå¤œé–“æ”¶è²»åƒè€ƒï¼Œæ–¹ä¾¿ä½ å³åˆ»æµåˆ°æœ€è¿‘å˜…ä¸€é–“ã€‚</p>
+        <p>🔔 狗狗半夜突然嘔血？貓咪凌晨發燒唔肯食嘢？呢啲情況，唔可以等到聽日先去診所。</p>
+        <p>做毛孩家長，除咗日常照顧，更加要<strong>預先知道屋企附近邊度有夜診／急症獸醫</strong>，先唔會臨急抱佛腳。</p>
+        <p>下面按地區分好，附上診所名、地址、電話同夜間收費參考，方便你即刻搵到最近嘅一間。</p>
       </blockquote>
 
-      <h3>ðŸŒ‰ æ¸¯å³¶å€å¤œè¨ºï¼æ€¥ç—‡è¨ºæ‰€</h3>
-      <p>ðŸ“£ <strong>è³‡æ–™æ›´æ–°ä¸­ï½œæ­¡è¿Žè£œå……ï¼</strong><br>è³‡è¨Šå¯èƒ½æœƒæœ‰è®Šå‹•æˆ–éºæ¼ï¼Œå¦‚æžœä½ çŸ¥é“å…¶ä»–è¨ºæ‰€ã€æœ‰æœ€æ–°æ”¶è²»ï¼Œæˆ–è€…æƒ³åˆ†äº«ç”¨å¾Œæ„Ÿï¼Œæ­¡è¿Ž IG ç§è¨Šæˆ‘å“‹ã€‚<br>ðŸ‘‰ <strong>IGï¼š@PetWell_HK</strong>ã€€ä½ å˜…åˆ†äº«ï¼Œå¯ä»¥å¹«åˆ°ä¸‹ä¸€ä½ä¸»äºº ðŸ™</p>
+      <h3>🌉 港島區夜診／急症診所</h3>
+      <p>📣 <strong>資料更新中｜歡迎補充！</strong><br>資訊可能會有變動或遺漏，如果你知道其他診所、有最新收費，或者想分享用後感，歡迎 IG 私訊我哋。<br>👉 <strong>IG：@PetWell_HK</strong>　你嘅分享，可以幫到下一位主人 🙏</p>
 
       <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç¸é†«åç¨±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åœ°å€</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é›»è©±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¤œé–“åŸºæœ¬è¨ºé‡‘</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">獸醫名稱</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">地址</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">電話</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">夜間基本診金</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ„›è­·å‹•ç‰©å”æœƒç£ä»”ç¸½éƒ¨ï¼ˆSPCAï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">ç£ä»”é‹ç››è¡—5è™Ÿ</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">2711 1000ï¼ˆ24å°æ™‚ç·Šæ€¥ï¼‰<br>2802 0501</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">6pmå¾Œ<br>æœƒå“¡$850-$1000ï¼›<br>éžæœƒå“¡$1300-$1600</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">愛護動物協會灣仔總部（SPCA）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">灣仔運盛街5號</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">2711 1000（24小時緊急）<br>2802 0501</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">6pm後<br>會員$850-$1000；<br>非會員$1300-$1600</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">æ–¹èˆŸå‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è¥¿ç‡Ÿç›¤æ°´è¡—35è™Ÿ</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">方舟動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">西營盤水街35號</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2549 2330</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">10:30pmå¾Œ<br>$1200</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">10:30pm後<br>$1200</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">Pets Central åŒ—è§’é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">åŒ—è§’æ¸£è¯é“66è™Ÿ</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">Pets Central 北角醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">北角渣華道66號</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2811 8907</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">8:30pm-10:45pm $400ï¼›<br>10:45pm-11:45pm $780ï¼›<br>11:45pmå¾Œ $1000</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">8:30pm-10:45pm $400；<br>10:45pm-11:45pm $780；<br>11:45pm後 $1000</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">åº·è¿ªäºžç¸é†«</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è·‘é¦¬åœ°è—å¡˜é“5-7è™Ÿä½Žåº§åœ°ä¸‹åŠ1æ¨“</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">2679 1000ï¼ˆç·Šæ€¥ç†±ç·šï¼‰</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">康迪亞獸醫</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">跑馬地藍塘道5-7號低座地下及1樓</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">2679 1000（緊急熱線）</td>
             <td style="border: 1px solid #ddd; padding: 10px;">$800</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ±å€24å°æ™‚å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è¥¿ç£æ²³ç­²ç®•ç£é“256è™Ÿåœ°èˆ–</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">東區24小時動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">西灣河筲箕灣道256號地舖</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2915 3999</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">åŒ—è§’å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">åŒ—è§’æ¸…è¯è¡—1-3è™Ÿæ¸…è¯å¤§å»ˆUG/F</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">北角動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">北角清華街1-3號清華大廈UG/F</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2307 6622</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
         </tbody>
       </table>
 
-      <h3>ðŸ™ï¸ ä¹é¾å€å¤œè¨ºï¼æ€¥ç—‡è¨ºæ‰€</h3>
-      <p>ðŸ“£ è³‡æ–™æ›´æ–°ä¸­ï¼Œæ­¡è¿Žè£œå……ã€‚IGï¼š@PetWell_HK ðŸ™</p>
+      <h3>🏙️ 九龍區夜診／急症診所</h3>
+      <p>📣 資料更新中，歡迎補充。IG：@PetWell_HK 🙏</p>
 
       <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç¸é†«åç¨±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åœ°å€</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é›»è©±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¤œé–“åŸºæœ¬è¨ºé‡‘</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">獸醫名稱</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">地址</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">電話</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">夜間基本診金</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">å¤ªå¹³é“å¯µç‰©è¨ºæ‰€(PAVC)*åŸŽå¤§å‹•ç‰©é†«ç™‚ä¸­å¿ƒ</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ·±æ°´åŸ—è”æžè§’é“339è™Ÿè±åŒ¯åœ°ä¸‹</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">3650 3000<br>3650 3200ï¼ˆç·Šæ€¥ç†±ç·šï¼‰</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">太平道寵物診所(PAVC)*城大動物醫療中心</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">深水埗荔枝角道339號豐匯地下</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">3650 3000<br>3650 3200（緊急熱線）</td>
             <td style="border: 1px solid #ddd; padding: 10px;">7pm-9am $1000</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">å‹•ç‰©é†«ç™‚ä¸­å¿ƒ</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ—ºè§’å‹åˆ©é“16è™ŸDåœ°ä¸‹</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">動物醫療中心</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">旺角勝利道16號D地下</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2713 4155</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">8pm-10pm $240ï¼›<br>10pm-12am $400ï¼›<br>12amå¾Œ $600</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">8pm-10pm $240；<br>10pm-12am $400；<br>12am後 $600</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">NPVéžç‰Ÿåˆ©ç¸é†«æœå‹™å”æœƒï¼ˆNPV29ï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å¤ªå­åŸºéš†è¡—50è™Ÿ</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">2393 2070ï¼ˆä¸€èˆ¬é–€è¨ºé ç´„ï¼‰<br>5931 9764ï¼ˆç·Šæ€¥ç†±ç·šï¼‰</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">12amå¾Œ $400</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">NPV非牟利獸醫服務協會（NPV29）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">太子基隆街50號</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">2393 2070（一般門診預約）<br>5931 9764（緊急熱線）</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">12am後 $400</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">éº¥èŠ±è‡£å‹•ç‰©è¨ºæ‰€</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ—ºè§’æ´—è¡£è¡—26è™Ÿåœ°ä¸‹</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">麥花臣動物診所</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">旺角洗衣街26號地下</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2781 2386</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">10pm-12am $300ï¼›<br>12am-10am $800</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">10pm-12am $300；<br>12am-10am $800</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">å‹•ç‰©é†«ç™‚å­¸æœƒé†«é™¢ (AMAH)</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å°–æ²™å’€æ±éƒ¨åŠ é€£å¨è€é“100è™Ÿæ¸¯æ™¶ä¸­å¿ƒ12-17èˆ–åœ°ä¸‹</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">動物醫療學會醫院 (AMAH)</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">尖沙咀東部加連威老道100號港晶中心12-17舖地下</td>
             <td style="border: 1px solid #ddd; padding: 10px;">3899 8999</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">7pmå¾Œ $1,100</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">7pm後 $1,100</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">å°ˆç§‘ç¸é†«é†«é™¢(VSH)</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">ä½•æ–‡ç”°è‡ªç”±é“7è™Ÿåœ°ä¸‹è‡³1æ¨“</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">專科獸醫醫院(VSH)</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">何文田自由道7號地下至1樓</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2408 2588</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">PETS CENTRAL æ—ºè§’å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ—ºè§’ä¸Šæµ·è¡—484è‡³488è™Ÿé †æ˜Žå¤§å»ˆ1æ¨“å’Œ2æ¨“</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">PETS CENTRAL 旺角動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">旺角上海街484至488號順明大廈1樓和2樓</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2309 2139</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
             <td style="border: 1px solid #ddd; padding: 10px;">VetiVa Center For Animal Wellness</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å°–æ²™å’€æ¢³å£«å·´åˆ©é“18-24è™Ÿç¶­æ¸¯æ–‡åŒ–åŒ¯K11è¾¦å…¬å¤§æ¨“19åŠ20æ¨“</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">2592 1000ï¼ˆä¸€èˆ¬é–€è¨ºé ç´„ï¼‰<br>6499 0999ï¼ˆæ€¥ç—‡å°ˆç·šï¼‰</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">尖沙咀梳士巴利道18-24號維港文化匯K11辦公大樓19及20樓</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">2592 1000（一般門診預約）<br>6499 0999（急症專線）</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">ç‚ºæ‚¨å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ—ºè§’çª©æ‰“è€é“49è™Ÿ</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">為您動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">旺角窩打老道49號</td>
             <td style="border: 1px solid #ddd; padding: 10px;">3840 0150<br>9479 3378<br>5572 2614</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">çå¯µæ±ä¹é¾å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è§€å¡˜æˆ²é™¢å¤§å»ˆé€šæ˜Žè¡—9è™Ÿåœ°ä¸‹</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">珍寵東九龍動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">觀塘戲院大廈通明街9號地下</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2345 6504</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸŒ„ æ–°ç•Œå€å¤œè¨ºï¼æ€¥ç—‡è¨ºæ‰€</h2>
-      <p>ðŸ“£ è³‡æ–™æ›´æ–°ä¸­ï¼Œæ­¡è¿Žè£œå……ã€‚IGï¼š@PetWell_HK ðŸ™</p>
+      <h2>🌄 新界區夜診／急症診所</h2>
+      <p>📣 資料更新中，歡迎補充。IG：@PetWell_HK 🙏</p>
 
       <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">ç¸é†«åç¨±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åœ°å€</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">é›»è©±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¤œé–“åŸºæœ¬è¨ºé‡‘</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">獸醫名稱</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">地址</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">電話</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">夜間基本診金</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">ç¶­å¤šåˆ©å¯µç‰©è¨ºæ‰€</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å…ƒæœ—æ°‘åˆå¾‘å¹¸ç¦æ¨“ 2 æœŸåœ°ä¸‹ 11 è™Ÿ</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">維多利寵物診所</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">元朗民合徑幸福樓 2 期地下 11 號</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2477 8929</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">12amå¾Œ $600</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">12am後 $600</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">è±ç›ˆå‹•ç‰©å°ˆç§‘åŠæ€¥ç—‡é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è‘µè±è¡—38-42è™Ÿè‘µæ¶Œå¤§é´»è¼ä¸­å¿ƒ2æœŸåœ°ä¸‹2è™Ÿé‹ª(æ€¥ç—‡å®¤æœå‹™)åŠ9æ¨“(å°ˆç§‘æœå‹™)</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">豐盈動物專科及急症醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">葵豐街38-42號葵涌大鴻輝中心2期地下2號鋪(急症室服務)及9樓(專科服務)</td>
             <td style="border: 1px solid #ddd; padding: 10px;">3426 3500</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">$1000ï¼ˆæ€¥ç—‡ï¼‰</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">$1000（急症）</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">å¤§åœçç¦½ç•°ç¸åŠå¯µç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å¤§åœç©ä¿¡è¡—75è™Ÿåœ°ä¸‹</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">大圍珍禽異獸及寵物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">大圍積信街75號地下</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2687 1030</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">9pm-12am $650ï¼›<br>12amå¾Œ $900</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">9pm-12am $650；<br>12am後 $900</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">ä»å¾·å‹•ç‰©é†«é™¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å¤§åŸ”ç‘žå®‰è¡—6è™Ÿ</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">仁德動物醫院</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">大埔瑞安街6號</td>
             <td style="border: 1px solid #ddd; padding: 10px;">2638 2869</td>
             <td style="border: 1px solid #ddd; padding: 10px;">$1,200</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">WeHUGæ–°ç•Œå‹•ç‰©é†«ç™‚ä¸­å¿ƒ</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">å…ƒæœ—é¦¬ç”°è·¯50è™Ÿæœ—æ™¯è‡º1åº§1è™Ÿèˆ–</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">3708 8770<br>5985 5995ï¼ˆç·Šæ€¥ç†±ç·šï¼‰</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">WeHUG新界動物醫療中心</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">元朗馬田路50號朗景臺1座1號舖</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">3708 8770<br>5985 5995（緊急熱線）</td>
             <td style="border: 1px solid #ddd; padding: 10px;">-</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸ’¡ å¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: 24å°æ™‚ç¸é†«é‚Šåº¦æœ‰ï¼Ÿ</strong></p>
-      <p>A: æ¸¯å³¶ã€ä¹é¾ã€æ–°ç•Œéƒ½æœ‰æä¾›å¤œè¨ºæˆ–24å°æ™‚æ€¥ç—‡å˜…è¨ºæ‰€ï¼Œä¸Šé¢è¡¨æ ¼å·²ç¶“åˆ—å‡ºæ¯å€ä¸»è¦å˜…é¸æ“‡åŒè¯çµ¡æ–¹æ³•ã€‚å»ºè­°æ€æœ€è¿‘å±‹ä¼å˜…ä¸€è‡³å…©é–“ï¼Œé å…ˆå„²å…¥é›»è©±ç°¿ã€‚</p>
+      <h2>💡 常見問題</h2>
+      <p><strong>Q: 24小時獸醫邊度有？</strong></p>
+      <p>A: 港島、九龍、新界都有提供夜診或24小時急症嘅診所，上面表格已經列出每區主要嘅選擇同聯絡方法。建議揀最近屋企嘅一至兩間，預先儲入電話簿。</p>
 
-      <p><strong>Q: å¤œè¨ºæ”¶è²»è²´å””è²´ï¼Ÿ</strong></p>
-      <p>A: å¤œé–“åŸºæœ¬è¨ºé‡‘é€šå¸¸æœƒæ¯”æ—¥é–“é«˜ï¼Œä¸€èˆ¬ç”± $400 è‡³ $1,600 å””ç­‰ï¼Œç‡è¨ºæ‰€åŒæ™‚æ®µè€Œå®šã€‚å¦‚æžœæ¶‰åŠæª¢æŸ¥ã€è¼¸æ¶²æˆ–ä½é™¢ï¼Œå¯¦éš›è²»ç”¨æœƒå†é«˜ï¼Œå»ºè­°åŽ»åˆ°å³åˆ»å•æ¸…æ¥šå ±åƒ¹ã€‚</p>
+      <p><strong>Q: 夜診收費貴唔貴？</strong></p>
+      <p>A: 夜間基本診金通常會比日間高，一般由 $400 至 $1,600 唔等，睇診所同時段而定。如果涉及檢查、輸液或住院，實際費用會再高，建議去到即刻問清楚報價。</p>
 
-      <p><strong>Q: æ¯›å­©åŠå¤œæ€¥ç—‡é»žç®—å¥½ï¼Ÿ</strong></p>
-      <p>A: å…ˆä¿æŒå†·éœï¼Œè§€å¯Ÿå¾µç‹€ï¼ˆä¾‹å¦‚å˜”åã€æ°£å–˜ã€æŠ½æã€å¤§é‡å‡ºè¡€ç­‰ï¼‰ï¼Œæ‰“é›»è©±ç•€æœ€è¿‘å˜…æ€¥ç—‡è¨ºæ‰€è¬›æ¸…æ¥šæƒ…æ³ï¼Œå†å³åˆ»å‡ºç™¼ã€‚ä¸­é€”é¿å…äº‚é¤µæ°´æˆ–è—¥ã€‚</p>
+      <p><strong>Q: 毛孩半夜急症點算好？</strong></p>
+      <p>A: 先保持冷靜，觀察徵狀（例如嘔吐、氣喘、抽搐、大量出血等），打電話畀最近嘅急症診所講清楚情況，再即刻出發。中途避免亂餵水或藥。</p>
 
-      <p>ç·Šæ€¥æ™‚åˆ»å””ç­‰äººï¼Œå°‡å‘¢ç¯‡æ–‡ Bookmark æˆ–è€… Share ç•€èº«é‚Šæœ‰æ¯›å­©å˜…æœ‹å‹ï¼Œä¸€é½Šåšå€‹æœ‰æº–å‚™å˜…å®¶é•· â¤ï¸<br>æƒ³é•·æœŸè¿½è¹¤æ¯›å­©å¥åº·ç´€éŒ„ï¼Œå¯ä»¥è©¦ä¸‹ PetWell Appï¼Œæˆ–è€… Follow æˆ‘å“‹ IG ç‡æ›´å¤šè³‡è¨Šã€‚</p>
+      <p>緊急時刻唔等人，將呢篇文 Bookmark 或者 Share 畀身邊有毛孩嘅朋友，一齊做個有準備嘅家長 ❤️<br>想長期追蹤毛孩健康紀錄，可以試下 PetWell App，或者 Follow 我哋 IG 睇更多資訊。</p>
 
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong>å¤œè¨ºåŒæ€¥ç—‡è¨ºæ‰€ä¿‚æ¯›å­©ç·Šæ€¥æƒ…æ³å˜…é‡è¦å¾Œç›¾ã€‚æå‰è¨˜ä½Žå±‹ä¼é™„è¿‘å˜…è¨ºæ‰€åã€åœ°å€åŒé›»è©±ï¼Œé—œéµæ™‚åˆ»å°±å””æœƒæ…Œäº‚ã€‚</p>
+      <p>🐾 <strong>總結：</strong>夜診同急症診所係毛孩緊急情況嘅重要後盾。提前記低屋企附近嘅診所名、地址同電話，關鍵時刻就唔會慌亂。</p>
 
       <div class="seo-hidden" aria-hidden="true">
-        <p>PetWell HK æä¾›å…¨æ¸¯24å°æ™‚ç¸é†«ã€å¤œè¨ºç¸é†«ã€å¯µç‰©æ€¥ç—‡è¨ºæ‰€è³‡è¨Šï¼Œæ¶µè“‹æ¸¯å³¶24å°æ™‚ç¸é†«ã€ä¹é¾24å°æ™‚ç¸é†«ã€æ–°ç•Œ24å°æ™‚ç¸é†«ï¼ŒåŒ…æ‹¬è¨ºæ‰€åœ°å€ã€é›»è©±ã€å¤œé–“æ”¶è²»ï¼Œå¹«åŠ©å¯µç‰©ä¸»äººåœ¨ç·Šæ€¥æ™‚åˆ»æµåˆ°æœ€è¿‘å˜…24å°æ™‚ç¸é†«æœå‹™ã€‚</p>
+        <p>PetWell HK 提供全港24小時獸醫、夜診獸醫、寵物急症診所資訊，涵蓋港島24小時獸醫、九龍24小時獸醫、新界24小時獸醫，包括診所地址、電話、夜間收費，幫助寵物主人在緊急時刻搵到最近嘅24小時獸醫服務。</p>
       </div>
     `,
     author: "PetWell HK",
     date: "2025-06-10",
-    category: "å¥åº·ä¿å¥",
+    category: "健康保健",
     imageUrl: blog24hrVetClinic,
     pinned: true
   },
   {
     id: "14",
-    slug: "é‚Šæ¬¾å…ˆå•±ä½ æ¯›å­©è¶…å¸‚åŽŸå‘³ä¹³é…ª",
-    title: "æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿè¶…å¸‚ä¹³é…ªé»žæ€ï¼Ÿæ¯›å­©ä¹³é…ªå®‰å…¨é¸æ“‡å…¨æ”»ç•¥ | PetWell HK",
-    excerpt: "æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿè¶…å¸‚ä¹³é…ªé»žæ€å…ˆå®‰å…¨ï¼Ÿæœ¬æ–‡æ•™ä½ è­˜åˆ¥æ¯›å­©å¯é£Ÿä¹³é…ªæˆåˆ†ï¼ˆåŽŸå‘³ã€ç„¡ä»£ç³–ã€ç„¡æœ¨ç³–é†‡ï¼‰ï¼Œæ¯”è¼ƒé›€å·¢ã€æ˜Žæ²»ã€FAGEç­‰å“ç‰Œï¼Œé™„æ¯æ—¥å»ºè­°ä»½é‡ï¼Œå®ˆè­·æ¯›å­©è…¸é“å¥åº·ã€‚",
+    slug: "邊款先啱你毛孩超市原味乳酪",
+    title: "毛孩可以食乳酪嗎？超市乳酪點揀？毛孩乳酪安全選擇全攻略 | PetWell HK",
+    excerpt: "毛孩可以食乳酪嗎？超市乳酪點揀先安全？本文教你識別毛孩可食乳酪成分（原味、無代糖、無木糖醇），比較雀巢、明治、FAGE等品牌，附每日建議份量，守護毛孩腸道健康。",
     content: `
-      <h2>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">å¥½å¤šä¸»äººéƒ½æœƒå•ï¼š<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Ž</strong>ï¼Ÿ<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>ï¼Œä½†<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>å…ˆå®‰å…¨ï¼Ÿå¥½å¤šä¸»äººéƒ½çŸ¥é“ï¼Œ<strong>ç‹—ç‹—</strong>åŒ<strong>è²“å’ª</strong>å¯ä»¥é£Ÿä¹³é…ªï¼Œä½†ä½ åˆçŸ¥å””çŸ¥â€”â€”<strong>å””ä¿‚æ‰€æœ‰ä¹³é…ªéƒ½å•±<strong>æ¯›å­©</strong>é£Ÿ</strong>ï¼<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ä¿‚é—œéµï¼Œé¸æ“‡éŒ¯èª¤å¯èƒ½å±å®³<strong>æ¯›å­©</strong>å¥åº·ã€‚æœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Ž</strong>ã€<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>å…ˆå®‰å…¨ï¼Œä»¥åŠ<strong>æ¯›å­©</strong>ä¹³é…ªå®‰å…¨é¸æ“‡æ–¹æ³•ã€‚</p>
+      <h2>毛孩可以食乳酪嗎？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">好多主人都會問：<strong>毛孩可以食乳酪嗎</strong>？<strong>毛孩可以食乳酪</strong>，但<strong>超市乳酪點揀</strong>先安全？好多主人都知道，<strong>狗狗</strong>同<strong>貓咪</strong>可以食乳酪，但你又知唔知——<strong>唔係所有乳酪都啱<strong>毛孩</strong>食</strong>！<strong>超市乳酪點揀</strong>係關鍵，選擇錯誤可能危害<strong>毛孩</strong>健康。本文為你詳細講解<strong>毛孩可以食乳酪嗎</strong>、<strong>超市乳酪點揀</strong>先安全，以及<strong>毛孩</strong>乳酪安全選擇方法。</p>
       
-      <p>å¥½å¤šä¸»äººéƒ½çŸ¥é“ï¼Œ<strong>ç‹—ç‹—</strong>åŒ<strong>è²“å’ª</strong>å¯ä»¥é£Ÿä¹³é…ªï¼Œä½†ä½ åˆçŸ¥å””çŸ¥â€”â€”<strong>å””ä¿‚æ‰€æœ‰ä¹³é…ªéƒ½å•±<strong>æ¯›å­©</strong>é£Ÿ</strong>ï¼ðŸ§</p>
-      <p>å¸‚é¢ä¸Šä¹³é…ªç¨®é¡žå’å¤šï¼Œ<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ï¼Ÿä¹œä¿‚ã€ŒåŽŸå‘³ã€ï¼Ÿå’©ä¿‚ã€ŒGreekã€ï¼Ÿé‚Šå•²æˆåˆ†ä¿‚è‡´å‘½åœ°å””å¾—ï¼Ÿå‘¢ç¯‡å°±å¹«ä½ é€ä¸€æ‹†è§£<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ï¼</p>
+      <p>好多主人都知道，<strong>狗狗</strong>同<strong>貓咪</strong>可以食乳酪，但你又知唔知——<strong>唔係所有乳酪都啱<strong>毛孩</strong>食</strong>！🧐</p>
+      <p>市面上乳酪種類咁多，<strong>超市乳酪點揀</strong>？乜係「原味」？咩係「Greek」？邊啲成分係致命地唔得？呢篇就幫你逐一拆解<strong>超市乳酪點揀</strong>！</p>
 
-      <h2>âœ… é»žè§£ä¹³é…ªå°æ¯›å­©æœ‰ç›Šï¼Ÿæ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿ</h2>
-      <p>å¦‚æžœä½ å•<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Ž</strong>ï¼Œç­”æ¡ˆæ˜¯è‚¯å®šçš„ã€‚ä»¥ä¸‹ä¿‚<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>çš„å¥½è™•ï¼š</p>
-      <p>ðŸ¥£ <strong>ç›Šç”ŸèŒï¼ˆProbioticï¼‰</strong><br>å¹«åŠ©<strong>æ¯›å­©</strong>è…¸é“å¥åº·ï¼Œæ”¹å–„<strong>æ¯›å­©</strong>è…¸èƒƒå¸æ”¶ï¼Œç‰¹åˆ¥é©åˆé£Ÿä¹¾ç³§åˆå””å¤šé£²æ°´å˜…<strong>æ¯›å­©</strong>ï½ž</p>
-      <p>ðŸ¦´ <strong>é«˜éˆ£è³ª</strong><br>æœ‰åŠ©<strong>æ¯›å­©</strong>å°ç‹—ç™¼è‚²æœŸéª¨éª¼åŒç‰™é½’æˆé•·ã€‚</p>
-      <p>ðŸ’ªðŸ» <strong>é«˜è›‹ç™½è³ª</strong><br>ç¶­æŒ<strong>æ¯›å­©</strong>è‚Œè‚‰ã€ä¿®å¾©<strong>æ¯›å­©</strong>çµ„ç¹”ï¼Œç‰¹åˆ¥é©åˆæ´»æ½‘æ´»èºåž‹<strong>ç‹—ç‹—</strong>ã€‚</p>
-      <p>ðŸ¥› <strong>æ¯”ç‰›å¥¶ä½Žä¹³ç³–ï¼Œå®¹æ˜“æ¶ˆåŒ–</strong><br>ä¹³é…ªç¶“éŽç™¼é…µï¼Œä¹³ç³–è‡ªç„¶è¼ƒä½Žï¼Œå¤§å¤šæ•¸<strong>æ¯›å­©</strong>éƒ½å®¹æ˜“æŽ¥å—ï½žä½†<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong><strong>ç¬¬ä¸€æ¬¡è©¦å»ºè­°å°‘é‡é–‹å§‹</strong>ï¼Œè§€å¯Ÿ<strong>æ¯›å­©</strong>æœƒå””æœƒæœ‰è‚šå±™ã€å˜”åæˆ–è…¹ç—›ç­‰æƒ…æ³ã€‚</p>
+      <h2>✅ 點解乳酪對毛孩有益？毛孩可以食乳酪嗎？</h2>
+      <p>如果你問<strong>毛孩可以食乳酪嗎</strong>，答案是肯定的。以下係<strong>毛孩可以食乳酪</strong>的好處：</p>
+      <p>🥣 <strong>益生菌（Probiotic）</strong><br>幫助<strong>毛孩</strong>腸道健康，改善<strong>毛孩</strong>腸胃吸收，特別適合食乾糧又唔多飲水嘅<strong>毛孩</strong>～</p>
+      <p>🦴 <strong>高鈣質</strong><br>有助<strong>毛孩</strong>小狗發育期骨骼同牙齒成長。</p>
+      <p>💪🏻 <strong>高蛋白質</strong><br>維持<strong>毛孩</strong>肌肉、修復<strong>毛孩</strong>組織，特別適合活潑活躍型<strong>狗狗</strong>。</p>
+      <p>🥛 <strong>比牛奶低乳糖，容易消化</strong><br>乳酪經過發酵，乳糖自然較低，大多數<strong>毛孩</strong>都容易接受～但<strong>毛孩可以食乳酪</strong><strong>第一次試建議少量開始</strong>，觀察<strong>毛孩</strong>會唔會有肚屙、嘔吐或腹痛等情況。</p>
 
-      <h2>ðŸ“Œ ã€Œäººé£Ÿå¾—ï¼Œæ¯›å­©éƒ½å•±ã€å˜…ä¹³é…ªæ‡‰è©²é»žæ€ï¼Ÿè¶…å¸‚ä¹³é…ªé»žæ€ï¼Ÿ</h2>
-      <p>å¦‚æžœä½ å•<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ï¼Œä»¥ä¸‹ä¿‚<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>çš„é¸æ“‡æ¨™æº–ï¼š</p>
-      <p>ðŸŸ¢ <strong>å»ºè­°é¸æ“‡ï¼š</strong></p>
+      <h2>📌 「人食得，毛孩都啱」嘅乳酪應該點揀？超市乳酪點揀？</h2>
+      <p>如果你問<strong>超市乳酪點揀</strong>，以下係<strong>毛孩可以食乳酪</strong>的選擇標準：</p>
+      <p>🟢 <strong>建議選擇：</strong></p>
       <ul>
-        <li>æˆä»½æ¨™ç¤ºç‚ºã€ŒåŽŸå‘³ï¼Naturalã€ï¼Œ<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>å®‰å…¨é¸æ“‡</li>
-        <li>ç„¡æ·»åŠ ç³–ï¼ç„¡ä»£ç³–ï¼ˆåŒ…æ‹¬ Steviaã€Xylitolï¼‰ï¼Œ<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>æ™‚æ‡‰æ³¨æ„</li>
-        <li>æˆä»½è¡¨è¶Šç°¡å–®è¶Šå¥½ï¼šç†æƒ³ä¿‚å¾—ã€Œmilk, live culturesã€ï¼Œ<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æœ€ä½³é¸æ“‡</li>
+        <li>成份標示為「原味／Natural」，<strong>毛孩可以食乳酪</strong>安全選擇</li>
+        <li>無添加糖／無代糖（包括 Stevia、Xylitol），<strong>超市乳酪點揀</strong>時應注意</li>
+        <li>成份表越簡單越好：理想係得「milk, live cultures」，<strong>毛孩可以食乳酪</strong>最佳選擇</li>
       </ul>
 
-      <h2>âš ï¸ è¶…é‡è¦âš ï¸ åƒç¥ˆå””å¥½è²·å«æœ‰ï¼šè¶…å¸‚ä¹³é…ªé»žæ€ç¦å¿Œ</h2>
-      <p>å¦‚æžœä½ å•<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ï¼Œä»¥ä¸‹ä¿‚<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ™‚æ‡‰é¿å…çš„æˆåˆ†ï¼š</p>
-      <p>âŒ <strong>Xylitolï¼ˆæœ¨ç³–é†‡ï¼‰</strong><br>âŒ <strong>ä»»ä½•äººå·¥ä»£ç³–ï¼ç”œå‘³åŠ‘</strong><br>å‘¢å•²æˆåˆ†å°<strong>æ¯›å­©</strong>éƒ½æœ‰æ¯’ï¼Œ<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>æ™‚åƒç¥ˆå””å¥½ä¸­ä¼ï¼</p>
+      <h2>⚠️ 超重要⚠️ 千祈唔好買含有：超市乳酪點揀禁忌</h2>
+      <p>如果你問<strong>超市乳酪點揀</strong>，以下係<strong>毛孩可以食乳酪</strong>時應避免的成分：</p>
+      <p>❌ <strong>Xylitol（木糖醇）</strong><br>❌ <strong>任何人工代糖／甜味劑</strong><br>呢啲成分對<strong>毛孩</strong>都有毒，<strong>超市乳酪點揀</strong>時千祈唔好中伏！</p>
 
-      <p>ðŸ” <strong>å°çŸ¥è­˜ï¼š</strong></p>
+      <p>🔍 <strong>小知識：</strong></p>
       <ul>
-        <li>æˆåˆ†è¡¨å‡ºç¾ã€ŒSugarsã€ä¿‚ä¹³é…ªå…¥é¢å¤©ç„¶ä¹³ç³–ï¼Œå””ä¸€å®šä¿‚åŠ ç³–</li>
-        <li><strong>å¸Œè‡˜ä¹³é…ªï¼ˆGreek Yogurtï¼‰</strong> æ¯” <strong>Greek Style</strong> æ›´çœŸæå¯¦æ–™ï¼Œç‡Ÿé¤Šé«˜ï¼‹ä¹³æ¸…å°‘</li>
+        <li>成分表出現「Sugars」係乳酪入面天然乳糖，唔一定係加糖</li>
+        <li><strong>希臘乳酪（Greek Yogurt）</strong> 比 <strong>Greek Style</strong> 更真材實料，營養高＋乳清少</li>
       </ul>
 
-      <h2>ðŸ¾ æ¯›å­©é£Ÿç”¨è²¼å£«ï¼šæ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿ</h2>
-      <p>å¦‚æžœä½ å•<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Ž</strong>ï¼Œç­”æ¡ˆæ˜¯è‚¯å®šçš„ï¼Œä½†è¦æ³¨æ„ä»¥ä¸‹<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>è²¼å£«ï¼š</p>
-      <p>ðŸ“ <strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ¯æ—¥å»ºè­°ä»½é‡ï¼š<strong>æ¯ 5kg ç´„ 1â€“2 æ¹¯åŒ™</strong></p>
-      <p>ðŸ´ <strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>å¯ç›´æŽ¥é£Ÿï¼åŠ å…¥<strong>æ¯›å­©</strong>ä¸»ç³§ï¼å‡å‡å’åšå†°ç£šéƒ½å¾—</p>
-      <p>ðŸ” <strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ–°æ‰‹è©¦é£Ÿï¼š<strong>ç¬¬ä¸€æ¬¡é£Ÿå»ºè­°å…ˆå°‘é‡è©¦ï¼Œè§€å¯Ÿ<strong>æ¯›å­©</strong>åæ‡‰</strong></p>
+      <h2>🐾 毛孩食用貼士：毛孩可以食乳酪嗎？</h2>
+      <p>如果你問<strong>毛孩可以食乳酪嗎</strong>，答案是肯定的，但要注意以下<strong>毛孩可以食乳酪</strong>貼士：</p>
+      <p>📏 <strong>毛孩可以食乳酪</strong>每日建議份量：<strong>每 5kg 約 1–2 湯匙</strong></p>
+      <p>🍴 <strong>毛孩可以食乳酪</strong>可直接食／加入<strong>毛孩</strong>主糧／凍凍咁做冰磚都得</p>
+      <p>🔍 <strong>毛孩可以食乳酪</strong>新手試食：<strong>第一次食建議先少量試，觀察<strong>毛孩</strong>反應</strong></p>
 
-      <h2>ðŸ›’ è¶…å¸‚å¸¸è¦‹å¯é£Ÿå“ç‰ŒæŽ¨ä»‹ï¼šè¶…å¸‚ä¹³é…ªé»žæ€æŽ¨è–¦</h2>
-      <p>å¦‚æžœä½ å•<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ï¼Œä»¥ä¸‹ä¿‚<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>çš„å“ç‰ŒæŽ¨è–¦ï¼š</p>
-      <p>ðŸ§Š <em>ææä½ ï¼š<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>æ™‚ï¼Œå””åŒæ‰¹æ¬¡æˆåˆ†å¯èƒ½æœ‰è®Šï¼Œè²·ä¹‹å‰è¨˜å¾—å†ç‡ä¸€æ¬¡æ¨™ç±¤å‘€ï¼</em></p>
+      <h2>🛒 超市常見可食品牌推介：超市乳酪點揀推薦</h2>
+      <p>如果你問<strong>超市乳酪點揀</strong>，以下係<strong>毛孩可以食乳酪</strong>的品牌推薦：</p>
+      <p>🧊 <em>提提你：<strong>超市乳酪點揀</strong>時，唔同批次成分可能有變，買之前記得再睇一次標籤呀！</em></p>
 
-      <h4 style="text-align: center;">1. é›€å·¢ç‰›å¥¶å…¬å¸å¤©ç„¶ç´”ä¹³é…ª</h4>
-      <p style="text-align: center;">âœ… æˆåˆ†ç°¡å–®ï¼šé®®ç‰›å¥¶ã€æ´»æ€§ä¹³é…¸èŒ<br>âœ… ç„¡æ·»åŠ ç³–ã€ç„¡äººå·¥ä»£ç³–<br>âœ… é©åˆæ¯›å­©é£Ÿç”¨</p>
+      <h4 style="text-align: center;">1. 雀巢牛奶公司天然純乳酪</h4>
+      <p style="text-align: center;">✅ 成分簡單：鮮牛奶、活性乳酸菌<br>✅ 無添加糖、無人工代糖<br>✅ 適合毛孩食用</p>
 
-      <h4 style="text-align: center;">2. æ˜Žæ²»åŽŸå‘³ä½Žè„‚ä¹³é…ª</h4>
-      <p style="text-align: center;">âœ… æˆåˆ†ï¼šç‰›å¥¶ã€ä¹³é…¸èŒ<br>âœ… ä½Žè„‚é…æ–¹<br>âœ… ç„¡æ·»åŠ ç³–</p>
+      <h4 style="text-align: center;">2. 明治原味低脂乳酪</h4>
+      <p style="text-align: center;">✅ 成分：牛奶、乳酸菌<br>✅ 低脂配方<br>✅ 無添加糖</p>
 
-      <h4 style="text-align: center;">3. ä¼Šç¾Žç‘žå£«ç‰¹é†‡0%åŽŸå‘³ä¹³é…ª</h4>
-      <p style="text-align: center;">âœ… 0%è„‚è‚ª<br>âœ… åŽŸå‘³ç„¡ç³–<br>âœ… é«˜è›‹ç™½è³ª</p>
+      <h4 style="text-align: center;">3. 伊美瑞士特醇0%原味乳酪</h4>
+      <p style="text-align: center;">✅ 0%脂肪<br>✅ 原味無糖<br>✅ 高蛋白質</p>
 
-      <h4 style="text-align: center;">4. é›€å·¢åŽŸå‘³å¸Œè‡˜å¼ä¹³é…ª</h4>
-      <p style="text-align: center;">âœ… å¸Œè‡˜å¼é…æ–¹<br>âœ… é«˜è›‹ç™½è³ªã€ä½Žä¹³æ¸…<br>âœ… ç„¡æ·»åŠ ç³–</p>
+      <h4 style="text-align: center;">4. 雀巢原味希臘式乳酪</h4>
+      <p style="text-align: center;">✅ 希臘式配方<br>✅ 高蛋白質、低乳清<br>✅ 無添加糖</p>
 
-      <h4 style="text-align: center;">5. FAGE åŽŸå‘³è„«è„‚å¸Œè‡˜ä¹³é…ª</h4>
-      <p style="text-align: center;">âœ… ç´”æ­£å¸Œè‡˜ä¹³é…ª<br>âœ… è„«è„‚é…æ–¹<br>âœ… æˆåˆ†ç°¡å–®ç´”æ·¨</p>
+      <h4 style="text-align: center;">5. FAGE 原味脫脂希臘乳酪</h4>
+      <p style="text-align: center;">✅ 純正希臘乳酪<br>✅ 脫脂配方<br>✅ 成分簡單純淨</p>
 
-      <h2>ðŸ’¡ æ¯›å­©ä¹³é…ªå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Žï¼Ÿ</strong></p>
-      <p>A: å¯ä»¥ï¼<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>ï¼Œä½†<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ä¿‚é—œéµã€‚æ‡‰é¸æ“‡åŽŸå‘³ã€ç„¡æ·»åŠ ç³–ã€ç„¡ä»£ç³–çš„ä¹³é…ªï¼Œé¿å…å«æœ‰Xylitolç­‰å±éšªæˆåˆ†çš„ä¹³é…ªã€‚</p>
+      <h2>💡 毛孩乳酪常見問題</h2>
+      <p><strong>Q: 毛孩可以食乳酪嗎？</strong></p>
+      <p>A: 可以！<strong>毛孩可以食乳酪</strong>，但<strong>超市乳酪點揀</strong>係關鍵。應選擇原味、無添加糖、無代糖的乳酪，避免含有Xylitol等危險成分的乳酪。</p>
       
-      <p><strong>Q: è¶…å¸‚ä¹³é…ªé»žæ€å…ˆå®‰å…¨ï¼Ÿ</strong></p>
-      <p>A: <strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>æ™‚ï¼Œæ‡‰é¸æ“‡æˆä»½æ¨™ç¤ºç‚ºã€ŒåŽŸå‘³ï¼Naturalã€ã€ç„¡æ·»åŠ ç³–ï¼ç„¡ä»£ç³–ï¼ˆåŒ…æ‹¬ Steviaã€Xylitolï¼‰ã€æˆä»½è¡¨ç°¡å–®ï¼ˆç†æƒ³ä¿‚å¾—ã€Œmilk, live culturesã€ï¼‰çš„ä¹³é…ªã€‚</p>
+      <p><strong>Q: 超市乳酪點揀先安全？</strong></p>
+      <p>A: <strong>超市乳酪點揀</strong>時，應選擇成份標示為「原味／Natural」、無添加糖／無代糖（包括 Stevia、Xylitol）、成份表簡單（理想係得「milk, live cultures」）的乳酪。</p>
       
-      <p><strong>Q: æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå¹¾å¤šï¼Ÿ</strong></p>
-      <p>A: <strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ¯æ—¥å»ºè­°ä»½é‡ç‚ºæ¯5kgç´„1-2æ¹¯åŒ™ã€‚ç¬¬ä¸€æ¬¡è®“<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ™‚ï¼Œå»ºè­°å…ˆå°‘é‡è©¦ï¼Œè§€å¯Ÿ<strong>æ¯›å­©</strong>åæ‡‰ã€‚</p>
+      <p><strong>Q: 毛孩可以食乳酪幾多？</strong></p>
+      <p>A: <strong>毛孩可以食乳酪</strong>每日建議份量為每5kg約1-2湯匙。第一次讓<strong>毛孩可以食乳酪</strong>時，建議先少量試，觀察<strong>毛孩</strong>反應。</p>
 
-      <p style="margin-top: 2em;">ðŸ¶ðŸ± è¨˜ä½ï¼š<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>ï¼Œä½†<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ä¿‚é—œéµã€‚å°‘é‡è©¦é£Ÿã€è§€å¯Ÿ<strong>æ¯›å­©</strong>åæ‡‰ã€é¸å°æˆåˆ†ï¼Œä½ å˜…<strong>æ¯›å­©</strong>å°±å¯ä»¥å®‰å¿ƒäº«å—ä¹³é…ªå˜…ç›Šè™•å•¦ï¼</p>
+      <p style="margin-top: 2em;">🐶🐱 記住：<strong>毛孩可以食乳酪</strong>，但<strong>超市乳酪點揀</strong>係關鍵。少量試食、觀察<strong>毛孩</strong>反應、選對成分，你嘅<strong>毛孩</strong>就可以安心享受乳酪嘅益處啦！</p>
       
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ªå—Ž</strong>ï¼Ÿç­”æ¡ˆæ˜¯è‚¯å®šçš„ã€‚<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>ï¼Œä½†<strong>è¶…å¸‚ä¹³é…ªé»žæ€</strong>ä¿‚é—œéµã€‚æ‡‰é¸æ“‡åŽŸå‘³ã€ç„¡æ·»åŠ ç³–ã€ç„¡ä»£ç³–çš„ä¹³é…ªï¼Œé¿å…å«æœ‰Xylitolç­‰å±éšªæˆåˆ†ã€‚æ¯æ—¥å»ºè­°ä»½é‡ç‚ºæ¯5kgç´„1-2æ¹¯åŒ™ï¼Œç¬¬ä¸€æ¬¡è®“<strong>æ¯›å­©å¯ä»¥é£Ÿä¹³é…ª</strong>æ™‚ï¼Œå»ºè­°å…ˆå°‘é‡è©¦ï¼Œè§€å¯Ÿ<strong>æ¯›å­©</strong>åæ‡‰ã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>毛孩可以食乳酪嗎</strong>？答案是肯定的。<strong>毛孩可以食乳酪</strong>，但<strong>超市乳酪點揀</strong>係關鍵。應選擇原味、無添加糖、無代糖的乳酪，避免含有Xylitol等危險成分。每日建議份量為每5kg約1-2湯匙，第一次讓<strong>毛孩可以食乳酪</strong>時，建議先少量試，觀察<strong>毛孩</strong>反應。</p>
     `,
     author: "PetWell HK",
     date: "2025-06-05",
-    category: "é£²é£Ÿç‡Ÿé¤Š",
+    category: "飲食營養",
     imageUrl: blogYogurtPets
   },
   {
     id: "15",
-    slug: "starbucks-puppuccino-é¦™æ¸¯",
-    title: "é¦™æ¸¯Starbucks Puppuccinoé»žæ¨£å«ï¼ŸPuppuccinoå®‰å…¨å—Žï¼Ÿå…¨æ¸¯åˆ†åº—æ¸…å–® | PetWell HK",
-    excerpt: "é¦™æ¸¯Starbucks Puppuccinoé»žæ¨£å«ï¼ŸåŽŸä¾†é¦™æ¸¯Starbuckséƒ½æœ‰ç‹—ç‹—å°ˆå±¬Puppuccinoï¼å…è²»é®®å¥¶æ²¹å°æ¯è¶…æ²»ç™’ï¼Œå…¨æ¸¯å¯µç‰©å‹å–„åˆ†åº—æ¸…å–®ã€Puppuccinoé»žé¤è²¼å£«ã€Puppuccinoå®‰å…¨æ³¨æ„äº‹é …å…¨æ”¶éŒ„ï¼Œå¸¶æ¯›å­©ä¸€é½Šæ‰“å¡åŽ»ï¼",
+    slug: "starbucks-puppuccino-香港",
+    title: "香港Starbucks Puppuccino點樣叫？Puppuccino安全嗎？全港分店清單 | PetWell HK",
+    excerpt: "香港Starbucks Puppuccino點樣叫？原來香港Starbucks都有狗狗專屬Puppuccino！免費鮮奶油小杯超治癒，全港寵物友善分店清單、Puppuccino點餐貼士、Puppuccino安全注意事項全收錄，帶毛孩一齊打卡去！",
     content: `
-      <h2>é¦™æ¸¯Starbucks Puppuccinoé»žæ¨£å«ï¼Ÿå®Œæ•´æŒ‡å—</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">ä½ æœ‰å†‡è½éŽ<strong>Puppuccino</strong>ï¼Ÿ<strong>Puppuccino</strong>ä¿‚Starbucksç‚º<strong>ç‹—ç‹—</strong>ç‰¹è¨­å˜…ã€Œæ±ªæ±ªæ¯ã€ï¼Œå…è²»æä¾›ä¿¾å¸¶ä½<strong>æ¯›å­©</strong>åšŸå˜…ä¸»äººï¼<strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Ÿ<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿæœ¬æ–‡ç‚ºä½ è©³ç´°è¬›è§£<strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ã€<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Œä»¥åŠå…¨æ¸¯<strong>Puppuccino</strong>å¯µç‰©å‹å–„åˆ†åº—æ¸…å–®ã€‚</p>
+      <h2>香港Starbucks Puppuccino點樣叫？完整指南</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">你有冇聽過<strong>Puppuccino</strong>？<strong>Puppuccino</strong>係Starbucks為<strong>狗狗</strong>特設嘅「汪汪杯」，免費提供俾帶住<strong>毛孩</strong>嚟嘅主人！<strong>香港Starbucks Puppuccino</strong>點樣叫？<strong>Puppuccino安全嗎</strong>？本文為你詳細講解<strong>香港Starbucks Puppuccino</strong>點樣叫、<strong>Puppuccino安全嗎</strong>，以及全港<strong>Puppuccino</strong>寵物友善分店清單。</p>
       
-      <h2>ðŸ¶ å’©ä¿‚ Puppuccinoï¼Ÿ</h2>
-      <p><strong>Puppuccino</strong> ä¿‚ Starbucks ç‚º<strong>ç‹—ç‹—</strong>ç‰¹è¨­å˜…ã€Œæ±ªæ±ªæ¯ã€â€”â€”ä¸€å°æ¯é®®å¥¶æ²¹ï¼Œå…è²»æä¾›ä¿¾å¸¶ä½<strong>æ¯›å­©</strong>åšŸå˜…ä¸»äººï¼</p>
-      <p>é›–ç„¶<strong>Puppuccino</strong>å””ä¿‚æ­£å¼é¤ç‰Œä¸Šå˜…ç”¢å“ï¼Œä½†åªè¦ä½ å•åº—å“¡ã€Œ<strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Ÿæœ‰å†‡<strong>Puppuccino</strong>ï¼Ÿã€å¥½å¤šåˆ†åº—éƒ½æœƒå¥½æ¨‚æ„ç‚ºä½ æº–å‚™ï½ž</p>
+      <h2>🐶 咩係 Puppuccino？</h2>
+      <p><strong>Puppuccino</strong> 係 Starbucks 為<strong>狗狗</strong>特設嘅「汪汪杯」——一小杯鮮奶油，免費提供俾帶住<strong>毛孩</strong>嚟嘅主人！</p>
+      <p>雖然<strong>Puppuccino</strong>唔係正式餐牌上嘅產品，但只要你問店員「<strong>香港Starbucks Puppuccino</strong>點樣叫？有冇<strong>Puppuccino</strong>？」好多分店都會好樂意為你準備～</p>
 
-      <h2>ðŸ‡­ðŸ‡° é¦™æ¸¯Starbucks Puppuccinoéƒ½æœ‰å¾—å«ï¼Ÿ</h2>
-      <p>ä¿‚ï¼<strong>é¦™æ¸¯Starbucks Puppuccino</strong>éƒ¨åˆ†åˆ†åº—éƒ½æœ‰æä¾›<strong>Puppuccino</strong>ï¼Œç‰¹åˆ¥ä¿‚ï¼š</p>
+      <h2>🇭🇰 香港Starbucks Puppuccino都有得叫？</h2>
+      <p>係！<strong>香港Starbucks Puppuccino</strong>部分分店都有提供<strong>Puppuccino</strong>，特別係：</p>
       <ul>
-        <li>ðŸ–ï¸ æœ‰æˆ¶å¤–åº§ä½å˜…<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—ï¼Œå¯ä»¥å«<strong>Puppuccino</strong></li>
-        <li>ðŸŒ³ ä½æ–¼å…¬åœ’æˆ–å¯µç‰©å‹å–„å€åŸŸé™„è¿‘å˜…<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—ï¼Œæä¾›<strong>Puppuccino</strong></li>
-        <li>ðŸ¾ åº—å“¡å°å¯µç‰©å‹å–„å˜…<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—ï¼Œå¯ä»¥å«<strong>Puppuccino</strong></li>
+        <li>🏖️ 有戶外座位嘅<strong>香港Starbucks</strong>分店，可以叫<strong>Puppuccino</strong></li>
+        <li>🌳 位於公園或寵物友善區域附近嘅<strong>香港Starbucks</strong>分店，提供<strong>Puppuccino</strong></li>
+        <li>🐾 店員對寵物友善嘅<strong>香港Starbucks</strong>分店，可以叫<strong>Puppuccino</strong></li>
       </ul>
 
-      <h2>ðŸ“ é¦™æ¸¯å¯µç‰©å‹å–„ Starbucks åˆ†åº—æŽ¨ä»‹ï¼šPuppuccinoåˆ†åº—</h2>
-      <p>ä»¥ä¸‹ä¿‚<strong>é¦™æ¸¯Starbucks Puppuccino</strong>å¯µç‰©å‹å–„åˆ†åº—ï¼Œå¯ä»¥å«<strong>Puppuccino</strong>ï¼š</p>
+      <h2>📍 香港寵物友善 Starbucks 分店推介：Puppuccino分店</h2>
+      <p>以下係<strong>香港Starbucks Puppuccino</strong>寵物友善分店，可以叫<strong>Puppuccino</strong>：</p>
       <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
         <thead>
           <tr style="background-color: #f2f2f2;">
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åœ°å€</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">åˆ†åº—åç¨±</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">å¯µç‰©å‹å–„ç‰¹è‰²</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">地區</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">分店名稱</th>
+            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">寵物友善特色</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">è¥¿è²¢</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">è¥¿è²¢æµ·æ¿±åˆ†åº—</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æˆ¶å¤–åº§ä½ã€è¿‘æµ·æ¿±é•·å»Š</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">西貢</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">西貢海濱分店</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">戶外座位、近海濱長廊</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">èµ¤æŸ±</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">èµ¤æŸ±å»£å ´åˆ†åº—</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æµ·é‚Šä½ç½®ã€æˆ¶å¤–ç©ºé–“å¤§</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">赤柱</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">赤柱廣場分店</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">海邊位置、戶外空間大</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ„‰æ™¯ç£</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ„‰æ™¯ç£åˆ†åº—</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ•´å€‹ç¤¾å€å¯µç‰©å‹å–„</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">愉景灣</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">愉景灣分店</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">整個社區寵物友善</td>
           </tr>
           <tr style="background-color: #f9f9f9;">
-            <td style="border: 1px solid #ddd; padding: 10px;">æ•¸ç¢¼æ¸¯</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æ•¸ç¢¼æ¸¯å•†å ´åˆ†åº—</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æœ‰æˆ¶å¤–åº§ä½å€</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">數碼港</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">數碼港商場分店</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">有戶外座位區</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 10px;">é»ƒé‡‘æµ·å²¸</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">é»ƒé‡‘æµ·å²¸åˆ†åº—</td>
-            <td style="border: 1px solid #ddd; padding: 10px;">æµ·é‚Šæ•£æ­¥ç†±é»ž</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">黃金海岸</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">黃金海岸分店</td>
+            <td style="border: 1px solid #ddd; padding: 10px;">海邊散步熱點</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>ðŸ™‹ é¦™æ¸¯Starbucks Puppuccinoé»žæ¨£å«ï¼Ÿ</h2>
-      <p>å¦‚æžœä½ å•<strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Œå¯ä»¥æŒ‰ç…§ä»¥ä¸‹æ­¥é©Ÿï¼š</p>
+      <h2>🙋 香港Starbucks Puppuccino點樣叫？</h2>
+      <p>如果你問<strong>香港Starbucks Puppuccino</strong>點樣叫，可以按照以下步驟：</p>
       <ol>
-        <li>å¸¶ä½<strong>ç‹—ç‹—</strong>åŽ»æœ‰æˆ¶å¤–åº§ä½å˜…<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—</li>
-        <li>ç¦®è²Œåœ°å•åº—å“¡ï¼šã€Œ<strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Ÿè«‹å•æœ‰å†‡<strong>Puppuccino</strong>ï¼Ÿã€</li>
-        <li>åº—å“¡æœƒæº–å‚™ä¸€å°æ¯é®®å¥¶æ²¹ä¿¾ä½ ï¼Œå³ä¿‚<strong>Puppuccino</strong></li>
-        <li>è¨˜å¾—è©±è²å¤šè¬ï¼ðŸ˜Š</li>
+        <li>帶住<strong>狗狗</strong>去有戶外座位嘅<strong>香港Starbucks</strong>分店</li>
+        <li>禮貌地問店員：「<strong>香港Starbucks Puppuccino</strong>點樣叫？請問有冇<strong>Puppuccino</strong>？」</li>
+        <li>店員會準備一小杯鮮奶油俾你，即係<strong>Puppuccino</strong></li>
+        <li>記得話聲多謝！😊</li>
       </ol>
 
-      <h2>âš ï¸ Puppuccinoå®‰å…¨å—Žï¼Ÿæ³¨æ„äº‹é …</h2>
-      <p>å¦‚æžœä½ å•<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Œä»¥ä¸‹ä¿‚<strong>Puppuccino</strong>æ³¨æ„äº‹é …ï¼š</p>
+      <h2>⚠️ Puppuccino安全嗎？注意事項</h2>
+      <p>如果你問<strong>Puppuccino安全嗎</strong>，以下係<strong>Puppuccino</strong>注意事項：</p>
       <ul>
-        <li>ðŸ¥› <strong>Puppuccino</strong> ä¸»è¦æˆåˆ†ä¿‚é®®å¥¶æ²¹ï¼ˆWhipped Creamï¼‰ï¼Œ<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿå°‘é‡é£Ÿç”¨å°å¤§å¤šæ•¸å¥åº·<strong>ç‹—ç‹—</strong>æ˜¯å®‰å…¨çš„</li>
-        <li>ðŸ• <strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿåªé©åˆ<strong>å°‘é‡</strong>ä¿¾<strong>ç‹—ç‹—</strong>è©¦é£Ÿï¼Œå””ä¿‚æ­£é¤</li>
-        <li>ðŸš« å¦‚æžœä½ å˜…<strong>ç‹—ç‹—</strong>æœ‰ä¹³ç³–ä¸è€ç—‡æˆ–è…¸èƒƒæ•æ„Ÿï¼Œå°±å””å»ºè­°ä¿¾<strong>ç‹—ç‹—</strong>é£Ÿ<strong>Puppuccino</strong>ï¼Œ<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿå°é€™äº›<strong>ç‹—ç‹—</strong>å¯èƒ½ä¸å®‰å…¨</li>
-        <li>ðŸ“ <strong>Puppuccino</strong>å»ºè­°ä»½é‡ï¼šå°åž‹<strong>ç‹—ç‹—</strong>åŠæ¯ã€ä¸­å¤§åž‹<strong>ç‹—ç‹—</strong>ä¸€æ¯ï¼Œç¢ºä¿<strong>Puppuccinoå®‰å…¨</strong></li>
-        <li>ðŸ§¼ <strong>ç‹—ç‹—</strong>é£Ÿå®Œ<strong>Puppuccino</strong>è¨˜å¾—å¹«<strong>ç‹—ç‹—</strong>æŠ¹ä¹¾æ·¨å˜´é‚Š</li>
+        <li>🥛 <strong>Puppuccino</strong> 主要成分係鮮奶油（Whipped Cream），<strong>Puppuccino安全嗎</strong>？少量食用對大多數健康<strong>狗狗</strong>是安全的</li>
+        <li>🐕 <strong>Puppuccino安全嗎</strong>？只適合<strong>少量</strong>俾<strong>狗狗</strong>試食，唔係正餐</li>
+        <li>🚫 如果你嘅<strong>狗狗</strong>有乳糖不耐症或腸胃敏感，就唔建議俾<strong>狗狗</strong>食<strong>Puppuccino</strong>，<strong>Puppuccino安全嗎</strong>？對這些<strong>狗狗</strong>可能不安全</li>
+        <li>📏 <strong>Puppuccino</strong>建議份量：小型<strong>狗狗</strong>半杯、中大型<strong>狗狗</strong>一杯，確保<strong>Puppuccino安全</strong></li>
+        <li>🧼 <strong>狗狗</strong>食完<strong>Puppuccino</strong>記得幫<strong>狗狗</strong>抹乾淨嘴邊</li>
       </ul>
 
-      <h2>ðŸ’¡ æº«é¦¨æç¤ºï¼šé¦™æ¸¯Starbucks Puppuccino</h2>
-      <p>ä¸¦å””ä¿‚æ‰€æœ‰<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—éƒ½æœƒæä¾›<strong>Puppuccino</strong>ï¼Œå‡ºç™¼å‰å»ºè­°ï¼š</p>
+      <h2>💡 溫馨提示：香港Starbucks Puppuccino</h2>
+      <p>並唔係所有<strong>香港Starbucks</strong>分店都會提供<strong>Puppuccino</strong>，出發前建議：</p>
       <ul>
-        <li>â˜Žï¸ æ‰“é›»è©±åŽ»<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—å•æ¸…æ¥š<strong>Puppuccino</strong>æ˜¯å¦æä¾›</li>
-        <li>ðŸ• é¿é–‹ç¹å¿™æ™‚é–“ï¼ˆæ—©ä¸Š8-10é»žã€åˆé¤12-2é»žï¼‰ï¼Œæ–¹ä¾¿å«<strong>Puppuccino</strong></li>
-        <li>ðŸ¶ ç¢ºä¿ä½ å˜…<strong>ç‹—ç‹—</strong>æ€§æ ¼æº«é¦´ã€å””æœƒé¨·æ“¾å…¶ä»–å®¢äººï¼Œé©åˆå«<strong>Puppuccino</strong></li>
-        <li>ðŸ’§ è‡ªå‚™<strong>ç‹—ç‹—</strong>æ°´ç¢—åŒé£²ç”¨æ°´ï¼Œ<strong>ç‹—ç‹—</strong>é£Ÿå®Œ<strong>Puppuccino</strong>å¾Œè£œæ°´</li>
+        <li>☎️ 打電話去<strong>香港Starbucks</strong>分店問清楚<strong>Puppuccino</strong>是否提供</li>
+        <li>🕐 避開繁忙時間（早上8-10點、午餐12-2點），方便叫<strong>Puppuccino</strong></li>
+        <li>🐶 確保你嘅<strong>狗狗</strong>性格溫馴、唔會騷擾其他客人，適合叫<strong>Puppuccino</strong></li>
+        <li>💧 自備<strong>狗狗</strong>水碗同飲用水，<strong>狗狗</strong>食完<strong>Puppuccino</strong>後補水</li>
       </ul>
 
-      <h2>ðŸ“¸ æ‰“å¡å°è²¼å£«ï¼šPuppuccino</h2>
-      <p>æƒ³å½±éšç›¸ï¼Ÿè©¦ä¸‹å‘¢å•²è§’åº¦ï¼š</p>
+      <h2>📸 打卡小貼士：Puppuccino</h2>
+      <p>想影靚相？試下呢啲角度：</p>
       <ul>
-        <li>ðŸ“· ç”±ä¸Šå‘ä¸‹å½±ï¼Œæ•æ‰<strong>ç‹—ç‹—</strong>èˆ”<strong>Puppuccino</strong>å˜…å¯æ„›æ¨£</li>
-        <li>â˜• å°‡ä½ å˜…å’–å•¡åŒ<strong>ç‹—ç‹—</strong>å˜…<strong>Puppuccino</strong>ä¸€é½Šå…¥é¡</li>
-        <li>ðŸŒ… é¸æµ·é‚Šæˆ–æ—¥è½æ™‚åˆ†å½±ï¼Œæ°£æ°›ä¸€æµ</li>
-        <li>#ï¸âƒ£ è¨˜å¾— Tag @Starbucks åŒ #Puppuccino</li>
+        <li>📷 由上向下影，捕捉<strong>狗狗</strong>舔<strong>Puppuccino</strong>嘅可愛樣</li>
+        <li>☕ 將你嘅咖啡同<strong>狗狗</strong>嘅<strong>Puppuccino</strong>一齊入鏡</li>
+        <li>🌅 選海邊或日落時分影，氣氛一流</li>
+        <li>#️⃣ 記得 Tag @Starbucks 同 #Puppuccino</li>
       </ul>
 
-      <h2>ðŸ’¡ Puppuccinoå¸¸è¦‹å•é¡Œ</h2>
-      <p><strong>Q: é¦™æ¸¯Starbucks Puppuccinoé»žæ¨£å«ï¼Ÿ</strong></p>
-      <p>A: <strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Ÿå¯ä»¥å¸¶ä½<strong>ç‹—ç‹—</strong>åŽ»æœ‰æˆ¶å¤–åº§ä½çš„<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—ï¼Œç¦®è²Œåœ°å•åº—å“¡ã€Œè«‹å•æœ‰å†‡<strong>Puppuccino</strong>ï¼Ÿã€åº—å“¡æœƒæº–å‚™ä¸€å°æ¯é®®å¥¶æ²¹ä¿¾ä½ ã€‚</p>
+      <h2>💡 Puppuccino常見問題</h2>
+      <p><strong>Q: 香港Starbucks Puppuccino點樣叫？</strong></p>
+      <p>A: <strong>香港Starbucks Puppuccino</strong>點樣叫？可以帶住<strong>狗狗</strong>去有戶外座位的<strong>香港Starbucks</strong>分店，禮貌地問店員「請問有冇<strong>Puppuccino</strong>？」店員會準備一小杯鮮奶油俾你。</p>
       
-      <p><strong>Q: Puppuccinoå®‰å…¨å—Žï¼Ÿ</strong></p>
-      <p>A: <strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿ<strong>Puppuccino</strong>ä¸»è¦æˆåˆ†ä¿‚é®®å¥¶æ²¹ï¼Œå°‘é‡é£Ÿç”¨å°å¤§å¤šæ•¸å¥åº·<strong>ç‹—ç‹—</strong>æ˜¯å®‰å…¨çš„ã€‚ä½†å¦‚æžœä½ å˜…<strong>ç‹—ç‹—</strong>æœ‰ä¹³ç³–ä¸è€ç—‡æˆ–è…¸èƒƒæ•æ„Ÿï¼Œå°±å””å»ºè­°ä¿¾<strong>ç‹—ç‹—</strong>é£Ÿ<strong>Puppuccino</strong>ã€‚</p>
+      <p><strong>Q: Puppuccino安全嗎？</strong></p>
+      <p>A: <strong>Puppuccino安全嗎</strong>？<strong>Puppuccino</strong>主要成分係鮮奶油，少量食用對大多數健康<strong>狗狗</strong>是安全的。但如果你嘅<strong>狗狗</strong>有乳糖不耐症或腸胃敏感，就唔建議俾<strong>狗狗</strong>食<strong>Puppuccino</strong>。</p>
       
-      <p><strong>Q: é¦™æ¸¯Starbucksé‚Šå•²åˆ†åº—æœ‰Puppuccinoï¼Ÿ</strong></p>
-      <p>A: <strong>é¦™æ¸¯Starbucks</strong>éƒ¨åˆ†åˆ†åº—æœ‰æä¾›<strong>Puppuccino</strong>ï¼Œç‰¹åˆ¥ä¿‚æœ‰æˆ¶å¤–åº§ä½çš„åˆ†åº—ã€ä½æ–¼å…¬åœ’æˆ–å¯µç‰©å‹å–„å€åŸŸé™„è¿‘çš„åˆ†åº—ã€åº—å“¡å°å¯µç‰©å‹å–„çš„åˆ†åº—ã€‚å»ºè­°å‡ºç™¼å‰æ‰“é›»è©±åŽ»<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—å•æ¸…æ¥šã€‚</p>
+      <p><strong>Q: 香港Starbucks邊啲分店有Puppuccino？</strong></p>
+      <p>A: <strong>香港Starbucks</strong>部分分店有提供<strong>Puppuccino</strong>，特別係有戶外座位的分店、位於公園或寵物友善區域附近的分店、店員對寵物友善的分店。建議出發前打電話去<strong>香港Starbucks</strong>分店問清楚。</p>
 
-      <p style="margin-top: 2em;">ðŸ¾ ä¸‹æ¬¡å¸¶<strong>ç‹—ç‹—</strong>å‡ºè¡—ï¼Œä¸å¦¨è©¦ä¸‹åŽ»<strong>é¦™æ¸¯Starbucks</strong>å«è¿”æ¯<strong>Puppuccino</strong>ï¼Œä¸€é½Šæ­Žä¸‹åˆèŒ¶å•¦ï¼</p>
+      <p style="margin-top: 2em;">🐾 下次帶<strong>狗狗</strong>出街，不妨試下去<strong>香港Starbucks</strong>叫返杯<strong>Puppuccino</strong>，一齊歎下午茶啦！</p>
       
-      <p>ðŸ¾ <strong>ç¸½çµï¼š</strong><strong>é¦™æ¸¯Starbucks Puppuccino</strong>é»žæ¨£å«ï¼Ÿå¯ä»¥å¸¶ä½<strong>ç‹—ç‹—</strong>åŽ»æœ‰æˆ¶å¤–åº§ä½çš„<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—ï¼Œç¦®è²Œåœ°å•åº—å“¡å³å¯ã€‚<strong>Puppuccinoå®‰å…¨å—Ž</strong>ï¼Ÿå°‘é‡é£Ÿç”¨å°å¤§å¤šæ•¸å¥åº·<strong>ç‹—ç‹—</strong>æ˜¯å®‰å…¨çš„ï¼Œä½†æ‡‰æ³¨æ„ä»½é‡å’Œ<strong>ç‹—ç‹—</strong>å¥åº·ç‹€æ³ã€‚å…¨æ¸¯å¤šé–“<strong>é¦™æ¸¯Starbucks</strong>åˆ†åº—éƒ½æœ‰æä¾›<strong>Puppuccino</strong>ï¼Œå»ºè­°å‡ºç™¼å‰æ‰“é›»è©±ç¢ºèªã€‚</p>
+      <p>🐾 <strong>總結：</strong><strong>香港Starbucks Puppuccino</strong>點樣叫？可以帶住<strong>狗狗</strong>去有戶外座位的<strong>香港Starbucks</strong>分店，禮貌地問店員即可。<strong>Puppuccino安全嗎</strong>？少量食用對大多數健康<strong>狗狗</strong>是安全的，但應注意份量和<strong>狗狗</strong>健康狀況。全港多間<strong>香港Starbucks</strong>分店都有提供<strong>Puppuccino</strong>，建議出發前打電話確認。</p>
     `,
     author: "PetWell HK",
     date: "2025-06-01",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogStarbucksPuppuccino
   },
   {
     id: "20",
     slug: "pet-on-ice-hong-kong-2026",
-    title: "ã€Pet on Ice 2026ã€‘é¦™æ¸¯é¦–å€‹å¯µç‰©æºœå†°é«”é©—ï½œåœ“æ–¹ The Rinkï½œPetWell HK",
-    excerpt: "è¾²æ›†æ–°å¹´æœŸé–“ï¼ˆ2æœˆ17-21æ—¥ï¼‰ï¼Œå¸¶ä½æ¯›å­©åŽ»è¥¿ä¹é¾åœ“æ–¹ The Rink æºœå†°å ´ï¼Œäº«å—é¦™æ¸¯é¦–å€‹å¯µç‰©å‹å–„æºœå†°é«”é©—ã€‚$250/2å°æ™‚ï¼ŒåŒ…ä¸€äººæºœå†°è²»ç”¨ã€‚",
-    content: `<p>è«‹ç€è¦½å°ˆé äº†è§£è©³æƒ…ã€‚</p>`,
+    title: "【Pet on Ice 2026】香港首個寵物溜冰體驗｜圓方 The Rink｜PetWell HK",
+    excerpt: "農曆新年期間（2月17-21日），帶住毛孩去西九龍圓方 The Rink 溜冰場，享受香港首個寵物友善溜冰體驗。$250/2小時，包一人溜冰費用。",
+    content: `<p>請瀏覽專頁了解詳情。</p>`,
     author: "PetWell HK",
     date: "2026-02-16",
-    category: "ç”Ÿæ´»å¨›æ¨‚",
+    category: "生活娛樂",
     imageUrl: blogPetOnIce
   },
   {
     id: "23",
     slug: "ai-pet-instagram-style-prompt-guide",
-    title: "ç”¨ä¸€å¼µå¯µç‰©åœ–ç‰‡ç”Ÿæˆ 3D Wallpaper åšæ‰‹æ©Ÿå°é¢ï¼šAI Prompt æ•™å­¸",
-    excerpt: "æƒ³å°‡æ¯›å­©ç…§ç‰‡è®Šæˆ iPhone 3D Wallpaperï¼Ÿæœ¬æ–‡æ•™ä½ ç”¨ ChatGPTã€Poeã€Nano Banana ç­‰ AI åœ–åƒç”Ÿæˆå·¥å…·ï¼Œä¸€æ­¥æ­¥å¯«å‡ºé«˜æˆåŠŸçŽ‡çš„ AI æç¤ºè©žï¼Œé™„å¯ç›´æŽ¥è¤‡è£½çš„ä¸­æ–‡ Prompt ç¯„æœ¬ã€‚",
+    title: "用一張寵物圖片生成 3D Wallpaper 做手機封面：AI Prompt 教學",
+    excerpt: "想將毛孩照片變成 iPhone 3D Wallpaper？本文教你用 ChatGPT、Poe、Nano Banana 等 AI 圖像生成工具，一步步寫出高成功率的 AI 提示詞，附可直接複製的中文 Prompt 範本。",
     content: `
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 16px;">æœ€è¿‘ç¤¾äº¤åª’é«”çˆ†ç´…ä¸€ç¨®<strong>AI å¯µç‰© 3D Wallpaper</strong>â€”â€”ç”¨ä¸€å¼µæ¯›å­©çš„ç…§ç‰‡ï¼Œé…ä¸Šæš–è‰²ç‡ˆå…‰ã€é–ƒäº®è£é£¾ï¼Œå†è®“å¯µç‰©ä¼¸å‡ºå¯æ„›çš„å°æ‰‹æ®ä¸€æ®ï¼Œå°±å¯ä»¥åšæˆç¨ä¸€ç„¡äºŒå˜…<strong>æ‰‹æ©Ÿå°é¢</strong>ã€‚ç‡èµ·åšŸå¥½è¤‡é›œï¼Œå…¶å¯¦åªè¦ä¸€å¼µåƒè€ƒåœ–åŠ ä¸Šä¸€æ®µå¯«å¾—æ¸…æ¥šçš„<strong>AI æç¤ºè©žï¼ˆPromptï¼‰</strong>ï¼Œæ–°æ‰‹éƒ½åšå¾—åˆ°ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 16px;">最近社交媒體爆紅一種<strong>AI 寵物 3D Wallpaper</strong>——用一張毛孩的照片，配上暖色燈光、閃亮裝飾，再讓寵物伸出可愛的小手揮一揮，就可以做成獨一無二嘅<strong>手機封面</strong>。睇起嚟好複雜，其實只要一張參考圖加上一段寫得清楚的<strong>AI 提示詞（Prompt）</strong>，新手都做得到。</p>
 
       <p style="margin: 16px 0 24px;">
-        <a href="#prompt-template" style="display: inline-block; background: #FF6B35; color: white; padding: 12px 20px; border-radius: 999px; font-weight: bold; text-decoration: none;">âš¡ å³åˆ»è·³åŽ»è¤‡è£½ Prompt ç¯„æœ¬ â†’</a>
+        <a href="#prompt-template" style="display: inline-block; background: #FF6B35; color: white; padding: 12px 20px; border-radius: 999px; font-weight: bold; text-decoration: none;">⚡ 即刻跳去複製 Prompt 範本 →</a>
       </p>
 
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">æœ¬æ–‡æœƒç”¨æœ€ç°¡å–®å˜…æ–¹å¼ï¼Œæ•™ä½ é»žæ¨£ç”¨ ChatGPTã€Poeã€Google Nano Banana ç­‰<strong>AI åœ–åƒç”Ÿæˆå·¥å…·</strong>ï¼Œå°‡è‡ªå·±å±‹ä¼æ¯›å­©çš„ç›¸ï¼Œè®Šæˆä¸€å¼µé«˜è³ªæ„Ÿçš„<strong>3D Wallpaper æ‰‹æ©Ÿå°é¢</strong>ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">本文會用最簡單嘅方式，教你點樣用 ChatGPT、Poe、Google Nano Banana 等<strong>AI 圖像生成工具</strong>，將自己屋企毛孩的相，變成一張高質感的<strong>3D Wallpaper 手機封面</strong>。</p>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">åƒè€ƒé¢¨æ ¼åœ–ï¼ˆé»žæ“Šä¸‹è¼‰ï¼‰</h2>
-      <p>ä¸‹é¢ä¿‚æœ¬æ–‡ç”¨åšŸç¤ºç¯„å˜…<strong>åƒè€ƒé¢¨æ ¼åœ–</strong>ã€‚ç›´æŽ¥é»žæ“Šåœ–ç‰‡å³å¯ä¸‹è¼‰åŽŸåœ–ï¼Œå†é€£åŒä½ å¯µç‰©å˜…åŽŸç›¸ä¸€é½Šä¸Šå‚³ä¿¾ AI å·¥å…·ã€‚</p>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">參考風格圖（點擊下載）</h2>
+      <p>下面係本文用嚟示範嘅<strong>參考風格圖</strong>。直接點擊圖片即可下載原圖，再連同你寵物嘅原相一齊上傳俾 AI 工具。</p>
       <p style="text-align: center; margin: 24px 0;">
-        <a href="${blogAiPetIgStyle}" download="petwell-ai-pet-reference.jpg" title="é»žæ“Šä¸‹è¼‰åƒè€ƒåœ–">
-          <img src="${blogAiPetIgStyle}" alt="AI å¯µç‰© 3D Wallpaper åƒè€ƒåœ– - PetWell HK" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); cursor: pointer;" />
+        <a href="${blogAiPetIgStyle}" download="petwell-ai-pet-reference.jpg" title="點擊下載參考圖">
+          <img src="${blogAiPetIgStyle}" alt="AI 寵物 3D Wallpaper 參考圖 - PetWell HK" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); cursor: pointer;" />
         </a>
         <br/>
-        <span style="font-size: 14px; color: #666;">ðŸ‘† é»žæ“Šåœ–ç‰‡ä¸‹è¼‰åŽŸåœ–</span>
+        <span style="font-size: 14px; color: #666;">👆 點擊圖片下載原圖</span>
       </p>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">é–‹å§‹ä¹‹å‰ï¼Œä½ è¦æº–å‚™å’©ï¼Ÿ</h2>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">開始之前，你要準備咩？</h2>
       <ul style="line-height: 2;">
-        <li><strong>ä¸€å¼µå¯µç‰©åŽŸåœ–</strong>ï¼šæ¸…æ™°ã€æ­£é¢ã€å…‰ç·šè¶³å¤ ï¼Œæœ€å¥½å¯ä»¥è¦‹åˆ°å®Œæ•´é¢éƒ¨è¡¨æƒ…</li>
-        <li><strong>ä¸€å¼µåƒè€ƒé¢¨æ ¼åœ–</strong>ï¼šå¯ç›´æŽ¥ç”¨ä¸Šé¢å˜…ç¯„ä¾‹åœ–ï¼ˆæš–æ©™ç‡ˆå…‰ + é–ƒäº®è£é£¾ï¼‰</li>
-        <li><strong>ä¸€æ®µå…·é«”çš„ Prompt</strong>ï¼šå””ä¿‚ã€Œè®Šå¾—å¯æ„›å•²ã€å’ç°¡å–®ï¼Œè¦å¯«åˆ° AI ä¸€ç‡å°±çŸ¥é»žåš</li>
-        <li><strong>ä¸€å€‹ AI åœ–åƒç”Ÿæˆå·¥å…·</strong>ï¼šChatGPTï¼ˆGPT-Imageï¼‰ã€Poeã€Google Geminiï¼Nano Banana éƒ½å¾—</li>
+        <li><strong>一張寵物原圖</strong>：清晰、正面、光線足夠，最好可以見到完整面部表情</li>
+        <li><strong>一張參考風格圖</strong>：可直接用上面嘅範例圖（暖橙燈光 + 閃亮裝飾）</li>
+        <li><strong>一段具體的 Prompt</strong>：唔係「變得可愛啲」咁簡單，要寫到 AI 一睇就知點做</li>
+        <li><strong>一個 AI 圖像生成工具</strong>：ChatGPT（GPT-Image）、Poe、Google Gemini／Nano Banana 都得</li>
       </ul>
-      <p style="background: #FFF8F3; border-left: 4px solid #FF6B35; padding: 16px 20px; border-radius: 8px; margin: 20px 0;">âš ï¸ <strong>å°æé†’ï¼š</strong>åŽŸåœ–çš„æ§‹åœ–ã€å…‰ç·šã€å§¿å‹¢ã€èƒŒæ™¯ï¼Œæœƒç›´æŽ¥å½±éŸ¿æˆå“æ•ˆæžœã€‚å¦‚æžœåŽŸåœ–å·²ç¶“ä¿‚æ­£é¢ã€å…‰ç·šæº«æš–ï¼ŒAI é€šå¸¸åšå¾—æ›´æº–ã€‚</p>
+      <p style="background: #FFF8F3; border-left: 4px solid #FF6B35; padding: 16px 20px; border-radius: 8px; margin: 20px 0;">⚠️ <strong>小提醒：</strong>原圖的構圖、光線、姿勢、背景，會直接影響成品效果。如果原圖已經係正面、光線溫暖，AI 通常做得更準。</p>
 
-      <h2 id="prompt-template" style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px; scroll-margin-top: 100px;">å¯ç›´æŽ¥è¤‡è£½å˜… Prompt ç¯„æœ¬</h2>
+      <h2 id="prompt-template" style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px; scroll-margin-top: 100px;">可直接複製嘅 Prompt 範本</h2>
 
       <div style="background: #FFF8F3; border: 2px solid #FF6B35; border-radius: 12px; padding: 20px; margin: 20px 0;">
-        <p style="font-weight: bold; color: #FF6B35; margin-bottom: 12px;">ðŸ“‹ ä¸­æ–‡ Promptï¼ˆæ–¹ä¾¿ä½ æ”¹å­—å¾Œç›´æŽ¥è²¼å…¥ AI å·¥å…·ï¼‰</p>
+        <p style="font-weight: bold; color: #FF6B35; margin-bottom: 12px;">📋 中文 Prompt（方便你改字後直接貼入 AI 工具）</p>
         <p style="background: white; padding: 16px; border-radius: 8px; line-height: 1.9;">
-          è«‹å¹«æˆ‘æŠŠå·¦é‚Šçš„ç…§ç‰‡(ä½ å¯µç‰©çš„åå­—)æ”¹æˆè·Ÿå³é‚Š(eevee)ä¸€æ¨£çš„é¢¨æ ¼<br/><br/>
-          åå­—æ”¹æˆ_____ <br/><br/>
-          æ‰‹è¦ä¼¸å‡ºä¾†
+          請幫我把左邊的照片(你寵物的名字)改成跟右邊(eevee)一樣的風格<br/><br/>
+          名字改成_____ <br/><br/>
+          手要伸出來
         </p>
       </div>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">å¯ä»¥ç”¨é‚Šå•² AI å·¥å…·ï¼Ÿ</h2>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">可以用邊啲 AI 工具？</h2>
       <ul style="line-height: 2;">
-        <li><strong>ChatGPTï¼ˆGPT-Image 2ï¼‰</strong>ï¼šPlus è¨‚é–±ç”¨æˆ¶å¯ç›´æŽ¥ç”Ÿæˆï¼Œè³ªç´ ç©©å®š</li>
-        <li><strong>Poe</strong>ï¼šå¯ä»¥ç”¨ä¸€å€‹è¨‚é–± call å¤šå€‹åœ–åƒæ¨¡åž‹ï¼Œæ–¹ä¾¿æ¯”è¼ƒ</li>
-        <li><strong>Google Gemini / Nano Banana</strong>ï¼šå…è²»é¡åº¦å¤§æ–¹ï¼Œç·¨è¼¯èƒ½åŠ›å¼·</li>
-      <li><strong>å…¶ä»–å…è²»ç¶²é å·¥å…·</strong>ï¼šä¾‹å¦‚ Bing Image Creatorã€Leonardo AIï¼Œä½†æˆåŠŸçŽ‡è¼ƒä½Žã€æ–‡å­—æ˜“å‡ºéŒ¯</li>
+        <li><strong>ChatGPT（GPT-Image 2）</strong>：Plus 訂閱用戶可直接生成，質素穩定</li>
+        <li><strong>Poe</strong>：可以用一個訂閱 call 多個圖像模型，方便比較</li>
+        <li><strong>Google Gemini / Nano Banana</strong>：免費額度大方，編輯能力強</li>
+      <li><strong>其他免費網頁工具</strong>：例如 Bing Image Creator、Leonardo AI，但成功率較低、文字易出錯</li>
       </ul>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">iPhone ç”¨æˆ¶å°ˆå±¬ï¼šSpatial Scene ç«‹é«”æ•ˆæžœ</h2>
-      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 16px;">ç”Ÿæˆå’— AI å¯µç‰©åœ–ä¹‹å¾Œï¼Œå¦‚æžœä½ æƒ³ä»¤æ‰‹æ©Ÿå°é¢æ›´æœ‰ç«‹é«”æ„Ÿï¼ŒiPhone ç”¨æˆ¶å¯ä»¥é€éŽ <strong>Spatial Scene</strong> åŠŸèƒ½ï¼Œå°‡æ™®é€š 2D ç…§ç‰‡è®Šæˆæœ‰æ™¯æ·±æ•ˆæžœå˜… 3D è¦–è¦ºé«”é©—ã€‚ç•¶ä½ è½‰å‹•æ‰‹æ©Ÿæˆ–è§£éŽ–èž¢å¹•æ™‚ï¼Œæ¯›å­©å°±å¥½ä¼¼çœŸä¿‚å–ºèž¢å¹•å¾Œé¢æŽ¢é ­å‡ºåšŸå’ï¼Œæ•ˆæžœéžå¸¸æ²»ç™’ï¼</p>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">iPhone 用戶專屬：Spatial Scene 立體效果</h2>
+      <p style="font-size: 18px; line-height: 1.8; margin-bottom: 16px;">生成咗 AI 寵物圖之後，如果你想令手機封面更有立體感，iPhone 用戶可以透過 <strong>Spatial Scene</strong> 功能，將普通 2D 照片變成有景深效果嘅 3D 視覺體驗。當你轉動手機或解鎖螢幕時，毛孩就好似真係喺螢幕後面探頭出嚟咁，效果非常治癒！</p>
 
-      <p style="background: #FFF8F3; border-left: 4px solid #FF6B35; padding: 16px 20px; border-radius: 8px; margin: 20px 0;">ðŸ’¡ <strong>æº«é¦¨æç¤ºï¼š</strong>å‘¢å€‹åŠŸèƒ½æœ€å•±ç”¨æ–¼å‰æ™¯åŒèƒŒæ™¯å±¤æ¬¡åˆ†æ˜Žå˜…åœ–ç‰‡ï¼Œä¾‹å¦‚æ¯›ä¼å–ºç•«é¢ä¸­å¤®ã€èƒŒæ™¯ç›¸å°ç°¡å–®å˜…æ§‹åœ–ã€‚å¦‚æžœ AI ç”Ÿæˆå˜…åœ–å·²ç¶“æœ‰æ¸…æ™°å˜…ä¸»é«”åŒèƒŒæ™¯åˆ†é›¢ï¼Œæ•ˆæžœæœƒæ›´åŠ çªå‡ºã€‚</p>
+      <p style="background: #FFF8F3; border-left: 4px solid #FF6B35; padding: 16px 20px; border-radius: 8px; margin: 20px 0;">💡 <strong>溫馨提示：</strong>呢個功能最啱用於前景同背景層次分明嘅圖片，例如毛企喺畫面中央、背景相對簡單嘅構圖。如果 AI 生成嘅圖已經有清晰嘅主體同背景分離，效果會更加突出。</p>
 
-      <h3 style="font-size: 22px; font-weight: 600; margin: 32px 0 16px 0;">è¨­å®šæ­¥é©Ÿ</h3>
+      <h3 style="font-size: 22px; font-weight: 600; margin: 32px 0 16px 0;">設定步驟</h3>
       <ol style="line-height: 2; padding-left: 24px;">
-        <li>æ‰“é–‹ iPhone <strong>ã€Œè¨­å®šã€</strong>ï¼ˆSettingsï¼‰</li>
-        <li>é»žå…¥ <strong>ã€ŒèƒŒæ™¯åœ–ç‰‡ã€</strong>ï¼ˆWallpaperï¼‰</li>
-        <li>é»žæ“Š <strong>ã€ŒåŠ å…¥æ–°èƒŒæ™¯åœ–ç‰‡ã€</strong>ï¼ˆAdd New Wallpaperï¼‰</li>
-        <li>é¸æ“‡ <strong>ã€Œç…§ç‰‡ã€</strong>ï¼ˆPhotosï¼‰</li>
-        <li>å¾žç›¸ç°¿æ€é¸ä½ ç”Ÿæˆå¥½å˜… AI å¯µç‰©åœ–ç‰‡</li>
-        <li>å–ºç•«é¢å³ä¸‹è§’æµåˆ° <strong>Spatial Scene åœ–ç¤º</strong>ï¼ˆå¤šé‚Šå½¢ç«‹é«”åœ–æ¡ˆï¼‰ï¼Œé»žä¸€ä¸‹é–‹å•Ÿ</li>
-        <li>é è¦½æ•ˆæžœæ»¿æ„å¾Œï¼Œé»žæ“Šå³ä¸Šè§’å˜… <strong>ã€ŒåŠ å…¥ã€</strong>ï¼ˆAddï¼‰å³å¯å¥—ç”¨</li>
+        <li>打開 iPhone <strong>「設定」</strong>（Settings）</li>
+        <li>點入 <strong>「背景圖片」</strong>（Wallpaper）</li>
+        <li>點擊 <strong>「加入新背景圖片」</strong>（Add New Wallpaper）</li>
+        <li>選擇 <strong>「照片」</strong>（Photos）</li>
+        <li>從相簿揀選你生成好嘅 AI 寵物圖片</li>
+        <li>喺畫面右下角搵到 <strong>Spatial Scene 圖示</strong>（多邊形立體圖案），點一下開啟</li>
+        <li>預覽效果滿意後，點擊右上角嘅 <strong>「加入」</strong>（Add）即可套用</li>
       </ol>
 
-      <p style="font-size: 18px; line-height: 1.8; margin-top: 24px;">è¨­å®šå®Œæˆå¾Œï¼Œæ¯æ¬¡è§£éŽ– iPhoneï¼Œæ¯›å­©å°±å¥½ä¼¼å–ºèž¢å¹•å…¥é¢åŒä½ æ®æ‰‹æ‰“æ‹›å‘¼å’ï¼Œç«‹é«”æ„Ÿåè¶³ï¼å¿«å•²è©¦å“å°‡ AI ç”Ÿæˆå˜…å¯µç‰©åœ–è®Šæˆä½ å˜…å°ˆå±¬ 3D æ‰‹æ©Ÿå°é¢å•¦ã€‚</p>
+      <p style="font-size: 18px; line-height: 1.8; margin-top: 24px;">設定完成後，每次解鎖 iPhone，毛孩就好似喺螢幕入面同你揮手打招呼咁，立體感十足！快啲試吓將 AI 生成嘅寵物圖變成你嘅專屬 3D 手機封面啦。</p>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">å¸¸è¦‹å•é¡Œ FAQ</h2>
-      <p><strong>Q: ç”¨å’© AI å·¥å…·æœ€å®¹æ˜“åšå‡ºå‘¢ç¨®æ•ˆæžœï¼Ÿ</strong></p>
-      <p>A: ChatGPT çš„ GPT-Image 2 åŒ Google Nano Banana ç›®å‰ä¿‚æœ€ç©©å®šã€æ–‡å­—æº–ç¢ºåº¦æœ€é«˜å˜…é¸æ“‡ã€‚</p>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">常見問題 FAQ</h2>
+      <p><strong>Q: 用咩 AI 工具最容易做出呢種效果？</strong></p>
+      <p>A: ChatGPT 的 GPT-Image 2 同 Google Nano Banana 目前係最穩定、文字準確度最高嘅選擇。</p>
 
-      <p><strong>Q: éœ€è¦ä¸Šå‚³å¹¾å¼µåœ–ï¼Ÿ</strong></p>
-      <p>A: å»ºè­°æœ€å°‘ 2 å¼µï¼šä¸€å¼µä¿‚ä½ å¯µç‰©å˜…åŽŸåœ–ï¼Œä¸€å¼µä¿‚ä½ æƒ³æ¨¡ä»¿å˜…é¢¨æ ¼åƒè€ƒåœ–ã€‚</p>
+      <p><strong>Q: 需要上傳幾張圖？</strong></p>
+      <p>A: 建議最少 2 張：一張係你寵物嘅原圖，一張係你想模仿嘅風格參考圖。</p>
 
-      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">çµèªž</h2>
-      <p>AI åœ–åƒç”Ÿæˆå˜…é–€æª»å·²ç¶“ä½ŽéŽä½ æƒ³åƒã€‚åªè¦ä½ è‚¯èŠ± 5 åˆ†é˜å¯«å¥½ä¸€æ®µæ¸…æ™°å˜… Promptï¼Œå°±å¯ä»¥å¹«æ¯›å­©æ•´ä¸€å¼µç¨ä¸€ç„¡äºŒå˜… 3D Wallpaper æ‰‹æ©Ÿå°é¢ã€‚</p>
-      <p>æ•´å®Œä¹‹å¾Œï¼Œæ­¡è¿Žå–º PetWell ç¤¾ç¾¤åˆ†äº«ä½ å˜…ä½œå“ï¼Œä¿¾å…¶ä»–ä¸»äººéˆæ„Ÿï¼ðŸ¾</p>
+      <h2 style="color: #FF6B35; border-left: 4px solid #FF6B35; padding-left: 12px; margin-top: 40px;">結語</h2>
+      <p>AI 圖像生成嘅門檻已經低過你想像。只要你肯花 5 分鐘寫好一段清晰嘅 Prompt，就可以幫毛孩整一張獨一無二嘅 3D Wallpaper 手機封面。</p>
+      <p>整完之後，歡迎喺 PetWell 社群分享你嘅作品，俾其他主人靈感！🐾</p>
     `,
     author: "PetWell HK",
     date: "2026-05-12",
-    category: "å¯µç‰©ç”Ÿæ´»",
+    category: "寵物生活",
     imageUrl: blogAiPet3dWallpaperCover,
     seoKeywords: [
-      "AI åœ–åƒç”Ÿæˆ",
-      "å¯µç‰©ç…§ç‰‡è®Šåœ–",
-      "AI æç¤ºè©ž",
-      "Prompt æ•™å­¸",
-      "ChatGPT åœ–åƒç”Ÿæˆ",
+      "AI 圖像生成",
+      "寵物照片變圖",
+      "AI 提示詞",
+      "Prompt 教學",
+      "ChatGPT 圖像生成",
       "Nano Banana",
-      "å…è²» AI ç¹ªåœ–å·¥å…·",
-      "å¯µç‰© 3D Wallpaper",
-      "å¯µç‰© AI åœ–",
-      "å¯µç‰©å‰µæ„ç…§"
+      "免費 AI 繪圖工具",
+      "寵物 3D Wallpaper",
+      "寵物 AI 圖",
+      "寵物創意照"
     ],
     faqItems: [
-      { question: "ç”¨ä»€éº¼ AI å·¥å…·æœ€å®¹æ˜“åšå‡ºå¯µç‰© 3D Wallpaperï¼Ÿ", answer: "ChatGPT çš„ GPT-Image 2 åŒ Google Nano Banana ç›®å‰ä¿‚æœ€ç©©å®šã€æ–‡å­—æº–ç¢ºåº¦æœ€é«˜å˜…é¸æ“‡ã€‚" },
-      { question: "éœ€è¦ä¸Šå‚³å¹¾å¼µåœ–ï¼Ÿ", answer: "å»ºè­°æœ€å°‘ 2 å¼µï¼šä¸€å¼µä¿‚ä½ å¯µç‰©å˜…åŽŸåœ–ï¼Œä¸€å¼µä¿‚ä½ æƒ³æ¨¡ä»¿å˜…é¢¨æ ¼åƒè€ƒåœ–ã€‚" }
+      { question: "用什麼 AI 工具最容易做出寵物 3D Wallpaper？", answer: "ChatGPT 的 GPT-Image 2 同 Google Nano Banana 目前係最穩定、文字準確度最高嘅選擇。" },
+      { question: "需要上傳幾張圖？", answer: "建議最少 2 張：一張係你寵物嘅原圖，一張係你想模仿嘅風格參考圖。" }
     ]
   }
 ];

@@ -5277,6 +5277,515 @@ All colors MUST be HSL.
   font-weight: 600;
 }
 
+/* ── Private account home (profile + my reviews) ── */
+.account-home-page {
+  background-color: hsl(var(--background));
+  color: hsl(var(--member-ink));
+}
+
+.account-home-shell {
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.account-home-hero {
+  position: relative;
+}
+
+.account-home-hero--portrait {
+  padding-top: 0.25rem;
+}
+
+.account-home-hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.account-home-hero--portrait .account-home-hero__inner {
+  align-items: flex-end;
+  gap: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .account-home-hero--portrait .account-home-hero__inner {
+    gap: 1.4rem;
+  }
+}
+
+.account-home-portrait {
+  position: relative;
+  flex-shrink: 0;
+  width: 5.25rem;
+  height: 5.25rem;
+}
+
+.account-home-hero--compact .account-home-portrait {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+@media (min-width: 768px) {
+  .account-home-portrait {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .account-home-hero--compact .account-home-portrait {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+}
+
+.account-home-portrait__ring {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--member-line));
+  background: hsl(var(--primary) / 0.08);
+  font-family: "Work Sans", "Noto Sans TC", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: hsl(var(--primary));
+  align-items: center;
+  justify-content: center;
+}
+
+.account-home-portrait__ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-home-portrait__ring--sm {
+  width: 5rem;
+  height: 5rem;
+}
+
+.account-home-portrait__edit {
+  position: absolute;
+  right: -0.1rem;
+  bottom: -0.1rem;
+  display: flex;
+  width: 1.85rem;
+  height: 1.85rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid hsl(var(--background));
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.account-home-identity {
+  min-width: 0;
+  padding-bottom: 0.15rem;
+}
+
+.account-home-eyebrow {
+  margin: 0 0 0.15rem;
+  color: hsl(var(--primary));
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.account-home-name {
+  margin: 0;
+  font-family: "Work Sans", "Noto Sans TC", sans-serif;
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: hsl(var(--member-ink));
+}
+
+.account-home-hero--compact .account-home-name {
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+}
+
+.account-home-meta {
+  margin: 0.35rem 0 0;
+  color: hsl(var(--member-muted));
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.account-home-meta p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-home-edit {
+  margin-top: 0.65rem;
+}
+
+.account-home-tabs {
+  display: flex;
+  gap: 0.15rem;
+  margin-top: 1.35rem;
+  border-bottom: 1px solid hsl(var(--member-line));
+}
+
+.account-home-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: -1px;
+  padding: 0.7rem 0.85rem 0.75rem;
+  color: hsl(var(--member-muted));
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.account-home-tab:hover {
+  color: hsl(var(--member-ink));
+}
+
+.account-home-tab.is-active {
+  border-bottom: 2px solid hsl(var(--primary));
+  color: hsl(var(--member-ink));
+}
+
+.account-home-tab__count {
+  min-width: 1.25rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: hsl(var(--muted));
+  color: hsl(var(--member-muted));
+  font-size: 0.6875rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.account-home-tab.is-active .account-home-tab__count {
+  background: hsl(var(--primary) / 0.12);
+  color: hsl(var(--primary));
+}
+
+.account-home-room {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.account-home-reveal {
+  animation: account-home-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.account-home-reveal:nth-child(1) { animation-delay: 0.02s; }
+.account-home-reveal:nth-child(2) { animation-delay: 0.08s; }
+.account-home-reveal:nth-child(3) { animation-delay: 0.14s; }
+.account-home-reveal:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes account-home-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.account-home-family {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+  gap: 0.85rem 0.6rem;
+}
+
+.account-home-pet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.15rem;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+}
+
+.account-home-pet__photo {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--member-line));
+  background: hsl(var(--muted));
+  transition: border-color 0.15s ease;
+}
+
+.account-home-pet:hover .account-home-pet__photo,
+.account-home-pet:focus-visible .account-home-pet__photo {
+  border-color: hsl(var(--primary) / 0.45);
+}
+
+.account-home-pet__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-home-pet__fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: "Work Sans", "Noto Sans TC", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: hsl(var(--primary));
+}
+
+.account-home-pet__name {
+  max-width: 5.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: hsl(var(--member-ink));
+}
+
+.account-home-pet__badge {
+  position: absolute;
+  right: -0.05rem;
+  bottom: -0.05rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid hsl(var(--background));
+  border-radius: 999px;
+  background: hsl(var(--primary));
+}
+
+.account-home-pet--add .account-home-pet__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  border-width: 1.5px;
+  border-color: hsl(var(--primary) / 0.45);
+  box-shadow: none;
+  background: hsl(var(--primary) / 0.06);
+  color: hsl(var(--primary));
+}
+
+.account-home-kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: hsl(var(--member-muted));
+}
+
+.account-home-empty {
+  border: 1px solid hsl(var(--member-line));
+  border-radius: var(--member-radius);
+  background: hsl(var(--background));
+  padding: 1.75rem 1.15rem;
+  text-align: center;
+}
+
+.account-home-empty h3,
+.account-home-empty p {
+  margin: 0;
+}
+
+.account-home-empty h3 {
+  font-size: 0.975rem;
+  font-weight: 650;
+  color: hsl(var(--member-ink));
+}
+
+.account-home-empty p {
+  margin-top: 0.35rem;
+  color: hsl(var(--member-muted));
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.account-home-empty__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.account-home-hint {
+  margin: 0.85rem 0 0;
+  color: hsl(var(--member-muted));
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.account-home-teaser {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.account-home-teaser h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.account-home-teaser a {
+  flex-shrink: 0;
+  color: hsl(var(--primary));
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.account-home-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  margin-top: 0.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid hsl(var(--member-line));
+}
+
+.account-home-foot button,
+.account-home-foot a {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: hsl(var(--member-muted));
+  font-size: 0.8125rem;
+}
+
+.account-home-foot button:hover,
+.account-home-foot a:hover {
+  color: hsl(var(--member-ink));
+}
+
+.account-home-foot a.account-home-foot__danger:hover {
+  color: hsl(var(--destructive));
+}
+
+.account-home-search {
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+.account-home-search svg {
+  position: absolute;
+  top: 50%;
+  left: 0.85rem;
+  width: 1rem;
+  height: 1rem;
+  color: hsl(var(--member-muted));
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.account-home-search input {
+  height: 2.65rem;
+  padding-left: 2.35rem;
+  border-color: hsl(var(--member-line));
+  border-radius: 999px;
+  background: hsl(var(--background));
+}
+
+.account-home-gate {
+  max-width: 24rem;
+  margin: 2.5rem auto;
+  border: 1px solid hsl(var(--member-line));
+  border-radius: var(--member-radius);
+  background: hsl(var(--background));
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.account-home-gate h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.account-home-gate p {
+  margin: 0 0 1.15rem;
+  color: hsl(var(--member-muted));
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.account-home-pet-sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.account-home-pet-sheet__photo {
+  width: 6.5rem;
+  height: 6.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 2px solid hsl(var(--member-line));
+  background: hsl(var(--primary) / 0.08);
+  margin-bottom: 0.5rem;
+}
+
+.account-home-pet-sheet__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-home-pet-sheet__fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 650;
+  color: hsl(var(--primary));
+}
+
+.account-home-pet-sheet h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.account-home-pet-sheet__facts {
+  margin: 0.15rem 0 0.85rem;
+  color: hsl(var(--member-muted));
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-home-reveal {
+    animation: none;
+  }
+
+  .account-home-portrait__edit,
+  .account-home-pet__photo {
+    transition: none;
+  }
+}
+
 /* Nametag daily promo popup */
 .nametag-daily-popup {
   --ndp-ink: 22 18% 14%;

@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";

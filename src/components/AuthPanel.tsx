@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { signUp, confirmSignUp, resendSignUpCode, resetPassword, confirmResetPassword, getCurrentUser, confirmSignIn, signOut } from "aws-amplify/auth";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ import {
 import { ClientRegistrationProfile, createClientProfileForCurrentUser, getClientByEmail, getOrCreateClient, updateExistingClientProfile } from "@/services/forumApi";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
-const logo = "/assets/logo.png";
+import logo from "@/assets/logo.png";
 import { signInWithApple, signInWithGoogle } from "@/services/authService";
 import { Apple, ArrowLeft, Loader2, Mail, User } from "lucide-react";
 
@@ -326,7 +326,7 @@ const AuthPanel = () => {
     }
   };
 
-  // Step 1: User enters email â†’ detect new/existing flow
+  // Step 1: User enters email → detect new/existing flow
   const handleEmailSubmit = async () => {
     setError(null);
     setLoading(true);
@@ -365,8 +365,8 @@ const AuthPanel = () => {
         isNewUser = false;
       } catch (checkError: any) {
         if (checkError.name === "UserNotFoundException") {
-          // Federated Cognito usernames are google_â€¦ / signinwithapple_â€¦, not the email.
-          // Probe by email returns UserNotFound â€” must check social methods before treating as NEW.
+          // Federated Cognito usernames are google_… / signinwithapple_…, not the email.
+          // Probe by email returns UserNotFound — must check social methods before treating as NEW.
           try {
             const summary = await checkAuthMethods(email);
             if (!summary.exists) {
@@ -387,7 +387,7 @@ const AuthPanel = () => {
         } else if (checkError.name === "NotAuthorizedException") {
           isNewUser = false;
         } else if (checkError.name === "UserNotConfirmedException") {
-          // Orphan UNCONFIRMED native next to Google/Apple â€” steer back to social login.
+          // Orphan UNCONFIRMED native next to Google/Apple — steer back to social login.
           try {
             const summary = await checkAuthMethods(email);
             if (summary.exists && isSocialOnlyAccount(summary)) {
@@ -431,7 +431,7 @@ const AuthPanel = () => {
     }
   };
 
-  // Step 2: User enters OTP code â†’ verify & auto-login
+  // Step 2: User enters OTP code → verify & auto-login
   const handleVerifyOTP = async () => {
     if (confirmationCode.length === 0) {
       setError(t("auth.fillConfirmationCode"));

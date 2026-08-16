@@ -1,4 +1,4 @@
-﻿import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 const hktdcLogo = "/assets/media-logos/hktdc.png";
 const rthkLogo = "/assets/media-logos/rthk.png";
@@ -19,20 +19,20 @@ const MEDIA_LOGOS = [
   { src: viutvLogo, alt: "ViuTV" },
   { src: yahooLogo, alt: "Yahoo" },
   { src: am730Logo, alt: "am730" },
-  { src: rthkLogo, alt: "RTHK é¦™æ¸¯é›»å°" },
-  { src: singTaoLogo, alt: "æ˜Ÿå³¶æ—¥å ± Sing Tao Daily" },
-  { src: hktdcLogo, alt: "HKTDC é¦™æ¸¯è²¿ç™¼å±€" },
-  { src: startupExpressLogo, alt: "Start-up Express å‰µæ¥­å¿«ç¶«" },
+  { src: rthkLogo, alt: "RTHK 香港電台" },
+  { src: singTaoLogo, alt: "星島日報 Sing Tao Daily" },
+  { src: hktdcLogo, alt: "HKTDC 香港貿發局" },
+  { src: startupExpressLogo, alt: "Start-up Express 創業快綫" },
   { src: unwireLogo, alt: "unwire.hk" },
-  { src: aquabeatLogo, alt: "AQUABEAT è§€å¡˜æµ·æ¿±æ´»å‹•ç©ºé–“" },
-  { src: hkustEntrepreneurshipLogo, alt: "HKUST Entrepreneurship Center é¦™æ¸¯ç§‘æŠ€å¤§å­¸å‰µæ¥­ä¸­å¿ƒ", wide: true },
-  { src: ydcLogo, alt: "é’å¹´ç™¼å±•å§”å“¡æœƒ Youth Development Commission", wide: true },
-  { src: hyabLogo, alt: "æ°‘æ”¿åŠé’å¹´äº‹å‹™å±€ Home and Youth Affairs Bureau", wide: true },
-  { src: govYouthProgrammeLogo, alt: "æ”¿åºœé’å¹´è¨ˆåŠƒ Government Youth Programme" },
-  { src: weVentureLogo, alt: "We Venture é’å‰µåŒè¡Œ", wide: true },
+  { src: aquabeatLogo, alt: "AQUABEAT 觀塘海濱活動空間" },
+  { src: hkustEntrepreneurshipLogo, alt: "HKUST Entrepreneurship Center 香港科技大學創業中心", wide: true },
+  { src: ydcLogo, alt: "青年發展委員會 Youth Development Commission", wide: true },
+  { src: hyabLogo, alt: "民政及青年事務局 Home and Youth Affairs Bureau", wide: true },
+  { src: govYouthProgrammeLogo, alt: "政府青年計劃 Government Youth Programme" },
+  { src: weVentureLogo, alt: "We Venture 青創同行", wide: true },
 ] as const;
 
-const FEATURED_ALTS = new Set(["ViuTV", "Yahoo", "am730", "RTHK é¦™æ¸¯é›»å°", "æ˜Ÿå³¶æ—¥å ± Sing Tao Daily"]);
+const FEATURED_ALTS = new Set(["ViuTV", "Yahoo", "am730", "RTHK 香港電台", "星島日報 Sing Tao Daily"]);
 
 type MediaLogoMarqueeProps = {
   variant?: "default" | "grayscaleHover";

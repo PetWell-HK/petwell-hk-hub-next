@@ -1,14 +1,7 @@
-﻿import type { Metadata } from "next";
-import { generatePlaceMetadata } from "@/lib/server/placeMetadata";
-import ClinicDetail from "@/views/ClinicDetail";
+"use client";
 
-type Props = { params: Promise<{ clinicId: string }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { clinicId } = await params;
-  return generatePlaceMetadata("clinic", clinicId);
-}
+import Page from "@/views/ClinicDetail";
 
 export default function RoutePage() {
-  return <ClinicDetail />;
+  return <Page />;
 }

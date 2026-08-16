@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -11,11 +11,11 @@ const routes = [
     route: "",
     page: "Index",
     seo: {
-      title: "PetWell HK | å¯µç‰©å‹å–„é¤å»³ã€ç¸é†«è¨ºæ‰€ã€å¯µç‰©è«–å£‡ | é¦™æ¸¯å¯µç‰©å¥åº·App",
+      title: "PetWell HK | 寵物友善餐廳、獸醫診所、寵物論壇 | 香港寵物健康App",
       description:
-        "PetWell é¦™æ¸¯é¦–å€‹ä¸€ç«™å¼å¯µç‰©å¥åº·Appã€‚å…¨æ¸¯å¯µç‰©å‹å–„é¤å»³ï¼ˆ18å€æœå°‹ï¼‰ã€ç¸é†«è¨ºæ‰€è©•åƒ¹ã€å¯µç‰©ç¾Žå®¹èˆ‡å¯„é¤Šã€å¯µç‰©æ´»å‹•åŠè«–å£‡ã€‚å…è²»ä¸‹è¼‰ã€‚",
+        "PetWell 香港首個一站式寵物健康App。全港寵物友善餐廳（18區搜尋）、獸醫診所評價、寵物美容與寄養、寵物活動及論壇。免費下載。",
       keywords:
-        "PetWell,å¯µç‰©é¦™æ¸¯,å¯µç‰©å¥åº·App,å¯µç‰©å‹å–„é¤å»³,é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³,é£Ÿç’°ç½²å¯µç‰©å‹å–„é¤å»³,ç¸é†«è¨ºæ‰€è©•åƒ¹,å¯µç‰©ç¾Žå®¹,å¯µç‰©å¯„é¤Š,å¯µç‰©è«–å£‡,å¯µç‰©æ´»å‹•,é¦™æ¸¯ç¸é†«,24å°æ™‚ç¸é†«,å¯µç‰©å¥åº·ç´€éŒ„",
+        "PetWell,寵物香港,寵物健康App,寵物友善餐廳,香港寵物友善餐廳,食環署寵物友善餐廳,獸醫診所評價,寵物美容,寵物寄養,寵物論壇,寵物活動,香港獸醫,24小時獸醫,寵物健康紀錄",
       path: "/",
     },
   },
@@ -23,8 +23,8 @@ const routes = [
     route: "landing",
     page: "Landing",
     seo: {
-      title: "PetWell HK | é¦™æ¸¯å¯µç‰©å¥åº·ç®¡ç†å¹³å°",
-      description: "PetWell HK ä¸€ç«™å¼å¯µç‰©å¥åº·ã€é¤å»³ã€è¨ºæ‰€èˆ‡ç¤¾å€å¹³å°ã€‚",
+      title: "PetWell HK | 香港寵物健康管理平台",
+      description: "PetWell HK 一站式寵物健康、餐廳、診所與社區平台。",
       path: "/landing",
     },
   },
@@ -32,8 +32,8 @@ const routes = [
     route: "about",
     page: "About",
     seo: {
-      title: "é—œæ–¼æˆ‘å€‘ | PetWell HK",
-      description: "èªè­˜ PetWell HKâ€”â€”é¦™æ¸¯å¯µç‰©å¥åº·èˆ‡ç”Ÿæ´»è³‡è¨Šå¹³å°ã€‚",
+      title: "關於我們 | PetWell HK",
+      description: "認識 PetWell HK——香港寵物健康與生活資訊平台。",
       path: "/about",
     },
   },
@@ -41,8 +41,8 @@ const routes = [
     route: "other-services",
     page: "OtherServices",
     seo: {
-      title: "å•†æ¥­åˆä½œèˆ‡å…¶ä»–æœå‹™ | PetWell HK",
-      description: "PetWell HK å•†æ¥­åˆä½œã€å»£å‘Šèˆ‡ B2B æœå‹™ã€‚",
+      title: "商業合作與其他服務 | PetWell HK",
+      description: "PetWell HK 商業合作、廣告與 B2B 服務。",
       path: "/other-services",
     },
   },
@@ -50,8 +50,8 @@ const routes = [
     route: "terms",
     page: "Terms",
     seo: {
-      title: "æœå‹™æ¢æ¬¾ | PetWell HK",
-      description: "PetWell HK æœå‹™æ¢æ¬¾ã€‚",
+      title: "服務條款 | PetWell HK",
+      description: "PetWell HK 服務條款。",
       path: "/terms",
       noIndex: true,
     },
@@ -60,8 +60,8 @@ const routes = [
     route: "privacy",
     page: "Terms",
     seo: {
-      title: "ç§éš±æ”¿ç­– | PetWell HK",
-      description: "PetWell HK ç§éš±æ”¿ç­–ã€‚",
+      title: "私隱政策 | PetWell HK",
+      description: "PetWell HK 私隱政策。",
       path: "/privacy",
       noIndex: true,
     },
@@ -70,9 +70,9 @@ const routes = [
     route: "clinics",
     page: "Clinics",
     seo: {
-      title: "é¦™æ¸¯ç¸é†«è¨ºæ‰€è©•åƒ¹èˆ‡æœå°‹ | PetWell HK",
-      description: "æœå°‹å…¨æ¸¯ç¸é†«è¨ºæ‰€ã€24å°æ™‚æ€¥ç—‡ã€è©•åƒ¹èˆ‡åœ°å€è³‡è¨Šã€‚",
-      keywords: "é¦™æ¸¯ç¸é†«,ç¸é†«è¨ºæ‰€,24å°æ™‚ç¸é†«,å¯µç‰©è¨ºæ‰€è©•åƒ¹",
+      title: "香港獸醫診所評價與搜尋 | PetWell HK",
+      description: "搜尋全港獸醫診所、24小時急症、評價與地區資訊。",
+      keywords: "香港獸醫,獸醫診所,24小時獸醫,寵物診所評價",
       path: "/clinics",
     },
   },
@@ -94,9 +94,9 @@ const routes = [
     route: "restaurants",
     page: "Restaurants",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³ï¼ˆ18å€æœå°‹ï¼‰| PetWell HK",
-      description: "å…¨æ¸¯å¯µç‰©å‹å–„é¤å»³æŒ‡å—ï¼ŒæŒ‰åœ°å€æœå°‹å¯å¸¶ç‹—ï¼å¯µç‰©å…¥åº§é¤å»³ã€‚",
-      keywords: "é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³,å¸¶ç‹—åŽ»é£Ÿé£¯,é£Ÿç’°ç½²å¯µç‰©å‹å–„é¤å»³",
+      title: "香港寵物友善餐廳（18區搜尋）| PetWell HK",
+      description: "全港寵物友善餐廳指南，按地區搜尋可帶狗／寵物入座餐廳。",
+      keywords: "香港寵物友善餐廳,帶狗去食飯,食環署寵物友善餐廳",
       path: "/restaurants",
     },
   },
@@ -104,8 +104,8 @@ const routes = [
     route: "restaurant",
     page: "Restaurants",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©å‹å–„é¤å»³ | PetWell HK",
-      description: "å…¨æ¸¯å¯µç‰©å‹å–„é¤å»³æŒ‡å—ã€‚",
+      title: "香港寵物友善餐廳 | PetWell HK",
+      description: "全港寵物友善餐廳指南。",
       path: "/restaurant",
     },
   },
@@ -124,8 +124,8 @@ const routes = [
     route: "salons",
     page: "Salons",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©ç¾Žå®¹åº—æœå°‹ | PetWell HK",
-      description: "æœå°‹å…¨æ¸¯å¯µç‰©ç¾Žå®¹ã€æ²–æ¶¼èˆ‡é€ åž‹æœå‹™ã€‚",
+      title: "香港寵物美容店搜尋 | PetWell HK",
+      description: "搜尋全港寵物美容、沖涼與造型服務。",
       path: "/salons",
     },
   },
@@ -134,8 +134,8 @@ const routes = [
     route: "lodging",
     page: "Lodging",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©å¯„é¤Šèˆ‡ä½å®¿ | PetWell HK",
-      description: "æœå°‹å¯µç‰©å¯„é¤Šã€é…’åº—èˆ‡å¯µç‰©å‹å¥½ä½å®¿ã€‚",
+      title: "香港寵物寄養與住宿 | PetWell HK",
+      description: "搜尋寵物寄養、酒店與寵物友好住宿。",
       path: "/lodging",
     },
   },
@@ -144,8 +144,8 @@ const routes = [
     route: "malls",
     page: "Malls",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©å‹å–„å•†å ´ | PetWell HK",
-      description: "æœå°‹å¯å¸¶å¯µç‰©é€²å…¥çš„é¦™æ¸¯å•†å ´èˆ‡å®¤å…§ç©ºé–“ã€‚",
+      title: "香港寵物友善商場 | PetWell HK",
+      description: "搜尋可帶寵物進入的香港商場與室內空間。",
       path: "/malls",
     },
   },
@@ -154,8 +154,8 @@ const routes = [
     route: "ngos",
     page: "NGOs",
     seo: {
-      title: "é¦™æ¸¯å‹•ç‰©NGOï¼æ•‘æ´çµ„ç¹” | PetWell HK",
-      description: "èªè­˜é¦™æ¸¯å‹•ç‰©ç¦åˆ©èˆ‡æ•‘æ´çµ„ç¹”ã€‚",
+      title: "香港動物NGO／救援組織 | PetWell HK",
+      description: "認識香港動物福利與救援組織。",
       path: "/ngos",
     },
   },
@@ -164,8 +164,8 @@ const routes = [
     route: "forum",
     page: "Forum",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©è«–å£‡ | PetWell HK",
-      description: "PetWell å¯µç‰©è«–å£‡ï¼šé¤Šå¯µå¿ƒå¾—ã€æå•èˆ‡ç¤¾ç¾¤è¨Žè«–ã€‚",
+      title: "香港寵物論壇 | PetWell HK",
+      description: "PetWell 寵物論壇：養寵心得、提問與社群討論。",
       path: "/forum",
     },
   },
@@ -174,17 +174,17 @@ const routes = [
     route: "owner-zone",
     page: "OwnerZone",
     seo: {
-      title: "é£¼ä¸»å°ˆå€ | PetWell HK",
-      description: "é£¼ä¸»å¯¦ç”¨è³‡è¨Šã€æŒ‡å—èˆ‡å·¥å…·ã€‚",
+      title: "飼主專區 | PetWell HK",
+      description: "飼主實用資訊、指南與工具。",
       path: "/owner-zone",
     },
   },
   {
     route: "download",
-    page: "ComingSoon",
+    page: "Download",
     seo: {
-      title: "ä¸‹è¼‰ PetWell App | PetWell HK",
-      description: "ä¸‹è¼‰ PetWell é¦™æ¸¯å¯µç‰©å¥åº· Appã€‚",
+      title: "下載 PetWell App | 香港寵物健康管理",
+      description: "免費下載 PetWell。香港獸醫診所評價、寵物友善餐廳、健康紀錄與價格提醒，iOS 與 Android 均適用。",
       path: "/download",
     },
   },
@@ -192,8 +192,8 @@ const routes = [
     route: "delete-account",
     page: "DeleteAccount",
     seo: {
-      title: "åˆªé™¤å¸³æˆ¶ | PetWell HK",
-      description: "åˆªé™¤ PetWell å¸³æˆ¶ã€‚",
+      title: "刪除帳戶 | PetWell HK",
+      description: "刪除 PetWell 帳戶。",
       path: "/delete-account",
       noIndex: true,
     },
@@ -216,14 +216,14 @@ const routes = [
   {
     route: "whatsapp-petwell-chin",
     page: "WhatsAppPetwellChin",
-    seo: { title: "WhatsApp PetWell", description: "è¯çµ¡", path: "/whatsapp-petwell-chin", noIndex: true },
+    seo: { title: "WhatsApp PetWell", description: "聯絡", path: "/whatsapp-petwell-chin", noIndex: true },
   },
   {
     route: "pet-matchmaker",
     page: "PetMatchmaker",
     seo: {
-      title: "å¯µç‰©é…å°æ¸¬é©— | PetWell HK",
-      description: "æ‰¾å‡ºæœ€é©åˆä½ çš„å¯µç‰©é¡žåž‹ã€‚",
+      title: "寵物配對測驗 | PetWell HK",
+      description: "找出最適合你的寵物類型。",
       path: "/pet-matchmaker",
     },
   },
@@ -231,8 +231,8 @@ const routes = [
     route: "christmas-dog-mbti-2025",
     page: "ChristmasDogMbti",
     seo: {
-      title: "è–èª•ç‹—ç‹— MBTI æ¸¬é©— 2025 | PetWell HK",
-      description: "æ¸¬æ¸¬ä½ å®¶ç‹—ç‹—çš„ MBTI æ€§æ ¼ï¼",
+      title: "聖誕狗狗 MBTI 測驗 2025 | PetWell HK",
+      description: "測測你家狗狗的 MBTI 性格！",
       path: "/christmas-dog-mbti-2025",
     },
   },
@@ -240,8 +240,8 @@ const routes = [
     route: "christmas-events-2025",
     page: "ChristmasEvents",
     seo: {
-      title: "2025 è–èª•å¯µç‰©æ´»å‹• | PetWell HK",
-      description: "é¦™æ¸¯è–èª•å¯µç‰©æ´»å‹•ä¸€è¦½ã€‚",
+      title: "2025 聖誕寵物活動 | PetWell HK",
+      description: "香港聖誕寵物活動一覽。",
       path: "/christmas-events-2025",
     },
   },
@@ -249,8 +249,8 @@ const routes = [
     route: "pet-activities",
     page: "PetActivities",
     seo: {
-      title: "é¦™æ¸¯å¯µç‰©æ´»å‹• | PetWell HK",
-      description: "æœå°‹é¦™æ¸¯å¯µç‰©å¸‚é›†ã€æ´»å‹•èˆ‡é«”é©—ã€‚",
+      title: "香港寵物活動 | PetWell HK",
+      description: "搜尋香港寵物市集、活動與體驗。",
       path: "/pet-activities",
     },
   },
@@ -260,8 +260,8 @@ const routes = [
     route: "petwell-member",
     page: "PetwellMember",
     seo: {
-      title: "PetWell æœƒå“¡ | PetWell HK",
-      description: "äº†è§£ PetWell æœƒå“¡è¨ˆåŠƒã€‚",
+      title: "PetWell 會員 | PetWell HK",
+      description: "了解 PetWell 會員計劃。",
       path: "/petwell-member",
     },
   },
@@ -269,21 +269,21 @@ const routes = [
     route: "nametag",
     page: "Nametag",
     seo: {
-      title: "é˜²èµ°å¤±ç‹—ç‰Œ / NFC å¯µç‰©åç‰Œ | PetWell HK",
-      description: "PetWell é˜²èµ°å¤±ç‹—ç‰Œï¼ŒNFC å³æ™‚è¯ç¹«é£¼ä¸»ã€‚",
-      keywords: "é˜²èµ°å¤±ç‹—ç‰Œ,NFCç‹—ç‰Œ,å¯µç‰©åç‰Œé¦™æ¸¯",
+      title: "防走失狗牌 / NFC 寵物名牌 | PetWell HK",
+      description: "PetWell 防走失狗牌，NFC 即時聯繫飼主。",
+      keywords: "防走失狗牌,NFC狗牌,寵物名牌香港",
       path: "/nametag",
     },
   },
   {
     route: "namtag",
     page: "Nametag",
-    seo: { title: "é˜²èµ°å¤±ç‹—ç‰Œ | PetWell HK", description: "PetWell é˜²èµ°å¤±ç‹—ç‰Œã€‚", path: "/namtag" },
+    seo: { title: "防走失狗牌 | PetWell HK", description: "PetWell 防走失狗牌。", path: "/namtag" },
   },
   {
     route: "fang-zou-shi-gou-pai",
     page: "Nametag",
-    seo: { title: "é˜²èµ°å¤±ç‹—ç‰Œ | PetWell HK", description: "PetWell é˜²èµ°å¤±ç‹—ç‰Œã€‚", path: "/fang-zou-shi-gou-pai" },
+    seo: { title: "防走失狗牌 | PetWell HK", description: "PetWell 防走失狗牌。", path: "/fang-zou-shi-gou-pai" },
   },
   {
     route: "anti-lost-dog-tag-hk",
@@ -295,16 +295,11 @@ const routes = [
     },
   },
   {
-    route: "é˜²èµ°å¤±ç‹—ç‰Œ",
-    page: "Nametag",
-    seo: { title: "é˜²èµ°å¤±ç‹—ç‰Œ | PetWell HK", description: "PetWell é˜²èµ°å¤±ç‹—ç‰Œã€‚", path: "/é˜²èµ°å¤±ç‹—ç‰Œ" },
-  },
-  {
     route: "vendor-application",
     page: "VendorApplication",
     seo: {
-      title: "å•†æˆ¶ç”³è«‹ | PetWell HK",
-      description: "ç”³è«‹æˆç‚º PetWell åˆä½œå•†æˆ¶ã€‚",
+      title: "商戶申請 | PetWell HK",
+      description: "申請成為 PetWell 合作商戶。",
       path: "/vendor-application",
     },
   },
@@ -312,8 +307,8 @@ const routes = [
     route: "vendor-application/thank-you",
     page: "VendorApplicationThankYou",
     seo: {
-      title: "ç”³è«‹å·²æäº¤ | PetWell HK",
-      description: "æ„Ÿè¬ä½ çš„å•†æˆ¶ç”³è«‹ã€‚",
+      title: "申請已提交 | PetWell HK",
+      description: "感謝你的商戶申請。",
       path: "/vendor-application/thank-you",
       noIndex: true,
     },
@@ -322,8 +317,8 @@ const routes = [
     route: "signup-login",
     page: "SignUpLogin",
     seo: {
-      title: "ç™»å…¥ / è¨»å†Š | PetWell HK",
-      description: "ç™»å…¥æˆ–è¨»å†Š PetWell å¸³æˆ¶ã€‚",
+      title: "登入 / 註冊 | PetWell HK",
+      description: "登入或註冊 PetWell 帳戶。",
       path: "/signup-login",
       noIndex: true,
     },
@@ -331,14 +326,14 @@ const routes = [
   {
     route: "register",
     page: "Register",
-    seo: { title: "è¨»å†Š | PetWell HK", description: "è¨»å†Š PetWell å¸³æˆ¶ã€‚", path: "/register", noIndex: true },
+    seo: { title: "註冊 | PetWell HK", description: "註冊 PetWell 帳戶。", path: "/register", noIndex: true },
   },
   {
     route: "forgot-password",
     page: "ForgotPassword",
     seo: {
-      title: "å¿˜è¨˜å¯†ç¢¼ | PetWell HK",
-      description: "é‡è¨­ PetWell å¸³æˆ¶å¯†ç¢¼ã€‚",
+      title: "忘記密碼 | PetWell HK",
+      description: "重設 PetWell 帳戶密碼。",
       path: "/forgot-password",
       noIndex: true,
     },
@@ -347,8 +342,8 @@ const routes = [
     route: "verification-code",
     page: "VerificationCode",
     seo: {
-      title: "é©—è­‰ç¢¼ | PetWell HK",
-      description: "è¼¸å…¥é©—è­‰ç¢¼ã€‚",
+      title: "驗證碼 | PetWell HK",
+      description: "輸入驗證碼。",
       path: "/verification-code",
       noIndex: true,
     },
@@ -357,14 +352,14 @@ const routes = [
   {
     route: "test-booking",
     page: "TestBooking",
-    seo: { title: "æ¸¬è©¦é è¨‚ | PetWell HK", description: "æ¸¬è©¦é è¨‚æµç¨‹ã€‚", path: "/test-booking", noIndex: true },
+    seo: { title: "測試預訂 | PetWell HK", description: "測試預訂流程。", path: "/test-booking", noIndex: true },
   },
   {
     route: "review",
     page: "Review",
     seo: {
-      title: "å¯µç‰©é£Ÿå“åƒ¹æ ¼æ¯”è¼ƒ | PetWell HK",
-      description: "æ¯”è¼ƒé¦™æ¸¯å¯µç‰©é£Ÿå“åƒ¹æ ¼èˆ‡ç”¢å“è©•åƒ¹ã€‚",
+      title: "寵物食品價格比較 | PetWell HK",
+      description: "比較香港寵物食品價格與產品評價。",
       path: "/review",
     },
   },
@@ -373,12 +368,12 @@ const routes = [
   {
     route: "wishlist",
     page: "Wishlist",
-    seo: { title: "é¡˜æœ›æ¸…å–® | PetWell HK", description: "ä½ çš„å¯µç‰©ç”¢å“é¡˜æœ›æ¸…å–®ã€‚", path: "/wishlist", noIndex: true },
+    seo: { title: "願望清單 | PetWell HK", description: "你的寵物產品願望清單。", path: "/wishlist", noIndex: true },
   },
   {
     route: "compare",
     page: "Compare",
-    seo: { title: "ç”¢å“æ¯”è¼ƒ | PetWell HK", description: "æ¯”è¼ƒå¯µç‰©é£Ÿå“ç”¢å“ã€‚", path: "/compare", noIndex: true },
+    seo: { title: "產品比較 | PetWell HK", description: "比較寵物食品產品。", path: "/compare", noIndex: true },
   },
   {
     route: "account",
@@ -388,15 +383,15 @@ const routes = [
   {
     route: "account/reviews",
     page: "MyReviews",
-    seo: { title: "æˆ‘çš„è©•åƒ¹ | PetWell HK", description: "ç®¡ç†ä½ çš„è©•åƒ¹ã€‚", path: "/account/reviews", noIndex: true },
+    seo: { title: "我的評價 | PetWell HK", description: "管理你的評價。", path: "/account/reviews", noIndex: true },
   },
   { route: "users/[userId]", page: "UserProfile", dynamic: true },
   {
     route: "blog/hong-kong-dog-trainer-licence-guide",
     page: "BlogDogTrainerLicence",
     seo: {
-      title: "é¦™æ¸¯ç‹—è¨“ç·´å“¡ç‰Œç…§æŒ‡å— | PetWell HK",
-      description: "é¦™æ¸¯ç‹—è¨“ç·´å“¡ç‰Œç…§èˆ‡ç›¸é—œæ³•è¦å®Œæ•´æŒ‡å—ã€‚",
+      title: "香港狗訓練員牌照指南 | PetWell HK",
+      description: "香港狗訓練員牌照與相關法規完整指南。",
       path: "/blog/hong-kong-dog-trainer-licence-guide",
       ogType: "article",
     },
@@ -405,8 +400,8 @@ const routes = [
     route: "rainy-day-pet-friendly-indoor-hong-kong",
     page: "RainyDayMalls",
     seo: {
-      title: "é›¨å¤©å¯µç‰©å‹å–„å®¤å…§å¥½åŽ»è™•é¦™æ¸¯ | PetWell HK",
-      description: "é¦™æ¸¯é›¨å¤©å¯å¸¶å¯µç‰©çš„å®¤å…§å•†å ´èˆ‡å¥½åŽ»è™•æŒ‡å—ã€‚",
+      title: "雨天寵物友善室內好去處香港 | PetWell HK",
+      description: "香港雨天可帶寵物的室內商場與好去處指南。",
       path: "/rainy-day-pet-friendly-indoor-hong-kong",
       ogType: "article",
     },
@@ -415,8 +410,8 @@ const routes = [
     route: "nutrition",
     page: "NutritionScore",
     seo: {
-      title: "å¯µç‰©ç‡Ÿé¤Šè©•åˆ† | PetWell HK",
-      description: "å¯µç‰©é£Ÿå“ç‡Ÿé¤Šè©•åˆ†èˆ‡æˆåˆ†åˆ†æžã€‚",
+      title: "寵物營養評分 | PetWell HK",
+      description: "寵物食品營養評分與成分分析。",
       path: "/nutrition",
     },
   },
@@ -491,7 +486,7 @@ for (const route of routes) {
   ensureDir(dir);
   fs.writeFileSync(path.join(dir, "page.tsx"), renderClientPage(route.page), "utf8");
   if (route.seo) {
-    // Avoid overwriting root layout.tsx â€” use seo.ts sibling for root,
+    // Avoid overwriting root layout.tsx — use seo.ts sibling for root,
     // and layout.tsx for nested routes only when no layout exists yet.
     if (route.route === "") {
       // root metadata lives in root layout

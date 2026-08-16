@@ -1,4 +1,4 @@
-﻿import { assetSrc } from "@/lib/assetSrc";
+import { assetSrc } from "@/lib/assetSrc";
 import { cn } from "@/lib/utils";
 
 const logo = "/assets/logo.png";
