@@ -21,7 +21,18 @@
     "petActivities": "Pet Activities",
     "testBooking": "Testing Services",
     "nutritionScore": "Food Score",
-    "otherServices": "Merchant Partnership"
+    "otherServices": "Merchant Partnership",
+    "petFriendlyMenu": {
+      "goOut": "Go out together",
+      "care": "Get care",
+      "services": "Grooming & stay",
+      "restaurants": "Restaurants",
+      "malls": "Malls",
+      "clinics": "Clinics",
+      "homeVisits": "Home visits",
+      "salons": "Grooming",
+      "lodging": "Lodging"
+    }
   },
   "restaurantReservation": {
     "cta": "Reserve a table",
@@ -2512,9 +2523,9 @@
   },
   "homeVisitPlaces": {
     "pageTitle": "Pet Home Visit Services in Hong Kong",
-    "subtitle": "See who can come to you, what they do, and the price — then WhatsApp or call",
+    "subtitle": "Pick an area to see who can come to you",
     "description": "Compare home-visit vets, nurses, groomers and related services. Check coverage and prices, then contact directly.",
-    "searchPlaceholder": "Search name, area or pet type…",
+    "searchPlaceholder": "Area, pet or name",
     "filterByRegion": "Filter by region",
     "regions": {
       "all": "All regions",

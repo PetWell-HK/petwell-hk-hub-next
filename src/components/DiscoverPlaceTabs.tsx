@@ -45,9 +45,10 @@ const discoverPlaces = [
 
 interface DiscoverPlaceTabsProps {
   className?: string;
+  compact?: boolean;
 }
 
-const DiscoverPlaceTabs = ({ className }: DiscoverPlaceTabsProps) => {
+const DiscoverPlaceTabs = ({ className, compact = false }: DiscoverPlaceTabsProps) => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
 
@@ -67,7 +68,7 @@ const DiscoverPlaceTabs = ({ className }: DiscoverPlaceTabsProps) => {
               className="discover-place-tab shrink-0"
               aria-current={isActive ? "page" : undefined}
             >
-              <Icon className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
+              <Icon className={cn("opacity-70", compact ? "h-3 w-3" : "h-3.5 w-3.5")} aria-hidden="true" />
               <span>{t(place.labelKey)}</span>
             </Link>
           );

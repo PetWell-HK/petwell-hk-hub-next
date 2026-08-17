@@ -7,6 +7,7 @@ const restaurantsImage = "/assets/suggestions/restaurants.webp";
 const activitiesImage = "/assets/suggestions/activities.webp";
 const ownerZoneImage = "/assets/suggestions/owner-zone.webp";
 const clinicsImage = "/assets/suggestions/clinics.webp";
+const homeVisitsImage = "/assets/suggestions/lodging.webp";
 
 interface FeaturedCard {
   id: string;
@@ -15,7 +16,6 @@ interface FeaturedCard {
   href: string;
   image: string;
   imagePosition: string;
-  size: "large" | "medium";
 }
 
 const FEATURED: FeaturedCard[] = [
@@ -26,7 +26,6 @@ const FEATURED: FeaturedCard[] = [
     href: "/review",
     image: reviewImage,
     imagePosition: "center center",
-    size: "large",
   },
   {
     id: "restaurants",
@@ -35,7 +34,6 @@ const FEATURED: FeaturedCard[] = [
     href: "/restaurants",
     image: restaurantsImage,
     imagePosition: "center 45%",
-    size: "medium",
   },
   {
     id: "activities",
@@ -44,7 +42,14 @@ const FEATURED: FeaturedCard[] = [
     href: "/pet-activities",
     image: activitiesImage,
     imagePosition: "center center",
-    size: "medium",
+  },
+  {
+    id: "homeVisits",
+    titleKey: "homePortal.sectors.homeVisits.title",
+    subtitleKey: "homePortal.sectors.homeVisits.subtitle",
+    href: "/home-visits",
+    image: homeVisitsImage,
+    imagePosition: "center 40%",
   },
   {
     id: "ownerZone",
@@ -53,7 +58,6 @@ const FEATURED: FeaturedCard[] = [
     href: "/owner-zone",
     image: ownerZoneImage,
     imagePosition: "center center",
-    size: "medium",
   },
   {
     id: "clinics",
@@ -62,16 +66,6 @@ const FEATURED: FeaturedCard[] = [
     href: "/clinics",
     image: clinicsImage,
     imagePosition: "center center",
-    size: "medium",
-  },
-  {
-    id: "homeVisits",
-    titleKey: "homePortal.sectors.homeVisits.title",
-    subtitleKey: "homePortal.sectors.homeVisits.subtitle",
-    href: "/home-visits",
-    image: clinicsImage,
-    imagePosition: "center 30%",
-    size: "medium",
   },
 ];
 
@@ -95,7 +89,6 @@ const HomeSuggestions = () => {
               to={item.href}
               className={cn(
                 "home-featured-card home-reveal group",
-                item.size === "large" && "home-featured-card--large",
                 `home-reveal-delay-${Math.min(index + 1, 4)}`,
               )}
             >

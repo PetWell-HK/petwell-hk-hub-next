@@ -72,6 +72,8 @@ interface PlaceListingLayoutProps {
   listFooterContent?: ReactNode;
   /** When set, empty state shows a CTA to suggest a missing place of this category. */
   suggestPlaceCategory?: WebSuggestPlaceCategory;
+  /** "find" puts the list first (default). Extra copy stays in `.seo-hidden` for crawlers. */
+  heroMode?: "full" | "find";
   children: ReactNode;
 }
 
@@ -119,6 +121,7 @@ const PlaceListingLayout = ({
   belowListContent,
   listFooterContent,
   suggestPlaceCategory,
+  heroMode = "find",
   children,
 }: PlaceListingLayoutProps) => {
   const { t } = useTranslation();
@@ -126,6 +129,8 @@ const PlaceListingLayout = ({
   const showResults = !isLoading && !error && resultCount > 0;
   const showPartialEmpty = !isLoading && !error && resultCount === 0 && hasMoreToLoad;
   const showEmpty = !isLoading && !error && resultCount === 0 && !hasMoreToLoad;
+  const isFindHero = heroMode === "find";
+  const showHeroCount = Boolean(resultsCountLabel) && !isLoading && !error;
 
   const suggestCta = suggestPlaceCategory ? (
     <Button
@@ -146,43 +151,75 @@ const PlaceListingLayout = ({
 
       <main className="place-listing-page flex-1 pb-14 md:pb-16">
         <div className="container mx-auto max-w-6xl px-4">
-          <header className="hero-summary pt-8 md:pt-10">
-            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-              <div className="max-w-2xl">
-                <h1 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+          <header className={cn("hero-summary", isFindHero ? "pt-4 md:pt-5" : "pt-8 md:pt-10")}>
+            {isFindHero ? (
+              <div className="flex items-end justify-between gap-3">
+                <h1 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
                   {title}
                 </h1>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                  {subtitle}
-                </p>
-                {description ? (
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground/80 md:text-sm">
-                    {description}
-                  </p>
-                ) : null}
-                {searchIntent ? (
-                  <p
-                    className={cn(
-                      "mt-2 text-xs leading-relaxed text-muted-foreground/80 md:text-sm",
-                      searchIntentClassName,
-                    )}
-                  >
-                    {searchIntent}
+                {showHeroCount ? (
+                  <p className="mb-0.5 shrink-0 text-xs tabular-nums text-muted-foreground md:text-sm">
+                    {resultsCountLabel}
                   </p>
                 ) : null}
               </div>
-              {trustBadge ? (
-                <div className="flex shrink-0 items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs text-muted-foreground">
-                  <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                  <span>{trustBadge}</span>
+            ) : (
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="max-w-2xl">
+                  <h1 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                    {title}
+                  </h1>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+                    {subtitle}
+                  </p>
+                  {description ? (
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground/80 md:text-sm">
+                      {description}
+                    </p>
+                  ) : null}
+                  {searchIntent ? (
+                    <p
+                      className={cn(
+                        "mt-2 text-xs leading-relaxed text-muted-foreground/80 md:text-sm",
+                        searchIntentClassName,
+                      )}
+                    >
+                      {searchIntent}
+                    </p>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
+                {trustBadge ? (
+                  <div className="flex shrink-0 items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs text-muted-foreground">
+                    <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                    <span>{trustBadge}</span>
+                  </div>
+                ) : null}
+              </div>
+            )}
 
-            <DiscoverPlaceTabs className="mt-6" />
+            {isFindHero ? (
+              <div className="seo-hidden">
+                <p>{subtitle}</p>
+                {description ? <p>{description}</p> : null}
+                {searchIntent ? (
+                  <p className={searchIntentClassName}>{searchIntent}</p>
+                ) : null}
+                {trustBadge ? <p>{trustBadge}</p> : null}
+              </div>
+            ) : null}
+
+            <DiscoverPlaceTabs
+              className={isFindHero ? "discover-place-tabs-compact mt-3" : "mt-6"}
+              compact={isFindHero}
+            />
           </header>
 
-          <div className="place-listing-toolbar sticky top-[var(--header-height)] z-20 -mx-4 border-b border-border bg-background/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-background/90">
+          <div
+            className={cn(
+              "place-listing-toolbar sticky top-[var(--header-height)] z-20 -mx-4 border-b border-border bg-background px-4",
+              isFindHero ? "place-listing-toolbar-compact py-2.5" : "py-4",
+            )}
+          >
             <div className="place-listing-search mx-auto max-w-6xl">
               <div className="relative">
                 <Search
@@ -194,16 +231,26 @@ const PlaceListingLayout = ({
                   placeholder={searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
-                  className="h-11 rounded-lg border-border bg-background pl-10 pr-4 text-[15px] shadow-none"
+                  className={cn(
+                    "rounded-lg border-border bg-background pl-10 pr-4 text-[15px] shadow-none",
+                    isFindHero ? "h-10" : "h-11",
+                  )}
                   aria-label={searchPlaceholder}
                 />
               </div>
             </div>
 
-            <div className="mx-auto mt-4 flex max-w-6xl flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div
+              className={cn(
+                "mx-auto max-w-6xl",
+                isFindHero
+                  ? "mt-2 flex items-center gap-2 overflow-x-auto scrollbar-none"
+                  : "mt-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between",
+              )}
+            >
               <nav
                 aria-label={filterByRegionLabel}
-                className="flex gap-1 overflow-x-auto scrollbar-none"
+                className="flex shrink-0 gap-0.5"
               >
                 {regions.map((region) => (
                   <button
@@ -220,8 +267,11 @@ const PlaceListingLayout = ({
               </nav>
 
               {(policyFilters.length > 0 || hasActiveFilters) && (
-                <div className="flex flex-wrap items-center gap-2">
-                  {policyFilters.length > 0 && (
+                <div className="flex shrink-0 items-center gap-1.5">
+                  {isFindHero ? (
+                    <span className="h-4 w-px shrink-0 bg-border" aria-hidden="true" />
+                  ) : null}
+                  {policyFilters.length > 0 && !isFindHero && (
                     <span className="mr-1 hidden items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-muted-foreground sm:inline-flex">
                       <SlidersHorizontal className="h-3 w-3" aria-hidden="true" />
                       {filtersLabel}
@@ -256,7 +306,7 @@ const PlaceListingLayout = ({
             </div>
           </div>
 
-          <div className="pt-8">
+          <div className={isFindHero ? "pt-4" : "pt-8"}>
             {isLoading && (
               <div className="flex items-center justify-center py-24">
                 <Loader2 className="h-7 w-7 animate-spin text-primary" />
@@ -319,23 +369,25 @@ const PlaceListingLayout = ({
 
             {showResults && (
               <>
-                {(resultsCountLabel || resultsNote || activeFilterLabels.length > 0) && (
-                <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  {resultsCountLabel || resultsNote ? (
+                {(isFindHero
+                  ? Boolean(resultsNote)
+                  : Boolean(resultsCountLabel || resultsNote || activeFilterLabels.length > 0)) && (
+                <div className={cn("flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between", isFindHero ? "mb-3" : "mb-6")}>
+                  {(!isFindHero && (resultsCountLabel || resultsNote)) || (isFindHero && resultsNote) ? (
                     <div className="min-w-0">
-                      {resultsCountLabel ? (
+                      {!isFindHero && resultsCountLabel ? (
                         <p className="text-sm tabular-nums text-muted-foreground">
                           {resultsCountLabel}
                         </p>
                       ) : null}
                       {resultsNote ? (
-                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                        <p className="text-xs leading-relaxed text-muted-foreground">
                           {resultsNote}
                         </p>
                       ) : null}
                     </div>
                   ) : null}
-                  {activeFilterLabels.length > 0 && (
+                  {!isFindHero && activeFilterLabels.length > 0 && (
                     <div className={`flex flex-wrap gap-1.5${resultsCountLabel ? "" : " sm:ml-auto"}`}>
                       {activeFilterLabels.map((label) => (
                         <span

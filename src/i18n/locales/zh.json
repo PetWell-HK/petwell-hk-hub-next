@@ -21,7 +21,18 @@
     "petActivities": "寵物活動",
     "testBooking": "檢測服務",
     "nutritionScore": "糧食評分",
-    "otherServices": "商戶合作"
+    "otherServices": "商戶合作",
+    "petFriendlyMenu": {
+      "goOut": "帶毛孩出街",
+      "care": "搵醫生",
+      "services": "美容同寄養",
+      "restaurants": "餐廳",
+      "malls": "商場",
+      "clinics": "診所",
+      "homeVisits": "上門服務",
+      "salons": "美容",
+      "lodging": "寄養"
+    }
   },
   "restaurantReservation": {
     "cta": "預約訂座",
@@ -2512,9 +2523,9 @@
   },
   "homeVisitPlaces": {
     "pageTitle": "香港寵物上門服務",
-    "subtitle": "邊個可以嚟你屋企、做咩服務、幾錢 — 再 WhatsApp 或打電話預約",
+    "subtitle": "揀地區，搵會嚟你屋企嘅服務",
     "description": "對比上門獸醫、護士、美容同相關服務。先睇覆蓋範圍同收費，再直接聯絡。",
-    "searchPlaceholder": "搜尋名稱、地區或寵物種類…",
+    "searchPlaceholder": "地區、寵物或名稱",
     "filterByRegion": "按地區篩選",
     "regions": {
       "all": "全部地區",

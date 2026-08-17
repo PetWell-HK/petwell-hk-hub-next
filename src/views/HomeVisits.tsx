@@ -166,6 +166,7 @@ const HomeVisits = () => {
 
   return (
     <PlaceListingLayout
+      heroMode="find"
       title={t("homeVisitPlaces.pageTitle")}
       subtitle={t("homeVisitPlaces.subtitle")}
       description={t("homeVisitPlaces.description")}
@@ -188,6 +189,7 @@ const HomeVisits = () => {
       errorTitle={t("homeVisitPlaces.error")}
       errorSubtitle={t("homeVisitPlaces.errorSubtitle")}
       resultCount={filteredProviders.length}
+      resultsCountLabel={t("homeVisitPlaces.resultsCount", { count: filteredProviders.length })}
       noResults={t("homeVisitPlaces.noResults")}
       noResultsHint={t("homeVisitPlaces.noResultsHint")}
       suggestPlaceCategory="homeVisit"

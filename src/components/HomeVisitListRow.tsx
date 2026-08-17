@@ -99,9 +99,6 @@ export function HomeVisitListRow({
                   {t("homeVisitPlaces.moreServices", { count: extraOfferingCount })}
                 </p>
               ) : null}
-              <p className="border-t border-border/60 px-3 py-2 text-[11px] leading-relaxed text-muted-foreground sm:px-4">
-                {t("homeVisitPlaces.detail.referenceDisclaimer")}
-              </p>
             </div>
           ) : null}
         </Link>
