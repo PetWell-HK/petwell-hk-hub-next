@@ -7,11 +7,18 @@ interface ClinicImageProps {
   imageKey: string | undefined;
   alt: string;
   className?: string;
+  objectFit?: 'cover' | 'contain';
 }
 
-export function ClinicImage({ imageKey, alt, className = '' }: ClinicImageProps) {
+export function ClinicImage({
+  imageKey,
+  alt,
+  className = '',
+  objectFit = 'cover',
+}: ClinicImageProps) {
   const { imageUrl, isLoading, error } = useRestaurantImage(imageKey);
   const [imgError, setImgError] = useState(false);
+  const fitClass = objectFit === 'contain' ? 'object-contain' : 'object-cover';
 
   const Placeholder = () => (
     <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 ${className}`}>
@@ -27,7 +34,7 @@ export function ClinicImage({ imageKey, alt, className = '' }: ClinicImageProps)
     <img
       src={imageUrl}
       alt={alt}
-      className={`block h-full w-full object-cover ${className}`}
+      className={`block h-full w-full ${fitClass} ${className}`}
       onError={() => setImgError(true)}
     />
   );

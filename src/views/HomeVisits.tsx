@@ -3,25 +3,19 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
-import { PlaceListCard } from "@/components/PlaceListCard";
+import { HomeVisitListRow } from "@/components/HomeVisitListRow";
 import { useFilteredHomeVisitProviders } from "@/hooks/useHomeVisitProviders";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { useSEO } from "@/hooks/useSEO";
-import { getTodayOpeningHours, localizeOpeningHoursText } from "@/utils/availableHours";
 import {
+  getHomeVisitListOfferings,
   getServiceCategoryLabel,
   getSpeciesLabel,
-  getWhatsAppUrl,
   type HomeVisitProvider,
 } from "@/services/homeVisitApi";
 
-const SPECIES_OPTIONS = ["dog", "cat", "rabbit", "bird", "exotic"] as const;
-const SERVICE_CATEGORY_OPTIONS = [
-  "home_visit",
-  "vaccination",
-  "health_check",
-  "emergency",
-] as const;
+/** Only filters that split the job: urgency vs grooming. Species/services live on the rows + search. */
+const NEED_FILTERS = ["grooming", "emergency"] as const;
 
 const homeVisitsFAQ = [
   {
@@ -50,7 +44,6 @@ const HomeVisits = () => {
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [show24HourOnly, setShow24HourOnly] = useState(false);
-  const [selectedSpecies, setSelectedSpecies] = useState<string>("");
   const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>("");
   const { t, i18n } = useTranslation();
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
@@ -60,7 +53,6 @@ const HomeVisits = () => {
       region: selectedRegion,
       keyword: searchQuery,
       is247: show24HourOnly || undefined,
-      species: selectedSpecies || undefined,
       serviceCategory: selectedServiceCategory || undefined,
     },
     i18n.language,
@@ -71,7 +63,6 @@ const HomeVisits = () => {
     { value: "Kowloon", label: t("homeVisitPlaces.regions.kowloon") },
     { value: "Hong Kong", label: t("homeVisitPlaces.regions.hongKong") },
     { value: "New Territories", label: t("homeVisitPlaces.regions.newTerritories") },
-    { value: "Others", label: t("homeVisitPlaces.regions.others") },
   ];
 
   const activeFilterLabels = [
@@ -79,7 +70,6 @@ const HomeVisits = () => {
       ? [regions.find((region) => region.value === selectedRegion)?.label ?? ""]
       : []),
     ...(show24HourOnly ? [t("homeVisitPlaces.filter24Hour")] : []),
-    ...(selectedSpecies ? [getSpeciesLabel(selectedSpecies, lang)] : []),
     ...(selectedServiceCategory
       ? [getServiceCategoryLabel(selectedServiceCategory, lang)]
       : []),
@@ -92,7 +82,6 @@ const HomeVisits = () => {
     setSelectedRegion("all");
     setSearchQuery("");
     setShow24HourOnly(false);
-    setSelectedSpecies("");
     setSelectedServiceCategory("");
   };
 
@@ -157,18 +146,6 @@ const HomeVisits = () => {
     speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
   });
 
-  const getOpeningHoursText = (provider: HomeVisitProvider) =>
-    getTodayOpeningHours(provider.availableHours, provider.is247, t) ||
-    localizeOpeningHoursText(provider.hoursSummary, i18n.language) ||
-    null;
-
-  const getServiceLabels = (provider: HomeVisitProvider) =>
-    provider.serviceOfferings.slice(0, 4).map((label) =>
-      getServiceCategoryLabel(label, lang) !== label
-        ? getServiceCategoryLabel(label, lang)
-        : label,
-    );
-
   const policyFilters = [
     {
       id: "24hour",
@@ -176,14 +153,7 @@ const HomeVisits = () => {
       active: show24HourOnly,
       onToggle: () => setShow24HourOnly((value) => !value),
     },
-    ...SPECIES_OPTIONS.map((species) => ({
-      id: `species-${species}`,
-      label: getSpeciesLabel(species, lang),
-      active: selectedSpecies === species,
-      onToggle: () =>
-        setSelectedSpecies((current) => (current === species ? "" : species)),
-    })),
-    ...SERVICE_CATEGORY_OPTIONS.map((category) => ({
+    ...NEED_FILTERS.map((category) => ({
       id: `service-${category}`,
       label: getServiceCategoryLabel(category, lang),
       active: selectedServiceCategory === category,
@@ -221,6 +191,7 @@ const HomeVisits = () => {
       resultsCountLabel={t("homeVisitPlaces.resultsCount", {
         count: filteredProviders.length,
       })}
+      resultsNote={t("homeVisitPlaces.detail.referenceDisclaimer")}
       noResults={t("homeVisitPlaces.noResults")}
       noResultsHint={t("homeVisitPlaces.noResultsHint")}
       suggestPlaceCategory="homeVisit"
@@ -232,49 +203,24 @@ const HomeVisits = () => {
       faqItems={homeVisitsFAQ}
       faqTitle="寵物上門服務常見問題"
     >
-      <div className="grid gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
-        {filteredProviders.map((provider) => {
-          const whatsappUrl = getWhatsAppUrl(provider.whatsapp);
-          const quickLinks = [
-            ...(whatsappUrl
-              ? [
-                  {
-                    href: whatsappUrl,
-                    label: t("homeVisitPlaces.detail.whatsapp"),
-                    kind: "whatsapp" as const,
-                  },
-                ]
-              : []),
-            ...(provider.phone
-              ? [
-                  {
-                    href: `tel:${provider.phone}`,
-                    label: t("homeVisitPlaces.detail.call"),
-                    kind: "phone" as const,
-                  },
-                ]
-              : []),
-          ];
-
-          return (
-            <PlaceListCard
+      <div className="flex flex-col gap-3">
+        {filteredProviders.map((provider) => (
+            <HomeVisitListRow
               key={provider.id}
               name={provider.name}
-              district={provider.district || provider.coverageSummary}
-              address={provider.address}
               coverageSummary={provider.coverageSummary}
-              rating={provider.rating}
+              district={provider.district}
               image={provider.image}
-              verified={provider.verified}
               detailPath={`/home-visits/${provider.id}`}
-              serviceLabels={getServiceLabels(provider)}
-              openingHoursText={getOpeningHoursText(provider)}
+              offerings={getHomeVisitListOfferings(provider, lang)}
+              speciesLabels={provider.speciesServed
+                .slice(0, 4)
+                .map((species) => getSpeciesLabel(species, lang))}
+              rating={provider.rating}
               is247={provider.is247}
               is247Label={t("homeVisitPlaces.filter24Hour")}
-              quickLinks={quickLinks}
             />
-          );
-        })}
+          ))}
       </div>
     </PlaceListingLayout>
   );

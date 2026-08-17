@@ -56,6 +56,7 @@ interface PlaceListingLayoutProps {
   partialEmptyMessage?: string;
   partialEmptyHint?: string;
   resultsCountLabel?: string;
+  resultsNote?: string;
   noResults: string;
   noResultsHint: string;
   listAriaLabel: string;
@@ -103,6 +104,7 @@ const PlaceListingLayout = ({
   partialEmptyMessage,
   partialEmptyHint,
   resultsCountLabel,
+  resultsNote,
   noResults,
   noResultsHint,
   listAriaLabel,
@@ -317,12 +319,21 @@ const PlaceListingLayout = ({
 
             {showResults && (
               <>
-                {(resultsCountLabel || activeFilterLabels.length > 0) && (
+                {(resultsCountLabel || resultsNote || activeFilterLabels.length > 0) && (
                 <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  {resultsCountLabel ? (
-                    <p className="text-sm tabular-nums text-muted-foreground">
-                      {resultsCountLabel}
-                    </p>
+                  {resultsCountLabel || resultsNote ? (
+                    <div className="min-w-0">
+                      {resultsCountLabel ? (
+                        <p className="text-sm tabular-nums text-muted-foreground">
+                          {resultsCountLabel}
+                        </p>
+                      ) : null}
+                      {resultsNote ? (
+                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                          {resultsNote}
+                        </p>
+                      ) : null}
+                    </div>
                   ) : null}
                   {activeFilterLabels.length > 0 && (
                     <div className={`flex flex-wrap gap-1.5${resultsCountLabel ? "" : " sm:ml-auto"}`}>

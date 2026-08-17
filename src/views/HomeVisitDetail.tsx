@@ -18,7 +18,6 @@ import {
   Clock,
   Facebook,
   Globe,
-  House,
   Instagram,
   Loader2,
   MapPin,
@@ -28,7 +27,6 @@ import {
 import { useHomeVisitProvider } from "@/hooks/useHomeVisitProviders";
 import { useSEO } from "@/hooks/useSEO";
 import { ClinicImage } from "@/components/ClinicImage";
-import { PetWellVerifiedBadge } from "@/components/PetWellVerifiedBadge";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
 import PlaceReportModal from "@/components/PlaceReportModal";
 import DiscoverPlaceTabs from "@/components/DiscoverPlaceTabs";
@@ -37,6 +35,7 @@ import {
   getServiceCategoryLabel,
   getSpeciesLabel,
   getWhatsAppUrl,
+  formatPriceAmount,
   transformHomeVisitProvider,
 } from "@/services/homeVisitApi";
 import {
@@ -48,25 +47,6 @@ import {
 
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 const DAYS: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-
-function formatPriceAmount(
-  currency: string,
-  amountMin?: number | null,
-  amountMax?: number | null,
-  lang: "zh" | "en" = "zh",
-): string {
-  const symbol = currency === "HKD" || !currency ? "HK$" : `${currency} `;
-  if (amountMin != null && amountMax != null && amountMin !== amountMax) {
-    return `${symbol}${amountMin} – ${symbol}${amountMax}`;
-  }
-  if (amountMin != null) {
-    return lang === "en" ? `From ${symbol}${amountMin}` : `${symbol}${amountMin} 起`;
-  }
-  if (amountMax != null) {
-    return `${symbol}${amountMax}`;
-  }
-  return "—";
-}
 
 const HomeVisitDetail = () => {
   const { providerId } = useParams();
@@ -213,21 +193,14 @@ const HomeVisitDetail = () => {
                 <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   {t("homeVisitPlaces.pageTitle")}
                 </p>
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  {provider.verified && <PetWellVerifiedBadge />}
-                  {provider.is247 && (
+                {provider.is247 ? (
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
                     <Badge variant="outline" className="gap-1">
                       <Clock className="h-3 w-3" />
                       {t("homeVisitPlaces.filter24Hour")}
                     </Badge>
-                  )}
-                  {provider.homeVisitConfirmed && (
-                    <Badge variant="secondary" className="gap-1">
-                      <House className="h-3 w-3" />
-                      {t("homeVisitPlaces.detail.homeVisitConfirmed")}
-                    </Badge>
-                  )}
-                </div>
+                  </div>
+                ) : null}
                 <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
                   {provider.name}
                 </h1>
@@ -332,9 +305,12 @@ const HomeVisitDetail = () => {
 
               {servicesByCategory.length > 0 ? (
                 <section className="rounded-xl border border-border p-5">
-                  <h2 className="mb-4 text-lg font-semibold">
+                  <h2 className="text-lg font-semibold">
                     {t("homeVisitPlaces.detail.services")}
                   </h2>
+                  <p className="mt-1 mb-4 text-sm leading-relaxed text-muted-foreground">
+                    {t("homeVisitPlaces.detail.referenceDisclaimer")}
+                  </p>
                   <div className="space-y-5">
                     {servicesByCategory.map(([category, items]) => (
                       <div key={category}>
@@ -369,9 +345,12 @@ const HomeVisitDetail = () => {
                 </section>
               ) : provider.serviceOfferings.length > 0 ? (
                 <section className="rounded-xl border border-border p-5">
-                  <h2 className="mb-3 text-lg font-semibold">
+                  <h2 className="text-lg font-semibold">
                     {t("homeVisitPlaces.detail.services")}
                   </h2>
+                  <p className="mt-1 mb-3 text-sm leading-relaxed text-muted-foreground">
+                    {t("homeVisitPlaces.detail.referenceDisclaimer")}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {provider.serviceOfferings.map((offering) => (
                       <Badge key={offering} variant="outline">
@@ -383,57 +362,66 @@ const HomeVisitDetail = () => {
               ) : null}
 
               <section className="rounded-xl border border-border p-5">
-                <h2 className="mb-3 text-lg font-semibold">
+                <h2 className="text-lg font-semibold">
                   {t("homeVisitPlaces.detail.pricing")}
                 </h2>
+                <p className="mt-1 mb-3 text-sm leading-relaxed text-muted-foreground">
+                  {t("homeVisitPlaces.detail.referenceDisclaimer")}
+                </p>
                 {provider.pricing.length > 0 ? (
-                  <div className="overflow-x-auto">
-                    <table className="w-full min-w-[420px] text-left text-sm">
-                      <thead>
-                        <tr className="border-b border-border text-muted-foreground">
-                          <th className="py-2 pr-3 font-medium">
-                            {t("homeVisitPlaces.detail.pricingService")}
-                          </th>
-                          <th className="py-2 pr-3 font-medium">
-                            {t("homeVisitPlaces.detail.pricingAmount")}
-                          </th>
-                          <th className="py-2 font-medium">
-                            {t("homeVisitPlaces.detail.pricingNotes")}
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {provider.pricing.map((row, index) => (
-                          <tr
-                            key={`${row.label}-${index}`}
-                            className="border-b border-border/70 align-top"
-                          >
-                            <td className="py-3 pr-3">
-                              <div className="font-medium">{row.label}</div>
-                              <div className="text-xs text-muted-foreground">
-                                {getServiceCategoryLabel(row.serviceCategory, lang)}
-                                {row.includesTravel
-                                  ? ` · ${t("homeVisitPlaces.detail.includesTravel")}`
-                                  : ""}
-                              </div>
-                            </td>
-                            <td className="py-3 pr-3 whitespace-nowrap">
-                              {row.rawText ||
-                                formatPriceAmount(
-                                  row.currency,
-                                  row.amountMin,
-                                  row.amountMax,
-                                  lang,
-                                )}
-                            </td>
-                            <td className="py-3 text-muted-foreground">
-                              {row.notes || "—"}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                  <ul className="divide-y divide-border">
+                    {provider.pricing.map((row, index) => {
+                      const amount =
+                        row.rawText?.trim() ||
+                        formatPriceAmount(
+                          row.currency,
+                          row.amountMin,
+                          row.amountMax,
+                          lang,
+                        ) ||
+                        null;
+                      const meta = [
+                        getServiceCategoryLabel(row.serviceCategory, lang),
+                        row.includesTravel
+                          ? t("homeVisitPlaces.detail.includesTravel")
+                          : "",
+                      ]
+                        .filter(Boolean)
+                        .join(" · ");
+                      const notes =
+                        row.notes?.trim() && row.notes.trim() !== amount
+                          ? row.notes.trim()
+                          : null;
+
+                      return (
+                        <li
+                          key={`${row.label}-${index}`}
+                          className="space-y-1 py-3 first:pt-0 last:pb-0"
+                        >
+                          <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                            <div className="min-w-0">
+                              <p className="font-medium leading-snug">{row.label}</p>
+                              {meta ? (
+                                <p className="mt-0.5 text-xs text-muted-foreground">
+                                  {meta}
+                                </p>
+                              ) : null}
+                            </div>
+                            {amount ? (
+                              <p className="text-sm font-semibold leading-relaxed break-words text-primary sm:max-w-[45%] sm:text-right">
+                                {amount}
+                              </p>
+                            ) : null}
+                          </div>
+                          {notes ? (
+                            <p className="text-sm leading-relaxed break-words text-muted-foreground">
+                              {notes}
+                            </p>
+                          ) : null}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 ) : (
                   <p className="text-sm text-muted-foreground">
                     {t("homeVisitPlaces.detail.pricingEmpty")}

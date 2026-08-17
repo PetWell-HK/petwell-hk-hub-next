@@ -523,17 +523,263 @@ export function getServiceCategoryLabel(category: string, lang: 'zh' | 'en'): st
   const labels: Record<string, { zh: string; en: string }> = {
     home_visit: { zh: '上門診症', en: 'Home visit' },
     vaccination: { zh: '疫苗', en: 'Vaccination' },
+    deworming: { zh: '驅蟲', en: 'Deworming' },
     health_check: { zh: '健康檢查', en: 'Health check' },
     blood_test: { zh: '驗血', en: 'Blood test' },
+    nail_trim: { zh: '剪甲', en: 'Nail trim' },
     dental: { zh: '牙科', en: 'Dental' },
     euthanasia: { zh: '安樂死', en: 'Euthanasia' },
     emergency: { zh: '急症', en: 'Emergency' },
     surgery: { zh: '手術', en: 'Surgery' },
     grooming: { zh: '美容', en: 'Grooming' },
     pharmacy: { zh: '配藥', en: 'Pharmacy' },
+    prescription: { zh: '配藥', en: 'Prescription' },
+    teleconsult: { zh: '視像諮詢', en: 'Teleconsult' },
+    surgery_referral: { zh: '轉介手術', en: 'Surgery referral' },
+    nutrition_consult: { zh: '營養諮詢', en: 'Nutrition' },
+    physiotherapy: { zh: '復康', en: 'Physio' },
+    training: { zh: '訓練', en: 'Training' },
+    sitting: { zh: '寵物保姆', en: 'Pet sitting' },
+    nursing: { zh: '上門護理', en: 'Nursing' },
     other: { zh: '其他', en: 'Other' },
   };
   return labels[key]?.[lang] || category;
+}
+
+export function formatPriceAmount(
+  currency: string,
+  amountMin?: number | null,
+  amountMax?: number | null,
+  lang: 'zh' | 'en' = 'zh',
+): string {
+  const symbol = currency === 'HKD' || !currency ? 'HK$' : `${currency} `;
+  if (amountMin != null && amountMax != null && amountMin !== amountMax) {
+    return `${symbol}${amountMin} – ${symbol}${amountMax}`;
+  }
+  if (amountMin != null) {
+    return lang === 'en' ? `From ${symbol}${amountMin}` : `${symbol}${amountMin} 起`;
+  }
+  if (amountMax != null) {
+    return `${symbol}${amountMax}`;
+  }
+  return '';
+}
+
+/** Compact starting price for list scan — omit when nothing numeric or quoted. */
+export function getHomeVisitPriceSummary(
+  pricing: HomeVisitPricingItem[],
+  lang: 'zh' | 'en' = 'zh',
+): string | null {
+  if (!pricing.length) return null;
+
+  const mins = pricing
+    .map((row) => row.amountMin)
+    .filter((n): n is number => typeof n === 'number' && Number.isFinite(n));
+  if (mins.length > 0) {
+    const lowest = Math.min(...mins);
+    const row = pricing.find((item) => item.amountMin === lowest);
+    return formatPriceAmount(row?.currency || 'HKD', lowest, null, lang) || null;
+  }
+
+  for (const row of pricing) {
+    const compact = formatCompactListPrice(row, lang);
+    if (compact) return compact;
+  }
+  return null;
+}
+
+const PRICE_IN_TEXT = /(?:HK\$|HKD\s*|\$)\s*(\d{2,6}(?:\.\d{1,2})?)/i;
+const LIST_PRICE_MAX_CHARS = 18;
+
+function extractFirstAmount(raw: string): number | null {
+  const withSymbol = raw.match(PRICE_IN_TEXT);
+  if (withSymbol) {
+    const amount = Number(withSymbol[1]);
+    return Number.isFinite(amount) ? amount : null;
+  }
+  return null;
+}
+
+function looksLikePriceDump(value: string): boolean {
+  const trimmed = value.trim();
+  if (/^(?:HK\$|HKD\s*|\$)\s*\d/.test(trimmed)) return true;
+  return trimmed.length > 28 && PRICE_IN_TEXT.test(trimmed);
+}
+
+/** Short list tag only. Detail pages should keep rawText / notes in full. */
+export function formatCompactListPrice(
+  item: HomeVisitPricingItem,
+  lang: 'zh' | 'en' = 'zh',
+): string | null {
+  const numeric = formatPriceAmount(
+    item.currency,
+    item.amountMin,
+    item.amountMax,
+    lang,
+  );
+  if (numeric) return numeric;
+
+  const raw = item.rawText?.trim();
+  if (!raw) return null;
+  if (raw.length <= LIST_PRICE_MAX_CHARS) return raw;
+
+  const amount = extractFirstAmount(raw);
+  if (amount != null) {
+    return lang === 'en' ? `From HK$${amount}` : `HK$${amount} 起`;
+  }
+  return `${raw.slice(0, 14).trim()}…`;
+}
+
+function hashStringRank(value: string, seed: number): number {
+  let h = seed >>> 0;
+  for (let i = 0; i < value.length; i += 1) {
+    h = Math.imul(h ^ value.charCodeAt(i), 2654435761);
+  }
+  return h >>> 0;
+}
+
+export function homeVisitHasListedPrice(provider: Pick<HomeVisitProvider, 'pricing'>): boolean {
+  return Boolean(getHomeVisitPriceSummary(provider.pricing));
+}
+
+/** Priced providers first; order within each group is stable for a given seed (new seed = new shuffle). */
+export function sortHomeVisitProvidersPricedThenRandom<
+  T extends { id: string; pricing: HomeVisitPricingItem[] },
+>(providers: T[], seed: number): T[] {
+  return [...providers].sort((a, b) => {
+    const pricedDiff =
+      Number(homeVisitHasListedPrice(b)) - Number(homeVisitHasListedPrice(a));
+    if (pricedDiff !== 0) return pricedDiff;
+    return hashStringRank(a.id, seed) - hashStringRank(b.id, seed);
+  });
+}
+
+export function getHomeVisitListServiceLabels(
+  provider: HomeVisitProvider,
+  lang: 'zh' | 'en',
+  limit = 5,
+): string[] {
+  const fromOfferings = provider.serviceOfferings.map((label) => {
+    const mapped = getServiceCategoryLabel(label, lang);
+    return mapped !== label ? mapped : label;
+  });
+  const fromServices = provider.services.map(
+    (service) =>
+      (lang === 'en'
+        ? service.name?.en || service.name?.zh
+        : service.name?.zh || service.name?.en) ||
+      getServiceCategoryLabel(service.category, lang),
+  );
+
+  const unique: string[] = [];
+  const seen = new Set<string>();
+  for (const label of [...fromOfferings, ...fromServices]) {
+    const trimmed = String(label || '').trim();
+    if (!trimmed) continue;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(trimmed);
+    if (unique.length >= limit) break;
+  }
+  return unique;
+}
+
+export type HomeVisitListOffering = {
+  key: string;
+  name: string;
+  price: string | null;
+};
+
+function normalizeOfferingKey(value: string): string {
+  return value.trim().toLowerCase().replace(/[\s-]+/g, '_');
+}
+
+function formatOfferingPrice(
+  item: HomeVisitPricingItem,
+  lang: 'zh' | 'en',
+): string | null {
+  return formatCompactListPrice(item, lang);
+}
+
+function listOfferingName(name: string, category: string, lang: 'zh' | 'en'): string {
+  const trimmed = name.trim();
+  if (!trimmed || looksLikePriceDump(trimmed)) {
+    return getServiceCategoryLabel(category, lang);
+  }
+  return trimmed;
+}
+
+/**
+ * Nested "menu" rows for a provider card: priced services first, then the rest.
+ * Callers should slice — do not dump every offering in the list UI.
+ */
+export function getHomeVisitListOfferings(
+  provider: HomeVisitProvider,
+  lang: 'zh' | 'en',
+): HomeVisitListOffering[] {
+  const usedPriceIndexes = new Set<number>();
+  const seenNames = new Set<string>();
+  const offerings: HomeVisitListOffering[] = [];
+
+  const takePrice = (category: string, name: string): string | null => {
+    const catKey = normalizeOfferingKey(category);
+    const nameKey = name.trim().toLowerCase();
+    let idx = provider.pricing.findIndex(
+      (row, i) =>
+        !usedPriceIndexes.has(i) && normalizeOfferingKey(row.serviceCategory) === catKey,
+    );
+    if (idx < 0) {
+      idx = provider.pricing.findIndex(
+        (row, i) => !usedPriceIndexes.has(i) && row.label.trim().toLowerCase() === nameKey,
+      );
+    }
+    if (idx < 0) return null;
+    usedPriceIndexes.add(idx);
+    return formatOfferingPrice(provider.pricing[idx], lang);
+  };
+
+  const pushOffering = (name: string, category: string, price: string | null) => {
+    const trimmed = name.trim();
+    if (!trimmed) return;
+    const seenKey = trimmed.toLowerCase();
+    if (seenNames.has(seenKey)) return;
+    seenNames.add(seenKey);
+    offerings.push({
+      key: `${offerings.length}-${seenKey}`,
+      name: trimmed,
+      price,
+    });
+  };
+
+  for (const service of provider.services) {
+    const name =
+      (lang === 'en'
+        ? service.name?.en || service.name?.zh
+        : service.name?.zh || service.name?.en) ||
+      getServiceCategoryLabel(service.category, lang);
+    pushOffering(listOfferingName(name, service.category, lang), service.category, takePrice(service.category, name));
+  }
+
+  for (const label of provider.serviceOfferings) {
+    const mapped = getServiceCategoryLabel(label, lang);
+    const name = mapped !== label ? mapped : label;
+    pushOffering(listOfferingName(name, label, lang), label, takePrice(label, name));
+  }
+
+  provider.pricing.forEach((row, index) => {
+    if (usedPriceIndexes.has(index)) return;
+    const name = listOfferingName(
+      row.label || getServiceCategoryLabel(row.serviceCategory, lang),
+      row.serviceCategory,
+      lang,
+    );
+    pushOffering(name, row.serviceCategory, formatOfferingPrice(row, lang));
+  });
+
+  const priced = offerings.filter((item) => item.price);
+  const unpriced = offerings.filter((item) => !item.price);
+  return [...priced, ...unpriced];
 }
 
 export function getSpeciesLabel(species: string, lang: 'zh' | 'en'): string {

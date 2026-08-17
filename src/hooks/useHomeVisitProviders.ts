@@ -1,9 +1,10 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
   fetchAllHomeVisitProviders,
   fetchHomeVisitProviderById,
   filterHomeVisitProviders,
+  sortHomeVisitProvidersPricedThenRandom,
   type HomeVisitListingFilters,
 } from '@/services/homeVisitApi';
 
@@ -20,10 +21,11 @@ export function useFilteredHomeVisitProviders(
   language: string = 'zh',
 ) {
   const query = useHomeVisitProviders(language);
+  const shuffleSeedRef = useRef(Math.random() * 0xffffffff);
 
   const providers = useMemo(() => {
-    const all = query.data ?? [];
-    return filterHomeVisitProviders(all, filters);
+    const filtered = filterHomeVisitProviders(query.data ?? [], filters);
+    return sortHomeVisitProvidersPricedThenRandom(filtered, shuffleSeedRef.current);
   }, [
     query.data,
     filters.region,
