@@ -188,10 +188,6 @@ const HomeVisits = () => {
       errorTitle={t("homeVisitPlaces.error")}
       errorSubtitle={t("homeVisitPlaces.errorSubtitle")}
       resultCount={filteredProviders.length}
-      resultsCountLabel={t("homeVisitPlaces.resultsCount", {
-        count: filteredProviders.length,
-      })}
-      resultsNote={t("homeVisitPlaces.detail.referenceDisclaimer")}
       noResults={t("homeVisitPlaces.noResults")}
       noResultsHint={t("homeVisitPlaces.noResultsHint")}
       suggestPlaceCategory="homeVisit"
