@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: `飼主專區 | PetWell HK`,
-  description: `飼主實用資訊、指南與工具。`,
+  title: `主人專區 | PetWell HK`,
+  description: `香港寵物媒體：健康護理、生活出行、實用指南。`,
   keywords: undefined,
   path: `/owner-zone`,
   ogType: "website",
