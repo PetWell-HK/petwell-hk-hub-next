@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import AuthPanel from "@/components/AuthPanel";
 import ContactUsWidget from "@/components/ContactUsWidget";
 import NametagDailyPopup from "@/components/NametagDailyPopup";
+import NavigationRecovery from "@/components/NavigationRecovery";
 import ScrollToTop from "@/components/ScrollToTop";
 import SiteProtection from "@/components/SiteProtection";
 import { AuthProvider } from "@/contexts/AuthContext";
@@ -32,6 +33,7 @@ export default function AppProviders({ children }: { children: ReactNode }) {
                 <Sonner />
                 {/* Suspense only for searchParams-using chrome — never wrap page children (breaks 404 status). */}
                 <Suspense fallback={null}>
+                  <NavigationRecovery />
                   <ScrollToTop />
                   <SiteProtection />
                   <AuthPanel />
