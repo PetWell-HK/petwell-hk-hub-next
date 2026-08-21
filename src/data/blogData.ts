@@ -112,6 +112,30 @@ const blogIamsmartPwStep3 = blogIamsmartPwStep3Asset.url;
 import blogPetRingwormCoverAsset from "@/assets/blog-pet-ringworm-cover.png.asset.json";
 const blogPetRingwormCover = blogPetRingwormCoverAsset.url;
 const blogSeniorPetTemperCover = "/assets/blog-senior-pet-temper-cover.jpg";
+const blogYohoAttackCover = "/assets/blog-yoho-dog-attack/cover.jpg";
+const blogYohoAttackScene = "/assets/blog-yoho-dog-attack/inline-scene.jpg";
+const blogYohoAttackMix = "/assets/blog-yoho-dog-attack/inline-yoho-mix.jpg";
+const blogYohoAttackAftermath = "/assets/blog-yoho-dog-attack/inline-aftermath.jpg";
+const blogYohoAttackPolice = "/assets/blog-yoho-dog-attack/inline-police.jpg";
+const blogYohoAttackJuly = "/assets/blog-yoho-dog-attack/inline-july-corgi.jpg";
+const blogYohoAttackNews = "/assets/blog-yoho-dog-attack/inline-news-graphic.jpg";
+const blogCatAbuseCover = "/assets/blog-cat-abuse-ssp/cover.jpg";
+const blogCatAbuseClinicExt = "/assets/blog-cat-abuse-ssp/inline-clinic-exterior.jpg";
+const blogCatAbuseClinicInt = "/assets/blog-cat-abuse-ssp/inline-clinic-interior.jpg";
+const blogCatAbuseCat = "/assets/blog-cat-abuse-ssp/inline-cat.jpg";
+const blogYlShelterCover = "/assets/blog-yl-shelter-136/cover.jpg";
+const blogYlShelterCages = "/assets/blog-yl-shelter-136/inline-cages.jpg";
+const blogYlShelterRaid1 = "/assets/blog-yl-shelter-136/inline-raid1.jpg";
+const blogYlShelterRaid2 = "/assets/blog-yl-shelter-136/inline-raid2.jpg";
+const blogYlShelterRaid3 = "/assets/blog-yl-shelter-136/inline-raid3.jpg";
+const blogTklCover = "/assets/blog-tkl-pawsgate/cover.jpg";
+const blogTklVenue = "/assets/blog-tkl-pawsgate/inline-venue.jpg";
+const blogTklCordon = "/assets/blog-tkl-pawsgate/inline-cordon.jpg";
+const blogTklPolice = "/assets/blog-tkl-pawsgate/inline-police.jpg";
+const blogTklEntrance = "/assets/blog-tkl-pawsgate/inline-entrance.jpg";
+const blogTklDog = "/assets/blog-tkl-pawsgate/inline-dog.jpg";
+const blogTklDogWalk = "/assets/blog-tkl-pawsgate/inline-dog-walk.jpg";
+
 
 const buildRainyDayContent = () => `
       <p style="font-size: 13px; color: #666; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 6 月 18 日</p>
@@ -217,6 +241,622 @@ const buildTyphoonMallContent = () => `
 `;
 
 const baseBlogPosts: BlogPost[] = [
+  {
+    id: "36",
+    slug: "ta-kwu-ling-pawsgate-dog-attack-2026-08-20",
+    title: "【突發】打鼓嶺寵物酒店女持牌人遭寄養唐狗咬死：時間線、場地同自保指南｜PetWell HK",
+    excerpt:
+      "2026 年 8 月 20 日下午，打鼓嶺坪洋新村持牌寵物酒店「Pawsgate 毛界限」33 歲女持牌人，餵完一隻約 30 公斤、待領養的雄性唐狗後，狗拒入籠並襲擊約 1 分鐘。她其後被發現倒斃草地，漁護署已帶走涉事犬，死因有待法醫確定。",
+    content: `
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 8 月 21 日</p>
+
+      <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.75;margin:0;color:#991B1B;"><strong>內容警示：</strong>本文報道 8 月 20 日打鼓嶺狗咬人致命事件。內文含現場新聞照片（警方封鎖、場地、義工舊照）。向事主家人同朋友致哀。事件仍在調查，死因有待法醫確定。</p>
+      </div>
+
+      <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">一分鐘結論</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">8 月 20 日下午約 2 時，打鼓嶺<strong>坪洋新村</strong>一間持牌寵物酒店兼犬隻訓練中心，33 歲女持牌人在草地餵完一隻約 <strong>30 公斤</strong>、待領養的雄性唐狗後，想將狗放返籠。狗唔肯入籠，突然襲擊，雙方糾纏約 <strong>1 分鐘</strong>。約 4 時 12 分有人發現她倒斃草地上，身旁仲有隻唐狗徘徊。現場另外 6 隻狗當時都喺籠內。漁護署已將涉事狗帶走觀察；案件交<strong>邊界警區重案組</strong>調查，警方稱會查有冇違規或疏忽。場地名為「<strong>Pawsgate 毛界限</strong>」，今年 1 月開業。</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">香港極少發生狗咬死人。事發前三日，元朗 YOHO MIX 先有大型犬咬死兩隻細狗；呢單再升到人命。PetWell 綜合警方記者會、<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60382113/%E6%89%93%E9%BC%93%E5%B6%BA%E7%8B%97%E6%AE%BA%E4%BA%BA-%E7%8B%97%E9%85%92%E5%BA%97%E5%A5%B3%E8%B2%A0%E8%B2%AC%E4%BA%BA%E9%81%AD%E5%94%90%E7%8B%97%E8%A5%B21%E5%88%86%E9%90%98-%E9%A0%AD%E9%A0%B8%E9%9B%99%E8%87%82%E7%8F%BE%E6%92%95%E8%A3%82%E5%82%B7" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://www.am730.com.hk/%E6%9C%AC%E5%9C%B0/1048632/%E6%89%93%E9%BC%93%E5%B6%BA%E5%AF%B5%E7%89%A9%E9%85%92%E5%BA%97%E5%A5%B3%E8%B2%A0%E8%B2%AC%E4%BA%BA%E9%81%AD%E7%8B%97%E5%94%90%E8%A5%B2%E6%93%8A%E4%B8%80%E5%88%86%E9%90%98%E6%AD%BB%E4%BA%A1-%E9%A0%AD%E9%A0%B8%E7%AD%89%E5%A4%9A%E8%99%95%E6%92%95%E8%A3%82" target="_blank" rel="noopener" style="color:#FF6B35;">am730</a>、<a href="https://news.mingpao.com/pns/%E8%A6%81%E8%81%9E/article/20260821/s00001/1787250200791/%E9%97%9C%E7%8B%97%E5%85%A5%E7%B1%A0%E9%81%AD%E5%92%AC-%E8%A8%93%E7%B7%B4%E4%B8%AD%E5%BF%83%E6%9D%B1%E4%B8%BB%E4%BA%A1-%E5%A4%9A%E8%99%95%E6%9C%89%E6%92%95%E8%A3%82%E5%82%B7-%E7%8A%AC%E4%BA%8B%E5%BE%8C%E5%BE%98%E5%BE%8A%E4%BA%8B%E4%B8%BB%E8%BA%AB%E6%97%81" target="_blank" rel="noopener" style="color:#FF6B35;">明報</a>、<a href="https://news.now.com/home/local/player?newsId=659343" target="_blank" rel="noopener" style="color:#FF6B35;">Now 新聞</a> 同訓犬師訪問，整理已知時間線、場地、法例，同寄養／領養／場主可以即刻用嘅風險管理。細節以警方、法醫同漁護署後續公布為準。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">發生咗咩事：由餵食到發現，大約兩小時</h2>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">8 月 11 日 · 入住</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">涉事雄性唐狗由狗義工帶到上址寄養，等待領養。至事發當日入住約 <strong>10 日</strong>。警方稱狗約 1 歲、身長約 1 米、重約 30 公斤；部分報道寫身長 1.5 米、高約 1 米。是否流浪狗定棄養，官方未公布。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">8 月 20 日約 14:00 · 閉路電視</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">女事主喺室外草地餵完呢隻狗，打算將佢放返旁邊狗舍嘅籠。狗唔肯入籠，突然襲擊。警方稱過程約 1 分鐘，其間被咬頸、膊頭約 10 秒。雙方糾纏後一齊離開狗舍，行向草地。襲擊前事主清醒。案發時酒店內只有她一人工作；另外 6 隻狗全部喺籠內。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">16:12 · 報案</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">警方接報：一名本地女子倒臥打鼓嶺坪洋村一帶草地，失去知覺。據報地址為坪洋村 111 號（部分報道寫 110 號）。警員同救護到場，證實 33 歲黃姓女子已死亡，身旁有一隻唐狗徘徊。初步檢驗：頭、下顎、頸同雙臂有不同程度撕裂同動物咬痕。現場無搜掠痕跡。案件暫列屍體發現。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">當晚至 8 月 21 日凌晨</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">法醫、鑑證、漁護署動物管理科、愛護動物協會、政府化驗所同勞工處先後到場。涉事狗由漁護署帶走觀察同檢查。家屬於晚上約 10 時趕到；遺體約凌晨 2 時移走。21 日早上約 9 時，親友約 20 人到富山殮房認屍。</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogTklVenue}" alt="打鼓嶺坪洋新村寵物酒店外，警員同警車在鐵閘前調查" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">警方封鎖涉事寵物酒店及犬隻訓練中心對開草地，禁止走近。（明報）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogTklCordon}" alt="警員在村路拉起橙色封鎖膠帶" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">坪洋新村對開小路被封鎖調查。（am730）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogTklEntrance}" alt="多名香港警員在村屋小路入口值勤，後方有白色車輛" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">警員在村路入口值勤，漁護署同法醫其後入村蒐證。（香港 01）</p>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">警方：持牌場、只有她一人當值</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">邊界警區助理指揮官（行動及刑事）警司陳啟澤交代：現場係一間<strong>持牌寵物酒店及犬隻訓練中心</strong>，今年 1 月開始營業。死者係 33 歲本地女子，亦即該酒店持牌人。案發時只有她在場工作。警方會全面調查，包括有冇違規或疏忽，還原事實。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">消息指場地為「<strong>Pawsgate 毛界限寵物酒店及犬隻訓練中心</strong>」，前稱「Getdogther 聚狗一堂」，裝修後今年 1 月開業。社交平台標榜過萬呎空間、4,500 呎草地、3.5 米 × 9 米泳池、1,000 呎室內空間，自稱有「10 年犬隻訓練經驗、20 年動物義工經驗、超過 200 隻狗狗學生、98% 五星好評」。警方記者會指，<strong>暫未發現女持牌人有同馴犬相關的專業資格</strong>。香港本身並無法例強制訓犬師持牌——呢點同寄養所牌照係兩件事。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogTklPolice}" alt="邊界警區重案組人員在記者會交代打鼓嶺狗咬人命案" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">邊界警區助理指揮官（行動及刑事）警司陳啟澤交代案情。案件由邊界警區重案組跟進。（am730）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">據報事主外號 Jojo：義工、愛幫浪浪</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">星島頭條引述朋友：事主外號 <strong>Jojo／祖兒</strong>，未婚，本身飼養一隻愛犬，經常做狗義工。朋友楊小姐說，幾年前在流浪狗領養日認識她，每次見面話題都圍繞浪浪；有時義工需要短期安置，她會幫手先放酒店。親友 21 日早上到富山殮房認屍。官方未公布全名，本文只跟傳媒已公開的外號同姓氏。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">涉事狗：官方講唐狗；東周刊指或係「太陽仔」</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">警方公開資料係：約 1 歲雄性<strong>唐狗</strong>，8 月 11 日由義工送到場寄養待領養。東周刊其後報道，<strong>據該刊了解</strong>，涉事犬或為混種美國惡霸犬「<strong>太陽仔</strong>」——長期被鐵鏈鎖在車場的籠鏈犬，今年 3 月因收地獲救，義工貼文形容「超級嗲嗲豬、對人類友善」，但需要學禮儀同狗狗社交，較適合無狗、有經驗家庭。拯救後住進狗場一個月仍未有人查詢領養。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">發佈領養帖的義工 S 小姐被問到是否同一隻時，表示目前不能發表言論。籠鏈犬關注組則說近半年未有安排狗隻入住該訓練中心。換言之：<strong>「太陽仔」身份尚未獲警方或漁護署核實</strong>。以下舊照來自義工尋家貼文／東周刊轉載，只說明「據報可能係同一隻」，唔好當成官方確認。</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogTklDog}" alt="據報名為太陽仔的淺啡色短毛大型混種犬，戴頸圈同牽繩，望向鏡頭" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">義工尋家帖中的「太陽仔」。東周刊指或即涉事犬，官方尚未核實。（東周刊／義工貼文）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogTklDogWalk}" alt="義工牽住淺啡色大型混種犬沿村路徑步行" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">義工帶「太陽仔」散步時，報道指表現服從。（東周刊／義工貼文）</p>
+        </div>
+      </div>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:16px 20px;border-radius:10px;margin-bottom:32px;">
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#1E3A8A;"><strong>溫馴舊照唔等於零風險。</strong>籠鏈犬、浪浪、待領養寄養犬，可能同時親人、怕困籠、未學過入籠指令。義工描述「嗲」同閉路電視「拒入籠後襲擊」，可以同時存在。評估風險要睇行為史、困籠訓練、體型同當值人手，而唔係一張笑臉相。</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">訓犬師：多數攻擊來自壓力同恐懼，唔好強行困籠</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">犬隻行為顧問 Eddie Choi 對明報同 am730 指出：除極少數不可預測的突發攻擊，大部分反抗都可以預測，多數源自壓力、恐懼或感到受威脅。如果狗平時已經唔願入籠，多次累積之後會愈抗拒；主人再強迫，狗喺別無選擇下會反抗。初期可能先「咬空氣」警告；壓力推到極高，就會見到人或者物件都咬。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">佢又說：約一歲狗處於「青少年期」，情緒可以好極端。如果體內有格鬥犬基因，一被刺激腎上腺素飆升，進入格鬥狀態時可以不知恐懼同痛。訓練應做無壓迫訓練，<strong>唔好強行困籠</strong>。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">萬一被中大型犬襲擊：先用身邊物件隔開；冇工具就雙手抱頭、身體縮小，保護頭頸，同時釋放「冇威脅」訊號。胡椒噴霧係下下策，興奮中的狗可能更猛。經過時唔好雙眼直盯，側身、眼尾監察，盡快離開。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">法例：有寄養牌 ≠ 有訓犬資格</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#111827;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">寵物寄養所牌照</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">為報酬寄養貓狗，一般要向漁護署申領動物寄養所牌照。警方確認呢間場係持牌寵物酒店。有牌代表場地獲批准經營，唔等於每個人手都有處理攻擊性犬隻的能力。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#111827;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">訓犬師：香港無強制牌</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">香港法律上<strong>不需要</strong>寵物訓練師持牌。場地可以自稱「10 年經驗、200 隻學生」，但無法定資格審查。選訓練班、寄宿訓練，要自己查認證同保險。詳情見 <a href="/blog/hong-kong-dog-trainer-licence-guide" style="color:#FF6B35;text-decoration:underline;">訓犬師牌照指南</a>。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#111827;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">狗牌、管束、勞工處</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">滿 5 個月的狗要有有效狗牌、晶片、狂犬病疫苗。勞工處到場，反映署方亦會睇職業安全：單獨當值、處理中大型待領養犬，係唔係足夠。公眾地方牽繩法例見 <a href="/yoho-mall-dog-attack-yuen-long-2026-08-17" style="color:#FF6B35;text-decoration:underline;">YOHO 狗咬狗專題</a>。</p>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">寄養、領養、場主：而家可做的 8 件事</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:32px;">
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>1. 入籠要用獎勵，唔好硬塞。</strong>拒入籠係常見壓力訊號。強行推入，可以將警告變成攻擊。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>2. 中大型待領養犬，唔好一人收工。</strong>體重 20 公斤以上，單獨餵食、單獨關籠，出事時無人幫忙。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>3. 問清楚行為史。</strong>係咪籠鏈犬、咬過未、見人／見狗／入籠反應點。義工帖寫「親人」只係一個面向。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>4. 場地有牌，再問保險同人手。</strong>查漁護署寄養所牌、當值人數、緊急聯絡、閉路電視、隔離籠。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>5. 訓練資格當加分，唔好當法定。</strong>香港訓犬師無強制牌。問有冇 CPDT / QSSD / 類似認證，同有冇處理攻擊史的經驗。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>6. 被中大型犬咬：護頭頸、縮細身體、用物件隔開。</strong>唔好對盯、唔好逞強拉開。即打 999。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>7. 懷疑無牌寄養或危險管束：1823 或 999。</strong>漁護署熱線可以舉報。緊急人身傷害先報警。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>8. 自己隻狗要有牌、有晶片。</strong>過戶領養之後，用你的身份續牌。教學見 <a href="/iamsmart-dog-electronic-licence-hk-guide" style="color:#C2410C;">iAM Smart 電子狗牌</a>。</div>
+      </div>
+
+      <div class="blog-cta-app">
+        <div class="cta-app-inner">
+          <div class="cta-app-text">
+            <h3>寄養、出街、急症資料，一 tap 備齊</h3>
+            <ul>
+              <li>✅ 電子狗牌、疫苗、病歷隨時出示</li>
+              <li>✅ 全港 24 小時獸醫一鍵導航</li>
+              <li>✅ 訓練班、商場政策、急診清單</li>
+            </ul>
+            <p class="cta-app-desc">愛狗同安全可以同時存在。PetWell 幫你準備好證件同應急資料。</p>
+            <a href="/download" class="cta-btn-primary">📲 立即免費下載</a>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">常見問題</h2>
+      <p><strong>Q: 係咪已經證實「太陽仔」就係咬死人嗰隻？</strong></p>
+      <p>A: 未。警方只公布約 1 歲雄性唐狗。東周刊指據了解是 5 歲混種美國惡霸犬「太陽仔」，但發帖義工拒絕確認，漁護署亦未公開核實。兩邊描述連年齡都唔同，要以官方後續為準。</p>
+      <p><strong>Q: 場地有牌，點解仲會出事？</strong></p>
+      <p>A: 寄養牌規管場地可否經營，唔規管每個當值員工的馴犬能力。警方指暫未發現事主有專業馴犬資格。香港訓犬師亦無法例強制持牌。有牌唔等於零風險。</p>
+      <p><strong>Q: 另外 6 隻狗而家點？</strong></p>
+      <p>A: 案發時牠哋都在籠內。後續由邊個接管、會唔會被漁護署一併檢查，要以署方同場地安排為準。唔好聽信「200 隻狗等領養」呢類未核實留言。</p>
+      <p><strong>Q: 被狗咬之後應該點做？</strong></p>
+      <p>A: 人身傷害打 999。保護頭頸，避免同狗對峙。傷口要即時醫療處理，並告知可能涉及動物咬傷。寵物遇襲則同時送最近獸醫，名單見 <a href="/24hr-vet-clinic-hk-list" style="color:#FF6B35;">24 小時獸醫</a>。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">相關閱讀</h2>
+      <ul style="font-size:15px;line-height:1.9;margin:0 0 28px;padding-left:22px;color:#374151;">
+        <li><a href="/yoho-mall-dog-attack-yuen-long-2026-08-17" style="color:#FF6B35;">元朗 YOHO MIX 大狗咬死兩隻細狗：牽繩法例同自保</a></li>
+        <li><a href="/blog/hong-kong-dog-trainer-licence-guide" style="color:#FF6B35;">香港訓犬師需要牌照嗎？</a></li>
+        <li><a href="/hk-dog-training-classes-guide-2026" style="color:#FF6B35;">香港狗隻訓練班指南</a></li>
+        <li><a href="/iamsmart-dog-electronic-licence-hk-guide" style="color:#FF6B35;">iAM Smart 電子狗牌申請</a></li>
+        <li><a href="/yuen-long-animal-shelter-136-unlicensed-dogs-2026-08-12" style="color:#FF6B35;">元朗收容所涉無牌養 136 隻狗</a></li>
+      </ul>
+
+      <p style="font-size:13px;line-height:1.7;color:#6B7280;margin-top:32px;padding-top:16px;border-top:1px solid #E5E7EB;">資料來源：<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60382113/%E6%89%93%E9%BC%93%E5%B6%BA%E7%8B%97%E6%AE%BA%E4%BA%BA-%E7%8B%97%E9%85%92%E5%BA%97%E5%A5%B3%E8%B2%A0%E8%B2%AC%E4%BA%BA%E9%81%AD%E5%94%90%E7%8B%97%E8%A5%B21%E5%88%86%E9%90%98-%E9%A0%AD%E9%A0%B8%E9%9B%99%E8%87%82%E7%8F%BE%E6%92%95%E8%A3%82%E5%82%B7" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60382146/%E6%89%93%E9%BC%93%E5%B6%BA%E7%8B%97%E6%AE%BA%E4%BA%BA-%E7%8B%97%E8%88%8D%E6%A8%99%E6%A6%9C%E9%81%8E%E8%90%AC%E5%91%8E%E7%A9%BA%E9%96%93-%E8%81%B2%E7%A8%B1-10%E5%B9%B4%E7%8A%AC%E9%9A%BB%E8%A8%93%E7%B7%B4%E7%B6%93%E9%A9%97" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01（場地）</a>、<a href="https://www.am730.com.hk/%E6%9C%AC%E5%9C%B0/1048632/%E6%89%93%E9%BC%93%E5%B6%BA%E5%AF%B5%E7%89%A9%E9%85%92%E5%BA%97%E5%A5%B3%E8%B2%A0%E8%B2%AC%E4%BA%BA%E9%81%AD%E7%8B%97%E5%94%90%E8%A5%B2%E6%93%8A%E4%B8%80%E5%88%86%E9%90%98%E6%AD%BB%E4%BA%A1-%E9%A0%AD%E9%A0%B8%E7%AD%89%E5%A4%9A%E8%99%95%E6%92%95%E8%A3%82" target="_blank" rel="noopener" style="color:#FF6B35;">am730</a>、<a href="https://news.mingpao.com/pns/%E8%A6%81%E8%81%9E/article/20260821/s00001/1787250200791/%E9%97%9C%E7%8B%97%E5%85%A5%E7%B1%A0%E9%81%AD%E5%92%AC-%E8%A8%93%E7%B7%B4%E4%B8%AD%E5%BF%83%E6%9D%B1%E4%B8%BB%E4%BA%A1-%E5%A4%9A%E8%99%95%E6%9C%89%E6%92%95%E8%A3%82%E5%82%B7-%E7%8A%AC%E4%BA%8B%E5%BE%8C%E5%BE%98%E5%BE%8A%E4%BA%8B%E4%B8%BB%E8%BA%AB%E6%97%81" target="_blank" rel="noopener" style="color:#FF6B35;">明報</a>、<a href="https://news.now.com/home/local/player?newsId=659343" target="_blank" rel="noopener" style="color:#FF6B35;">Now 新聞</a>、<a href="https://www.stheadline.com/breaking-news/3606566/%E6%89%93%E9%BC%93%E5%B6%BA%E7%8B%97%E8%88%8D%E5%91%BD%E6%A1%88%E4%BB%8A%E5%B9%B41%E6%9C%88%E9%96%8B%E6%A5%AD-%E6%A8%99%E6%A6%9C%E9%81%8E%E8%90%AC%E5%91%8E%E7%A9%BA%E9%96%93-%E8%81%B2%E7%A8%B1%E6%9C%8910%E5%B9%B4%E7%B6%93%E9%A9%97" target="_blank" rel="noopener" style="color:#FF6B35;">星島頭條</a>、<a href="https://eastweek.stheadline.com/pets/21016/%E6%89%93%E9%BC%93%E5%B6%BA%E7%8B%97%E8%88%8D%E5%A5%B3%E6%9D%B1%E4%B8%BB%E6%AD%BB%E4%BA%A1-%E6%B6%89%E4%BA%8B%E7%8A%AC%E8%BA%AB%E4%BB%BD%E6%9B%9D%E5%85%89-%E6%9B%BE%E7%82%BA%E7%B1%A0%E9%8F%88%E7%8A%AC-%E7%BE%A9%E5%B7%A5%E6%8C%87%E6%80%A7%E6%A0%BC%E8%A6%AA%E4%BA%BA" target="_blank" rel="noopener" style="color:#FF6B35;">東周刊（太陽仔，未核實）</a>。現場照片為新聞報道用途，來源已註明。封面為 AI 根據現場照片同義工舊照生成的非寫實示意，並非事發原圖。事件仍在調查，細節以警方、法醫及漁護署公布為準。</p>
+    `,
+    author: "PetWell HK",
+    date: "2026-08-21",
+    category: "寵物安全",
+    imageUrl: blogTklCover,
+    seoKeywords: [
+      "打鼓嶺 狗咬死人",
+      "Pawsgate 毛界限",
+      "坪洋新村 寵物酒店",
+      "唐狗 襲擊",
+      "寵物寄養 安全",
+      "漁護署 狗隻",
+      "訓犬師 牌照",
+      "太陽仔 籠鏈犬",
+    ],
+    faqItems: [
+      {
+        question: "係咪已經證實「太陽仔」就係咬死人嗰隻？",
+        answer: "未。警方只公布約 1 歲雄性唐狗。東周刊指據了解是 5 歲混種美國惡霸犬「太陽仔」，但發帖義工拒絕確認，漁護署亦未公開核實。要以官方後續為準。",
+      },
+      {
+        question: "場地有牌，點解仲會出事？",
+        answer: "寄養牌規管場地可否經營，唔規管每個當值員工的馴犬能力。警方指暫未發現事主有專業馴犬資格。香港訓犬師亦無法例強制持牌。",
+      },
+      {
+        question: "另外 6 隻狗而家點？",
+        answer: "案發時牠哋都在籠內。後續由邊個接管、會唔會被漁護署一併檢查，要以署方同場地安排為準。",
+      },
+      {
+        question: "被狗咬之後應該點做？",
+        answer: "人身傷害打 999。保護頭頸，避免同狗對峙。傷口要即時醫療處理。寵物遇襲則同時送最近獸醫。",
+      },
+    ],
+    relatedTopics: ["寵物安全", "寄養", "狗隻訓練", "牽繩法例"],
+  },
+  {
+    id: "33",
+    slug: "yoho-mall-dog-attack-yuen-long-2026-08-17",
+    title: "【突發】元朗 YOHO MIX 大狗 20 分鐘咬死兩隻細狗：時間線、法例同自保指南｜PetWell HK",
+    excerpt:
+      "2026 年 8 月 17 日下午，元朗 YOHO MIX／形點一帶，一隻約 60 公斤、無牽繩、無口罩的大型犬，18 分鐘內先後咬死 17 歲迷你貴婦狗同 4 歲比熊犬。漁護署其後帶走涉事大狗；據報疑與 7 月 11 日咬傷哥基事件有關。",
+    content: `
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 8 月 17 日</p>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:14px 18px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.7;margin:0;color:#1E3A8A;"><strong>今日焦點：</strong>打鼓嶺寵物酒店女持牌人遭寄養唐狗咬死，見<a href="/ta-kwu-ling-pawsgate-dog-attack-2026-08-20" style="color:#2563EB;text-decoration:underline;">專題報道</a>。</p>
+      </div>
+
+      <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.75;margin:0;color:#991B1B;"><strong>內容警示：</strong>本文報道今日元朗狗咬狗致命事件，內文含現場截圖（部分已打格）。畫面可能引起不安，請自行衡量是否繼續閱讀。向兩位離世毛孩的主人致哀。</p>
+      </div>
+
+      <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">一分鐘結論</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">今日（8 月 17 日）下午約 3 時，元朗 <strong>YOHO MIX／形點</strong>一帶，一隻重約 <strong>60 公斤</strong>、只有頸箍、無狗繩、無口罩的大型混種犬，在閉路電視未見有人牽引的情況下，18 分鐘內先後襲擊兩隻約 5 公斤的細狗：17 歲迷你貴婦狗送院不治，4 歲白色比熊犬當場死亡。警方列作「狗隻咬噬」；漁護署將大狗送往新界北動物管理中心，其後確認狗只有晶片同有效狗牌，會按牌照聯絡畜養人調查，證據充足將檢控。</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">YOHO 一帶係元朗最熱鬧的寵物友善商圈之一——商場、的士站、公園、行人路全部疊埋一齊。今日呢單，唔係「兩隻狗嘈交」，而係一隻體型相差十倍以上的大型犬，喺無人牽繩的公眾地方，短時間內結束兩條生命。PetWell 綜合 <a href="https://www.am730.com.hk/%E6%9C%AC%E5%9C%B0/1047909/%E5%85%83%E6%9C%97yoho%E5%A4%A7%E7%8B%97%E5%A4%B1%E6%8E%A7%E5%92%AC%E6%AD%BB%E7%B4%B0%E7%8B%97-%E7%9B%AE%E6%93%8A%E8%80%85%E7%99%BC%E6%96%87%E5%B0%8B-%E7%84%A1%E8%89%AF%E7%8B%97%E4%B8%BB-%E6%9C%89%E7%89%87-" target="_blank" rel="noopener" style="color:#FF6B35;">am730</a>、<a href="https://hkanimalpost.com/2026/08/17/08172/" target="_blank" rel="noopener" style="color:#FF6B35;">香港動物報</a>、<a href="https://www.sundaykiss.com/2425415" target="_blank" rel="noopener" style="color:#FF6B35;">SundayKiss</a> 同漁護署回覆，整理時間線、法例同主人可以即刻用嘅自保方法。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">發生咗咩事：18 分鐘兩宗報案</h2>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">15:06 · 第一宗</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">警方接報：一隻重約 5 公斤的 <strong>17 歲啡色迷你貴婦狗</strong>，在 <strong>YOHO MIX 對開的士站／YOHO Mall 1 停車場小路</strong>（朗樂路 1 號 YOHO 平台一帶）被大型犬追咬。男狗主即時送往附近獸醫診所，最終不治。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#DC2626;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">15:24 · 第二宗</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">另一隻同樣約 5 公斤的 <strong>4 歲白色比熊犬</strong>，在 <strong>YOHO 棒棒堂／棒棒糖公園</strong>被同一大型犬咬住頸部。途人上前制止不果，比熊犬當場倒地死亡。網上流傳畫面可見主人跪地掩面痛哭，其他市民嘗試用狗繩拉開大狗，但大狗咬住不放。</p>
+        </div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">警方翻查閉路電視：涉事大狗長約 <strong>1.5 米</strong>、高約 <strong>1 米</strong>、重約 <strong>60 公斤</strong>，當時只有頸帶，身上沒有狗繩同口罩，襲擊過程未見有人牽引。約 6 至 7 名警員其後用屏風隔板包圍大型犬，防止逃走，再交由漁護署帶走。案件列作「狗隻咬噬」。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogYohoAttackMix}" alt="元朗 YOHO MIX 對開行人路，涉事大型犬站在白色細狗上方，畫面已打格" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">現場在 YOHO MIX（元點）對開行人路。屏障上可見商場標誌。畫面已打格。（網上片段截圖／SundayKiss）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">現場畫面：途人制止不果</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">目擊者形容大狗「死都唔放口」。有人報警時，現場無人承認係大狗主人。曾上前拉住大狗的內地遊客（網名「紅豆使者」）其後發文，指自己同表弟表妹接手拉狗：「這隻狗體型實在是太大了，力氣也非常大……心裡還是很擔心牠回扭過頭咬我。」</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYohoAttackScene}" alt="現場片段截圖：大型犬咬住細狗，旁邊有人跪地痛哭，畫面已打格" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">網上片段可見大狗咬住白色細狗不放，主人當場崩潰。畫面已打格。（am730／Threads）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYohoAttackAftermath}" alt="事發後途人包圍已戴上口罩的大型犬，有人跪在地上" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">事發後途人包圍大型犬；有市民跪地痛哭。稍後大狗被戴上口罩。（網上片段截圖）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYohoAttackPolice}" alt="香港警員在現場架起肉色屏風隔板處理狗咬狗案" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">警員到場以屏風隔板包圍大型犬，防止逃走，再交漁護署接收。（網上片段截圖）</p>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">漁護署：有晶片、有有效狗牌，會聯絡主人</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">大狗被送往<strong>新界北動物管理中心</strong>。漁護署職員最初表示，因大型犬情緒仍處於危險狀態，未能即場掃描晶片。其後漁護署回覆香港動物報：經檢查後，<strong>該狗隻植有晶片，並領有有效狗牌</strong>。署方會按牌照資料聯絡畜養人，就事件調查；如有足夠證據，會提出檢控。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">漁護署同時提醒：狗隻畜養人必須時刻對狗隻作出適當管束，包括用狗帶穩妥牽引大型狗隻，以免對其他人或動物造成傷害。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogYohoAttackNews}" alt="香港動物報報道圖：涉事大型犬、現場同犬隻行為專家 Eddie Choi" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">犬隻行為專家 Eddie Choi：「沒有絕對方法可以制止，教育狗主牽繩更重要。」（香港動物報）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">7 月 11 日：疑同一隻大狗咬傷哥基</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">香港動物報報道，今日咬死兩狗的大型犬，<strong>疑似</strong>就是 7 月 11 日在 Grand YOHO 旁行人路突襲 3 歲哥基「寶寶」的那一隻。當日大狗無預警衝過馬路，咬住哥基右耳不放；女主人兩次被撞倒擦傷，途人攔住大狗後，牠仍追殺至商場玻璃門，坐在門口等候。哥基右耳被咬穿，內耳多處咬痕，需每日清洗傷口同食抗生素。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">當時漁護署已將大狗帶走，其後狗主領回。哥基主人張先生今日對動物報表示憤怒：「點解個主人仲係唔幫隻大狗上繩及戴口罩，漁農處已經檢控緊佢。」動物報正向漁護署查詢，7 月事件的檢控進度；兩案是否同一隻狗，仍待官方核實。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogYohoAttackJuly}" alt="7月11日被大型犬咬傷的哥基在診所治理，右耳有傷口" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">7 月 11 日 Grand YOHO 被咬傷的哥基「寶寶」，右耳被咬穿。（香港動物報／事主提供）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">香港法例：公眾地方必須牽繩</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">呢單唔係「寵物禮貌」問題，而係刑事責任。漁護署公開引用兩條：</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#111827;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">《狂犬病條例》第 421 章第 23 條</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">任何大小的狗隻，在公眾地方（或按常理可遊蕩至公眾地方時），必須以狗帶牽引或以其他方式妥善控制。違例最高罰款 <strong>$10,000</strong>。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:20px;background:#fff;">
+          <div style="display:inline-block;background:#111827;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">《危險狗隻規例》第 167D 章第 9 條</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">體重 <strong>20 公斤或以上</strong>的大型狗隻，在公眾地方須以長度不超逾 <strong>2 米</strong>的狗帶穩妥牽引。違例最高罰款 <strong>$25,000 及監禁 3 個月</strong>。</p>
+        </div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">今日涉事大狗約 60 公斤，明顯屬於大型犬。無牽繩出現在的士站、公園同商場對開行人路，已經踩中上述兩條。有牌、有晶片，都唔等於可以放養。查狗牌、續牌可以睇 <a href="/iamsmart-dog-electronic-licence-hk-guide" style="color:#FF6B35;text-decoration:underline;">iAM Smart 電子狗牌教學</a>。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">專家：大狗咬住之後，幾乎冇必殺技</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">犬隻行為專家 Eddie Choi 對香港動物報指出：當大狗已經咬住細狗，<strong>沒有絕對有效的制止方法</strong>。兩種極端做法都風險極高：</p>
+      <ul style="font-size:15px;line-height:1.8;margin:0 0 16px;padding-left:22px;color:#374151;">
+        <li>嚇到大狗放口——但當時腎上腺素極高，成功率低。</li>
+        <li>等佢冷靜：不要讓狗揈頭（揈頭會撕裂傷口）；可用衫或毛巾遮住雙眼，再找機會撬口。大狗咬合力動輒數百磅。</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">佢坦言今次體型相差太遠：即使大狗沒有揈頭，都可以咬斷細狗的頸。所以真正有效的，係<strong>事前牽繩</strong>，而唔係事發先英雄救美。</p>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:16px 20px;border-radius:10px;margin-bottom:32px;">
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#1E3A8A;"><strong>如果有大狗衝過嚟咬你隻狗：</strong>抱起自己的狗時，<strong>調轉背、立即離開</strong>，唔好面對面同大狗對峙。見到體型差很遠的狗，遠啲行，唔好靠近打招呼。</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">細狗主人出街：而家可做的 7 件事</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:32px;">
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>1. 短繩，唔好伸縮繩。</strong>商場、的士站、公園出入口用人手短繩，先控制得到距離。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>2. 一眼關七。</strong>見大型犬無牽繩、或者主人滑手機，即刻拉開距離，唔使覺得自己失禮。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>3. 細狗可以入袋／抱起。</strong>YOHO Mall 本身係「指定區域・須繫繩」。人流密、有大型犬靠近，抱起細狗再行。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>4. 唔好讓兩狗 tri 頭 tri 腦。</strong>體型差十倍嘅「友好見面」，對細狗可以係致命風險。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>5. 大型犬主人：2 米內短繩 + 訓練。</strong>法例已經寫明。口罩唔係羞辱，係對其他生命的最低尊重。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>6. 遇襲即打 999，再送最近獸醫。</strong>頸部咬傷可以幾分鐘內失血或窒息。元朗夜診可先睇 <a href="/24hr-vet-clinic-hk-list" style="color:#C2410C;">24 小時獸醫名單</a> 同 <a href="/pet-emergency-night-vet-checklist-hk" style="color:#C2410C;">急診判斷清單</a>。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>7. 有片、有證人就留低。</strong>閉路電視、途人影片，係之後漁護署同警方跟進的關鍵。</div>
+      </div>
+
+      <div class="blog-cta-app">
+        <div class="cta-app-inner">
+          <div class="cta-app-text">
+            <h3>出街之前，商場政策同附近診所一 tap 睇</h3>
+            <ul>
+              <li>✅ YOHO Mall 等 45 間寵物友善商場政策</li>
+              <li>✅ 全港 24 小時獸醫一鍵導航</li>
+              <li>✅ 電子狗牌、疫苗、病歷隨時出示</li>
+            </ul>
+            <p class="cta-app-desc">牽繩係法律，亦係對其他毛孩嘅責任。PetWell 幫你準備好出街資料。</p>
+            <a href="/download" class="cta-btn-primary">📲 立即免費下載</a>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">常見問題</h2>
+      <p><strong>Q: 而家搵唔搵到大狗主人？</strong></p>
+      <p>A: 現場無人承認。漁護署其後確認狗只有晶片同有效狗牌，會按牌照聯絡畜養人。截至本文發出時，主人仍未公開現身。</p>
+      <p><strong>Q: 同 7 月咬傷哥基係唔係同一隻？</strong></p>
+      <p>A: 香港動物報引述事主同目擊者，指外觀同出沒地點高度吻合，但官方尚未公開核實兩案是否同一隻狗。7 月事件據事主所述，狗主當時已被漁護署跟進檢控。</p>
+      <p><strong>Q: 細狗出街一定要戴口罩？</strong></p>
+      <p>A: 香港法例沒有規定所有細狗必須戴口罩；20 公斤或以上大型犬在公眾地方必須用不多於 2 米的狗帶牽引。細狗更實際的保護係短繩、保持距離、必要時抱起或入袋。</p>
+      <p><strong>Q: 見到無繩大狗應該報警嗎？</strong></p>
+      <p>A: 如果狗隻無人管束、追咬其他動物或人，應打 999。漁護署熱線 1823 亦可舉報無牌、無牽繩或具攻擊性的狗隻。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">相關閱讀</h2>
+      <ul style="font-size:15px;line-height:1.9;margin:0 0 28px;padding-left:22px;color:#374151;">
+        <li><a href="/rainy-day-pet-friendly-indoor-hong-kong" style="color:#FF6B35;">全港寵物友善商場名單（含 YOHO Mall 政策）</a></li>
+        <li><a href="/24hr-vet-clinic-hk-list" style="color:#FF6B35;">香港 24 小時獸醫診所名單</a></li>
+        <li><a href="/pet-emergency-night-vet-checklist-hk" style="color:#FF6B35;">夜間急診判斷清單</a></li>
+        <li><a href="/hk-dog-training-classes-guide-2026" style="color:#FF6B35;">香港狗隻訓練班指南</a></li>
+        <li><a href="/iamsmart-dog-electronic-licence-hk-guide" style="color:#FF6B35;">iAM Smart 電子狗牌申請</a></li>
+      </ul>
+
+      <p style="font-size:13px;line-height:1.7;color:#6B7280;margin-top:32px;padding-top:16px;border-top:1px solid #E5E7EB;">資料來源：<a href="https://www.am730.com.hk/%E6%9C%AC%E5%9C%B0/1047909/%E5%85%83%E6%9C%97yoho%E5%A4%A7%E7%8B%97%E5%A4%B1%E6%8E%A7%E5%92%AC%E6%AD%BB%E7%B4%B0%E7%8B%97-%E7%9B%AE%E6%93%8A%E8%80%85%E7%99%BC%E6%96%87%E5%B0%8B-%E7%84%A1%E8%89%AF%E7%8B%97%E4%B8%BB-%E6%9C%89%E7%89%87-" target="_blank" rel="noopener" style="color:#FF6B35;">am730</a>、<a href="https://hkanimalpost.com/2026/08/17/08172/" target="_blank" rel="noopener" style="color:#FF6B35;">香港動物報（08172）</a>、<a href="https://hkanimalpost.com/2026/08/17/08173/" target="_blank" rel="noopener" style="color:#FF6B35;">香港動物報（08173，含漁護署回覆）</a>、<a href="https://www.sundaykiss.com/2425415" target="_blank" rel="noopener" style="color:#FF6B35;">SundayKiss</a>、<a href="https://www.pets.gov.hk/tc_chi/proper_care_of_pets/dogs/proper_control.html" target="_blank" rel="noopener" style="color:#FF6B35;">漁護署「妥善管理狗隻」</a>。現場照片為新聞報道用途，來源已註明。封面為 AI 根據現場照片生成的非寫實示意，並非事發原圖。事件仍在調查，細節以警方及漁護署公布為準。</p>
+    `,
+    author: "PetWell HK",
+    date: "2026-08-17",
+    category: "寵物安全",
+    imageUrl: blogYohoAttackCover,
+    seoKeywords: [
+      "YOHO Mall 大狗咬死細狗",
+      "YOHO MIX 狗咬狗",
+      "元朗形點 狗隻襲擊",
+      "香港牽繩法例",
+      "危險狗隻規例",
+      "漁護署 狗隻咬噬",
+      "大型犬 口罩 狗繩",
+      "寵物安全 商場",
+    ],
+    faqItems: [
+      {
+        question: "而家搵唔搵到大狗主人？",
+        answer: "現場無人承認。漁護署其後確認狗只有晶片同有效狗牌，會按牌照聯絡畜養人。截至本文發出時，主人仍未公開現身。",
+      },
+      {
+        question: "同 7 月咬傷哥基係唔係同一隻？",
+        answer: "香港動物報引述事主同目擊者，指外觀同出沒地點高度吻合，但官方尚未公開核實兩案是否同一隻狗。7 月事件據事主所述，狗主當時已被漁護署跟進檢控。",
+      },
+      {
+        question: "細狗出街一定要戴口罩？",
+        answer: "香港法例沒有規定所有細狗必須戴口罩；20 公斤或以上大型犬在公眾地方必須用不多於 2 米的狗帶牽引。細狗更實際的保護係短繩、保持距離、必要時抱起或入袋。",
+      },
+      {
+        question: "見到無繩大狗應該報警嗎？",
+        answer: "如果狗隻無人管束、追咬其他動物或人，應打 999。漁護署熱線 1823 亦可舉報無牌、無牽繩或具攻擊性的狗隻。",
+      },
+    ],
+    relatedTopics: ["寵物安全", "牽繩法例", "急症護理", "狗隻訓練"],
+  },
+  {
+    id: "34",
+    slug: "cheung-sha-wan-cat-abuse-classmate-boarding-2026-08-10",
+    title: "14歲男生涉虐死同學託管貓：診所揭發、法例同暫託注意｜PetWell HK",
+    excerpt:
+      "8 月 10 日，14 歲男生帶女同學暫託的 8 個月大起司貓到長沙灣動物醫療中心，貓已無呼吸心跳。警方其後以涉嫌殘酷對待動物拘捕他，現已保釋候查。",
+    content: `
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 8 月 16 日</p>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:14px 18px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.7;margin:0;color:#1E3A8A;"><strong>今日焦點：</strong>打鼓嶺寵物酒店女持牌人遭寄養唐狗咬死，見<a href="/ta-kwu-ling-pawsgate-dog-attack-2026-08-20" style="color:#2563EB;text-decoration:underline;">專題報道</a>。YOHO MIX 大狗咬死兩隻細狗，見<a href="/yoho-mall-dog-attack-yuen-long-2026-08-17" style="color:#2563EB;text-decoration:underline;">專題報道</a>。</p>
+      </div>
+
+      <div style="background:#FEF2F2;border-left:4px solid #DC2626;padding:16px 20px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.75;margin:0;color:#991B1B;"><strong>內容警示：</strong>本文含一張已打格的求診照片。案件仍在調查，男生獲准保釋，尚未定罪。</p>
+      </div>
+
+      <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">一分鐘結論</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">8 月 10 日傍晚，一名 <strong>14 歲</strong>中學男生帶女同學暫託約一個月的 <strong>8 個月大灰白色起司貓</strong>（美國短毛貓）到<strong>長沙灣動物醫療中心</strong>。獸醫發現貓已無呼吸心跳，口鼻有血、全身濕透、頸掛索帶。診所報警後，警方指男生同日較早前在<strong>李鄭屋邨</strong>寓所掌摑及腳踢該貓，以涉嫌「殘酷對待動物」拘捕。男生現已<strong>保釋候查</strong>；愛協檢走貓屍，轉交漁護署化驗所解剖。</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">同學離港，把貓交俾同學照顧——香港好常見。今次診所職員同獸醫因為傷勢唔尋常、男生講法前後矛盾，先揭發。PetWell 綜合 <a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60380444/%E5%B9%AB%E5%90%8C%E5%AD%B8%E7%85%A7%E9%A1%A78%E5%80%8B%E6%9C%88%E5%A4%A7%E8%B5%B7%E5%8F%B8%E8%B2%93-14%E6%AD%B2%E4%BB%94%E7%96%91%E8%99%90%E5%BE%85%E8%87%B4%E6%AD%BB-%E6%B1%82%E8%A8%BA%E6%83%B9%E7%96%91%E6%8F%AD%E7%99%BC%E8%A2%AB%E6%8D%95" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://www.stheadline.com/breaking-news/3604951/" target="_blank" rel="noopener" style="color:#FF6B35;">星島頭條</a>、<a href="https://hk.on.cc/hk/bkn/cnt/news/20260816/bkn-20260816162505197-0816_00822_001.html" target="_blank" rel="noopener" style="color:#FF6B35;">東網</a> 同文匯報報道，整理已知事實、法例，同暫託貓狗時可以點自保。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">已知時間線</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">8 月 10 日 · 較早前</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">警方調查指，有人曾於長沙灣李鄭屋邨家中掌摑及腳踢該貓。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">約 17:30</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">操普通話的 14 歲男生（報導指姓陳）無預約，手持飛機籠到青山道長沙灣動物醫療中心，稱「貓貓唔舒服」。職員形容佢好慌張、「手都震埋」，手上有疑似被貓抓傷的新傷口。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">求診檢查</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">獸醫發現貓已無呼吸心跳；口鼻出血、全身濕透、失禁、皮膚有泥沙、腹部積水、頸掛膠索帶。職員形容濕透程度「直情係喺個水度攞返上嚟咁」。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">18:25 · 報案</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">診所報警。女貓主當時視像通話，職員指對方喊得好犀利。雙方未成年，家長其後決定不急救。愛協到場檢走貓屍；男生父親到場後，警員帶男生返署。</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogCatAbuseClinicExt}" alt="長沙灣動物醫療中心 Pets R Us 門面" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">長沙灣動物醫療中心（Pets R Us），青山道 124–126 號 Spark City。（診所網站圖片）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogCatAbuseClinicInt}" alt="長沙灣動物醫療中心接待處" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">診所接待處。東網記者其後到場了解。（東網／文健雄攝）</p>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">講法前後矛盾，診所先報警</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">星島頭條引述職員：男生同佢、同事、警察講嘅係三樣嘢。綜合各報，至少出現過呢幾個版本：</p>
+      <ul style="font-size:15px;line-height:1.8;margin:0 0 16px;padding-left:22px;color:#374151;">
+        <li>貓打翻水桶／水杯，受驚跳來跳去撞傷</li>
+        <li>噹噹繩斷咗，所以用索帶箍頸</li>
+        <li>將貓困在廁所，用花灑射水，再用掃帚趕入籠</li>
+        <li>其後又謂無將貓困在廁所</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">愛協回覆香港 01：督察到場時貓已明顯死亡，口部及前肢有血跡，頸有膠索帶，皮毛有曾經濕過的痕跡；為成年雄性美國短毛貓。屍體其後交漁護署獸醫化驗所解剖。案件由深水埗警區動物罪案專隊跟進。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogCatAbuseCat}" alt="求診時的起司貓，頭部已打格" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">求診照片，頭部已打格。（東網）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">法例：殘酷對待動物最高囚 3 年</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">根據《防止殘酷對待動物條例》（第 169 章），殘酷地打、踢、惡待、折磨動物，或因不合理作為／不作為導致動物受到不必要痛苦，一經定罪，最高可處罰款 <strong>$200,000 及監禁 3 年</strong>。男生 14 歲，後續會按少年司法程序處理；現階段只係拘捕同保釋候查，並未定罪。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">交託貓狗之前，可以點做</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px;">
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>1. 唔好只交俾「識得嘅人」。 </strong>同學、親戚都要先睇過佢點同動物相處，最好上門觀察一次。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>2. 寫低緊急資料。</strong>獸醫電話、晶片編號、過敏、日常糧、授權人簽名。離港都要留一個成年聯絡人。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>3. 要求每日短片／相片。</strong>食嘢、廁所、精神。斷聯超過半天就要有後備計劃。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>4. 未成年人暫養要有大人在場。</strong>今次雙方都未成年，診所先要再搵家長。責任同判斷都唔應該只交俾 14 歲。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>5. 懷疑虐畜：打 999 或 1823，亦可通知愛協。</strong>獸醫有責任舉報不尋常傷勢。頸索帶、全身濕透、口鼻出血，都唔係「自己撞到」解釋得通。</div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">急症判斷同夜診名單，可睇 <a href="/pet-emergency-night-vet-checklist-hk" style="color:#FF6B35;text-decoration:underline;">夜間急診清單</a> 同 <a href="/24hr-vet-clinic-hk-list" style="color:#FF6B35;text-decoration:underline;">24 小時獸醫</a>。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">常見問題</h2>
+      <p><strong>Q: 男生而家點？</strong></p>
+      <p>A: 警方以涉嫌殘酷對待動物拘捕後，已准保釋候查。案件由深水埗警區動物罪案專隊跟進，解剖結果尚未公布。</p>
+      <p><strong>Q: 點解診所唔即刻急救？</strong></p>
+      <p>A: 報導指貓送到時已無心跳。雙方未成年，診所聯絡家長後，女貓主家長知悉搶救費用後決定放棄。呢點唔等於診所包庇——佢哋同時報警同叫愛協。</p>
+      <p><strong>Q: 託管寵物出事，原主人有冇責任？</strong></p>
+      <p>A: 視乎有冇合理挑選同指示暫養人。刑事責任主要睇邊個作出殘酷行為。離港前交俾未成年人單獨照顧，風險明顯高。</p>
+
+      <p style="font-size:13px;line-height:1.7;color:#6B7280;margin-top:32px;padding-top:16px;border-top:1px solid #E5E7EB;">資料來源：<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60380444/%E5%B9%AB%E5%90%8C%E5%AD%B8%E7%85%A7%E9%A1%A78%E5%80%8B%E6%9C%88%E5%A4%A7%E8%B5%B7%E5%8F%B8%E8%B2%93-14%E6%AD%B2%E4%BB%94%E7%96%91%E8%99%90%E5%BE%85%E8%87%B4%E6%AD%BB-%E6%B1%82%E8%A8%BA%E6%83%B9%E7%96%91%E6%8F%AD%E7%99%BC%E8%A2%AB%E6%8D%95" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://www.stheadline.com/breaking-news/3604884/" target="_blank" rel="noopener" style="color:#FF6B35;">星島頭條</a>、<a href="https://hk.on.cc/hk/bkn/cnt/news/20260816/bkn-20260816162505197-0816_00822_001.html" target="_blank" rel="noopener" style="color:#FF6B35;">東網</a>、<a href="https://www.wenweipo.com/a/202608/17/AP6a821cc8e4b0c1e500251f59.html" target="_blank" rel="noopener" style="color:#FF6B35;">文匯報</a>。封面為 AI 示意，並非事發原圖。案件仍在調查。</p>
+    `,
+    author: "PetWell HK",
+    date: "2026-08-16",
+    category: "寵物安全",
+    imageUrl: blogCatAbuseCover,
+    seoKeywords: [
+      "14歲男生虐貓",
+      "同學託管貓",
+      "長沙灣動物醫療中心",
+      "起司貓 虐待",
+      "防止殘酷對待動物條例",
+      "寵物暫託 注意",
+    ],
+    faqItems: [
+      {
+        question: "男生而家點？",
+        answer: "警方以涉嫌殘酷對待動物拘捕後，已准保釋候查。案件由深水埗警區動物罪案專隊跟進，解剖結果尚未公布。",
+      },
+      {
+        question: "點解診所唔即刻急救？",
+        answer: "報導指貓送到時已無心跳。雙方未成年，診所聯絡家長後，女貓主家長知悉搶救費用後決定放棄。診所同時報警並通知愛協。",
+      },
+      {
+        question: "託管寵物出事，原主人有冇責任？",
+        answer: "視乎有冇合理挑選同指示暫養人。刑事責任主要睇邊個作出殘酷行為。離港前交俾未成年人單獨照顧，風險明顯高。",
+      },
+    ],
+    relatedTopics: ["寵物安全", "虐畜法例", "寵物暫託"],
+  },
+  {
+    id: "35",
+    slug: "yuen-long-animal-shelter-136-unlicensed-dogs-2026-08-12",
+    title: "元朗動物收容所涉無牌養136隻狗：漁護署檢控、狗牌法例同收容所規管｜PetWell HK",
+    excerpt:
+      "漁護署 8 月 12 日公布，突擊檢查元朗一間動物收容所，發現 136 隻狗涉嫌無有效牌照，已向一名本地女子提出檢控。案件 9 月 2 日屯門裁判法院提堂。據報涉事場地為八鄉「520浪浪加油站」。",
+    content: `
+      <p style="font-size: 13px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">最後更新：2026 年 8 月 12 日</p>
+
+      <div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:14px 18px;border-radius:10px;margin-bottom:24px;">
+        <p style="font-size:14px;line-height:1.7;margin:0;color:#1E3A8A;"><strong>今日焦點：</strong>打鼓嶺寵物酒店女持牌人遭寄養唐狗咬死，見<a href="/ta-kwu-ling-pawsgate-dog-attack-2026-08-20" style="color:#2563EB;text-decoration:underline;">專題報道</a>。YOHO MIX 大狗咬死兩隻細狗，見<a href="/yoho-mall-dog-attack-yuen-long-2026-08-17" style="color:#2563EB;text-decoration:underline;">專題報道</a>。</p>
+      </div>
+
+      <div style="background:#FFF7ED;border-left:4px solid #FF6B35;padding:16px 20px;border-radius:10px;margin-bottom:28px;">
+        <h2 style="font-size:18px;font-weight:700;margin:0 0 8px;color:#C2410C;">一分鐘結論</h2>
+        <p style="font-size:15px;line-height:1.75;margin:0;color:#111827;">漁護署 8 月 12 日公布：早前接獲市民投訴元朗一間動物收容所，突擊檢查後發現處所內共有 <strong>136 隻狗涉嫌未領有有效牌照</strong>。署方根據《狂犬病規例》（第 421A 章）第 20 條，向一名本地女子提出檢控，案件 <strong>9 月 2 日</strong>在屯門裁判法院提堂。官方新聞稿沒有點名；香港動物報指，據了解涉事狗場為八鄉「<strong>520浪浪加油站</strong>」。超過 5 個月大的狗必須有牌、有晶片、打狂犬病疫苗，違例最高罰款 <strong>$10,000</strong>。現階段只係檢控，尚未定罪。</p>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">香港私人收容所、狗場、暫託場長期處於灰色地帶：多數唔使領「收容所牌」，但場內每隻滿 5 個月的狗，畜養人仍然要領狗牌。今次數字大——一次過 136 隻——正正踩中呢條線。PetWell 綜合漁護署新聞稿、<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60379201/%E5%85%83%E6%9C%97%E5%8B%95%E7%89%A9%E6%94%B6%E5%AE%B9%E6%89%80%E6%B6%89%E7%84%A1%E7%89%8C%E9%A4%8A136%E9%9A%BB%E7%8B%97-%E6%BC%81%E8%AD%B7%E7%BD%B2%E6%AA%A2%E6%8E%A7%E4%B8%80%E5%90%8D%E6%9C%AC%E5%9C%B0%E5%A5%B3%E5%AD%90" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://hkanimalpost.com/2026/08/13/08131-8/" target="_blank" rel="noopener" style="color:#FF6B35;">香港動物報</a> 同較早前巡查報道，整理已知事實、法例，同市民可以點查牌、點舉報。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 36px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">漁護署公布咗咩</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px;">
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">投訴 → 突擊檢查</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">署方早前接獲市民對元朗區一間動物收容所的投訴，隨即前往突擊檢查。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">136 隻無牌狗</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">行動中發現處所內共有 136 頭涉嫌未領有有效牌照的狗隻。</p>
+        </div>
+        <div style="border:1px solid #E5E7EB;border-radius:14px;padding:18px;background:#fff;">
+          <div style="display:inline-block;background:#4B5563;color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;">8 月 12 日檢控 · 9 月 2 日提堂</div>
+          <p style="font-size:15px;line-height:1.8;margin:0;color:#374151;">根據《狂犬病規例》第 20 條，向一名本地女子提出檢控。案件將於 9 月 2 日在屯門裁判法院提堂。</p>
+        </div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">官方稿件只寫「元朗區一間動物收容所」，沒有公布場名、地址同負責人全名。香港動物報 8 月 13 日報道指，<strong>據了解涉事狗場為「520浪浪加油站」</strong>。該組織位於元朗八鄉錦上路元崗新村清潭路一帶，今年 6 月已被漁護署聯同警方巡查。</p>
+
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;margin-bottom:28px;">
+        <img src="${blogYlShelterCages}" alt="八鄉狗場鐵籠內有多隻狗，地上濕滑，籠頂蓋帆布同遮傘" style="width:100%;display:block;" loading="lazy" />
+        <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">較早前巡查時，場內多隻狗被困鐵籠，籠頂蓋帆布同遮傘。（星島頭條／動物福利關注聯盟召集人劉鎮海提供）</p>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">6 月已有巡查：消瘦、無牌、帶走狗隻</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">8 月呢張檢控，唔係突然冒出。6 月 11 日，漁護署聯同警方進入八鄉清潭路狗場。漁護署其後回覆傳媒：場內多隻狗身型<strong>異常消瘦</strong>，懷疑疏忽照顧；檢走 <strong>11 隻狗</strong>返動物管理中心檢查；場內另有 <strong>30 隻狗未領有效牌照</strong>。現場消息指行動由下午約 3 時至晚上 11 時，有多輛漁護署車輛到場；部分報道指當日運走約數十隻狗。數字以署方後來書面回覆為準。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:20px;">愛協當時表示，2026 年初起已就該收容場所接獲<strong>數百宗投訴</strong>，並呼籲盡快規管動物收容所。署方指被帶走的狗屬案件證物，一般不會交民間機構托管。</p>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:28px;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYlShelterRaid2}" alt="漁護署人員夜間帶捕狗索進入狗場" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">6 月 11 日巡查：人員帶捕狗索進入場內。（香港 01）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYlShelterRaid1}" alt="八鄉狗場出入口的村路同鐵閘，遠處有穿保護衣人員" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">狗場出入口一帶。（香港 01）</p>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid #E5E7EB;">
+          <img src="${blogYlShelterRaid3}" alt="狗場鐵籠、遮傘同雜物，籠內有狗" style="width:100%;display:block;" loading="lazy" />
+          <p style="font-size:13px;color:#666;text-align:center;margin:10px 16px 14px;line-height:1.6;">場內環境被指擠迫、衞生差。（香港 01）</p>
+        </div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">法例：無狗牌最高罰 $10,000</h2>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">根據《狂犬病規例》（第 421A 章），所有超過 <strong>5 個月大</strong>的狗隻均須領有有效牌照，其後每隔不超過 <strong>3 年</strong>續牌一次。申領時通常要植入晶片同接種狂犬病疫苗。違例者一經定罪，最高可處罰款 <strong>$10,000</strong>。今次檢控條文是第 20 條。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:16px;">如果涉及殘酷對待或因不合理作為／不作為導致動物不必要痛苦，則屬《防止殘酷對待動物條例》（第 169 章），最高可處罰款 <strong>$200,000 及監禁 3 年</strong>。香港動物報指，520浪浪加油站負責人梁翠儀早前被控 6 項殘酷對待動物罪及 1 項虛報有人犯罪罪，當時押後至 8 月 20 日再訊。兩組控罪係唔同程序，唔好當成已經定罪。</p>
+      <p style="font-size:15px;line-height:1.8;color:#374151;margin-bottom:24px;">查自己隻狗有冇牌、點用 iAM Smart 續牌，可睇 <a href="/iamsmart-dog-electronic-licence-hk-guide" style="color:#FF6B35;text-decoration:underline;">電子狗牌教學</a>。</p>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">捐款、領養、暫託之前可以點做</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:28px;">
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>1. 問清楚牌照。</strong>場內成犬有冇晶片、有冇有效狗牌？私人收容所本身未必有「場牌」，但狗牌係法定責任。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>2. 上門睇環境。</strong>籠細、日曬雨淋、無乾淨食水、動物明顯消瘦，都係紅旗。相片同短片好易美化。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>3. 善款要有去向。</strong>醫療籌款應有診所單據、晶片編號、可核實的進度。唔好只憑感人故事。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>4. 懷疑虐畜或無牌：1823 或 999。</strong>漁護署會抽查狗牌。情況緊急先報警。愛協亦接受舉報。</div>
+        <div style="border-left:4px solid #FF6B35;padding:12px 16px;background:#FFF7ED;border-radius:8px;"><strong>5. 領養後自己去領牌。</strong>狗過戶到你名下，就要用你的身份續牌同打疫苗，唔好假設「場已經搞掂」。</div>
+      </div>
+
+      <h2 style="font-size: 24px; font-weight: 700; margin: 40px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #FF6B35;">常見問題</h2>
+      <p><strong>Q: 係咪已經定罪？</strong></p>
+      <p>A: 未。漁護署已提出檢控，9 月 2 日提堂。在法院裁定前，只屬涉嫌。</p>
+      <p><strong>Q: 點解官方唔講場名？</strong></p>
+      <p>A: 檢控新聞稿通常只寫區域同罪行。場名來自其後傳媒「據了解」報道，PetWell 分開寫官方事實同據報身份。</p>
+      <p><strong>Q: 136 隻同 6 月嗰 30 隻無牌係咪同一單？</strong></p>
+      <p>A: 6 月巡查時署方公布場內有 30 隻無牌、帶走 11 隻作檢查。8 月公布的是另一次突擊檢查發現 136 隻涉嫌無牌。兩次都指向同一類場所，但是否同一場、點樣由 30 變成 136，要以法庭同署方後續為準。</p>
+
+      <p style="font-size:13px;line-height:1.7;color:#6B7280;margin-top:32px;padding-top:16px;border-top:1px solid #E5E7EB;">資料來源：漁護署 8 月 12 日公布、<a href="https://www.hk01.com/%E7%AA%81%E7%99%BC/60379201/%E5%85%83%E6%9C%97%E5%8B%95%E7%89%A9%E6%94%B6%E5%AE%B9%E6%89%80%E6%B6%89%E7%84%A1%E7%89%8C%E9%A4%8A136%E9%9A%BB%E7%8B%97-%E6%BC%81%E8%AD%B7%E7%BD%B2%E6%AA%A2%E6%8E%A7%E4%B8%80%E5%90%8D%E6%9C%AC%E5%9C%B0%E5%A5%B3%E5%AD%90" target="_blank" rel="noopener" style="color:#FF6B35;">香港 01</a>、<a href="https://hkanimalpost.com/2026/08/13/08131-8/" target="_blank" rel="noopener" style="color:#FF6B35;">香港動物報</a>、<a href="https://www.wenweipo.com/a/202608/12/AP6a7bf661e4b0c1e50024870b.html" target="_blank" rel="noopener" style="color:#FF6B35;">文匯報</a>、<a href="https://www.stheadline.com/breaking-news/3582175/" target="_blank" rel="noopener" style="color:#FF6B35;">星島頭條</a>（6 月巡查）。封面為實拍加設計字，並非改圖。案件仍在司法程序。</p>
+    `,
+    author: "PetWell HK",
+    date: "2026-08-12",
+    category: "寵物安全",
+    imageUrl: blogYlShelterCover,
+    seoKeywords: [
+      "元朗動物收容所",
+      "136隻狗 無牌",
+      "520浪浪加油站",
+      "漁護署 檢控",
+      "狂犬病規例",
+      "狗牌",
+      "動物收容所 規管",
+    ],
+    faqItems: [
+      {
+        question: "係咪已經定罪？",
+        answer: "未。漁護署已提出檢控，9 月 2 日在屯門裁判法院提堂。在法院裁定前，只屬涉嫌。",
+      },
+      {
+        question: "點解官方唔講場名？",
+        answer: "檢控新聞稿通常只寫區域同罪行。場名來自其後傳媒「據了解」報道，應分開官方事實同據報身份。",
+      },
+      {
+        question: "136 隻同 6 月嗰 30 隻無牌係咪同一單？",
+        answer: "6 月巡查時署方公布場內有 30 隻無牌、帶走 11 隻作檢查。8 月公布的是另一次突擊檢查發現 136 隻涉嫌無牌。是否同一場、數字如何變化，要以法庭同署方後續為準。",
+      },
+    ],
+    relatedTopics: ["寵物安全", "狗牌法例", "動物收容所"],
+  },
   {
     id: "32",
     slug: "senior-dog-cat-irritable-temper-guide-hk",

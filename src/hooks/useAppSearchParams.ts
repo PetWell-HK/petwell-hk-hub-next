@@ -1,7 +1,8 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useMemo, type SetStateAction } from "react";
+import { useWindowSearchString } from "@/hooks/useWindowSearchParams";
 
 type SetURLSearchParams = (
   nextInit?: SetStateAction<URLSearchParams | Record<string, string> | string | string[][]>,
@@ -12,16 +13,16 @@ type SetURLSearchParams = (
 export function useAppSearchParams(): [URLSearchParams, SetURLSearchParams] {
   const router = useRouter();
   const pathname = usePathname() || "/";
-  const nextParams = useSearchParams();
+  const search = useWindowSearchString();
 
   const searchParams = useMemo(
-    () => new URLSearchParams(nextParams?.toString() || ""),
-    [nextParams],
+    () => new URLSearchParams(search.startsWith("?") ? search.slice(1) : search),
+    [search],
   );
 
   const setSearchParams = useCallback<SetURLSearchParams>(
     (nextInit, navigateOpts) => {
-      const current = new URLSearchParams(nextParams?.toString() || "");
+      const current = new URLSearchParams(search.startsWith("?") ? search.slice(1) : search);
       let next: URLSearchParams;
 
       if (typeof nextInit === "function") {
@@ -43,7 +44,7 @@ export function useAppSearchParams(): [URLSearchParams, SetURLSearchParams] {
       if (navigateOpts?.replace) router.replace(href);
       else router.push(href);
     },
-    [nextParams, pathname, router],
+    [pathname, router, search],
   );
 
   return [searchParams, setSearchParams];

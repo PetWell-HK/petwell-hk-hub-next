@@ -1,10 +1,10 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/RestaurantsByArea";
 import { generateAreaMetadata, generateAreaJsonLd, areaSlugExists, getAreaSlugs } from "@/lib/server/contentMetadata";
 import { ssrRestaurantListingForArea } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ areaSlug: string }> };
 
@@ -27,7 +27,7 @@ export default async function RoutePage({ params }: Props) {
   return (
     <>
       {jsonLd ? <JsonLd data={jsonLd} /> : null}
-      <Suspense fallback={null}><Page initialListing={initialListing}  /></Suspense>
+      <PageSuspense><Page initialListing={initialListing}  /></PageSuspense>
     </>
   );
 }

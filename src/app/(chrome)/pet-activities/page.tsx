@@ -1,8 +1,8 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/PetActivities";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrEventListing } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 export const revalidate = 900;
 
@@ -18,7 +18,7 @@ export default async function RoutePage() {
           path: `/pet-activities`,
         })}
       />
-      <Suspense fallback={null}><Page initialEvents={initialEvents}  /></Suspense>
+      <PageSuspense><Page initialEvents={initialEvents}  /></PageSuspense>
     </>
   );
 }

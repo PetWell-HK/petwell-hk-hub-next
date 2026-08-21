@@ -1,6 +1,6 @@
-import { Suspense } from "react";
 import Page from "@/views/Register";
+import PageSuspense from "@/components/PageSuspense";
 
 export default function RoutePage() {
-  return <Suspense fallback={null}><Page  /></Suspense>;
+  return <PageSuspense><Page  /></PageSuspense>;
 }

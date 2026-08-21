@@ -1,8 +1,8 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/ReviewBrand";
 import { generateReviewBrandMetadata, generateReviewBrandJsonLd } from "@/lib/server/contentMetadata";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ brand: string }> };
 
@@ -19,7 +19,7 @@ export default async function RoutePage({ params }: Props) {
   return (
     <>
       {jsonLd ? <JsonLd data={jsonLd} /> : null}
-      <Suspense fallback={null}><Page  /></Suspense>
+      <PageSuspense><Page  /></PageSuspense>
     </>
   );
 }

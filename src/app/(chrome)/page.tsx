@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import { getRequestLocale } from "@/lib/server/locale";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrHomeRails } from "@/lib/server/ssrContent";
 import Page from "@/views/Index";
+import PageSuspense from "@/components/PageSuspense";
 
 export default async function HomePage() {
   const locale = await getRequestLocale();
@@ -19,9 +19,9 @@ export default async function HomePage() {
           locale,
         })}
       />
-      <Suspense fallback={null}>
+      <PageSuspense>
         <Page initialHome={initialHome} />
-      </Suspense>
+      </PageSuspense>
     </>
   );
 }

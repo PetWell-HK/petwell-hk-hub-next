@@ -1,8 +1,8 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/HomeVisits";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrHomeVisits } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 export const revalidate = 900;
 
@@ -18,7 +18,7 @@ export default async function RoutePage() {
           path: `/home-visits`,
         })}
       />
-      <Suspense fallback={null}><Page initialProviders={initialProviders}  /></Suspense>
+      <PageSuspense><Page initialProviders={initialProviders}  /></PageSuspense>
     </>
   );
 }

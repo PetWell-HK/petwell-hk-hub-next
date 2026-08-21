@@ -1,8 +1,8 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/Salons";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrSalonListing } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 export const revalidate = 900;
 
@@ -18,7 +18,7 @@ export default async function RoutePage() {
           path: `/salons`,
         })}
       />
-      <Suspense fallback={null}><Page initialListing={initialListing}  /></Suspense>
+      <PageSuspense><Page initialListing={initialListing}  /></PageSuspense>
     </>
   );
 }

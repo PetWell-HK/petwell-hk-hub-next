@@ -1,7 +1,7 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import Page from "@/views/UserProfile";
 import { generateUserMetadata } from "@/lib/server/contentMetadata";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ userId: string }> };
 
@@ -13,5 +13,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function RoutePage() {
-  return <Suspense fallback={null}><Page  /></Suspense>;
+  return <PageSuspense><Page  /></PageSuspense>;
 }

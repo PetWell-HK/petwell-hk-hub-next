@@ -1,8 +1,8 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/Malls";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrMalls } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 export const revalidate = 900;
 
@@ -18,7 +18,7 @@ export default async function RoutePage() {
           path: `/malls`,
         })}
       />
-      <Suspense fallback={null}><Page initialMalls={initialMalls}  /></Suspense>
+      <PageSuspense><Page initialMalls={initialMalls}  /></PageSuspense>
     </>
   );
 }

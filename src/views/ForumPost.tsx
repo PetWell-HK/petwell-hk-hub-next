@@ -182,7 +182,7 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-subtle">
+      <div className="min-h-full bg-gradient-subtle">
         <main className="container mx-auto px-4 py-10 md:py-12">
           <div className="max-w-4xl mx-auto">
             <Skeleton className="h-10 w-32 mb-6" />
@@ -214,7 +214,7 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-gradient-subtle">
+      <div className="min-h-full bg-gradient-subtle">
         <main className="container mx-auto px-4 py-10 md:py-12">
           <div className="max-w-4xl mx-auto text-center">
             <AlertCircle className="w-12 h-12 mx-auto mb-4 text-destructive" />
@@ -230,7 +230,7 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
   }
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-full bg-gradient-subtle">
       
       <main className="container mx-auto px-4 py-10 md:py-12">
         <div className="max-w-4xl mx-auto">

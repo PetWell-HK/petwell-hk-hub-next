@@ -1660,13 +1660,13 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
   };
 
   return (
-    <div className="h-screen bg-background overflow-hidden flex flex-col">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-background">
       <h1 className="sr-only">
         {i18n.language === "zh" ? "香港寵物討論區" : "Hong Kong Pet Forum"}
       </h1>
       
       {/* Top Bar with Expandable Search */}
-      <div className="sticky top-[var(--header-height)] z-20 bg-white border-b border-border shadow-sm">
+      <div className="z-20 shrink-0 bg-white border-b border-border shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-14 gap-4">
             {/* Expandable Search */}

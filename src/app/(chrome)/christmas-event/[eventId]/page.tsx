@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/ChristmasEventDetail";
 import { generateChristmasEventMetadata, generateChristmasEventJsonLd, christmasEventExists, getChristmasEventIds } from "@/lib/server/contentMetadata";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ eventId: string }> };
 
@@ -25,7 +25,7 @@ export default async function RoutePage({ params }: Props) {
   return (
     <>
       {jsonLd ? <JsonLd data={jsonLd} /> : null}
-      <Suspense fallback={null}><Page  /></Suspense>
+      <PageSuspense><Page  /></PageSuspense>
     </>
   );
 }

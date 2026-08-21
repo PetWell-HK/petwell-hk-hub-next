@@ -1,7 +1,7 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/ChristmasEvents";
 import { listingPageJsonLd } from "@/lib/seo";
+import PageSuspense from "@/components/PageSuspense";
 
 export default function RoutePage() {
   return (
@@ -14,7 +14,7 @@ export default function RoutePage() {
           path: `/christmas-events-2025`,
         })}
       />
-      <Suspense fallback={null}><Page  /></Suspense>
+      <PageSuspense><Page  /></PageSuspense>
     </>
   );
 }

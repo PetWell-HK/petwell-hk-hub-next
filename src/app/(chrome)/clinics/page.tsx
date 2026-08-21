@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import { getRequestLocale } from "@/lib/server/locale";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrClinicListing } from "@/lib/server/ssrContent";
 import Page from "@/views/Clinics";
+import PageSuspense from "@/components/PageSuspense";
 
 export default async function ClinicsPage() {
   const locale = await getRequestLocale();
@@ -19,9 +19,9 @@ export default async function ClinicsPage() {
           locale,
         })}
       />
-      <Suspense fallback={null}>
+      <PageSuspense>
         <Page initialListing={initialListing} />
-      </Suspense>
+      </PageSuspense>
     </>
   );
 }

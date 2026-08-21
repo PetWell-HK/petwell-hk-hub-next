@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import JsonLd from "@/components/seo/JsonLd";
 import { generatePlaceJsonLd, generatePlaceMetadata } from "@/lib/server/placeMetadata";
 import { unwrapSsrEntity, ssrRestaurant } from "@/lib/server/ssrContent";
 import Page from "@/views/RestaurantDetail";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ restaurantId: string }> };
 
@@ -19,9 +19,9 @@ export default async function RestaurantDetailPage({ params }: Props) {
   return (
     <>
       {jsonLd ? <JsonLd data={jsonLd} /> : null}
-      <Suspense fallback={null}>
+      <PageSuspense>
         <Page initialRestaurant={initialRestaurant} />
-      </Suspense>
+      </PageSuspense>
     </>
   );
 }

@@ -208,9 +208,27 @@ export async function buildDynamicSitemapEntries(): Promise<MetadataRoute.Sitema
     getNutritionProductIds().catch(() => [] as string[]),
   ]);
 
-  const blogEntries = blogPosts.map((post) =>
-    entry(`/${post.slug}`, "monthly", 0.7, post.date ? new Date(post.date) : now),
-  );
+  const newsBlogSlugs = new Set([
+    "ta-kwu-ling-pawsgate-dog-attack-2026-08-20",
+    "yoho-mall-dog-attack-yuen-long-2026-08-17",
+    "cheung-sha-wan-cat-abuse-classmate-boarding-2026-08-10",
+    "yuen-long-animal-shelter-136-unlicensed-dogs-2026-08-12",
+  ]);
+  const blogEntries = blogPosts.flatMap((post) => {
+    const isNews = newsBlogSlugs.has(post.slug);
+    const lastModified = post.date ? new Date(post.date) : now;
+    const canonical = entry(
+      `/${post.slug}`,
+      isNews ? "daily" : "monthly",
+      isNews ? 0.9 : 0.7,
+      lastModified,
+    );
+    if (!isNews) return [canonical];
+    return [
+      canonical,
+      entry(`/blog/${post.slug}`, "daily", 0.85, lastModified),
+    ];
+  });
   const areaEntries = ALL_AREA_SEO_SLUGS.map((slug) =>
     entry(`/pet-friendly-restaurants/${slug}`, "weekly", slug === "districts" ? 0.85 : 0.8),
   );

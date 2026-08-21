@@ -97,14 +97,12 @@ const BlogPost = () => {
           {/* Hero Image */}
           <div className="max-w-4xl mx-auto mb-8">
             {post.slug !== 'hk-fehd-pet-friendly-restaurants-1000-list' && (
-              <div className="aspect-video rounded-2xl overflow-hidden mb-6">
-                <img 
-                  src={post.imageUrl} 
+              <div className="mb-6 overflow-hidden rounded-2xl bg-neutral-950">
+                <img
+                  src={post.imageUrl}
                   alt={`${post.title} - ${post.category} - PetWell HK`}
-                  className="w-full h-full object-cover"
+                  className="mx-auto block h-auto w-full max-h-[min(75vh,40rem)] object-contain"
                   loading="eager"
-                  width="1200"
-                  height="675"
                 />
               </div>
             )}
@@ -498,14 +496,12 @@ const BlogPost = () => {
                   {relatedPosts.map((relatedPost) => (
                     <AppLink key={relatedPost.id} href={`/${relatedPost.slug}`}>
                       <Card className="overflow-hidden hover:shadow-strong transition-all h-full">
-                        <div className="aspect-video overflow-hidden">
-                          <img 
-                            src={relatedPost.imageUrl} 
+                        <div className="aspect-video overflow-hidden bg-neutral-950">
+                          <img
+                            src={relatedPost.imageUrl}
                             alt={`${relatedPost.title} - ${relatedPost.category} - 相關文章`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
                             loading="lazy"
-                            width="400"
-                            height="225"
                           />
                         </div>
                         <div className="p-4">

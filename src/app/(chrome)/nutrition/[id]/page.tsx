@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/NutritionProduct";
 import { generateNutritionMetadata, generateNutritionJsonLd, getNutritionProductIds } from "@/lib/server/contentMetadata";
 import { unwrapSsrEntity, ssrNutritionProduct } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -25,7 +25,7 @@ export default async function RoutePage({ params }: Props) {
   return (
     <>
       {jsonLd ? <JsonLd data={jsonLd} /> : null}
-      <Suspense fallback={null}><Page initialProduct={initialProduct}  /></Suspense>
+      <PageSuspense><Page initialProduct={initialProduct}  /></PageSuspense>
     </>
   );
 }

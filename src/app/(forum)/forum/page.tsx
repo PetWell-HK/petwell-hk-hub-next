@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/Forum";
 import { listingPageJsonLd } from "@/lib/seo";
 import { ssrForumListing } from "@/lib/server/ssrContent";
+import PageSuspense from "@/components/PageSuspense";
 
 export default async function ForumPage({
   searchParams,
@@ -24,7 +24,7 @@ export default async function ForumPage({
           path: `/forum`,
         })}
       />
-      <Suspense fallback={null}><Page initialPosts={initialPosts}  /></Suspense>
+      <PageSuspense><Page initialPosts={initialPosts}  /></PageSuspense>
     </>
   );
 }
