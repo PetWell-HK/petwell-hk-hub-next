@@ -3,12 +3,12 @@ import type { ReactNode } from "react";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: `飼主專區 | PetWell HK`,
-  description: `飼主實用資訊、指南與工具。`,
+  title: `Auth | PetWell HK`,
+  description: `Authentication`,
   keywords: undefined,
-  path: `/owner-zone`,
+  path: `/auth`,
   ogType: "website",
-  noIndex: false,
+  noIndex: true,
 });
 
 export default function SeoLayout({ children }: { children: ReactNode }) {

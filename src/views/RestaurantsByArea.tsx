@@ -17,6 +17,7 @@ import { getTodayOpeningHours } from "@/utils/availableHours";
 import {
   resolveAreaSlug,
 } from "@/data/hongKong18Districts";
+import type { Restaurant } from "@/services/restaurantApi";
 import type { RestaurantFilters } from "@/hooks/useRestaurants";
 
 function getFehdRegionForDistrict(labelZh: string, regionKey: string): string {
@@ -26,7 +27,11 @@ function getFehdRegionForDistrict(labelZh: string, regionKey: string): string {
   return "新界區";
 }
 
-const RestaurantsByArea = () => {
+const RestaurantsByArea = ({
+  initialListing = null,
+}: {
+  initialListing?: { restaurants: Restaurant[]; total: number; nextToken: number[] | null } | null;
+}) => {
   const { areaSlug } = useParams<{ areaSlug: string }>();
   const area = resolveAreaSlug(areaSlug);
   const { t, i18n } = useTranslation();
@@ -64,7 +69,11 @@ const RestaurantsByArea = () => {
     hasNextPage,
     fetchNextPage,
     isFetchingNextPage,
-  } = useFilteredRestaurants(listingFilters, i18n.language);
+  } = useFilteredRestaurants(
+    listingFilters,
+    i18n.language,
+    !searchQuery && !indoorAllowed && !walkInAllowed ? initialListing : null,
+  );
 
   const seoContext = useMemo(() => {
     if (!area || area.type === "index") {

@@ -37,6 +37,7 @@ import {
   getWhatsAppUrl,
   formatPriceAmount,
   transformHomeVisitProvider,
+  type ApiHomeVisitProvider,
 } from "@/services/homeVisitApi";
 import {
   getFormattedHoursForDay,
@@ -48,10 +49,17 @@ import {
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 const DAYS: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-const HomeVisitDetail = () => {
+const HomeVisitDetail = ({
+  initialProvider = null,
+}: {
+  initialProvider?: ApiHomeVisitProvider | null;
+}) => {
   const { providerId } = useParams();
   const { i18n, t } = useTranslation();
-  const { data: apiProvider, isLoading, error } = useHomeVisitProvider(providerId);
+  const { data: apiProvider, isLoading, error } = useHomeVisitProvider(
+    providerId,
+    initialProvider,
+  );
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
   const [hoursOpen, setHoursOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);

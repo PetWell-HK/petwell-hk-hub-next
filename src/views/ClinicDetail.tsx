@@ -12,6 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { ClinicImage } from "@/components/ClinicImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
+import type { ApiClinic } from "@/services/clinicApi";
 
 function getLocalizedString(
   multiLang: { zh?: string | null; en?: string | null } | undefined | null,
@@ -26,10 +27,10 @@ function getLocalizedString(
   );
 }
 
-const ClinicDetail = () => {
+const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | null }) => {
   const { clinicId } = useParams();
   const { i18n, t } = useTranslation();
-  const { data: clinic, isLoading, error } = useClinic(clinicId);
+  const { data: clinic, isLoading, error } = useClinic(clinicId, initialClinic);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
 
   const clinicName = getLocalizedString(clinic?.name, lang);

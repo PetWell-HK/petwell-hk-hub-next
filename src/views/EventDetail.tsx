@@ -69,12 +69,12 @@ const categoryStyles: Record<string, string> = {
   OTHER: "bg-muted text-muted-foreground border-border",
 };
 
-const EventDetail = () => {
+const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | null }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const [event, setEvent] = useState<OrganizedEvent | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [event, setEvent] = useState<OrganizedEvent | null>(initialEvent);
+  const [loading, setLoading] = useState(!initialEvent);
   const [error, setError] = useState<string | null>(null);
   const [isLiked, setIsLiked] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -89,7 +89,7 @@ const EventDetail = () => {
       }
 
       try {
-        setLoading(true);
+        if (!initialEvent) setLoading(true);
         setError(null);
         const eventData = await fetchEventById(id);
         setEvent(eventData);
@@ -444,36 +444,10 @@ function parseEventI18n(value: OrganizedEvent["i18n"]): EventI18n | null {
 
 function sanitizeEventHtml(value?: string | null): string {
   if (!value) return "";
-  const parser = new DOMParser();
-  const document = parser.parseFromString(value, "text/html");
-  const allowedTags = new Set(["P", "SPAN", "BR", "UL", "LI", "STRONG", "A"]);
-
-  const walk = (node: Node) => {
-    [...node.childNodes].forEach((child) => {
-      if (child.nodeType === Node.ELEMENT_NODE) {
-        const element = child as HTMLElement;
-        if (!allowedTags.has(element.tagName)) {
-          element.replaceWith(...Array.from(element.childNodes));
-          return;
-        }
-
-        [...element.attributes].forEach((attr) => {
-          const isSafeHref = element.tagName === "A" && attr.name === "href" && /^https?:\/\//i.test(attr.value);
-          if (!isSafeHref) element.removeAttribute(attr.name);
-        });
-
-        if (element.tagName === "A") {
-          element.setAttribute("target", "_blank");
-          element.setAttribute("rel", "noopener noreferrer");
-          element.classList.add("text-primary", "underline", "underline-offset-4");
-        }
-      }
-      walk(child);
-    });
-  };
-
-  walk(document.body);
-  return document.body.innerHTML;
+  return value
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/\son\w+=(?:"[^"]*"|'[^']*')/gi, "")
+    .replace(/javascript:/gi, "");
 }
 
 function buildRemarkWithFallback(remark?: string | null, url?: string | null): string {

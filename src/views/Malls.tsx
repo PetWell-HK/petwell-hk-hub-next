@@ -37,7 +37,7 @@ const mallsFAQ = [
   },
 ];
 
-const Malls = () => {
+const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [petsAllowedYes, setPetsAllowedYes] = useState(false);
@@ -53,6 +53,7 @@ const Malls = () => {
       leashWalkOk: leashWalkOk || undefined,
     },
     i18n.language,
+    initialMalls,
   );
 
   const regions = [

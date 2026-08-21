@@ -143,33 +143,8 @@ export const useSEO = ({
       link.setAttribute('href', canonicalUrl);
     }
 
-    // Add hreflang tags for i18n
-    // Remove existing hreflang tags
-    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    existingHreflangs.forEach(el => el.remove());
-
-    if (canonicalUrl) {
-      // Add hreflang for Traditional Chinese (Hong Kong) - primary language
-      const hreflangZh = document.createElement('link');
-      hreflangZh.setAttribute('rel', 'alternate');
-      hreflangZh.setAttribute('hreflang', 'zh-HK');
-      hreflangZh.setAttribute('href', canonicalUrl);
-      document.head.appendChild(hreflangZh);
-
-      // Add hreflang for English
-      const hreflangEn = document.createElement('link');
-      hreflangEn.setAttribute('rel', 'alternate');
-      hreflangEn.setAttribute('hreflang', 'en');
-      hreflangEn.setAttribute('href', canonicalUrl);
-      document.head.appendChild(hreflangEn);
-
-      // Add x-default (fallback)
-      const hreflangDefault = document.createElement('link');
-      hreflangDefault.setAttribute('rel', 'alternate');
-      hreflangDefault.setAttribute('hreflang', 'x-default');
-      hreflangDefault.setAttribute('href', canonicalUrl);
-      document.head.appendChild(hreflangDefault);
-    }
+    // Add hreflang only when distinct language URLs exist.
+    // Same-URL zh-HK + en hreflang is invalid and can dilute indexing.
     
     // Build combined structured data array
     const structuredDataArray: object[] = [];

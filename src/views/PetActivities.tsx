@@ -77,10 +77,61 @@ interface EventDisplay {
   remark?: string;
 }
 
-const PetActivities = () => {
+function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
+  const transformed: EventDisplay[] = [];
+  for (const event of items) {
+    try {
+      const status = calculateEventStatus(event);
+      const attendeeCount = getAttendeeCount(event);
+      const district = extractDistrict(event.location);
+      const imageUrl = event.photos && event.photos.length > 0 ? event.photos[0] : undefined;
+      transformed.push({
+        id: event.id,
+        name: event.name,
+        description: event.description || "",
+        dateTime: event.dateTime || "",
+        location: event.location || "",
+        district,
+        imageUrl,
+        organizerName:
+          event.organizerName || event.organizer?.name || event.organizerEmail || "Unknown",
+        status,
+        attendeeCount,
+        capacity: event.capacity || undefined,
+        price: event.price || undefined,
+        category: normalizeEventCategory(event.category, event.name, event.description),
+        remark: event.remark || undefined,
+      });
+    } catch {
+      // Skip malformed events so one bad record cannot empty the listing.
+    }
+  }
+
+  return transformed.sort((a, b) => {
+    const statusPriority: Record<EventStatus, number> = {
+      startingSoon: 0,
+      ongoing: 1,
+      upcoming: 2,
+      completed: 3,
+      cancelled: 4,
+    };
+    const aPriority = statusPriority[a.status] ?? 4;
+    const bPriority = statusPriority[b.status] ?? 4;
+    if (aPriority !== bPriority) return aPriority - bPriority;
+    return new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime();
+  });
+}
+
+const PetActivities = ({
+  initialEvents = null,
+}: {
+  initialEvents?: OrganizedEvent[] | null;
+}) => {
   const { t, i18n } = useTranslation();
-  const [events, setEvents] = useState<EventDisplay[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [events, setEvents] = useState<EventDisplay[]>(() =>
+    initialEvents ? mapOrganizedEventsToDisplay(initialEvents) : [],
+  );
+  const [loading, setLoading] = useState(!initialEvents);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -108,79 +159,27 @@ const PetActivities = () => {
   useEffect(() => {
     const loadEvents = async () => {
       try {
-        setLoading(true);
+        if (!initialEvents) setLoading(true);
         setError(null);
         const response = await fetchAllEvents({ limit: 100 });
         
         if (!response || !response.items) {
           console.warn('No events data received');
-          setEvents([]);
+          if (!initialEvents) setEvents([]);
           return;
         }
-        
-        // Transform API events to display format
-        const transformedEvents: EventDisplay[] = response.items
-          .map((event: OrganizedEvent) => {
-            try {
-              const status = calculateEventStatus(event);
-              const attendeeCount = getAttendeeCount(event);
-              const district = extractDistrict(event.location);
-              const imageUrl = event.photos && event.photos.length > 0 ? event.photos[0] : undefined;
 
-              return {
-                id: event.id,
-                name: event.name,
-                description: event.description,
-                dateTime: event.dateTime,
-                location: event.location,
-                district,
-                imageUrl,
-                organizerName: event.organizerName || event.organizer?.name || event.organizerEmail || 'Unknown',
-                status,
-                attendeeCount,
-                capacity: event.capacity || undefined,
-                price: event.price || undefined,
-                category: normalizeEventCategory(event.category, event.name, event.description),
-                remark: event.remark || undefined,
-              };
-            } catch (err) {
-              console.warn('Error transforming event:', event.id, err);
-              return null;
-            }
-          })
-          .filter((event): event is NonNullable<typeof event> => event !== null) as EventDisplay[];
-
-        // Sort events by status and date: starting soon first, then ongoing, then upcoming
-        const sortedEvents = transformedEvents.sort((a, b) => {
-          const statusPriority: Record<EventStatus, number> = {
-            startingSoon: 0,
-            ongoing: 1,
-            upcoming: 2,
-            completed: 3,
-            cancelled: 4,
-          };
-          const aPriority = statusPriority[a.status] ?? 4;
-          const bPriority = statusPriority[b.status] ?? 4;
-          
-          if (aPriority !== bPriority) {
-            return aPriority - bPriority;
-          }
-          
-          // Within same status, sort by date
-          return new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime();
-        });
-
-        setEvents(sortedEvents);
+        setEvents(mapOrganizedEventsToDisplay(response.items));
       } catch (err) {
         console.error('Error loading events:', err);
-        setError('無法載入活動資料，請稍後再試');
+        if (!initialEvents) setError('無法載入活動資料，請稍後再試');
       } finally {
         setLoading(false);
       }
     };
 
     loadEvents();
-  }, []);
+  }, [initialEvents]);
 
   const categories = eventCategoryKeys;
 

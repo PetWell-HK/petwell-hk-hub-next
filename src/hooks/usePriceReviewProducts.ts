@@ -4,23 +4,33 @@ import {
   listPriceReviewBrandProducts,
   listPriceReviewProducts,
 } from "@/services/priceReviewApi";
-import type { PriceReviewQuery } from "@/types/priceReview";
+import type { PriceReviewDetailResponse, PriceReviewListResponse, PriceReviewProductSummary, PriceReviewQuery } from "@/types/priceReview";
 
-export function usePriceReviewProducts(query: PriceReviewQuery) {
+export function usePriceReviewProducts(
+  query: PriceReviewQuery,
+  initialItems?: PriceReviewProductSummary[] | null,
+) {
   return useQuery({
     queryKey: ["priceReviewProducts", query],
     queryFn: () => listPriceReviewProducts(query),
     staleTime: 60_000,
     placeholderData: keepPreviousData,
+    initialData: initialItems?.length
+      ? ({ items: initialItems, brands: [] } satisfies PriceReviewListResponse)
+      : undefined,
   });
 }
 
-export function usePriceReviewProduct(productId?: string) {
+export function usePriceReviewProduct(
+  productId?: string,
+  initialData?: PriceReviewDetailResponse | null,
+) {
   return useQuery({
     queryKey: ["priceReviewProduct", productId],
     queryFn: () => getPriceReviewProduct(productId || ""),
     enabled: Boolean(productId),
     staleTime: 60_000,
+    initialData: initialData ?? undefined,
   });
 }
 

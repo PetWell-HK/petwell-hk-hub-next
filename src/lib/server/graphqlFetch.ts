@@ -5,11 +5,17 @@ const ENDPOINT =
 const API_KEY =
   process.env.NEXT_PUBLIC_GRAPHQL_API_KEY || "da2-pq3dyfbcuncunjstmawmtz3req";
 
-export async function serverGraphqlFetch<T>(
+export type GraphqlEnvelope<T> = {
+  data: T | null;
+  errors: unknown[] | null;
+  transportOk: boolean;
+};
+
+export async function serverGraphqlFetchEnvelope<T>(
   query: string,
   variables?: Record<string, unknown>,
   revalidateSeconds = 3600,
-): Promise<T | null> {
+): Promise<GraphqlEnvelope<T>> {
   try {
     const response = await fetch(ENDPOINT, {
       method: "POST",
@@ -21,13 +27,26 @@ export async function serverGraphqlFetch<T>(
       next: { revalidate: revalidateSeconds },
     });
 
-    if (!response.ok) return null;
-    const json = (await response.json()) as { data?: T; errors?: unknown[] };
-    if (json.errors?.length) return null;
-    return json.data ?? null;
+    if (!response.ok) return { data: null, errors: null, transportOk: false };
+    const json = (await response.json()) as { data?: T | null; errors?: unknown[] };
+    if (json.data == null) return { data: null, errors: json.errors ?? null, transportOk: false };
+    return {
+      data: json.data,
+      errors: json.errors ?? null,
+      transportOk: true,
+    };
   } catch {
-    return null;
+    return { data: null, errors: null, transportOk: false };
   }
+}
+
+export async function serverGraphqlFetch<T>(
+  query: string,
+  variables?: Record<string, unknown>,
+  revalidateSeconds = 3600,
+): Promise<T | null> {
+  const envelope = await serverGraphqlFetchEnvelope<T>(query, variables, revalidateSeconds);
+  return envelope.data;
 }
 
 export type Localized = { zh?: string | null; en?: string | null } | null;

@@ -37,6 +37,7 @@ import {
   getMallMovementLabel,
   getMallPetsAllowedLabel,
   transformMall,
+  type ApiMall,
 } from "@/services/mallApi";
 import {
   getFormattedHoursForDay,
@@ -49,10 +50,10 @@ import { getGoogleMapsEmbedUrl, getGoogleMapsUrl } from "@/utils/placeMaps";
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 const DAYS: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-const MallDetail = () => {
+const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) => {
   const { mallId } = useParams();
   const { i18n, t } = useTranslation();
-  const { data: apiMall, isLoading, error } = useMall(mallId);
+  const { data: apiMall, isLoading, error } = useMall(mallId, initialMall);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
   const [hoursOpen, setHoursOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);

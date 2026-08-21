@@ -85,7 +85,7 @@ const LIST_ORGANIZED_EVENTS_QUERY = `
   }
 `;
 
-const GET_ORGANIZED_EVENT_QUERY = `
+export const GET_ORGANIZED_EVENT_QUERY = `
   query GetOrganizedEvent($id: ID!) {
     getOrganizedEvent(id: $id) {
       id

@@ -1,8 +1,20 @@
-"use client";
-
 import ClientPage from "@/components/ClientPage";
+import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/PetwellMember";
+import { listingPageJsonLd } from "@/lib/seo";
 
 export default function RoutePage() {
-  return <ClientPage Page={Page} />;
+  return (
+    <>
+      <JsonLd
+        id="ld-collection"
+        data={listingPageJsonLd({
+          title: `PetWell 會員 | PetWell HK`,
+          description: `了解 PetWell 會員計劃。`,
+          path: `/petwell-member`,
+        })}
+      />
+      <ClientPage Page={Page} />
+    </>
+  );
 }

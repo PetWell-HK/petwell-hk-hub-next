@@ -18,6 +18,7 @@ const routes = [
         "PetWell,寵物香港,寵物健康App,寵物友善餐廳,香港寵物友善餐廳,食環署寵物友善餐廳,獸醫診所評價,寵物美容,寵物寄養,寵物論壇,寵物活動,香港獸醫,24小時獸醫,寵物健康紀錄",
       path: "/",
     },
+    listingKind: "home",
   },
   {
     route: "landing",
@@ -69,6 +70,7 @@ const routes = [
   {
     route: "clinics",
     page: "Clinics",
+    listingKind: "clinics",
     seo: {
       title: "香港獸醫診所評價與搜尋 | PetWell HK",
       description: "搜尋全港獸醫診所、24小時急症、評價與地區資訊。",
@@ -76,10 +78,11 @@ const routes = [
       path: "/clinics",
     },
   },
-  { route: "clinics/[clinicId]", page: "ClinicDetail", dynamic: true },
+  { route: "clinics/[clinicId]", page: "ClinicDetail", dynamic: true, seoKind: "place", placeKind: "clinic", param: "clinicId" },
   {
     route: "home-visits",
     page: "HomeVisits",
+    listingKind: "homeVisits",
     seo: {
       title: "香港寵物上門服務｜上門診症、疫苗、急症｜PetWell HK",
       description:
@@ -89,10 +92,11 @@ const routes = [
       path: "/home-visits",
     },
   },
-  { route: "home-visits/[providerId]", page: "HomeVisitDetail", dynamic: true },
+  { route: "home-visits/[providerId]", page: "HomeVisitDetail", dynamic: true, seoKind: "place", placeKind: "homeVisit", param: "providerId" },
   {
     route: "restaurants",
     page: "Restaurants",
+    listingKind: "restaurants",
     seo: {
       title: "香港寵物友善餐廳（18區搜尋）| PetWell HK",
       description: "全港寵物友善餐廳指南，按地區搜尋可帶狗／寵物入座餐廳。",
@@ -103,6 +107,7 @@ const routes = [
   {
     route: "restaurant",
     page: "Restaurants",
+    listingKind: "restaurants",
     seo: {
       title: "香港寵物友善餐廳 | PetWell HK",
       description: "全港寵物友善餐廳指南。",
@@ -112,44 +117,48 @@ const routes = [
   {
     route: "pet-friendly-restaurants-hk",
     page: "Restaurants",
+    listingKind: "restaurants",
     seo: {
       title: "Pet-Friendly Restaurants Hong Kong | PetWell HK",
       description: "Find pet-friendly restaurants across Hong Kong.",
       path: "/pet-friendly-restaurants-hk",
     },
   },
-  { route: "pet-friendly-restaurants/[areaSlug]", page: "RestaurantsByArea", dynamic: true },
-  { route: "restaurants/[restaurantId]", page: "RestaurantDetail", dynamic: true },
+  { route: "pet-friendly-restaurants/[areaSlug]", page: "RestaurantsByArea", dynamic: true, seoKind: "area", param: "areaSlug" },
+  { route: "restaurants/[restaurantId]", page: "RestaurantDetail", dynamic: true, seoKind: "place", placeKind: "restaurant", param: "restaurantId" },
   {
     route: "salons",
     page: "Salons",
+    listingKind: "salons",
     seo: {
       title: "香港寵物美容店搜尋 | PetWell HK",
       description: "搜尋全港寵物美容、沖涼與造型服務。",
       path: "/salons",
     },
   },
-  { route: "salons/[salonId]", page: "SalonDetail", dynamic: true },
+  { route: "salons/[salonId]", page: "SalonDetail", dynamic: true, seoKind: "place", placeKind: "salon", param: "salonId" },
   {
     route: "lodging",
     page: "Lodging",
+    listingKind: "lodging",
     seo: {
       title: "香港寵物寄養與住宿 | PetWell HK",
       description: "搜尋寵物寄養、酒店與寵物友好住宿。",
       path: "/lodging",
     },
   },
-  { route: "lodging/[lodgingId]", page: "LodgingDetail", dynamic: true },
+  { route: "lodging/[lodgingId]", page: "LodgingDetail", dynamic: true, seoKind: "place", placeKind: "lodging", param: "lodgingId" },
   {
     route: "malls",
     page: "Malls",
+    listingKind: "malls",
     seo: {
       title: "香港寵物友善商場 | PetWell HK",
       description: "搜尋可帶寵物進入的香港商場與室內空間。",
       path: "/malls",
     },
   },
-  { route: "malls/[mallId]", page: "MallDetail", dynamic: true },
+  { route: "malls/[mallId]", page: "MallDetail", dynamic: true, seoKind: "place", placeKind: "mall", param: "mallId" },
   {
     route: "ngos",
     page: "NGOs",
@@ -159,7 +168,7 @@ const routes = [
       path: "/ngos",
     },
   },
-  { route: "ngos/[ngoId]", page: "NGODetail", dynamic: true },
+  { route: "ngos/[ngoId]", page: "NGODetail", dynamic: true, seoKind: "ngo", param: "ngoId" },
   {
     route: "forum",
     page: "Forum",
@@ -168,8 +177,9 @@ const routes = [
       description: "PetWell 寵物論壇：養寵心得、提問與社群討論。",
       path: "/forum",
     },
+    listingKind: "forum",
   },
-  { route: "forum/[postId]", page: "ForumPost", dynamic: true },
+  { route: "forum/[postId]", page: "ForumPost", dynamic: true, seoKind: "forum", param: "postId" },
   {
     route: "owner-zone",
     page: "OwnerZone",
@@ -253,9 +263,10 @@ const routes = [
       description: "搜尋香港寵物市集、活動與體驗。",
       path: "/pet-activities",
     },
+    listingKind: "events",
   },
-  { route: "event/[id]", page: "EventDetail", dynamic: true },
-  { route: "christmas-event/[eventId]", page: "ChristmasEventDetail", dynamic: true },
+  { route: "event/[id]", page: "EventDetail", dynamic: true, seoKind: "event", param: "id" },
+  { route: "christmas-event/[eventId]", page: "ChristmasEventDetail", dynamic: true, seoKind: "christmas", param: "eventId" },
   {
     route: "petwell-member",
     page: "PetwellMember",
@@ -348,7 +359,7 @@ const routes = [
       noIndex: true,
     },
   },
-  { route: "auth/[[...slug]]", page: "AuthCallback", dynamic: true, noIndex: true },
+  { route: "auth/[[...slug]]", page: "AuthCallback", dynamic: true, noIndex: true, seo: { title: "Auth | PetWell HK", description: "Authentication", path: "/auth", noIndex: true } },
   {
     route: "test-booking",
     page: "TestBooking",
@@ -363,8 +374,8 @@ const routes = [
       path: "/review",
     },
   },
-  { route: "review/brand/[brand]", page: "ReviewBrand", dynamic: true },
-  { route: "review/[id]", page: "ReviewProduct", dynamic: true },
+  { route: "review/brand/[brand]", page: "ReviewBrand", dynamic: true, seoKind: "reviewBrand", param: "brand" },
+  { route: "review/[id]", page: "ReviewProduct", dynamic: true, seoKind: "reviewProduct", param: "id" },
   {
     route: "wishlist",
     page: "Wishlist",
@@ -385,7 +396,7 @@ const routes = [
     page: "MyReviews",
     seo: { title: "我的評價 | PetWell HK", description: "管理你的評價。", path: "/account/reviews", noIndex: true },
   },
-  { route: "users/[userId]", page: "UserProfile", dynamic: true },
+  { route: "users/[userId]", page: "UserProfile", dynamic: true, seoKind: "user", param: "userId" },
   {
     route: "blog/hong-kong-dog-trainer-licence-guide",
     page: "BlogDogTrainerLicence",
@@ -415,8 +426,8 @@ const routes = [
       path: "/nutrition",
     },
   },
-  { route: "nutrition/[id]", page: "NutritionProduct", dynamic: true },
-  { route: "blog/[slug]", page: "BlogPost", dynamic: true },
+  { route: "nutrition/[id]", page: "NutritionProduct", dynamic: true, seoKind: "nutrition", param: "id" },
+  { route: "blog/[slug]", page: "BlogPost", dynamic: true, seoKind: "blogRedirect", param: "slug" },
   {
     route: "afcd-pet-food-safety-pdf",
     page: "AfcdPdfRedirect",
@@ -427,10 +438,10 @@ const routes = [
       noIndex: true,
     },
   },
-  { route: "check/[id]", page: "CheckTag", dynamic: true },
-  { route: "pet/[tagId]", page: "PetTag", dynamic: true },
-  { route: "activate/[tagId]", page: "ActivateTag", dynamic: true },
-  { route: "[slug]", page: "BlogPost", dynamic: true },
+  { route: "check/[id]", page: "CheckTag", dynamic: true, noIndex: true, seo: { title: "Check Tag | PetWell HK", description: "Pet tag check", path: "/check", noIndex: true } },
+  { route: "pet/[tagId]", page: "PetTag", dynamic: true, noIndex: true, seo: { title: "Pet Tag | PetWell HK", description: "Pet tag", path: "/pet", noIndex: true } },
+  { route: "activate/[tagId]", page: "ActivateTag", dynamic: true, noIndex: true, seo: { title: "Activate Tag | PetWell HK", description: "Activate pet tag", path: "/activate", noIndex: true } },
+  { route: "[slug]", page: "BlogPost", dynamic: true, seoKind: "blog", param: "slug" },
 ];
 
 function esc(str) {
@@ -449,32 +460,410 @@ export default function RoutePage() {
 `;
 }
 
+function listingSsrConfig(listingKind) {
+  switch (listingKind) {
+    case "restaurants":
+      return { fn: "ssrRestaurantListing", prop: "initialListing" };
+    case "clinics":
+      return { fn: "ssrClinicListing", prop: "initialListing" };
+    case "salons":
+      return { fn: "ssrSalonListing", prop: "initialListing" };
+    case "lodging":
+      return { fn: "ssrLodgingListing", prop: "initialListing" };
+    case "malls":
+      return { fn: "ssrMalls", prop: "initialMalls" };
+    case "homeVisits":
+      return { fn: "ssrHomeVisits", prop: "initialProviders" };
+    case "forum":
+      return { fn: "ssrForumListing", prop: "initialPosts" };
+    case "events":
+      return { fn: "ssrEventListing", prop: "initialEvents" };
+    case "home":
+      return { fn: "ssrHomeRails", prop: "initialHome" };
+    default:
+      return null;
+  }
+}
+
+function placeSsrConfig(placeKind) {
+  switch (placeKind) {
+    case "restaurant":
+      return { fn: "ssrRestaurant", prop: "initialRestaurant" };
+    case "clinic":
+      return { fn: "ssrClinic", prop: "initialClinic" };
+    case "salon":
+      return { fn: "ssrSalon", prop: "initialSalon" };
+    case "lodging":
+      return { fn: "ssrLodging", prop: "initialLodging" };
+    case "mall":
+      return { fn: "ssrMall", prop: "initialMall" };
+    case "homeVisit":
+      return { fn: "ssrHomeVisit", prop: "initialProvider" };
+    default:
+      return null;
+  }
+}
+
+function renderListingPage(pageName, seo, listingKind) {
+  const title = esc(seo.title || "PetWell HK");
+  const description = esc(seo.description || "PetWell HK");
+  const seoPath = esc(seo.path || "/");
+  if (seo.noIndex) {
+    return renderClientPage(pageName);
+  }
+  const listingSsr = listingSsrConfig(listingKind);
+  if (!listingSsr) {
+    return `import ClientPage from "@/components/ClientPage";
+import JsonLd from "@/components/seo/JsonLd";
+import Page from "@/views/${pageName}";
+import { listingPageJsonLd } from "@/lib/seo";
+
+export default function RoutePage() {
+  return (
+    <>
+      <JsonLd
+        id="ld-collection"
+        data={listingPageJsonLd({
+          title: \`${title}\`,
+          description: \`${description}\`,
+          path: \`${seoPath}\`,
+        })}
+      />
+      <ClientPage Page={Page} />
+    </>
+  );
+}
+`;
+  }
+  return `import ClientPage from "@/components/ClientPage";
+import JsonLd from "@/components/seo/JsonLd";
+import Page from "@/views/${pageName}";
+import { listingPageJsonLd } from "@/lib/seo";
+import { ${listingSsr.fn} } from "@/lib/server/ssrContent";
+
+export const revalidate = 900;
+
+export default async function RoutePage() {
+  const ${listingSsr.prop} = await ${listingSsr.fn}();
+  return (
+    <>
+      <JsonLd
+        id="ld-collection"
+        data={listingPageJsonLd({
+          title: \`${title}\`,
+          description: \`${description}\`,
+          path: \`${seoPath}\`,
+        })}
+      />
+      <ClientPage Page={Page} ${listingSsr.prop}={${listingSsr.prop}} />
+    </>
+  );
+}
+`;
+}
+
 function renderSeoLayout(seo) {
   const keywords = seo.keywords
     ? typeof seo.keywords === "string"
       ? JSON.stringify(seo.keywords)
       : JSON.stringify(seo.keywords)
     : "undefined";
-  const noIndex = seo.noIndex ? "true" : "false";
+  const noIndex = Boolean(seo.noIndex);
   const ogType = seo.ogType || "website";
+  const title = esc(seo.title || "PetWell HK");
+  const description = esc(seo.description || "PetWell HK");
+  const seoPath = esc(seo.path || "/");
 
   return `import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: \`${esc(seo.title || "PetWell HK")}\`,
-  description: \`${esc(seo.description || "PetWell HK")}\`,
+  title: \`${title}\`,
+  description: \`${description}\`,
   keywords: ${keywords === "undefined" ? "undefined" : keywords},
-  path: \`${esc(seo.path || "/")}\`,
+  path: \`${seoPath}\`,
   ogType: "${ogType}",
-  noIndex: ${noIndex},
+  noIndex: ${noIndex ? "true" : "false"},
 });
 
 export default function SeoLayout({ children }: { children: ReactNode }) {
   return children;
 }
 `;
+}
+
+function renderPlacePage(pageName, placeKind, paramName) {
+  const placeSsr = placeSsrConfig(placeKind);
+  const ssrImport = placeSsr
+    ? `\nimport { unwrapSsrEntity, ${placeSsr.fn} } from "@/lib/server/ssrContent";`
+    : "";
+  const ssrFetch = placeSsr
+    ? `\n  const ${placeSsr.prop} = unwrapSsrEntity(await ${placeSsr.fn}(${paramName}));`
+    : "";
+  const ssrProp = placeSsr ? ` ${placeSsr.prop}={${placeSsr.prop}}` : "";
+  return `import type { Metadata } from "next";
+import ClientPage from "@/components/ClientPage";
+import JsonLd from "@/components/seo/JsonLd";
+import Page from "@/views/${pageName}";
+import { generatePlaceJsonLd, generatePlaceMetadata } from "@/lib/server/placeMetadata";${ssrImport}
+
+type Props = { params: Promise<{ ${paramName}: string }> };
+
+export const revalidate = 1800;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { ${paramName} } = await params;
+  return generatePlaceMetadata("${placeKind}", ${paramName});
+}
+
+export default async function RoutePage({ params }: Props) {
+  const { ${paramName} } = await params;${ssrFetch}
+  const jsonLd = await generatePlaceJsonLd("${placeKind}", ${paramName});
+  return (
+    <>
+      {jsonLd ? <JsonLd data={jsonLd} /> : null}
+      <ClientPage Page={Page}${ssrProp} />
+    </>
+  );
+}
+`;
+}
+
+function namedImport(names) {
+  return [...new Set(names.filter(Boolean))].join(", ");
+}
+
+function renderAsyncSeoPage({
+  pageName,
+  param,
+  metadataFn,
+  jsonLdFn,
+  existsFn,
+  extraImports = [],
+  staticParams,
+  asyncStaticParams = false,
+  revalidate = 1800,
+  awaitMetadata = true,
+  awaitJsonLd = true,
+  ssrFn,
+  clientProp,
+  ssrUnwrap = false,
+}) {
+  const imports = namedImport([metadataFn, jsonLdFn, existsFn, ...extraImports]);
+  const existsBlock = existsFn
+    ? `
+  if (!${existsFn}(${param})) notFound();`
+    : "";
+  const notFoundImport = existsFn ? `\nimport { notFound } from "next/navigation";` : "";
+  const ssrNames = ssrFn
+    ? ssrUnwrap
+      ? `unwrapSsrEntity, ${ssrFn}`
+      : ssrFn
+    : "";
+  const ssrImport = ssrFn
+    ? `\nimport { ${ssrNames} } from "@/lib/server/ssrContent";`
+    : "";
+  const ssrFetch = ssrFn && clientProp
+    ? ssrUnwrap
+      ? `\n  const ${clientProp} = unwrapSsrEntity(await ${ssrFn}(${param}));`
+      : `\n  const ${clientProp} = await ${ssrFn}(${param});`
+    : "";
+  const ssrProp = clientProp ? ` ${clientProp}={${clientProp}}` : "";
+  const staticParamsBlock = staticParams
+    ? `
+export ${asyncStaticParams ? "async " : ""}function generateStaticParams() {
+  return ${staticParams};
+}
+`
+    : "";
+  const metadataCall = awaitMetadata ? `await ${metadataFn}(${param})` : `${metadataFn}(${param})`;
+  const jsonLdCall = jsonLdFn
+    ? awaitJsonLd
+      ? `await ${jsonLdFn}(${param})`
+      : `${jsonLdFn}(${param})`
+    : "null";
+
+  return `import type { Metadata } from "next";${notFoundImport}
+import ClientPage from "@/components/ClientPage";
+import JsonLd from "@/components/seo/JsonLd";
+import Page from "@/views/${pageName}";
+import { ${imports} } from "@/lib/server/contentMetadata";${ssrImport}
+
+type Props = { params: Promise<{ ${param}: string }> };
+
+export const revalidate = ${revalidate};
+${staticParamsBlock}
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { ${param} } = await params;
+  return ${metadataCall};
+}
+
+export default async function RoutePage({ params }: Props) {
+  const { ${param} } = await params;${existsBlock}${ssrFetch}
+  const jsonLd = ${jsonLdCall};
+  return (
+    <>
+      {jsonLd ? <JsonLd data={jsonLd} /> : null}
+      <ClientPage Page={Page}${ssrProp} />
+    </>
+  );
+}
+`;
+}
+
+function renderBlogRedirectPage() {
+  return `import { notFound, redirect } from "next/navigation";
+import { blogPostExists } from "@/lib/server/contentMetadata";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export default async function RoutePage({ params }: Props) {
+  const { slug } = await params;
+  if (!blogPostExists(slug)) notFound();
+  redirect(\`/\${slug}\`);
+}
+`;
+}
+
+function renderDynamicPage(route) {
+  switch (route.seoKind) {
+    case "place":
+      return renderPlacePage(route.page, route.placeKind, route.param);
+    case "blog":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "slug",
+        metadataFn: "generateBlogMetadata",
+        jsonLdFn: "generateBlogJsonLd",
+        existsFn: "blogPostExists",
+        extraImports: ["getBlogSlugs"],
+        staticParams: "getBlogSlugs().map((slug) => ({ slug }))",
+        revalidate: 3600,
+        awaitMetadata: false,
+        awaitJsonLd: false,
+      });
+    case "blogRedirect":
+      return renderBlogRedirectPage();
+    case "area":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "areaSlug",
+        metadataFn: "generateAreaMetadata",
+        jsonLdFn: "generateAreaJsonLd",
+        existsFn: "areaSlugExists",
+        extraImports: ["getAreaSlugs"],
+        staticParams: "getAreaSlugs().map((areaSlug) => ({ areaSlug }))",
+        revalidate: 3600,
+        awaitMetadata: false,
+        awaitJsonLd: false,
+        ssrFn: "ssrRestaurantListingForArea",
+        clientProp: "initialListing",
+      });
+    case "ngo":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "ngoId",
+        metadataFn: "generateNgoMetadata",
+        jsonLdFn: "generateNgoJsonLd",
+        existsFn: "ngoExists",
+        extraImports: ["getNgoIds"],
+        staticParams: "getNgoIds().map((ngoId) => ({ ngoId }))",
+        revalidate: 86400,
+        awaitMetadata: false,
+        awaitJsonLd: false,
+      });
+    case "christmas":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "eventId",
+        metadataFn: "generateChristmasEventMetadata",
+        jsonLdFn: "generateChristmasEventJsonLd",
+        existsFn: "christmasEventExists",
+        extraImports: ["getChristmasEventIds"],
+        staticParams: "getChristmasEventIds().map((eventId) => ({ eventId }))",
+        revalidate: 86400,
+        awaitMetadata: false,
+        awaitJsonLd: false,
+      });
+    case "forum":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "postId",
+        metadataFn: "generateForumMetadata",
+        jsonLdFn: "generateForumJsonLd",
+        revalidate: 600,
+        ssrFn: "ssrForumPost",
+        clientProp: "initialPost",
+        ssrUnwrap: true,
+      });
+    case "event":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "id",
+        metadataFn: "generateEventMetadata",
+        jsonLdFn: "generateEventJsonLd",
+        revalidate: 1800,
+        ssrFn: "ssrEvent",
+        clientProp: "initialEvent",
+        ssrUnwrap: true,
+      });
+    case "reviewProduct":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "id",
+        metadataFn: "generateReviewProductMetadata",
+        jsonLdFn: "generateReviewProductJsonLd",
+        revalidate: 1800,
+        ssrFn: "ssrReviewProduct",
+        clientProp: "initialReview",
+        ssrUnwrap: true,
+      });
+    case "reviewBrand":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "brand",
+        metadataFn: "generateReviewBrandMetadata",
+        jsonLdFn: "generateReviewBrandJsonLd",
+        awaitJsonLd: false,
+        revalidate: 1800,
+      });
+    case "nutrition":
+      return renderAsyncSeoPage({
+        pageName: route.page,
+        param: "id",
+        metadataFn: "generateNutritionMetadata",
+        jsonLdFn: "generateNutritionJsonLd",
+        extraImports: ["getNutritionProductIds"],
+        staticParams: "(await getNutritionProductIds()).map((id) => ({ id }))",
+        asyncStaticParams: true,
+        revalidate: 86400,
+        ssrFn: "ssrNutritionProduct",
+        clientProp: "initialProduct",
+        ssrUnwrap: true,
+      });
+    case "user":
+      return `import type { Metadata } from "next";
+import ClientPage from "@/components/ClientPage";
+import Page from "@/views/${route.page}";
+import { generateUserMetadata } from "@/lib/server/contentMetadata";
+
+type Props = { params: Promise<{ userId: string }> };
+
+export const revalidate = 1800;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { userId } = await params;
+  return generateUserMetadata(userId);
+}
+
+export default function RoutePage() {
+  return <ClientPage Page={Page} />;
+}
+`;
+    default:
+      return renderClientPage(route.page);
+  }
 }
 
 function ensureDir(dir) {
@@ -485,15 +874,17 @@ let count = 0;
 for (const route of routes) {
   const dir = route.route ? path.join(appDir, route.route) : appDir;
   ensureDir(dir);
-  fs.writeFileSync(path.join(dir, "page.tsx"), renderClientPage(route.page), "utf8");
+  const pageSource = route.seoKind
+    ? renderDynamicPage(route)
+    : route.seo
+      ? renderListingPage(route.page, route.seo, route.listingKind)
+      : renderClientPage(route.page);
+  fs.writeFileSync(path.join(dir, "page.tsx"), pageSource, "utf8");
   if (route.seo) {
-    // Avoid overwriting root layout.tsx — use seo.ts sibling for root,
-    // and layout.tsx for nested routes only when no layout exists yet.
     if (route.route === "") {
       // root metadata lives in root layout
     } else {
       const layoutPath = path.join(dir, "layout.tsx");
-      // Don't overwrite if a custom layout already exists with non-generated content
       fs.writeFileSync(layoutPath, renderSeoLayout(route.seo), "utf8");
     }
   }

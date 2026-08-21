@@ -13,10 +13,14 @@ const PLACEHOLDER_POSTS: Array<{ id: string; title: string; replies: number }> =
   { id: "placeholder-4", title: "邊度買貓糧最抵？", replies: 15 },
 ];
 
-const HomeForumTrends = () => {
+const HomeForumTrends = ({
+  initialPosts = null,
+}: {
+  initialPosts?: ForumPost[] | null;
+}) => {
   const { t, i18n } = useTranslation();
-  const [posts, setPosts] = useState<ForumPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState<ForumPost[]>(initialPosts ?? []);
+  const [loading, setLoading] = useState(!initialPosts?.length);
   const [usePlaceholder, setUsePlaceholder] = useState(false);
 
   useEffect(() => {
@@ -29,11 +33,11 @@ const HomeForumTrends = () => {
         if (hotPosts.length > 0) {
           setPosts(hotPosts.slice(0, 4));
           setUsePlaceholder(false);
-        } else {
+        } else if (!initialPosts?.length) {
           setUsePlaceholder(true);
         }
       } catch {
-        if (!cancelled) {
+        if (!cancelled && !initialPosts?.length) {
           setUsePlaceholder(true);
         }
       } finally {
@@ -47,7 +51,7 @@ const HomeForumTrends = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [initialPosts]);
 
   return (
     <section className="home-forum-section" aria-labelledby="home-forum-heading">

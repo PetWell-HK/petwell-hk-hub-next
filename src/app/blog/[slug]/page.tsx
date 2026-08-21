@@ -1,8 +1,10 @@
-"use client";
+import { notFound, redirect } from "next/navigation";
+import { blogPostExists } from "@/lib/server/contentMetadata";
 
-import ClientPage from "@/components/ClientPage";
-import Page from "@/views/BlogPost";
+type Props = { params: Promise<{ slug: string }> };
 
-export default function RoutePage() {
-  return <ClientPage Page={Page} />;
+export default async function RoutePage({ params }: Props) {
+  const { slug } = await params;
+  if (!blogPostExists(slug)) notFound();
+  redirect(`/${slug}`);
 }

@@ -10,6 +10,7 @@ import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { useSEO } from "@/hooks/useSEO";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
 import { getTodayOpeningHours } from "@/utils/availableHours";
+import type { Salon } from "@/services/salonApi";
 
 const salonsFAQ = [
   {
@@ -34,7 +35,11 @@ const salonsFAQ = [
   },
 ];
 
-const Salons = () => {
+const Salons = ({
+  initialListing = null,
+}: {
+  initialListing?: { salons: Salon[]; total: number; nextToken: number[] | null } | null;
+}) => {
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [show24HourOnly, setShow24HourOnly] = useState<boolean>(false);
@@ -53,6 +58,7 @@ const Salons = () => {
       is247: show24HourOnly || undefined,
     },
     i18n.language,
+    initialListing,
   );
 
   const regions = [

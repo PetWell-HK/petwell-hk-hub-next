@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef, useCallback, type ReactElement } from "react";
 import { useTranslation } from "react-i18next";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -93,7 +93,11 @@ const getUsernameColor = (name: string): string => {
 
 const BASE_URL = "https://petwellhk.com";
 
-const Forum = () => {
+type ForumProps = {
+  initialPosts?: ForumPost[] | null;
+};
+
+const Forum = ({ initialPosts = null }: ForumProps) => {
 
   const { t, i18n } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -104,12 +108,16 @@ const Forum = () => {
   const [showDownloadCta, setShowDownloadCta] = useState(false);
   const pendingReplyRef = useRef<{ content: string; postId: string; replyingTo: ForumReply | null; imagePreviews: Array<{ id: string; file: File; preview: string }> } | null>(null);
   const closingForAuthRef = useRef(false);
-  const [allPosts, setAllPosts] = useState<ForumPost[]>([]);
-  const [displayedPosts, setDisplayedPosts] = useState<ForumPost[]>([]);
+  const ssrPosts = initialPosts ?? [];
+  const urlCategoryOnMount = searchParams.get("category") || "all";
+  const [allPosts, setAllPosts] = useState<ForumPost[]>(ssrPosts);
+  const [displayedPosts, setDisplayedPosts] = useState<ForumPost[]>(() =>
+    ssrPosts.slice(0, POSTS_PER_PAGE),
+  );
   const [selectedPost, setSelectedPost] = useState<ForumPost | null>(null);
   const [selectedPostReplies, setSelectedPostReplies] = useState<ForumReply[]>([]);
   const [allPostReplies, setAllPostReplies] = useState<ForumReply[]>([]); // Store all replies for parent lookup
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(ssrPosts.length === 0);
   const [loadingPostDetail, setLoadingPostDetail] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [createDialogOpen, setCreateDialogOpen] = useState(false);
@@ -145,6 +153,8 @@ const Forum = () => {
   const lastPostListScrollTopRef = useRef(0);
   const isInitialMountRef = useRef(true);
   const isUpdatingFromUrlRef = useRef(false);
+  const skipInitialListFetchRef = useRef(ssrPosts.length > 0 && urlCategoryOnMount === "all");
+  const skipInitialSearchFetchRef = useRef(ssrPosts.length > 0 && urlCategoryOnMount === "all");
 
   // Mobile UX: track whether the detail panel is the active view on small screens.
   // Initialise to true when navigating directly to a post URL on mobile.
@@ -603,6 +613,10 @@ const Forum = () => {
   }, [searchParams, setSelectedCategory]);
 
   useEffect(() => {
+    if (skipInitialListFetchRef.current) {
+      skipInitialListFetchRef.current = false;
+      return;
+    }
     loadPosts(true);
   }, [selectedCategory, selectedTags, sortBy]);
 
@@ -619,6 +633,10 @@ const Forum = () => {
 
   // Debounced search
   useEffect(() => {
+    if (skipInitialSearchFetchRef.current) {
+      skipInitialSearchFetchRef.current = false;
+      return;
+    }
     const timer = setTimeout(() => {
       if (searchQuery.trim() || !searchQuery) {
         loadPosts(true);
@@ -1645,6 +1663,9 @@ const Forum = () => {
   return (
     <div className="h-screen bg-background overflow-hidden flex flex-col">
       <Header />
+      <h1 className="sr-only">
+        {i18n.language === "zh" ? "香港寵物討論區" : "Hong Kong Pet Forum"}
+      </h1>
       
       {/* Top Bar with Expandable Search */}
       <div className="sticky top-[var(--header-height)] z-20 bg-white border-b border-border shadow-sm">
@@ -1861,7 +1882,26 @@ const Forum = () => {
                           </div>
 
                           <h3 className="text-base font-semibold mb-2 line-clamp-2 leading-snug text-foreground">
-                            {sanitizeUserVisibleText(post.title)}
+                            <Link
+                              to={`/forum/${post.id}`}
+                              onClick={(event) => {
+                                if (
+                                  event.metaKey ||
+                                  event.ctrlKey ||
+                                  event.shiftKey ||
+                                  event.altKey ||
+                                  event.button !== 0
+                                ) {
+                                  return;
+                                }
+                                event.preventDefault();
+                                event.stopPropagation();
+                                handlePostSelect(post);
+                              }}
+                              className="hover:underline"
+                            >
+                              {sanitizeUserVisibleText(post.title)}
+                            </Link>
                           </h3>
 
                           <div className="flex items-center gap-2 flex-wrap">

@@ -5,23 +5,30 @@ import {
   fetchHomeVisitProviderById,
   filterHomeVisitProviders,
   sortHomeVisitProvidersPricedThenRandom,
+  type ApiHomeVisitProvider,
   type HomeVisitListingFilters,
+  type HomeVisitProvider,
 } from '@/services/homeVisitApi';
 
-export function useHomeVisitProviders(language: string = 'zh') {
+export function useHomeVisitProviders(
+  language: string = 'zh',
+  initialData?: HomeVisitProvider[] | null,
+) {
   return useQuery({
     queryKey: ['homeVisitProviders', 'all', language],
     queryFn: () => fetchAllHomeVisitProviders(language),
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }
 
 export function useFilteredHomeVisitProviders(
   filters: HomeVisitListingFilters,
   language: string = 'zh',
+  initialProviders?: HomeVisitProvider[] | null,
 ) {
-  const query = useHomeVisitProviders(language);
-  const shuffleSeedRef = useRef(Math.random() * 0xffffffff);
+  const query = useHomeVisitProviders(language, initialProviders);
+  const shuffleSeedRef = useRef(1);
 
   const providers = useMemo(() => {
     const filtered = filterHomeVisitProviders(query.data ?? [], filters);
@@ -44,7 +51,10 @@ export function useFilteredHomeVisitProviders(
   };
 }
 
-export function useHomeVisitProvider(id: string | undefined) {
+export function useHomeVisitProvider(
+  id: string | undefined,
+  initialData?: ApiHomeVisitProvider | null,
+) {
   return useQuery({
     queryKey: ['homeVisitProvider', id],
     queryFn: () => {
@@ -53,5 +63,6 @@ export function useHomeVisitProvider(id: string | undefined) {
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

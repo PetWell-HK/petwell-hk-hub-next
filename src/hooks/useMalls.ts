@@ -4,19 +4,26 @@ import {
   fetchAllMalls,
   fetchMallById,
   filterMalls,
+  type ApiMall,
+  type Mall,
   type MallListingFilters,
 } from '@/services/mallApi';
 
-export function useMalls(language: string = 'zh') {
+export function useMalls(language: string = 'zh', initialData?: Mall[] | null) {
   return useQuery({
     queryKey: ['malls', 'all', language],
     queryFn: () => fetchAllMalls(language),
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }
 
-export function useFilteredMalls(filters: MallListingFilters, language: string = 'zh') {
-  const query = useMalls(language);
+export function useFilteredMalls(
+  filters: MallListingFilters,
+  language: string = 'zh',
+  initialMalls?: Mall[] | null,
+) {
+  const query = useMalls(language, initialMalls);
 
   const malls = useMemo(() => {
     const all = query.data ?? [];
@@ -31,7 +38,7 @@ export function useFilteredMalls(filters: MallListingFilters, language: string =
   };
 }
 
-export function useMall(id: string | undefined) {
+export function useMall(id: string | undefined, initialData?: ApiMall | null) {
   return useQuery({
     queryKey: ['mall', id],
     queryFn: () => {
@@ -40,5 +47,6 @@ export function useMall(id: string | undefined) {
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

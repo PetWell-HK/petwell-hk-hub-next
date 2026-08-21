@@ -3,6 +3,7 @@ import {
   fetchSalonById,
   getSalonSearchNextPageParam,
   searchSalons,
+  type ApiSalon,
   type Salon,
 } from '@/services/salonApi';
 import {
@@ -20,7 +21,7 @@ export interface PlaceListingFilters {
   is247?: boolean;
 }
 
-export function useSalons(language: string = 'zh') {
+export function useSalons(language: string = 'zh', initialSalons?: Salon[] | null) {
   return useQuery({
     queryKey: ['salons', 'home', PLACE_SEARCH_BACKEND, language],
     queryFn: async () => {
@@ -31,12 +32,18 @@ export function useSalons(language: string = 'zh') {
       return salons;
     },
     staleTime: 5 * 60 * 1000,
+    initialData: initialSalons?.length ? initialSalons : undefined,
   });
 }
 
-export function useFilteredSalons(filters: PlaceListingFilters, language: string = 'zh') {
+export function useFilteredSalons(
+  filters: PlaceListingFilters,
+  language: string = 'zh',
+  initialPage?: { salons: Salon[]; total: number; nextToken: number[] | null } | null,
+) {
   const searchRegion = getPlaceSearchRegionParam(filters.region);
   const searchKeyword = filters.keyword?.trim() || undefined;
+  const isDefaultSearch = !searchKeyword && !searchRegion && !filters.is247;
 
   const query = useInfiniteQuery({
     queryKey: ['salons', 'search', PLACE_SEARCH_BACKEND, language, searchRegion, searchKeyword, filters.is247],
@@ -54,6 +61,10 @@ export function useFilteredSalons(filters: PlaceListingFilters, language: string
     initialPageParam: undefined as number[] | undefined,
     getNextPageParam: (lastPage) => getSalonSearchNextPageParam(lastPage.nextToken),
     staleTime: 5 * 60 * 1000,
+    initialData:
+      isDefaultSearch && initialPage
+        ? { pages: [initialPage], pageParams: [undefined] }
+        : undefined,
   });
 
   const salons = useMemo(() => {
@@ -94,7 +105,7 @@ export function useFilteredSalons(filters: PlaceListingFilters, language: string
   };
 }
 
-export function useSalon(id: string | undefined) {
+export function useSalon(id: string | undefined, initialData?: ApiSalon | null) {
   return useQuery({
     queryKey: ['salon', id],
     queryFn: () => {
@@ -103,5 +114,6 @@ export function useSalon(id: string | undefined) {
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

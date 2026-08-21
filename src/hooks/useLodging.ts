@@ -3,6 +3,7 @@ import {
   fetchLodgingById,
   getLodgingSearchNextPageParam,
   searchLodgings,
+  type ApiLodging,
   type Lodging,
 } from '@/services/lodgingApi';
 import {
@@ -20,7 +21,7 @@ export interface PlaceListingFilters {
   is247?: boolean;
 }
 
-export function useLodgings(language: string = 'zh') {
+export function useLodgings(language: string = 'zh', initialLodgings?: Lodging[] | null) {
   return useQuery({
     queryKey: ['lodgings', 'home', PLACE_SEARCH_BACKEND, language],
     queryFn: async () => {
@@ -31,12 +32,18 @@ export function useLodgings(language: string = 'zh') {
       return lodgings;
     },
     staleTime: 5 * 60 * 1000,
+    initialData: initialLodgings?.length ? initialLodgings : undefined,
   });
 }
 
-export function useFilteredLodgings(filters: PlaceListingFilters, language: string = 'zh') {
+export function useFilteredLodgings(
+  filters: PlaceListingFilters,
+  language: string = 'zh',
+  initialPage?: { lodgings: Lodging[]; total: number; nextToken: number[] | null } | null,
+) {
   const searchRegion = getPlaceSearchRegionParam(filters.region);
   const searchKeyword = filters.keyword?.trim() || undefined;
+  const isDefaultSearch = !searchKeyword && !searchRegion && !filters.is247;
 
   const query = useInfiniteQuery({
     queryKey: ['lodgings', 'search', PLACE_SEARCH_BACKEND, language, searchRegion, searchKeyword, filters.is247],
@@ -54,6 +61,10 @@ export function useFilteredLodgings(filters: PlaceListingFilters, language: stri
     initialPageParam: undefined as number[] | undefined,
     getNextPageParam: (lastPage) => getLodgingSearchNextPageParam(lastPage.nextToken),
     staleTime: 5 * 60 * 1000,
+    initialData:
+      isDefaultSearch && initialPage
+        ? { pages: [initialPage], pageParams: [undefined] }
+        : undefined,
   });
 
   const lodgings = useMemo(() => {
@@ -94,7 +105,7 @@ export function useFilteredLodgings(filters: PlaceListingFilters, language: stri
   };
 }
 
-export function useLodging(id: string | undefined) {
+export function useLodging(id: string | undefined, initialData?: ApiLodging | null) {
   return useQuery({
     queryKey: ['lodging', id],
     queryFn: () => {
@@ -103,5 +114,6 @@ export function useLodging(id: string | undefined) {
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

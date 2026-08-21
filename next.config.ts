@@ -44,6 +44,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/namtag",
+        destination: "/nametag",
+        permanent: true,
+      },
+      {
+        source: "/fang-zou-shi-gou-pai",
+        destination: "/nametag",
+        permanent: true,
+      },
+      {
         source: "/merchant",
         destination: "/other-services",
         permanent: true,

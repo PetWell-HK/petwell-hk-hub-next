@@ -204,7 +204,7 @@ const MALL_LIST_FIELDS = `
   listingAlert { zh en }
 `;
 
-const LIST_MALLS_QUERY = `
+export const LIST_MALLS_QUERY = `
   query ListMalls($limit: Int, $nextToken: String) {
     listMalls(limit: $limit, nextToken: $nextToken) {
       items {
@@ -215,7 +215,7 @@ const LIST_MALLS_QUERY = `
   }
 `;
 
-const GET_MALL_QUERY = `
+export const GET_MALL_QUERY = `
   query GetMall($id: ID!) {
     getMall(id: $id) {
       ${MALL_LIST_FIELDS}

@@ -40,7 +40,11 @@ const homeVisitsFAQ = [
   },
 ];
 
-const HomeVisits = () => {
+const HomeVisits = ({
+  initialProviders = null,
+}: {
+  initialProviders?: HomeVisitProvider[] | null;
+}) => {
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [show24HourOnly, setShow24HourOnly] = useState(false);
@@ -56,6 +60,7 @@ const HomeVisits = () => {
       serviceCategory: selectedServiceCategory || undefined,
     },
     i18n.language,
+    initialProviders,
   );
 
   const regions = [

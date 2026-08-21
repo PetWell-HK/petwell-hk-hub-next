@@ -8,8 +8,9 @@ import HomeHeroSearch from "@/components/home/HomeHeroSearch";
 import HomeQuickNav from "@/components/home/HomeQuickNav";
 import HomeSectorShowcase from "@/components/home/HomeSectorShowcase";
 import { useSEO } from "@/hooks/useSEO";
+import type { HomeRails } from "@/types/homeRails";
 
-const Index = () => {
+const Index = ({ initialHome = null }: { initialHome?: HomeRails | null }) => {
   const structuredData = useMemo(
     () => ({
       "@context": "https://schema.org",
@@ -61,8 +62,8 @@ const Index = () => {
       <HomeHeroSearch />
       <HomeQuickNav />
       <main className="home-portal-main">
-        <HomeSectorShowcase />
-        <HomeForumTrends />
+        <HomeSectorShowcase initialHome={initialHome} />
+        <HomeForumTrends initialPosts={initialHome?.forumPosts} />
       </main>
       <Footer />
     </div>

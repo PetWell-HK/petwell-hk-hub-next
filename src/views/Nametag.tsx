@@ -93,7 +93,7 @@ const Nametag = () => {
     title: t("nametagPage.seo.title"),
     description: t("nametagPage.seo.description"),
     keywords: t("nametagPage.seo.keywords"),
-    canonicalUrl: "https://petwellhk.com/anti-lost-dog-tag-hk",
+    canonicalUrl: typeof window !== "undefined" ? `${window.location.origin}${window.location.pathname}` : "https://petwellhk.com/nametag",
     structuredData,
     faqItems,
     howToSteps: {

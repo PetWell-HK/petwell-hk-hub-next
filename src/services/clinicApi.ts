@@ -99,7 +99,7 @@ function getRegionFromDistrict(district: string): string {
 }
 
 // Transform API clinic to app clinic format
-function transformClinic(apiClinic: ApiClinic, language: string = 'zh'): Clinic {
+export function transformClinic(apiClinic: ApiClinic, language: string = 'zh'): Clinic {
   const lang = language === 'en' ? 'en' : 'zh';
   const fallbackName = lang === 'en' ? 'Unnamed clinic' : '未命名診所';
   const fallbackAddress = lang === 'en' ? 'Address unavailable' : '地址未提供';
@@ -235,7 +235,7 @@ export async function searchClinics(
 
 export { getPlaceSearchNextPageParam as getClinicSearchNextPageParam };
 
-const GET_CLINIC_QUERY = `
+export const GET_CLINIC_QUERY = `
   query GetClinic($id: ID!) {
     getClinic(id: $id) {
       id

@@ -74,12 +74,17 @@ function getLocalizedString(
   return multiLang[lang] || multiLang[fallbackLang] || "";
 }
 
-const RestaurantDetail = () => {
+const RestaurantDetail = ({
+  initialRestaurant = null,
+}: {
+  initialRestaurant?: ApiRestaurant | null;
+}) => {
   const { restaurantId } = useParams<{ restaurantId: string }>();
   const { t, i18n } = useTranslation();
   const { data: restaurant, isLoading, error } = useRestaurant(
     restaurantId,
     i18n.language,
+    initialRestaurant,
   );
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [hoursExpanded, setHoursExpanded] = useState(false);

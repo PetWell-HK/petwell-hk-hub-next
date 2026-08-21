@@ -112,9 +112,15 @@ function DetailSkeleton() {
   );
 }
 
-export default function NutritionProduct() {
+export default function NutritionProduct({
+  initialProduct = null,
+}: {
+  initialProduct?: object | null;
+}) {
   const { id } = useParams<{ id: string }>();
-  const [products, setProducts] = useState<NutritionProduct[] | null>(null);
+  const [products, setProducts] = useState<NutritionProduct[] | null>(
+    initialProduct ? [initialProduct as NutritionProduct] : null,
+  );
   const [err, setErr] = useState(false);
 
   useEffect(() => {

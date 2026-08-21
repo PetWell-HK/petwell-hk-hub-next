@@ -7,6 +7,7 @@ import {
   getRestaurantSearchNextPageParam,
   HOME_FEATURED_RESTAURANT_FETCH_SIZE,
   RESTAURANT_SEARCH_PAGE_SIZE,
+  type ApiRestaurant,
   type Restaurant,
 } from '@/services/restaurantApi';
 import { mapFilterToRegionKey } from '@/data/hongKongDistricts';
@@ -179,6 +180,7 @@ export function useVerifiedRestaurants(language: string = 'zh') {
 export function useHomeFeaturedRestaurants(
   language: string = 'zh',
   count: number = HOME_FEATURED_RESTAURANT_COUNT,
+  initialRestaurants?: Restaurant[] | null,
 ) {
   return useQuery({
     queryKey: ['restaurants', 'homeFeatured', PLACE_SEARCH_BACKEND, language, count],
@@ -195,10 +197,15 @@ export function useHomeFeaturedRestaurants(
       return pickFeaturedWithPremiumFirst(verified, count, shuffleArray);
     },
     staleTime: 5 * 60 * 1000,
+    initialData: initialRestaurants?.length ? initialRestaurants : undefined,
   });
 }
 
-export function useFilteredRestaurants(filters: RestaurantFilters, language: string = 'zh') {
+export function useFilteredRestaurants(
+  filters: RestaurantFilters,
+  language: string = 'zh',
+  initialPage?: { restaurants: Restaurant[]; total: number; nextToken: number[] | null } | null,
+) {
   const searchRegion = getSearchRegionParam(filters.region);
   const { district: searchDistrict, districts: searchDistricts } = getSearchDistrictParams(
     filters.selectedDistricts,
@@ -257,6 +264,10 @@ export function useFilteredRestaurants(filters: RestaurantFilters, language: str
     getNextPageParam: (lastPage) => getRestaurantSearchNextPageParam(lastPage.nextToken),
     enabled: !useFehdList,
     staleTime: 5 * 60 * 1000,
+    initialData:
+      initialPage
+        ? { pages: [initialPage], pageParams: [undefined] }
+        : undefined,
   });
 
   const activeQuery = useFehdList ? fehdListQuery : searchQuery;
@@ -353,14 +364,19 @@ export function useFilteredRestaurants(filters: RestaurantFilters, language: str
   };
 }
 
-export function useRestaurant(id: string | undefined, language: string = 'zh') {
+export function useRestaurant(
+  id: string | undefined,
+  _language: string = 'zh',
+  initialData?: ApiRestaurant | null,
+) {
   return useQuery({
-    queryKey: ['restaurant', id, language],
+    queryKey: ['restaurant', id],
     queryFn: async () => {
       if (!id) throw new Error('Restaurant ID is required');
       return fetchRestaurantById(id);
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

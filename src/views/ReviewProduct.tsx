@@ -51,10 +51,15 @@ import {
 } from "@/data/reviewProductDemo";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import type { PriceReviewDetailResponse } from "@/types/priceReview";
 
-const ReviewProduct = () => {
+const ReviewProduct = ({
+  initialReview = null,
+}: {
+  initialReview?: PriceReviewDetailResponse | null;
+}) => {
   const { id } = useParams<{ id: string }>();
-  const { data, isLoading, isError, error } = usePriceReviewProduct(id);
+  const { data, isLoading, isError, error } = usePriceReviewProduct(id, initialReview);
   const { i18n } = useTranslation();
   const offersRef = useRef<HTMLDivElement>(null);
   const [reportOpen, setReportOpen] = useState(false);

@@ -12,8 +12,13 @@ import { getTodayOpeningHours } from "@/utils/availableHours";
 import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
 import restaurantsOgImage from "@/assets/restaurants-og.png.asset.json";
+import type { Restaurant } from "@/services/restaurantApi";
 
-const Restaurants = () => {
+const Restaurants = ({
+  initialListing = null,
+}: {
+  initialListing?: { restaurants: Restaurant[]; total: number; nextToken: number[] | null } | null;
+}) => {
   const location = useLocation();
   const isEnglishAlias = location.pathname === "/pet-friendly-restaurants-hk";
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
@@ -41,6 +46,13 @@ const Restaurants = () => {
       fehdLicensed,
     },
     i18n.language,
+    !searchQuery &&
+      selectedRegion === "all" &&
+      !indoorAllowed &&
+      !walkInAllowed &&
+      !fehdLicensed
+      ? initialListing
+      : null,
   );
 
   const restaurantsFAQ = useMemo(

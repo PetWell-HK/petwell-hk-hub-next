@@ -12,6 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { LodgingImage } from "@/components/LodgingImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
+import type { ApiLodging } from "@/services/lodgingApi";
 
 function getLocalizedString(
   multiLang: { zh?: string; en?: string } | undefined,
@@ -22,10 +23,10 @@ function getLocalizedString(
   return multiLang[lang]?.trim() || multiLang[fallbackLang]?.trim() || "";
 }
 
-const LodgingDetail = () => {
+const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging | null }) => {
   const { lodgingId } = useParams();
   const { i18n, t } = useTranslation();
-  const { data: lodging, isLoading, error } = useLodging(lodgingId);
+  const { data: lodging, isLoading, error } = useLodging(lodgingId, initialLodging);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
 
   const lodgingName = getLocalizedString(lodging?.name, lang);

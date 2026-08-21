@@ -132,5 +132,51 @@ export function buildMetadata({
 }
 
 export function jsonLdScript(data: object | object[]): string {
-  return JSON.stringify(data);
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+export function listingPageJsonLd(input: {
+  title: string;
+  description: string;
+  path: string;
+}): object[] {
+  const url = absoluteUrl(input.path === "/" ? "/" : input.path);
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: input.title,
+      description: input.description,
+      url,
+      inLanguage: "zh-HK",
+      isPartOf: {
+        "@type": "WebSite",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "首頁", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: input.title, item: url },
+      ],
+    },
+  ];
+}
+
+export function breadcrumbJsonLd(
+  items: Array<{ name: string; path: string }>,
+): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
 }

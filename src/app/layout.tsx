@@ -40,6 +40,7 @@ export const viewport: Viewport = {
 const organizationLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "PetWell HK Limited",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
@@ -55,6 +56,16 @@ const organizationLd = {
     "https://www.instagram.com/petwellhk",
     "https://www.youtube.com/@petwellhk",
   ],
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: "zh-HK",
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const mobileAppLd = {
@@ -76,6 +87,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="zh-HK">
       <head>
         <JsonLd id="ld-organization" data={organizationLd} />
+        <JsonLd id="ld-website" data={websiteLd} />
         <JsonLd id="ld-mobile-app" data={mobileAppLd} />
         <meta name="GPTBot" content="noindex, nofollow" />
         <meta name="ChatGPT-User" content="noindex, nofollow" />

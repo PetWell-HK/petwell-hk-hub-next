@@ -114,7 +114,7 @@ function getMultilingualString(
   return primary || fallback || '';
 }
 
-function transformSalon(apiSalon: ApiSalon, language: string = 'zh'): Salon {
+export function transformSalon(apiSalon: ApiSalon, language: string = 'zh'): Salon {
   const lang = language === 'en' ? 'en' : 'zh';
   return {
     id: apiSalon.id,
@@ -244,7 +244,7 @@ export async function searchSalons(
 
 export { getPlaceSearchNextPageParam as getSalonSearchNextPageParam };
 
-const GET_SALON_QUERY = `
+export const GET_SALON_QUERY = `
   query GetSalon($id: ID!) {
     getSalon(id: $id) {
       id

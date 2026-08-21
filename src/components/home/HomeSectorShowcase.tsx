@@ -21,7 +21,10 @@ import {
 } from "@/components/home/cards";
 import type { EventListCardData } from "@/components/EventListCard";
 import { useClinics } from "@/hooks/useClinics";
-import { useHomeFeaturedRestaurants } from "@/hooks/useRestaurants";
+import {
+  HOME_FEATURED_RESTAURANT_COUNT,
+  useHomeFeaturedRestaurants,
+} from "@/hooks/useRestaurants";
 import { useSalons } from "@/hooks/useSalons";
 import { useLodgings } from "@/hooks/useLodging";
 import { usePriceReviewProducts } from "@/hooks/usePriceReviewProducts";
@@ -33,9 +36,9 @@ import {
   type OrganizedEvent,
 } from "@/services/eventApi";
 import { savingsPct } from "@/lib/priceReviewPricing";
-import { shuffleArray } from "@/utils/shuffleArray";
 import { pickFeaturedWithPremiumFirst } from "@/utils/partnerPremium";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
+import type { HomeRails } from "@/types/homeRails";
 import HomeSuggestions from "@/components/home/HomeSuggestions";
 
 const EVENT_CATEGORY_KEYS = [
@@ -179,16 +182,36 @@ function RailItem({ children }: { children: ReactNode }) {
   return <div className="home-sector-rail__item">{children}</div>;
 }
 
-const HomeSectorShowcase = () => {
+const HomeSectorShowcase = ({
+  initialHome = null,
+}: {
+  initialHome?: HomeRails | null;
+}) => {
   const { t, i18n } = useTranslation();
-  const { data: reviewData, isLoading: reviewLoading } = usePriceReviewProducts({ limit: 12 });
+  const { data: reviewData, isLoading: reviewLoading } = usePriceReviewProducts(
+    { limit: 12 },
+    initialHome?.reviews,
+  );
   const { data: featuredRestaurants = [], isLoading: restaurantsLoading } =
-    useHomeFeaturedRestaurants(i18n.language);
-  const { data: clinics = [], isLoading: clinicsLoading } = useClinics(i18n.language);
-  const { data: salons = [], isLoading: salonsLoading } = useSalons(i18n.language);
-  const { data: lodgings = [], isLoading: lodgingsLoading } = useLodgings(i18n.language);
-  const [events, setEvents] = useState<EventListCardData[]>([]);
-  const [eventsLoading, setEventsLoading] = useState(true);
+    useHomeFeaturedRestaurants(i18n.language, HOME_FEATURED_RESTAURANT_COUNT, initialHome?.restaurants);
+  const { data: clinics = [], isLoading: clinicsLoading } = useClinics(
+    i18n.language,
+    initialHome?.clinics,
+  );
+  const { data: salons = [], isLoading: salonsLoading } = useSalons(
+    i18n.language,
+    initialHome?.salons,
+  );
+  const { data: lodgings = [], isLoading: lodgingsLoading } = useLodgings(
+    i18n.language,
+    initialHome?.lodgings,
+  );
+  const [events, setEvents] = useState<EventListCardData[]>(() =>
+    (initialHome?.events ?? [])
+      .map(toEventListCardData)
+      .filter((event): event is EventListCardData => event !== null),
+  );
+  const [eventsLoading, setEventsLoading] = useState(!initialHome?.events?.length);
 
   useEffect(() => {
     let cancelled = false;
@@ -202,9 +225,9 @@ const HomeSectorShowcase = () => {
           .filter((event): event is EventListCardData => event !== null)
           .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime())
           .slice(0, 8);
-        setEvents(upcoming);
+        if (!cancelled) setEvents(upcoming);
       } catch {
-        if (!cancelled) setEvents([]);
+        if (!cancelled && events.length === 0) setEvents([]);
       } finally {
         if (!cancelled) setEventsLoading(false);
       }
@@ -221,19 +244,20 @@ const HomeSectorShowcase = () => {
     return [...items].sort((a, b) => savingsPct(b) - savingsPct(a)).slice(0, 8);
   }, [reviewData?.items]);
 
-  const featuredClinics = useMemo(
-    () => pickFeaturedWithPremiumFirst(clinics.filter((c) => c.hasData), 8, shuffleArray),
-    [clinics],
-  );
+  const featuredClinics = useMemo(() => {
+    const eligible = clinics.filter((c) => c.hasData);
+    if (eligible.length <= 8) return eligible;
+    return pickFeaturedWithPremiumFirst(eligible, 8, (items) => [...items]);
+  }, [clinics]);
 
-  const featuredSalons = useMemo(
-    () => pickFeaturedWithPremiumFirst(salons, 8, shuffleArray),
-    [salons],
-  );
-  const topLodgings = useMemo(
-    () => pickFeaturedWithPremiumFirst(lodgings, 8, shuffleArray),
-    [lodgings],
-  );
+  const featuredSalons = useMemo(() => {
+    if (salons.length <= 8) return salons;
+    return pickFeaturedWithPremiumFirst(salons, 8, (items) => [...items]);
+  }, [salons]);
+  const topLodgings = useMemo(() => {
+    if (lodgings.length <= 8) return lodgings;
+    return pickFeaturedWithPremiumFirst(lodgings, 8, (items) => [...items]);
+  }, [lodgings]);
 
   const getDisplayServices = (services: string[]) =>
     translateServiceOfferings(services, i18n.language);

@@ -102,7 +102,7 @@ function getMultilingualString(obj: { zh?: string; en?: string } | undefined, la
   return obj[lang]?.trim() || obj[other]?.trim() || '';
 }
 
-function transformLodging(api: ApiLodging, language: string = 'zh'): Lodging {
+export function transformLodging(api: ApiLodging, language: string = 'zh'): Lodging {
   const lang = language === 'en' ? 'en' : 'zh';
   return {
     id: api.id,
@@ -226,7 +226,7 @@ export async function searchLodgings(
 
 export { getPlaceSearchNextPageParam as getLodgingSearchNextPageParam };
 
-const GET_LODGING_QUERY = `
+export const GET_LODGING_QUERY = `
   query GetLodging($id: ID!) {
     getLodging(id: $id) {
       id

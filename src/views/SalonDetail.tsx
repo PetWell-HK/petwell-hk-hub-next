@@ -12,6 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { SalonImage } from "@/components/SalonImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
+import type { ApiSalon } from "@/services/salonApi";
 
 function getLocalizedString(
   multiLang: { zh?: string; en?: string } | undefined,
@@ -22,10 +23,10 @@ function getLocalizedString(
   return multiLang[lang]?.trim() || multiLang[fallbackLang]?.trim() || "";
 }
 
-const SalonDetail = () => {
+const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }) => {
   const { salonId } = useParams();
   const { i18n, t } = useTranslation();
-  const { data: salon, isLoading, error } = useSalon(salonId);
+  const { data: salon, isLoading, error } = useSalon(salonId, initialSalon);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
 
   const salonName = getLocalizedString(salon?.name, lang);

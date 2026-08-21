@@ -160,7 +160,7 @@ const HOME_VISIT_LIST_FIELDS = `
   numReviews
 `;
 
-const LIST_HOME_VISIT_PROVIDERS_QUERY = `
+export const LIST_HOME_VISIT_PROVIDERS_QUERY = `
   query ListHomeVisitProviders($limit: Int, $nextToken: String) {
     listHomeVisitProviders(limit: $limit, nextToken: $nextToken) {
       items {
@@ -171,7 +171,7 @@ const LIST_HOME_VISIT_PROVIDERS_QUERY = `
   }
 `;
 
-const GET_HOME_VISIT_PROVIDER_QUERY = `
+export const GET_HOME_VISIT_PROVIDER_QUERY = `
   query GetHomeVisitProvider($id: ID!) {
     getHomeVisitProvider(id: $id) {
       ${HOME_VISIT_LIST_FIELDS}

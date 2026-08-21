@@ -3,6 +3,7 @@ import {
   fetchClinicById,
   getClinicSearchNextPageParam,
   searchClinics,
+  type ApiClinic,
   type Clinic,
 } from '@/services/clinicApi';
 import {
@@ -20,7 +21,7 @@ export interface PlaceListingFilters {
   is247?: boolean;
 }
 
-export function useClinics(language: string = 'zh') {
+export function useClinics(language: string = 'zh', initialClinics?: Clinic[] | null) {
   return useQuery({
     queryKey: ['clinics', 'home', PLACE_SEARCH_BACKEND, language],
     queryFn: async () => {
@@ -31,12 +32,18 @@ export function useClinics(language: string = 'zh') {
       return clinics;
     },
     staleTime: 5 * 60 * 1000,
+    initialData: initialClinics?.length ? initialClinics : undefined,
   });
 }
 
-export function useFilteredClinics(filters: PlaceListingFilters, language: string = 'zh') {
+export function useFilteredClinics(
+  filters: PlaceListingFilters,
+  language: string = 'zh',
+  initialPage?: { clinics: Clinic[]; total: number; nextToken: number[] | null } | null,
+) {
   const searchRegion = getPlaceSearchRegionParam(filters.region);
   const searchKeyword = filters.keyword?.trim() || undefined;
+  const isDefaultSearch = !searchKeyword && !searchRegion && !filters.is247;
 
   const query = useInfiniteQuery({
     queryKey: ['clinics', 'search', PLACE_SEARCH_BACKEND, language, searchRegion, searchKeyword, filters.is247],
@@ -54,6 +61,10 @@ export function useFilteredClinics(filters: PlaceListingFilters, language: strin
     initialPageParam: undefined as number[] | undefined,
     getNextPageParam: (lastPage) => getClinicSearchNextPageParam(lastPage.nextToken),
     staleTime: 5 * 60 * 1000,
+    initialData:
+      isDefaultSearch && initialPage
+        ? { pages: [initialPage], pageParams: [undefined] }
+        : undefined,
   });
 
   const clinics = useMemo(() => {
@@ -94,7 +105,7 @@ export function useFilteredClinics(filters: PlaceListingFilters, language: strin
   };
 }
 
-export function useClinic(id: string | undefined) {
+export function useClinic(id: string | undefined, initialData?: ApiClinic | null) {
   return useQuery({
     queryKey: ['clinic', id],
     queryFn: () => {
@@ -103,5 +114,6 @@ export function useClinic(id: string | undefined) {
     },
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
+    initialData: initialData ?? undefined,
   });
 }

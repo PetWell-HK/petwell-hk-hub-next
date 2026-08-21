@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/data/blogData";
 import { SITE_URL } from "@/lib/seo";
-import { serverGraphqlFetch } from "@/lib/server/graphqlFetch";
+import { buildDynamicSitemapEntries } from "@/lib/server/sitemapSources";
 
 const staticRoutes: Array<{
   path: string;
@@ -22,7 +21,6 @@ const staticRoutes: Array<{
   { path: "/nutrition", changeFrequency: "weekly", priority: 0.8 },
   { path: "/nametag", changeFrequency: "weekly", priority: 0.85 },
   { path: "/anti-lost-dog-tag-hk", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/fang-zou-shi-gou-pai", changeFrequency: "weekly", priority: 0.75 },
   { path: "/owner-zone", changeFrequency: "weekly", priority: 0.75 },
   { path: "/ngos", changeFrequency: "monthly", priority: 0.7 },
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
@@ -33,15 +31,9 @@ const staticRoutes: Array<{
   { path: "/blog/hong-kong-dog-trainer-licence-guide", changeFrequency: "monthly", priority: 0.75 },
   { path: "/download", changeFrequency: "monthly", priority: 0.7 },
   { path: "/vendor-application", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/christmas-events-2025", changeFrequency: "weekly", priority: 0.65 },
+  { path: "/christmas-dog-mbti-2025", changeFrequency: "monthly", priority: 0.55 },
 ];
-
-const RESTAURANT_IDS_QUERY = `
-  query DynamoRestaurantSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $verified: Boolean) {
-    dynamoRestaurantSearch(location: $location, limit: $limit, sortMethod: $sortMethod, verified: $verified) {
-      items { id }
-    }
-  }
-`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -53,37 +45,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route.priority,
   }));
 
-  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => {
-    const slug = post.slug.replace(/^blog\//, "");
-    return {
-      url: `${SITE_URL}/${slug}`,
-      lastModified: post.date ? new Date(post.date) : now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    };
+  const dynamicEntries = await buildDynamicSitemapEntries();
+  const merged = [...staticEntries, ...dynamicEntries];
+  const seen = new Set<string>();
+  return merged.filter((item) => {
+    if (seen.has(item.url)) return false;
+    seen.add(item.url);
+    return true;
   });
-
-  const restaurantData = await serverGraphqlFetch<{
-    dynamoRestaurantSearch?: { items?: Array<{ id: string }> };
-  }>(
-    RESTAURANT_IDS_QUERY,
-    {
-      location: { lat: 22.3193, lon: 114.1694 },
-      limit: 200,
-      sortMethod: "DISTANCE",
-      verified: true,
-    },
-    86400,
-  );
-
-  const restaurantEntries: MetadataRoute.Sitemap = (
-    restaurantData?.dynamoRestaurantSearch?.items || []
-  ).map((item) => ({
-    url: `${SITE_URL}/restaurants/${item.id}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  return [...staticEntries, ...blogEntries, ...restaurantEntries];
 }

@@ -15,13 +15,13 @@ import { useSEO } from "@/hooks/useSEO";
 
 const BASE_URL = "https://petwellhk.com";
 
-const ForumPost = () => {
+const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null }) => {
   const { postId } = useParams();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const [post, setPost] = useState<ForumPostType | null>(null);
+  const [post, setPost] = useState<ForumPostType | null>(initialPost);
   const [replies, setReplies] = useState<ForumReply[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialPost);
   const [error, setError] = useState<string | null>(null);
 
   // Build SEO values from loaded post + replies
@@ -166,7 +166,7 @@ const ForumPost = () => {
     }
 
     try {
-      setLoading(true);
+      if (!initialPost) setLoading(true);
       setError(null);
       
       // Fetch post and replies in parallel

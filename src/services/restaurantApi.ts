@@ -165,7 +165,7 @@ function getLocalizedString(multiLang: MultiLangString | undefined, language: st
 }
 
 // Transform API restaurant to app restaurant format
-function transformRestaurant(apiRestaurant: ApiRestaurant, language: string = 'zh'): Restaurant {
+export function transformRestaurant(apiRestaurant: ApiRestaurant, language: string = 'zh'): Restaurant {
   const lang = language === 'en' ? 'en' : 'zh';
   const externalMetadata = parseRestaurantExternalMetadata(apiRestaurant.externalMetadata);
   const typeLabels = externalMetadata?.types
@@ -291,7 +291,7 @@ ${RESTAURANT_LISTING_FIELDS}
   }
 `;
 
-const GET_RESTAURANT_QUERY = `
+export const GET_RESTAURANT_QUERY = `
   query GetRestaurant($id: ID!) {
     getRestaurant(id: $id) {
       id
@@ -357,7 +357,7 @@ const GET_RESTAURANT_QUERY = `
 `;
 
 /** Fallback when partnerReply fields are unavailable; keeps reservationSettings. */
-const GET_RESTAURANT_QUERY_WITHOUT_PARTNER_REPLY = `
+export const GET_RESTAURANT_QUERY_WITHOUT_PARTNER_REPLY = `
   query GetRestaurant($id: ID!) {
     getRestaurant(id: $id) {
       id
@@ -413,7 +413,7 @@ const GET_RESTAURANT_QUERY_WITHOUT_PARTNER_REPLY = `
 `;
 
 /** Last-resort fallback for older schemas without reservationSettings. */
-const GET_RESTAURANT_QUERY_LEGACY = `
+export const GET_RESTAURANT_QUERY_LEGACY = `
   query GetRestaurant($id: ID!) {
     getRestaurant(id: $id) {
       id
