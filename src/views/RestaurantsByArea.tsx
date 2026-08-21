@@ -1,10 +1,10 @@
 "use client";
 
-import { Link, Navigate, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
+import AppRedirect from "@/components/AppRedirect";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
 import FehdPetFriendlyDirectory from "@/components/FehdPetFriendlyDirectory";
 import RestaurantDistrictLinks from "@/components/RestaurantDistrictLinks";
@@ -12,7 +12,6 @@ import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
 import { useFilteredRestaurants } from "@/hooks/useRestaurants";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import {
   resolveAreaSlug,
@@ -168,24 +167,14 @@ const RestaurantsByArea = ({
     ];
   }, [area?.type, areaRestaurants.length, seoContext, t]);
 
-  useSEO({
-    title: seoContext.title,
-    description: seoContext.description,
-    keywords: seoContext.keywords,
-    canonicalUrl: seoContext.canonicalUrl,
-    structuredData,
-    faqItems,
-    speakableSelectors: [".hero-summary", ".restaurants-area-seo", "h1"],
-  });
 
   if (!area) {
-    return <Navigate to="/restaurants" replace />;
+    return <AppRedirect href="/restaurants" replace />;
   }
 
   if (area.type === "index") {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 pb-14">
           <div className="container mx-auto max-w-6xl px-4 pt-8 md:pt-10">
             <header className="hero-summary">
@@ -195,7 +184,6 @@ const RestaurantsByArea = ({
             <RestaurantDistrictLinks showCounts={false} />
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -394,21 +382,21 @@ function AreaSeoBlock({
           {t("restaurants.districtPage.fehdCompare")}
         </p>
         <div className="mt-4 flex flex-wrap gap-3 text-sm">
-          <Link to="/restaurants" className="text-primary underline-offset-4 hover:underline">
+          <AppLink href="/restaurants" className="text-primary underline-offset-4 hover:underline">
             {t("restaurants.districtPage.hubLink")}
-          </Link>
-          <Link
-            to="/hk-fehd-pet-friendly-restaurants-1000-list"
+          </AppLink>
+          <AppLink
+            href="/hk-fehd-pet-friendly-restaurants-1000-list"
             className="text-primary underline-offset-4 hover:underline"
           >
             {t("restaurants.districtPage.fehdLink")}
-          </Link>
-          <Link
-            to="/pet-friendly-restaurants/districts"
+          </AppLink>
+          <AppLink
+            href="/pet-friendly-restaurants/districts"
             className="text-primary underline-offset-4 hover:underline"
           >
             {t("restaurants.districtPage.allDistricts")}
-          </Link>
+          </AppLink>
         </div>
       </section>
 

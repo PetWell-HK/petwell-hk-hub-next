@@ -1,14 +1,11 @@
 "use client";
 
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useMemo, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { blogPosts, type BlogPost } from "@/data/blogData";
 import { Search } from "lucide-react";
-import { useSEO } from "@/hooks/useSEO";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
 
@@ -134,16 +131,6 @@ const OwnerZone = () => {
     [sortedPosts],
   );
 
-  useSEO({
-    title:
-      "寵物香港 - 主人專區 | 寵物健康知識、養狗貼士、寵物保險比較、寵物護理指南 | PetWell HK",
-    description:
-      "寵物香港首選 - PetWell 主人專區提供實用寵物照護知識：狗狗健康、貓貓護理、寵物保險比較、獸醫推薦、寵物飲食、寵物行為、寵物安全、急症護理、戶外活動指南。由專業團隊撰寫，幫助寵物香港主人更好照顧毛孩。",
-    keywords:
-      "寵物健康知識,養狗貼士,貓貓護理,寵物保險比較,寵物護理指南,寵物行為,寵物安全,PetWell,寵物主人",
-    canonicalUrl: "https://petwellhk.com/owner-zone",
-    structuredData,
-  });
 
   const goToTab = (tab: FrontTab) => {
     setActiveTab(tab);
@@ -160,7 +147,6 @@ const OwnerZone = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="media-page flex-1 pb-14 md:pb-16">
         <div className="container mx-auto max-w-6xl px-4">
@@ -239,7 +225,7 @@ const OwnerZone = () => {
                   className="media-cover"
                   aria-label="今期封面"
                 >
-                  <Link to={`/${coverStory.slug}`} className="media-cover__feature">
+                  <AppLink href={`/${coverStory.slug}`} className="media-cover__feature">
                     <div className="media-cover__image">
                       <img
                         src={coverStory.imageUrl}
@@ -257,14 +243,14 @@ const OwnerZone = () => {
                       {coverStory.excerpt}
                     </p>
                     <p className="media-dateline">{storyDate(coverStory.date)}</p>
-                  </Link>
+                  </AppLink>
 
                   {supportingStories.length > 0 ? (
                     <div className="media-cover__rail">
                       {supportingStories.map((post) => (
-                        <Link
+                        <AppLink
                           key={post.id}
-                          to={`/${post.slug}`}
+                          href={`/${post.slug}`}
                           className="media-support"
                         >
                           <div className="media-story-thumb">
@@ -285,7 +271,7 @@ const OwnerZone = () => {
                             </h3>
                             <p className="media-dateline">{storyDate(post.date)}</p>
                           </div>
-                        </Link>
+                        </AppLink>
                       ))}
                     </div>
                   ) : null}
@@ -320,8 +306,8 @@ const OwnerZone = () => {
                     </header>
 
                     <div className="media-desk__grid">
-                      <Link
-                        to={`/${feature.slug}`}
+                      <AppLink
+                        href={`/${feature.slug}`}
                         className="media-desk-feature"
                       >
                         <div className="media-desk-feature__image">
@@ -341,14 +327,14 @@ const OwnerZone = () => {
                           {feature.excerpt}
                         </p>
                         <p className="media-dateline">{storyDate(feature.date)}</p>
-                      </Link>
+                      </AppLink>
 
                       {rest.length > 0 ? (
                         <div className="media-desk__list">
                           {rest.map((post) => (
-                            <Link
+                            <AppLink
                               key={post.id}
-                              to={`/${post.slug}`}
+                              href={`/${post.slug}`}
                               className="media-row"
                             >
                               <span className="media-kicker media-kicker--tight">
@@ -358,7 +344,7 @@ const OwnerZone = () => {
                                 {storyTitle(post.title)}
                               </h3>
                               <p className="media-dateline">{storyDate(post.date)}</p>
-                            </Link>
+                            </AppLink>
                           ))}
                         </div>
                       ) : null}
@@ -397,7 +383,6 @@ const OwnerZone = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };
@@ -431,7 +416,7 @@ function SearchResults({
       ) : (
         <div className="media-results__list">
           {results.map((post) => (
-            <Link key={post.id} to={`/${post.slug}`} className="media-result">
+            <AppLink key={post.id} href={`/${post.slug}`} className="media-result">
               <div className="media-story-thumb">
                 <img
                   src={post.imageUrl}
@@ -451,7 +436,7 @@ function SearchResults({
                 <p className="media-result__excerpt">{post.excerpt}</p>
                 <p className="media-dateline">{storyDate(post.date)}</p>
               </div>
-            </Link>
+            </AppLink>
           ))}
         </div>
       )}

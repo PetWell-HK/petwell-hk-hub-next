@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Flame, MessageCircle } from "lucide-react";
 import { fetchHotTopics, getRelativeTime, type ForumPost } from "@/services/forumApi";
@@ -68,10 +68,10 @@ const HomeForumTrends = ({
               <p className="home-forum-section__subtitle">{t("homePortal.forum.subtitle")}</p>
             </div>
           </div>
-          <Link to="/forum" className="home-forum-section__view-all">
+          <AppLink href="/forum" className="home-forum-section__view-all">
             {t("homePortal.forum.viewAll")}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          </AppLink>
         </div>
 
         <div className="home-forum-section__grid">
@@ -82,7 +82,7 @@ const HomeForumTrends = ({
 
           {!loading && usePlaceholder &&
             PLACEHOLDER_POSTS.map((post) => (
-              <Link key={post.id} to="/forum" className="home-forum-card">
+              <AppLink key={post.id} href="/forum" className="home-forum-card">
                 <div className="home-forum-card__hot">
                   <Flame className="h-3.5 w-3.5" aria-hidden="true" />
                   {t("homePortal.forum.hot")}
@@ -94,12 +94,12 @@ const HomeForumTrends = ({
                   <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
                   {t("homePortal.forum.replies", { count: post.replies })}
                 </p>
-              </Link>
+              </AppLink>
             ))}
 
           {!loading && !usePlaceholder &&
             posts.map((post) => (
-              <Link key={post.id} to={`/forum/${post.id}`} className="home-forum-card">
+              <AppLink key={post.id} href={`/forum/${post.id}`} className="home-forum-card">
                 <div className="home-forum-card__hot">
                   <Flame className="h-3.5 w-3.5" aria-hidden="true" />
                   {t("homePortal.forum.hot")}
@@ -119,7 +119,7 @@ const HomeForumTrends = ({
                     <span>{getRelativeTime(post.createdAt, i18n.language)}</span>
                   )}
                 </p>
-              </Link>
+              </AppLink>
             ))}
         </div>
       </div>

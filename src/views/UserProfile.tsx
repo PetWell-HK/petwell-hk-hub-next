@@ -1,15 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppRedirect from "@/components/AppRedirect";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import { Loader2, Star } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import UserReviewList from "@/components/UserReviewList";
 import { useAuth } from "@/contexts/AuthContext";
-import { useSEO } from "@/hooks/useSEO";
 import { fetchPublicClient, fetchUserReviews } from "@/services/userReviewApi";
 import type { UserReviewType } from "@/types/userReview";
 import { resolveProfileImageUrl } from "@/utils/reviewDisplay";
@@ -26,7 +25,7 @@ const REVIEW_TYPES: UserReviewType[] = [
 type FilterKey = "all" | UserReviewType;
 
 const UserProfile = () => {
-  const { userId = "" } = useParams();
+  const userId = routeParam(useParams().userId);
   const { t, i18n } = useTranslation();
   const { userInfo } = useAuth();
   const [filter, setFilter] = useState<FilterKey>("all");
@@ -83,14 +82,9 @@ const UserProfile = () => {
     return reviews.filter((review) => review.reviewType === filter);
   }, [filter, reviews]);
 
-  useSEO({
-    title: `${displayName} | PetWell`,
-    description: t("userReviews.publicSeoDescription"),
-    canonicalUrl: `https://petwellhk.com/users/${userId}`,
-  });
 
   if (isOwnProfile) {
-    return <Navigate to="/account" replace />;
+    return <AppRedirect href="/account" replace />;
   }
 
   const loading = loadingClient || loadingReviews;
@@ -99,7 +93,6 @@ const UserProfile = () => {
 
   return (
     <div className="member-profile-page flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1">
         <section className="member-profile-hero">
           <div className="container mx-auto px-4 py-8 md:py-10">
@@ -199,7 +192,6 @@ const UserProfile = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

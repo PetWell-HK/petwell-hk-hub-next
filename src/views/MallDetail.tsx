@@ -1,10 +1,10 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useCallback, useMemo, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
@@ -25,7 +25,6 @@ import {
   Train,
 } from "lucide-react";
 import { useMall } from "@/hooks/useMalls";
-import { useSEO } from "@/hooks/useSEO";
 import { MallImage } from "@/components/MallImage";
 import { MallDetailHero } from "@/components/mall/MallDetailHero";
 import { MallPolicySection } from "@/components/mall/MallPolicySection";
@@ -51,7 +50,7 @@ type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 const DAYS: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) => {
-  const { mallId } = useParams();
+  const mallId = routeParam(useParams().mallId);
   const { i18n, t } = useTranslation();
   const { data: apiMall, isLoading, error } = useMall(mallId, initialMall);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
@@ -135,31 +134,13 @@ const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) =>
     };
   }, [mall, mallId, mallName, mallAddress, mallDistrict]);
 
-  useSEO({
-    title: mall
-      ? `${mallName} | ${mallDistrict}寵物友善商場 | PetWell HK`
-      : "寵物友善商場詳情 | PetWell HK",
-    description: mall
-      ? `${mallName}係${mallDistrict}寵物友善商場。${getMallMovementLabel(
-          mall.petMovementMode,
-          "zh",
-        )}。地址：${mallAddress}。`
-      : "查看香港寵物友善商場詳細資料及寵物政策",
-    keywords: mall
-      ? `${mallName}寵物友善,${mallDistrict}帶狗商場,${mallName}帶狗,寵物友善商場`
-      : "寵物友善商場,帶狗入商場",
-    canonicalUrl: `https://petwellhk.com/malls/${mallId}`,
-    structuredData,
-  });
 
   if (isLoading) {
     return (
       <div className="mall-page flex min-h-screen flex-col">
-        <Header />
         <main className="flex flex-1 items-center justify-center py-16 md:py-20">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -167,18 +148,16 @@ const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) =>
   if (error || !mall || !apiMall) {
     return (
       <div className="mall-page flex min-h-screen flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16">
           <div className="mall-shell text-center">
             <h1 className="mall-title mb-4 text-3xl md:text-4xl">
               {t("mallPlaces.detail.notFound")}
             </h1>
-            <Link to="/malls">
+            <AppLink href="/malls">
               <Button>{t("mallPlaces.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -305,7 +284,6 @@ const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) =>
 
   return (
     <div className="mall-page flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1" onClick={handleImageClick}>
         <div className="lg:hidden">
           <MallDetailHero
@@ -318,15 +296,15 @@ const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) =>
 
         <div className="mall-shell">
           <nav className="mall-breadcrumb hidden lg:flex lg:pt-6" aria-label="Breadcrumb">
-            <Link to="/" className="transition-colors hover:text-primary">
+            <AppLink href="/" className="transition-colors hover:text-primary">
               PetWell HK
-            </Link>
+            </AppLink>
             <span className="mall-breadcrumb-sep" aria-hidden>
               /
             </span>
-            <Link to="/malls" className="transition-colors hover:text-primary">
+            <AppLink href="/malls" className="transition-colors hover:text-primary">
               {t("mallPlaces.pageTitle")}
-            </Link>
+            </AppLink>
             <span className="mall-breadcrumb-sep" aria-hidden>
               /
             </span>
@@ -448,13 +426,12 @@ const MallDetail = ({ initialMall = null }: { initialMall?: ApiMall | null }) =>
           </a>
         )}
         {!mall.phone && !mapsUrl && (
-          <Link to="/malls" className="restaurant-action-btn restaurant-action-btn--primary">
+          <AppLink href="/malls" className="restaurant-action-btn restaurant-action-btn--primary">
             {t("mallPlaces.backToList")}
-          </Link>
+          </AppLink>
         )}
       </div>
 
-      <Footer />
 
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-[min(92vw,56rem)] border-none bg-black/95 p-2 sm:p-4">

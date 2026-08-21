@@ -1,12 +1,11 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo, useState, useCallback } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { format } from "date-fns";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -35,7 +34,6 @@ import {
   getTodayOpeningHours,
   localizeOpeningHoursText,
 } from "@/utils/availableHours";
-import { useSEO } from "@/hooks/useSEO";
 import PlaceReportModal from "@/components/PlaceReportModal";
 import { ReviewSourceLabel } from "@/components/ReviewSourceLabel";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
@@ -212,21 +210,6 @@ const RestaurantDetail = ({
     ];
   }, [restaurant, restaurantId, restaurantName, restaurantAddress, restaurantDistrict, t]);
 
-  useSEO({
-    title: restaurant
-      ? `${restaurantName} | ${restaurantDistrict}寵物友善餐廳 | PetWell HK`
-      : "寵物友善餐廳詳情 | PetWell HK",
-    description: restaurant
-      ? `${restaurantName}係${restaurantDistrict}寵物友善餐廳，經PetWell認證。${restaurant.petAccessArea === "INDOOR_ALLOWED" ? "可帶狗入室內" : "戶外用餐區"}。地址：${restaurantAddress}。`
-      : "查看寵物友善餐廳詳細資料及寵物政策",
-    keywords: restaurant
-      ? `${restaurantName}寵物友善,${restaurantDistrict}帶狗餐廳,${restaurantName}帶狗,寵物友善餐廳推薦`
-      : "寵物友善餐廳,帶狗餐廳",
-    canonicalUrl: `https://petwellhk.com/restaurants/${restaurantId}`,
-    ogImage: restaurant?.coverPhoto,
-    structuredData,
-    faqItems: detailFaq,
-  });
 
   const getPetEntryPolicyLabel = (policy?: PetEntryPolicy) => {
     switch (policy) {
@@ -265,11 +248,9 @@ const RestaurantDetail = ({
   if (isLoading) {
     return (
       <div className="restaurant-page min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-16 md:py-20 flex items-center justify-center">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -277,18 +258,16 @@ const RestaurantDetail = ({
   if (error || !restaurant) {
     return (
       <div className="restaurant-page min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-2xl font-bold mb-4">
               {t("restaurants.detail.notFound")}
             </h1>
-            <Link to="/restaurants">
+            <AppLink href="/restaurants">
               <Button>{t("restaurants.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -373,7 +352,6 @@ const RestaurantDetail = ({
 
   return (
     <div className="restaurant-page min-h-screen flex flex-col">
-      <Header />
 
       <main className="flex-1" onClick={handleImageClick}>
         {/* Mobile hero — full bleed */}
@@ -389,15 +367,15 @@ const RestaurantDetail = ({
         <div className="restaurant-shell">
           {/* Desktop breadcrumb */}
           <nav className="restaurant-breadcrumb hidden lg:flex lg:pt-6" aria-label="Breadcrumb">
-            <Link to="/" className="transition-colors hover:text-primary">
+            <AppLink href="/" className="transition-colors hover:text-primary">
               PetWell HK
-            </Link>
+            </AppLink>
             <span className="restaurant-breadcrumb-sep" aria-hidden>
               /
             </span>
-            <Link to="/restaurants" className="transition-colors hover:text-primary">
+            <AppLink href="/restaurants" className="transition-colors hover:text-primary">
               {t("restaurants.pageTitle")}
-            </Link>
+            </AppLink>
             <span className="restaurant-breadcrumb-sep" aria-hidden>
               /
             </span>
@@ -858,7 +836,6 @@ const RestaurantDetail = ({
         </a>
       </div>
 
-      <Footer />
 
       {canBook && (
         <RestaurantReservationDialog

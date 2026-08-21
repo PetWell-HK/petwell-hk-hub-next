@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, CalendarDays, Crown, Sparkles, TrendingDown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -62,9 +62,9 @@ const HomePromoCarousel = () => {
           {PROMO_BANNERS.map((banner) => {
             const Icon = banner.icon;
             return (
-              <Link
+              <AppLink
                 key={banner.id}
-                to={banner.href}
+                href={banner.href}
                 className={`home-promo-banner home-promo-banner--${banner.tone}`}
               >
                 <div className="home-promo-banner__glow" aria-hidden="true" />
@@ -81,7 +81,7 @@ const HomePromoCarousel = () => {
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </span>
                 </div>
-              </Link>
+              </AppLink>
             );
           })}
         </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { ChevronRight, Star } from "lucide-react";
 import { getUserReviewHref } from "@/services/userReviewApi";
@@ -101,7 +101,7 @@ export default function UserReviewList({
 
           return (
             <li key={`${review.reviewType}-${review.id}`}>
-              <Link to={getUserReviewHref(review)} className="member-review-row">
+              <AppLink href={getUserReviewHref(review)} className="member-review-row">
                 <div className="member-review-row__top">
                   <div className="min-w-0">
                     <h3 className="member-review-row__place">
@@ -141,7 +141,7 @@ export default function UserReviewList({
                   {t("userReviews.viewPlace")}
                   <ChevronRight className="h-3.5 w-3.5" aria-hidden />
                 </span>
-              </Link>
+              </AppLink>
             </li>
           );
         })}
@@ -155,8 +155,8 @@ export default function UserReviewList({
         const rating = Math.max(0, Math.min(5, Math.round(review.totalRating || 0)));
         return (
           <li key={`${review.reviewType}-${review.id}`}>
-            <Link
-              to={getUserReviewHref(review)}
+            <AppLink
+              href={getUserReviewHref(review)}
               className="block rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-muted/30"
             >
               <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
@@ -193,7 +193,7 @@ export default function UserReviewList({
                   <span>{t("userReviews.anonymousBadge")}</span>
                 ) : null}
               </div>
-            </Link>
+            </AppLink>
           </li>
         );
       })}

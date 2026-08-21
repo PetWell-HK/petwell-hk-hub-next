@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import AppLink from "@/components/AppLink";
 import { ArrowRight, Sparkles, MapPin, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { christmasEvents, Personality } from '@/data/christmasEventData';
 
 const personalityLabels: Partial<Record<Personality, string>> = {
@@ -116,7 +114,6 @@ const ChristmasEvents = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       <main className="pt-2">
         {/* Hero Section */}
@@ -164,12 +161,12 @@ const ChristmasEvents = () => {
                   </p>
                 </div>
               </div>
-              <Link to="/christmas-dog-mbti-2025">
+              <AppLink href="/christmas-dog-mbti-2025">
                 <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white shadow-lg whitespace-nowrap">
                   測試狗狗MBTI
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-              </Link>
+              </AppLink>
             </div>
           </div>
         </section>
@@ -186,7 +183,7 @@ const ChristmasEvents = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {christmasEvents.map((event) => (
                 <article key={event.id}>
-                  <Link to={`/christmas-event/${event.id}`}>
+                  <AppLink href={`/christmas-event/${event.id}`}>
                     <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                       <div className="aspect-[16/10] overflow-hidden relative">
                         <img 
@@ -237,7 +234,7 @@ const ChristmasEvents = () => {
                         )}
                       </CardContent>
                     </Card>
-                  </Link>
+                  </AppLink>
                 </article>
               ))}
             </div>
@@ -250,17 +247,16 @@ const ChristmasEvents = () => {
             <p className="text-muted-foreground mb-4">
               想知道邊個活動最適合你嘅狗狗？
             </p>
-            <Link to="/christmas-dog-mbti-2025">
+            <AppLink href="/christmas-dog-mbti-2025">
               <Button variant="outline" size="lg">
                 <Sparkles className="w-4 h-4 mr-2" />
                 做狗狗性格測驗
               </Button>
-            </Link>
+            </AppLink>
           </div>
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 };

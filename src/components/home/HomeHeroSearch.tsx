@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { Search } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const heroImage = "/assets/home-hero-pets-blanket.webp";
 
 export type HomeSearchCategory =
@@ -56,7 +58,7 @@ const CATEGORY_PLACEHOLDER_KEYS: Record<
 
 const HomeHeroSearch = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const isMobile = useIsMobile();
   const [activeCategory, setActiveCategory] = useState<HomeSearchCategory>("restaurants");
   const [query, setQuery] = useState("");
@@ -80,9 +82,13 @@ const HomeHeroSearch = () => {
   return (
     <section className="home-portal-hero">
       <div className="home-portal-hero__visual" aria-hidden="true">
-        <div
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
           className="home-portal-hero__bg"
-          style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="home-portal-hero__overlay" />
       </div>

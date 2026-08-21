@@ -5,15 +5,12 @@ import { useTranslation } from "react-i18next";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import FAQSection from "@/components/FAQSection";
 import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 const appPreviewAbout = "/assets/app-preview-about.png";
 import MediaLogoMarquee from "@/components/MediaLogoMarquee";
 import HomePlatform from "@/components/HomePlatform";
 import Testimonials from "@/components/Testimonials";
 import ContactUsForm from "@/components/ContactUsForm";
-import { useSEO } from "@/hooks/useSEO";
 import { usePetwellFaq } from "@/hooks/usePetwellFaq";
 
 const About = () => {
@@ -37,19 +34,9 @@ const About = () => {
     [t],
   );
 
-  useSEO({
-    title: t("about.seo.title"),
-    description: t("about.seo.description"),
-    keywords: t("about.seo.keywords"),
-    canonicalUrl: "https://petwellhk.com/about",
-    structuredData,
-    faqItems: faqItems,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main>
         <Hero
           previewImage={appPreviewAbout}
@@ -102,7 +89,6 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import { ArrowRight, Tag } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -24,7 +25,7 @@ function isSuppressedPath(pathname: string): boolean {
 
 const NameTagBanner = () => {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
+  const pathname = usePathname() || "/";
 
   if (isSuppressedPath(pathname)) {
     return null;
@@ -71,8 +72,8 @@ const NameTagBanner = () => {
           </span>
         </div>
 
-        <Link
-          to="/anti-lost-dog-tag-hk"
+        <AppLink
+          href="/anti-lost-dog-tag-hk"
           className="group inline-flex shrink-0 items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-primary/90 transition-colors hover:bg-primary/[0.05] hover:text-primary sm:gap-1.5 sm:px-2 sm:text-xs"
         >
           <span className="whitespace-nowrap">{t("nameTagBanner.cta")}</span>
@@ -80,7 +81,7 @@ const NameTagBanner = () => {
             className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
             aria-hidden
           />
-        </Link>
+        </AppLink>
       </div>
     </div>
   );

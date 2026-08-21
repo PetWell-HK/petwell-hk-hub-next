@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -84,9 +84,9 @@ const HomeSuggestions = () => {
 
         <div className="home-featured__grid">
           {FEATURED.map((item, index) => (
-            <Link
+            <AppLink
               key={item.id}
-              to={item.href}
+              href={item.href}
               className={cn(
                 "home-featured-card home-reveal group",
                 `home-reveal-delay-${Math.min(index + 1, 4)}`,
@@ -110,18 +110,18 @@ const HomeSuggestions = () => {
                   </span>
                 </div>
               </div>
-            </Link>
+            </AppLink>
           ))}
         </div>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
-          <Link
-            to="/pet-friendly-restaurants/districts"
+          <AppLink
+            href="/pet-friendly-restaurants/districts"
             className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 font-medium text-primary hover:bg-primary/10"
           >
             <MapPin className="h-4 w-4" aria-hidden="true" />
             {t("homePortal.suggestions.districtsLink")}
-          </Link>
+          </AppLink>
         </div>
       </div>
     </section>

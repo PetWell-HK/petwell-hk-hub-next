@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,11 +16,8 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/contexts/CompareContext";
-import { useSEO } from "@/hooks/useSEO";
 import { usePriceReviewProductsByIds } from "@/hooks/usePriceReviewProducts";
 import { ReviewProductPrice } from "@/components/ReviewPriceDisplay";
 import ProductReviewRatingBadge from "@/components/ProductReviewRatingBadge";
@@ -49,11 +46,6 @@ const Compare = () => {
   const { data, isLoading, isError, error } = usePriceReviewProductsByIds(ids);
   const products = data?.items || [];
 
-  useSEO({
-    title: "產品比較 | PetWell Review",
-    description: "並排比較寵物用品真實價格、店舖數量及最低報價。",
-    canonicalUrl: "https://petwellhk.com/compare",
-  });
 
   if (ids.length === 0) return <EmptyCompare max={max} />;
 
@@ -65,13 +57,12 @@ const Compare = () => {
 
   return (
     <div className="review-page min-h-screen">
-      <Header />
 
       <div className="border-b border-[hsl(var(--review-line))] bg-white">
         <div className="container mx-auto flex items-center gap-1 overflow-x-auto whitespace-nowrap px-4 py-2.5 text-[12px] text-muted-foreground">
-          <Link to="/review" className="inline-flex items-center gap-1 hover:text-primary">
+          <AppLink href="/review" className="inline-flex items-center gap-1 hover:text-primary">
             <ArrowLeft className="h-3 w-3" /> 格價
-          </Link>
+          </AppLink>
           <ChevronRight className="h-3 w-3 shrink-0 opacity-40" />
           <span className="font-medium text-foreground">產品比較</span>
         </div>
@@ -97,10 +88,10 @@ const Compare = () => {
             </div>
             <div className="flex shrink-0 gap-2">
               <Button variant="outline" size="sm" asChild className="h-8 rounded-md border-[hsl(var(--review-line))] text-[12px]">
-                <Link to="/review">
+                <AppLink href="/review">
                   <ArrowLeft className="mr-1 h-3.5 w-3.5" />
                   繼續格價
-                </Link>
+                </AppLink>
               </Button>
               <Button
                 variant="outline"
@@ -202,7 +193,7 @@ const Compare = () => {
                     >
                       <div className="flex flex-wrap gap-2">
                         <Button asChild size="sm" className="h-8 flex-1 rounded-md text-[12px]">
-                          <Link to={getPriceReviewProductPath(product)}>睇詳情</Link>
+                          <AppLink href={getPriceReviewProductPath(product)}>睇詳情</AppLink>
                         </Button>
                         {product.topOffers[0]?.url && (
                           <Button asChild size="sm" variant="outline" className="h-8 rounded-md border-[hsl(var(--review-line))] px-2.5">
@@ -240,7 +231,6 @@ const Compare = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
@@ -264,8 +254,8 @@ function CompareProductHeader({
       </button>
 
       <div className="pr-8">
-        <Link
-          to={getPriceReviewProductPath(product)}
+        <AppLink
+          href={getPriceReviewProductPath(product)}
           className="group mb-3 block aspect-square max-h-[120px] overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/40 p-2"
         >
           {product.image ? (
@@ -277,19 +267,19 @@ function CompareProductHeader({
           ) : (
             <div className="flex h-full items-center justify-center text-[12px] text-muted-foreground">—</div>
           )}
-        </Link>
+        </AppLink>
 
-        <Link
-          to={`/review/brand/${encodeURIComponent(product.brand)}`}
+        <AppLink
+          href={`/review/brand/${encodeURIComponent(product.brand)}`}
           className="review-chip mb-1.5 inline-block border border-primary/20 bg-secondary/60 px-2 py-0.5 text-[10px] font-semibold text-primary hover:border-primary/40"
         >
           {product.brand}
-        </Link>
-        <Link to={getPriceReviewProductPath(product)}>
+        </AppLink>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <p className="line-clamp-2 text-[13px] font-semibold leading-snug text-foreground hover:text-primary">
             {product.name}
           </p>
-        </Link>
+        </AppLink>
         <ProductReviewRatingBadge
           avgRating={product.avgRating}
           numReviews={product.numReviews}
@@ -397,8 +387,8 @@ function MobileCompareCard({
   return (
     <article className="review-panel review-card-product overflow-hidden bg-white">
       <div className="flex gap-3 p-3">
-        <Link
-          to={getPriceReviewProductPath(product)}
+        <AppLink
+          href={getPriceReviewProductPath(product)}
           className="relative block h-[88px] w-[88px] shrink-0 overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/40 p-1.5"
         >
           {product.image ? (
@@ -411,22 +401,22 @@ function MobileCompareCard({
               慳{pct}%
             </span>
           )}
-        </Link>
+        </AppLink>
 
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <Link
-                to={`/review/brand/${encodeURIComponent(product.brand)}`}
+              <AppLink
+                href={`/review/brand/${encodeURIComponent(product.brand)}`}
                 className="review-chip mb-1 inline-block border border-primary/20 bg-secondary/60 px-1.5 py-px text-[10px] font-semibold text-primary"
               >
                 {product.brand}
-              </Link>
-              <Link to={getPriceReviewProductPath(product)}>
+              </AppLink>
+              <AppLink href={getPriceReviewProductPath(product)}>
                 <h3 className="line-clamp-2 text-[13px] font-semibold leading-snug text-foreground hover:text-primary">
                   {product.name}
                 </h3>
-              </Link>
+              </AppLink>
               <ProductReviewRatingBadge
                 avgRating={product.avgRating}
                 numReviews={product.numReviews}
@@ -468,7 +458,7 @@ function MobileCompareCard({
 
       <div className="flex gap-2 border-t border-[hsl(var(--review-line))] p-3">
         <Button asChild size="sm" className="h-8 flex-1 rounded-md text-[12px]">
-          <Link to={getPriceReviewProductPath(product)}>睇詳情</Link>
+          <AppLink href={getPriceReviewProductPath(product)}>睇詳情</AppLink>
         </Button>
         {product.topOffers[0]?.url && (
           <Button asChild size="sm" variant="outline" className="h-8 rounded-md border-[hsl(var(--review-line))] px-3 text-[12px]">
@@ -549,7 +539,7 @@ function FootLink({
       <ArrowRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
     </>
   );
-  if (internal) return <Link to={href} className={className}>{content}</Link>;
+  if (internal) return <AppLink href={href} className={className}>{content}</AppLink>;
   return <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{content}</a>;
 }
 
@@ -568,7 +558,7 @@ function ErrorState({ message }: { message: string }) {
       <h2 className="review-display text-xl">暫時未能載入</h2>
       <p className="mx-auto mt-2 max-w-xl text-[14px] text-muted-foreground">{message}</p>
       <Button asChild className="mt-4 rounded-md">
-        <Link to="/review">返回格價</Link>
+        <AppLink href="/review">返回格價</AppLink>
       </Button>
     </div>
   );
@@ -577,13 +567,12 @@ function ErrorState({ message }: { message: string }) {
 function EmptyCompare({ max }: { max: number }) {
   return (
     <div className="review-page min-h-screen">
-      <Header />
 
       <div className="border-b border-[hsl(var(--review-line))] bg-white">
         <div className="container mx-auto flex items-center gap-1 px-4 py-2.5 text-[12px] text-muted-foreground">
-          <Link to="/review" className="inline-flex items-center gap-1 hover:text-primary">
+          <AppLink href="/review" className="inline-flex items-center gap-1 hover:text-primary">
             <ArrowLeft className="h-3 w-3" /> 格價
-          </Link>
+          </AppLink>
           <ChevronRight className="h-3 w-3 shrink-0 opacity-40" />
           <span className="font-medium text-foreground">產品比較</span>
         </div>
@@ -599,12 +588,11 @@ function EmptyCompare({ max }: { max: number }) {
             喺格價頁面剔選 2 至 {max} 件產品，再返嚟並排比較。
           </p>
           <Button asChild className="mt-5 rounded-md">
-            <Link to="/review">前往格價</Link>
+            <AppLink href="/review">前往格價</AppLink>
           </Button>
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,5 @@
 import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import PlaceReportModal from "@/components/PlaceReportModal";
@@ -147,7 +145,6 @@ const PlaceListingLayout = ({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="place-listing-page flex-1 pb-14 md:pb-16">
         <div className="container mx-auto max-w-6xl px-4">
@@ -437,7 +434,6 @@ const PlaceListingLayout = ({
         </div>
       </main>
 
-      <Footer />
 
       {suggestPlaceCategory ? (
         <PlaceReportModal

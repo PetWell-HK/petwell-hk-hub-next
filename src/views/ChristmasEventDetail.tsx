@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import NearbyRestaurants from '@/components/NearbyRestaurants';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -120,20 +119,18 @@ const ChristmasEventDetail = () => {
   if (!event) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 mt-[72px] flex items-center justify-center">
           <div className="text-center space-y-4 p-8">
             <h1 className="text-2xl font-bold text-foreground">找不到活動</h1>
             <p className="text-muted-foreground">呢個活動可能已經結束或者唔存在。</p>
-            <Link to="/christmas-events-2025">
+            <AppLink href="/christmas-events-2025">
               <Button>
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 返回測驗
               </Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -172,7 +169,6 @@ const ChristmasEventDetail = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       
       <main className="flex-1 mt-0">
         {/* Hero Image */}
@@ -186,12 +182,12 @@ const ChristmasEventDetail = () => {
           
           {/* Back button */}
           <div className="absolute top-4 left-4">
-            <Link to="/christmas-events-2025">
+            <AppLink href="/christmas-events-2025">
               <Button variant="secondary" size="sm" className="gap-2 bg-background/80 backdrop-blur-sm">
                 <ArrowLeft className="w-4 h-4" />
                 返回
               </Button>
-            </Link>
+            </AppLink>
           </div>
 
           {/* Share button */}
@@ -306,16 +302,15 @@ const ChristmasEventDetail = () => {
             <p className="text-muted-foreground mb-4">
               想知狗狗最啱去邊度過聖誕？
             </p>
-            <Link to="/christmas-dog-mbti-2025">
+            <AppLink href="/christmas-dog-mbti-2025">
               <Button variant="outline" className="gap-2">
                 🐕 測下狗狗 MBTI 話你知佢想去邊
               </Button>
-            </Link>
+            </AppLink>
           </div>
         </div>
       </main>
       
-      <Footer />
     </div>
   );
 };

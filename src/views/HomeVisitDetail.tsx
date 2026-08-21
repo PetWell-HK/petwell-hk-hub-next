@@ -1,10 +1,10 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -25,7 +25,6 @@ import {
   Phone,
 } from "lucide-react";
 import { useHomeVisitProvider } from "@/hooks/useHomeVisitProviders";
-import { useSEO } from "@/hooks/useSEO";
 import { ClinicImage } from "@/components/ClinicImage";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
 import PlaceReportModal from "@/components/PlaceReportModal";
@@ -54,7 +53,7 @@ const HomeVisitDetail = ({
 }: {
   initialProvider?: ApiHomeVisitProvider | null;
 }) => {
-  const { providerId } = useParams();
+  const providerId = routeParam(useParams().providerId);
   const { i18n, t } = useTranslation();
   const { data: apiProvider, isLoading, error } = useHomeVisitProvider(
     providerId,
@@ -126,30 +125,13 @@ const HomeVisitDetail = ({
     };
   }, [provider, providerId]);
 
-  useSEO({
-    title: provider
-      ? `${provider.name}｜香港寵物上門服務｜PetWell HK`
-      : "寵物上門服務詳情｜PetWell HK",
-    description: provider
-      ? `${provider.name}提供寵物上門服務。服務範圍：${provider.coverageSummary}。${
-          provider.description ? provider.description.slice(0, 80) : "WhatsApp／電話查詢預約。"
-        }`
-      : "查看香港寵物上門服務詳細資料、服務範圍同聯絡方式",
-    keywords: provider
-      ? `${provider.name},寵物上門,${provider.district || "香港"}上門獸醫,home visit`
-      : "寵物上門服務,香港上門獸醫",
-    canonicalUrl: `https://petwellhk.com/home-visits/${providerId}`,
-    structuredData,
-  });
 
   if (isLoading) {
     return (
       <div className="flex min-h-screen flex-col">
-        <Header />
         <main className="flex flex-1 items-center justify-center py-16 md:py-20">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -157,18 +139,16 @@ const HomeVisitDetail = ({
   if (error || !provider || !apiProvider) {
     return (
       <div className="flex min-h-screen flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16">
           <div className="container mx-auto max-w-3xl px-4 text-center">
             <h1 className="mb-4 text-3xl font-bold">
               {t("homeVisitPlaces.detail.notFound")}
             </h1>
-            <Link to="/home-visits">
+            <AppLink href="/home-visits">
               <Button>{t("homeVisitPlaces.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -182,7 +162,6 @@ const HomeVisitDetail = ({
 
   return (
     <div className="flex min-h-screen flex-col pb-20 lg:pb-0">
-      <Header />
       <main className="flex-1">
         <div className="container mx-auto max-w-5xl px-4 py-6 md:py-10">
           <DiscoverPlaceTabs className="mb-6" />
@@ -568,12 +547,12 @@ const HomeVisitDetail = ({
                 <AppDownloadCTA title={t("homeVisitPlaces.ctaTitle")} />
               </div>
 
-              <Link
-                to="/home-visits"
+              <AppLink
+                href="/home-visits"
                 className="inline-flex text-sm font-medium text-primary hover:underline"
               >
                 ← {t("homeVisitPlaces.backToList")}
-              </Link>
+              </AppLink>
             </aside>
           </div>
         </div>
@@ -617,7 +596,6 @@ const HomeVisitDetail = ({
         )}
       </div>
 
-      <Footer />
 
       <PlaceReportModal
         open={reportOpen}

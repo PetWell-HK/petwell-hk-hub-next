@@ -7,7 +7,6 @@ import { ListInfiniteLoader } from "@/components/ListInfiniteLoader";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredSalons } from "@/hooks/useSalons";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import type { Salon } from "@/services/salonApi";
@@ -138,15 +137,6 @@ const Salons = ({
     [filteredSalons, t, seoDescription],
   );
 
-  useSEO({
-    title: "寵物美容 | 香港寵物美容店搜尋及評價 | PetWell HK",
-    description: seoDescription,
-    keywords: "寵物美容,香港寵物美容,狗狗美容,貓貓美容,寵物剪毛,寵物沖涼,寵物美容店推薦",
-    canonicalUrl,
-    structuredData,
-    faqItems: salonsFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   const getDisplayServices = (services: string[]) =>
     translateServiceOfferings(services, i18n.language);

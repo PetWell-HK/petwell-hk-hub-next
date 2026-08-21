@@ -1,9 +1,7 @@
 "use client";
 
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { ChevronRight, ExternalLink, Heart, Loader2, Scale, Trash2, TrendingDown, TrendingUp } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import AppUpsellBanner from "@/components/AppUpsellBanner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,17 +9,11 @@ import { Card } from "@/components/ui/card";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
 import { useWishlist } from "@/contexts/WishlistContext";
-import { useSEO } from "@/hooks/useSEO";
 import { usePriceReviewProductsByIds } from "@/hooks/usePriceReviewProducts";
 import { getPriceReviewProductPath } from "@/lib/priceReviewUrl";
 import { toast } from "sonner";
 
 const Wishlist = () => {
-  useSEO({
-    title: "我的追蹤清單 | PetWell Review",
-    description: "追蹤你想買嘅寵物用品價格，最平價格一目了然。",
-    canonicalUrl: "https://petwellhk.com/wishlist",
-  });
 
   const { isAuthenticated } = useAuth();
   const { openPanel } = useAuthPanel();
@@ -42,13 +34,12 @@ const Wishlist = () => {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
 
       <main className="flex-1">
         <section className="border-b bg-gradient-to-br from-primary/10 via-background to-accent/10">
           <div className="container mx-auto px-4 py-8 md:py-12">
             <div className="mb-2 flex items-center gap-2 text-xs text-muted-foreground">
-              <Link to="/review" className="hover:text-primary">格價</Link>
+              <AppLink href="/review" className="hover:text-primary">格價</AppLink>
               <ChevronRight className="h-3 w-3" />
               <span>追蹤清單</span>
             </div>
@@ -71,7 +62,7 @@ const Wishlist = () => {
               <div className="flex justify-center gap-2">
                 <Button variant="outline" onClick={() => openPanel("LANDING")}>登入</Button>
                 <Button asChild>
-                  <Link to="/register">立即註冊</Link>
+                  <AppLink href="/register">立即註冊</AppLink>
                 </Button>
               </div>
             </Card>
@@ -100,14 +91,14 @@ const Wishlist = () => {
                 const lowest = product.topOffers[0];
                 return (
                   <Card key={entry.productId} className="flex flex-col overflow-hidden">
-                    <Link to={getPriceReviewProductPath(product)} className="block aspect-[16/10] overflow-hidden bg-muted">
+                    <AppLink href={getPriceReviewProductPath(product)} className="block aspect-[16/10] overflow-hidden bg-muted">
                       {product.image && <img src={product.image} alt={product.name} className="h-full w-full object-cover transition-transform hover:scale-105" />}
-                    </Link>
+                    </AppLink>
                     <div className="flex flex-1 flex-col p-4">
                       <Badge variant="outline" className="mb-1.5 self-start text-[10px]">{product.brand}</Badge>
-                      <Link to={getPriceReviewProductPath(product)} className="line-clamp-2 text-sm font-semibold leading-tight hover:text-primary md:text-base">
+                      <AppLink href={getPriceReviewProductPath(product)} className="line-clamp-2 text-sm font-semibold leading-tight hover:text-primary md:text-base">
                         {product.name}
-                      </Link>
+                      </AppLink>
                       <p className="mt-0.5 text-xs text-muted-foreground">{product.size}</p>
 
                       <div className="mt-3 flex items-end justify-between gap-2 border-t pt-3">
@@ -143,9 +134,9 @@ const Wishlist = () => {
                           <Trash2 className="h-3.5 w-3.5" /> 移除
                         </Button>
                         <Button variant="outline" size="sm" asChild className="gap-1 text-xs">
-                          <Link to={getPriceReviewProductPath(product)}>
+                          <AppLink href={getPriceReviewProductPath(product)}>
                             <Scale className="h-3.5 w-3.5" /> 前往比較
-                          </Link>
+                          </AppLink>
                         </Button>
                       </div>
                       {lowest?.url && (
@@ -165,7 +156,6 @@ const Wishlist = () => {
       </main>
 
       <AppUpsellBanner />
-      <Footer />
     </div>
   );
 };
@@ -177,7 +167,7 @@ function EmptyWishlist() {
       <h2 className="mb-2 text-lg font-semibold md:text-xl">仲未有追蹤產品</h2>
       <p className="mb-5 text-sm text-muted-foreground">喺格價頁面按心心即可加入追蹤清單。</p>
       <Button asChild>
-        <Link to="/review">前往格價</Link>
+        <AppLink href="/review">前往格價</AppLink>
       </Button>
     </Card>
   );

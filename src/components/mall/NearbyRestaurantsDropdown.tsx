@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { ChevronDown, Loader2, MapPin, UtensilsCrossed } from "lucide-react";
 import {
   DropdownMenu,
@@ -66,8 +66,8 @@ export function NearbyRestaurantsDropdown({
 
         {preview.map(({ restaurant, distance }) => (
           <DropdownMenuItem key={restaurant.id} asChild>
-            <Link
-              to={`/restaurants/${restaurant.id}`}
+            <AppLink
+              href={`/restaurants/${restaurant.id}`}
               className="flex items-start gap-2 py-2"
             >
               <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
@@ -80,7 +80,7 @@ export function NearbyRestaurantsDropdown({
                   {restaurant.district ? ` · ${restaurant.district}` : ""}
                 </div>
               </div>
-            </Link>
+            </AppLink>
           </DropdownMenuItem>
         ))}
 
@@ -88,9 +88,9 @@ export function NearbyRestaurantsDropdown({
           <>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <Link to="/restaurants" className="text-primary">
+              <AppLink href="/restaurants" className="text-primary">
                 查看全部 {restaurants.length} 間 →
-              </Link>
+              </AppLink>
             </DropdownMenuItem>
           </>
         )}

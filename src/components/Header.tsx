@@ -1,5 +1,8 @@
+"use client";
+
 import { useLayoutEffect, useRef, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,22 +18,25 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu, LogIn, ChevronDown } from "lucide-react";
-const logo = "/assets/logo.png";
-import LanguageSwitcher from "./LanguageSwitcher";
-import NameTagBanner from "./NameTagBanner";
-import PetFriendlyNavMenu from "./PetFriendlyNavMenu";
-import UserAccountMenu from "./UserAccountMenu";
+import AppLink from "@/components/AppLink";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import NameTagBanner from "@/components/NameTagBanner";
+import PetFriendlyNavMenu from "@/components/PetFriendlyNavMenu";
+import UserAccountMenu from "@/components/UserAccountMenu";
 import { useAuth } from "@/contexts/AuthContext";
-import { signOutUser } from "@/services/authService";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
+import { signOutUser } from "@/services/authService";
+
+const logo = "/assets/logo.png";
 const PET_FRIENDLY_PATHS = ["/restaurants", "/pet-friendly-restaurants", "/salons", "/lodging", "/clinics", "/malls", "/home-visits"];
 const SECONDARY_LINKS = [{ to: "/terms", translationKey: "footer.terms" }];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useAppNavigate();
+  const pathname = usePathname() || "/";
   const { t } = useTranslation();
   const { isAuthenticated, userInfo, setIsAuthenticated } = useAuth();
   const showAccountMenu = isAuthenticated === true && Boolean(userInfo);
@@ -38,7 +44,7 @@ const Header = () => {
   const { openPanel } = useAuthPanel();
 
   const isPetFriendlyActive = PET_FRIENDLY_PATHS.some(
-    (path) => location.pathname === path || location.pathname.startsWith(path + "/")
+    (path) => pathname === path || pathname.startsWith(path + "/")
   );
 
   const handleLogout = async () => {
@@ -65,7 +71,7 @@ const Header = () => {
   ];
 
   const isActivePath = (path: string) =>
-    location.pathname === path || (path !== "/" && location.pathname.startsWith(path + "/"));
+    pathname === path || (path !== "/" && pathname.startsWith(path + "/"));
 
   useLayoutEffect(() => {
     const node = headerRef.current;
@@ -92,9 +98,9 @@ const Header = () => {
       <NameTagBanner />
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt={t("nav.logoAlt")} className="h-8 w-auto" />
-          </Link>
+          <AppLink href="/" className="flex items-center">
+            <Image src={logo} alt={t("nav.logoAlt")} width={128} height={32} className="h-8 w-auto" />
+          </AppLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -125,15 +131,15 @@ const Header = () => {
               }
               const isActive = isActivePath(link.to);
               return (
-                <Link
+                <AppLink
                   key={link.to}
-                  to={link.to}
+                  href={link.to}
                   className={`font-medium transition-colors rounded-md px-1 -mx-1 hover:text-primary ${
                     isActive ? "text-primary" : "text-foreground"
                   }`}
                 >
                   {link.label}
-                </Link>
+                </AppLink>
               );
             })}
           </nav>
@@ -181,7 +187,7 @@ const Header = () => {
               <SheetContent side="right" className="w-[min(100vw-1rem,350px)] overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <img src={logo} alt={t("nav.logoAlt")} className="h-8 w-auto" />
+                    <Image src={logo} alt={t("nav.logoAlt")} width={128} height={32} className="h-8 w-auto" />
                   </SheetTitle>
                 </SheetHeader>
                 {showAccountMenu ? (
@@ -207,16 +213,16 @@ const Header = () => {
                     }
                     const isActive = isActivePath(link.to);
                     return (
-                      <Link
+                      <AppLink
                         key={link.to}
-                        to={link.to}
+                        href={link.to}
                         onClick={() => setIsOpen(false)}
                         className={`text-lg font-medium transition-colors ${
                           isActive ? "text-primary" : "text-foreground hover:text-primary"
                         }`}
                       >
                         {link.label}
-                      </Link>
+                      </AppLink>
                     );
                   })}
 
@@ -225,16 +231,16 @@ const Header = () => {
                       const isActive = isActivePath(link.to);
 
                       return (
-                        <Link
+                        <AppLink
                           key={link.to}
-                          to={link.to}
+                          href={link.to}
                           onClick={() => setIsOpen(false)}
                           className={`block text-base font-medium transition-colors ${
                             isActive ? "text-primary" : "text-foreground hover:text-primary"
                           }`}
                         >
                           {t(link.translationKey)}
-                        </Link>
+                        </AppLink>
                       );
                     })}
                   </div>

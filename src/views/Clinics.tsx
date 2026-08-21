@@ -7,7 +7,6 @@ import { ListInfiniteLoader } from "@/components/ListInfiniteLoader";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredClinics } from "@/hooks/useClinics";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import type { Clinic } from "@/services/clinicApi";
@@ -138,16 +137,6 @@ const Clinics = ({
     [filteredClinics, t, seoDescription],
   );
 
-  useSEO({
-    title: "寵物香港 - 全港獸醫診所評價比較 | 24小時急症獸醫推薦 | PetWell HK",
-    description: seoDescription,
-    keywords:
-      "獸醫診所評價,香港獸醫推薦,24小時獸醫,急症獸醫,寵物醫院,獸醫診所邊間好,寵物疫苗,寵物絕育,獸醫收費",
-    canonicalUrl,
-    structuredData,
-    faqItems: clinicsFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   const getDisplayServices = (services: string[]) =>
     translateServiceOfferings(services, i18n.language);

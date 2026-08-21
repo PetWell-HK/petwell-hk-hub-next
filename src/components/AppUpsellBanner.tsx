@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Button } from "@/components/ui/button";
 import { Bell, Smartphone, X } from "lucide-react";
 
@@ -54,11 +54,11 @@ const AppUpsellBanner = () => {
               size="sm"
               className="bg-white text-primary hover:bg-white/90 h-8 md:h-9 px-2.5 md:px-4 text-xs md:text-sm gap-1"
             >
-              <Link to="/download">
+              <AppLink href="/download">
                 <Smartphone className="w-3.5 h-3.5" />
                 <span className="hidden xs:inline">下載 App</span>
                 <span className="xs:hidden">下載</span>
-              </Link>
+              </AppLink>
             </Button>
             <button
               onClick={dismiss}

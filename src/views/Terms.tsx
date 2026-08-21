@@ -2,8 +2,6 @@
 
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const Terms = () => {
   const { t } = useTranslation();
@@ -31,7 +29,6 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800">
-      <Header />
 
       <main className="flex-1 pt-6 pb-20">
         <div className="container mx-auto px-4">
@@ -68,7 +65,6 @@ const Terms = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
 
 interface Props {
@@ -23,7 +23,7 @@ const AuthRequiredDialog = ({
   title = "儲存追蹤清單",
   description = "登入 PetWell 帳戶，即可儲存追蹤清單及獲取最平價格通知",
 }: Props) => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { openPanel } = useAuthPanel();
 
   const handleLogin = () => {

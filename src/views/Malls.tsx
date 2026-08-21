@@ -6,7 +6,6 @@ import PlaceListingLayout from "@/components/PlaceListingLayout";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredMalls } from "@/hooks/useMalls";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { getTodayOpeningHours, localizeOpeningHoursText } from "@/utils/availableHours";
 import {
   getMallMovementLabel,
@@ -131,15 +130,6 @@ const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
     [filteredMalls, t, seoDescription],
   );
 
-  useSEO({
-    title: seoTitle,
-    description: seoDescription,
-    keywords: seoKeywords,
-    canonicalUrl,
-    structuredData,
-    faqItems: mallsFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   const getOpeningHoursText = (mall: Mall) =>
     getTodayOpeningHours(mall.availableHours, false, t) ||

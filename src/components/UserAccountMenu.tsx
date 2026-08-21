@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import AppLink from "@/components/AppLink";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { LogOut, MessageSquareText, UserRound } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -36,7 +37,7 @@ function useAccountIdentity() {
 
 const UserAccountMenu = ({ variant, onLogout, onNavigate }: UserAccountMenuProps) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { displayName, email, avatarUrl, initials } = useAccountIdentity();
 
   const go = (path: string) => {
@@ -114,8 +115,8 @@ const UserAccountMenu = ({ variant, onLogout, onNavigate }: UserAccountMenuProps
         </div>
       </div>
       <div className="mt-3 flex flex-col">
-        <Link
-          to="/account"
+        <AppLink
+          href="/account"
           onClick={onNavigate}
           className={cn(
             "flex items-center gap-2 rounded-md px-1 py-2 text-sm font-medium text-foreground hover:text-primary",
@@ -123,15 +124,15 @@ const UserAccountMenu = ({ variant, onLogout, onNavigate }: UserAccountMenuProps
         >
           <UserRound className="h-4 w-4" />
           {t("accountProfile.title")}
-        </Link>
-        <Link
-          to="/account/reviews"
+        </AppLink>
+        <AppLink
+          href="/account/reviews"
           onClick={onNavigate}
           className="flex items-center gap-2 rounded-md px-1 py-2 text-sm font-medium text-foreground hover:text-primary"
         >
           <MessageSquareText className="h-4 w-4" />
           {t("userReviews.myReviews")}
-        </Link>
+        </AppLink>
         <button
           type="button"
           onClick={() => {

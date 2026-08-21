@@ -1,10 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { z } from "zod";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,7 +26,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { toast } from "sonner";
-import { useSEO } from "@/hooks/useSEO";
 import { useAuth } from "@/contexts/AuthContext";
 import { createContactUsReport } from "@/services/reportService";
 import { cn } from "@/lib/utils";
@@ -261,7 +258,7 @@ const Field = ({
 );
 
 const VendorApplication = () => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { isAuthenticated, userInfo } = useAuth();
   const [joinType, setJoinType] = useState<JoinType | null>(null);
   const [agreed, setAgreed] = useState(false);
@@ -281,12 +278,6 @@ const VendorApplication = () => {
     equipment: "",
   });
 
-  useSEO({
-    title: "PetWell x Aquabeat 觀塘寵物市集｜檔主招募 09-2026",
-    description:
-      "2026年9月25-27日觀塘海濱活動空間02，毛孩沉浸台式中秋節。PetWell × AquaBeat 聯乘寵物市集檔主及贊助招募，約20檔，額滿即止。",
-    canonicalUrl: "https://petwellhk.com/vendor-application",
-  });
 
   const isSponsorOnly = joinType === "sponsor";
   const unitLabel = isSponsorOnly ? "品牌" : "攤位";
@@ -429,7 +420,6 @@ const VendorApplication = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(30_20%_97%)]">
-      <Header />
 
       <div className="border-b border-border bg-background">
         <img
@@ -831,7 +821,6 @@ const VendorApplication = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

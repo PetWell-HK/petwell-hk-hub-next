@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Store } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
@@ -24,7 +24,7 @@ export function HomeProductCard({ product }: HomeProductCardProps) {
 
   return (
     <article className="home-card home-card--product group">
-      <Link to={getPriceReviewProductPath(product)} className="home-card__link">
+      <AppLink href={getPriceReviewProductPath(product)} className="home-card__link">
         <div className="home-card--product__media">
           {product.image ? (
             <img
@@ -74,7 +74,7 @@ export function HomeProductCard({ product }: HomeProductCardProps) {
             className="mt-1"
           />
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

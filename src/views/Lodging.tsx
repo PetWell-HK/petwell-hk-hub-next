@@ -7,7 +7,6 @@ import { ListInfiniteLoader } from "@/components/ListInfiniteLoader";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredLodgings } from "@/hooks/useLodging";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import type { Lodging } from "@/services/lodgingApi";
@@ -138,15 +137,6 @@ const Lodging = ({
     [filteredLodgings, t, seoDescription],
   );
 
-  useSEO({
-    title: "寵物寄養 | 香港寵物酒店、寵物寄養搜尋及評價 | PetWell HK",
-    description: seoDescription,
-    keywords: "寵物寄養,香港寵物寄養,寵物酒店,狗狗寄養,貓貓寄養,寵物託管,寵物住宿推薦",
-    canonicalUrl,
-    structuredData,
-    faqItems: lodgingFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   const getDisplayServices = (services: string[]) =>
     translateServiceOfferings(services, i18n.language);

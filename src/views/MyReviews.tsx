@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { Loader2, Search } from "lucide-react";
 import AccountHomeShell from "@/components/account/AccountHomeShell";
@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
-import { useSEO } from "@/hooks/useSEO";
 import { useMyReviews } from "@/hooks/useMyReviews";
 import type { UserReviewType } from "@/types/userReview";
 import { cn } from "@/lib/utils";
@@ -33,11 +32,6 @@ const MyReviews = () => {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [query, setQuery] = useState("");
 
-  useSEO({
-    title: `${t("userReviews.myReviews")} | PetWell`,
-    description: t("userReviews.mySeoDescription"),
-    canonicalUrl: "https://petwellhk.com/account/reviews",
-  });
 
   useEffect(() => {
     if (isAuthenticated === false) {
@@ -89,10 +83,10 @@ const MyReviews = () => {
           <p>{t("userReviews.myEmptyBody")}</p>
           <div className="account-home-empty__actions">
             <Button asChild>
-              <Link to="/restaurants">{t("userReviews.emptyCtaRestaurants")}</Link>
+              <AppLink href="/restaurants">{t("userReviews.emptyCtaRestaurants")}</AppLink>
             </Button>
             <Button variant="outline" asChild>
-              <Link to="/clinics">{t("userReviews.emptyCtaClinics")}</Link>
+              <AppLink href="/clinics">{t("userReviews.emptyCtaClinics")}</AppLink>
             </Button>
           </div>
         </div>

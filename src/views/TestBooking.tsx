@@ -15,8 +15,6 @@ import {
   Stethoscope,
   TestTube2,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -28,7 +26,6 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
-import { useSEO } from "@/hooks/useSEO";
 import { createTestBookingPaymentLink } from "@/services/testBookingPaymentApi";
 import { getClientsByEmail } from "@/services/forumApi";
 
@@ -220,48 +217,6 @@ const TestBooking = () => {
   );
   const selectedClinic = clinicOptions.find((clinic) => clinic.name === bookingClinic);
 
-  useSEO({
-    title: t("testBooking.seoTitle"),
-    description: t("testBooking.seoDescription"),
-    keywords: t("testBooking.seoKeywords"),
-    canonicalUrl: "https://petwellhk.com/test-booking",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: t("testBooking.structuredDataName"),
-      itemListElement: products.map((product, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "MedicalTest",
-          name: product.name,
-          description: product.description,
-          usedToDiagnose: product.bestFor,
-          relevantSpecialty: t("testBooking.structuredDataSpecialty"),
-          offers: {
-            "@type": "Offer",
-            priceCurrency: TEST_CURRENCY,
-            price: product.price,
-            availability: "https://schema.org/InStock",
-          },
-        },
-      })),
-    },
-    faqItems: [
-      {
-        question: t("testBooking.faq.q1"),
-        answer: t("testBooking.faq.a1"),
-      },
-      {
-        question: t("testBooking.faq.q2"),
-        answer: t("testBooking.faq.a2"),
-      },
-      {
-        question: t("testBooking.faq.q3"),
-        answer: t("testBooking.faq.a3"),
-      },
-    ],
-  });
 
   const handlePurchase = async (product: BookingProduct) => {
     const normalizedEmail = shopperEmail.trim().toLowerCase();
@@ -344,7 +299,6 @@ const TestBooking = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50/40 via-background to-background">
-      <Header />
       <main className="container mx-auto max-w-6xl px-4 py-5 md:py-12">
         <section className="relative overflow-hidden rounded-3xl border border-orange-200/70 bg-background shadow-lg animate-in fade-in-50 slide-in-from-bottom-3 duration-700 md:rounded-[2rem]">
           <div className="absolute right-0 top-0 h-44 w-44 rounded-full bg-orange-200/30 blur-3xl animate-in fade-in-0 zoom-in-95 duration-1000 md:h-72 md:w-72" />
@@ -808,7 +762,6 @@ const TestBooking = () => {
           </Button>
         </DialogContent>
       </Dialog>
-      <Footer />
     </div>
   );
 };

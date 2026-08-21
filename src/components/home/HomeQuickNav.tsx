@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import {
   BookOpen,
@@ -42,9 +42,9 @@ const HomeQuickNav = () => {
           {QUICK_NAV.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Link
+              <AppLink
                 key={item.id}
-                to={item.href}
+                href={item.href}
                 className={cn(
                   "home-quick-nav__item home-reveal",
                   `home-quick-nav__item--${item.tone}`,
@@ -55,7 +55,7 @@ const HomeQuickNav = () => {
                   <Icon className="home-quick-nav__icon" aria-hidden="true" />
                 </span>
                 <span className="home-quick-nav__label">{t(item.labelKey)}</span>
-              </Link>
+              </AppLink>
             );
           })}
         </div>

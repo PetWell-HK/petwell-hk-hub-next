@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { uploadData } from "aws-amplify/storage";
 import {
   Dialog,
@@ -42,7 +42,7 @@ interface CreatePostDialogProps {
 
 const CreatePostDialog = ({ open, onOpenChange, onPostCreated }: CreatePostDialogProps) => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { isAuthenticated, userInfo } = useAuth();
   const { openPanel } = useAuthPanel();
 
@@ -294,7 +294,7 @@ const CreatePostDialog = ({ open, onOpenChange, onPostCreated }: CreatePostDialo
       }
 
       // Navigate to the new post
-      navigate(`/forum?post=${createdPost.id}`);
+      navigate(`/forum/${createdPost.id}`);
     } catch (err: unknown) {
       console.error("Error creating post:", err);
       setError(err instanceof Error ? err.message : t("forum.createPost.error"));

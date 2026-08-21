@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import AppLink from "@/components/AppLink";
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Calendar, Clock, Star, ChevronDown } from 'lucide-react';
@@ -98,7 +98,7 @@ const EventCard = ({ event, isRecommended }: EventCardProps) => {
   };
 
   return (
-    <Link to={`/christmas-event/${event.id}`}>
+    <AppLink href={`/christmas-event/${event.id}`}>
       <Card 
         className={`group overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer h-full ${
           isRecommended 
@@ -159,7 +159,7 @@ const EventCard = ({ event, isRecommended }: EventCardProps) => {
 
         </CardContent>
       </Card>
-    </Link>
+    </AppLink>
   );
 };
 

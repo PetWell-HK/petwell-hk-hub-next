@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,7 +10,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin, Phone, Mail, Globe, Search, Filter, Heart, Users } from "lucide-react";
 import { useFilteredNGOs } from "@/hooks/useNGOs";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useSEO } from "@/hooks/useSEO";
 import {
   Sheet,
   SheetContent,
@@ -49,13 +46,6 @@ const NGOs = () => {
     }))
   }), [regionFilteredNGOs, i18n.language]);
 
-  useSEO({
-    title: "???????? | ??????????? | PetWell HK",
-    description: "???????????????????????????????????????????????",
-    keywords: "??????,????,????,????,????,????,??NGO,?????,????,??????",
-    canonicalUrl: "https://petwellhk.com/ngos",
-    structuredData
-  });
 
   const filteredNGOs = regionFilteredNGOs.filter((ngo) => {
     if (searchQuery) {
@@ -83,7 +73,6 @@ const NGOs = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       
       <main className="flex-1 pt-6 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-4">
@@ -170,7 +159,7 @@ const NGOs = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredNGOs.map((ngo) => (
                     <article key={ngo.id}>
-                      <Link to={`/ngos/${ngo.id}`}>
+                      <AppLink href={`/ngos/${ngo.id}`}>
                         <Card className="p-6 h-full hover:shadow-strong transition-shadow cursor-pointer">
                           <div className="space-y-4">
                             <header>
@@ -231,7 +220,7 @@ const NGOs = () => {
                             </div>
                           </div>
                         </Card>
-                      </Link>
+                      </AppLink>
                     </article>
                   ))}
                 </div>
@@ -250,7 +239,6 @@ const NGOs = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

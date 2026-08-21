@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:routes": "node scripts/generate-app-routes.mjs",
     "smoke": "node scripts/smoke-next.mjs",
     "smoke:detail": "node scripts/smoke-probe-detail.mjs",
     "smoke:graphql": "node scripts/smoke-probe-graphql.mjs",

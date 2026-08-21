@@ -1,6 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import AuthCallback from "./AuthCallback";
 
 const completeSocialLoginWithCode = vi.fn();
@@ -18,13 +17,13 @@ vi.mock("react-i18next", () => ({
   }),
 }));
 
-vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual<typeof import("react-router-dom")>("react-router-dom");
-  return {
-    ...actual,
-    useNavigate: () => navigate,
-  };
-});
+vi.mock("next/navigation", () => ({
+  useSearchParams: () => new URLSearchParams("code=abc&state=xyz"),
+}));
+
+vi.mock("@/hooks/useAppNavigate", () => ({
+  useAppNavigate: () => navigate,
+}));
 
 vi.mock("aws-amplify/auth", () => ({
   signOut: vi.fn(async () => undefined),
@@ -63,14 +62,7 @@ vi.mock("@/components/LinkAccountDialog", () => ({
     open ? <div>link-account-dialog:{email}</div> : null,
 }));
 
-const renderCallback = () =>
-  render(
-    <MemoryRouter initialEntries={["/auth/callback/?code=abc&state=xyz"]}>
-      <Routes>
-        <Route path="/auth/callback/" element={<AuthCallback />} />
-      </Routes>
-    </MemoryRouter>
-  );
+const renderCallback = () => render(<AuthCallback />);
 
 describe("AuthCallback linking branches", () => {
   beforeEach(() => {

@@ -5,13 +5,10 @@ import { useTranslation } from "react-i18next";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import FAQSection from "@/components/FAQSection";
 import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomePlatform from "@/components/HomePlatform";
 import Testimonials from "@/components/Testimonials";
 import { usePetwellFaq } from "@/hooks/usePetwellFaq";
-import { useSEO } from "@/hooks/useSEO";
 
 const Landing = () => {
   const { t } = useTranslation();
@@ -48,19 +45,9 @@ const Landing = () => {
     [t],
   );
 
-  useSEO({
-    title: t("landing.seo.title"),
-    description: t("landing.seo.description"),
-    keywords: t("landing.seo.keywords"),
-    canonicalUrl: "https://petwellhk.com/landing",
-    structuredData,
-    faqItems,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main>
         <Hero />
 
@@ -79,7 +66,6 @@ const Landing = () => {
           <FAQSection items={faqItems} title={t("about.faqTitle")} hidden={true} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

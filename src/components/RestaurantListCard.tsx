@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { MapPin, Star, DoorOpen, CalendarCheck, Coffee, Clock, UtensilsCrossed, Banknote, TriangleAlert } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -26,7 +26,7 @@ export function RestaurantListCard({
 
   return (
     <article>
-      <Link to={`/restaurants/${restaurant.id}`}>
+      <AppLink href={`/restaurants/${restaurant.id}`}>
         <Card className="h-full overflow-hidden hover:shadow-strong transition-shadow cursor-pointer rounded-xl">
           <div className="relative aspect-[4/3] overflow-hidden">
             <RestaurantImage
@@ -131,7 +131,7 @@ export function RestaurantListCard({
             )}
           </div>
         </Card>
-      </Link>
+      </AppLink>
     </article>
   );
 }

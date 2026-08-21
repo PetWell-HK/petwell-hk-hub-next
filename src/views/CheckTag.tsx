@@ -1,6 +1,8 @@
 "use client";
 
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppRedirect from "@/components/AppRedirect";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { resolvePetByTagId } from "@/services/petApi";
@@ -25,7 +27,7 @@ const TAG_REDIRECTS: Record<string, string> = {
 };
 
 const CheckTag = () => {
-  const { id: rawId } = useParams();
+  const rawId = routeParam(useParams().id);
 
   const normalizedRawId = normalizeTagId(rawId);
 
@@ -54,10 +56,10 @@ const CheckTag = () => {
 
   // Only activated pets can go to public pet profile.
   if (pet?.isTagActivated === true) {
-    return <Navigate to={`/pet/${pet.id}`} replace />;
+    return <AppRedirect href={`/pet/${pet.id}`} replace />;
   }
 
-  return <Navigate to={`/activate/${activateId}`} replace />;
+  return <AppRedirect href={`/activate/${activateId}`} replace />;
 };
 
 export default CheckTag;

@@ -6,7 +6,6 @@ import PlaceListingLayout from "@/components/PlaceListingLayout";
 import { HomeVisitListRow } from "@/components/HomeVisitListRow";
 import { useFilteredHomeVisitProviders } from "@/hooks/useHomeVisitProviders";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import {
   getHomeVisitListOfferings,
   getServiceCategoryLabel,
@@ -141,15 +140,6 @@ const HomeVisits = ({
     [filteredProviders, seoDescription],
   );
 
-  useSEO({
-    title: seoTitle,
-    description: seoDescription,
-    keywords: seoKeywords,
-    canonicalUrl,
-    structuredData,
-    faqItems: homeVisitsFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   const policyFilters = [
     {

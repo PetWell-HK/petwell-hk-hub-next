@@ -5,8 +5,6 @@ import { CheckCircle2, ImagePlus, Loader2, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import NametagHero from "@/components/NametagHero";
 import NametagAccountPrompt from "@/components/NametagAccountPrompt";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -14,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { useSEO } from "@/hooks/useSEO";
 import { SPECIES_OPTIONS, type SpeciesKey } from "@/constants/petBreedsBySpecies";
 import {
   getNametagRegisterConfigError,
@@ -89,24 +86,6 @@ const Nametag = () => {
     [t],
   );
 
-  useSEO({
-    title: t("nametagPage.seo.title"),
-    description: t("nametagPage.seo.description"),
-    keywords: t("nametagPage.seo.keywords"),
-    canonicalUrl: typeof window !== "undefined" ? `${window.location.origin}${window.location.pathname}` : "https://petwellhk.com/nametag",
-    structuredData,
-    faqItems,
-    howToSteps: {
-      name: t("nametagPage.seo.howTo.name"),
-      description: t("nametagPage.seo.howTo.description"),
-      steps: [
-        { name: t("nametagPage.seo.howTo.step1Name"), text: t("nametagPage.seo.howTo.step1Text") },
-        { name: t("nametagPage.seo.howTo.step2Name"), text: t("nametagPage.seo.howTo.step2Text") },
-        { name: t("nametagPage.seo.howTo.step3Name"), text: t("nametagPage.seo.howTo.step3Text") },
-      ],
-    },
-    speakableSelectors: [".nametag-hero-summary", ".nametag-hero__chips", "h1"],
-  });
 
   const updateField = (field: keyof FormState, value: string | File | null) => {
     if (field === "petWeight" && typeof value === "string") {
@@ -252,7 +231,6 @@ const Nametag = () => {
 
   return (
     <div className="nametag-page min-h-screen overflow-x-hidden">
-      <Header />
       <main className="overflow-x-hidden">
         <NametagHero />
 
@@ -370,7 +348,6 @@ const Nametag = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

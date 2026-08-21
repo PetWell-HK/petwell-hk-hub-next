@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
 import RestaurantDistrictLinks from "@/components/RestaurantDistrictLinks";
 import { useFilteredRestaurants } from "@/hooks/useRestaurants";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
-import { useSEO } from "@/hooks/useSEO";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
@@ -19,8 +18,8 @@ const Restaurants = ({
 }: {
   initialListing?: { restaurants: Restaurant[]; total: number; nextToken: number[] | null } | null;
 }) => {
-  const location = useLocation();
-  const isEnglishAlias = location.pathname === "/pet-friendly-restaurants-hk";
+  const pathname = usePathname() || "/";
+  const isEnglishAlias = pathname === "/pet-friendly-restaurants-hk";
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [indoorAllowed, setIndoorAllowed] = useState<boolean>(false);
@@ -118,23 +117,6 @@ const Restaurants = ({
     [totalCount, t, seoDescription, canonicalUrl],
   );
 
-  useSEO({
-    title: seoTitle,
-    description: seoDescription,
-    keywords: t("restaurants.seoKeywords"),
-    ogImage: `https://petwell-hk-hub.lovable.app${restaurantsOgImage.url}`,
-    canonicalUrl,
-    structuredData,
-    faqItems: restaurantsFAQ,
-    howToSteps,
-    speakableSelectors: [
-      ".hero-summary",
-      ".faq-answer",
-      ".restaurants-search-intent",
-      ".restaurants-hub-seo",
-      "h1",
-    ],
-  });
 
   const regions = [
     { value: "all", label: t("restaurants.regions.all") },

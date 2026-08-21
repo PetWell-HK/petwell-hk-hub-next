@@ -1,4 +1,8 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { htmlLang, parseLocale, setLocaleCookie } from "@/lib/locale";
 import { cn } from "@/lib/utils";
 
 const LANGUAGES = [
@@ -6,15 +10,10 @@ const LANGUAGES = [
   { code: "en", short: "EN", name: "English" },
 ] as const;
 
-type LangCode = (typeof LANGUAGES)[number]["code"];
-
-function resolveLang(language: string): LangCode {
-  return language.toLowerCase().startsWith("en") ? "en" : "zh";
-}
-
 const LanguageSwitcher = () => {
+  const router = useRouter();
   const { i18n } = useTranslation();
-  const current = resolveLang(i18n.language);
+  const current = parseLocale(i18n.language);
 
   return (
     <div
@@ -41,7 +40,10 @@ const LanguageSwitcher = () => {
             aria-label={lang.name}
             onClick={() => {
               if (!isActive) {
+                setLocaleCookie(lang.code);
                 void i18n.changeLanguage(lang.code);
+                document.documentElement.lang = htmlLang(lang.code);
+                router.refresh();
               }
             }}
             className={cn(

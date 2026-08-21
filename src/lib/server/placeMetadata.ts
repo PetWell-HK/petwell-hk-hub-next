@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { type AppLocale } from "@/lib/locale";
 import { absoluteUrl, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { pickLocalized, serverGraphqlFetch, type Localized } from "@/lib/server/graphqlFetch";
+import { getRequestLocale } from "@/lib/server/locale";
 
 export type PlaceKind = "restaurant" | "clinic" | "salon" | "lodging" | "mall" | "homeVisit";
 
@@ -317,10 +319,10 @@ function placeJsonLd(kind: PlaceKind, place: PlaceRecord, meta: {
   ];
 }
 
-function buildPlaceSeo(kind: PlaceKind, place: PlaceRecord): PlaceSeo {
-  const name = pickLocalized(place.name) || LIST_LABEL[kind];
-  const address = pickLocalized(place.address);
-  const district = place.district || "香港";
+function buildPlaceSeo(kind: PlaceKind, place: PlaceRecord, locale: AppLocale): PlaceSeo {
+  const name = pickLocalized(place.name, locale) || LIST_LABEL[kind];
+  const address = pickLocalized(place.address, locale);
+  const district = place.district || (locale === "en" ? "Hong Kong" : "香港");
   const ogImage = place.coverPhoto || undefined;
   const path = `${PATH_PREFIX[kind]}/${place.id}`;
 
@@ -380,6 +382,7 @@ function buildPlaceSeo(kind: PlaceKind, place: PlaceRecord): PlaceSeo {
 }
 
 async function loadPlaceSeo(kind: PlaceKind, id: string): Promise<PlaceSeo> {
+  const locale = await getRequestLocale();
   if (!id) {
     return { metadata: fallbackMeta(kind, id), jsonLd: null };
   }
@@ -394,7 +397,7 @@ async function loadPlaceSeo(kind: PlaceKind, id: string): Promise<PlaceSeo> {
     return { metadata: fallbackMeta(kind, id), jsonLd: null };
   }
 
-  return buildPlaceSeo(kind, place);
+  return buildPlaceSeo(kind, place, locale);
 }
 
 export async function generatePlaceMetadata(

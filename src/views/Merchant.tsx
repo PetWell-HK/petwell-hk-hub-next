@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { z } from "zod";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,7 +9,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, BellRing, BadgeCheck, Store, LogIn } from "lucide-react";
 import { toast } from "sonner";
-import { useSEO } from "@/hooks/useSEO";
 import { useAuth } from "@/contexts/AuthContext";
 import { createContactUsReport } from "@/services/reportService";
 
@@ -52,11 +49,6 @@ const Merchant = () => {
   });
   const [submitting, setSubmitting] = useState(false);
 
-  useSEO({
-    title: "商家合作 | PetWell 認證商家計劃",
-    description: "免費登記成為 PetWell 認證商家，自助更新價格及特價，直接觸達全港寵物主人。",
-    canonicalUrl: "https://petwellhk.com/merchant",
-  });
 
   const set = (k: keyof typeof form, v: string) => setForm((f) => ({ ...f, [k]: v }));
 
@@ -101,7 +93,6 @@ const Merchant = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-background border-b">
@@ -214,7 +205,6 @@ const Merchant = () => {
         </Card>
       </section>
 
-      <Footer />
     </div>
   );
 };

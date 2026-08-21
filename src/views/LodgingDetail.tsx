@@ -1,14 +1,13 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useLodging } from "@/hooks/useLodging";
-import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { LodgingImage } from "@/components/LodgingImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
@@ -24,7 +23,7 @@ function getLocalizedString(
 }
 
 const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging | null }) => {
-  const { lodgingId } = useParams();
+  const lodgingId = routeParam(useParams().lodgingId);
   const { i18n, t } = useTranslation();
   const { data: lodging, isLoading, error } = useLodging(lodgingId, initialLodging);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
@@ -73,28 +72,13 @@ const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging 
     };
   }, [lodging, lodgingId, lodgingName, lodgingAddress, lodgingDistrict]);
 
-  useSEO({
-    title: lodging
-      ? `${lodgingName} | 寵物寄養評價、地址 | PetWell HK`
-      : "寵物寄養詳情 | PetWell HK",
-    description: lodging
-      ? `${lodgingName}寵物寄養評價、真實用家評論。地址：${lodgingAddress}。服務：${lodgingServices}。`
-      : "查看寵物寄養場所詳細資料、評價及服務",
-    keywords: lodging
-      ? `${lodgingName}寵物寄養,${lodgingName}評價,${lodging.district}寵物寄養,寵物酒店推薦`
-      : "寵物寄養,香港寵物寄養",
-    canonicalUrl: `https://petwellhk.com/lodging/${lodgingId}`,
-    structuredData,
-  });
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-16 md:py-20 flex items-center justify-center bg-gradient-hero">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -102,18 +86,16 @@ const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging 
   if (error || !lodging) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-2xl font-bold mb-4">
               {t("lodging.detail.notFound")}
             </h1>
-            <Link to="/lodging">
+            <AppLink href="/lodging">
               <Button>{t("lodging.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -123,7 +105,6 @@ const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging 
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <PlaceDetailLayout
         backTo="/lodging"
         name={lodgingName}
@@ -149,7 +130,6 @@ const LodgingDetail = ({ initialLodging = null }: { initialLodging?: ApiLodging 
         reservationSettings={lodging.reservationSettings as never}
         ownerSub={lodging.ownerSub}
       />
-      <Footer />
     </div>
   );
 };

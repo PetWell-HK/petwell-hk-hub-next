@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { canLinkToUserProfile } from "@/services/userReviewApi";
 import { isExternalReviewSource, resolveProfileImageUrl } from "@/utils/reviewDisplay";
@@ -63,12 +63,12 @@ export default function ReviewAuthorLink({
   }
 
   return (
-    <Link
-      to={`/users/${reviewerId}`}
+    <AppLink
+      href={`/users/${reviewerId}`}
       className={className || "flex items-center gap-3 hover:opacity-90"}
     >
       {avatar}
       <span className="text-sm font-semibold text-primary">{name}</span>
-    </Link>
+    </AppLink>
   );
 }

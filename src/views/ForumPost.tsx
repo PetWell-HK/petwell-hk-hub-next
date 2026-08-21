@@ -1,23 +1,22 @@
 "use client";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { MessageCircle, Heart, Share2, ArrowLeft, AlertCircle } from "lucide-react";
 import { getForumPostById, getForumPostReplies, getAuthorDisplayName, getRelativeTime, getCategoryLabel, type ForumPost as ForumPostType, type ForumReply } from "@/services/forumApi";
 import { parseBBCode, stripBBCode } from "@/utils/bbcodeParser";
-import { useSEO } from "@/hooks/useSEO";
 
 const BASE_URL = "https://petwellhk.com";
 
 const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null }) => {
-  const { postId } = useParams();
-  const navigate = useNavigate();
+  const postId = routeParam(useParams().postId);
+  const navigate = useAppNavigate();
   const { t, i18n } = useTranslation();
   const [post, setPost] = useState<ForumPostType | null>(initialPost);
   const [replies, setReplies] = useState<ForumReply[]>([]);
@@ -143,20 +142,6 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
     };
   }, [post, replies, canonicalUrl, i18n.language]);
 
-  useSEO({
-    title: seoData.title,
-    description: seoData.description,
-    keywords: seoData.keywords,
-    ogType: "article",
-    canonicalUrl,
-    structuredData: seoData.structuredData,
-    articlePublishedTime: seoData.articlePublishedTime,
-    articleModifiedTime: seoData.articleModifiedTime,
-    articleAuthor: seoData.articleAuthor,
-    articleSection: seoData.articleSection,
-    articleTags: seoData.articleTags,
-    speakableSelectors: post ? ["h1", ".forum-post-content", ".forum-reply-content"] : undefined,
-  });
 
   const loadPostData = async () => {
     if (!postId) {
@@ -198,7 +183,6 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-subtle">
-        <Header />
         <main className="container mx-auto px-4 py-10 md:py-12">
           <div className="max-w-4xl mx-auto">
             <Skeleton className="h-10 w-32 mb-6" />
@@ -224,7 +208,6 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
             </Card>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -232,7 +215,6 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
   if (error || !post) {
     return (
       <div className="min-h-screen bg-gradient-subtle">
-        <Header />
         <main className="container mx-auto px-4 py-10 md:py-12">
           <div className="max-w-4xl mx-auto text-center">
             <AlertCircle className="w-12 h-12 mx-auto mb-4 text-destructive" />
@@ -243,14 +225,12 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
             </div>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      <Header />
       
       <main className="container mx-auto px-4 py-10 md:py-12">
         <div className="max-w-4xl mx-auto">
@@ -348,7 +328,6 @@ const ForumPost = ({ initialPost = null }: { initialPost?: ForumPostType | null 
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

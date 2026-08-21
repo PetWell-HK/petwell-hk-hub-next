@@ -17,7 +17,10 @@ async function fetchText(path, opts = {}) {
   const url = `${BASE}${path}`;
   const res = await fetch(url, {
     redirect: opts.redirect || "manual",
-    headers: { "user-agent": opts.ua || "PetWellSmoke/1.0" },
+    headers: {
+      "user-agent": opts.ua || "PetWellSmoke/1.0",
+      ...(opts.headers || {}),
+    },
   });
   const text = opts.skipBody ? "" : await res.text();
   return { res, text, url };
@@ -216,10 +219,30 @@ async function main() {
   // Duplicate restaurant listing should redirect
   await expectRedirect("/restaurant", "/restaurants", "redirect /restaurant -> /restaurants");
 
-  // Client-only detail metadata inheritance check (forum post fake id)
-  await expectHtml("/forum/does-not-exist-smoke", [
-    { type: "canonical", path: "/forum" }, // currently inherits listing — document as bug if unfixed
-  ], "SEO forum detail currently inherits /forum canonical (known gap)");
+  await expectStatus(
+    "/forum/does-not-exist-smoke",
+    404,
+    "GET missing forum post 404",
+  );
+
+  {
+    const zh = await fetchText("/", {
+      headers: { cookie: "petwell-locale=zh" },
+    });
+    const en = await fetchText("/", {
+      headers: { cookie: "petwell-locale=en" },
+    });
+    const zhLang = (zh.text.match(/<html[^>]*lang=["']([^"']+)["']/) || [])[1];
+    const enLang = (en.text.match(/<html[^>]*lang=["']([^"']+)["']/) || [])[1];
+    record(
+      "SSR html lang follows petwell-locale cookie",
+      zh.res.status === 200 &&
+        en.res.status === 200 &&
+        zhLang === "zh-HK" &&
+        enLang === "en",
+      `zh=${zhLang} en=${enLang}`,
+    );
+  }
 
   // 404
   await expectStatus("/this-route-should-404-xyz", 404, "GET unknown 404");

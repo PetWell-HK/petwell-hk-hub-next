@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { ChevronLeft } from "lucide-react";
 import { MallImage } from "@/components/MallImage";
 
@@ -32,9 +32,9 @@ export function MallDetailHero({
   if (!primary) {
     return (
       <div className={heroShell}>
-        <Link to="/malls" className="mall-hero-back" aria-label={backLabel}>
+        <AppLink href="/malls" className="mall-hero-back" aria-label={backLabel}>
           <ChevronLeft className="h-5 w-5" />
-        </Link>
+        </AppLink>
         <div
           className={`${mediaShell} flex items-center justify-center bg-muted text-sm text-muted-foreground`}
         >
@@ -47,9 +47,9 @@ export function MallDetailHero({
   if (extras.length >= 2) {
     return (
       <div className={heroShell}>
-        <Link to="/malls" className="mall-hero-back" aria-label={backLabel}>
+        <AppLink href="/malls" className="mall-hero-back" aria-label={backLabel}>
           <ChevronLeft className="h-5 w-5" />
-        </Link>
+        </AppLink>
         <div
           className={
             isDesktop
@@ -91,9 +91,9 @@ export function MallDetailHero({
 
   return (
     <div className={heroShell}>
-      <Link to="/malls" className="mall-hero-back" aria-label={backLabel}>
+      <AppLink href="/malls" className="mall-hero-back" aria-label={backLabel}>
         <ChevronLeft className="h-5 w-5" />
-      </Link>
+      </AppLink>
       <div className={`${mediaShell} mall-hero-media--cover`}>
         <MallImage imageKey={primary} alt={name} className="h-full w-full" />
         <div className="mall-hero-veil" aria-hidden />

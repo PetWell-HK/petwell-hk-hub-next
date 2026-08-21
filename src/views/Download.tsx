@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { APP_STORE_URL, PLAY_STORE_URL } from "@/components/AppDownloadCTA";
-import { useSEO } from "@/hooks/useSEO";
 import { cn } from "@/lib/utils";
 
 const appStoreBadge = "/assets/store-badges/app-store.svg";
@@ -55,28 +52,9 @@ const Download = () => {
 
   const isDesktop = platform === "desktop";
 
-  useSEO({
-    title: t("download.seo.title"),
-    description: t("download.seo.description"),
-    keywords: t("download.seo.keywords"),
-    canonicalUrl: "https://petwellhk.com/download",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      name: "PetWell",
-      operatingSystem: "iOS, Android",
-      applicationCategory: "LifestyleApplication",
-      url: "https://petwellhk.com/download",
-      downloadUrl: [APP_STORE_URL, PLAY_STORE_URL],
-      offers: { "@type": "Offer", price: "0", priceCurrency: "HKD" },
-      description: t("download.seo.description"),
-    },
-    speakableSelectors: ["h1", ".download-subtitle"],
-  });
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
 
       <main className="relative flex flex-1 items-center justify-center overflow-hidden px-4 py-16 md:py-24">
         <div className="home-hero-bg pointer-events-none absolute inset-0" aria-hidden="true" />
@@ -116,18 +94,17 @@ const Download = () => {
           ) : null}
 
           <p className="home-reveal home-reveal-delay-4 mt-10 text-sm text-muted-foreground">
-            <Link
-              to="/about"
+            <AppLink
+              href="/about"
               className="inline-flex items-center gap-1 font-medium text-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
             >
               {t("download.aboutCta")}
               <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-            </Link>
+            </AppLink>
           </p>
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { ChevronLeft } from "lucide-react";
 import { RestaurantImage } from "@/components/RestaurantImage";
 
@@ -32,9 +32,9 @@ export function RestaurantDetailHero({
   if (!primary) {
     return (
       <div className={heroShell}>
-        <Link to="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
+        <AppLink href="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
           <ChevronLeft className="h-5 w-5" />
-        </Link>
+        </AppLink>
         <div
           className={`${mediaShell} flex items-center justify-center bg-muted text-sm text-muted-foreground`}
         >
@@ -47,9 +47,9 @@ export function RestaurantDetailHero({
   if (extras.length >= 2) {
     return (
       <div className={heroShell}>
-        <Link to="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
+        <AppLink href="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
           <ChevronLeft className="h-5 w-5" />
-        </Link>
+        </AppLink>
         <div
           className={
             isDesktop
@@ -91,9 +91,9 @@ export function RestaurantDetailHero({
 
   return (
     <div className={heroShell}>
-      <Link to="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
+      <AppLink href="/restaurants" className="restaurant-hero-back" aria-label={backLabel}>
         <ChevronLeft className="h-5 w-5" />
-      </Link>
+      </AppLink>
       <div className={`${mediaShell} restaurant-hero-media--cover`}>
         <RestaurantImage imageKey={primary} alt={name} className="h-full w-full" />
       </div>

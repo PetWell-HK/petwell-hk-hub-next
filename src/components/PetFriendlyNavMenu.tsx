@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import {
   BedDouble,
@@ -98,9 +99,9 @@ const DestinationRow = forwardRef<
   const Icon = destination.icon;
 
   return (
-    <Link
+    <AppLink
       ref={ref}
-      to={destination.to}
+      href={destination.to}
       onClick={onNavigate}
       aria-current={isActive ? "page" : undefined}
       className={cn(
@@ -122,7 +123,7 @@ const DestinationRow = forwardRef<
       <span className="min-w-0 flex-1 text-sm font-medium leading-tight">
         {t(`nav.petFriendlyMenu.${destination.id}`)}
       </span>
-    </Link>
+    </AppLink>
   );
 });
 DestinationRow.displayName = "DestinationRow";
@@ -134,7 +135,7 @@ interface PetFriendlyNavMenuProps {
 
 const PetFriendlyNavMenu = ({ variant, onNavigate }: PetFriendlyNavMenuProps) => {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
+  const pathname = usePathname() || "/";
 
   return (
     <div className={cn(variant === "sheet" && "rounded-xl border border-border bg-muted/30 p-1.5")}>

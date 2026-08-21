@@ -1,10 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { useSEO } from "@/hooks/useSEO";
+import AppLink from "@/components/AppLink";
 import {
   Accordion,
   AccordionContent,
@@ -91,22 +88,6 @@ const BlogDogTrainerLicence = () => {
     []
   );
 
-  useSEO({
-    title: "香港寵物訓練師需要牌照嗎？2026年完整指南",
-    description:
-      "香港法律上不需要寵物訓練師持牌——但這對你的毛孩有什麼影響？PetWell 為你解析業界認證、漁農署規管範圍及選師貼士。",
-    keywords:
-      "香港訓犬師認證,寵物訓練香港,訓犬師牌照,狗訓練師,寵物訓練師資格,ICA QSSD,CPDT-KA,漁農署",
-    canonicalUrl: pageUrl,
-    ogImage: heroImage,
-    ogType: "article",
-    articlePublishedTime: "2026-03-06",
-    articleModifiedTime: "2026-03-06",
-    articleAuthor: "PetWell HK",
-    articleSection: "寵物訓練",
-    articleTags: ["香港訓犬師", "寵物訓練", "訓犬師認證", "漁農署", "ICA QSSD", "CPDT-KA", "正向強化"],
-    structuredData,
-  });
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(pageUrl);
@@ -131,7 +112,6 @@ const BlogDogTrainerLicence = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Header />
 
       <main className="flex-1 pb-24">
         {/* Hero */}
@@ -336,15 +316,14 @@ const BlogDogTrainerLicence = () => {
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur border-t p-3 md:p-4">
         <div className="container mx-auto flex justify-center">
-          <Link to="/about">
+          <AppLink href="/about">
             <Button size="lg" className="w-full max-w-md text-base font-semibold">
               聯絡 PetWell 了解更多
             </Button>
-          </Link>
+          </AppLink>
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 };

@@ -1417,15 +1417,13 @@ All colors MUST be HSL.
   }
 
   .home-portal-hero__bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center 35%;
+    object-fit: cover;
+    object-position: center 35%;
   }
 
   @media (max-width: 767px) {
     .home-portal-hero__bg {
-      background-position: center 30%;
+      object-position: center 30%;
     }
   }
 

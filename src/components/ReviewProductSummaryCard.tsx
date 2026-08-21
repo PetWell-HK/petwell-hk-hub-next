@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Store } from "lucide-react";
 import { ReviewProductPrice } from "@/components/ReviewPriceDisplay";
 import {
@@ -22,8 +22,8 @@ export function ReviewProductSummaryCard({ product }: ReviewProductSummaryCardPr
 
   return (
     <article className="review-panel review-card-product group flex h-full flex-col overflow-hidden bg-white">
-      <Link
-        to={getPriceReviewProductPath(product)}
+      <AppLink
+        href={getPriceReviewProductPath(product)}
         className="relative block aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5"
       >
         {product.image ? (
@@ -41,20 +41,20 @@ export function ReviewProductSummaryCard({ product }: ReviewProductSummaryCardPr
             慳{pct}%
           </span>
         )}
-      </Link>
+      </AppLink>
 
       <div className="flex flex-1 flex-col gap-1 p-2.5 pt-2">
-        <Link
-          to={`/review/brand/${encodeURIComponent(product.brand)}`}
+        <AppLink
+          href={`/review/brand/${encodeURIComponent(product.brand)}`}
           className="truncate text-[11px] font-medium text-primary hover:underline"
         >
           {product.brand}
-        </Link>
-        <Link to={getPriceReviewProductPath(product)}>
+        </AppLink>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <h3 className="line-clamp-2 min-h-[2.25rem] text-[12px] leading-snug text-foreground group-hover:text-primary">
             {product.name}
           </h3>
-        </Link>
+        </AppLink>
 
         <div className="mt-auto space-y-1 pt-1">
           <ReviewProductPrice product={product} />

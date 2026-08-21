@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Sparkles, MapPin, Calendar, Search, SlidersHorizontal, X, Loader2, Tag } from "lucide-react";
@@ -9,11 +9,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import { fetchAllEvents, calculateEventStatus, getAttendeeCount, extractDistrict, type EventStatus, type OrganizedEvent } from "@/services/eventApi";
-import useSEO from "@/hooks/useSEO";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
@@ -235,64 +232,9 @@ const PetActivities = ({
   };
 
   // SEO with dynamic data
-  useSEO({
-    title: "寵物香港 - 2026 香港寵物活動攻略 | 寵物好去處、帶狗活動推薦 | PetWell",
-    description:
-      "寵物香港首選 - 精選2026香港寵物活動、寵物好去處、帶狗活動推薦。涵蓋寵物市集、寵物派對、狗狗嘉年華、寵物友善商場活動。港島、九龍、新界全覆蓋，幫寵物香港主人搵到最適合毛孩嘅活動！",
-    keywords:
-      "寵物活動,寵物好去處,帶狗活動,香港寵物活動,寵物市集,寵物派對,帶狗好去處,寵物友善商場",
-    canonicalUrl: "https://petwellhk.com/pet-activities",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: "2026 香港寵物活動",
-      description: "精選香港寵物活動、帶狗好去處、寵物市集推薦",
-      url: "https://petwellhk.com/pet-activities",
-      numberOfItems: filteredEvents.length,
-      itemListElement: filteredEvents.slice(0, 20).map((event, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "Event",
-          name: event.name,
-          description: event.description?.replace(/<[^>]*>/g, '').substring(0, 200) || '',
-          startDate: event.dateTime,
-          location: {
-            "@type": "Place",
-            name: event.location,
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: event.district,
-              addressCountry: "HK"
-            }
-          },
-          organizer: {
-            "@type": "Organization",
-            name: event.organizerName,
-          },
-          image: event.imageUrl,
-          url: `https://petwellhk.com/event/${event.id}`,
-          offers: event.price ? {
-            "@type": "Offer",
-            price: event.price,
-            priceCurrency: "HKD",
-            availability: "https://schema.org/InStock",
-          } : {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "HKD",
-            availability: "https://schema.org/InStock",
-          },
-        },
-      })),
-    },
-    faqItems: petActivitiesFAQ,
-    speakableSelectors: [".hero-summary", ".faq-answer", "h1"],
-  });
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="place-listing-page flex-1 pb-14 md:pb-16">
         <div className="container mx-auto max-w-6xl px-4">
@@ -466,7 +408,7 @@ const PetActivities = ({
                     const statusBadge = getEventStatusBadge(event.status);
                     return (
                       <article key={event.id}>
-                        <Link to={`/event/${event.id}`} className="group block h-full">
+                        <AppLink href={`/event/${event.id}`} className="group block h-full">
                           <Card className="h-full overflow-hidden rounded-xl border-border shadow-none transition-shadow hover:shadow-strong">
                             <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                               {event.imageUrl ? (
@@ -526,7 +468,7 @@ const PetActivities = ({
                               </div>
                             </CardContent>
                           </Card>
-                        </Link>
+                        </AppLink>
                       </article>
                     );
                   })}
@@ -567,18 +509,18 @@ const PetActivities = ({
                 <h2 className="text-base font-bold text-foreground md:text-lg">想搵更多寵物友善餐廳？</h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">玩完活動，帶埋狗狗去食個飯</p>
                 <div className="mt-5 flex flex-wrap justify-center gap-3">
-                  <Link to="/restaurants">
+                  <AppLink href="/restaurants">
                     <Button variant="default" size="sm" className="rounded-lg">
                       瀏覽寵物友善餐廳
                       <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                     </Button>
-                  </Link>
-                  <Link id="dog-mbti" to="/christmas-dog-mbti-2025">
+                  </AppLink>
+                  <AppLink id="dog-mbti" href="/christmas-dog-mbti-2025">
                     <Button variant="outline" size="sm" className="rounded-lg">
                       <Sparkles className="mr-1.5 h-3.5 w-3.5" />
                       做狗狗性格測驗
                     </Button>
-                  </Link>
+                  </AppLink>
                 </div>
               </div>
             </Card>
@@ -586,7 +528,6 @@ const PetActivities = ({
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

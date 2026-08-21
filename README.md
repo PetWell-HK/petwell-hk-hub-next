@@ -45,13 +45,13 @@ Copy `.env.local` keys (already scaffolded from the Vite app):
 
 | Path | Role |
 |---|---|
-| `src/app/` | App Router routes, sitemap, robots |
-| `src/views/` | Page UI (migrated from Vite `src/pages`) |
-| `src/components/` | Shared UI |
-| `src/shims/react-router-dom.tsx` | React Router → Next navigation shim |
+| `src/app/` | App Router routes, sitemap, robots, `(chrome)` / `(forum)` / `(bare)` groups |
+| `src/views/` | Client islands for interactive page UI |
+| `src/components/` | Shared UI (`AppLink`, Header/Footer) |
+| `src/lib/locale.ts` | Cookie locale (`petwell-locale`) |
 | `src/lib/seo.ts` | Metadata helpers |
-| `src/lib/server/` | Server GraphQL + place metadata |
-| `public/assets/` | Migrated static images |
+| `src/lib/server/` | Server GraphQL, dictionaries, place metadata |
+| `public/assets/` | Static images |
 
 ## Scripts
 
@@ -59,7 +59,7 @@ Copy `.env.local` keys (already scaffolded from the Vite app):
 npm run dev
 npm run build
 npm run start
-npm run generate:routes   # regenerate App Router page shells
+npm run lint
 ```
 
 ## Notes

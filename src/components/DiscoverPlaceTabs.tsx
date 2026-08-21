@@ -1,5 +1,6 @@
 import { BedDouble, House, Scissors, ShoppingBag, Stethoscope, UtensilsCrossed } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
@@ -49,7 +50,7 @@ interface DiscoverPlaceTabsProps {
 }
 
 const DiscoverPlaceTabs = ({ className, compact = false }: DiscoverPlaceTabsProps) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname() || "/";
   const { t } = useTranslation();
 
   return (
@@ -61,16 +62,16 @@ const DiscoverPlaceTabs = ({ className, compact = false }: DiscoverPlaceTabsProp
             pathname === place.href || pathname.startsWith(`${place.href}/`);
 
           return (
-            <Link
+            <AppLink
               key={place.key}
-              to={place.href}
+              href={place.href}
               data-active={isActive}
               className="discover-place-tab shrink-0"
               aria-current={isActive ? "page" : undefined}
             >
               <Icon className={cn("opacity-70", compact ? "h-3 w-3" : "h-3.5 w-3.5")} aria-hidden="true" />
               <span>{t(place.labelKey)}</span>
-            </Link>
+            </AppLink>
           );
         })}
       </div>

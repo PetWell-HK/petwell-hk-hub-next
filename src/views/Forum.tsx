@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useMemo, useRef, useCallback, type ReactElement } from "react";
 import { useTranslation } from "react-i18next";
-import { useSearchParams, useNavigate, Link } from "react-router-dom";
-import Header from "@/components/Header";
+import AppLink from "@/components/AppLink";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
+import { useAppSearchParams } from "@/hooks/useAppSearchParams";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
@@ -54,7 +55,6 @@ import {
   type ForumReply,
   type ForumTag
 } from "@/services/forumApi";
-import { useSEO } from "@/hooks/useSEO";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import CreatePostDialog from "@/components/CreatePostDialog";
 import { useToast } from "@/hooks/use-toast";
@@ -100,8 +100,8 @@ type ForumProps = {
 const Forum = ({ initialPosts = null }: ForumProps) => {
 
   const { t, i18n } = useTranslation();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useAppSearchParams();
+  const navigate = useAppNavigate();
   const { toast } = useToast();
   const { isAuthenticated, userInfo } = useAuth();
   const { openPanel, onAuthSuccess } = useAuthPanel();
@@ -414,7 +414,6 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     };
   }, [selectedPost, allPostReplies, i18n.language]);
 
-  useSEO(seoProps);
 
   useEffect(() => {
     let isCancelled = false;
@@ -1662,7 +1661,6 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
 
   return (
     <div className="h-screen bg-background overflow-hidden flex flex-col">
-      <Header />
       <h1 className="sr-only">
         {i18n.language === "zh" ? "香港寵物討論區" : "Hong Kong Pet Forum"}
       </h1>
@@ -1882,8 +1880,8 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
                           </div>
 
                           <h3 className="text-base font-semibold mb-2 line-clamp-2 leading-snug text-foreground">
-                            <Link
-                              to={`/forum/${post.id}`}
+                            <AppLink
+                              href={`/forum/${post.id}`}
                               onClick={(event) => {
                                 if (
                                   event.metaKey ||
@@ -1901,7 +1899,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
                               className="hover:underline"
                             >
                               {sanitizeUserVisibleText(post.title)}
-                            </Link>
+                            </AppLink>
                           </h3>
 
                           <div className="flex items-center gap-2 flex-wrap">

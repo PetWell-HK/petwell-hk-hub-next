@@ -1,9 +1,9 @@
 "use client";
 
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -15,20 +15,18 @@ import {
 import { useNGO } from "@/hooks/useNGOs";
 
 const NGODetail = () => {
-  const { ngoId } = useParams();
+  const ngoId = routeParam(useParams().ngoId);
   const { t, i18n } = useTranslation();
   const { ngo, isLoading, error } = useNGO(ngoId);
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <p className="text-center">{t('common.loading')}</p>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -36,21 +34,19 @@ const NGODetail = () => {
   if (error || !ngo) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <p className="text-center text-destructive">{t('ngos.notFound')}</p>
             <div className="text-center mt-4">
-              <Link to="/ngos">
+              <AppLink href="/ngos">
                 <Button variant="outline">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   {t('ngos.backToList')}
                 </Button>
-              </Link>
+              </AppLink>
             </div>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -60,18 +56,17 @@ const NGODetail = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       
       <main className="flex-1 pt-6 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-4">
           {/* Back Button */}
           <div className="mb-6">
-            <Link to="/ngos">
+            <AppLink href="/ngos">
               <Button variant="ghost" className="gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 {t('ngos.backToList')}
               </Button>
-            </Link>
+            </AppLink>
           </div>
 
           {/* NGO Header */}
@@ -286,7 +281,6 @@ const NGODetail = () => {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 };

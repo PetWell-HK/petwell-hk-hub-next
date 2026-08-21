@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,8 +30,6 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import WishlistHeartButton from "@/components/WishlistHeartButton";
 import CompareBar from "@/components/CompareBar";
 import { Button } from "@/components/ui/button";
@@ -42,7 +40,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
 import { useCompare } from "@/contexts/CompareContext";
 import { useWishlist } from "@/contexts/WishlistContext";
-import { useSEO } from "@/hooks/useSEO";
 import { usePriceReviewProducts } from "@/hooks/usePriceReviewProducts";
 import { ReviewPriceAmount, ReviewProductPrice } from "@/components/ReviewPriceDisplay";
 import ProductReviewRatingBadge from "@/components/ProductReviewRatingBadge";
@@ -208,11 +205,6 @@ const Review = () => {
     document.getElementById("review-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [hasPreviousPage]);
 
-  useSEO({
-    title: "寵物用品格價比較 | PetWell Review",
-    description: "比較香港寵物糧食、藥品、用品真實價格，睇清楚邊間最抵。",
-    canonicalUrl: "https://petwellhk.com/review",
-  });
 
   const hasActiveFilter =
     category !== "all" || brand !== "all" || Boolean(search.trim()) || Boolean(promoFilter);
@@ -247,12 +239,11 @@ const Review = () => {
 
   return (
     <div className={cn("review-page min-h-screen", compareIds.length && "pb-20 md:pb-24")}>
-      <Header />
 
       <section id="review-top" className="review-panel border-x-0 border-t-0 bg-white">
         <div className="container mx-auto px-4 py-4 md:py-5">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-            <Link to="/review" className="flex shrink-0 items-center gap-2.5">
+            <AppLink href="/review" className="flex shrink-0 items-center gap-2.5">
               <img src={logo} alt="PetWell" className="h-9 w-9 object-contain md:h-10 md:w-10" />
               <div>
                 <p className="text-[15px] font-semibold leading-tight text-foreground md:text-base">
@@ -260,7 +251,7 @@ const Review = () => {
                 </p>
                 <p className="text-[12px] text-muted-foreground">香港寵物用品比價</p>
               </div>
-            </Link>
+            </AppLink>
 
             <div className="min-w-0 flex-1 lg:max-w-2xl lg:mx-auto">
               <div className="review-search flex h-11 border-2 border-primary transition-shadow md:h-12">
@@ -329,15 +320,15 @@ const Review = () => {
                   {tab.label}
                 </a>
               ) : (
-                <Link
+                <AppLink
                   key={tab.label}
-                  to={tab.href}
+                  href={tab.href}
                   data-active={activeNav === tab.label}
                   className="review-nav-tab"
                   onClick={() => setActiveNav(tab.label)}
                 >
                   {tab.label}
-                </Link>
+                </AppLink>
               ),
             )}
           </nav>
@@ -378,8 +369,8 @@ const Review = () => {
             <div className="min-w-0 flex-1">
               <div className="flex flex-col gap-2 sm:flex-row">
                 {heroProduct && (
-                  <Link
-                    to={getPriceReviewProductPath(heroProduct)}
+                  <AppLink
+                    href={getPriceReviewProductPath(heroProduct)}
                     className="review-panel review-hero-deal review-card-product group relative flex min-h-[210px] min-w-0 flex-1 flex-col overflow-hidden sm:max-w-[42%]"
                   >
                     {heroProduct.image && (
@@ -426,7 +417,7 @@ const Review = () => {
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </AppLink>
                 )}
 
                 <div className="review-panel grid min-h-[210px] flex-1 grid-cols-3 grid-rows-2 divide-x divide-y divide-[hsl(var(--review-line))] overflow-hidden">
@@ -509,13 +500,13 @@ const Review = () => {
                   <p className="mb-2 text-[12px] font-medium text-muted-foreground">熱門品牌</p>
                   <div className="-mx-1 flex gap-2 overflow-x-auto pb-0.5 scrollbar-none">
                     {allBrands.slice(0, 24).map((b) => (
-                      <Link
+                      <AppLink
                         key={b}
-                        to={`/review/brand/${encodeURIComponent(b)}`}
+                        href={`/review/brand/${encodeURIComponent(b)}`}
                         className="shrink-0 review-chip border border-[hsl(var(--review-line))] bg-white px-2.5 py-0.5 text-[12px] text-foreground/85 hover:border-primary hover:text-primary"
                       >
                         {b}
-                      </Link>
+                      </AppLink>
                     ))}
                   </div>
                 </div>
@@ -533,11 +524,11 @@ const Review = () => {
                     登入 / 註冊
                   </Button>
                 ) : (
-                  <Link to="/owner-zone" className="mt-3 block">
+                  <AppLink href="/owner-zone" className="mt-3 block">
                     <Button variant="outline" className="h-9 w-full rounded-md text-[13px]" size="sm">
                       我的帳戶
                     </Button>
-                  </Link>
+                  </AppLink>
                 )}
                 <div className="review-panel-inset mt-4 grid grid-cols-2 gap-px overflow-hidden border border-[hsl(var(--review-line))] bg-[hsl(var(--review-line))]">
                   <QuickLink to="/wishlist" icon={Heart} label="心水" count={wishlistItems.length} />
@@ -730,7 +721,6 @@ const Review = () => {
         </div>
       </section>
 
-      <Footer />
       <CompareBar />
     </div>
   );
@@ -774,13 +764,13 @@ function QuickLink({
   count?: number;
 }) {
   return (
-    <Link to={to} className="flex flex-col items-center bg-white py-3 text-center hover:bg-[hsl(var(--review-canvas))]">
+    <AppLink href={to} className="flex flex-col items-center bg-white py-3 text-center hover:bg-[hsl(var(--review-canvas))]">
       <Icon className="h-4 w-4 text-foreground/70" strokeWidth={1.75} />
       <span className="mt-1 text-[11px] font-medium text-foreground/80">{label}</span>
       {count !== undefined && count > 0 && (
         <span className="text-[11px] tabular-nums text-primary">{count}</span>
       )}
-    </Link>
+    </AppLink>
   );
 }
 
@@ -834,7 +824,7 @@ function FootLink({
       <ArrowRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
     </>
   );
-  if (internal) return <Link to={href} className={className}>{content}</Link>;
+  if (internal) return <AppLink href={href} className={className}>{content}</AppLink>;
   return <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{content}</a>;
 }
 
@@ -853,7 +843,7 @@ const ProductCard = memo(function ProductCard({
 
   return (
     <article className="review-panel review-card-product group flex h-full flex-col overflow-hidden bg-white">
-      <Link to={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5">
+      <AppLink href={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5">
         {product.image ? (
           <img
             src={product.image}
@@ -872,20 +862,20 @@ const ProductCard = memo(function ProductCard({
         <div className="absolute bottom-2 right-2 opacity-0 transition-opacity group-hover:opacity-100">
           <WishlistHeartButton productId={product.id} currentLowest={pricing.lowestPrice} size="sm" />
         </div>
-      </Link>
+      </AppLink>
 
       <div className="flex flex-1 flex-col gap-1 p-2.5 pt-2">
-        <Link
-          to={`/review/brand/${encodeURIComponent(product.brand)}`}
+        <AppLink
+          href={`/review/brand/${encodeURIComponent(product.brand)}`}
           className="truncate text-[11px] font-medium text-primary hover:underline"
         >
           {product.brand}
-        </Link>
-        <Link to={getPriceReviewProductPath(product)}>
+        </AppLink>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <h3 className="line-clamp-2 min-h-[2.25rem] text-[12px] leading-snug text-foreground group-hover:text-primary">
             {product.name}
           </h3>
-        </Link>
+        </AppLink>
 
         <div className="mt-auto space-y-1 pt-1">
           <ReviewProductPrice product={product} size="sm" />
@@ -937,26 +927,26 @@ function ProductListRow({
 
   return (
     <article className="review-panel review-card-product review-list-row bg-white px-3 py-2.5 md:px-4 md:py-3">
-      <Link to={getPriceReviewProductPath(product)} className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/50 p-1 md:h-16 md:w-16">
+      <AppLink href={getPriceReviewProductPath(product)} className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/50 p-1 md:h-16 md:w-16">
         {product.image ? (
           <img src={product.image} alt="" loading="lazy" className="h-full w-full object-contain" />
         ) : (
           <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">—</div>
         )}
-      </Link>
+      </AppLink>
 
       <div className="min-w-0">
-        <Link
-          to={`/review/brand/${encodeURIComponent(product.brand)}`}
+        <AppLink
+          href={`/review/brand/${encodeURIComponent(product.brand)}`}
           className="text-[11px] font-medium text-primary hover:underline"
         >
           {product.brand}
-        </Link>
-        <Link to={getPriceReviewProductPath(product)}>
+        </AppLink>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <h3 className="line-clamp-2 text-[13px] font-medium leading-snug text-foreground hover:text-primary md:line-clamp-1">
             {product.name}
           </h3>
-        </Link>
+        </AppLink>
         <p className="mt-0.5 hidden items-center gap-2 text-[11px] text-muted-foreground md:flex">
           <span className="inline-flex items-center gap-1">
             <Store className="h-3 w-3" /> {product.storeCount} 間店舖
@@ -1054,7 +1044,7 @@ function DealRail({
               key={product.id}
               className="review-deal-rail-item review-card-product review-panel w-[132px] shrink-0 overflow-hidden bg-white sm:w-[148px]"
             >
-              <Link to={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/30 p-2">
+              <AppLink href={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/30 p-2">
                 {product.image ? (
                   <img src={product.image} alt="" loading="lazy" className="h-full w-full object-contain" />
                 ) : (
@@ -1065,11 +1055,11 @@ function DealRail({
                     -{pct}%
                   </span>
                 )}
-              </Link>
+              </AppLink>
               <div className="space-y-1 p-2 pt-1.5">
-                <Link to={getPriceReviewProductPath(product)}>
+                <AppLink href={getPriceReviewProductPath(product)}>
                   <p className="line-clamp-2 min-h-[2rem] text-[11px] leading-snug text-foreground">{product.name}</p>
-                </Link>
+                </AppLink>
                 <ReviewProductPrice product={product} size="sm" showPurchaseNote={false} />
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] text-muted-foreground">{product.storeCount} 店</span>

@@ -1,5 +1,5 @@
 import { ArrowUpRight, CalendarDays, Stethoscope, UtensilsCrossed } from "lucide-react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 
 const HomePlatform = () => {
@@ -52,10 +52,10 @@ const HomePlatform = () => {
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">
                 {service.description}
               </p>
-              <Link to={service.to} className="home-platform-link mt-8">
+              <AppLink href={service.to} className="home-platform-link mt-8">
                 {service.cta}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+              </AppLink>
             </article>
           ))}
         </div>

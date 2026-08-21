@@ -2,15 +2,12 @@
 
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import MediaLogoMarquee from "@/components/MediaLogoMarquee";
 import AudienceServices from "@/components/other-services/AudienceServices";
 import CaseStudyGallery from "@/components/other-services/CaseStudyGallery";
 import StatsSection from "@/components/other-services/StatsSection";
 import OsHero from "@/components/other-services/OsHero";
 import { ScrollReveal } from "@/components/other-services/ScrollReveal";
-import { useSEO } from "@/hooks/useSEO";
 
 const OtherServices = () => {
   const { t } = useTranslation();
@@ -31,17 +28,9 @@ const OtherServices = () => {
     [t],
   );
 
-  useSEO({
-    title: t("otherServices.seo.title"),
-    description: t("otherServices.seo.description"),
-    keywords: t("otherServices.seo.keywords"),
-    canonicalUrl: "https://petwellhk.com/other-services",
-    structuredData,
-  });
 
   return (
     <div className="os-page min-h-screen">
-      <Header />
 
       <main>
         <OsHero />
@@ -62,7 +51,6 @@ const OtherServices = () => {
         <AudienceServices />
       </main>
 
-      <Footer />
     </div>
   );
 };

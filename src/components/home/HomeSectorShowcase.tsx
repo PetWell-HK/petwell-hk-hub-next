@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
@@ -151,10 +151,10 @@ function SectorRail({
               {subtitle && <p className="home-sector-rail__subtitle">{subtitle}</p>}
             </div>
           </div>
-          <Link to={viewAllHref} className="home-sector-rail__view-all">
+          <AppLink href={viewAllHref} className="home-sector-rail__view-all">
             {viewAllLabel}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          </AppLink>
         </div>
       </div>
 

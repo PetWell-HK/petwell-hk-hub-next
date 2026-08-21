@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import AppLink from "@/components/AppLink";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useTranslation } from "react-i18next";
 import { Camera, Loader2, Plus } from "lucide-react";
 import AccountHomeShell from "@/components/account/AccountHomeShell";
@@ -20,7 +21,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
-import { useSEO } from "@/hooks/useSEO";
 import { toast } from "@/hooks/use-toast";
 import { useMyAccountProfile, useUpdateMyAccountProfile } from "@/hooks/useMyAccountProfile";
 import { useMyReviews } from "@/hooks/useMyReviews";
@@ -61,7 +61,7 @@ function petAgeLabel(
 
 const AccountProfile = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { isAuthenticated, userInfo, setIsAuthenticated } = useAuth();
   const { openPanel } = useAuthPanel();
   const userId = userInfo?.userId;
@@ -80,11 +80,6 @@ const AccountProfile = () => {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useSEO({
-    title: `${t("accountProfile.title")} | PetWell`,
-    description: t("accountProfile.seoDescription"),
-    canonicalUrl: "https://petwellhk.com/account",
-  });
 
   useEffect(() => {
     if (isAuthenticated === false) {
@@ -249,7 +244,7 @@ const AccountProfile = () => {
             <div className="account-home-teaser">
               <h2>{t("accountProfile.reviewsTeaser")}</h2>
               {reviews.length > 0 ? (
-                <Link to="/account/reviews">{t("accountProfile.reviewsTeaserCta")}</Link>
+                <AppLink href="/account/reviews">{t("accountProfile.reviewsTeaserCta")}</AppLink>
               ) : null}
             </div>
             {reviews.length === 0 ? (
@@ -257,10 +252,10 @@ const AccountProfile = () => {
                 <p>{t("accountProfile.reviewsTeaserEmpty")}</p>
                 <div className="account-home-empty__actions">
                   <Button variant="outline" asChild>
-                    <Link to="/restaurants">{t("userReviews.emptyCtaRestaurants")}</Link>
+                    <AppLink href="/restaurants">{t("userReviews.emptyCtaRestaurants")}</AppLink>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/clinics">{t("userReviews.emptyCtaClinics")}</Link>
+                    <AppLink href="/clinics">{t("userReviews.emptyCtaClinics")}</AppLink>
                   </Button>
                 </div>
               </div>
@@ -274,9 +269,9 @@ const AccountProfile = () => {
               <button type="button" onClick={handleLogout}>
                 {t("auth.logout")}
               </button>
-              <Link to="/delete-account" className="account-home-foot__danger">
+              <AppLink href="/delete-account" className="account-home-foot__danger">
                 {t("accountProfile.deleteAccount")}
-              </Link>
+              </AppLink>
             </div>
           </section>
         </div>

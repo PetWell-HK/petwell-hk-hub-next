@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { MapPin, Star, TriangleAlert } from "lucide-react";
 import { RestaurantImage } from "@/components/RestaurantImage";
@@ -42,8 +42,8 @@ export function NearbyRestaurantCard({ restaurant, distanceKm }: NearbyRestauran
 
   return (
     <article className="nearby-restaurant-card group h-full">
-      <Link
-        to={`/restaurants/${restaurant.id}`}
+      <AppLink
+        href={`/restaurants/${restaurant.id}`}
         className="flex h-full flex-col overflow-hidden rounded-xl border border-[hsl(var(--restaurant-line))] bg-[hsl(var(--restaurant-panel))] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       >
         <div className="relative aspect-[5/3] overflow-hidden bg-muted">
@@ -106,7 +106,7 @@ export function NearbyRestaurantCard({ restaurant, distanceKm }: NearbyRestauran
             </div>
           )}
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Clock, MapPin, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ClinicImage } from "@/components/ClinicImage";
@@ -39,7 +39,7 @@ export function HomeServiceCard({
     <article
       className={`home-card home-card--service home-card--service--${variant} group`}
     >
-      <Link to={detailPath} className="home-card__link">
+      <AppLink href={detailPath} className="home-card__link">
         <div className="home-card--service__media">
           <ClinicImage imageKey={image} alt={name} className="home-card--service__img" />
           {verified && (
@@ -93,7 +93,7 @@ export function HomeServiceCard({
             {district}
           </p>
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

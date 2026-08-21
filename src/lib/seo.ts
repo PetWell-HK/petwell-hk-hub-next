@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { htmlLang, type AppLocale } from "@/lib/locale";
 
 export const SITE_URL = "https://petwellhk.com";
 export const SITE_NAME = "PetWell HK";
@@ -139,6 +140,7 @@ export function listingPageJsonLd(input: {
   title: string;
   description: string;
   path: string;
+  locale?: AppLocale;
 }): object[] {
   const url = absoluteUrl(input.path === "/" ? "/" : input.path);
   return [
@@ -148,7 +150,7 @@ export function listingPageJsonLd(input: {
       name: input.title,
       description: input.description,
       url,
-      inLanguage: "zh-HK",
+      inLanguage: htmlLang(input.locale ?? "zh"),
       isPartOf: {
         "@type": "WebSite",
         name: SITE_NAME,

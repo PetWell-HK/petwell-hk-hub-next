@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import AppLink from "@/components/AppLink";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useTranslation } from "react-i18next";
 import CountUpStat from "@/components/CountUpStat";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ const Hero = ({
   previewLayout = "default",
 }: HeroProps) => {
   const isLandscapePreview = previewLayout === "landscape";
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { t } = useTranslation();
 
   const stats = [
@@ -93,10 +94,10 @@ const Hero = ({
                 size="lg"
                 className="h-12 border-border bg-background/70 px-8 text-base text-foreground backdrop-blur-sm transition-[color,background-color,border-color,box-shadow] hover:border-primary/35 hover:bg-secondary hover:text-secondary-foreground active:bg-secondary/90 active:text-secondary-foreground [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5"
               >
-                <Link to="/clinics">
+                <AppLink href="/clinics">
                   {t("home.explorePlatform")}
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </AppLink>
               </Button>
             </div>
 

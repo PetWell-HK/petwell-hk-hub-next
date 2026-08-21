@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import AppLink from "@/components/AppLink";
 import { ChevronRight, Truck, Crown } from 'lucide-react';
 
 const banners = [
@@ -55,13 +55,13 @@ const PromoBannerRotator = () => {
             {currentBanner.text}
           </span>
           {currentBanner.link && (
-            <Link
-              to={currentBanner.link}
+            <AppLink
+              href={currentBanner.link}
               className="text-sm font-semibold text-white bg-primary px-2 py-0.5 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-0.5"
             >
               {currentBanner.linkText}
               <ChevronRight className="w-3 h-3" />
-            </Link>
+            </AppLink>
           )}
         </div>
       </div>

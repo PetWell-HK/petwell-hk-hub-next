@@ -1,14 +1,13 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useClinic } from "@/hooks/useClinics";
-import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { ClinicImage } from "@/components/ClinicImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
@@ -28,7 +27,7 @@ function getLocalizedString(
 }
 
 const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | null }) => {
-  const { clinicId } = useParams();
+  const clinicId = routeParam(useParams().clinicId);
   const { i18n, t } = useTranslation();
   const { data: clinic, isLoading, error } = useClinic(clinicId, initialClinic);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
@@ -77,28 +76,13 @@ const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | nu
     };
   }, [clinic, clinicId, clinicName, clinicAddress, clinicDistrict]);
 
-  useSEO({
-    title: clinic
-      ? `${clinicName}好唔好？評價、收費、地址 | PetWell HK`
-      : "獸醫診所詳情 | PetWell HK",
-    description: clinic
-      ? `${clinicName}獸醫診所評價、真實用家評論、收費參考。地址：${clinicAddress}。服務包括：${clinicServices}。睇下其他主人點講。`
-      : "查看獸醫診所詳細資料、評價及服務",
-    keywords: clinic
-      ? `${clinicName}好唔好,${clinicName}評價,${clinicName}收費,${clinic.district}獸醫,獸醫診所推薦,${clinicName}review`
-      : "獸醫診所評價,香港獸醫",
-    canonicalUrl: `https://petwellhk.com/clinics/${clinicId}`,
-    structuredData,
-  });
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-16 md:py-20 flex items-center justify-center bg-gradient-hero">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -106,18 +90,16 @@ const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | nu
   if (error || !clinic) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-2xl font-bold mb-4">
               {t("clinics.detail.notFound")}
             </h1>
-            <Link to="/clinics">
+            <AppLink href="/clinics">
               <Button>{t("clinics.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -127,7 +109,6 @@ const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | nu
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <PlaceDetailLayout
         backTo="/clinics"
         name={clinicName}
@@ -153,7 +134,6 @@ const ClinicDetail = ({ initialClinic = null }: { initialClinic?: ApiClinic | nu
         reservationSettings={clinic.reservationSettings as never}
         ownerSub={clinic.ownerSub}
       />
-      <Footer />
     </div>
   );
 };

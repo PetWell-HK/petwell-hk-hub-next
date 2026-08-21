@@ -1,7 +1,9 @@
 "use client";
 
 import { memo, useMemo, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
+import AppRedirect from "@/components/AppRedirect";
 import {
   ArrowLeft,
   ArrowRight,
@@ -21,15 +23,12 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import CompareBar from "@/components/CompareBar";
 import WishlistHeartButton from "@/components/WishlistHeartButton";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useCompare } from "@/contexts/CompareContext";
-import { useSEO } from "@/hooks/useSEO";
 import { usePriceReviewBrandProducts } from "@/hooks/usePriceReviewProducts";
 import { ReviewProductPrice } from "@/components/ReviewPriceDisplay";
 import ProductReviewRatingBadge from "@/components/ProductReviewRatingBadge";
@@ -140,43 +139,17 @@ const ReviewBrand = () => {
   const canonicalUrl = `https://petwellhk.com/review/brand/${encodeURIComponent(brandName)}`;
   const seoDescription = `比較 ${brandName} 喺香港不同寵物店的最新價格，${products.length} 款產品、${totalOffers} 個店舖報價。`;
 
-  useSEO({
-    title: `${brandName} 全部產品格價 | PetWell Review`,
-    description: seoDescription,
-    canonicalUrl,
-    structuredData: products.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Brand",
-              name: brandName,
-              description: info?.description || seoDescription,
-              url: canonicalUrl,
-            },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                { "@type": "ListItem", position: 1, name: "PetWell Review", item: "https://petwellhk.com/review" },
-                { "@type": "ListItem", position: 2, name: brandName, item: canonicalUrl },
-              ],
-            },
-          ],
-        }
-      : undefined,
-  });
 
-  if (!brandName) return <Navigate to="/review" replace />;
+  if (!brandName) return <AppRedirect href="/review" replace />;
 
   return (
     <div className={cn("review-page min-h-screen", compareIds.length && "pb-20 md:pb-24")}>
-      <Header />
 
       <div className="border-b border-[hsl(var(--review-line))] bg-white">
         <div className="container mx-auto flex items-center gap-1 overflow-x-auto whitespace-nowrap px-4 py-2.5 text-[12px] text-muted-foreground">
-          <Link to="/review" className="inline-flex items-center gap-1 hover:text-primary">
+          <AppLink href="/review" className="inline-flex items-center gap-1 hover:text-primary">
             <ArrowLeft className="h-3 w-3" /> 格價
-          </Link>
+          </AppLink>
           <ChevronRight className="h-3 w-3 shrink-0 opacity-40" />
           <span className="truncate font-medium text-foreground">{brandName}</span>
         </div>
@@ -256,8 +229,8 @@ const ReviewBrand = () => {
           </div>
 
           {featuredProduct && savingsPct(featuredProduct) > 0 && (
-            <Link
-              to={getPriceReviewProductPath(featuredProduct)}
+            <AppLink
+              href={getPriceReviewProductPath(featuredProduct)}
               className="review-hero-deal group flex items-stretch border-t border-[hsl(var(--review-line))] transition-colors hover:bg-[hsl(var(--review-canvas))]/30"
             >
               <div className="relative hidden w-[120px] shrink-0 items-center justify-center bg-[hsl(var(--review-canvas))]/30 sm:flex md:w-[140px]">
@@ -295,7 +268,7 @@ const ReviewBrand = () => {
                   </span>
                 </div>
               </div>
-            </Link>
+            </AppLink>
           )}
         </div>
 
@@ -381,7 +354,7 @@ const ReviewBrand = () => {
               <p className="review-display text-lg">暫時未有公開產品價格</p>
               <p className="mt-2 text-[13px] text-muted-foreground">
                 {category !== "all" ? "試吓揀其他分類，或者" : ""}
-                <Link to="/review" className="font-medium text-primary hover:underline">返回格價首頁</Link>
+                <AppLink href="/review" className="font-medium text-primary hover:underline">返回格價首頁</AppLink>
               </p>
             </div>
           ) : viewMode === "list" ? (
@@ -435,7 +408,6 @@ const ReviewBrand = () => {
         </div>
       </section>
 
-      <Footer />
       <CompareBar />
     </div>
   );
@@ -509,7 +481,7 @@ function FootLink({
       <ArrowRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
     </>
   );
-  if (internal) return <Link to={href} className={className}>{content}</Link>;
+  if (internal) return <AppLink href={href} className={className}>{content}</AppLink>;
   return <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{content}</a>;
 }
 
@@ -528,7 +500,7 @@ const ProductCard = memo(function ProductCard({
 
   return (
     <article className="review-panel review-card-product group flex h-full flex-col overflow-hidden bg-white">
-      <Link to={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5">
+      <AppLink href={getPriceReviewProductPath(product)} className="relative block aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5">
         {product.image ? (
           <img
             src={product.image}
@@ -547,17 +519,17 @@ const ProductCard = memo(function ProductCard({
         <div className="absolute bottom-2 right-2 opacity-0 transition-opacity group-hover:opacity-100">
           <WishlistHeartButton productId={product.id} currentLowest={pricing.lowestPrice} size="sm" />
         </div>
-      </Link>
+      </AppLink>
 
       <div className="flex flex-1 flex-col gap-1 p-2.5 pt-2">
         {product.size && (
           <p className="truncate text-[10px] text-muted-foreground">{product.size}</p>
         )}
-        <Link to={getPriceReviewProductPath(product)}>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <h3 className="line-clamp-2 min-h-[2.25rem] text-[12px] leading-snug text-foreground group-hover:text-primary">
             {product.name}
           </h3>
-        </Link>
+        </AppLink>
 
         <div className="mt-auto space-y-1 pt-1">
           <ReviewProductPrice product={product} size="sm" />
@@ -609,23 +581,23 @@ function ProductListRow({
 
   return (
     <article className="review-panel review-card-product review-list-row bg-white px-3 py-2.5 md:px-4 md:py-3">
-      <Link to={getPriceReviewProductPath(product)} className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/50 p-1 md:h-16 md:w-16">
+      <AppLink href={getPriceReviewProductPath(product)} className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-md bg-[hsl(var(--review-canvas))]/50 p-1 md:h-16 md:w-16">
         {product.image ? (
           <img src={product.image} alt="" loading="lazy" className="h-full w-full object-contain" />
         ) : (
           <div className="flex h-full items-center justify-center text-[10px] text-muted-foreground">—</div>
         )}
-      </Link>
+      </AppLink>
 
       <div className="min-w-0">
         {product.size && (
           <p className="text-[10px] text-muted-foreground">{product.size}</p>
         )}
-        <Link to={getPriceReviewProductPath(product)}>
+        <AppLink href={getPriceReviewProductPath(product)}>
           <h3 className="line-clamp-2 text-[13px] font-medium leading-snug text-foreground hover:text-primary md:line-clamp-1">
             {product.name}
           </h3>
-        </Link>
+        </AppLink>
         <p className="mt-0.5 hidden items-center gap-2 text-[11px] text-muted-foreground md:flex">
           <span className="inline-flex items-center gap-1">
             <Store className="h-3 w-3" /> {product.storeCount} 間店舖
@@ -698,7 +670,7 @@ function ErrorState({ message }: { message: string }) {
       <h3 className="review-display text-xl">暫時未能載入</h3>
       <p className="mx-auto mt-2 max-w-xl text-[14px] text-muted-foreground">{message}</p>
       <Button asChild className="mt-4 rounded-md">
-        <Link to="/review">返回格價</Link>
+        <AppLink href="/review">返回格價</AppLink>
       </Button>
     </div>
   );

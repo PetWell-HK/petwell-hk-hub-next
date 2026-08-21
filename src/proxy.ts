@@ -18,7 +18,7 @@ export function proxy(request: NextRequest) {
   }
 
   const response = NextResponse.next();
-  response.headers.append("Vary", RSC_VARY);
+  response.headers.append("Vary", `${RSC_VARY}, Cookie`);
 
   // Prefetch / client navigation Flight payloads must not share the HTML ISR
   // cache. A CDN 304 on pathname-only `/page` makes Next consume HTML (or a

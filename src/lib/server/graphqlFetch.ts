@@ -1,3 +1,5 @@
+import type { AppLocale } from "@/lib/locale";
+
 const ENDPOINT =
   process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ||
   "https://zzqlfjlslncu7kjjqkdedp7uwu.appsync-api.ap-southeast-1.amazonaws.com/graphql";
@@ -51,8 +53,15 @@ export async function serverGraphqlFetch<T>(
 
 export type Localized = { zh?: string | null; en?: string | null } | null;
 
-export function pickLocalized(value: Localized, preferZh = true): string {
+export function pickLocalized(
+  value: Localized,
+  localeOrPreferZh: AppLocale | boolean = "zh",
+): string {
   if (!value) return "";
+  const preferZh =
+    typeof localeOrPreferZh === "boolean"
+      ? localeOrPreferZh
+      : localeOrPreferZh !== "en";
   if (preferZh) return value.zh || value.en || "";
   return value.en || value.zh || "";
 }

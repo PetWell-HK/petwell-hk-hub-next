@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { MapPin, MessageCircle, Phone, Star, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -53,7 +53,7 @@ export function PlaceListCard({
   return (
     <article>
       <Card className="h-full overflow-hidden rounded-xl transition-shadow hover:shadow-strong">
-        <Link to={detailPath} className="block cursor-pointer">
+        <AppLink href={detailPath} className="block cursor-pointer">
           <div className="relative aspect-[4/3] overflow-hidden">
             <ClinicImage imageKey={image} alt={name} className="h-full w-full" />
             {(isPremium || verified) && (
@@ -116,7 +116,7 @@ export function PlaceListCard({
               </div>
             )}
           </div>
-        </Link>
+        </AppLink>
 
         {quickLinks.length > 0 ? (
           <div className="flex gap-2 border-t border-border px-4 py-3">

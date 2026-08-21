@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useSearchParams } from "next/navigation";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useTranslation } from "react-i18next";
 import { signOut } from "aws-amplify/auth";
 import { Loader2 } from "lucide-react";
@@ -23,8 +24,8 @@ type LinkContext = {
 };
 
 const AuthCallback = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const searchParams = useSearchParams();
+  const navigate = useAppNavigate();
   const { t } = useTranslation();
   const { setIsAuthenticated, setRequiresProfileCompletion, setUserInfo } = useAuth();
   const { openPanel, triggerAuthSuccess } = useAuthPanel();
@@ -74,7 +75,6 @@ const AuthCallback = () => {
 
     const finalizeSocialLogin = async () => {
       try {
-        const searchParams = new URLSearchParams(location.search);
         const code = searchParams.get("code");
         const state = searchParams.get("state");
 
@@ -150,7 +150,7 @@ const AuthCallback = () => {
     };
 
     void finalizeSocialLogin();
-  }, [location.search, navigate, openPanel, setIsAuthenticated, setRequiresProfileCompletion, setUserInfo, t, triggerAuthSuccess]);
+  }, [navigate, openPanel, searchParams, setIsAuthenticated, setRequiresProfileCompletion, setUserInfo, t, triggerAuthSuccess]);
 
   const handleLinkCancel = async () => {
     setShowLinkAccount(false);

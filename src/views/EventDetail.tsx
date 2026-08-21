@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useTranslation } from "react-i18next";
 import {
   ArrowLeft,
@@ -25,14 +26,11 @@ import {
   X,
 } from "lucide-react";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import useSEO from "@/hooks/useSEO";
 import {
   calculateEventStatus,
   fetchEventById,
@@ -70,8 +68,8 @@ const categoryStyles: Record<string, string> = {
 };
 
 const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | null }) => {
+  const navigate = useAppNavigate();
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [event, setEvent] = useState<OrganizedEvent | null>(initialEvent);
   const [loading, setLoading] = useState(!initialEvent);
@@ -122,52 +120,13 @@ const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | 
   const cleanDescription = stripHtml(localized?.description || "").substring(0, 160) || t("event.detail.defaultSeoDescription");
   const organizerName = event?.organizerName || event?.organizer?.name || event?.organizerEmail || t("event.detail.unknownOrganizer");
 
-  useSEO({
-    title: event && localized ? `${localized.name} | PetWell Events` : "Event | PetWell",
-    description: cleanDescription,
-    keywords: event && localized ? `${localized.name}, pet event, ${event.category || "pet activities"}, Hong Kong, ${event.location}` : "pet event, Hong Kong",
-    canonicalUrl: event ? `https://petwellhk.com/event/${event.id}` : undefined,
-    ogImage: event?.photos?.[0],
-    structuredData: event && localized ? {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      name: localized.name,
-      description: cleanDescription,
-      startDate: event.dateTime,
-      endDate: event.deadline || undefined,
-      location: {
-        "@type": "Place",
-        name: event.location || localized.address,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: localized.address || event.location || undefined,
-          addressLocality: localized.district || "Hong Kong",
-          addressCountry: "HK",
-        },
-      },
-      organizer: {
-        "@type": "Organization",
-        name: organizerName,
-      },
-      image: event.photos?.[0],
-      offers: {
-        "@type": "Offer",
-        price: event.price || 0,
-        priceCurrency: "HKD",
-        availability: "https://schema.org/InStock",
-        url: event.redirected_url || undefined,
-      },
-    } : undefined,
-  });
 
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
         <div className="flex min-h-[60vh] items-center justify-center">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
-        <Footer />
       </div>
     );
   }
@@ -175,7 +134,6 @@ const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | 
   if (error || !event || !localized) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
         <div className="container mx-auto flex min-h-[60vh] items-center justify-center px-4">
           <Card className="max-w-md p-8 text-center">
             <p className="mb-4 text-muted-foreground">{error || t("event.detail.notFound")}</p>
@@ -185,7 +143,6 @@ const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | 
             </Button>
           </Card>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -219,7 +176,6 @@ const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | 
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
 
       <div className="sticky top-16 z-40 border-b bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-3">
@@ -403,7 +359,6 @@ const EventDetail = ({ initialEvent = null }: { initialEvent?: OrganizedEvent | 
         </Dialog>
       ) : null}
 
-      <Footer />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo, useState, type ComponentType } from "react";
 import { format } from "date-fns";
@@ -174,13 +174,13 @@ const PlaceDetailLayout = ({
       <main className="flex-1 bg-gradient-hero pb-12">
         <div className="container mx-auto px-4 max-w-5xl pt-6 md:pt-10">
           <nav aria-label="返回導航">
-            <Link
-              to={backTo}
+            <AppLink
+              href={backTo}
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-5 md:mb-6 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
               <span>{t(`${ns}.backToList`)}</span>
-            </Link>
+            </AppLink>
           </nav>
 
           <article className="space-y-5 md:space-y-6">

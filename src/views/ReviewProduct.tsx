@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
+import AppRedirect from "@/components/AppRedirect";
 import { useTranslation } from "react-i18next";
 import {
   ArrowLeft,
@@ -23,13 +25,10 @@ import {
   Truck,
   type LucideIcon,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import PriceReportDialog from "@/components/PriceReportDialog";
 import { ReviewOfferPrice, ReviewProductPrice } from "@/components/ReviewPriceDisplay";
 import WishlistHeartButton from "@/components/WishlistHeartButton";
 import { Button } from "@/components/ui/button";
-import { useSEO } from "@/hooks/useSEO";
 import { usePriceReviewProduct } from "@/hooks/usePriceReviewProducts";
 import { formatPriceReviewShipping } from "@/lib/priceReviewText";
 import {
@@ -160,15 +159,6 @@ const ReviewProduct = ({
       }
     : undefined;
 
-  useSEO({
-    title: product && lowest ? `${product.name} 最低 ${formatPrice(lowestComparable)} 格價比較 | PetWell Review` : "產品比較 | PetWell",
-    description: seoDescription,
-    keywords: product ? `${product.name}, ${product.brand}, 香港寵物用品格價, pet product price hk, 寵物店價格` : undefined,
-    ogImage: product?.image,
-    ogType: "product",
-    canonicalUrl,
-    structuredData,
-  });
 
   const handleShare = async () => {
     const url = window.location.href;
@@ -194,37 +184,36 @@ const ReviewProduct = ({
 
   if (isError) {
     const message = (error as Error).message;
-    if (/not found/i.test(message)) return <Navigate to="/review" replace />;
+    if (/not found/i.test(message)) return <AppRedirect href="/review" replace />;
     return (
       <PageShell>
         <div className="review-panel mx-auto mt-10 max-w-lg p-8 text-center">
           <h1 className="review-display text-xl">暫時未能載入</h1>
           <p className="mt-2 text-[14px] text-muted-foreground">{message}</p>
           <Button asChild className="mt-4 rounded-md">
-            <Link to="/review">返回格價</Link>
+            <AppLink href="/review">返回格價</AppLink>
           </Button>
         </div>
       </PageShell>
     );
   }
 
-  if (!product || !lowest) return <Navigate to="/review" replace />;
+  if (!product || !lowest) return <AppRedirect href="/review" replace />;
 
   const priceRange = Math.max(1, highestComparable - lowestComparable);
 
   return (
     <div className="review-page min-h-screen pb-[4.5rem] text-foreground md:pb-0">
-      <Header />
 
       <div className="border-b border-[hsl(var(--review-line))] bg-white">
         <div className="container mx-auto flex items-center gap-1 overflow-x-auto whitespace-nowrap px-4 py-2.5 text-[12px] text-muted-foreground">
-          <Link to="/review" className="inline-flex items-center gap-1 hover:text-primary">
+          <AppLink href="/review" className="inline-flex items-center gap-1 hover:text-primary">
             <ArrowLeft className="h-3 w-3" /> 格價
-          </Link>
+          </AppLink>
           <ChevronRight className="h-3 w-3 shrink-0 opacity-40" />
-          <Link to={`/review/brand/${encodeURIComponent(product.brand)}`} className="hover:text-primary">
+          <AppLink href={`/review/brand/${encodeURIComponent(product.brand)}`} className="hover:text-primary">
             {product.brand}
-          </Link>
+          </AppLink>
           <ChevronRight className="h-3 w-3 shrink-0 opacity-40" />
           <span className="truncate font-medium text-foreground">{product.name}</span>
         </div>
@@ -426,9 +415,9 @@ const ReviewProduct = ({
           <div className="container mx-auto px-4 py-6 md:py-8">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="review-display text-xl">相關產品</h2>
-              <Link to="/review" className="flex items-center gap-0.5 text-[12px] font-medium text-primary hover:underline">
+              <AppLink href="/review" className="flex items-center gap-0.5 text-[12px] font-medium text-primary hover:underline">
                 全部格價 <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
+              </AppLink>
             </div>
             <div className="review-deal-rail -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:grid md:grid-cols-4 md:gap-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5">
               {data.related.map((item) => (
@@ -481,7 +470,6 @@ const ReviewProduct = ({
         storeName={reportStore}
       />
 
-      <Footer />
     </div>
   );
 };
@@ -494,12 +482,12 @@ function ProductTitle({
   return (
     <div>
       <div className="mb-1.5 flex flex-wrap items-center gap-2">
-        <Link
-          to={`/review/brand/${encodeURIComponent(product.brand)}`}
+        <AppLink
+          href={`/review/brand/${encodeURIComponent(product.brand)}`}
           className="review-chip border border-primary/20 bg-secondary/60 px-2 py-0.5 text-[11px] font-semibold text-primary hover:border-primary/40"
         >
           {product.brand}
-        </Link>
+        </AppLink>
         <span className="text-[11px] text-muted-foreground">{categoryLabel(product.category)}</span>
         {product.size && (
           <>
@@ -667,8 +655,8 @@ function OfferRow({
 
 function RelatedCard({ product }: { product: PriceReviewProductSummary }) {
   return (
-    <Link
-      to={getPriceReviewProductPath(product)}
+    <AppLink
+      href={getPriceReviewProductPath(product)}
       className="review-deal-rail-item review-panel review-card-product flex w-[140px] shrink-0 flex-col overflow-hidden bg-white md:w-auto"
     >
       <div className="relative aspect-square bg-[hsl(var(--review-canvas))]/40 p-2.5">
@@ -683,7 +671,7 @@ function RelatedCard({ product }: { product: PriceReviewProductSummary }) {
         <h3 className="line-clamp-2 min-h-[2rem] text-[11px] leading-snug text-foreground">{product.name}</h3>
         <ReviewProductPrice product={product} size="sm" showPurchaseNote={false} />
       </div>
-    </Link>
+    </AppLink>
   );
 }
 
@@ -712,7 +700,7 @@ function TrustLink({
       <ArrowRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
     </>
   );
-  if (internal) return <Link to={href} className={className}>{content}</Link>;
+  if (internal) return <AppLink href={href} className={className}>{content}</AppLink>;
   return <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{content}</a>;
 }
 
@@ -921,9 +909,7 @@ function SpecsContent({
 function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="review-page min-h-screen">
-      <Header />
       <main className="container mx-auto px-4 py-8">{children}</main>
-      <Footer />
     </div>
   );
 }

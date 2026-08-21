@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import {
   Camera,
   ShieldCheck,
@@ -16,12 +16,9 @@ import {
   X,
   ScanLine,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useSEO } from "@/hooks/useSEO";
 import { cn } from "@/lib/utils";
 import { PhotoAnalyzerDialog } from "@/components/PhotoAnalyzerDialog";
 import {
@@ -93,8 +90,8 @@ function FoodRow({ food, index }: { food: NutritionProduct; index: number }) {
     FORM_META[food.form === "raw" ? "freeze-dried" : (food.form as FormFilter)]?.short ?? food.form;
 
   return (
-    <Link
-      to={`/nutrition/${food.id}`}
+    <AppLink
+      href={`/nutrition/${food.id}`}
       className={cn(
         "nutrition-food-row group pl-5",
         index < 8 && `nutrition-reveal nutrition-reveal-delay-${Math.min(index % 3, 2) + 1}`,
@@ -128,7 +125,7 @@ function FoodRow({ food, index }: { food: NutritionProduct; index: number }) {
         </div>
       </div>
       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" aria-hidden="true" />
-    </Link>
+    </AppLink>
   );
 }
 
@@ -156,12 +153,6 @@ export default function NutritionScore() {
   const [loadError, setLoadError] = useState(false);
   const [analyzerOpen, setAnalyzerOpen] = useState(false);
 
-  useSEO({
-    title: "糧食評分｜PetWell 中立寵物糧營養評測",
-    description:
-      "PetWell 自家糧食評分系統，收錄過千款貓糧、狗糧同零食。以公開營養標籤加權計分，唔收品牌費，幫你揀啱毛孩每日食嘅嘢。",
-    canonicalUrl: "https://petwellhk.com/nutrition",
-  });
 
   useEffect(() => {
     fetch("/data/nutrition-products.json")
@@ -220,7 +211,6 @@ export default function NutritionScore() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
 
       <main className="nutrition-page flex-1 pb-16">
         {/* Hero */}
@@ -434,7 +424,7 @@ export default function NutritionScore() {
                   影相分析
                 </button>
                 <Button variant="outline" asChild className="h-11 rounded-full border-[hsl(var(--nutrition-line))] bg-transparent">
-                  <Link to="/download">下載 App</Link>
+                  <AppLink href="/download">下載 App</AppLink>
                 </Button>
               </div>
             </div>
@@ -452,7 +442,6 @@ export default function NutritionScore() {
         </div>
       </main>
 
-      <Footer />
       <PhotoAnalyzerDialog open={analyzerOpen} onOpenChange={setAnalyzerOpen} />
     </div>
   );

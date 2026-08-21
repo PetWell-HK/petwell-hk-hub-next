@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { MapPin, Banknote } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { RestaurantImage } from "@/components/RestaurantImage";
@@ -16,7 +16,7 @@ export function HomeRestaurantCard({ restaurant, rank }: HomeRestaurantCardProps
 
   return (
     <article className="home-card home-card--restaurant-chart group">
-      <Link to={`/restaurants/${restaurant.id}`} className="home-card__link">
+      <AppLink href={`/restaurants/${restaurant.id}`} className="home-card__link">
         <div className="home-card--restaurant-chart__media">
           <RestaurantImage
             imageKey={restaurant.image}
@@ -54,7 +54,7 @@ export function HomeRestaurantCard({ restaurant, rank }: HomeRestaurantCardProps
             </p>
           </div>
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

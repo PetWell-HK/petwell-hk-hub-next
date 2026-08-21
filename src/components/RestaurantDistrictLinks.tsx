@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import type { Restaurant } from "@/services/restaurantApi";
 import {
@@ -45,20 +45,20 @@ export function RestaurantDistrictLinks({
         </p>
       )}
       <div className="mt-4 flex flex-wrap gap-2">
-        <Link
-          to="/pet-friendly-restaurants/districts"
+        <AppLink
+          href="/pet-friendly-restaurants/districts"
           className="rounded-md border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary/10"
         >
           {t("restaurants.districtPage.allDistricts")}
-        </Link>
+        </AppLink>
         {HONG_KONG_REGION_HUBS.map((hub) => (
-          <Link
+          <AppLink
             key={hub.slug}
-            to={`/pet-friendly-restaurants/${hub.slug}`}
+            href={`/pet-friendly-restaurants/${hub.slug}`}
             className="rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:border-primary/30 hover:text-primary"
           >
             {isEn ? hub.labelEn : hub.labelZh}
-          </Link>
+          </AppLink>
         ))}
       </div>
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -78,8 +78,8 @@ export function RestaurantDistrictLinks({
                   const isCurrent = district.slug === currentSlug;
                   return (
                     <li key={district.slug}>
-                      <Link
-                        to={`/pet-friendly-restaurants/${district.slug}`}
+                      <AppLink
+                        href={`/pet-friendly-restaurants/${district.slug}`}
                         className={`text-sm leading-snug hover:text-primary ${
                           isCurrent ? "font-semibold text-primary" : "text-muted-foreground"
                         }`}
@@ -87,7 +87,7 @@ export function RestaurantDistrictLinks({
                       >
                         {isEn ? district.labelEn : district.labelZh}
                         {showCounts && count > 0 ? ` (${count})` : ""}
-                      </Link>
+                      </AppLink>
                     </li>
                   );
                 })}

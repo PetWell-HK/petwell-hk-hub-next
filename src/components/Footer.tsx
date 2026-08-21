@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Facebook, Youtube, Instagram } from "lucide-react";
-const logo = "/assets/logo.png";
+import AppLink from "@/components/AppLink";
 import PlaceReportModal from "@/components/PlaceReportModal";
+
+const logo = "/assets/logo.png";
 
 type FooterModalMode = "feedback" | "suggest";
 
@@ -23,9 +27,9 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <Link to="/" className="flex items-center mb-4">
-                <img src={logo} alt="PetWell香港寵物健康App - 獸醫診所評價、寵物健康管理" className="h-8 w-auto brightness-0 invert" />
-              </Link>
+              <AppLink href="/" className="flex items-center mb-4">
+                <Image src={logo} alt="PetWell香港寵物健康App - 獸醫診所評價、寵物健康管理" width={128} height={32} className="h-8 w-auto brightness-0 invert" />
+              </AppLink>
               <p className="text-sm text-background/80">
                 {t("footer.tagline")}
               </p>
@@ -33,45 +37,45 @@ const Footer = () => {
 
             <div>
               <nav className="flex flex-col gap-3">
-                <Link to="/" className="hover:text-primary transition-colors">
+                <AppLink href="/" className="hover:text-primary transition-colors">
                   {t("nav.home")}
-                </Link>
-                <Link to="/forum" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/forum" className="hover:text-primary transition-colors">
                   {t("nav.forum")}
-                </Link>
-                <Link to="/pet-activities" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/pet-activities" className="hover:text-primary transition-colors">
                   {t("nav.petActivities")}
-                </Link>
-                <Link to="/restaurants" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/restaurants" className="hover:text-primary transition-colors">
                   {t("nav.restaurants")}
-                </Link>
-                <Link to="/salons" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/salons" className="hover:text-primary transition-colors">
                   {t("nav.salons")}
-                </Link>
-                <Link to="/lodging" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/lodging" className="hover:text-primary transition-colors">
                   {t("nav.lodging")}
-                </Link>
-                <Link to="/clinics" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/clinics" className="hover:text-primary transition-colors">
                   {t("nav.clinics")}
-                </Link>
-                <Link to="/home-visits" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/home-visits" className="hover:text-primary transition-colors">
                   {t("nav.homeVisits")}
-                </Link>
-                <Link to="/malls" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/malls" className="hover:text-primary transition-colors">
                   {t("nav.malls")}
-                </Link>
-                <Link to="/owner-zone" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/owner-zone" className="hover:text-primary transition-colors">
                   {t("nav.ownerZone")}
-                </Link>
-                <Link to="/other-services" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/other-services" className="hover:text-primary transition-colors">
                   {t("nav.otherServices")}
-                </Link>
-                <Link to="/about" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/about" className="hover:text-primary transition-colors">
                   {t("nav.about")}
-                </Link>
-                <Link to="/terms" className="hover:text-primary transition-colors">
+                </AppLink>
+                <AppLink href="/terms" className="hover:text-primary transition-colors">
                   {t("footer.terms")}
-                </Link>
+                </AppLink>
                 <button
                   type="button"
                   className="text-left hover:text-primary transition-colors"

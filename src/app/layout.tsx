@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import AppProviders from "@/components/providers/AppProviders";
 import JsonLd from "@/components/seo/JsonLd";
+import { htmlLang } from "@/lib/locale";
+import { getRequestLocale } from "@/lib/server/locale";
 import { buildMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 import "@/index.css";
 
@@ -82,12 +84,19 @@ const mobileAppLd = {
   url: SITE_URL,
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const locale = await getRequestLocale();
+  const lang = htmlLang(locale);
+  const localizedWebsiteLd = {
+    ...websiteLd,
+    inLanguage: lang,
+  };
+
   return (
-    <html lang="zh-HK">
+    <html lang={lang}>
       <head>
         <JsonLd id="ld-organization" data={organizationLd} />
-        <JsonLd id="ld-website" data={websiteLd} />
+        <JsonLd id="ld-website" data={localizedWebsiteLd} />
         <JsonLd id="ld-mobile-app" data={mobileAppLd} />
         <meta name="GPTBot" content="noindex, nofollow" />
         <meta name="ChatGPT-User" content="noindex, nofollow" />

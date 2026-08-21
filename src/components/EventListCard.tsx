@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Calendar, MapPin, Tag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -33,7 +33,7 @@ export function EventListCard({
 }: EventListCardProps) {
   return (
     <article>
-      <Link to={`/event/${event.id}`} className="group block h-full">
+      <AppLink href={`/event/${event.id}`} className="group block h-full">
         <Card className="h-full overflow-hidden rounded-xl border-border shadow-none transition-shadow hover:shadow-strong">
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
             {event.imageUrl ? (
@@ -95,7 +95,7 @@ export function EventListCard({
             </div>
           </CardContent>
         </Card>
-      </Link>
+      </AppLink>
     </article>
   );
 }

@@ -1,6 +1,9 @@
 "use client";
 
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
+import AppRedirect from "@/components/AppRedirect";
 import { useQuery } from "@tanstack/react-query";
 import { Tag, Shield, PawPrint, Loader2, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,7 +27,7 @@ const normalizeTagId = (value?: string) => {
 };
 
 const ActivateTag = () => {
-  const { tagId: rawTagId } = useParams();
+  const rawTagId = routeParam(useParams().tagId);
 
   const normalizedRawTagId = normalizeTagId(rawTagId);
 
@@ -53,16 +56,16 @@ const ActivateTag = () => {
 
   // If pet data exists and is already activated, redirect to pet profile
   if (pet && pet.isTagActivated) {
-    return <Navigate to={`/pet/${pet.id}`} replace />;
+    return <AppRedirect href={`/pet/${pet.id}`} replace />;
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-card rounded-2xl shadow-xl p-8 text-center">
         <div className="mb-8">
-          <Link to="/" aria-label="PetWell 首頁" className="inline-block">
+          <AppLink href="/" aria-label="PetWell 首頁" className="inline-block">
             <img src={logo} alt="PetWell Logo" className="h-10 w-auto mx-auto mb-6" />
-          </Link>
+          </AppLink>
         </div>
         <div className="mb-6">
           <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -100,10 +103,10 @@ const ActivateTag = () => {
         </div>
 
         <Button size="lg" className="w-full" asChild>
-          <Link to="/download">
+          <AppLink href="/download">
             <Tag className="mr-2 h-5 w-5" />
             即刻啟用名牌，預防毛孩走失！
-          </Link>
+          </AppLink>
         </Button>
       </div>
     </div>

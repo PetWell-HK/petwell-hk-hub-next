@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
+import AppLink from "@/components/AppLink";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 const promoArt = "/assets/nametag/paws-port-promo.png";
 
 const STORAGE_KEY = "petwell:nametagDailyPopup:lastShown:v1";
@@ -42,7 +44,7 @@ function isHomePath(pathname: string): boolean {
 
 const NametagDailyPopup = () => {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
+  const pathname = usePathname() || "/";
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -100,14 +102,14 @@ const NametagDailyPopup = () => {
             <p className="nametag-daily-popup__time">{t("nametagDailyPopup.time")}</p>
             <p className="nametag-daily-popup__urgency">{t("nametagDailyPopup.urgency")}</p>
 
-            <Link
-              to="/anti-lost-dog-tag-hk"
+            <AppLink
+              href="/anti-lost-dog-tag-hk"
               className="nametag-daily-popup__cta"
               onClick={() => handleOpenChange(false)}
             >
               {t("nametagDailyPopup.cta")}
               <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
+            </AppLink>
           </div>
         </div>
       </DialogContent>

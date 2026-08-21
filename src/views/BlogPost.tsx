@@ -1,9 +1,9 @@
 "use client";
 
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useMemo, useState, useEffect, useCallback, useRef } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
 import FehdPetFriendlyDirectory from "@/components/FehdPetFriendlyDirectory";
 import PetFriendlyMallsDirectory from "@/components/PetFriendlyMallsDirectory";
@@ -14,7 +14,6 @@ import { Card } from "@/components/ui/card";
 import { Calendar, User, ArrowLeft, MapPin, Clock, Sparkles, Navigation, X, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { useSEO } from "@/hooks/useSEO";
 import {
   generateBlogKeywords,
   generateBlogDescription,
@@ -24,7 +23,7 @@ import {
 import BlogAdSense from "@/components/BlogAdSense";
 
 const BlogPost = () => {
-  const { slug } = useParams();
+  const slug = routeParam(useParams().slug);
   const post = blogPosts.find((p) => p.slug === slug);
 
   // Enhanced SEO with scalable system
@@ -39,44 +38,21 @@ const BlogPost = () => {
     };
   }, [post, slug]);
 
-  useSEO({
-    title: post
-      ? `${post.title.replace(/\s*[\|\｜]\s*PetWell HK\s*$/i, "").trim()} | PetWell HK`
-      : '文章不存在 | PetWell HK',
-    description: post
-      ? (seoData?.description || post.excerpt)
-      : '找不到此文章',
-    keywords: post
-      ? (seoData?.keywords || `${post.category},寵物健康,養寵物貼士`)
-      : '',
-    canonicalUrl: `https://petwellhk.com/${slug}`,
-    ogImage: post?.imageUrl,
-    ogType: 'article',
-    structuredData: seoData?.structuredData,
-    faqItems: seoData?.faqItems,
-    articlePublishedTime: post?.date,
-    articleModifiedTime: post?.date,
-    articleAuthor: post?.author,
-    articleSection: post?.category,
-    articleTags: post?.seoKeywords?.slice(0, 10),
-  });
 
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-10 md:py-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">文章不存在</h1>
-            <Link to="/owner-zone">
+            <AppLink href="/owner-zone">
               <Button variant="outline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 返回主人專區
               </Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -107,17 +83,16 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
 
       <main className="flex-1 pt-6 pb-20">
         <article className="container mx-auto px-4" onClick={handleImageClick}>
           {/* Back Button */}
-          <Link to="/owner-zone" className="inline-block mb-8">
+          <AppLink href="/owner-zone" className="inline-block mb-8">
             <Button variant="ghost" size="sm">
               <ArrowLeft className="mr-2 h-4 w-4" />
               返回文章列表
             </Button>
-          </Link>
+          </AppLink>
 
           {/* Hero Image */}
           <div className="max-w-4xl mx-auto mb-8">
@@ -508,11 +483,11 @@ const BlogPost = () => {
               <p className="text-lg mb-6 opacity-90">
                 下載 PetWell App，獲取更多實用的寵物照護資訊
               </p>
-              <Link to="/coming-soon">
+              <AppLink href="/coming-soon">
                 <button className="px-8 py-3 bg-background text-primary rounded-lg hover:bg-background/90 transition-colors font-semibold">
                   立即下載 App
                 </button>
-              </Link>
+              </AppLink>
             </Card>
 
             {/* Related Posts */}
@@ -521,7 +496,7 @@ const BlogPost = () => {
                 <h2 className="text-3xl font-bold mb-6">相關文章</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   {relatedPosts.map((relatedPost) => (
-                    <Link key={relatedPost.id} to={`/${relatedPost.slug}`}>
+                    <AppLink key={relatedPost.id} href={`/${relatedPost.slug}`}>
                       <Card className="overflow-hidden hover:shadow-strong transition-all h-full">
                         <div className="aspect-video overflow-hidden">
                           <img 
@@ -539,7 +514,7 @@ const BlogPost = () => {
                           <p className="text-sm text-muted-foreground line-clamp-2">{relatedPost.excerpt}</p>
                         </div>
                       </Card>
-                    </Link>
+                    </AppLink>
                   ))}
                 </div>
               </div>
@@ -564,7 +539,6 @@ const BlogPost = () => {
         </DialogContent>
       </Dialog>
 
-      <Footer />
     </div>
   );
 };

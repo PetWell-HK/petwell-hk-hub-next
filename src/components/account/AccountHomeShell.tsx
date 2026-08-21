@@ -1,11 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { Camera, Loader2 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
@@ -44,7 +42,6 @@ const AccountHomeShell = ({ tab, onEditProfile, children }: AccountHomeShellProp
 
   return (
     <div className="account-home-page flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1">
         {showLoading ? (
           <div className="flex items-center justify-center py-24 text-muted-foreground">
@@ -120,15 +117,15 @@ const AccountHomeShell = ({ tab, onEditProfile, children }: AccountHomeShellProp
               </header>
 
               <nav className="account-home-tabs" aria-label={t("accountProfile.sections")}>
-                <Link
-                  to="/account"
+                <AppLink
+                  href="/account"
                   className={cn("account-home-tab", tab === "profile" && "is-active")}
                   aria-current={tab === "profile" ? "page" : undefined}
                 >
                   {t("accountProfile.title")}
-                </Link>
-                <Link
-                  to="/account/reviews"
+                </AppLink>
+                <AppLink
+                  href="/account/reviews"
                   className={cn("account-home-tab", tab === "reviews" && "is-active")}
                   aria-current={tab === "reviews" ? "page" : undefined}
                 >
@@ -136,7 +133,7 @@ const AccountHomeShell = ({ tab, onEditProfile, children }: AccountHomeShellProp
                   {reviewsFetched ? (
                     <span className="account-home-tab__count">{reviews.length}</span>
                   ) : null}
-                </Link>
+                </AppLink>
               </nav>
 
               {isLoggedIn && isError && !profile ? (
@@ -152,7 +149,6 @@ const AccountHomeShell = ({ tab, onEditProfile, children }: AccountHomeShellProp
           </div>
         )}
       </main>
-      <Footer />
     </div>
   );
 };

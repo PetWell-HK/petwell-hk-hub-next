@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useAppNavigate } from "@/hooks/useAppNavigate";
 import { useAuthPanel } from "@/contexts/AuthPanelContext";
 
 // Redirect to panel instead of showing page
 const SignUpLogin = () => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const { openPanel } = useAuthPanel();
 
   useEffect(() => {

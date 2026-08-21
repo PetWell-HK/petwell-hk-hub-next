@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Clock, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ClinicImage } from "@/components/ClinicImage";
@@ -33,7 +33,7 @@ export function HomeClinicCard({
 
   return (
     <article className="home-card home-card--clinic group">
-      <Link to={detailPath} className="home-card__link">
+      <AppLink href={detailPath} className="home-card__link">
         <div className="home-card--clinic__media">
           <ClinicImage imageKey={image} alt={name} className="home-card--clinic__img" />
           {scoreDisplay !== null && (
@@ -70,7 +70,7 @@ export function HomeClinicCard({
             </div>
           )}
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

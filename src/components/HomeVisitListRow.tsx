@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Clock, MapPin, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
@@ -41,7 +41,7 @@ export function HomeVisitListRow({
   return (
     <article>
       <Card className="overflow-hidden rounded-xl transition-shadow hover:shadow-strong">
-        <Link to={detailPath} className="block">
+        <AppLink href={detailPath} className="block">
           <div className="flex min-h-[96px] flex-row">
             <div className="relative w-[88px] shrink-0 self-stretch overflow-hidden bg-muted sm:w-[108px]">
               <ClinicImage
@@ -101,7 +101,7 @@ export function HomeVisitListRow({
               ) : null}
             </div>
           ) : null}
-        </Link>
+        </AppLink>
       </Card>
     </article>
   );

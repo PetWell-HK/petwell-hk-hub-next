@@ -1,14 +1,13 @@
 "use client";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
+import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useSalon } from "@/hooks/useSalons";
-import { useSEO } from "@/hooks/useSEO";
 import PlaceDetailLayout from "@/components/PlaceDetailLayout";
 import { SalonImage } from "@/components/SalonImage";
 import { isEffectivePremium } from "@/utils/partnerPremium";
@@ -24,7 +23,7 @@ function getLocalizedString(
 }
 
 const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }) => {
-  const { salonId } = useParams();
+  const salonId = routeParam(useParams().salonId);
   const { i18n, t } = useTranslation();
   const { data: salon, isLoading, error } = useSalon(salonId, initialSalon);
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
@@ -73,28 +72,13 @@ const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }
     };
   }, [salon, salonId, salonName, salonAddress, salonDistrict]);
 
-  useSEO({
-    title: salon
-      ? `${salonName} | 寵物美容評價、地址 | PetWell HK`
-      : "寵物美容詳情 | PetWell HK",
-    description: salon
-      ? `${salonName}寵物美容評價、真實用家評論。地址：${salonAddress}。服務：${salonServices}。`
-      : "查看寵物美容店詳細資料、評價及服務",
-    keywords: salon
-      ? `${salonName}寵物美容,${salonName}評價,${salon.district}寵物美容,寵物美容推薦`
-      : "寵物美容,香港寵物美容",
-    canonicalUrl: `https://petwellhk.com/salons/${salonId}`,
-    structuredData,
-  });
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-16 md:py-20 flex items-center justify-center bg-gradient-hero">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -102,18 +86,16 @@ const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }
   if (error || !salon) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-1 py-12 md:py-16 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-2xl font-bold mb-4">
               {t("salons.detail.notFound")}
             </h1>
-            <Link to="/salons">
+            <AppLink href="/salons">
               <Button>{t("salons.backToList")}</Button>
-            </Link>
+            </AppLink>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -123,7 +105,6 @@ const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
       <PlaceDetailLayout
         backTo="/salons"
         name={salonName}
@@ -149,7 +130,6 @@ const SalonDetail = ({ initialSalon = null }: { initialSalon?: ApiSalon | null }
         reservationSettings={salon.reservationSettings as never}
         ownerSub={salon.ownerSub}
       />
-      <Footer />
     </div>
   );
 };

@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -44,7 +42,6 @@ import NearbyRestaurants from "@/components/NearbyRestaurants";
 import { mallDiningOverrides } from "@/data/mallDiningOverrides";
 
 
-import { useSEO } from "@/hooks/useSEO";
 import { useTranslation } from "react-i18next";
 import BlogAdSense from "@/components/BlogAdSense";
 import { localizeOpeningHoursText } from "@/utils/availableHours";
@@ -81,16 +78,6 @@ import rainyDayHeroAsset from "@/assets/blog-rainy-day-pets.jpg.asset.json";
 const HERO_BG = rainyDayHeroAsset.url;
 
 const RainyDayMalls = () => {
-  useSEO({
-    title: "2025–2026 香港寵物友善商場完全指南 | 44間商場寵物政策、停車及設施",
-    description:
-      "全港44間寵物友善商場最新資訊，包括寵物政策、停車場、附近車位及設施。按地區、政策篩選，一鍵搵到最啱你同毛孩嘅商場。",
-    keywords:
-      "寵物友善商場,香港商場寵物,雨天好去處,寵物商場停車場,可帶狗商場,The Southside,Stanley Plaza,K11 Musea,Airside",
-    canonicalUrl:
-      "https://petwellhk.com/rainy-day-pet-friendly-indoor-hong-kong",
-    ogImage: HERO_BG,
-  });
 
   const { t, i18n } = useTranslation();
   const isEn = i18n.language?.toLowerCase().startsWith("en");
@@ -140,7 +127,6 @@ const RainyDayMalls = () => {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#FAFAF8" }}>
-      <Header />
 
       <main className="flex-1">
         {/* HEADER (editorial style) */}
@@ -622,7 +608,6 @@ const RainyDayMalls = () => {
         </button>
       )}
 
-      <Footer />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import AppLink from "@/components/AppLink";
 import {
   ArrowLeft,
   ShieldCheck,
@@ -15,12 +16,9 @@ import {
   MessageCircle,
   Check,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useSEO } from "@/hooks/useSEO";
 import { cn } from "@/lib/utils";
 import {
   NutritionGradeBadge,
@@ -132,20 +130,13 @@ export default function NutritionProduct({
 
   const food = useMemo(() => products?.find((p) => p.id === id) ?? null, [products, id]);
 
-  useSEO({
-    title: food ? `${food.brand} ${food.name}｜PetWell 糧食評測` : "糧食評測｜PetWell HK",
-    description: food ? `PetWell 中立分析：${food.brand} ${food.name} 嘅營養評分、成份重點同注意事項。` : "PetWell 糧食評測。",
-    canonicalUrl: `https://petwellhk.com/nutrition/${id ?? ""}`,
-  });
 
   if (err) {
     return (
       <div className="flex min-h-screen flex-col bg-background">
-        <Header />
         <main className="nutrition-page flex flex-1 items-center justify-center py-20 text-sm text-muted-foreground">
           載入失敗，請刷新頁面。
         </main>
-        <Footer />
       </div>
     );
   }
@@ -153,11 +144,9 @@ export default function NutritionProduct({
   if (!products) {
     return (
       <div className="flex min-h-screen flex-col bg-background">
-        <Header />
         <main className="nutrition-page flex-1">
           <DetailSkeleton />
         </main>
-        <Footer />
       </div>
     );
   }
@@ -165,19 +154,17 @@ export default function NutritionProduct({
   if (!food) {
     return (
       <div className="flex min-h-screen flex-col bg-background">
-        <Header />
         <main className="nutrition-page container mx-auto flex-1 px-4 py-20 text-center">
           <div className="nutrition-panel mx-auto max-w-md p-10">
             <p className="nutrition-display text-2xl">搵唔到呢款糧</p>
             <p className="mt-2 text-sm text-muted-foreground">可能已經下架或者連結有誤。</p>
             <Button asChild variant="outline" className="mt-6 rounded-full">
-              <Link to="/nutrition">
+              <AppLink href="/nutrition">
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" /> 返回評測列表
-              </Link>
+              </AppLink>
             </Button>
           </div>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -190,18 +177,17 @@ export default function NutritionProduct({
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
 
       <main className="nutrition-page flex-1 pb-16">
         <div className="container mx-auto max-w-4xl px-4">
           <div className="pt-5">
-            <Link
-              to="/nutrition"
+            <AppLink
+              href="/nutrition"
               className="inline-flex items-center gap-1.5 rounded-full border border-[hsl(var(--nutrition-line))] bg-white px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
               返回評測列表
-            </Link>
+            </AppLink>
           </div>
 
           {/* Report header */}
@@ -334,7 +320,6 @@ export default function NutritionProduct({
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

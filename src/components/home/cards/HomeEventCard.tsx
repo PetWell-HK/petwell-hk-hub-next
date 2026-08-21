@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Calendar, MapPin, Tag } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
@@ -39,7 +39,7 @@ export function HomeEventCard({
 
   return (
     <article className="home-card home-card--event group">
-      <Link to={`/event/${event.id}`} className="home-card__link">
+      <AppLink href={`/event/${event.id}`} className="home-card__link">
         <div className="home-card--event__media">
           {event.imageUrl ? (
             <img
@@ -94,7 +94,7 @@ export function HomeEventCard({
             </p>
           )}
         </div>
-      </Link>
+      </AppLink>
     </article>
   );
 }

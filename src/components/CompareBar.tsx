@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import AppLink from "@/components/AppLink";
 import { Loader2, Scale, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCompare } from "@/contexts/CompareContext";
@@ -64,10 +64,10 @@ const CompareBar = () => {
               title={canCompare ? undefined : "請選擇至少 2 件產品"}
             >
               {canCompare ? (
-                <Link to="/compare">
+                <AppLink href="/compare">
                   <Scale className="h-3.5 w-3.5" />
                   比較
-                </Link>
+                </AppLink>
               ) : (
                 <span>
                   <Scale className="mr-1 inline h-3.5 w-3.5" />

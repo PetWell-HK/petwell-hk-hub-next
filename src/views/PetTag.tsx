@@ -1,6 +1,7 @@
 "use client";
 
-import { useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { routeParam } from "@/lib/routeParam";
 import { useQuery } from "@tanstack/react-query";
 import { Phone, Calendar, Weight, Heart, Loader2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -58,8 +59,7 @@ const SPECIES_I18N_KEY: Record<string, string> = {
 };
 
 const PetTag = () => {
-  const { tagId: rawTagId } = useParams();
-  const tagId = normalizeTagId(rawTagId);
+  const tagId = normalizeTagId(routeParam(useParams().tagId));
   const { t } = useTranslation();
 
   const {
