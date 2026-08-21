@@ -11,6 +11,12 @@ function isRscRequest(request: NextRequest): boolean {
 }
 
 export function proxy(request: NextRequest) {
+  const url = request.nextUrl.clone();
+  if (url.pathname !== "/" && url.pathname.endsWith("/")) {
+    url.pathname = url.pathname.slice(0, -1);
+    return NextResponse.redirect(url, 308);
+  }
+
   const response = NextResponse.next();
   response.headers.append("Vary", RSC_VARY);
 

@@ -41,6 +41,37 @@ function toHref(to: To): string {
   return `${pathname}${search}${hash}`;
 }
 
+/** ISR listing indexes whose Flight restore is unsafe on Back (Next #412). */
+const DOCUMENT_NAV_INDEXES = new Set([
+  "/",
+  "/restaurants",
+  "/restaurant",
+  "/pet-friendly-restaurants-hk",
+  "/clinics",
+  "/salons",
+  "/lodging",
+  "/malls",
+  "/home-visits",
+  "/forum",
+  "/pet-activities",
+  "/other-services",
+]);
+
+function hrefPathname(href: string): string {
+  const path = href.split("?")[0].split("#")[0];
+  if (path !== "/" && path.endsWith("/")) return path.slice(0, -1);
+  return path || "/";
+}
+
+function shouldDocumentNavigate(href: string): boolean {
+  return DOCUMENT_NAV_INDEXES.has(hrefPathname(href));
+}
+
+function documentNavigate(href: string, replace?: boolean) {
+  if (replace) window.location.replace(href);
+  else window.location.assign(href);
+}
+
 export type LinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   to: To;
   replace?: boolean;
@@ -56,8 +87,16 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
         ref={ref}
         href={href}
         replace={replace}
-        prefetch={prefetch}
-        onClick={onClick}
+        prefetch={prefetch ?? false}
+        onClick={(event) => {
+          onClick?.(event);
+          if (event.defaultPrevented) return;
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          if (event.button !== 0) return;
+          if (!shouldDocumentNavigate(href)) return;
+          event.preventDefault();
+          documentNavigate(href, replace);
+        }}
         {...rest}
       >
         {children}
@@ -77,6 +116,10 @@ export function useNavigate() {
         return;
       }
       const href = toHref(to);
+      if (shouldDocumentNavigate(href)) {
+        documentNavigate(href, options?.replace);
+        return;
+      }
       if (options?.replace) router.replace(href);
       else router.push(href);
     },
@@ -166,6 +209,10 @@ export function Navigate({
   const href = toHref(to);
 
   useEffect(() => {
+    if (shouldDocumentNavigate(href)) {
+      documentNavigate(href, replace);
+      return;
+    }
     if (replace) router.replace(href);
     else router.push(href);
   }, [href, replace, router]);
