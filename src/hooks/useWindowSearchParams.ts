@@ -42,9 +42,22 @@ function getServerSearch() {
   return "";
 }
 
+function getClientPathname() {
+  return window.location.pathname;
+}
+
+function getServerPathname() {
+  return "";
+}
+
 /** Query string without calling next/navigation useSearchParams (that hook suspends). */
 export function useWindowSearchString(): string {
   return useSyncExternalStore(subscribeToUrl, getClientSearch, getServerSearch);
+}
+
+/** Pathname that updates on pushState/replaceState without suspending. */
+export function useWindowPathname(): string {
+  return useSyncExternalStore(subscribeToUrl, getClientPathname, getServerPathname);
 }
 
 export function useWindowSearchParams(): URLSearchParams {

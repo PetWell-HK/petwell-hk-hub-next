@@ -66,6 +66,26 @@ type ForumPostRecord = {
   updatedAt?: string | null;
 };
 
+const FORUM_CATEGORY_LABELS: Record<string, string> = {
+  DOG: "狗狗",
+  CAT: "貓貓",
+  SMALL_ANIMAL: "小動物",
+  LIFE_SHARING: "生活分享",
+  EVENTS: "活動",
+  ADOPTION: "領養",
+  HEALTH: "健康",
+  GROOMING: "美容",
+  DIET: "飲食",
+  TRAINING: "訓練",
+  BEHAVIOR: "行為問題",
+  PRODUCT_REVIEW: "用品評價",
+  TRADING: "交易",
+  TRAVEL: "旅遊",
+  LODGING: "住宿",
+  LOST_FOUND: "走失協尋",
+  EMERGENCY: "緊急求助",
+};
+
 type EventI18n = {
   zh?: Partial<Record<"name" | "description" | "remark" | "address" | "district", string>>;
   en?: Partial<Record<"name" | "description" | "remark" | "address" | "district", string>>;
@@ -412,19 +432,28 @@ export async function generateForumMetadata(postId: string): Promise<Metadata> {
     });
   }
 
-  const plain = stripBbCode(post.content || "").slice(0, 140);
-  const description =
-    plain || `${post.authorName || "用戶"} 喺PetWell香港寵物討論區分享：${post.title}`;
+  const categoryLabel = FORUM_CATEGORY_LABELS[post.category || ""] || "";
+  const plain = stripBbCode(post.content || "").replace(/\n+/g, " ").trim();
+  const contentSnippet = plain.length > 120 ? `${plain.slice(0, 117)}…` : plain;
+  const authorName = post.isAnonymous ? "匿名用戶" : post.authorName || "用戶";
+  const description = (
+    contentSnippet || `${authorName} 喺PetWell香港寵物討論區分享：${post.title}`
+  ).slice(0, 160);
+  const title = categoryLabel
+    ? `${post.title} [${categoryLabel}] | PetWell 香港寵物討論區`
+    : `${post.title} | PetWell 香港寵物討論區`;
   return buildMetadata({
-    title: `${post.title} | PetWell 香港寵物討論區`,
+    title,
     description,
-    keywords: `${post.title},寵物討論區,寵物論壇,香港寵物,PetWell`,
+    keywords: [post.title, categoryLabel, "寵物討論區", "寵物論壇", "香港寵物", "PetWell"]
+      .filter(Boolean)
+      .join(","),
     path: `/forum/${post.id}`,
     ogType: "article",
     articlePublishedTime: post.createdAt || undefined,
     articleModifiedTime: post.updatedAt || post.createdAt || undefined,
-    articleAuthor: post.isAnonymous ? "匿名用戶" : post.authorName || "用戶",
-    articleSection: post.category || "寵物論壇",
+    articleAuthor: post.isAnonymous ? undefined : authorName,
+    articleSection: categoryLabel || post.category || "寵物論壇",
   });
 }
 
@@ -438,18 +467,24 @@ export async function generateForumJsonLd(postId: string): Promise<object[] | nu
   if (!post || post.isDeleted) return null;
   const url = absoluteUrl(`/forum/${post.id}`);
   const plain = stripBbCode(post.content || "");
+  const categoryLabel = FORUM_CATEGORY_LABELS[post.category || ""] || "";
+  const crumbs = [
+    { name: "首頁", path: "/" },
+    { name: "寵物討論區 / 寵物論壇", path: "/forum" },
+    ...(post.category
+      ? [{ name: categoryLabel || post.category, path: `/forum?category=${post.category}` }]
+      : []),
+    { name: post.title || "討論", path: `/forum/${post.id}` },
+  ];
   return [
-    breadcrumbJsonLd([
-      { name: "首頁", path: "/" },
-      { name: "寵物論壇", path: "/forum" },
-      { name: post.title || "討論", path: `/forum/${post.id}` },
-    ]),
+    breadcrumbJsonLd(crumbs),
     {
       "@context": "https://schema.org",
       "@type": "DiscussionForumPosting",
       headline: post.title,
       text: plain.slice(0, 5000),
       url,
+      inLanguage: "zh-HK",
       datePublished: post.createdAt || undefined,
       dateModified: post.updatedAt || post.createdAt || undefined,
       author: {
@@ -461,6 +496,14 @@ export async function generateForumJsonLd(postId: string): Promise<object[] | nu
         name: "PetWell HK Limited",
         url: SITE_URL,
       },
+      isPartOf: {
+        "@type": "DiscussionForum",
+        name: "PetWell 香港寵物討論區",
+        url: absoluteUrl("/forum"),
+      },
+      ...(categoryLabel || post.category
+        ? { articleSection: categoryLabel || post.category }
+        : {}),
     },
   ];
 }

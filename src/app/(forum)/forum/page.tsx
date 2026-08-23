@@ -1,9 +1,8 @@
 import { redirect } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import Page from "@/views/Forum";
-import { listingPageJsonLd } from "@/lib/seo";
+import { forumListingJsonLd } from "@/lib/forumSeo";
 import { ssrForumListing } from "@/lib/server/ssrContent";
-import PageSuspense from "@/components/PageSuspense";
 
 export default async function ForumPage({
   searchParams,
@@ -15,16 +14,9 @@ export default async function ForumPage({
 
   const initialPosts = await ssrForumListing();
   return (
-    <>
-      <JsonLd
-        id="ld-collection"
-        data={listingPageJsonLd({
-          title: `香港寵物論壇 | PetWell HK`,
-          description: `PetWell 寵物論壇：養寵心得、提問與社群討論。`,
-          path: `/forum`,
-        })}
-      />
-      <PageSuspense><Page initialPosts={initialPosts}  /></PageSuspense>
-    </>
+    <div className="h-full min-h-0">
+      <JsonLd id="ld-forum" data={forumListingJsonLd()} />
+      <Page initialPosts={initialPosts} />
+    </div>
   );
 }

@@ -56,6 +56,8 @@ import {
   type ForumTag
 } from "@/services/forumApi";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
+import { useWindowPathname } from "@/hooks/useWindowSearchParams";
+import { getForumPostIdFromPath, replaceForumLocation } from "@/lib/forumUrl";
 import CreatePostDialog from "@/components/CreatePostDialog";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
@@ -95,12 +97,19 @@ const BASE_URL = "https://petwellhk.com";
 
 type ForumProps = {
   initialPosts?: ForumPost[] | null;
+  initialPost?: ForumPost | null;
+  initialPostId?: string | null;
 };
 
-const Forum = ({ initialPosts = null }: ForumProps) => {
+const Forum = ({
+  initialPosts = null,
+  initialPost = null,
+  initialPostId = null,
+}: ForumProps) => {
 
   const { t, i18n } = useTranslation();
-  const [searchParams, setSearchParams] = useAppSearchParams();
+  const [searchParams] = useAppSearchParams();
+  const windowPathname = useWindowPathname();
   const navigate = useAppNavigate();
   const { toast } = useToast();
   const { isAuthenticated, userInfo } = useAuth();
@@ -114,7 +123,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
   const [displayedPosts, setDisplayedPosts] = useState<ForumPost[]>(() =>
     ssrPosts.slice(0, POSTS_PER_PAGE),
   );
-  const [selectedPost, setSelectedPost] = useState<ForumPost | null>(null);
+  const [selectedPost, setSelectedPost] = useState<ForumPost | null>(initialPost);
   const [selectedPostReplies, setSelectedPostReplies] = useState<ForumReply[]>([]);
   const [allPostReplies, setAllPostReplies] = useState<ForumReply[]>([]); // Store all replies for parent lookup
   const [loading, setLoading] = useState(ssrPosts.length === 0);
@@ -146,7 +155,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
   const [viewingImageUrl, setViewingImageUrl] = useState<string | null>(null);
   const [tradingDisclaimerOpen, setTradingDisclaimerOpen] = useState(false);
   const loadingPostIdRef = useRef<string | null>(null);
-  const currentPostIdRef = useRef<string | null>(null);
+  const currentPostIdRef = useRef<string | null>(initialPost?.id ?? initialPostId ?? null);
   const postContentRef = useRef<HTMLDivElement>(null);
   const postListContainerRef = useRef<HTMLDivElement>(null);
   const replyContentRefs = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -158,14 +167,21 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
 
   // Mobile UX: track whether the detail panel is the active view on small screens.
   // Initialise to true when navigating directly to a post URL on mobile.
-  const [mobileShowDetail, setMobileShowDetail] = useState(() => !!searchParams.get('post'));
+  const [mobileShowDetail, setMobileShowDetail] = useState(
+    () => Boolean(initialPost || initialPostId || searchParams.get("post")),
+  );
   const [isMobileFilterBarHidden, setIsMobileFilterBarHidden] = useState(false);
   
   // Constants for content truncation
   const MAX_CONTENT_LENGTH = 3000; // Characters before showing "show more"
   
-  // Get post ID and category from URL
-  const postIdFromUrl = searchParams.get('post');
+  // Get post ID and category from URL. Prefer the live window path so in-app
+  // history.replaceState can keep the split view without remounting the page.
+  const postIdFromPath = getForumPostIdFromPath(windowPathname);
+  const postIdFromUrl =
+    searchParams.get("post") ||
+    postIdFromPath ||
+    (windowPathname ? null : initialPostId || initialPost?.id || null);
   const categoryFromUrl = searchParams.get('category');
   
   // Filters
@@ -337,7 +353,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
       : getAuthorDisplayName(selectedPost, selectedPost.author, selectedPost.authorId, i18n.language) || "用戶";
     const plainContent = stripBBCode(selectedPost.content).replace(/\n+/g, " ").trim();
     const description = plainContent.length > 160 ? plainContent.slice(0, 157) + "…" : plainContent;
-    const canonicalUrl = `${BASE_URL}/forum?post=${selectedPost.id}`;
+    const canonicalUrl = `${BASE_URL}/forum/${selectedPost.id}`;
     const categoryLabel = selectedPost.category ? getCategoryLabel(selectedPost.category, i18n.language) : "";
 
     const safeTitle = sanitizeUserVisibleText(selectedPost.title);
@@ -414,6 +430,10 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     };
   }, [selectedPost, allPostReplies, i18n.language]);
 
+  useEffect(() => {
+    if (typeof document === "undefined" || !seoProps.title) return;
+    document.title = seoProps.title;
+  }, [seoProps.title]);
 
   useEffect(() => {
     let isCancelled = false;
@@ -585,18 +605,13 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
 
     // Only update URL if category actually changed (user action)
     if (prevCategoryRef.current !== selectedCategory) {
-      const newParams = new URLSearchParams(window.location.search);
-      if (selectedCategory !== "all") {
-        newParams.set('category', selectedCategory);
-      } else {
-        newParams.delete('category');
-      }
-      // Remove post param when changing category
-      newParams.delete('post');
       prevCategoryRef.current = selectedCategory;
-      setSearchParams(newParams, { replace: true });
+      replaceForumLocation({
+        postId: null,
+        category: selectedCategory,
+      });
     }
-  }, [selectedCategory, setSearchParams]);
+  }, [selectedCategory]);
 
   // Update category when URL changes (browser navigation or shared link)
   useEffect(() => {
@@ -679,15 +694,11 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     const endIndex = startIndex + POSTS_PER_PAGE;
     setDisplayedPosts(filteredPosts.slice(startIndex, endIndex));
     
-    // Don't reset selected post when filters change - keep URL state
-    // Only reset if post is not in filtered results
-    if (selectedPost && !filteredPosts.find(p => p.id === selectedPost.id)) {
+    // Keep a URL-opened post even if it is not in the current filtered list.
+    if (!postIdFromUrl && selectedPost && !filteredPosts.find(p => p.id === selectedPost.id)) {
       setSelectedPost(null);
-      const newParams = new URLSearchParams(searchParams);
-      newParams.delete('post');
-      setSearchParams(newParams, { replace: true });
     }
-  }, [filteredPosts, currentPage, selectedPost, searchParams, setSearchParams]);
+  }, [filteredPosts, currentPage, selectedPost, postIdFromUrl]);
 
   // When no post is selected (e.g., after back-navigation or deselect) reset mobile view to list.
   useEffect(() => {
@@ -1049,10 +1060,8 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     setReplyingToReply(null);
     setShowReplyBox(false);
     
-    // Update URL immediately (no loading, instant feedback)
-    const newParams = new URLSearchParams(searchParams);
-    newParams.set('post', post.id);
-    setSearchParams(newParams, { replace: true });
+    // Update the SEO-friendly path without remounting the split-view page.
+    replaceForumLocation({ postId: post.id });
     
     // Set loading state before updating post
     setLoadingPostDetail(true);
@@ -1065,7 +1074,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     
     // Load full post data in background
     loadPostDetail(post.id);
-  }, [searchParams, setSearchParams, loadPostDetail]);
+  }, [loadPostDetail]);
 
   // Share function
   const handleShare = useCallback(async (e?: React.MouseEvent) => {
@@ -1074,7 +1083,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
     
     if (!selectedPost) return;
     
-    const url = `${window.location.origin}/forum?post=${selectedPost.id}`;
+    const url = `${window.location.origin}/forum/${selectedPost.id}`;
     const shareData = {
       title: sanitizeUserVisibleText(selectedPost.title),
       text: sanitizeUserVisibleText(selectedPost.content).substring(0, 200) + '...',
@@ -1661,9 +1670,11 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
 
   return (
     <div className="flex h-full min-h-0 flex-col overflow-hidden bg-background">
-      <h1 className="sr-only">
-        {i18n.language === "zh" ? "香港寵物討論區" : "Hong Kong Pet Forum"}
-      </h1>
+      {!selectedPost && (
+        <h1 className="sr-only">
+          {i18n.language === "zh" ? "香港寵物討論區" : "Hong Kong Pet Forum"}
+        </h1>
+      )}
       
       {/* Top Bar with Expandable Search */}
       <div className="z-20 shrink-0 bg-white border-b border-border shadow-sm">
@@ -2022,10 +2033,7 @@ const Forum = ({ initialPosts = null }: ForumProps) => {
                         <button
                           onClick={() => {
                             setMobileShowDetail(false);
-                            // Remove post param from URL so back behaves naturally
-                            const newParams = new URLSearchParams(searchParams);
-                            newParams.delete('post');
-                            setSearchParams(newParams, { replace: true });
+                            replaceForumLocation({ postId: null });
                             setSelectedPost(null);
                           }}
                           className="flex items-center gap-0.5 text-[#FF902A] font-medium text-sm -ml-1"
