@@ -36,19 +36,17 @@ export async function graphqlQuery<T>(
   options?: { authMode?: 'apiKey' | 'userPool' }
 ): Promise<T> {
   try {
-    // Log configuration for debugging
     const config = Amplify.getConfig();
     const endpoint = config?.API?.GraphQL?.endpoint;
-    const isAuthenticated = await isUserAuthenticated();
-    
-    // Better mutation detection - check for 'mutation' keyword (case-insensitive)
     const normalizedQuery = query.trim().replace(/\s+/g, ' ');
     const isMutation = /^\s*mutation\s+/i.test(normalizedQuery);
-    
-    console.log('GraphQL Endpoint from Amplify config:', endpoint);
-    console.log('User authenticated:', isAuthenticated);
-    console.log('Is mutation:', isMutation);
-    console.log('Query preview:', normalizedQuery.substring(0, 50) + '...');
+
+    // Public reads use API_KEY and skip the Cognito probe. Only mutations
+    // without an explicit apiKey override need an auth check.
+    let isAuthenticated = false;
+    if (isMutation && options?.authMode !== 'apiKey') {
+      isAuthenticated = await isUserAuthenticated();
+    }
     
     // For mutations, we need authenticated users - check authentication
     // BUT: Allow mutations with explicit apiKey auth mode (for public operations like CNY orders)
@@ -75,8 +73,13 @@ export async function graphqlQuery<T>(
     if (authMode === 'apiKey' && crawlerPolicy.isBlocked) {
       throw new Error('Automated access is not allowed for this public API.');
     }
-    
-    console.log('Using auth mode:', authMode, options?.authMode ? '(override)' : '(auto)');
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('GraphQL Endpoint from Amplify config:', endpoint);
+      console.log('User authenticated:', isAuthenticated);
+      console.log('Is mutation:', isMutation);
+      console.log('Using auth mode:', authMode, options?.authMode ? '(override)' : '(auto)');
+    }
     
     const result: any = await amplifyClient.graphql({
       query,

@@ -10,6 +10,7 @@ import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { getTodayOpeningHours } from "@/utils/availableHours";
 import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
+import AppLink from "@/components/AppLink";
 import restaurantsOgImage from "@/assets/restaurants-og.png.asset.json";
 import type { Restaurant } from "@/services/restaurantApi";
 
@@ -64,6 +65,7 @@ const Restaurants = ({
       { question: t("restaurants.faq.q6"), answer: t("restaurants.faq.a6") },
       { question: t("restaurants.faq.q7"), answer: t("restaurants.faq.a7") },
       { question: t("restaurants.faq.q8"), answer: t("restaurants.faq.a8") },
+      { question: t("restaurants.faq.q9"), answer: t("restaurants.faq.a9") },
     ],
     [t],
   );
@@ -247,6 +249,20 @@ const Restaurants = ({
       belowListContent={
         <div className="restaurants-hub-seo space-y-6">
             <section>
+              <h2 className="text-lg font-semibold">{t("restaurants.hubSeo.fehdTitle")}</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {t("restaurants.hubSeo.fehdBody")}
+              </p>
+              <p className="mt-3 text-sm">
+                <AppLink
+                  href="/hk-fehd-pet-friendly-restaurants-1000-list"
+                  className="text-primary underline-offset-4 hover:underline"
+                >
+                  {t("restaurants.districtPage.fehdLink")}
+                </AppLink>
+              </p>
+            </section>
+            <section>
               <h2 className="text-lg font-semibold">{t("restaurants.hubSeo.title")}</h2>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
                 {t("restaurants.hubSeo.body")}
@@ -263,10 +279,11 @@ const Restaurants = ({
       }
     >
       <div className="grid gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
-        {restaurants.map((restaurant) => (
+        {restaurants.map((restaurant, index) => (
           <RestaurantListCard
             key={restaurant.id}
             restaurant={restaurant}
+            imagePriority={index < 4}
             petAccessLabel={getPetAccessAreaLabel(restaurant.petAccessArea)}
             petEntryLabel={getPetEntryPolicyLabel(restaurant.petEntryPolicy)}
             openingHoursText={

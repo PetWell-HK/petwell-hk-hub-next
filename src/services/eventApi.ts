@@ -376,7 +376,7 @@ export function extractDistrict(location: string): string {
   if (location.includes('Central') || location.includes('中環') || location.includes('金鐘') || location.includes('灣仔')) {
     return '港島';
   }
-  if (location.includes('Tsim Sha Tsui') || location.includes('尖沙咀') || location.includes('旺角') || location.includes('九龍灣')) {
+  if (location.includes('Tsim Sha Tsui') || location.includes('尖沙咀') || location.includes('旺角') || location.includes('九龍灣') || location.includes('觀塘')) {
     return '九龍';
   }
   if (location.includes('Sha Tin') || location.includes('沙田') || location.includes('將軍澳') || location.includes('元朗')) {

@@ -588,6 +588,54 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
 
   // HowTo schema for step-by-step guides (eligible for rich snippets)
   const howToSchemas: object[] = [];
+  if (slug === 'mid-autumn-pet-outings-hong-kong-2026') {
+    howToSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "毛孩沉浸台式中秋節",
+      "alternateName": "Taiwan Mid-Autumn Night",
+      "description": "2026年9月25–27日於觀塘海濱 AquaBeat 舉行的寵物中秋市集：十分車站／九份打卡、許願天燈、養生花膠月餅、美人魚表演與服裝租借。免費入場，無需預約，歡迎帶寵物。",
+      "image": post.imageUrl,
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "startDate": "2026-09-25T16:00:00+08:00",
+      "endDate": "2026-09-27T21:00:00+08:00",
+      "isAccessibleForFree": true,
+      "inLanguage": "zh-HK",
+      "url": "https://petwellhk.com/mid-autumn-pet-outings-hong-kong-2026",
+      "location": {
+        "@type": "Place",
+        "name": "觀塘海濱 AquaBeat 活動空間 02",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kwun Tong Promenade",
+          "addressLocality": "Kwun Tong",
+          "addressRegion": "Kowloon",
+          "addressCountry": "HK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 22.3104,
+          "longitude": 114.2227
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "PetWell HK Limited",
+        "url": "https://petwellhk.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "入場",
+        "price": "0",
+        "priceCurrency": "HKD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://petwellhk.com/mid-autumn-pet-outings-hong-kong-2026",
+        "validFrom": "2026-08-29"
+      }
+    });
+  }
+
   if (slug === 'iamsmart-dog-electronic-licence-hk-guide') {
     howToSchemas.push({
       "@context": "https://schema.org",

@@ -1,16 +1,21 @@
 import { useState } from 'react';
 import { useRestaurantImage } from '@/hooks/useRestaurantImage';
-import { Skeleton } from '@/components/ui/skeleton';
 import { UtensilsCrossed } from 'lucide-react';
 
 interface RestaurantImageProps {
   imageKey: string | undefined;
   alt: string;
   className?: string;
+  priority?: boolean;
 }
 
-export function RestaurantImage({ imageKey, alt, className = '' }: RestaurantImageProps) {
-  const { imageUrl, isLoading, error } = useRestaurantImage(imageKey);
+export function RestaurantImage({
+  imageKey,
+  alt,
+  className = '',
+  priority = false,
+}: RestaurantImageProps) {
+  const { imageUrl, error } = useRestaurantImage(imageKey);
   const [imgError, setImgError] = useState(false);
 
   // Fallback placeholder
@@ -24,19 +29,22 @@ export function RestaurantImage({ imageKey, alt, className = '' }: RestaurantIma
     return <Placeholder />;
   }
 
-  if (isLoading) {
-    return <Skeleton className={`h-full w-full ${className}`} />;
+  if (error || imgError) {
+    return <Placeholder />;
   }
 
-  if (error || !imageUrl || imgError) {
-    return <Placeholder />;
+  if (!imageUrl) {
+    return <div className={`h-full w-full bg-muted/40 ${className}`} aria-hidden />;
   }
 
   return (
     <img
       src={imageUrl}
       alt={alt}
-      loading="lazy"
+      width={800}
+      height={600}
+      fetchPriority={priority ? 'high' : 'auto'}
+      loading={priority ? 'eager' : 'lazy'}
       decoding="async"
       className={`block h-full w-full object-cover ${className}`}
       onError={() => setImgError(true)}

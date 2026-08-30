@@ -1,5 +1,7 @@
 import { blogPostsPetCareHk } from "./blogPostsPetCareHk";
 import { blogPostsPetCareHkSeo } from "./blogPostsPetCareHkSeo";
+import { blogPostsMidAutumn } from "./blogPostsMidAutumn";
+import { blogPostsDogMer } from "./blogPostsDogMer";
 
 export interface BlogPost {
   id: string;
@@ -4965,6 +4967,8 @@ const baseBlogPosts: BlogPost[] = [
 ];
 
 export const blogPosts: BlogPost[] = [
+  ...blogPostsMidAutumn,
+  ...blogPostsDogMer,
   ...baseBlogPosts,
   ...blogPostsPetCareHk.map((post) => ({
     ...post,

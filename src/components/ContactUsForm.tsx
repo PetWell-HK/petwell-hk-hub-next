@@ -33,6 +33,7 @@ export type ContactFormValues = {
 
 type ContactUsFormProps = {
   sourceLabel: string;
+  defaultMessage?: string;
   onSuccess?: () => void;
   className?: string;
   compact?: boolean;
@@ -56,6 +57,7 @@ type ContactUsFormInnerProps = ContactUsFormProps & {
 
 const ContactUsFormInner = ({
   sourceLabel,
+  defaultMessage = "",
   onSuccess,
   className,
   compact = false,
@@ -111,7 +113,7 @@ const ContactUsFormInner = ({
       lastName: "",
       email: "",
       contactNumber: "",
-      message: "",
+      message: defaultMessage,
       privacyConfirmed: false,
     },
   });

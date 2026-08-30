@@ -39,7 +39,7 @@ export function HomeEventCard({
 
   return (
     <article className="home-card home-card--event group">
-      <AppLink href={`/event/${event.id}`} className="home-card__link">
+      <AppLink href={event.href || `/event/${event.id}`} className="home-card__link">
         <div className="home-card--event__media">
           {event.imageUrl ? (
             <img

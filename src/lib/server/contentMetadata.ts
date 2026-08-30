@@ -306,7 +306,7 @@ export function generateNgoMetadata(ngoId: string): Metadata {
   }
 
   return buildMetadata({
-    title: `${ngo.name} | 香港動物NGO | PetWell HK`,
+    title: `${ngo.name} | 香港動物團體 | PetWell HK`,
     description: ngo.description.slice(0, 160),
     keywords: `${ngo.name},${ngo.nameEn},香港動物救援,動物福利NGO`,
     path: `/ngos/${ngo.id}`,

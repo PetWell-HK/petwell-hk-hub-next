@@ -21,6 +21,7 @@ import { Menu, LogIn, ChevronDown } from "lucide-react";
 import AppLink from "@/components/AppLink";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import NameTagBanner from "@/components/NameTagBanner";
+import PartnershipNavMenu from "@/components/PartnershipNavMenu";
 import PetFriendlyNavMenu from "@/components/PetFriendlyNavMenu";
 import UserAccountMenu from "@/components/UserAccountMenu";
 import { useAuth } from "@/contexts/AuthContext";
@@ -66,9 +67,15 @@ const Header = () => {
     { to: "/forum", label: t('nav.forum') },
     { to: "/pet-activities", label: t('nav.petActivities') },
     { to: "/owner-zone", label: t('nav.blog') },
-    { to: "/other-services", label: t('nav.otherServices') },
+    {
+      partnership: true as const,
+      label: t('nav.otherServices'),
+    },
     { to: "/about", label: t('nav.about') },
   ];
+
+  const isPartnershipActive =
+    pathname === "/other-services" || pathname.startsWith("/other-services/");
 
   const isActivePath = (path: string) =>
     pathname === path || (path !== "/" && pathname.startsWith(path + "/"));
@@ -125,6 +132,30 @@ const Header = () => {
                       className="w-[18.5rem] rounded-xl border-border p-1.5 shadow-[0_12px_40px_-12px_hsl(24_100%_50%/0.2)]"
                     >
                       <PetFriendlyNavMenu variant="dropdown" />
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+              if ("partnership" in link && link.partnership) {
+                return (
+                  <DropdownMenu key="partnership">
+                    <DropdownMenuTrigger
+                      aria-label={t("nav.otherServices")}
+                      aria-haspopup="menu"
+                      className={`inline-flex items-center gap-1.5 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 rounded-md py-1.5 px-2 -mx-1 hover:text-primary data-[state=open]:text-primary [&>svg]:data-[state=open]:rotate-180 [&>svg]:transition-transform ${
+                        isPartnershipActive ? "text-primary" : "text-foreground"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className="h-4 w-4 shrink-0" aria-hidden />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="start"
+                      side="bottom"
+                      sideOffset={10}
+                      className="w-[16.5rem] rounded-xl border-border p-1.5 shadow-[0_12px_40px_-12px_hsl(24_100%_50%/0.2)]"
+                    >
+                      <PartnershipNavMenu variant="dropdown" />
                     </DropdownMenuContent>
                   </DropdownMenu>
                 );
@@ -205,6 +236,16 @@ const Header = () => {
                       return (
                         <div key="pet-friendly-mobile">
                           <PetFriendlyNavMenu
+                            variant="sheet"
+                            onNavigate={() => setIsOpen(false)}
+                          />
+                        </div>
+                      );
+                    }
+                    if ("partnership" in link && link.partnership) {
+                      return (
+                        <div key="partnership-mobile">
+                          <PartnershipNavMenu
                             variant="sheet"
                             onNavigate={() => setIsOpen(false)}
                           />

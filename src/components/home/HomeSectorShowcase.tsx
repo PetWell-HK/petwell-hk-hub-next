@@ -38,6 +38,11 @@ import {
 import { savingsPct } from "@/lib/priceReviewPricing";
 import { pickFeaturedWithPremiumFirst } from "@/utils/partnerPremium";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
+import {
+  MID_AUTUMN_FEATURED_ACTIVITY,
+  isFeaturedActivity,
+  mergeFeaturedActivityFirst,
+} from "@/data/featuredActivities";
 import type { HomeRails } from "@/types/homeRails";
 import HomeSuggestions from "@/components/home/HomeSuggestions";
 
@@ -94,6 +99,8 @@ function formatEventDate(dateTime: string, language: string) {
 function toEventListCardData(event: OrganizedEvent): EventListCardData | null {
   if (!event.name || !event.dateTime) return null;
 
+  const featured = isFeaturedActivity(event);
+
   return {
     id: event.id,
     name: event.name,
@@ -104,6 +111,8 @@ function toEventListCardData(event: OrganizedEvent): EventListCardData | null {
     category: event.category,
     price: event.price,
     status: calculateEventStatus(event),
+    href: featured ? MID_AUTUMN_FEATURED_ACTIVITY.href : undefined,
+    featured,
   };
 }
 
@@ -206,11 +215,32 @@ const HomeSectorShowcase = ({
     i18n.language,
     initialHome?.lodgings,
   );
-  const [events, setEvents] = useState<EventListCardData[]>(() =>
-    (initialHome?.events ?? [])
+  const midAutumnCover = "/assets/blog-mid-autumn-pet-hk/cover.jpg";
+  const featuredCard: EventListCardData = {
+    id: MID_AUTUMN_FEATURED_ACTIVITY.id,
+    name: MID_AUTUMN_FEATURED_ACTIVITY.name,
+    dateTime: MID_AUTUMN_FEATURED_ACTIVITY.dateTime,
+    location: MID_AUTUMN_FEATURED_ACTIVITY.location,
+    district: MID_AUTUMN_FEATURED_ACTIVITY.district,
+    imageUrl: midAutumnCover,
+    category: MID_AUTUMN_FEATURED_ACTIVITY.category,
+    price: MID_AUTUMN_FEATURED_ACTIVITY.price,
+    status: calculateEventStatus(MID_AUTUMN_FEATURED_ACTIVITY),
+    href: MID_AUTUMN_FEATURED_ACTIVITY.href,
+    featured: true,
+  };
+  const [events, setEvents] = useState<EventListCardData[]>(() => {
+    const initial = (initialHome?.events ?? [])
       .map(toEventListCardData)
-      .filter((event): event is EventListCardData => event !== null),
-  );
+      .filter((event): event is EventListCardData => event !== null);
+    return mergeFeaturedActivityFirst(initial, featuredCard)
+      .map((event) =>
+        isFeaturedActivity(event)
+          ? { ...event, imageUrl: event.imageUrl || midAutumnCover, href: MID_AUTUMN_FEATURED_ACTIVITY.href, featured: true }
+          : event,
+      )
+      .slice(0, 8);
+  });
   const [eventsLoading, setEventsLoading] = useState(!initialHome?.events?.length);
 
   useEffect(() => {
@@ -220,14 +250,22 @@ const HomeSectorShowcase = ({
       try {
         const result = await fetchAllEvents({ limit: 20 });
         if (cancelled) return;
-        const upcoming = result.items
-          .map(toEventListCardData)
-          .filter((event): event is EventListCardData => event !== null)
-          .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime())
+        const upcoming = mergeFeaturedActivityFirst(
+          result.items
+            .map(toEventListCardData)
+            .filter((event): event is EventListCardData => event !== null)
+            .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()),
+          featuredCard,
+        )
+          .map((event) =>
+            isFeaturedActivity(event)
+              ? { ...event, imageUrl: event.imageUrl || midAutumnCover, href: MID_AUTUMN_FEATURED_ACTIVITY.href, featured: true }
+              : event,
+          )
           .slice(0, 8);
         if (!cancelled) setEvents(upcoming);
       } catch {
-        if (!cancelled && events.length === 0) setEvents([]);
+        if (!cancelled) setEvents([featuredCard]);
       } finally {
         if (!cancelled) setEventsLoading(false);
       }

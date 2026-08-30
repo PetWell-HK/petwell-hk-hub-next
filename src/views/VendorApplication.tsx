@@ -63,10 +63,10 @@ const EVENT_TIMES = [
 const EVENT_TAGLINE = "毛孩沉浸台式中秋節 — PetWell × AquaBeat 聯乘活動，帶你同毛孩一齊體驗台式夜市文化。";
 
 const EVENT_HIGHLIGHTS = [
-  "夜市美食區：台式燒肉卡集章挑戰，寵物友善美味",
   "許願天燈區：寵物友善 LED 環保氫氣球天燈，一同寄託中秋願望",
-  "特色打卡區：復刻十分車站、彩虹眷村、西門町彩虹地等台灣經典景點",
-  "品牌互動區：健康諮詢服務、產品試用體驗",
+  "特色打卡區：十分車站、九份連成一景，毛孩可喺寵物 size 夜市檔扮檔主影相",
+  "養生花膠月餅工作坊（須預先報名，唔設即場體驗）",
+  "美人魚表演、和服及新中式服裝租借",
 ];
 
 const TERMS = [
@@ -447,7 +447,7 @@ const VendorApplication = () => {
             <h2 className="text-lg font-semibold text-foreground">{STEP_LABELS[activeStepId]}</h2>
             {activeStepId === "overview" && (
               <p className="mt-1 text-sm text-muted-foreground">
-                請先了解活動詳情，並選擇參與方式。
+                🔥 名額極有限，額滿即止！立即填寫表格搶先留位，遲咗就冇啦！（提交表格不等於確認參與，最終名額以確認通知為準）
               </p>
             )}
             {activeStepId === "brand" && (

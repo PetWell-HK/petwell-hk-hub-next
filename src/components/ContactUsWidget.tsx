@@ -1,14 +1,60 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { usePathname } from "next/navigation";
 import { MessageCircle, X } from "lucide-react";
 import ContactUsForm from "@/components/ContactUsForm";
 import { cn } from "@/lib/utils";
 
+export type ContactTopic = "mooncake" | "family-photo" | "event";
+
+type OpenContactDetail = {
+  topic?: ContactTopic;
+};
+
+const CONTACT_PRESETS: Record<
+  ContactTopic,
+  { title: string; description: string; source: string; message: string }
+> = {
+  mooncake: {
+    title: "報名花膠月餅工作坊",
+    description: "須預先報名，唔設即場體驗。填表後我哋會回覆確認名額同時段。",
+    source: "[活動報名] 花膠月餅工作坊｜毛孩沉浸台式中秋節",
+    message:
+      "你好，我想報名 9 月 25–27 日觀塘海濱「毛孩沉浸台式中秋節」養生花膠月餅工作坊。請回覆確認名額同時段。",
+  },
+  "family-photo": {
+    title: "預約全家福",
+    description: "免費入場，無需預約。預約可獲一張全家福 soft copy。",
+    source: "[活動預約] 全家福 soft copy｜毛孩沉浸台式中秋節",
+    message:
+      "你好，我想預約 9 月 25–27 日觀塘海濱「毛孩沉浸台式中秋節」，領取全家福 soft copy。",
+  },
+  event: {
+    title: "活動查詢",
+    description: "入場免費，無需預約。有工作坊、服裝租借或其他問題都可以留低聯絡方法。",
+    source: "[活動查詢] 毛孩沉浸台式中秋節 2026",
+    message: "",
+  },
+};
+
+export function openPetwellContact(topic: ContactTopic = "event") {
+  window.dispatchEvent(new CustomEvent<OpenContactDetail>("petwell:open-contact", { detail: { topic } }));
+}
+
 const ContactUsWidget = () => {
   const { t } = useTranslation();
+  const pathname = usePathname() || "/";
+  const isMidAutumnPage = pathname.includes("mid-autumn");
   const [isOpen, setIsOpen] = useState(false);
+  const [contactTopic, setContactTopic] = useState<ContactTopic | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const preset = isMidAutumnPage
+    ? CONTACT_PRESETS[contactTopic ?? "event"]
+    : null;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -39,10 +85,14 @@ const ContactUsWidget = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    const openFromPage = () => setIsOpen(true);
+    const openFromPage = (event: Event) => {
+      const topic = (event as CustomEvent<OpenContactDetail>).detail?.topic;
+      setContactTopic(topic ?? (isMidAutumnPage ? "event" : null));
+      setIsOpen(true);
+    };
     window.addEventListener("petwell:open-contact", openFromPage);
     return () => window.removeEventListener("petwell:open-contact", openFromPage);
-  }, []);
+  }, [isMidAutumnPage]);
 
   return (
     <>
@@ -70,9 +120,11 @@ const ContactUsWidget = () => {
           <div className="flex items-start justify-between gap-3 border-b border-border px-4 py-3">
             <div className="min-w-0 pr-2">
               <h2 id="contact-us-title" className="text-base font-semibold leading-tight">
-                {t("about.contact.title")}
+                {preset?.title ?? t("about.contact.title")}
               </h2>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("about.contact.description")}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {preset?.description ?? t("about.contact.description")}
+              </p>
             </div>
             <button
               type="button"
@@ -86,7 +138,14 @@ const ContactUsWidget = () => {
 
           <div className="max-h-[min(70vh,560px)] overflow-y-auto px-4 py-4">
             <ContactUsForm
-              sourceLabel="[Site Contact Widget]"
+              key={`${isMidAutumnPage ? (contactTopic ?? "event") : "site"}`}
+              sourceLabel={
+                preset?.source ??
+                (isMidAutumnPage
+                  ? "[活動查詢] 毛孩沉浸台式中秋節 2026"
+                  : "[Site Contact Widget]")
+              }
+              defaultMessage={preset?.message}
               compact
               onSuccess={() => setIsOpen(false)}
             />
@@ -96,7 +155,14 @@ const ContactUsWidget = () => {
         <button
           ref={buttonRef}
           type="button"
-          onClick={() => setIsOpen((open) => !open)}
+          onClick={() =>
+            setIsOpen((open) => {
+              if (!open) {
+                setContactTopic(isMidAutumnPage ? "event" : null);
+              }
+              return !open;
+            })
+          }
           aria-expanded={isOpen}
           aria-controls="contact-us-panel"
           className={cn(
@@ -109,7 +175,9 @@ const ContactUsWidget = () => {
           ) : (
             <MessageCircle className="h-5 w-5" />
           )}
-          <span className="max-[380px]:sr-only">{t("contactWidget.label")}</span>
+          <span className="max-[380px]:sr-only">
+            {isMidAutumnPage ? "活動查詢" : t("contactWidget.label")}
+          </span>
         </button>
       </div>
     </>

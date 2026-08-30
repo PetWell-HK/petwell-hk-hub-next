@@ -32,12 +32,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/namtag",
-        destination: "/nametag",
+        destination: "/anti-lost-dog-tag-hk",
+        permanent: true,
+      },
+      {
+        source: "/nametag",
+        destination: "/anti-lost-dog-tag-hk",
         permanent: true,
       },
       {
         source: "/fang-zou-shi-gou-pai",
-        destination: "/nametag",
+        destination: "/anti-lost-dog-tag-hk",
         permanent: true,
       },
       {
@@ -57,12 +62,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/%E9%98%B2%E8%B5%B0%E5%A4%B1%E7%8B%97%E7%89%8C",
-        destination: "/nametag",
+        destination: "/anti-lost-dog-tag-hk",
         permanent: true,
       },
       {
         source: "/防走失狗牌",
-        destination: "/nametag",
+        destination: "/anti-lost-dog-tag-hk",
+        permanent: true,
+      },
+      {
+        source: "/pet-friendly-restaurants-hk",
+        destination: "/restaurants",
         permanent: true,
       },
     ];

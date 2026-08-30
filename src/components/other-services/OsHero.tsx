@@ -1,11 +1,13 @@
+import { ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import OsCtaButton from "@/components/other-services/OsCtaButton";
 import OsHeroShowcase from "@/components/other-services/OsHeroShowcase";
+import { eventsSiteUrl } from "@/lib/sites";
 
 const TRUST_BADGE_KEYS = ["media", "appStore", "platform"] as const;
 
 const OsHero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <section className="os-hero relative overflow-hidden">
@@ -28,6 +30,13 @@ const OsHero = () => {
 
             <div className="os-hero__cta mt-5">
               <OsCtaButton className="os-cta-btn--compact" />
+              <a
+                href={eventsSiteUrl(i18n.language)}
+                className="os-cta-btn os-cta-btn--secondary os-cta-btn--compact inline-flex items-center justify-center gap-2"
+              >
+                {t("otherServices.hero.eventsCta")}
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </a>
             </div>
           </div>
 

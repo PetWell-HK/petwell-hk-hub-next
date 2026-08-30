@@ -33,9 +33,9 @@ const PetwellMember = () => {
 
           {/* How to Join */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-8">
-              如何成為會員
-            </h2>
+            <h1 className="text-2xl font-bold text-foreground text-center mb-8">
+              如何成為 PetWell 會員
+            </h1>
             <div className="space-y-4">
               {steps.map((item) => (
                 <div

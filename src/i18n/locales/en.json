@@ -22,6 +22,14 @@
     "testBooking": "Testing Services",
     "nutritionScore": "Food Score",
     "otherServices": "Merchant Partnership",
+    "review": "Price reviews",
+    "download": "Download the app",
+    "partnershipMenu": {
+      "merchant": "Media & merchants",
+      "merchantHint": "Ads, KOL and listings",
+      "events": "Events",
+      "eventsHint": "Pet markets and festivals"
+    },
     "petFriendlyMenu": {
       "goOut": "Go out together",
       "care": "Get care",
@@ -495,7 +503,9 @@
       "q7": "Can I bring my cat to pet-friendly restaurants?",
       "a7": "Policies vary. PetWell listings focus on dog-friendly venues — call ahead to confirm if cats are welcome.",
       "q8": "Which areas have the most pet-friendly restaurants?",
-      "a8": "Hong Kong Island (Central, Wan Chai, Eastern) and Kowloon (Yau Tsim Mong, Kwun Tong) tend to have more options. Browse our 18-district pages for counts."
+      "a8": "Hong Kong Island (Central, Wan Chai, Eastern) and Kowloon (Yau Tsim Mong, Kwun Tong) tend to have more options. Browse our 18-district pages for counts.",
+      "q9": "What changed on 9 July 2026 for dogs in restaurants?",
+      "a9": "FEHD's scheme allowing dogs on licensed food premises took effect on 9 July 2026, covering about 989–1,000 venues. A licence is not the same as being truly pet-friendly: some are outdoor-only, some require reservations, and cats are not covered. PetWell confirms indoor and walk-in policy by phone."
     },
     "howTo": {
       "name": "How to choose a pet-friendly restaurant",
@@ -511,7 +521,9 @@
     },
     "hubSeo": {
       "title": "Hong Kong's only pet-friendly restaurant review site — by owners, for owners",
-      "body": "Plenty of restaurants say they're pet-friendly, but the reality is often different: outdoor seating only, advance booking required, or dogs kept in strollers indoors. Don't let another owner get caught out — share your real experience here. You can post anonymously, upload photos, and speak your mind. Every review helps the next family bringing a pet out, and makes Hong Kong genuinely more pet-friendly."
+      "body": "Plenty of restaurants say they're pet-friendly, but the reality is often different: outdoor seating only, advance booking required, or dogs kept in strollers indoors. Don't let another owner get caught out — share your real experience here. You can post anonymously, upload photos, and speak your mind. Every review helps the next family bringing a pet out, and makes Hong Kong genuinely more pet-friendly.",
+      "fehdTitle": "2026 FEHD dog-in-restaurant scheme: licence vs truly pet-friendly",
+      "fehdBody": "FEHD's scheme took effect on 9 July 2026. About 989–1,000 licensed dog-friendly restaurants may legally admit dogs. A licence only means dogs are allowed — not that staff welcome pets indoors or accept walk-ins. PetWell verifies those policies by phone and adds owner reviews. Typical FEHD rules: leash no longer than 1.5m, no dogs on tables, no contact with utensils, and adult supervision. Use the FEHD-licensed filter or our searchable approved list to cross-check."
     },
     "communityReviewsTitle": "Why leave a review?",
     "communityReviewsBody": "PetWell isn't just a directory — it's a shared map built by Hong Kong pet owners. One honest comment, good or bad, helps the next family avoid a bad experience or discover a hidden gem. Post anonymously, add photos, tell the truth. All free.",
@@ -909,6 +921,11 @@
   "footer": {
     "quickLinks": "Quick Links",
     "legal": "Legal",
+    "explore": "Go out together",
+    "care": "Get care",
+    "community": "Community",
+    "company": "PetWell",
+    "follow": "Follow us",
     "terms": "Terms & Privacy Policy",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 PetWell HK Limited. All rights reserved",
@@ -1218,6 +1235,8 @@
       "completed": "Finished",
       "cancelled": "Cancelled"
     },
+    "featured": "Featured activity",
+    "featuredBadge": "Featured",
     "filters": {
       "allStatuses": "All Statuses"
     },
@@ -1673,6 +1692,7 @@
         "appStore": "App Store Top 9",
         "platform": "AI-powered · Data verified"
       },
+      "eventsCta": "Visit events site",
       "kolCaption": "KOL campaign examples",
       "kolVisualLabel": "Sample KOL pet collaboration content",
       "showcaseHint": "Move your mouse to explore · hover a card for service highlights"

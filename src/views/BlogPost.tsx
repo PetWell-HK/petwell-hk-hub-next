@@ -3,10 +3,12 @@
 import { useParams } from "next/navigation";
 import { routeParam } from "@/lib/routeParam";
 import AppLink from "@/components/AppLink";
+import { openPetwellContact } from "@/components/ContactUsWidget";
 import { useMemo, useState, useEffect, useCallback, useRef } from "react";
 import FAQSection from "@/components/FAQSection";
 import FehdPetFriendlyDirectory from "@/components/FehdPetFriendlyDirectory";
 import PetFriendlyMallsDirectory from "@/components/PetFriendlyMallsDirectory";
+import DogMerCalculator from "@/components/DogMerCalculator";
 import React from "react";
 import { blogPosts } from "@/data/blogData";
 import { Badge } from "@/components/ui/badge";
@@ -96,7 +98,8 @@ const BlogPost = () => {
 
           {/* Hero Image */}
           <div className="max-w-4xl mx-auto mb-8">
-            {post.slug !== 'hk-fehd-pet-friendly-restaurants-1000-list' && (
+            {post.slug !== 'hk-fehd-pet-friendly-restaurants-1000-list' &&
+              post.slug !== 'dog-mer-calorie-calculator-hk' && (
               <div className="mb-6 overflow-hidden rounded-2xl bg-neutral-950">
                 <img
                   src={post.imageUrl}
@@ -109,11 +112,16 @@ const BlogPost = () => {
 
             {/* Meta Info */}
             <div className="mb-6">
-              <Badge className="mb-4">{post.category}</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
-              <p className="text-xl text-muted-foreground mb-6">{post.excerpt}</p>
+              <Badge className="mb-2.5">{post.category}</Badge>
+              <h1 className="mb-3 text-[1.375rem] font-semibold leading-snug tracking-tight text-foreground md:text-[1.75rem]">
+                {post.title}
+              </h1>
+              {post.slug === "dog-mer-calorie-calculator-hk" && <DogMerCalculator />}
+              <p className="mb-4 text-[15px] font-normal leading-7 text-muted-foreground">
+                {post.excerpt}
+              </p>
               
-              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <User className="w-4 h-4" />
                   {post.author}
@@ -126,6 +134,73 @@ const BlogPost = () => {
             </div>
 
             <BlogAdSense placement="top" />
+
+            {post.slug === "mid-autumn-pet-outings-hong-kong-2026" && (
+              <Card className="mb-8 overflow-hidden rounded-xl">
+                <div className="flex flex-col sm:flex-row">
+                  <div className="relative h-44 shrink-0 overflow-hidden bg-muted sm:h-auto sm:w-[220px] lg:w-[240px]">
+                    <img
+                      src={post.imageUrl}
+                      alt="毛孩沉浸台式中秋節｜觀塘海濱 AquaBeat"
+                      className="h-full w-full object-cover"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow-sm">
+                      免費入場 · 無需預約
+                    </span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col justify-between px-4 py-4 sm:px-5 sm:py-4">
+                    <div>
+                      <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground">
+                        AQUABEAT × PETWELL
+                      </p>
+                      <h2 className="mt-1 text-[1.25rem] font-bold leading-snug sm:text-[1.35rem]">
+                        毛孩沉浸台式中秋節
+                      </h2>
+                      <dl className="mt-3 grid grid-cols-[2.25rem_1fr] gap-x-3 gap-y-1.5 text-sm">
+                        <dt className="text-muted-foreground">日期</dt>
+                        <dd>2026年9月25–27日</dd>
+                        <dt className="text-muted-foreground">時間</dt>
+                        <dd>週五 16:00–20:00 · 六日 15:00–21:00</dd>
+                        <dt className="text-muted-foreground">地點</dt>
+                        <dd>觀塘海濱 AquaBeat 活動空間 02</dd>
+                      </dl>
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                        所有動物都歡迎。賞月、十分／九份打卡、LED 天燈、美人魚表演、和服同新中式服裝租借。想整花膠月餅要預先報名。
+                      </p>
+                    </div>
+                    <div className="mt-4 flex flex-col gap-3 border-t border-border/70 pt-3">
+                      <div className="flex flex-wrap gap-2">
+                        <Button
+                          type="button"
+                          size="sm"
+                          onClick={() => openPetwellContact("family-photo")}
+                        >
+                          預約送全家福
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          onClick={() => openPetwellContact("mooncake")}
+                        >
+                          報名花膠月餅
+                        </Button>
+                        <Button asChild size="sm" variant="ghost">
+                          <a href="#practical">交通資訊</a>
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        主人即場入場就可以。檔主、傳媒或品牌請用{" "}
+                        <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
+                          開檔申請
+                        </AppLink>
+                        。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            )}
 
             {/* Prominent Answer Box for Key Search Queries */}
             {post.slug === 'pet-insurance-hk-2025' && (

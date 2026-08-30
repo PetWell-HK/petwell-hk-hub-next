@@ -13,6 +13,11 @@ import DirectAnswerBox from "@/components/DirectAnswerBox";
 import { fetchAllEvents, calculateEventStatus, getAttendeeCount, extractDistrict, type EventStatus, type OrganizedEvent } from "@/services/eventApi";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import {
+  MID_AUTUMN_FEATURED_ACTIVITY,
+  isFeaturedActivity,
+  mergeFeaturedActivityFirst,
+} from "@/data/featuredActivities";
 
 const eventCategoryKeys = [
   "ADOPTION",
@@ -35,7 +40,7 @@ const petActivitiesFAQ = [
   },
   {
     question: "今個周末帶狗去邊好？",
-    answer: "你可以喺PetWell查看最新嘅寵物活動，我哋會列出港島、九龍、新界各區嘅寵物好去處，幫你計劃同毛孩嘅周末活動。",
+    answer: "2026 年 9 月 25–27 日觀塘海濱有毛孩沉浸台式中秋節，賞月、寵物月餅、打卡同夜市一次過。其他週末市集、派對同寵物友善活動亦會喺本頁更新。",
   },
   {
     question: "邊度可以帶寵物？有咩放狗好地方？",
@@ -72,6 +77,8 @@ interface EventDisplay {
   price?: number;
   category?: string;
   remark?: string;
+  href?: string;
+  featured?: boolean;
 }
 
 function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
@@ -98,6 +105,8 @@ function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
         price: event.price || undefined,
         category: normalizeEventCategory(event.category, event.name, event.description),
         remark: event.remark || undefined,
+        href: isFeaturedActivity(event) ? MID_AUTUMN_FEATURED_ACTIVITY.href : undefined,
+        featured: isFeaturedActivity(event),
       });
     } catch {
       // Skip malformed events so one bad record cannot empty the listing.
@@ -119,6 +128,32 @@ function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
   });
 }
 
+const MID_AUTUMN_COVER = "/assets/blog-mid-autumn-pet-hk/cover.jpg";
+
+function featuredFallback(): EventDisplay {
+  return {
+    ...MID_AUTUMN_FEATURED_ACTIVITY,
+    imageUrl: MID_AUTUMN_COVER,
+    organizerName: MID_AUTUMN_FEATURED_ACTIVITY.organizerName,
+    status: calculateEventStatus(MID_AUTUMN_FEATURED_ACTIVITY),
+    attendeeCount: 0,
+    featured: true,
+  };
+}
+
+function withFeaturedActivity(events: EventDisplay[]): EventDisplay[] {
+  return mergeFeaturedActivityFirst(events, featuredFallback()).map((event) =>
+    isFeaturedActivity(event)
+      ? {
+          ...event,
+          imageUrl: event.imageUrl || MID_AUTUMN_COVER,
+          href: MID_AUTUMN_FEATURED_ACTIVITY.href,
+          featured: true,
+        }
+      : event,
+  );
+}
+
 const PetActivities = ({
   initialEvents = null,
 }: {
@@ -126,7 +161,7 @@ const PetActivities = ({
 }) => {
   const { t, i18n } = useTranslation();
   const [events, setEvents] = useState<EventDisplay[]>(() =>
-    initialEvents ? mapOrganizedEventsToDisplay(initialEvents) : [],
+    withFeaturedActivity(initialEvents ? mapOrganizedEventsToDisplay(initialEvents) : []),
   );
   const [loading, setLoading] = useState(!initialEvents);
   const [error, setError] = useState<string | null>(null);
@@ -162,14 +197,14 @@ const PetActivities = ({
         
         if (!response || !response.items) {
           console.warn('No events data received');
-          if (!initialEvents) setEvents([]);
+          setEvents(withFeaturedActivity([]));
           return;
         }
 
-        setEvents(mapOrganizedEventsToDisplay(response.items));
+        setEvents(withFeaturedActivity(mapOrganizedEventsToDisplay(response.items)));
       } catch (err) {
         console.error('Error loading events:', err);
-        if (!initialEvents) setError('無法載入活動資料，請稍後再試');
+        if (!initialEvents) setEvents(withFeaturedActivity([]));
       } finally {
         setLoading(false);
       }
@@ -203,6 +238,11 @@ const PetActivities = ({
   useEffect(() => {
     setVisibleEventCount(EVENTS_PER_PAGE);
   }, [searchQuery, statusFilter, categoryFilter, priceFilter]);
+
+  const featuredEvent = useMemo(
+    () => filteredEvents.find((event) => event.featured || isFeaturedActivity(event)) ?? null,
+    [filteredEvents],
+  );
 
   const visibleEvents = useMemo(
     () => filteredEvents.slice(0, visibleEventCount),
@@ -250,7 +290,7 @@ const PetActivities = ({
 
             <DirectAnswerBox
               question="今個周末帶狗去邊好？"
-              answer="PetWell收錄最新香港寵物活動，包括寵物市集、寵物派對、狗狗嘉年華等。港島、九龍、新界全覆蓋，幫你計劃同毛孩嘅周末活動！"
+              answer="2026 年 9 月 25–27 日可以帶狗去觀塘海濱毛孩沉浸台式中秋節：賞月、寵物月餅、台灣打卡景同夜市。其他週末市集同派對亦會喺本頁更新。"
               className="mt-4 max-w-2xl"
               hidden={true}
             />
@@ -399,6 +439,67 @@ const PetActivities = ({
               </div>
             ) : (
               <>
+                {featuredEvent && (
+                  <article className="mb-8">
+                    <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-primary">
+                      {t("event.featured")}
+                    </p>
+                    <AppLink
+                      href={featuredEvent.href || `/event/${featuredEvent.id}`}
+                      className="group block overflow-hidden rounded-2xl border border-border bg-background transition-shadow hover:shadow-strong"
+                    >
+                      <div className="flex flex-col sm:flex-row">
+                        <div className="relative h-52 shrink-0 overflow-hidden bg-muted sm:h-auto sm:w-[280px] lg:w-[320px]">
+                          {featuredEvent.imageUrl ? (
+                            <img
+                              src={featuredEvent.imageUrl}
+                              alt={`${featuredEvent.name} - 觀塘海濱寵物中秋市集`}
+                              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                            />
+                          ) : (
+                            <div className="flex h-full w-full items-center justify-center bg-muted">
+                              <Calendar className="h-10 w-10 text-muted-foreground/30" />
+                            </div>
+                          )}
+                          <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold text-primary-foreground shadow-sm">
+                            {t("event.featuredBadge")}
+                          </span>
+                        </div>
+                        <div className="flex min-w-0 flex-1 flex-col justify-between px-5 py-5">
+                          <div>
+                            <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground">
+                              AQUABEAT × PETWELL
+                            </p>
+                            <h2 className="mt-1 text-xl font-bold leading-snug text-foreground group-hover:text-primary sm:text-2xl">
+                              {featuredEvent.name}
+                            </h2>
+                            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                              {featuredEvent.description}
+                            </p>
+                            <div className="mt-4 space-y-1.5 text-sm text-muted-foreground">
+                              <div className="flex items-start gap-2">
+                                <Calendar className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                                <span>2026年9月25–27日 · 週五 16:00–20:00 · 六日 15:00–21:00</span>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                                <span>{featuredEvent.location}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mt-5 flex items-center justify-between gap-3 border-t border-border/70 pt-3">
+                            <span className="text-sm font-semibold text-primary">免費入場</span>
+                            <span className="inline-flex items-center text-sm font-semibold text-primary">
+                              {i18n.language === "zh" ? "查看詳情" : "View details"}
+                              <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </AppLink>
+                  </article>
+                )}
+
                 <p className="mb-6 text-sm tabular-nums text-muted-foreground">
                   共 {filteredEvents.length} 個活動
                 </p>
@@ -408,7 +509,7 @@ const PetActivities = ({
                     const statusBadge = getEventStatusBadge(event.status);
                     return (
                       <article key={event.id}>
-                        <AppLink href={`/event/${event.id}`} className="group block h-full">
+                        <AppLink href={event.href || `/event/${event.id}`} className="group block h-full">
                           <Card className="h-full overflow-hidden rounded-xl border-border shadow-none transition-shadow hover:shadow-strong">
                             <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                               {event.imageUrl ? (

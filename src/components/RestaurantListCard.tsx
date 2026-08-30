@@ -14,6 +14,7 @@ interface RestaurantListCardProps {
   petAccessLabel: string | null;
   petEntryLabel: string | null;
   openingHoursText: string | null;
+  imagePriority?: boolean;
 }
 
 export function RestaurantListCard({
@@ -21,6 +22,7 @@ export function RestaurantListCard({
   petAccessLabel,
   petEntryLabel,
   openingHoursText,
+  imagePriority = false,
 }: RestaurantListCardProps) {
   const { t } = useTranslation();
 
@@ -33,6 +35,7 @@ export function RestaurantListCard({
               imageKey={restaurant.image}
               alt={restaurant.name}
               className="w-full h-full"
+              priority={imagePriority}
             />
             <div className="absolute left-2 top-2 z-10 flex flex-col items-start gap-1.5">
               {isEffectivePremium(restaurant) && (

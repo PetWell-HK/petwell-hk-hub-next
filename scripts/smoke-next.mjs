@@ -125,7 +125,6 @@ async function main() {
     "/forum",
     "/review",
     "/nutrition",
-    "/nametag",
     "/about",
     "/owner-zone",
     "/pet-activities",
@@ -134,6 +133,8 @@ async function main() {
     "/rainy-day-pet-friendly-indoor-hong-kong",
     "/blog/hong-kong-dog-trainer-licence-guide",
     "/anti-lost-dog-tag-hk",
+    "/mid-autumn-pet-outings-hong-kong-2026",
+    "/dog-mer-calorie-calculator-hk",
     "/pet-matchmaker",
     "/download",
   ];
@@ -151,6 +152,8 @@ async function main() {
   await expectRedirect("/merchant", "/other-services", "redirect /merchant");
   await expectRedirect("/chong-wu-you-shan-can-ting", "/restaurants", "redirect chinese restaurants alias");
   await expectRedirect("/blog/pet-friendly-shopping-malls-hk-2025", "/rainy-day-pet-friendly-indoor-hong-kong", "redirect malls blog");
+  await expectRedirect("/nametag", "/anti-lost-dog-tag-hk", "redirect /nametag");
+  await expectRedirect("/pet-friendly-restaurants-hk", "/restaurants", "redirect english restaurants alias");
 
   // SEO: home
   await expectHtml("/", [

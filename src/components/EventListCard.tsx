@@ -14,6 +14,8 @@ export interface EventListCardData {
   category?: string | null;
   price?: number | null;
   status: EventStatus;
+  href?: string;
+  featured?: boolean;
 }
 
 interface EventListCardProps {
@@ -33,7 +35,7 @@ export function EventListCard({
 }: EventListCardProps) {
   return (
     <article>
-      <AppLink href={`/event/${event.id}`} className="group block h-full">
+      <AppLink href={event.href || `/event/${event.id}`} className="group block h-full">
         <Card className="h-full overflow-hidden rounded-xl border-border shadow-none transition-shadow hover:shadow-strong">
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
             {event.imageUrl ? (

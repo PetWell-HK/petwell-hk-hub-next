@@ -9,7 +9,6 @@ const staticRoutes: Array<{
 }> = [
   { path: "/", changeFrequency: "daily", priority: 1 },
   { path: "/restaurants", changeFrequency: "daily", priority: 0.95 },
-  { path: "/pet-friendly-restaurants-hk", changeFrequency: "daily", priority: 0.9 },
   { path: "/clinics", changeFrequency: "daily", priority: 0.9 },
   { path: "/home-visits", changeFrequency: "weekly", priority: 0.85 },
   { path: "/salons", changeFrequency: "weekly", priority: 0.85 },
@@ -19,8 +18,7 @@ const staticRoutes: Array<{
   { path: "/pet-activities", changeFrequency: "daily", priority: 0.8 },
   { path: "/review", changeFrequency: "daily", priority: 0.8 },
   { path: "/nutrition", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/nametag", changeFrequency: "weekly", priority: 0.85 },
-  { path: "/anti-lost-dog-tag-hk", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/anti-lost-dog-tag-hk", changeFrequency: "weekly", priority: 0.85 },
   { path: "/owner-zone", changeFrequency: "weekly", priority: 0.75 },
   { path: "/ngos", changeFrequency: "monthly", priority: 0.7 },
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
