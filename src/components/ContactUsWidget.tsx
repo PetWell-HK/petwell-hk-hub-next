@@ -43,10 +43,18 @@ export function openPetwellContact(topic: ContactTopic = "event") {
   window.dispatchEvent(new CustomEvent<OpenContactDetail>("petwell:open-contact", { detail: { topic } }));
 }
 
+const PLACE_DETAIL_PATH =
+  /^\/(restaurants|clinics|salons|lodging|malls|home-visits)\/[^/]+\/?$/;
+
+function isPlaceDetailPath(pathname: string): boolean {
+  return PLACE_DETAIL_PATH.test(pathname);
+}
+
 const ContactUsWidget = () => {
   const { t } = useTranslation();
   const pathname = usePathname() || "/";
   const isMidAutumnPage = pathname.includes("mid-autumn");
+  const hideOnPlaceDetail = isPlaceDetailPath(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [contactTopic, setContactTopic] = useState<ContactTopic | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -86,13 +94,24 @@ const ContactUsWidget = () => {
 
   useEffect(() => {
     const openFromPage = (event: Event) => {
+      if (hideOnPlaceDetail) return;
       const topic = (event as CustomEvent<OpenContactDetail>).detail?.topic;
       setContactTopic(topic ?? (isMidAutumnPage ? "event" : null));
       setIsOpen(true);
     };
     window.addEventListener("petwell:open-contact", openFromPage);
     return () => window.removeEventListener("petwell:open-contact", openFromPage);
-  }, [isMidAutumnPage]);
+  }, [hideOnPlaceDetail, isMidAutumnPage]);
+
+  useEffect(() => {
+    if (hideOnPlaceDetail) {
+      setIsOpen(false);
+    }
+  }, [hideOnPlaceDetail]);
+
+  if (hideOnPlaceDetail) {
+    return null;
+  }
 
   return (
     <>

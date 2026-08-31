@@ -1,8 +1,9 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import FAQSection from "@/components/FAQSection";
 import DirectAnswerBox from "@/components/DirectAnswerBox";
 import PlaceReportModal from "@/components/PlaceReportModal";
+import LocationPermissionDialog from "@/components/LocationPermissionDialog";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ import { Loader2, Locate, PlusCircle, Search, ShieldCheck, SlidersHorizontal, X 
 import DiscoverPlaceTabs from "@/components/DiscoverPlaceTabs";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
 import { cn } from "@/lib/utils";
+import type { NearbyLocationHint } from "@/hooks/useNearbyPlaceSearch";
 import type { WebSuggestPlaceCategory } from "@/services/reportService";
 
 export interface PlaceListingFilter {
@@ -40,7 +42,7 @@ interface PlaceListingLayoutProps {
   selectedRegion: string;
   onRegionChange: (region: string) => void;
   nearbyActive?: boolean;
-  onSearchNearby?: () => void;
+  onSearchNearby?: () => void | boolean | NearbyLocationHint | null | Promise<void | boolean | NearbyLocationHint | null>;
   isRequestingNearby?: boolean;
   policyFilters?: PlaceListingFilter[];
   activeFilterLabels: string[];
@@ -76,6 +78,16 @@ interface PlaceListingLayoutProps {
   /** "find" puts the list first (default). Extra copy stays in `.seo-hidden` for crawlers. */
   heroMode?: "full" | "find";
   children: ReactNode;
+}
+
+function readNearbyOutcome(
+  outcome: void | boolean | NearbyLocationHint | null,
+): NearbyLocationHint | null {
+  if (outcome === "blocked" || outcome === "timeout" || outcome === "unavailable") {
+    return outcome;
+  }
+  if (outcome === false) return "blocked";
+  return null;
 }
 
 const PlaceListingLayout = ({
@@ -130,6 +142,41 @@ const PlaceListingLayout = ({
 }: PlaceListingLayoutProps) => {
   const { t } = useTranslation();
   const [isSuggestModalOpen, setIsSuggestModalOpen] = useState(false);
+  const [locationHint, setLocationHint] = useState<NearbyLocationHint | null>(null);
+
+  const handleSearchNearby = async () => {
+    if (!onSearchNearby) return;
+    const outcome = readNearbyOutcome(await onSearchNearby());
+    setLocationHint(outcome);
+  };
+
+  useEffect(() => {
+    if (locationHint !== "blocked" || !onSearchNearby) return;
+    if (typeof navigator === "undefined" || !navigator.permissions?.query) return;
+
+    let cancelled = false;
+    let status: PermissionStatus | undefined;
+
+    void navigator.permissions
+      .query({ name: "geolocation" as PermissionName })
+      .then((permission) => {
+        if (cancelled) return;
+        status = permission;
+        permission.onchange = () => {
+          if (permission.state !== "granted") return;
+          void (async () => {
+            const outcome = readNearbyOutcome(await onSearchNearby());
+            if (!cancelled) setLocationHint(outcome);
+          })();
+        };
+      });
+
+    return () => {
+      cancelled = true;
+      if (status) status.onchange = null;
+    };
+  }, [locationHint, onSearchNearby]);
+
   const showResults = !isLoading && !error && resultCount > 0;
   const showPartialEmpty = !isLoading && !error && resultCount === 0 && hasMoreToLoad;
   const showEmpty = !isLoading && !error && resultCount === 0 && !hasMoreToLoad;
@@ -271,7 +318,7 @@ const PlaceListingLayout = ({
                     type="button"
                     className="place-listing-nearby-btn shrink-0"
                     onClick={() => {
-                      void onSearchNearby();
+                      void handleSearchNearby();
                     }}
                     disabled={isRequestingNearby}
                     aria-label={t("placeListing.searchNearby")}
@@ -479,6 +526,14 @@ const PlaceListingLayout = ({
           defaultCategory={suggestPlaceCategory}
         />
       ) : null}
+      <LocationPermissionDialog
+        hint={locationHint}
+        isRetrying={isRequestingNearby}
+        onRetry={() => {
+          void handleSearchNearby();
+        }}
+        onDismiss={() => setLocationHint(null)}
+      />
     </div>
   );
 };

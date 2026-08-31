@@ -1,11 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { toast } from "@/hooks/use-toast";
 import { roundLocationForSearch } from "@/utils/distance";
 
 export type NearbyCoords = { lat: number; lon: number };
+export type NearbyLocationHint = "blocked" | "timeout" | "unavailable";
 
 function readCurrentPosition(): Promise<NearbyCoords> {
   return new Promise((resolve, reject) => {
@@ -31,8 +30,28 @@ function readCurrentPosition(): Promise<NearbyCoords> {
   });
 }
 
+async function queryGeolocationState(): Promise<PermissionState | "unknown"> {
+  try {
+    const status = await navigator.permissions?.query({
+      name: "geolocation" as PermissionName,
+    });
+    return status?.state ?? "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
+function classifyGeoFailure(error: unknown): NearbyLocationHint {
+  const code = typeof error === "object" && error && "code" in error
+    ? Number((error as { code?: number }).code)
+    : null;
+  if (code === 3) return "timeout";
+  if (code === 2) return "unavailable";
+  if (error instanceof Error && error.message === "unavailable") return "unavailable";
+  return "blocked";
+}
+
 export function useNearbyPlaceSearch() {
-  const { t } = useTranslation();
   const [coords, setCoords] = useState<NearbyCoords | null>(null);
   const [nearbyActive, setNearbyActive] = useState(false);
   const [isRequesting, setIsRequesting] = useState(false);
@@ -47,34 +66,29 @@ export function useNearbyPlaceSearch() {
   }, []);
 
   const requestNearby = useCallback(
-    async ({ silent = false }: { silent?: boolean } = {}) => {
+    async ({ silent = false }: { silent?: boolean } = {}): Promise<NearbyLocationHint | null> => {
       setIsRequesting(true);
       try {
-        const position = await readCurrentPosition();
-        const applied = applyPosition(position);
-        if (!applied) {
+        const permission = await queryGeolocationState();
+        if (permission === "denied") {
           setNearbyActive(false);
-          if (!silent) {
-            toast({
-              title: t("placeListing.locationDenied"),
-            });
-          }
-          return false;
+          return silent ? null : "blocked";
         }
-        return true;
-      } catch {
+
+        const position = await readCurrentPosition();
+        if (!applyPosition(position)) {
+          setNearbyActive(false);
+          return silent ? null : "unavailable";
+        }
+        return null;
+      } catch (error) {
         setNearbyActive(false);
-        if (!silent) {
-          toast({
-            title: t("placeListing.locationDenied"),
-          });
-        }
-        return false;
+        return silent ? null : classifyGeoFailure(error);
       } finally {
         setIsRequesting(false);
       }
     },
-    [applyPosition, t],
+    [applyPosition],
   );
 
   const exitNearby = useCallback(() => {
@@ -87,14 +101,8 @@ export function useNearbyPlaceSearch() {
     if (typeof navigator === "undefined" || !navigator.geolocation) return;
 
     const autoRequest = async () => {
-      try {
-        const permission = await navigator.permissions?.query({
-          name: "geolocation" as PermissionName,
-        });
-        if (permission?.state === "denied") return;
-      } catch {
-        // Safari / older browsers may not support Permissions for geolocation.
-      }
+      const permission = await queryGeolocationState();
+      if (permission === "denied") return;
       await requestNearby({ silent: true });
     };
 
