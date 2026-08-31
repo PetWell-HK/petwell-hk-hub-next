@@ -18,6 +18,7 @@ export interface PlaceSearchOptions {
   limit?: number;
   nextToken?: number[];
   sortMethod?: 'rating-desc' | 'location';
+  location?: { lat: number; lon: number };
 }
 
 export function formatGraphqlError(error: unknown, fallback = 'Search failed'): string {

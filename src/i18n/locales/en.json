@@ -42,6 +42,15 @@
       "lodging": "Lodging"
     }
   },
+  "placeListing": {
+    "searchNearby": "Search nearby",
+    "nearby": "Nearby",
+    "sortedByDistance": "Closest first",
+    "locationDenied": "Couldn't get your location. Allow location access in your browser, then tap Search nearby again.",
+    "locationUnavailable": "This browser can't provide a location.",
+    "distanceM": "{{m}} m",
+    "distanceKm": "{{km}} km"
+  },
   "restaurantReservation": {
     "cta": "Reserve a table",
     "ctaShort": "Reserve",

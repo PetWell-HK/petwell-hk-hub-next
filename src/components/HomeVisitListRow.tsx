@@ -18,6 +18,7 @@ interface HomeVisitListRowProps {
   is247?: boolean;
   is247Label?: string;
   rating?: number;
+  distanceLabel?: string | null;
 }
 
 export function HomeVisitListRow({
@@ -31,6 +32,7 @@ export function HomeVisitListRow({
   is247,
   is247Label,
   rating = 0,
+  distanceLabel,
 }: HomeVisitListRowProps) {
   const { t } = useTranslation();
   const visibleOfferings = offerings.slice(0, VISIBLE_OFFERING_LIMIT);
@@ -54,6 +56,11 @@ export function HomeVisitListRow({
                 <span className="absolute left-1 top-1 inline-flex items-center gap-0.5 rounded-full bg-white/95 px-1.5 py-0.5 text-[10px] font-semibold text-primary shadow-sm">
                   <Clock className="h-2.5 w-2.5" aria-hidden="true" />
                   {is247Label}
+                </span>
+              ) : null}
+              {distanceLabel ? (
+                <span className="absolute right-1 top-1 rounded-full bg-black/55 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums text-white">
+                  {distanceLabel}
                 </span>
               ) : null}
             </div>

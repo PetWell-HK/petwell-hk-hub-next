@@ -11,8 +11,10 @@ import RestaurantDistrictLinks from "@/components/RestaurantDistrictLinks";
 import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
 import { useFilteredRestaurants } from "@/hooks/useRestaurants";
+import { useNearbyPlaceSearch } from "@/hooks/useNearbyPlaceSearch";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { getTodayOpeningHours } from "@/utils/availableHours";
+import { getNearbyDistanceLabel } from "@/utils/distance";
 import {
   resolveAreaSlug,
 } from "@/data/hongKong18Districts";
@@ -38,6 +40,7 @@ const RestaurantsByArea = ({
   const [indoorAllowed, setIndoorAllowed] = useState(false);
   const [walkInAllowed, setWalkInAllowed] = useState(false);
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
+  const nearby = useNearbyPlaceSearch();
 
   const listingFilters = useMemo((): RestaurantFilters => {
     const filters: RestaurantFilters = {
@@ -49,7 +52,7 @@ const RestaurantsByArea = ({
 
     if (area?.type === "region") {
       filters.region = area.region.filterRegion;
-    } else if (area?.type === "district") {
+    } else     if (area?.type === "district") {
       // Prefer Chinese neighborhood + admin aliases so 元朗區 pages also match 元朗 rows
       const zhFilterValues = area.district.filterValues.filter((value) =>
         /[\u4e00-\u9fff]/.test(value),
@@ -58,8 +61,13 @@ const RestaurantsByArea = ({
         zhFilterValues.length > 0 ? zhFilterValues : [area.district.labelZh];
     }
 
+    if (nearby.nearbyActive && nearby.coords) {
+      filters.location = nearby.coords;
+      filters.sortMethod = "location";
+    }
+
     return filters;
-  }, [area, searchQuery, indoorAllowed, walkInAllowed]);
+  }, [area, searchQuery, indoorAllowed, walkInAllowed, nearby.nearbyActive, nearby.coords]);
 
   const {
     restaurants: areaRestaurants,
@@ -71,7 +79,9 @@ const RestaurantsByArea = ({
   } = useFilteredRestaurants(
     listingFilters,
     i18n.language,
-    !searchQuery && !indoorAllowed && !walkInAllowed ? initialListing : null,
+    !searchQuery && !indoorAllowed && !walkInAllowed && !nearby.nearbyActive
+      ? initialListing
+      : null,
   );
 
   const seoContext = useMemo(() => {
@@ -253,7 +263,12 @@ const RestaurantsByArea = ({
       filtersLabel={t("restaurants.filtersLabel")}
       regions={regionTabs}
       selectedRegion={regionTabs[0].value}
-      onRegionChange={() => {}}
+      onRegionChange={() => {
+        nearby.exitNearby();
+      }}
+      nearbyActive={nearby.nearbyActive}
+      onSearchNearby={nearby.requestNearby}
+      isRequestingNearby={nearby.isRequesting}
       policyFilters={[
         {
           id: "indoor",
@@ -334,6 +349,12 @@ const RestaurantsByArea = ({
             openingHoursText={
               getTodayOpeningHours(restaurant.availableHours, restaurant.is247, t) || null
             }
+            distanceLabel={getNearbyDistanceLabel(
+              nearby.nearbyActive,
+              nearby.coords,
+              restaurant.location,
+              t,
+            )}
           />
         ))}
       </div>

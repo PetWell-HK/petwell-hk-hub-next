@@ -24,6 +24,7 @@ export interface ApiSalon {
     en: string;
   };
   district: string;
+  location?: { lat: number; lon: number } | null;
   phoneNo: string;
   website?: string;
   email?: string;
@@ -82,6 +83,7 @@ export interface Salon {
   region: string;
   district: string;
   address: string;
+  location?: { lat: number; lon: number } | null;
   phone: string;
   rating: number;
   totalReviews: number;
@@ -122,6 +124,7 @@ export function transformSalon(apiSalon: ApiSalon, language: string = 'zh'): Sal
     region: getRegionFromDistrict(apiSalon.district),
     district: apiSalon.district,
     address: getMultilingualString(apiSalon.address, lang),
+    location: apiSalon.location || null,
     phone: apiSalon.phoneNo,
     rating: apiSalon.totalRating,
     totalReviews: apiSalon.numReviews,
@@ -202,7 +205,7 @@ export async function searchSalons(
 
   try {
     const variables: Record<string, unknown> = {
-      location: HK_CENTER,
+      location: options.location ?? HK_CENTER,
       limit,
       sortMethod,
     };

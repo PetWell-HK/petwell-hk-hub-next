@@ -15,6 +15,7 @@ interface RestaurantListCardProps {
   petEntryLabel: string | null;
   openingHoursText: string | null;
   imagePriority?: boolean;
+  distanceLabel?: string | null;
 }
 
 export function RestaurantListCard({
@@ -23,6 +24,7 @@ export function RestaurantListCard({
   petEntryLabel,
   openingHoursText,
   imagePriority = false,
+  distanceLabel,
 }: RestaurantListCardProps) {
   const { t } = useTranslation();
 
@@ -49,6 +51,11 @@ export function RestaurantListCard({
               variant="onDark"
             />
             </div>
+            {distanceLabel ? (
+              <span className="absolute right-2 top-2 z-10 rounded-full bg-black/55 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
+                {distanceLabel}
+              </span>
+            ) : null}
           </div>
 
           <div className="p-4 space-y-3">

@@ -42,6 +42,15 @@
       "lodging": "寄養"
     }
   },
+  "placeListing": {
+    "searchNearby": "搜尋附近",
+    "nearby": "附近",
+    "sortedByDistance": "由近到遠",
+    "locationDenied": "未能取得你嘅位置。請喺瀏覽器設定允許定位，再撳「搜尋附近」。",
+    "locationUnavailable": "呢個瀏覽器未能提供位置。",
+    "distanceM": "{{m}} 米",
+    "distanceKm": "{{km}} 公里"
+  },
   "restaurantReservation": {
     "cta": "預約訂座",
     "ctaShort": "訂座",

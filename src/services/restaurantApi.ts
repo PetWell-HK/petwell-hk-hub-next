@@ -490,6 +490,7 @@ export interface FetchRestaurantsOptions {
   nextToken?: number[];
   /** Use full search fields (e.g. nearby). Listing pages use the lighter query by default. */
   fullFields?: boolean;
+  location?: { lat: number; lon: number };
 }
 
 const RESTAURANT_PAGE_SIZE = 500;
@@ -528,7 +529,7 @@ export async function fetchRestaurants(
 
   try {
     const variables: Record<string, unknown> = {
-      location: HK_CENTER,
+      location: options.location ?? HK_CENTER,
       limit,
       sortMethod,
     };

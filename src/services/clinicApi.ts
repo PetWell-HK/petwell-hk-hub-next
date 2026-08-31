@@ -24,6 +24,7 @@ export interface ApiClinic {
     en: string | null;
   } | null;
   district: string | null;
+  location?: { lat: number; lon: number } | null;
   phoneNo: string | null;
   website?: string;
   email?: string;
@@ -77,6 +78,7 @@ export interface Clinic {
   region: string;
   district: string;
   address: string;
+  location?: { lat: number; lon: number } | null;
   phone: string;
   rating: number;
   totalReviews: number;
@@ -113,6 +115,7 @@ export function transformClinic(apiClinic: ApiClinic, language: string = 'zh'): 
     region: getRegionFromDistrict(district),
     district,
     address: localizedAddress,
+    location: apiClinic.location || null,
     phone: apiClinic.phoneNo || '',
     rating: apiClinic.totalRating,
     totalReviews: apiClinic.numReviews,
@@ -193,7 +196,7 @@ export async function searchClinics(
 
   try {
     const variables: Record<string, unknown> = {
-      location: HK_CENTER,
+      location: options.location ?? HK_CENTER,
       limit,
       sortMethod,
     };

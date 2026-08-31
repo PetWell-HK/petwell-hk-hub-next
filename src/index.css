@@ -956,6 +956,34 @@ All colors MUST be HSL.
     border-radius: var(--radius);
   }
 
+  .place-listing-nearby-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 999px;
+    border: 1px solid hsl(var(--primary) / 0.3);
+    background: hsl(var(--primary) / 0.08);
+    padding: 0.375rem 0.75rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    white-space: nowrap;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .place-listing-nearby-btn:hover:not(:disabled) {
+    background: hsl(var(--primary) / 0.14);
+    border-color: hsl(var(--primary) / 0.45);
+  }
+
+  .place-listing-nearby-btn:disabled {
+    opacity: 0.7;
+  }
+
+  .place-listing-toolbar-compact .place-listing-nearby-btn {
+    padding: 0.25rem 0.625rem;
+  }
+
   .place-listing-region-tab,
   .restaurants-region-tab {
     position: relative;

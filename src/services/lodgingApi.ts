@@ -18,6 +18,7 @@ export interface ApiLodging {
   name: { zh: string; en: string };
   address: { zh: string; en: string };
   district: string;
+  location?: { lat: number; lon: number } | null;
   phoneNo: string;
   website?: string;
   email?: string;
@@ -76,6 +77,7 @@ export interface Lodging {
   region: string;
   district: string;
   address: string;
+  location?: { lat: number; lon: number } | null;
   phone: string;
   rating: number;
   totalReviews: number;
@@ -110,6 +112,7 @@ export function transformLodging(api: ApiLodging, language: string = 'zh'): Lodg
     region: getRegionFromDistrict(api.district),
     district: api.district,
     address: getMultilingualString(api.address, lang),
+    location: api.location || null,
     phone: api.phoneNo,
     rating: api.totalRating,
     totalReviews: api.numReviews,
@@ -184,7 +187,7 @@ export async function searchLodgings(
 
   try {
     const variables: Record<string, unknown> = {
-      location: HK_CENTER,
+      location: options.location ?? HK_CENTER,
       limit,
       sortMethod,
     };

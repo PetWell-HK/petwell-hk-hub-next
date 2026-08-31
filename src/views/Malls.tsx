@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredMalls } from "@/hooks/useMalls";
+import { useNearbyPlaceSearch } from "@/hooks/useNearbyPlaceSearch";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { getTodayOpeningHours, localizeOpeningHoursText } from "@/utils/availableHours";
+import { getNearbyDistanceLabel } from "@/utils/distance";
 import {
   getMallMovementLabel,
   getMallPetsAllowedLabel,
@@ -43,13 +45,15 @@ const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
   const [leashWalkOk, setLeashWalkOk] = useState(false);
   const { t, i18n } = useTranslation();
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
+  const nearby = useNearbyPlaceSearch();
 
   const { malls: filteredMalls, isLoading, error } = useFilteredMalls(
     {
-      region: selectedRegion,
+      region: nearby.nearbyActive ? "all" : selectedRegion,
       keyword: searchQuery,
       petsAllowedYes: petsAllowedYes || undefined,
       leashWalkOk: leashWalkOk || undefined,
+      location: nearby.nearbyActive ? nearby.coords ?? undefined : undefined,
     },
     i18n.language,
     initialMalls,
@@ -75,6 +79,7 @@ const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
   const hasActiveFilters = activeFilterLabels.length > 0;
 
   const clearFilters = () => {
+    nearby.exitNearby();
     setSelectedRegion("all");
     setSearchQuery("");
     setPetsAllowedYes(false);
@@ -160,7 +165,13 @@ const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
       filtersLabel={t("mallPlaces.filtersLabel")}
       regions={regions}
       selectedRegion={selectedRegion}
-      onRegionChange={setSelectedRegion}
+      onRegionChange={(region) => {
+        nearby.exitNearby();
+        setSelectedRegion(region);
+      }}
+      nearbyActive={nearby.nearbyActive}
+      onSearchNearby={nearby.requestNearby}
+      isRequestingNearby={nearby.isRequesting}
       policyFilters={[
         {
           id: "pets-yes",
@@ -209,6 +220,12 @@ const Malls = ({ initialMalls = null }: { initialMalls?: Mall[] | null }) => {
             detailPath={`/malls/${mall.id}`}
             serviceLabels={getPolicyLabels(mall)}
             openingHoursText={getOpeningHoursText(mall)}
+            distanceLabel={getNearbyDistanceLabel(
+              nearby.nearbyActive,
+              nearby.coords,
+              mall.location,
+              t,
+            )}
           />
         ))}
       </div>

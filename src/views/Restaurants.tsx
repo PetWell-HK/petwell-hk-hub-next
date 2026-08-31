@@ -6,8 +6,10 @@ import { useTranslation } from "react-i18next";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
 import RestaurantDistrictLinks from "@/components/RestaurantDistrictLinks";
 import { useFilteredRestaurants } from "@/hooks/useRestaurants";
+import { useNearbyPlaceSearch } from "@/hooks/useNearbyPlaceSearch";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { getTodayOpeningHours } from "@/utils/availableHours";
+import { getNearbyDistanceLabel } from "@/utils/distance";
 import { RestaurantListCard } from "@/components/RestaurantListCard";
 import { RestaurantListInfiniteLoader } from "@/components/restaurant/RestaurantListInfiniteLoader";
 import AppLink from "@/components/AppLink";
@@ -27,6 +29,7 @@ const Restaurants = ({
   const [walkInAllowed, setWalkInAllowed] = useState<boolean>(false);
   const [fehdLicensed, setFehdLicensed] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
+  const nearby = useNearbyPlaceSearch();
 
   const {
     restaurants,
@@ -38,19 +41,22 @@ const Restaurants = ({
     isFetchingNextPage,
   } = useFilteredRestaurants(
     {
-      region: selectedRegion,
+      region: nearby.nearbyActive ? "all" : selectedRegion,
       keyword: searchQuery,
       verifiedOnly: true,
       indoorAllowed,
       walkInAllowed,
       fehdLicensed,
+      location: nearby.nearbyActive ? nearby.coords ?? undefined : undefined,
+      sortMethod: nearby.nearbyActive ? "location" : "rating-desc",
     },
     i18n.language,
     !searchQuery &&
       selectedRegion === "all" &&
       !indoorAllowed &&
       !walkInAllowed &&
-      !fehdLicensed
+      !fehdLicensed &&
+      !nearby.nearbyActive
       ? initialListing
       : null,
   );
@@ -141,6 +147,7 @@ const Restaurants = ({
   const hasActiveFilters = activeFilterLabels.length > 0;
 
   const clearFilters = () => {
+    nearby.exitNearby();
     setSelectedRegion("all");
     setSearchQuery("");
     setIndoorAllowed(false);
@@ -193,7 +200,13 @@ const Restaurants = ({
       filtersLabel={t("restaurants.filtersLabel")}
       regions={regions}
       selectedRegion={selectedRegion}
-      onRegionChange={setSelectedRegion}
+      onRegionChange={(region) => {
+        nearby.exitNearby();
+        setSelectedRegion(region);
+      }}
+      nearbyActive={nearby.nearbyActive}
+      onSearchNearby={nearby.requestNearby}
+      isRequestingNearby={nearby.isRequesting}
       policyFilters={[
         {
           id: "indoor",
@@ -289,6 +302,12 @@ const Restaurants = ({
             openingHoursText={
               getTodayOpeningHours(restaurant.availableHours, restaurant.is247, t) || null
             }
+            distanceLabel={getNearbyDistanceLabel(
+              nearby.nearbyActive,
+              nearby.coords,
+              restaurant.location,
+              t,
+            )}
           />
         ))}
       </div>

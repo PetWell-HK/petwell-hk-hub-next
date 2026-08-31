@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import PlaceListingLayout from "@/components/PlaceListingLayout";
 import { HomeVisitListRow } from "@/components/HomeVisitListRow";
 import { useFilteredHomeVisitProviders } from "@/hooks/useHomeVisitProviders";
+import { useNearbyPlaceSearch } from "@/hooks/useNearbyPlaceSearch";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import {
   getHomeVisitListOfferings,
@@ -12,6 +13,7 @@ import {
   getSpeciesLabel,
   type HomeVisitProvider,
 } from "@/services/homeVisitApi";
+import { getNearbyDistanceLabel } from "@/utils/distance";
 
 /** Only filters that split the job: urgency vs grooming. Species/services live on the rows + search. */
 const NEED_FILTERS = ["grooming", "emergency"] as const;
@@ -50,13 +52,15 @@ const HomeVisits = ({
   const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>("");
   const { t, i18n } = useTranslation();
   const lang: "zh" | "en" = i18n.language === "en" ? "en" : "zh";
+  const nearby = useNearbyPlaceSearch();
 
   const { providers: filteredProviders, isLoading, error } = useFilteredHomeVisitProviders(
     {
-      region: selectedRegion,
+      region: nearby.nearbyActive ? "all" : selectedRegion,
       keyword: searchQuery,
       is247: show24HourOnly || undefined,
       serviceCategory: selectedServiceCategory || undefined,
+      location: nearby.nearbyActive ? nearby.coords ?? undefined : undefined,
     },
     i18n.language,
     initialProviders,
@@ -83,6 +87,7 @@ const HomeVisits = ({
   const hasActiveFilters = activeFilterLabels.length > 0;
 
   const clearFilters = () => {
+    nearby.exitNearby();
     setSelectedRegion("all");
     setSearchQuery("");
     setShow24HourOnly(false);
@@ -173,7 +178,13 @@ const HomeVisits = ({
       filtersLabel={t("homeVisitPlaces.filtersLabel")}
       regions={regions}
       selectedRegion={selectedRegion}
-      onRegionChange={setSelectedRegion}
+      onRegionChange={(region) => {
+        nearby.exitNearby();
+        setSelectedRegion(region);
+      }}
+      nearbyActive={nearby.nearbyActive}
+      onSearchNearby={nearby.requestNearby}
+      isRequestingNearby={nearby.isRequesting}
       policyFilters={policyFilters}
       activeFilterLabels={activeFilterLabels}
       hasActiveFilters={hasActiveFilters}
@@ -212,6 +223,12 @@ const HomeVisits = ({
               rating={provider.rating}
               is247={provider.is247}
               is247Label={t("homeVisitPlaces.filter24Hour")}
+              distanceLabel={getNearbyDistanceLabel(
+                nearby.nearbyActive,
+                nearby.coords,
+                provider.location,
+                t,
+              )}
             />
           ))}
       </div>

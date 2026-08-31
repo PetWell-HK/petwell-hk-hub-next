@@ -6,9 +6,11 @@ import PlaceListingLayout from "@/components/PlaceListingLayout";
 import { ListInfiniteLoader } from "@/components/ListInfiniteLoader";
 import { PlaceListCard } from "@/components/PlaceListCard";
 import { useFilteredSalons } from "@/hooks/useSalons";
+import { useNearbyPlaceSearch } from "@/hooks/useNearbyPlaceSearch";
 import { useSearchQueryFromUrl } from "@/hooks/useSearchQueryFromUrl";
 import { translateServiceOfferings } from "@/utils/serviceOfferings";
 import { getTodayOpeningHours } from "@/utils/availableHours";
+import { getNearbyDistanceLabel } from "@/utils/distance";
 import type { Salon } from "@/services/salonApi";
 
 const salonsFAQ = [
@@ -43,6 +45,7 @@ const Salons = ({
   const [searchQuery, setSearchQuery] = useSearchQueryFromUrl();
   const [show24HourOnly, setShow24HourOnly] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
+  const nearby = useNearbyPlaceSearch();
   const {
     salons: filteredSalons,
     isLoading,
@@ -52,12 +55,14 @@ const Salons = ({
     isFetchingNextPage,
   } = useFilteredSalons(
     {
-      region: selectedRegion,
+      region: nearby.nearbyActive ? "all" : selectedRegion,
       keyword: searchQuery,
       is247: show24HourOnly || undefined,
+      location: nearby.nearbyActive ? nearby.coords ?? undefined : undefined,
+      sortMethod: nearby.nearbyActive ? "location" : "rating-desc",
     },
     i18n.language,
-    initialListing,
+    nearby.nearbyActive ? null : initialListing,
   );
 
   const regions = [
@@ -79,6 +84,7 @@ const Salons = ({
   const hasActiveFilters = activeFilterLabels.length > 0;
 
   const clearFilters = () => {
+    nearby.exitNearby();
     setSelectedRegion("all");
     setSearchQuery("");
     setShow24HourOnly(false);
@@ -156,7 +162,13 @@ const Salons = ({
       filtersLabel={t("salons.filtersLabel")}
       regions={regions}
       selectedRegion={selectedRegion}
-      onRegionChange={setSelectedRegion}
+      onRegionChange={(region) => {
+        nearby.exitNearby();
+        setSelectedRegion(region);
+      }}
+      nearbyActive={nearby.nearbyActive}
+      onSearchNearby={nearby.requestNearby}
+      isRequestingNearby={nearby.isRequesting}
       policyFilters={[
         {
           id: "24hour",
@@ -212,6 +224,12 @@ const Salons = ({
             openingHoursText={getOpeningHoursText(salon.availableHours, salon.is247) || null}
             is247={salon.is247}
             is247Label={t("salons.filter24Hour")}
+            distanceLabel={getNearbyDistanceLabel(
+              nearby.nearbyActive,
+              nearby.coords,
+              salon.location,
+              t,
+            )}
           />
         ))}
       </div>

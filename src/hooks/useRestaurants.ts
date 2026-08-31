@@ -14,6 +14,7 @@ import { mapFilterToRegionKey } from '@/data/hongKongDistricts';
 import { shuffleArray } from '@/utils/shuffleArray';
 import { pickFeaturedWithPremiumFirst } from '@/utils/partnerPremium';
 import { isRestaurantFehdLicensed } from '@/utils/restaurantExternalMetadata';
+import { sortByDistance } from '@/utils/distance';
 import { PLACE_SEARCH_BACKEND } from '@/services/placeSearchConfig';
 import { expandDistrictFilterValues } from '@/services/placeSearchUtils';
 import { useEffect, useMemo } from 'react';
@@ -29,6 +30,8 @@ export interface RestaurantFilters {
   walkInAllowed?: boolean;
   fehdLicensed?: boolean;
   selectedDistricts?: string[];
+  location?: { lat: number; lon: number };
+  sortMethod?: 'rating-desc' | 'location';
 }
 
 function getSearchRegionParam(filterRegion?: string): string | undefined {
@@ -213,6 +216,8 @@ export function useFilteredRestaurants(
   const hasDistrictFilter = Boolean(searchDistrict || searchDistricts?.length);
   const searchKeyword = filters.keyword?.trim() || undefined;
   const useFehdList = filters.fehdLicensed === true;
+  const searchLocation = filters.location;
+  const sortMethod = filters.sortMethod ?? 'rating-desc';
 
   const fehdListQuery = useInfiniteQuery({
     queryKey: ['restaurants', 'fehd', language],
@@ -242,6 +247,9 @@ export function useFilteredRestaurants(
       filters.verifiedOnly,
       filters.indoorAllowed,
       filters.walkInAllowed,
+      sortMethod,
+      searchLocation?.lat,
+      searchLocation?.lon,
     ],
     queryFn: ({ pageParam }) =>
       fetchRestaurants(
@@ -255,6 +263,8 @@ export function useFilteredRestaurants(
           verified: filters.verifiedOnly !== false ? true : undefined,
           petAccessArea: filters.indoorAllowed ? 'INDOOR_ALLOWED' : undefined,
           petEntryPolicy: filters.walkInAllowed ? 'WALK_IN' : undefined,
+          location: searchLocation,
+          sortMethod,
           limit: RESTAURANT_SEARCH_PAGE_SIZE,
           nextToken: pageParam,
         },
@@ -287,13 +297,15 @@ export function useFilteredRestaurants(
     [filters, searchKeyword, useFehdList],
   );
 
-  const filteredRestaurants = useMemo(
-    () =>
-      applyRestaurantListingFilters(loadedRestaurants, clientFilters, {
-        serverFiltered: !useFehdList,
-      }),
-    [loadedRestaurants, clientFilters, useFehdList],
-  );
+  const filteredRestaurants = useMemo(() => {
+    const filtered = applyRestaurantListingFilters(loadedRestaurants, clientFilters, {
+      serverFiltered: !useFehdList,
+    });
+    if (useFehdList && searchLocation && sortMethod === 'location') {
+      return sortByDistance(filtered, searchLocation, (restaurant) => restaurant.location);
+    }
+    return filtered;
+  }, [loadedRestaurants, clientFilters, useFehdList, searchLocation, sortMethod]);
 
   const apiTotalCount = useFehdList
     ? undefined

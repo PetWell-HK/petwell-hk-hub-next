@@ -6,7 +6,7 @@ import PlaceReportModal from "@/components/PlaceReportModal";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Loader2, PlusCircle, Search, ShieldCheck, SlidersHorizontal, X } from "lucide-react";
+import { Loader2, Locate, PlusCircle, Search, ShieldCheck, SlidersHorizontal, X } from "lucide-react";
 import DiscoverPlaceTabs from "@/components/DiscoverPlaceTabs";
 import { AppDownloadCTA } from "@/components/AppDownloadCTA";
 import { cn } from "@/lib/utils";
@@ -39,6 +39,9 @@ interface PlaceListingLayoutProps {
   regions: Array<{ value: string; label: string }>;
   selectedRegion: string;
   onRegionChange: (region: string) => void;
+  nearbyActive?: boolean;
+  onSearchNearby?: () => void;
+  isRequestingNearby?: boolean;
   policyFilters?: PlaceListingFilter[];
   activeFilterLabels: string[];
   hasActiveFilters: boolean;
@@ -90,6 +93,9 @@ const PlaceListingLayout = ({
   regions,
   selectedRegion,
   onRegionChange,
+  nearbyActive = false,
+  onSearchNearby,
+  isRequestingNearby = false,
   policyFilters = [],
   activeFilterLabels,
   hasActiveFilters,
@@ -129,6 +135,8 @@ const PlaceListingLayout = ({
   const showEmpty = !isLoading && !error && resultCount === 0 && !hasMoreToLoad;
   const isFindHero = heroMode === "find";
   const showHeroCount = Boolean(resultsCountLabel) && !isLoading && !error;
+  const nearbyNote = nearbyActive ? t("placeListing.sortedByDistance") : undefined;
+  const resolvedResultsNote = resultsNote ?? nearbyNote;
 
   const suggestCta = suggestPlaceCategory ? (
     <Button
@@ -247,16 +255,44 @@ const PlaceListingLayout = ({
             >
               <nav
                 aria-label={filterByRegionLabel}
-                className="flex shrink-0 gap-0.5"
+                className="flex shrink-0 items-center gap-0.5"
               >
+                {nearbyActive ? (
+                  <button
+                    type="button"
+                    className="place-listing-region-tab shrink-0"
+                    data-active="true"
+                    aria-pressed="true"
+                  >
+                    {t("placeListing.nearby")}
+                  </button>
+                ) : onSearchNearby ? (
+                  <button
+                    type="button"
+                    className="place-listing-nearby-btn shrink-0"
+                    onClick={() => {
+                      void onSearchNearby();
+                    }}
+                    disabled={isRequestingNearby}
+                    aria-label={t("placeListing.searchNearby")}
+                    data-nearby-cta="true"
+                  >
+                    {isRequestingNearby ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden="true" />
+                    ) : (
+                      <Locate className="h-3.5 w-3.5" aria-hidden="true" />
+                    )}
+                    {t("placeListing.searchNearby")}
+                  </button>
+                ) : null}
                 {regions.map((region) => (
                   <button
                     key={region.value}
                     type="button"
                     onClick={() => onRegionChange(region.value)}
-                    data-active={selectedRegion === region.value}
+                    data-active={!nearbyActive && selectedRegion === region.value}
                     className="place-listing-region-tab shrink-0"
-                    aria-pressed={selectedRegion === region.value}
+                    aria-pressed={!nearbyActive && selectedRegion === region.value}
                   >
                     {region.label}
                   </button>
@@ -367,19 +403,19 @@ const PlaceListingLayout = ({
             {showResults && (
               <>
                 {(isFindHero
-                  ? Boolean(resultsNote)
-                  : Boolean(resultsCountLabel || resultsNote || activeFilterLabels.length > 0)) && (
+                  ? Boolean(resolvedResultsNote)
+                  : Boolean(resultsCountLabel || resolvedResultsNote || activeFilterLabels.length > 0)) && (
                 <div className={cn("flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between", isFindHero ? "mb-3" : "mb-6")}>
-                  {(!isFindHero && (resultsCountLabel || resultsNote)) || (isFindHero && resultsNote) ? (
+                  {(!isFindHero && (resultsCountLabel || resolvedResultsNote)) || (isFindHero && resolvedResultsNote) ? (
                     <div className="min-w-0">
                       {!isFindHero && resultsCountLabel ? (
                         <p className="text-sm tabular-nums text-muted-foreground">
                           {resultsCountLabel}
                         </p>
                       ) : null}
-                      {resultsNote ? (
+                      {resolvedResultsNote ? (
                         <p className="text-xs leading-relaxed text-muted-foreground">
-                          {resultsNote}
+                          {resolvedResultsNote}
                         </p>
                       ) : null}
                     </div>

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { sortByDistance } from '@/utils/distance';
 import {
   fetchAllMalls,
   fetchMallById,
@@ -27,8 +28,10 @@ export function useFilteredMalls(
 
   const malls = useMemo(() => {
     const all = query.data ?? [];
-    return filterMalls(all, filters);
-  }, [query.data, filters.region, filters.keyword, filters.petsAllowedYes, filters.leashWalkOk]);
+    const filtered = filterMalls(all, filters);
+    if (!filters.location) return filtered;
+    return sortByDistance(filtered, filters.location, (mall) => mall.location);
+  }, [query.data, filters.region, filters.keyword, filters.petsAllowedYes, filters.leashWalkOk, filters.location]);
 
   return {
     malls,

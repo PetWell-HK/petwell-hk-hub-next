@@ -19,6 +19,8 @@ export interface PlaceListingFilters {
   region?: string;
   keyword?: string;
   is247?: boolean;
+  location?: { lat: number; lon: number };
+  sortMethod?: 'rating-desc' | 'location';
 }
 
 export function useClinics(language: string = 'zh', initialClinics?: Clinic[] | null) {
@@ -43,16 +45,32 @@ export function useFilteredClinics(
 ) {
   const searchRegion = getPlaceSearchRegionParam(filters.region);
   const searchKeyword = filters.keyword?.trim() || undefined;
-  const isDefaultSearch = !searchKeyword && !searchRegion && !filters.is247;
+  const searchLocation = filters.location;
+  const sortMethod = filters.sortMethod ?? 'rating-desc';
+  const isDefaultSearch =
+    !searchKeyword && !searchRegion && !filters.is247 && sortMethod !== 'location' && !searchLocation;
 
   const query = useInfiniteQuery({
-    queryKey: ['clinics', 'search', PLACE_SEARCH_BACKEND, language, searchRegion, searchKeyword, filters.is247],
+    queryKey: [
+      'clinics',
+      'search',
+      PLACE_SEARCH_BACKEND,
+      language,
+      searchRegion,
+      searchKeyword,
+      filters.is247,
+      sortMethod,
+      searchLocation?.lat,
+      searchLocation?.lon,
+    ],
     queryFn: ({ pageParam }) =>
       searchClinics(
         {
           region: searchRegion,
           keyword: searchKeyword,
           is247: filters.is247,
+          location: searchLocation,
+          sortMethod,
           limit: PLACE_SEARCH_PAGE_SIZE,
           nextToken: pageParam,
         },

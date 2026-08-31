@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { sortByDistance } from '@/utils/distance';
 import {
   fetchAllHomeVisitProviders,
   fetchHomeVisitProviderById,
@@ -32,6 +33,9 @@ export function useFilteredHomeVisitProviders(
 
   const providers = useMemo(() => {
     const filtered = filterHomeVisitProviders(query.data ?? [], filters);
+    if (filters.location) {
+      return sortByDistance(filtered, filters.location, (provider) => provider.location);
+    }
     return sortHomeVisitProvidersPricedThenRandom(filtered, shuffleSeedRef.current);
   }, [
     query.data,
@@ -41,6 +45,7 @@ export function useFilteredHomeVisitProviders(
     filters.species,
     filters.serviceCategory,
     filters.is247,
+    filters.location,
   ]);
 
   return {

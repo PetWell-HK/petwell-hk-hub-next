@@ -170,6 +170,7 @@ export interface MallListingFilters {
   keyword?: string;
   petsAllowedYes?: boolean;
   leashWalkOk?: boolean;
+  location?: { lat: number; lon: number };
 }
 
 const LIST_PAGE_SIZE = 100;

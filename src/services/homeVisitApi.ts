@@ -118,6 +118,7 @@ export interface HomeVisitListingFilters {
   species?: string;
   serviceCategory?: string;
   is247?: boolean;
+  location?: { lat: number; lon: number };
 }
 
 const LIST_PAGE_SIZE = 100;

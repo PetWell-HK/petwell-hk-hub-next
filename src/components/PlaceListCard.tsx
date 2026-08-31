@@ -25,6 +25,7 @@ interface PlaceListCardProps {
   openingHoursText?: string | null;
   is247?: boolean;
   is247Label?: string;
+  distanceLabel?: string | null;
   /** Prefer coverage / service-area copy over a street address when set. */
   coverageSummary?: string;
   quickLinks?: PlaceListCardQuickLink[];
@@ -45,6 +46,7 @@ export function PlaceListCard({
   is247Label,
   coverageSummary,
   quickLinks = [],
+  distanceLabel,
 }: PlaceListCardProps) {
   const visibleServices = serviceLabels.slice(0, 2);
   const extraServiceCount = serviceLabels.length - visibleServices.length;
@@ -62,6 +64,11 @@ export function PlaceListCard({
                 {verified && <PetWellVerifiedBadge variant="onDark" />}
               </div>
             )}
+            {distanceLabel ? (
+              <span className="absolute right-2 top-2 z-10 rounded-full bg-black/55 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-white backdrop-blur-sm">
+                {distanceLabel}
+              </span>
+            ) : null}
           </div>
 
           <div className="space-y-3 p-4">

@@ -2,6 +2,7 @@ const CLINIC_LISTING_FIELDS = `
         id
         name { zh en }
         address { zh en }
+        location { lat lon }
         district
         phoneNo
         serviceOfferings
@@ -32,6 +33,7 @@ const RESTAURANT_LISTING_FIELDS = `
         id
         name { zh en }
         address { zh en }
+        location { lat lon }
         district
         availableHours {
           mon { start end }
