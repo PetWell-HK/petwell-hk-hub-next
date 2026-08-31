@@ -99,7 +99,8 @@ const BlogPost = () => {
           {/* Hero Image */}
           <div className="max-w-4xl mx-auto mb-8">
             {post.slug !== 'hk-fehd-pet-friendly-restaurants-1000-list' &&
-              post.slug !== 'dog-mer-calorie-calculator-hk' && (
+              post.slug !== 'dog-mer-calorie-calculator-hk' &&
+              post.slug !== "mid-autumn-pet-outings-hong-kong-2026" && (
               <div className="mb-6 overflow-hidden rounded-2xl bg-neutral-950">
                 <img
                   src={post.imageUrl}
@@ -137,66 +138,64 @@ const BlogPost = () => {
 
             {post.slug === "mid-autumn-pet-outings-hong-kong-2026" && (
               <Card className="mb-8 overflow-hidden rounded-xl">
-                <div className="flex flex-col sm:flex-row">
-                  <div className="relative h-44 shrink-0 overflow-hidden bg-muted sm:h-auto sm:w-[220px] lg:w-[240px]">
-                    <img
-                      src={post.imageUrl}
-                      alt="毛孩沉浸台式中秋節｜觀塘海濱 AquaBeat"
-                      className="h-full w-full object-cover"
-                    />
-                    <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow-sm">
-                      免費入場 · 無需預約
-                    </span>
+                <div className="relative bg-neutral-950">
+                  <img
+                    src="/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=16x9"
+                    alt="毛孩沉浸式台灣中秋祭海報｜觀塘海濱 AquaBeat 2026年9月25–27日"
+                    className="mx-auto block h-auto w-full"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow-sm">
+                    免費入場 · 無需預約
+                  </span>
+                </div>
+                <div className="flex min-w-0 flex-1 flex-col justify-between px-4 py-4 sm:px-5 sm:py-4">
+                  <div>
+                    <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground">
+                      AQUABEAT × PETWELL
+                    </p>
+                    <h2 className="mt-1 text-[1.25rem] font-bold leading-snug sm:text-[1.35rem]">
+                      毛孩沉浸式台灣中秋祭
+                    </h2>
+                    <dl className="mt-3 grid grid-cols-[2.25rem_1fr] gap-x-3 gap-y-1.5 text-sm">
+                      <dt className="text-muted-foreground">日期</dt>
+                      <dd>2026年9月25–27日</dd>
+                      <dt className="text-muted-foreground">時間</dt>
+                      <dd>週五 16:00–20:00 · 六日 15:00–21:00</dd>
+                      <dt className="text-muted-foreground">地點</dt>
+                      <dd>觀塘海濱 AquaBeat 活動空間 02</dd>
+                    </dl>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      歡迎所有毛孩參加。賞月、九份夜市、十分天燈、美人魚表演、中秋服租借。想整花膠月餅要預先報名。
+                    </p>
                   </div>
-                  <div className="flex min-w-0 flex-1 flex-col justify-between px-4 py-4 sm:px-5 sm:py-4">
-                    <div>
-                      <p className="text-[11px] font-medium tracking-[0.14em] text-muted-foreground">
-                        AQUABEAT × PETWELL
-                      </p>
-                      <h2 className="mt-1 text-[1.25rem] font-bold leading-snug sm:text-[1.35rem]">
-                        毛孩沉浸台式中秋節
-                      </h2>
-                      <dl className="mt-3 grid grid-cols-[2.25rem_1fr] gap-x-3 gap-y-1.5 text-sm">
-                        <dt className="text-muted-foreground">日期</dt>
-                        <dd>2026年9月25–27日</dd>
-                        <dt className="text-muted-foreground">時間</dt>
-                        <dd>週五 16:00–20:00 · 六日 15:00–21:00</dd>
-                        <dt className="text-muted-foreground">地點</dt>
-                        <dd>觀塘海濱 AquaBeat 活動空間 02</dd>
-                      </dl>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                        所有動物都歡迎。賞月、十分／九份打卡、LED 天燈、美人魚表演、和服同新中式服裝租借。想整花膠月餅要預先報名。
-                      </p>
+                  <div className="mt-4 flex flex-col gap-3 border-t border-border/70 pt-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        type="button"
+                        size="sm"
+                        onClick={() => openPetwellContact("family-photo")}
+                      >
+                        立即登記・免費送全家福
+                      </Button>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        onClick={() => openPetwellContact("mooncake")}
+                      >
+                        報名花膠月餅
+                      </Button>
+                      <Button asChild size="sm" variant="ghost">
+                        <a href="#experiences">睇行程</a>
+                      </Button>
                     </div>
-                    <div className="mt-4 flex flex-col gap-3 border-t border-border/70 pt-3">
-                      <div className="flex flex-wrap gap-2">
-                        <Button
-                          type="button"
-                          size="sm"
-                          onClick={() => openPetwellContact("family-photo")}
-                        >
-                          預約送全家福
-                        </Button>
-                        <Button
-                          type="button"
-                          size="sm"
-                          variant="outline"
-                          onClick={() => openPetwellContact("mooncake")}
-                        >
-                          報名花膠月餅
-                        </Button>
-                        <Button asChild size="sm" variant="ghost">
-                          <a href="#practical">交通資訊</a>
-                        </Button>
-                      </div>
-                      <p className="text-xs text-muted-foreground">
-                        主人即場入場就可以。檔主、傳媒或品牌請用{" "}
-                        <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
-                          開檔申請
-                        </AppLink>
-                        。
-                      </p>
-                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      免費入場，帶毛孩即場參加就得。檔主、傳媒或品牌請用{" "}
+                      <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
+                        開檔申請
+                      </AppLink>
+                      。
+                    </p>
                   </div>
                 </div>
               </Card>

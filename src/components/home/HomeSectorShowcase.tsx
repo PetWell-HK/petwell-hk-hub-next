@@ -215,7 +215,7 @@ const HomeSectorShowcase = ({
     i18n.language,
     initialHome?.lodgings,
   );
-  const midAutumnCover = "/assets/blog-mid-autumn-pet-hk/cover.jpg";
+  const midAutumnCover = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=16x9";
   const featuredCard: EventListCardData = {
     id: MID_AUTUMN_FEATURED_ACTIVITY.id,
     name: MID_AUTUMN_FEATURED_ACTIVITY.name,

@@ -128,7 +128,7 @@ function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
   });
 }
 
-const MID_AUTUMN_COVER = "/assets/blog-mid-autumn-pet-hk/cover.jpg";
+const MID_AUTUMN_COVER = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=16x9";
 
 function featuredFallback(): EventDisplay {
   return {

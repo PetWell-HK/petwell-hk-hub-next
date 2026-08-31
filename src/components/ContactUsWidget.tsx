@@ -25,11 +25,11 @@ const CONTACT_PRESETS: Record<
       "你好，我想報名 9 月 25–27 日觀塘海濱「毛孩沉浸台式中秋節」養生花膠月餅工作坊。請回覆確認名額同時段。",
   },
   "family-photo": {
-    title: "預約全家福",
-    description: "免費入場，無需預約。預約可獲一張全家福 soft copy。",
-    source: "[活動預約] 全家福 soft copy｜毛孩沉浸台式中秋節",
+    title: "立即登記・免費送全家福",
+    description: "免費入場，帶毛孩即場參加就得。登記可獲一張全家福 soft copy。",
+    source: "[活動登記] 全家福 soft copy｜毛孩沉浸式台灣中秋祭",
     message:
-      "你好，我想預約 9 月 25–27 日觀塘海濱「毛孩沉浸台式中秋節」，領取全家福 soft copy。",
+      "你好，我想登記 9 月 25–27 日觀塘海濱「毛孩沉浸式台灣中秋祭」，領取全家福 soft copy。",
   },
   event: {
     title: "活動查詢",
