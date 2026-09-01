@@ -275,7 +275,9 @@ const RestaurantDetail = ({
   const normalizedHours = restaurant.availableHours
     ? normalizeAvailableHours(restaurant.availableHours)
     : null;
-  const displayedReviews = (restaurant.reviews?.items || []).slice(0, 5);
+  const displayedReviews = [...(restaurant.reviews?.items || [])]
+    .sort((a, b) => Date.parse(b.updatedAt || "") - Date.parse(a.updatedAt || ""))
+    .slice(0, 50);
   const totalReviews = restaurant.reviews?.items?.length || 0;
   const coverImageKey = restaurant.coverPhoto || restaurant.gallery?.[0];
   const petAccessLabel = getPetAccessAreaLabel(restaurant.petAccessArea);

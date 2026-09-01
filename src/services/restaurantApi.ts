@@ -331,7 +331,7 @@ export const GET_RESTAURANT_QUERY = `
       externalMetadata
       partnerPlan
       partnerPlanExpiresAt
-      reviews {
+      reviews(limit: 80) {
         items {
           id
           reviewerId
@@ -397,7 +397,7 @@ export const GET_RESTAURANT_QUERY_WITHOUT_PARTNER_REPLY = `
       externalMetadata
       partnerPlan
       partnerPlanExpiresAt
-      reviews {
+      reviews(limit: 80) {
         items {
           id
           title
@@ -452,7 +452,7 @@ export const GET_RESTAURANT_QUERY_LEGACY = `
       externalMetadata
       partnerPlan
       partnerPlanExpiresAt
-      reviews {
+      reviews(limit: 80) {
         items {
           id
           reviewerId
