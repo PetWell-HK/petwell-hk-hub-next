@@ -6,8 +6,8 @@ const dressModel = "/assets/blog-mid-autumn-pet-hk/dress-model.jpg";
 const dressProduct = "/assets/blog-mid-autumn-pet-hk/dress-product.jpg";
 const mermaid = "/assets/blog-mid-autumn-pet-hk/mermaid.jpg";
 const moonViewing = "/assets/blog-mid-autumn-pet-hk/moon-viewing.jpg";
-const posterFamily = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=16x9";
-const posterGuide = "/assets/blog-mid-autumn-pet-hk/poster-guide.jpg?v=16x9";
+const posterFamily = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=20260901";
+const posterGuide = "/assets/blog-mid-autumn-pet-hk/poster-guide.jpg?v=20260901";
 
 const DRESS_URL =
   "https://www.dlpawradise.com/zh/products/modern-chinese-style-pearl-tassel-dress?variant=64378930200945";
@@ -93,17 +93,6 @@ export const blogPostsMidAutumn: BlogPost[] = [
     content: `
       <p style="font-size: 13px; color: #666; margin-bottom: 20px; letter-spacing: 0.4px;">最後更新：2026 年 8 月 31 日　｜　2026 中秋：9 月 25 日（星期五）</p>
 
-      <nav style="background:#FFF7ED;border:1px solid #FED7AA;border-radius:14px;padding:20px 22px;margin-bottom:32px;">
-        <p style="font-size:12px;letter-spacing:1px;color:#9A3412;margin:0 0 12px;font-weight:700;">本文目錄</p>
-      <div style="display:grid;gap:8px;font-size:15px;">
-          <a href="#one-stop" style="color:#C2410C;text-decoration:none;">1. 觀塘海濱：賞月熱點今年再加一條龍</a>
-          <a href="#experiences" style="color:#C2410C;text-decoration:none;">2. 一條龍行程：一次完成的五件事</a>
-          <a href="#sixty-seconds" style="color:#C2410C;text-decoration:none;">3. 出發前重點</a>
-          <a href="#practical" style="color:#C2410C;text-decoration:none;">4. 日期、時間、地圖與交通</a>
-          <a href="#rsvp" style="color:#C2410C;text-decoration:none;">5. 報名／即場參加</a>
-        </div>
-      </nav>
-
       <p style="font-size:18px;line-height:1.8;margin-bottom:28px;font-weight:300;">每年中秋前後，搜尋欄總會出現同一句：<strong>「中秋可以帶狗狗去哪裡？」</strong>商場有花燈、海濱有草地、公園有月亮——但大多數行程都要分開幾天、輾轉幾個場地。今年有另一個答案：如果你想賞月、製作寵物月餅、打卡、沉浸於台式夜市，<strong>到觀塘海濱一次便可完成。</strong>今年中秋，帶毛孩在海風與月光之下，留下一晚屬於你們的回憶。</p>
 
       <h2 id="one-stop" style="font-size:26px;font-weight:700;margin:40px 0 18px;padding-bottom:10px;border-bottom:2px solid #FF6B35;scroll-margin-top:88px;">觀塘海濱：傳統賞月熱點，今年再加一條龍體驗</h2>
@@ -112,7 +101,7 @@ export const blogPostsMidAutumn: BlogPost[] = [
       <p style="font-size:17px;line-height:1.85;margin-bottom:20px;">2026 年 9 月 25–27 日，同一條海濱將加設 PetWell × AquaBeat「毛孩沉浸式台灣中秋祭」：九份夜市、十分天燈、養生花膠月餅、美人魚表演，以及中秋服租借。換句話說，<strong>只要走到海濱，便已同時賞月、過節、打卡。</strong></p>
 
       <figure style="margin:0 0 32px;">
-        <img src="${posterGuide}" alt="毛孩沉浸式台灣中秋祭活動一覽：九份夜市、十分天燈、中秋服租借、攝影服務、寵物月餅、DIY 圍巾、磁石貼同市集" style="width:100%;border-radius:12px;" loading="lazy" />
+        <img src="${posterGuide}" alt="毛孩沉浸式台灣中秋祭活動一覽：九份夜市、十分天燈、中秋服租借、攝影服務、寵物月餅、DIY 圍巾、磁石貼同美人魚表演" style="width:100%;border-radius:12px;" loading="lazy" />
         <figcaption style="font-size:13px;color:#6B7280;margin-top:8px;">一個海濱・四個台灣景：九份夜市、十分天燈、中秋服租借、手作工作坊，全家一齊過中秋。</figcaption>
       </figure>
 

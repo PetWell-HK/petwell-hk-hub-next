@@ -140,7 +140,7 @@ const BlogPost = () => {
               <Card className="mb-8 overflow-hidden rounded-xl">
                 <div className="relative bg-neutral-950">
                   <img
-                    src="/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=16x9"
+                    src="/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=20260901"
                     alt="毛孩沉浸式台灣中秋祭海報｜觀塘海濱 AquaBeat 2026年9月25–27日"
                     className="mx-auto block h-auto w-full"
                   />
