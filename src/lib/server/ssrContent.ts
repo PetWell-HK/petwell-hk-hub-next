@@ -46,6 +46,7 @@ import {
   type Salon,
 } from "@/services/salonApi";
 import { PRICE_REVIEW_API_URL } from "@/config/priceReview";
+import { getPetwellApiBase } from "@/config/petwellApi";
 import { getPublicEnv } from "@/lib/env";
 import {
   serverGraphqlFetch,
@@ -95,37 +96,6 @@ const LIST_EVENTS_SSR_QUERY = `
   }
 `;
 
-const LIST_FORUM_POSTS_SSR_QUERY = `
-  query ListForumPosts($filter: ModelForumPostFilterInput, $limit: Int) {
-    listForumPosts(filter: $filter, limit: $limit) {
-      items {
-        id
-        title
-        content
-        authorId
-        tags
-        attachments
-        likes
-        dislikes
-        replies
-        views
-        isPinned
-        isLocked
-        isDeleted
-        category
-        location
-        createdAt
-        updatedAt
-        lastReplyAt
-        isAnonymous
-        anonHash
-        authorName
-        hotScore
-      }
-    }
-  }
-`;
-
 const GET_EVENT_SSR_FALLBACK_QUERY = `
   query GetOrganizedEvent($id: ID!) {
     getOrganizedEvent(id: $id) {
@@ -142,35 +112,6 @@ const GET_EVENT_SSR_FALLBACK_QUERY = `
       category
       remark
       i18n
-    }
-  }
-`;
-
-const GET_FORUM_POST_SSR_QUERY = `
-  query GetForumPost($id: ID!) {
-    getForumPost(id: $id) {
-      id
-      title
-      content
-      authorId
-      tags
-      attachments
-      likes
-      dislikes
-      replies
-      views
-      isPinned
-      isLocked
-      isDeleted
-      category
-      location
-      createdAt
-      updatedAt
-      lastReplyAt
-      isAnonymous
-      anonHash
-      authorName
-      hotScore
     }
   }
 `;
@@ -450,20 +391,24 @@ export async function ssrHomeVisits(
 }
 
 export async function ssrForumPost(id: string): Promise<SsrEntity<ForumPost>> {
-  const entity = await fetchGetField<ForumPost>(
-    "getForumPost",
-    [GET_FORUM_POST_SSR_QUERY],
-    { id },
-    600,
-  );
-  if (entity.state !== "found") return entity;
-  const post = entity.data;
-  if (post.isDeleted) return { state: "missing" };
-  if (post.isAnonymous) {
-    post.authorId = "";
-    post.author = undefined;
+  try {
+    const response = await fetch(
+      `${getPetwellApiBase()}/api/forum/posts/${encodeURIComponent(id)}`,
+      { headers: { accept: "application/json" }, next: { revalidate: 600 } },
+    );
+    if (response.status === 404) return { state: "missing" };
+    if (!response.ok) return { state: "unavailable" };
+    const json = (await response.json()) as { post?: ForumPost };
+    const post = json.post;
+    if (!post?.id || post.isDeleted) return { state: "missing" };
+    if (post.isAnonymous) {
+      post.authorId = "";
+      post.author = undefined;
+    }
+    return { state: "found", data: post };
+  } catch {
+    return { state: "unavailable" };
   }
-  return { state: "found", data: post };
 }
 
 export async function ssrEvent(id: string): Promise<SsrEntity<OrganizedEvent>> {
@@ -547,24 +492,26 @@ export async function ssrReviewProduct(
 }
 
 export async function ssrForumListing(limit = 50): Promise<ForumPost[] | null> {
-  const data = await serverGraphqlFetch<{ listForumPosts: { items?: Array<ForumPost | null> } }>(
-    LIST_FORUM_POSTS_SSR_QUERY,
-    { filter: { isDeleted: { ne: true } }, limit },
-    600,
-  );
-  const posts = (data?.listForumPosts?.items ?? [])
-    .filter((post): post is ForumPost => Boolean(post?.id) && !post.isDeleted)
-    .map((post) =>
-      post.isAnonymous ? { ...post, authorId: "", author: undefined } : post,
-    );
-  if (!data) return null;
-  return posts.sort((a, b) => {
-    if (a.isPinned && !b.isPinned) return -1;
-    if (!a.isPinned && b.isPinned) return 1;
-    const aTime = a.lastReplyAt || a.createdAt || "";
-    const bTime = b.lastReplyAt || b.createdAt || "";
-    return new Date(bTime).getTime() - new Date(aTime).getTime();
-  });
+  try {
+    const params = new URLSearchParams({
+      sort: "recent",
+      limit: String(Math.min(Math.max(limit, 1), 100)),
+    });
+    const response = await fetch(`${getPetwellApiBase()}/api/forum/posts?${params.toString()}`, {
+      headers: { accept: "application/json" },
+      next: { revalidate: 600 },
+    });
+    if (!response.ok) return null;
+    const json = (await response.json()) as { items?: Array<ForumPost | null> };
+    const posts = (json.items ?? [])
+      .filter((post): post is ForumPost => Boolean(post?.id) && !post.isDeleted)
+      .map((post) =>
+        post.isAnonymous ? { ...post, authorId: "", author: undefined } : post,
+      );
+    return posts;
+  } catch {
+    return null;
+  }
 }
 
 export async function ssrEventListing(limit = 100): Promise<OrganizedEvent[] | null> {

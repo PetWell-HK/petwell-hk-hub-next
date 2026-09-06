@@ -1,0 +1,48 @@
+---
+description: How to add APIs, Dynamo fields, and tables without Amplify GraphQL unless explicitly required
+alwaysApply: true
+---
+
+# Backend change cases (PetWell)
+
+New product APIs live in **petwell-api** (HTTP + Dynamo). Do not add `@model` / `@function` to Amplify GraphQL for new work.
+
+## Do not (default)
+
+- Edit `amplify/backend/api/clientGraph/schema.graphql`
+- Run `amplify push` of the GraphQL API
+- Add console GSIs on `*-{apiId}-prod` Amplify tables
+- Trust `userId` / `authorId` from the JSON body — use Cognito JWT `sub`
+- Put Vercel functions in US East; use **sin1**. Dynamo is `ap-southeast-1`
+
+## Legacy Lambda bugfix
+
+Code-only: `amplify function push <functionName>` or zip + `aws lambda update-function-code`. Not a full API push.
+
+IAM/env on that function: that function’s stack only.
+
+GraphQL **signature** change (new args on `@function`): still needs schema push — avoid by putting the new field on petwell-api HTTP instead.
+
+## Case A — new field, HTTP-only
+
+`UpdateItem` the attribute on the existing table. No Amplify. GraphQL clients ignore unknown attributes.
+
+## Case B — GraphQL clients must read the field
+
+Last resort: add the field in `schema.graphql` + `amplify push`, **only if the human explicitly asks**. Prefer Case A + HTTP.
+
+## Case C — need to query/filter by a new field on an Amplify table
+
+Prefer a **new table you own**. Otherwise `@index` in schema + push. Never add a GSI in the AWS console on Amplify-owned tables (CloudFormation drift).
+
+## New table
+
+Create `PetWell…` in `ap-southeast-1` yourself. Never `@model`. petwell-api owns it.
+
+## Auth
+
+Cognito ID token `Authorization: Bearer …`. Identity = `payload.sub`. Admin = `cognito:groups` contains `Admin`. Partner hub uses HMAC sessions in `partnerAuth`, not this API’s Cognito path.
+
+## Docs
+
+Update `docs/ai/` in the same session (`Last updated` UTC+8).

@@ -17,6 +17,8 @@ import {
   MID_AUTUMN_FEATURED_ACTIVITY,
   isFeaturedActivity,
   mergeFeaturedActivityFirst,
+  stripHtmlText,
+  withMidAutumnFeaturedOverrides,
 } from "@/data/featuredActivities";
 
 const eventCategoryKeys = [
@@ -128,7 +130,7 @@ function mapOrganizedEventsToDisplay(items: OrganizedEvent[]): EventDisplay[] {
   });
 }
 
-const MID_AUTUMN_COVER = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=20260901";
+const MID_AUTUMN_COVER = "/assets/blog-mid-autumn-pet-hk/festival-hero-banner.jpg";
 
 function featuredFallback(): EventDisplay {
   return {
@@ -143,14 +145,7 @@ function featuredFallback(): EventDisplay {
 
 function withFeaturedActivity(events: EventDisplay[]): EventDisplay[] {
   return mergeFeaturedActivityFirst(events, featuredFallback()).map((event) =>
-    isFeaturedActivity(event)
-      ? {
-          ...event,
-          imageUrl: event.imageUrl || MID_AUTUMN_COVER,
-          href: MID_AUTUMN_FEATURED_ACTIVITY.href,
-          featured: true,
-        }
-      : event,
+    withMidAutumnFeaturedOverrides(event, { imageUrl: MID_AUTUMN_COVER }),
   );
 }
 
@@ -474,7 +469,7 @@ const PetActivities = ({
                               {featuredEvent.name}
                             </h2>
                             <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                              {featuredEvent.description}
+                              {stripHtmlText(featuredEvent.description)}
                             </p>
                             <div className="mt-4 space-y-1.5 text-sm text-muted-foreground">
                               <div className="flex items-start gap-2">

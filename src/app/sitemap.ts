@@ -31,6 +31,7 @@ const staticRoutes: Array<{
   { path: "/vendor-application", changeFrequency: "monthly", priority: 0.5 },
   { path: "/christmas-events-2025", changeFrequency: "weekly", priority: 0.65 },
   { path: "/christmas-dog-mbti-2025", changeFrequency: "monthly", priority: 0.55 },
+  { path: "/mid-autumn-taiwan-festival", changeFrequency: "daily", priority: 0.9 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

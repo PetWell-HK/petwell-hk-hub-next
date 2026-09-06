@@ -75,6 +75,16 @@ const nextConfig: NextConfig = {
         destination: "/restaurants",
         permanent: true,
       },
+      {
+        source: "/lodgings",
+        destination: "/lodging",
+        permanent: true,
+      },
+      {
+        source: "/lodgings/:id",
+        destination: "/lodging/:id",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

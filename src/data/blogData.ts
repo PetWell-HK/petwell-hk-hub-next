@@ -19,6 +19,13 @@ export interface BlogPost {
   seoDescription?: string; // Custom description override
   faqItems?: Array<{ question: string; answer: string }>; // Custom FAQ items
   relatedTopics?: string[]; // Related topics for internal linking
+  titleEn?: string;
+  excerptEn?: string;
+  contentEn?: string;
+  seoKeywordsEn?: string[];
+  seoDescriptionEn?: string;
+  faqItemsEn?: Array<{ question: string; answer: string }>;
+  categoryEn?: string;
 }
 
 const blogDogShake = "/assets/blog-dog-shake.jpg";
@@ -4975,3 +4982,20 @@ export const blogPosts: BlogPost[] = [
     ...blogPostsPetCareHkSeo[post.slug],
   })),
 ];
+
+export function isBlogEnglish(language: string): boolean {
+  return language.toLowerCase().startsWith("en");
+}
+
+export function localizedBlogPost(post: BlogPost, language: string): BlogPost {
+  if (!isBlogEnglish(language)) return post;
+  return {
+    ...post,
+    title: post.titleEn ?? post.title,
+    excerpt: post.excerptEn ?? post.excerpt,
+    content: post.contentEn ?? post.content,
+    seoKeywords: post.seoKeywordsEn ?? post.seoKeywords,
+    seoDescription: post.seoDescriptionEn ?? post.seoDescription,
+    faqItems: post.faqItemsEn ?? post.faqItems,
+  };
+}

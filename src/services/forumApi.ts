@@ -1,5 +1,6 @@
 import { getCurrentUser } from 'aws-amplify/auth';
 import { graphqlQuery } from './graphqlClient';
+import { forumGetVotes, forumRequest } from './forumHttp';
 import { formatDistanceToNow } from 'date-fns';
 import { zhTW, enUS } from 'date-fns/locale';
 import i18n from '@/i18n/config';
@@ -1310,132 +1311,20 @@ const fetchClientsForPosts = async (posts: ForumPost[]): Promise<ForumPost[]> =>
 };
 
 export const fetchAllForumPosts = async (filters?: ForumPostFilters): Promise<ForumPost[]> => {
-  try {
-    const limit = filters?.limit || 50;
-    let result;
-
-    // Use search if searchQuery is provided
-    if (filters?.searchQuery && filters.searchQuery.trim()) {
-      try {
-        const searchFilter: any = {
-          and: [
-            {
-              isDeleted: { ne: true }
-            },
-            {
-              or: [
-                { title: { wildcard: `*${filters.searchQuery.toLowerCase()}*` } },
-                { content: { wildcard: `*${filters.searchQuery.toLowerCase()}*` } }
-              ]
-            }
-          ]
-        };
-
-        // Add category filter to search
-        if (filters?.category) {
-          searchFilter.and.push({ category: { eq: filters.category } });
-        }
-
-        // Add date range filter
-        if (filters?.dateFrom || filters?.dateTo) {
-          const dateFilter: any = {};
-          if (filters.dateFrom) {
-            dateFilter.gte = filters.dateFrom;
-          }
-          if (filters.dateTo) {
-            dateFilter.lte = filters.dateTo;
-          }
-          searchFilter.and.push({ createdAt: dateFilter });
-        }
-
-        try {
-          if (forumPostIsHotFieldSupported === false) {
-            result = await graphqlQuery<{ searchForumPosts: { items: ForumPost[] } }>(
-              SEARCH_FORUM_POSTS_QUERY_LEGACY,
-              { filter: searchFilter, limit }
-            );
-          } else {
-            result = await graphqlQuery<{ searchForumPosts: { items: ForumPost[] } }>(
-              SEARCH_FORUM_POSTS_QUERY,
-              { filter: searchFilter, limit }
-            );
-            forumPostIsHotFieldSupported = forumPostIsHotFieldSupported ?? true;
-          }
-        } catch (searchWithIsHotError: any) {
-          if (!isIsHotFieldUndefinedError(searchWithIsHotError)) {
-            throw searchWithIsHotError;
-          }
-          forumPostIsHotFieldSupported = false;
-          logIsHotSchemaFallbackOnce();
-          result = await graphqlQuery<{ searchForumPosts: { items: ForumPost[] } }>(
-            SEARCH_FORUM_POSTS_QUERY_LEGACY,
-            { filter: searchFilter, limit }
-          );
-        }
-
-        const posts = result.searchForumPosts?.items || [];
-        const postsWithAuthors = await fetchClientsForPosts(posts);
-        return processPosts(postsWithAuthors, filters);
-      } catch (searchError) {
-        console.warn("Search failed, falling back to list query:", searchError);
-        // Fall through to list query
-      }
-    }
-
-    // Use regular list query
-    const listFilter: any = {
-      isDeleted: { ne: true }
-    };
-
-    // Add category filter
-    if (filters?.category) {
-      listFilter.category = { eq: filters.category };
-    }
-
-    // Add date range filter
-    if (filters?.dateFrom || filters?.dateTo) {
-      const dateFilter: any = {};
-      if (filters.dateFrom) {
-        dateFilter.ge = filters.dateFrom;
-      }
-      if (filters.dateTo) {
-        dateFilter.le = filters.dateTo;
-      }
-      listFilter.createdAt = dateFilter;
-    }
-
-    try {
-      if (forumPostIsHotFieldSupported === false) {
-        result = await graphqlQuery<{ listForumPosts: { items: ForumPost[] } }>(
-          LIST_FORUM_POSTS_QUERY_LEGACY,
-          { filter: Object.keys(listFilter).length > 0 ? listFilter : undefined, limit }
-        );
-      } else {
-        result = await graphqlQuery<{ listForumPosts: { items: ForumPost[] } }>(
-          LIST_FORUM_POSTS_QUERY,
-          { filter: Object.keys(listFilter).length > 0 ? listFilter : undefined, limit }
-        );
-        forumPostIsHotFieldSupported = forumPostIsHotFieldSupported ?? true;
-      }
-    } catch (listWithIsHotError: any) {
-      if (!isIsHotFieldUndefinedError(listWithIsHotError)) {
-        throw listWithIsHotError;
-      }
-      forumPostIsHotFieldSupported = false;
-      logIsHotSchemaFallbackOnce();
-      result = await graphqlQuery<{ listForumPosts: { items: ForumPost[] } }>(
-        LIST_FORUM_POSTS_QUERY_LEGACY,
-        { filter: Object.keys(listFilter).length > 0 ? listFilter : undefined, limit }
-      );
-    }
-
-    const posts = result.listForumPosts?.items || [];
-    const postsWithAuthors = await fetchClientsForPosts(posts);
-    return processPosts(postsWithAuthors, filters);
-  } catch (error) {
-    console.error("Error fetching forum posts:", error);
-    throw error;
+  const limit = Math.min(Math.max(filters?.limit || 50, 1), 100);
+  if (filters?.searchQuery?.trim()) {
+    const params = new URLSearchParams({
+      q: filters.searchQuery.trim(),
+      limit: String(limit),
+    });
+    const result = await forumRequest<{ items?: ForumPost[] }>(`/api/forum/search?${params.toString()}`);
+    return processPosts(result.items || [], filters);
   }
+  const sort = filters?.sortBy === "hot" || filters?.sortBy === "popular" ? filters.sortBy : "recent";
+  const params = new URLSearchParams({ sort, limit: String(limit) });
+  if (filters?.category) params.set("category", filters.category);
+  const result = await forumRequest<{ items?: ForumPost[] }>(`/api/forum/posts?${params.toString()}`);
+  return processPosts(result.items || [], filters);
 };
 
 const normalizePostIsHot = (post: ForumPost): ForumPost => ({
@@ -1444,13 +1333,11 @@ const normalizePostIsHot = (post: ForumPost): ForumPost => ({
 });
 
 const processPosts = (posts: ForumPost[], filters?: ForumPostFilters): ForumPost[] => {
-  // Normalize isHot (null/undefined -> false) then filter out null and deleted posts
   let filteredPosts = posts
     .filter((post): post is ForumPost => Boolean(post))
     .map(normalizePostIsHot)
     .filter((post) => !post.isDeleted);
 
-  // Filter by tags if provided
   if (filters?.tags && filters.tags.length > 0) {
     filteredPosts = filteredPosts.filter(post =>
       post.tags && post.tags.some(tag =>
@@ -1461,34 +1348,37 @@ const processPosts = (posts: ForumPost[], filters?: ForumPostFilters): ForumPost
     );
   }
 
-  // Sort posts
+  if (filters?.dateFrom || filters?.dateTo) {
+    filteredPosts = filteredPosts.filter((post) => {
+      const created = post.createdAt ? new Date(post.createdAt).getTime() : 0;
+      if (filters.dateFrom && created < new Date(filters.dateFrom).getTime()) return false;
+      if (filters.dateTo && created > new Date(filters.dateTo).getTime()) return false;
+      return true;
+    });
+  }
+
   filteredPosts.sort((a, b) => {
-    // Pinned posts first
     if (a.isPinned && !b.isPinned) return -1;
     if (!a.isPinned && b.isPinned) return 1;
 
-    // Then by sort option
     if (filters?.sortBy === 'hot') {
-      // Sort by hot score (based on reply frequency and recency)
-      // Use stored hotScore if available, otherwise calculate with available data
       const aHotScore = a.hotScore ?? calculateHotScore(
-        a.replies, 
-        a.likes, 
+        a.replies,
+        a.likes,
         a.dislikes || 0,
-        undefined, // No reply timestamps in list view
+        undefined,
         a.createdAt,
         a.lastReplyAt
       );
       const bHotScore = b.hotScore ?? calculateHotScore(
-        b.replies, 
-        b.likes, 
+        b.replies,
+        b.likes,
         b.dislikes || 0,
-        undefined, // No reply timestamps in list view
+        undefined,
         b.createdAt,
         b.lastReplyAt
       );
       if (bHotScore !== aHotScore) return bHotScore - aHotScore;
-      // If hot scores are equal, sort by recent activity
       const aTime = a.lastReplyAt || a.createdAt;
       const bTime = b.lastReplyAt || b.createdAt;
       if (aTime && bTime) {
@@ -1496,19 +1386,16 @@ const processPosts = (posts: ForumPost[], filters?: ForumPostFilters): ForumPost
       }
       return 0;
     } else if (filters?.sortBy === 'popular') {
-      // Sort by likes, then replies, then views
       if (b.likes !== a.likes) return b.likes - a.likes;
       if (b.replies !== a.replies) return b.replies - a.replies;
       return b.views - a.views;
     } else if (filters?.sortBy === 'replies') {
-      // Sort by replies, then by lastReplyAt
       if (b.replies !== a.replies) return b.replies - a.replies;
       if (b.lastReplyAt && a.lastReplyAt) {
         return new Date(b.lastReplyAt).getTime() - new Date(a.lastReplyAt).getTime();
       }
       return 0;
     } else {
-      // Default: recent (by createdAt or lastReplyAt)
       const aTime = a.lastReplyAt || a.createdAt;
       const bTime = b.lastReplyAt || b.createdAt;
       if (aTime && bTime) {
@@ -1521,10 +1408,6 @@ const processPosts = (posts: ForumPost[], filters?: ForumPostFilters): ForumPost
   return filteredPosts;
 };
 
-/**
- * Fetch hot topics (most discussed forum posts) sorted by hotScore
- * This shows posts with high reply frequency and recent activity (Recent Trends)
- */
 export const fetchHotTopics = async (limit: number = 10): Promise<ForumPost[]> => {
   try {
     // Fetch all posts and sort by hotScore
@@ -1672,137 +1555,54 @@ export const getAuthorDisplayName = (
 
 // Fetch a single forum post by ID
 export const getForumPostById = async (id: string): Promise<ForumPost> => {
-  try {
-    let result;
-    try {
-      result = await graphqlQuery<{ getForumPost: ForumPost }>(
-        GET_FORUM_POST_QUERY,
-        { id }
-      );
-      forumPostIsHotFieldSupported = forumPostIsHotFieldSupported ?? true;
-    } catch (getWithIsHotError: any) {
-      if (!isIsHotFieldUndefinedError(getWithIsHotError)) {
-        throw getWithIsHotError;
-      }
-      forumPostIsHotFieldSupported = false;
-      logIsHotSchemaFallbackOnce();
-      result = await graphqlQuery<{ getForumPost: ForumPost }>(
-        GET_FORUM_POST_QUERY_LEGACY,
-        { id }
-      );
+  const result = await forumRequest<{ post: ForumPost }>(`/api/forum/posts/${encodeURIComponent(id)}`);
+  const post = result.post;
+  if (!post || post.isDeleted) {
+    throw new Error("Post not found or has been deleted");
+  }
+  post.isHot = post.isHot ?? false;
+  if (post.isAnonymous) {
+    if (!post.anonHash && post.id && post.authorId) {
+      post.anonHash = generateAnonHash(post.id, post.authorId);
     }
-
-    // Check if post is deleted
-    if (result.getForumPost.isDeleted) {
-      throw new Error("Post not found or has been deleted");
-    }
-
-    const post = result.getForumPost;
-    post.isHot = post.isHot ?? false;
-
-    // Handle anonymous mode - never fetch or expose author info
-    if (post.isAnonymous) {
-      // Generate hash if not present
-      if (!post.anonHash && post.id && post.authorId) {
-        post.anonHash = generateAnonHash(post.id, post.authorId);
-      }
-      // Clear authorId for security
-      post.authorId = '';
-      post.author = undefined;
-      return post;
-    }
-
-    // Fetch Client data for the author (only for non-anonymous posts)
-    // Only use firstName+lastName from database, never use displayName (might contain email)
-    if (post.authorId) {
-      const client = await getClientById(post.authorId);
-      if (client) {
-        post.author = {
-          firstName: client.firstName,
-          lastName: client.lastName,
-          // Do not include displayName - it might contain email, we only use firstName+lastName
-        };
-      }
-    }
-
+    post.authorId = "";
+    post.author = undefined;
     return post;
-  } catch (error) {
-    console.error("Error fetching forum post:", error);
-    throw error;
   }
+  if (post.author) {
+    post.author = {
+      firstName: post.author.firstName || "",
+      lastName: post.author.lastName || "",
+      displayName: post.author.displayName,
+    };
+  }
+  return post;
 };
-
-// Fetch all replies for a specific post
 export const getForumPostReplies = async (postId: string, limit: number = 100): Promise<ForumReply[]> => {
-  try {
-    // Paginate through all pages to collect every reply for this post.
-    // AppSync applies the `filter` AFTER DynamoDB's page scan, so a single
-    // request may return fewer items than actually exist.
-    const allItems: ForumReply[] = [];
-    let nextToken: string | null = null;
-
-    do {
-      const variables: Record<string, any> = {
-        filter: { postId: { eq: postId } },
-        limit,
-      };
-      if (nextToken) variables.nextToken = nextToken;
-
-      const result = await graphqlQuery<{ listReplies: { items: ForumReply[]; nextToken?: string | null } }>(
-        LIST_REPLIES_QUERY,
-        variables
-      );
-
-      allItems.push(...(result.listReplies.items ?? []));
-      nextToken = result.listReplies.nextToken ?? null;
-    } while (nextToken);
-
-    // Filter out null and deleted replies
-    let filteredReplies = allItems
-      .filter((reply): reply is ForumReply => Boolean(reply))
-      .filter((reply) => !reply.isDeleted);
-
-    // Fetch Client data for all reply authors
-    const authorIds = [...new Set(filteredReplies.map(reply => reply.authorId).filter(Boolean))];
-    const clientPromises = authorIds.map(id => getClientById(id));
-    const clients = await Promise.all(clientPromises);
-    
-    const clientMap = new Map<string, Client>();
-    authorIds.forEach((id, index) => {
-      if (clients[index]) {
-        clientMap.set(id, clients[index]!);
-      }
-    });
-
-    // Attach Client data to replies
-    filteredReplies = filteredReplies.map(reply => {
-      const client = clientMap.get(reply.authorId);
-      return {
-        ...reply,
-        author: client ? {
-          firstName: client.firstName,
-          lastName: client.lastName,
-          displayName: client.displayName, // email safety is checked in getAuthorDisplayName
-        } : undefined,
-      };
-    });
-
-    // Sort replies by createdAt (oldest first - chronological order)
-    filteredReplies.sort((a, b) => {
-      if (!a.createdAt && !b.createdAt) return 0;
-      if (!a.createdAt) return 1;
-      if (!b.createdAt) return -1;
-      return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-    });
-
-    return filteredReplies;
-  } catch (error) {
-    console.error("Error fetching forum replies:", error);
-    throw error;
-  }
+  const result = await forumRequest<{ items?: ForumReply[] }>(
+    `/api/forum/posts/${encodeURIComponent(postId)}/replies?limit=${Math.min(Math.max(limit, 1), 500)}`,
+  );
+  const filteredReplies = (result.items || [])
+    .filter((reply): reply is ForumReply => Boolean(reply))
+    .filter((reply) => !reply.isDeleted)
+    .map((reply) => ({
+      ...reply,
+      author: reply.author
+        ? {
+            firstName: reply.author.firstName || "",
+            lastName: reply.author.lastName || "",
+            displayName: reply.author.displayName,
+          }
+        : undefined,
+    }));
+  filteredReplies.sort((a, b) => {
+    if (!a.createdAt && !b.createdAt) return 0;
+    if (!a.createdAt) return 1;
+    if (!b.createdAt) return -1;
+    return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+  });
+  return filteredReplies;
 };
-
-// Parse timestamp and return relative time using date-fns
 export const getRelativeTime = (
   timestamp?: string, 
   locale: string = 'zh'
@@ -1941,232 +1741,69 @@ export interface ModeratedPendingReview {
 }
 
 export const createForumPost = async (input: CreateForumPostInput): Promise<ForumPost | ModeratedPendingReview> => {
-  try {
-    // Validate required fields
-    if (!input.title || !input.content || !input.authorId) {
-      throw new Error('Title, content, and authorId are required');
-    }
-
-    // Validate title length (1-200 characters)
-    if (input.title.length < 1 || input.title.length > 200) {
-      throw new Error('Title must be between 1 and 200 characters');
-    }
-
-    // Validate content length (1-10000 characters)
-    if (input.content.length < 1 || input.content.length > 10000) {
-      throw new Error('Content must be between 1 and 10000 characters');
-    }
-
-    // Validate tags (max 10 tags, each 1-30 characters)
-    if (input.tags && input.tags.length > 10) {
-      throw new Error('Maximum 10 tags allowed');
-    }
-
-    if (input.tags) {
-      input.tags.forEach((tag, index) => {
-        if (tag.length < 1 || tag.length > 30) {
-          throw new Error(`Tag at index ${index} must be between 1 and 30 characters`);
-        }
-      });
-    }
-
-    // Validate tagIds (max 10 tags)
-    if (input.tagIds && input.tagIds.length > 10) {
-      throw new Error('Maximum 10 tags allowed');
-    }
-
-    // anonHash is generated after create (needs postId). Lambda may set a temp hash.
-
-    // Calculate initial hot score (0 for new post, no replies yet)
-    const hotScore = calculateHotScore(
-      input.replies ?? 0, 
-      input.likes ?? 0, 
-      input.dislikes ?? 0,
-      undefined, // No replies yet for new post
-      undefined, // Will be set by createdAt
-      undefined  // No lastReplyAt for new post
-    );
-
-    // Get author name from Client (DynamoDB) - this is the source of truth
-    // Only use DynamoDB Client data, do NOT fetch from Cognito
-    let authorName = input.authorName;
-    if (!input.isAnonymous && !authorName && input.authorId) {
-      try {
-        // Fetch Client from DynamoDB only
-        // ALWAYS use firstName+lastName from database - this is the source of truth
-        const client = await getClientById(input.authorId);
-        if (client) {
-          const firstName = client.firstName?.trim() || '';
-          const lastName = client.lastName?.trim() || '';
-          
-          // ALWAYS use firstName+lastName from database, even if it's "User"
-          // The database is the source of truth - if it says "User", use "User"
-          // If the user wants a different name, they should update their Client record in the database
-          if (firstName && lastName) {
-            authorName = `${firstName} ${lastName}`.trim();
-          } else if (firstName) {
-            authorName = firstName;
-          } else if (lastName) {
-            authorName = lastName;
-          }
-        }
-      } catch (clientError) {
-        console.warn('Could not fetch Client for authorName:', clientError);
-        // Continue without authorName - it's optional
+  if (!input.title || !input.content || !input.authorId) {
+    throw new Error("Title, content, and authorId are required");
+  }
+  if (input.title.length < 1 || input.title.length > 200) {
+    throw new Error("Title must be between 1 and 200 characters");
+  }
+  if (input.content.length < 1 || input.content.length > 10000) {
+    throw new Error("Content must be between 1 and 10000 characters");
+  }
+  if (input.tags && input.tags.length > 10) {
+    throw new Error("Maximum 10 tags allowed");
+  }
+  let authorName = input.authorName;
+  if (!input.isAnonymous && !authorName && input.authorId) {
+    try {
+      const client = await getClientById(input.authorId);
+      if (client) {
+        const firstName = client.firstName?.trim() || "";
+        const lastName = client.lastName?.trim() || "";
+        if (firstName && lastName) authorName = `${firstName} ${lastName}`.trim();
+        else if (firstName) authorName = firstName;
+        else if (lastName) authorName = lastName;
       }
+    } catch (clientError) {
+      console.warn("Could not fetch Client for authorName:", clientError);
     }
-
-    // Ensure required fields have default values (as per GraphQL schema - ForumPost Boolean! and Int!)
-    const postInput: any = {
+  }
+  const result = await forumRequest<{
+    blocked?: boolean;
+    pendingReview?: boolean;
+    status?: string;
+    filteredContentId?: string;
+    riskScore?: number;
+    riskReasons?: string[];
+    matchedTerms?: string[];
+    post?: ForumPost;
+  }>("/api/forum/posts", {
+    method: "POST",
+    auth: true,
+    body: {
       title: sanitizeUserVisibleText(input.title).trim(),
       content: sanitizeUserVisibleText(input.content).trim(),
-      authorId: input.authorId,
-      category: input.category || "DOG", // Required field, default to "DOG" (狗狗)
-      tags: input.tags && input.tags.length > 0 ? input.tags : undefined,
-      attachments: input.attachments && input.attachments.length > 0 ? input.attachments : undefined,
-      location: input.location && input.location.trim() ? input.location.trim() : undefined,
-      likes: input.likes ?? 0,
-      dislikes: input.dislikes ?? 0,
-      replies: input.replies ?? 0,
-      views: input.views ?? 0,
-      isPinned: input.isPinned ?? false,
-      isLocked: input.isLocked ?? false,
-      isDeleted: input.isDeleted ?? false,
+      category: input.category || "DOG",
+      tags: input.tags,
+      attachments: input.attachments,
+      location: input.location,
       isAnonymous: input.isAnonymous ?? false,
-      isHot: false, // Boolean! in schema - must be explicit to avoid coerced null
-      hotScore: hotScore,
+      authorName: input.isAnonymous ? undefined : authorName,
+    },
+  });
+  if (result.blocked || result.pendingReview) {
+    return {
+      pendingReview: true,
+      filteredContentId: result.filteredContentId,
+      moderationStatus: result.status,
+      riskScore: result.riskScore,
+      riskReasons: result.riskReasons,
+      matchedTerms: result.matchedTerms,
     };
-
-    // Add authorName if not anonymous - ALWAYS use what's in the database
-    // The database is the source of truth - use whatever firstName+lastName is stored there
-    if (!input.isAnonymous) {
-      if (authorName && authorName.trim() !== '') {
-        postInput.authorName = authorName.trim();
-      }
-    }
-
-    // Do not send anonHash here — ModeratedForumPostInput does not define it.
-    // Lambda generates a temporary hash when isAnonymous; we overwrite after create.
-
-    const result = await graphqlQuery<{
-      createModeratedForumPost: {
-        status: string;
-        blocked: boolean;
-        riskScore?: number;
-        riskReasons?: string[];
-        matchedTerms?: string[];
-        filteredContentId?: string;
-        post?: ForumPost;
-      };
-    }>(
-      CREATE_FORUM_POST_MUTATION,
-      { input: postInput }
-    );
-
-    if (result.createModeratedForumPost.blocked) {
-      return {
-        pendingReview: true,
-        filteredContentId: result.createModeratedForumPost.filteredContentId,
-        moderationStatus: result.createModeratedForumPost.status,
-        riskScore: result.createModeratedForumPost.riskScore,
-        riskReasons: result.createModeratedForumPost.riskReasons,
-        matchedTerms: result.createModeratedForumPost.matchedTerms,
-      };
-    }
-
-    const createdPost = result.createModeratedForumPost.post;
-    if (!createdPost) {
-      throw new Error('Failed to create forum post');
-    }
-    createdPost.isHot = createdPost.isHot ?? false;
-
-    // Update anonHash with proper hash based on postId (if anonymous)
-    if (input.isAnonymous && createdPost.id) {
-      try {
-        const properHash = generateAnonHash(createdPost.id, input.authorId);
-        
-        // Update the post with the proper hash
-        await graphqlQuery<{ updateForumPost: ForumPost }>(
-          UPDATE_FORUM_POST_MUTATION,
-          {
-            input: {
-              id: createdPost.id,
-              anonHash: properHash
-            }
-          }
-        );
-        
-        // Update the response object
-        createdPost.anonHash = properHash;
-      } catch (updateError) {
-        console.warn('Error updating anonHash:', updateError);
-        // If update fails, generate hash locally for display
-        createdPost.anonHash = generateAnonHash(createdPost.id, input.authorId);
-      }
-    }
-
-    // Create PostTag relationships if tagIds are provided
-    let finalTagIds: string[] = [];
-    
-    if (input.tagIds && input.tagIds.length > 0) {
-      finalTagIds = input.tagIds;
-    } else if (input.tags && input.tags.length > 0) {
-      // If tag names are provided (legacy), create/get tags and get their IDs
-      try {
-        const tagPromises = input.tags.map(tagName => getOrCreateTag(tagName));
-        finalTagIds = await Promise.all(tagPromises);
-      } catch (tagError) {
-        console.warn('Error creating/getting tags from names:', tagError);
-        // Continue without tags if this fails
-      }
-    }
-
-    // Create PostTag relationships
-    if (finalTagIds.length > 0 && createdPost.id) {
-      try {
-        const postTagPromises = finalTagIds
-          .filter(tagId => tagId) // Filter out any null/undefined
-          .map(tagId =>
-            graphqlQuery<{ createPostTag: PostTag }>(
-              CREATE_POST_TAG_MUTATION,
-              {
-                input: {
-                  postId: createdPost.id,
-                  tagId: tagId
-                }
-              }
-            )
-          );
-        await Promise.all(postTagPromises);
-      } catch (tagError) {
-        console.warn('Error creating post tags:', tagError);
-        // Don't fail the post creation if tags fail
-      }
-    }
-
-    // Ensure hotScore is set in response (should already be set from creation)
-    if (createdPost.hotScore === undefined || createdPost.hotScore === null) {
-      createdPost.hotScore = calculateHotScore(
-        createdPost.replies, 
-        createdPost.likes, 
-        createdPost.dislikes || 0,
-        undefined,
-        createdPost.createdAt,
-        createdPost.lastReplyAt
-      );
-    }
-
-    // Ensure isAnonymous is set
-    createdPost.isAnonymous = input.isAnonymous ?? false;
-
-    return createdPost;
-  } catch (error) {
-    console.error('Error creating forum post:', error);
-    throw error;
   }
+  if (!result.post) throw new Error("Failed to create post");
+  return result.post;
 };
-
-// PostUpvote interface
 export interface PostUpvote {
   id: string;
   postId: string;
@@ -2232,636 +1869,66 @@ const UPDATE_FORUM_POST_LIKES_MUTATION = `
 /**
  * Check if user has liked a post
  */
-export const checkUserLikedPost = async (postId: string, userId: string): Promise<boolean> => {
+export const checkUserLikedPost = async (postId: string, _userId: string): Promise<boolean> => {
   try {
-    const result = await graphqlQuery<{
-      listPostUpvotes: { items: PostUpvote[] };
-    }>(
-      LIST_POST_UPVOTES_QUERY,
-      {
-        filter: {
-          postId: { eq: postId },
-          userId: { eq: userId }
-        },
-        limit: 1000 // Increased to avoid early termination in DynamoDB scans
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listPostUpvotes?.items?.length > 0;
+    const { postVotes } = await forumGetVotes({ postIds: [postId] });
+    return postVotes[postId] === 1;
   } catch (error) {
-    console.error('Error checking if user liked post:', error);
+    console.error("Error checking if user liked post:", error);
     return false;
   }
 };
-
-/**
- * Toggle like on a post (like if not liked, unlike if already liked)
- */
 export const togglePostLike = async (
   postId: string,
-  userEmail: string,
-  currentLikes: number,
-  currentDislikes: number,
-  currentReplies: number
+  _userEmail: string,
+  _currentLikes: number,
+  _currentDislikes: number,
+  _currentReplies: number
 ): Promise<{ liked: boolean; newLikesCount: number; newDislikesCount: number }> => {
-  try {
-    // Get or create Client for the user
-    const userId = await getOrCreateClient(userEmail, userEmail);
-    
-    // Check if user has already liked or disliked
-    const hasLiked = await checkUserLikedPost(postId, userId);
-    const hasDisliked = await checkUserDislikedPost(postId, userId);
-    
-    // If user has disliked, remove the dislike first
-    if (hasDisliked) {
-      const downvotesResult = await graphqlQuery<{
-        listPostDownvotes: { items: PostDownvote[] };
-      }>(
-        LIST_POST_DOWNVOTES_QUERY,
-        {
-          filter: {
-            postId: { eq: postId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const downvote = downvotesResult.listPostDownvotes?.items?.[0];
-      if (downvote) {
-        await graphqlQuery<{ deletePostDownvote: { id: string } }>(
-          DELETE_POST_DOWNVOTE_MUTATION,
-          {
-            input: { id: downvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-      }
-    }
-    
-    if (hasLiked) {
-      // Unlike: Find and delete the upvote
-      const upvotesResult = await graphqlQuery<{
-        listPostUpvotes: { items: PostUpvote[] };
-      }>(
-        LIST_POST_UPVOTES_QUERY,
-        {
-          filter: {
-            postId: { eq: postId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const upvote = upvotesResult.listPostUpvotes?.items?.[0];
-      if (upvote) {
-        // Delete the upvote
-        await graphqlQuery<{ deletePostUpvote: { id: string } }>(
-          DELETE_POST_UPVOTE_MUTATION,
-          {
-            input: { id: upvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        // Decrement likes count
-        const newLikesCount = Math.max(0, currentLikes - 1);
-        const newDislikesCount = hasDisliked ? Math.max(0, currentDislikes - 1) : currentDislikes;
-        
-        // Fetch reply timestamps for accurate hotScore calculation
-        let replyTimestamps: string[] | undefined;
-        let postCreatedAt: string | undefined;
-        let lastReplyAt: string | undefined;
-        try {
-          const post = await getForumPostById(postId);
-          postCreatedAt = post.createdAt;
-          lastReplyAt = post.lastReplyAt;
-          const allReplies = await getForumPostReplies(postId, 1000);
-          replyTimestamps = allReplies
-            .filter(reply => !reply.isDeleted && reply.createdAt)
-            .map(reply => reply.createdAt!);
-        } catch (err) {
-          console.warn('Error fetching replies for hotScore calculation:', err);
-          // Continue with fallback calculation
-        }
-        
-        const newHotScore = calculateHotScore(
-          currentReplies, 
-          newLikesCount, 
-          newDislikesCount,
-          replyTimestamps,
-          postCreatedAt,
-          lastReplyAt
-        );
-        
-        await graphqlQuery<{ updateForumPost: { id: string; likes: number; dislikes: number } }>(
-          UPDATE_FORUM_POST_LIKES_MUTATION,
-          {
-            input: {
-              id: postId,
-              likes: newLikesCount,
-              dislikes: newDislikesCount,
-              hotScore: newHotScore
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        return { liked: false, newLikesCount, newDislikesCount };
-      }
-    } else {
-      // Like: Double-check before creating (prevent race conditions)
-      const doubleCheck = await checkUserLikedPost(postId, userId);
-      if (doubleCheck) {
-        // User already liked, return current state
-        return { liked: true, newLikesCount: currentLikes, newDislikesCount: currentDislikes };
-      }
-      
-      // Create new upvote
-      let upvoteCreated = false;
-      try {
-        const createResult = await graphqlQuery<{ createPostUpvote: PostUpvote }>(
-          CREATE_POST_UPVOTE_MUTATION,
-          {
-            input: {
-              postId: postId,
-              userId: userId
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        console.log('Post upvote created:', createResult);
-        upvoteCreated = true;
-      } catch (error: any) {
-        console.error('Error creating post upvote:', error);
-        // If error is due to duplicate, check again
-        if (error?.message?.includes('duplicate') || error?.message?.includes('already exists')) {
-          const alreadyLiked = await checkUserLikedPost(postId, userId);
-          if (alreadyLiked) {
-            console.log('Post upvote already exists, proceeding with update');
-            upvoteCreated = true;
-          } else {
-            throw error;
-          }
-        } else {
-          throw error;
-        }
-      }
-      
-      // Verify the upvote was created successfully
-      const verifyLiked = await checkUserLikedPost(postId, userId);
-      console.log('Verifying post upvote exists:', verifyLiked, 'upvoteCreated:', upvoteCreated);
-      
-      if (!verifyLiked && !upvoteCreated) {
-        // Upvote wasn't created, return current state
-        return { liked: false, newLikesCount: currentLikes, newDislikesCount: currentDislikes };
-      }
-      
-      // Increment likes count
-      const newLikesCount = currentLikes + 1;
-      const newDislikesCount = hasDisliked ? Math.max(0, currentDislikes - 1) : currentDislikes;
-      
-      // Fetch reply timestamps for accurate hotScore calculation
-      let replyTimestamps: string[] | undefined;
-      let postCreatedAt: string | undefined;
-      let lastReplyAt: string | undefined;
-      try {
-        const post = await getForumPostById(postId);
-        postCreatedAt = post.createdAt;
-        lastReplyAt = post.lastReplyAt;
-        const allReplies = await getForumPostReplies(postId, 1000);
-        replyTimestamps = allReplies
-          .filter(reply => !reply.isDeleted && reply.createdAt)
-          .map(reply => reply.createdAt!);
-      } catch (err) {
-        console.warn('Error fetching replies for hotScore calculation:', err);
-        // Continue with fallback calculation
-      }
-      
-      const newHotScore = calculateHotScore(
-        currentReplies, 
-        newLikesCount, 
-        newDislikesCount,
-        replyTimestamps,
-        postCreatedAt,
-        lastReplyAt
-      );
-      
-      console.log('Updating post with likes:', { postId, newLikesCount, newDislikesCount, newHotScore });
-      
-      const updateResult = await graphqlQuery<{ updateForumPost: { id: string; likes: number; dislikes: number } }>(
-        UPDATE_FORUM_POST_LIKES_MUTATION,
-        {
-          input: {
-            id: postId,
-            likes: newLikesCount,
-            dislikes: newDislikesCount,
-            hotScore: newHotScore
-          }
-        },
-        { authMode: 'userPool' }
-      );
-      
-      console.log('Post updated with likes:', updateResult);
-      
-      // Final verification: Ensure mutual exclusivity
-      const finalLiked = await checkUserLikedPost(postId, userId);
-      const finalDisliked = await checkUserDislikedPost(postId, userId);
-      if (finalLiked && finalDisliked) {
-        console.warn('Mutual exclusivity violation detected - both like and dislike exist, removing dislike');
-        // Remove dislike to maintain mutual exclusivity
-        const downvotesResult = await graphqlQuery<{
-          listPostDownvotes: { items: PostDownvote[] };
-        }>(
-          LIST_POST_DOWNVOTES_QUERY,
-          {
-            filter: {
-              postId: { eq: postId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        const downvote = downvotesResult.listPostDownvotes?.items?.[0];
-        if (downvote) {
-          await graphqlQuery<{ deletePostDownvote: { id: string } }>(
-            DELETE_POST_DOWNVOTE_MUTATION,
-            {
-              input: { id: downvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-          const correctedDislikesCount = Math.max(0, newDislikesCount - 1);
-          await graphqlQuery<{ updateForumPost: { id: string; dislikes: number } }>(
-            UPDATE_FORUM_POST_DISLIKES_MUTATION,
-            {
-              input: {
-                id: postId,
-                dislikes: correctedDislikesCount,
-                likes: newLikesCount
-              }
-            },
-            { authMode: 'userPool' }
-          );
-          return { liked: true, newLikesCount, newDislikesCount: correctedDislikesCount };
-        }
-      }
-      
-      return { liked: true, newLikesCount, newDislikesCount };
-    }
-    
-    return { liked: false, newLikesCount: currentLikes, newDislikesCount: currentDislikes };
-  } catch (error) {
-    console.error('Error toggling post like:', error);
-    throw error;
-  }
+  const { postVotes } = await forumGetVotes({ postIds: [postId] });
+  const liked = postVotes[postId] !== 1;
+  await forumRequest(`/api/forum/posts/${encodeURIComponent(postId)}/vote`, {
+    method: "POST",
+    auth: true,
+    body: { value: liked ? 1 : 0 },
+  });
+  const post = await getForumPostById(postId);
+  return {
+    liked,
+    newLikesCount: post.likes ?? 0,
+    newDislikesCount: post.dislikes ?? 0,
+  };
 };
-
-// Queries for PostDownvote
-const LIST_POST_DOWNVOTES_QUERY = `
-  query ListPostDownvotes($filter: ModelPostDownvoteFilterInput, $limit: Int) {
-    listPostDownvotes(filter: $filter, limit: $limit) {
-      items {
-        id
-        postId
-        userId
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-
-const CREATE_POST_DOWNVOTE_MUTATION = `
-  mutation CreatePostDownvote($input: CreatePostDownvoteInput!) {
-    createPostDownvote(input: $input) {
-      id
-      postId
-      userId
-      createdAt
-      updatedAt
-    }
-  }
-`;
-
-const DELETE_POST_DOWNVOTE_MUTATION = `
-  mutation DeletePostDownvote($input: DeletePostDownvoteInput!) {
-    deletePostDownvote(input: $input) {
-      id
-    }
-  }
-`;
-
-const UPDATE_FORUM_POST_DISLIKES_MUTATION = `
-  mutation UpdateForumPost($input: UpdateForumPostInput!) {
-    updateForumPost(input: $input) {
-      id
-      likes
-      dislikes
-      hotScore
-    }
-  }
-`;
-
-/**
- * Check if user has disliked a post
- */
-export const checkUserDislikedPost = async (postId: string, userId: string): Promise<boolean> => {
+export const checkUserDislikedPost = async (postId: string, _userId: string): Promise<boolean> => {
   try {
-    const result = await graphqlQuery<{
-      listPostDownvotes: { items: PostDownvote[] };
-    }>(
-      LIST_POST_DOWNVOTES_QUERY,
-      {
-        filter: {
-          postId: { eq: postId },
-          userId: { eq: userId }
-        },
-        limit: 1000 // Increased from 1 to avoid early termination in DynamoDB scans
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listPostDownvotes?.items?.length > 0;
+    const { postVotes } = await forumGetVotes({ postIds: [postId] });
+    return postVotes[postId] === -1;
   } catch (error) {
-    console.error('Error checking if user disliked post:', error);
+    console.error("Error checking if user disliked post:", error);
     return false;
   }
 };
-
-/**
- * Toggle dislike on a post (dislike if not disliked, undislike if already disliked)
- */
 export const togglePostDislike = async (
   postId: string,
-  userEmail: string,
-  currentLikes: number,
-  currentDislikes: number,
-  currentReplies: number
-): Promise<{ disliked: boolean; newDislikesCount: number; newLikesCount: number }> => {
-  try {
-    // Get or create Client for the user
-    const userId = await getOrCreateClient(userEmail, userEmail);
-    
-    // Check if user has already liked or disliked
-    const hasLiked = await checkUserLikedPost(postId, userId);
-    const hasDisliked = await checkUserDislikedPost(postId, userId);
-    
-    // If user has liked, remove the like first
-    if (hasLiked) {
-      const upvotesResult = await graphqlQuery<{
-        listPostUpvotes: { items: PostUpvote[] };
-      }>(
-        LIST_POST_UPVOTES_QUERY,
-        {
-          filter: {
-            postId: { eq: postId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const upvote = upvotesResult.listPostUpvotes?.items?.[0];
-      if (upvote) {
-        await graphqlQuery<{ deletePostUpvote: { id: string } }>(
-          DELETE_POST_UPVOTE_MUTATION,
-          {
-            input: { id: upvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-      }
-    }
-    
-    if (hasDisliked) {
-      // Undislike: Find and delete the downvote
-      const downvotesResult = await graphqlQuery<{
-        listPostDownvotes: { items: PostDownvote[] };
-      }>(
-        LIST_POST_DOWNVOTES_QUERY,
-        {
-          filter: {
-            postId: { eq: postId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const downvote = downvotesResult.listPostDownvotes?.items?.[0];
-      if (downvote) {
-        // Delete the downvote
-        await graphqlQuery<{ deletePostDownvote: { id: string } }>(
-          DELETE_POST_DOWNVOTE_MUTATION,
-          {
-            input: { id: downvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        // Decrement dislikes count
-        const newDislikesCount = Math.max(0, currentDislikes - 1);
-        const newLikesCount = hasLiked ? Math.max(0, currentLikes - 1) : currentLikes;
-        
-        // Fetch reply timestamps for accurate hotScore calculation
-        let replyTimestamps: string[] | undefined;
-        let postCreatedAt: string | undefined;
-        let lastReplyAt: string | undefined;
-        try {
-          const post = await getForumPostById(postId);
-          postCreatedAt = post.createdAt;
-          lastReplyAt = post.lastReplyAt;
-          const allReplies = await getForumPostReplies(postId, 1000);
-          replyTimestamps = allReplies
-            .filter(reply => !reply.isDeleted && reply.createdAt)
-            .map(reply => reply.createdAt!);
-        } catch (err) {
-          console.warn('Error fetching replies for hotScore calculation:', err);
-          // Continue with fallback calculation
-        }
-        
-        const newHotScore = calculateHotScore(
-          currentReplies, 
-          newLikesCount, 
-          newDislikesCount,
-          replyTimestamps,
-          postCreatedAt,
-          lastReplyAt
-        );
-        
-        await graphqlQuery<{ updateForumPost: { id: string; dislikes: number; likes: number } }>(
-          UPDATE_FORUM_POST_DISLIKES_MUTATION,
-          {
-            input: {
-              id: postId,
-              dislikes: newDislikesCount,
-              likes: newLikesCount,
-              hotScore: newHotScore
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        return { disliked: false, newDislikesCount, newLikesCount };
-      }
-    } else {
-      // Dislike: Double-check before creating (prevent race conditions)
-      const doubleCheck = await checkUserDislikedPost(postId, userId);
-      if (doubleCheck) {
-        // User already disliked, return current state
-        return { disliked: true, newDislikesCount: currentDislikes, newLikesCount: currentLikes };
-      }
-      
-      // Create new downvote
-      let downvoteCreated = false;
-      try {
-        const createResult = await graphqlQuery<{ createPostDownvote: PostDownvote }>(
-          CREATE_POST_DOWNVOTE_MUTATION,
-          {
-            input: {
-              postId: postId,
-              userId: userId
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        console.log('Post downvote created:', createResult);
-        downvoteCreated = true;
-      } catch (error: any) {
-        console.error('Error creating post downvote:', error);
-        // If error is due to duplicate (e.g., unique constraint violation), check again
-        if (error?.message?.includes('duplicate') || error?.message?.includes('already exists')) {
-          const alreadyDisliked = await checkUserDislikedPost(postId, userId);
-          if (alreadyDisliked) {
-            console.log('Downvote already exists, proceeding with update');
-            downvoteCreated = true;
-          } else {
-            throw error;
-          }
-        } else {
-          throw error;
-        }
-      }
-      
-      // Verify the downvote was created successfully
-      const verifyDisliked = await checkUserDislikedPost(postId, userId);
-      console.log('Verifying downvote exists:', verifyDisliked, 'downvoteCreated:', downvoteCreated);
-      
-      if (!verifyDisliked && !downvoteCreated) {
-        // Downvote wasn't created and creation failed, throw error
-        throw new Error('Failed to create post downvote');
-      }
-      
-      // Increment dislikes count
-      const newDislikesCount = currentDislikes + 1;
-      const newLikesCount = hasLiked ? Math.max(0, currentLikes - 1) : currentLikes;
-      
-      // Fetch reply timestamps for accurate hotScore calculation
-      let replyTimestamps: string[] | undefined;
-      let postCreatedAt: string | undefined;
-      let lastReplyAt: string | undefined;
-      try {
-        const post = await getForumPostById(postId);
-        postCreatedAt = post.createdAt;
-        lastReplyAt = post.lastReplyAt;
-        const allReplies = await getForumPostReplies(postId, 1000);
-        replyTimestamps = allReplies
-          .filter(reply => !reply.isDeleted && reply.createdAt)
-          .map(reply => reply.createdAt!);
-      } catch (err) {
-        console.warn('Error fetching replies for hotScore calculation:', err);
-        // Continue with fallback calculation
-      }
-      
-      const newHotScore = calculateHotScore(
-        currentReplies, 
-        newLikesCount, 
-        newDislikesCount,
-        replyTimestamps,
-        postCreatedAt,
-        lastReplyAt
-      );
-      
-      console.log('Updating post with dislikes:', { postId, newDislikesCount, newLikesCount, newHotScore });
-      
-      const updateResult = await graphqlQuery<{ updateForumPost: { id: string; dislikes: number; likes: number } }>(
-        UPDATE_FORUM_POST_DISLIKES_MUTATION,
-        {
-          input: {
-            id: postId,
-            dislikes: newDislikesCount,
-            likes: newLikesCount,
-            hotScore: newHotScore
-          }
-        },
-        { authMode: 'userPool' }
-      );
-      
-      console.log('Post updated with dislikes:', updateResult);
-      
-      // Final verification: Ensure mutual exclusivity
-      const finalLiked = await checkUserLikedPost(postId, userId);
-      const finalDisliked = await checkUserDislikedPost(postId, userId);
-      if (finalLiked && finalDisliked) {
-        console.warn('Mutual exclusivity violation detected - both like and dislike exist, removing like');
-        // Remove like to maintain mutual exclusivity
-        const upvotesResult = await graphqlQuery<{
-          listPostUpvotes: { items: PostUpvote[] };
-        }>(
-          LIST_POST_UPVOTES_QUERY,
-          {
-            filter: {
-              postId: { eq: postId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        const upvote = upvotesResult.listPostUpvotes?.items?.[0];
-        if (upvote) {
-          await graphqlQuery<{ deletePostUpvote: { id: string } }>(
-            DELETE_POST_UPVOTE_MUTATION,
-            {
-              input: { id: upvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-          const correctedLikesCount = Math.max(0, newLikesCount - 1);
-          await graphqlQuery<{ updateForumPost: { id: string; likes: number } }>(
-            UPDATE_FORUM_POST_DISLIKES_MUTATION,
-            {
-              input: {
-                id: postId,
-                likes: correctedLikesCount,
-                dislikes: newDislikesCount
-              }
-            },
-            { authMode: 'userPool' }
-          );
-          return { disliked: true, newDislikesCount, newLikesCount: correctedLikesCount };
-        }
-      }
-      
-      return { disliked: true, newDislikesCount, newLikesCount };
-    }
-    
-    return { disliked: false, newDislikesCount: currentDislikes, newLikesCount: currentLikes };
-  } catch (error) {
-    console.error('Error toggling post dislike:', error);
-    throw error;
-  }
+  _userEmail: string,
+  _currentLikes: number,
+  _currentDislikes: number,
+  _currentReplies: number
+): Promise<{ disliked: boolean; newLikesCount: number; newDislikesCount: number }> => {
+  const { postVotes } = await forumGetVotes({ postIds: [postId] });
+  const disliked = postVotes[postId] !== -1;
+  await forumRequest(`/api/forum/posts/${encodeURIComponent(postId)}/vote`, {
+    method: "POST",
+    auth: true,
+    body: { value: disliked ? -1 : 0 },
+  });
+  const post = await getForumPostById(postId);
+  return {
+    disliked,
+    newLikesCount: post.likes ?? 0,
+    newDislikesCount: post.dislikes ?? 0,
+  };
 };
-
-// ReplyUpvote interface
 export interface ReplyUpvote {
   id: string;
   replyId: string;
@@ -2972,498 +2039,62 @@ const UPDATE_REPLY_DISLIKES_MUTATION = `
 /**
  * Check if user has liked a reply
  */
-export const checkUserLikedReply = async (replyId: string, userId: string): Promise<boolean> => {
+export const checkUserLikedReply = async (replyId: string, _userId: string): Promise<boolean> => {
   try {
-    const result = await graphqlQuery<{
-      listReplyUpvotes: { items: ReplyUpvote[] };
-    }>(
-      LIST_REPLY_UPVOTES_QUERY,
-      {
-        filter: {
-          replyId: { eq: replyId },
-          userId: { eq: userId }
-        },
-        limit: 1000 // Increased from 1 to avoid early termination in DynamoDB scans
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listReplyUpvotes?.items?.length > 0;
+    const { replyVotes } = await forumGetVotes({ replyIds: [replyId] });
+    return replyVotes[replyId] === 1;
   } catch (error) {
-    console.error('Error checking if user liked reply:', error);
+    console.error("Error checking if user liked reply:", error);
     return false;
   }
 };
-
-/**
- * Check if user has disliked a reply
- */
-export const checkUserDislikedReply = async (replyId: string, userId: string): Promise<boolean> => {
+export const checkUserDislikedReply = async (replyId: string, _userId: string): Promise<boolean> => {
   try {
-    const result = await graphqlQuery<{
-      listReplyDownvotes: { items: ReplyDownvote[] };
-    }>(
-      LIST_REPLY_DOWNVOTES_QUERY,
-      {
-        filter: {
-          replyId: { eq: replyId },
-          userId: { eq: userId }
-        },
-        limit: 1000 // Increased from 1 to avoid early termination in DynamoDB scans
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listReplyDownvotes?.items?.length > 0;
+    const { replyVotes } = await forumGetVotes({ replyIds: [replyId] });
+    return replyVotes[replyId] === -1;
   } catch (error) {
-    console.error('Error checking if user disliked reply:', error);
+    console.error("Error checking if user disliked reply:", error);
     return false;
   }
 };
-
-/**
- * Toggle like on a reply (like if not liked, unlike if already liked)
- */
 export const toggleReplyLike = async (
   replyId: string,
-  userEmail: string,
-  currentLikes: number,
-  currentDislikes: number = 0
+  _userEmail: string,
+  _currentLikes: number,
+  _currentDislikes: number
 ): Promise<{ liked: boolean; newLikesCount: number; newDislikesCount: number }> => {
-  try {
-    // Get or create Client for the user
-    const userId = await getOrCreateClient(userEmail, userEmail);
-    
-    // Check if user has already liked or disliked
-    const hasLiked = await checkUserLikedReply(replyId, userId);
-    const hasDisliked = await checkUserDislikedReply(replyId, userId);
-    
-    if (hasLiked) {
-      // Unlike: Find and delete the upvote
-      const upvotesResult = await graphqlQuery<{
-        listReplyUpvotes: { items: ReplyUpvote[] };
-      }>(
-        LIST_REPLY_UPVOTES_QUERY,
-        {
-          filter: {
-            replyId: { eq: replyId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const upvote = upvotesResult.listReplyUpvotes?.items?.[0];
-      if (upvote) {
-        // Delete the upvote
-        await graphqlQuery<{ deleteReplyUpvote: { id: string } }>(
-          DELETE_REPLY_UPVOTE_MUTATION,
-          {
-            input: { id: upvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        // Decrement likes count
-        const newLikesCount = Math.max(0, currentLikes - 1);
-        const newDislikesCount = currentDislikes; // No change to dislikes
-        
-        await graphqlQuery<{ updateReply: { id: string; likes: number; dislikes: number } }>(
-          UPDATE_REPLY_LIKES_MUTATION,
-          {
-            input: {
-              id: replyId,
-              likes: newLikesCount,
-              dislikes: newDislikesCount
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        return { liked: false, newLikesCount, newDislikesCount };
-      }
-    } else {
-      // Like: If previously disliked, remove the dislike first
-      if (hasDisliked) {
-        const downvotesResult = await graphqlQuery<{
-          listReplyDownvotes: { items: ReplyDownvote[] };
-        }>(
-          LIST_REPLY_DOWNVOTES_QUERY,
-          {
-            filter: {
-              replyId: { eq: replyId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        
-        const downvote = downvotesResult.listReplyDownvotes?.items?.[0];
-        if (downvote) {
-          await graphqlQuery<{ deleteReplyDownvote: { id: string } }>(
-            DELETE_REPLY_DOWNVOTE_MUTATION,
-            {
-              input: { id: downvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-        }
-      }
-      
-      // Create new upvote
-      let upvoteCreated = false;
-      try {
-        const createResult = await graphqlQuery<{ createReplyUpvote: ReplyUpvote }>(
-          CREATE_REPLY_UPVOTE_MUTATION,
-          {
-            input: {
-              replyId: replyId,
-              userId: userId
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        console.log('Reply upvote created:', createResult);
-        upvoteCreated = true;
-      } catch (error: any) {
-        console.error('Error creating reply upvote:', error);
-        // If error is due to duplicate, check again
-        if (error?.message?.includes('duplicate') || error?.message?.includes('already exists')) {
-          const alreadyLiked = await checkUserLikedReply(replyId, userId);
-          if (alreadyLiked) {
-            console.log('Reply upvote already exists, proceeding with update');
-            upvoteCreated = true;
-          } else {
-            throw error;
-          }
-        } else {
-          throw error;
-        }
-      }
-      
-      // Verify the upvote was created successfully
-      const verifyLiked = await checkUserLikedReply(replyId, userId);
-      console.log('Verifying reply upvote exists:', verifyLiked, 'upvoteCreated:', upvoteCreated);
-      
-      if (!verifyLiked && !upvoteCreated) {
-        throw new Error('Failed to create reply upvote');
-      }
-      
-      // Increment likes count, decrement dislikes if was disliked
-      const newLikesCount = currentLikes + 1;
-      const newDislikesCount = hasDisliked ? Math.max(0, currentDislikes - 1) : currentDislikes;
-      
-      console.log('Updating reply with likes:', { replyId, newLikesCount, newDislikesCount });
-      
-      const updateResult = await graphqlQuery<{ updateReply: { id: string; likes: number; dislikes: number } }>(
-        UPDATE_REPLY_LIKES_MUTATION,
-        {
-          input: {
-            id: replyId,
-            likes: newLikesCount,
-            dislikes: newDislikesCount
-          }
-        },
-        { authMode: 'userPool' }
-      );
-      
-      console.log('Reply updated with likes:', updateResult);
-      
-      // Final verification: Ensure mutual exclusivity
-      const finalLiked = await checkUserLikedReply(replyId, userId);
-      const finalDisliked = await checkUserDislikedReply(replyId, userId);
-      if (finalLiked && finalDisliked) {
-        console.warn('Mutual exclusivity violation detected for reply - both like and dislike exist, removing dislike');
-        // Remove dislike to maintain mutual exclusivity
-        const downvotesResult = await graphqlQuery<{
-          listReplyDownvotes: { items: ReplyDownvote[] };
-        }>(
-          LIST_REPLY_DOWNVOTES_QUERY,
-          {
-            filter: {
-              replyId: { eq: replyId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        const downvote = downvotesResult.listReplyDownvotes?.items?.[0];
-        if (downvote) {
-          await graphqlQuery<{ deleteReplyDownvote: { id: string } }>(
-            DELETE_REPLY_DOWNVOTE_MUTATION,
-            {
-              input: { id: downvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-          const correctedDislikesCount = Math.max(0, newDislikesCount - 1);
-          await graphqlQuery<{ updateReply: { id: string; dislikes: number } }>(
-            UPDATE_REPLY_LIKES_MUTATION,
-            {
-              input: {
-                id: replyId,
-                dislikes: correctedDislikesCount,
-                likes: newLikesCount
-              }
-            },
-            { authMode: 'userPool' }
-          );
-          return { liked: true, newLikesCount, newDislikesCount: correctedDislikesCount };
-        }
-      }
-      
-      return { liked: true, newLikesCount, newDislikesCount };
-    }
-    
-    return { liked: false, newLikesCount: currentLikes, newDislikesCount: currentDislikes };
-  } catch (error) {
-    console.error('Error toggling reply like:', error);
-    throw error;
-  }
+  const { replyVotes } = await forumGetVotes({ replyIds: [replyId] });
+  const liked = replyVotes[replyId] !== 1;
+  const voted = await forumRequest<{ reply?: ForumReply }>(`/api/forum/replies/${encodeURIComponent(replyId)}/vote`, {
+    method: "POST",
+    auth: true,
+    body: { value: liked ? 1 : 0 },
+  });
+  return {
+    liked,
+    newLikesCount: voted.reply?.likes ?? 0,
+    newDislikesCount: voted.reply?.dislikes ?? 0,
+  };
 };
-
 export const toggleReplyDislike = async (
   replyId: string,
-  userEmail: string,
-  currentDislikes: number,
-  currentLikes: number = 0
-): Promise<{ disliked: boolean; newDislikesCount: number; newLikesCount: number }> => {
-  try {
-    // Get or create Client for the user
-    const userId = await getOrCreateClient(userEmail, userEmail);
-    
-    // Check if user has already liked or disliked
-    const hasLiked = await checkUserLikedReply(replyId, userId);
-    const hasDisliked = await checkUserDislikedReply(replyId, userId);
-    
-    if (hasDisliked) {
-      // Undislike: Find and delete the downvote
-      const downvotesResult = await graphqlQuery<{
-        listReplyDownvotes: { items: ReplyDownvote[] };
-      }>(
-        LIST_REPLY_DOWNVOTES_QUERY,
-        {
-          filter: {
-            replyId: { eq: replyId },
-            userId: { eq: userId }
-          },
-          limit: 1000 // Increased to avoid early termination in DynamoDB scans
-        },
-        { authMode: 'userPool' }
-      );
-      
-      const downvote = downvotesResult.listReplyDownvotes?.items?.[0];
-      if (downvote) {
-        // Delete the downvote
-        await graphqlQuery<{ deleteReplyDownvote: { id: string } }>(
-          DELETE_REPLY_DOWNVOTE_MUTATION,
-          {
-            input: { id: downvote.id }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        // Decrement dislikes count
-        const newDislikesCount = Math.max(0, currentDislikes - 1);
-        const newLikesCount = currentLikes; // No change to likes
-        
-        await graphqlQuery<{ updateReply: { id: string; likes: number; dislikes: number } }>(
-          UPDATE_REPLY_DISLIKES_MUTATION,
-          {
-            input: {
-              id: replyId,
-              dislikes: newDislikesCount,
-              likes: newLikesCount
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        
-        return { disliked: false, newDislikesCount, newLikesCount };
-      }
-    } else {
-      // Dislike: If previously liked, remove the like first
-      if (hasLiked) {
-        const upvotesResult = await graphqlQuery<{
-          listReplyUpvotes: { items: ReplyUpvote[] };
-        }>(
-          LIST_REPLY_UPVOTES_QUERY,
-          {
-            filter: {
-              replyId: { eq: replyId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        
-        const upvote = upvotesResult.listReplyUpvotes?.items?.[0];
-        if (upvote) {
-          await graphqlQuery<{ deleteReplyUpvote: { id: string } }>(
-            DELETE_REPLY_UPVOTE_MUTATION,
-            {
-              input: { id: upvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-        }
-      }
-      
-      // Create new downvote
-      let downvoteCreated = false;
-      try {
-        const createResult = await graphqlQuery<{ createReplyDownvote: ReplyDownvote }>(
-          CREATE_REPLY_DOWNVOTE_MUTATION,
-          {
-            input: {
-              replyId: replyId,
-              userId: userId
-            }
-          },
-          { authMode: 'userPool' }
-        );
-        console.log('Reply downvote created:', createResult);
-        downvoteCreated = true;
-      } catch (error: any) {
-        console.error('Error creating reply downvote:', error);
-        // If error is due to duplicate, check again
-        if (error?.message?.includes('duplicate') || error?.message?.includes('already exists')) {
-          const alreadyDisliked = await checkUserDislikedReply(replyId, userId);
-          if (alreadyDisliked) {
-            console.log('Reply downvote already exists, proceeding with update');
-            downvoteCreated = true;
-          } else {
-            throw error;
-          }
-        } else {
-          throw error;
-        }
-      }
-      
-      // Verify the downvote was created successfully
-      const verifyDisliked = await checkUserDislikedReply(replyId, userId);
-      console.log('Verifying reply downvote exists:', verifyDisliked, 'downvoteCreated:', downvoteCreated);
-      
-      if (!verifyDisliked && !downvoteCreated) {
-        throw new Error('Failed to create reply downvote');
-      }
-      
-      // Increment dislikes count, decrement likes if was liked
-      const newDislikesCount = currentDislikes + 1;
-      const newLikesCount = hasLiked ? Math.max(0, currentLikes - 1) : currentLikes;
-      
-      console.log('Updating reply with dislikes:', { replyId, newDislikesCount, newLikesCount });
-      
-      const updateResult = await graphqlQuery<{ updateReply: { id: string; likes: number; dislikes: number } }>(
-        UPDATE_REPLY_DISLIKES_MUTATION,
-        {
-          input: {
-            id: replyId,
-            dislikes: newDislikesCount,
-            likes: newLikesCount
-          }
-        },
-        { authMode: 'userPool' }
-      );
-      
-      console.log('Reply updated with dislikes:', updateResult);
-      
-      // Final verification: Ensure mutual exclusivity
-      const finalLiked = await checkUserLikedReply(replyId, userId);
-      const finalDisliked = await checkUserDislikedReply(replyId, userId);
-      if (finalLiked && finalDisliked) {
-        console.warn('Mutual exclusivity violation detected for reply - both like and dislike exist, removing like');
-        // Remove like to maintain mutual exclusivity
-        const upvotesResult = await graphqlQuery<{
-          listReplyUpvotes: { items: ReplyUpvote[] };
-        }>(
-          LIST_REPLY_UPVOTES_QUERY,
-          {
-            filter: {
-              replyId: { eq: replyId },
-              userId: { eq: userId }
-            },
-            limit: 1000 // Increased to avoid early termination in DynamoDB scans
-          },
-          { authMode: 'userPool' }
-        );
-        const upvote = upvotesResult.listReplyUpvotes?.items?.[0];
-        if (upvote) {
-          await graphqlQuery<{ deleteReplyUpvote: { id: string } }>(
-            DELETE_REPLY_UPVOTE_MUTATION,
-            {
-              input: { id: upvote.id }
-            },
-            { authMode: 'userPool' }
-          );
-          const correctedLikesCount = Math.max(0, newLikesCount - 1);
-          await graphqlQuery<{ updateReply: { id: string; likes: number } }>(
-            UPDATE_REPLY_DISLIKES_MUTATION,
-            {
-              input: {
-                id: replyId,
-                likes: correctedLikesCount,
-                dislikes: newDislikesCount
-              }
-            },
-            { authMode: 'userPool' }
-          );
-          return { disliked: true, newDislikesCount, newLikesCount: correctedLikesCount };
-        }
-      }
-      
-      return { disliked: true, newDislikesCount, newLikesCount };
-    }
-    
-    return { disliked: false, newDislikesCount: currentDislikes, newLikesCount: currentLikes };
-  } catch (error) {
-    console.error('Error toggling reply dislike:', error);
-    throw error;
-  }
+  _userEmail: string,
+  _currentLikes: number,
+  _currentDislikes: number
+): Promise<{ disliked: boolean; newLikesCount: number; newDislikesCount: number }> => {
+  const { replyVotes } = await forumGetVotes({ replyIds: [replyId] });
+  const disliked = replyVotes[replyId] !== -1;
+  const voted = await forumRequest<{ reply?: ForumReply }>(`/api/forum/replies/${encodeURIComponent(replyId)}/vote`, {
+    method: "POST",
+    auth: true,
+    body: { value: disliked ? -1 : 0 },
+  });
+  return {
+    disliked,
+    newLikesCount: voted.reply?.likes ?? 0,
+    newDislikesCount: voted.reply?.dislikes ?? 0,
+  };
 };
-
-// Moderated create Reply Mutation
-const CREATE_REPLY_MUTATION = `
-  mutation CreateModeratedReply($input: ModeratedReplyInput!) {
-    createModeratedReply(input: $input) {
-      status
-      blocked
-      message
-      filteredContentId
-      riskScore
-      riskReasons
-      matchedTerms
-      reply {
-        id
-        content
-        postId
-        authorId
-        parentReplyId
-        likes
-        dislikes
-        isDeleted
-        attachments
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-
-const UPDATE_FORUM_POST_REPLIES_MUTATION = `
-  mutation UpdateForumPost($input: UpdateForumPostInput!) {
-    updateForumPost(input: $input) {
-      id
-      replies
-      lastReplyAt
-    }
-  }
-`;
-
 export interface CreateReplyInput {
   content: string;
   postId: string;
@@ -3482,357 +2113,117 @@ export const createForumReply = async (
   input: CreateReplyInput,
   userEmail: string
 ): Promise<ForumReply | ModeratedPendingReview> => {
-  try {
-    // Validate required fields
-    if (!input.content || input.content.trim() === '') {
-      throw new Error('Reply content is required');
-    }
-    if (!input.postId) {
-      throw new Error('Post ID is required');
-    }
-    if (!input.authorId) {
-      throw new Error('Author ID is required');
-    }
-
-    // Get or create Client for the user
-    const userId = await getOrCreateClient(userEmail, userEmail);
-    
-    // Ensure authorId matches the authenticated user
-    if (userId !== input.authorId) {
-      throw new Error('Author ID must match authenticated user');
-    }
-
-    // Prepare reply input
-    const replyInput: any = {
+  if (!input.content || input.content.trim() === "") {
+    throw new Error("Reply content is required");
+  }
+  if (!input.postId) {
+    throw new Error("Post ID is required");
+  }
+  if (!input.authorId) {
+    throw new Error("Author ID is required");
+  }
+  const userId = await getOrCreateClient(userEmail, userEmail);
+  if (userId !== input.authorId) {
+    throw new Error("Author ID must match authenticated user");
+  }
+  const result = await forumRequest<{
+    blocked?: boolean;
+    pendingReview?: boolean;
+    status?: string;
+    filteredContentId?: string;
+    riskScore?: number;
+    riskReasons?: string[];
+    matchedTerms?: string[];
+    reply?: ForumReply;
+  }>(`/api/forum/posts/${encodeURIComponent(input.postId)}/replies`, {
+    method: "POST",
+    auth: true,
+    body: {
       content: sanitizeUserVisibleText(input.content).trim(),
-      postId: input.postId,
-      authorId: input.authorId,
-      likes: input.likes ?? 0,
-      dislikes: input.dislikes ?? 0,
-      isDeleted: input.isDeleted ?? false,
-      attachments: input.attachments && input.attachments.length > 0 ? input.attachments : undefined,
+      parentReplyId: input.parentReplyId || undefined,
+      attachments: input.attachments,
+    },
+  });
+  if (result.blocked || result.pendingReview) {
+    return {
+      pendingReview: true,
+      filteredContentId: result.filteredContentId,
+      moderationStatus: result.status,
+      riskScore: result.riskScore,
+      riskReasons: result.riskReasons,
+      matchedTerms: result.matchedTerms,
     };
-
-    // Add parentReplyId if provided (for nested replies)
-    if (input.parentReplyId) {
-      replyInput.parentReplyId = input.parentReplyId;
-    }
-
-    // Create the reply
-    const result = await graphqlQuery<{
-      createModeratedReply: {
-        status: string;
-        blocked: boolean;
-        riskScore?: number;
-        riskReasons?: string[];
-        matchedTerms?: string[];
-        filteredContentId?: string;
-        reply?: ForumReply;
-      };
-    }>(
-      CREATE_REPLY_MUTATION,
-      { input: replyInput },
-      { authMode: 'userPool' }
-    );
-
-    if (result.createModeratedReply.blocked) {
-      return {
-        pendingReview: true,
-        filteredContentId: result.createModeratedReply.filteredContentId,
-        moderationStatus: result.createModeratedReply.status,
-        riskScore: result.createModeratedReply.riskScore,
-        riskReasons: result.createModeratedReply.riskReasons,
-        matchedTerms: result.createModeratedReply.matchedTerms,
+  }
+  const createdReply = result.reply;
+  if (!createdReply) throw new Error("Failed to create reply");
+  try {
+    const author = await getClientById(input.authorId);
+    if (author) {
+      createdReply.author = {
+        firstName: author.firstName,
+        lastName: author.lastName,
       };
     }
-
-    const createdReply = result.createModeratedReply.reply;
-    if (!createdReply) {
-      throw new Error('Failed to create reply');
-    }
-
-    // Update post replies count and last reply timestamp only.
-    // hotScore is updated by the scheduler Lambda.
-    try {
-      // First, get the current post to compute the next replies count
-      const post = await getForumPostById(input.postId);
-      const newRepliesCount = (post.replies || 0) + 1;
-
-      await graphqlQuery<{ updateForumPost: { id: string; replies: number; lastReplyAt: string } }>(
-        UPDATE_FORUM_POST_REPLIES_MUTATION,
-        {
-          input: {
-            id: input.postId,
-            replies: newRepliesCount,
-            lastReplyAt: createdReply.createdAt || new Date().toISOString()
-          }
-        },
-        { authMode: 'userPool' }
-      );
-    } catch (updateError) {
-      console.warn('Error updating post replies count:', updateError);
-      // Don't fail the reply creation if updating post fails
-    }
-
-    // Fetch Client data for the author
-    try {
-      const author = await getClientById(input.authorId);
-      if (author) {
-        createdReply.author = {
-          firstName: author.firstName,
-          lastName: author.lastName,
-        };
-      }
-    } catch (authorError) {
-      console.warn('Error fetching reply author:', authorError);
-      // Continue without author data
-    }
-
-    return createdReply;
-  } catch (error) {
-    console.error('Error creating forum reply:', error);
-    throw error;
+  } catch (authorError) {
+    console.warn("Error fetching reply author:", authorError);
   }
+  return createdReply;
 };
-
-/**
- * Get all users who liked a specific post
- */
-export const getPostLikes = async (postId: string): Promise<PostUpvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listPostUpvotes: { items: PostUpvote[] };
-    }>(
-      LIST_POST_UPVOTES_QUERY,
-      {
-        filter: {
-          postId: { eq: postId }
-        },
-        limit: 1000 // Get up to 1000 likes
-      }
-    );
-    
-    return result.listPostUpvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting post likes:', error);
-    throw error;
-  }
+export const getPostLikes = async (_postId: string): Promise<PostUpvote[]> => {
+  return [];
 };
-
-/**
- * Get all users who liked a specific reply
- */
-export const getReplyLikes = async (replyId: string): Promise<ReplyUpvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listReplyUpvotes: { items: ReplyUpvote[] };
-    }>(
-      LIST_REPLY_UPVOTES_QUERY,
-      {
-        filter: {
-          replyId: { eq: replyId }
-        },
-        limit: 1000 // Get up to 1000 likes
-      }
-    );
-    
-    return result.listReplyUpvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting reply likes:', error);
-    throw error;
-  }
+export const getReplyLikes = async (_replyId: string): Promise<ReplyUpvote[]> => {
+  return [];
 };
-
-/**
- * Get all posts liked by a specific user
- */
-export const getUserLikedPosts = async (userId: string): Promise<PostUpvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listPostUpvotes: { items: PostUpvote[] };
-    }>(
-      LIST_POST_UPVOTES_QUERY,
-      {
-        filter: {
-          userId: { eq: userId }
-        },
-        limit: 1000 // Get up to 1000 liked posts
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listPostUpvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting user liked posts:', error);
-    throw error;
-  }
+export const getUserLikedPosts = async (_userId: string): Promise<PostUpvote[]> => {
+  return [];
 };
-
-/**
- * Get all posts disliked by a specific user (optimized batch query)
- */
-export const getUserDislikedPosts = async (userId: string): Promise<PostDownvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listPostDownvotes: { items: PostDownvote[] };
-    }>(
-      LIST_POST_DOWNVOTES_QUERY,
-      {
-        filter: {
-          userId: { eq: userId }
-        },
-        limit: 1000 // Get up to 1000 disliked posts
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listPostDownvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting user disliked posts:', error);
-    throw error;
-  }
+export const getUserDislikedPosts = async (_userId: string): Promise<PostDownvote[]> => {
+  return [];
 };
-
-/**
- * Get all replies liked by a specific user (optimized batch query)
- */
-export const getUserLikedReplies = async (userId: string): Promise<ReplyUpvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listReplyUpvotes: { items: ReplyUpvote[] };
-    }>(
-      LIST_REPLY_UPVOTES_QUERY,
-      {
-        filter: {
-          userId: { eq: userId }
-        },
-        limit: 1000 // Get up to 1000 liked replies
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listReplyUpvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting user liked replies:', error);
-    throw error;
-  }
+export const getUserLikedReplies = async (_userId: string): Promise<ReplyUpvote[]> => {
+  return [];
 };
-
-/**
- * Get all replies disliked by a specific user (optimized batch query)
- */
-export const getUserDislikedReplies = async (userId: string): Promise<ReplyDownvote[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listReplyDownvotes: { items: ReplyDownvote[] };
-    }>(
-      LIST_REPLY_DOWNVOTES_QUERY,
-      {
-        filter: {
-          userId: { eq: userId }
-        },
-        limit: 1000 // Get up to 1000 disliked replies
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listReplyDownvotes?.items || [];
-  } catch (error) {
-    console.error('Error getting user disliked replies:', error);
-    throw error;
-  }
+export const getUserDislikedReplies = async (_userId: string): Promise<ReplyDownvote[]> => {
+  return [];
 };
-
-/**
- * Get all user interactions (likes/dislikes) for posts and replies in batch
- * This is much more efficient than checking each post/reply individually
- * Returns Sets of IDs for O(1) lookup performance
- */
-export const getUserInteractions = async (userId: string): Promise<{
+export const getUserInteractions = async (
+  _userId: string,
+  opts?: { postIds?: string[]; replyIds?: string[] }
+): Promise<{
   likedPostIds: Set<string>;
   dislikedPostIds: Set<string>;
   likedReplyIds: Set<string>;
   dislikedReplyIds: Set<string>;
 }> => {
+  const empty = {
+    likedPostIds: new Set<string>(),
+    dislikedPostIds: new Set<string>(),
+    likedReplyIds: new Set<string>(),
+    dislikedReplyIds: new Set<string>(),
+  };
   try {
-    // Fetch all interactions in parallel (4 queries total instead of N*2 queries)
-    const [likedPosts, dislikedPosts, likedReplies, dislikedReplies] = await Promise.all([
-      getUserLikedPosts(userId),
-      getUserDislikedPosts(userId),
-      getUserLikedReplies(userId),
-      getUserDislikedReplies(userId)
-    ]);
-    
-    // Debug: Log what we fetched
-    console.log('getUserInteractions - Raw data:', {
-      likedPostsCount: likedPosts.length,
-      dislikedPostsCount: dislikedPosts.length,
-      likedRepliesCount: likedReplies.length,
-      dislikedRepliesCount: dislikedReplies.length,
-      sampleLikedPost: likedPosts[0],
-      sampleDislikedPost: dislikedPosts[0]
-    });
-    
-    const likedPostIds = new Set(likedPosts.map(upvote => upvote.postId));
-    const dislikedPostIds = new Set(dislikedPosts.map(downvote => downvote.postId));
-    const likedReplyIds = new Set(likedReplies.map(upvote => upvote.replyId));
-    const dislikedReplyIds = new Set(dislikedReplies.map(downvote => downvote.replyId));
-    
-    console.log('getUserInteractions - Processed IDs:', {
-      likedPostIds: Array.from(likedPostIds),
-      dislikedPostIds: Array.from(dislikedPostIds),
-      likedReplyIds: Array.from(likedReplyIds),
-      dislikedReplyIds: Array.from(dislikedReplyIds)
-    });
-    
-    return {
-      likedPostIds,
-      dislikedPostIds,
-      likedReplyIds,
-      dislikedReplyIds
-    };
+    const postIds = opts?.postIds || [];
+    const replyIds = opts?.replyIds || [];
+    if (!postIds.length && !replyIds.length) return empty;
+    const { postVotes, replyVotes } = await forumGetVotes({ postIds, replyIds });
+    for (const [id, value] of Object.entries(postVotes)) {
+      if (value === 1) empty.likedPostIds.add(id);
+      if (value === -1) empty.dislikedPostIds.add(id);
+    }
+    for (const [id, value] of Object.entries(replyVotes)) {
+      if (value === 1) empty.likedReplyIds.add(id);
+      if (value === -1) empty.dislikedReplyIds.add(id);
+    }
+    return empty;
   } catch (error) {
-    console.error('Error getting user interactions:', error);
-    // Return empty sets on error
-    return {
-      likedPostIds: new Set<string>(),
-      dislikedPostIds: new Set<string>(),
-      likedReplyIds: new Set<string>(),
-      dislikedReplyIds: new Set<string>()
-    };
+    console.error("Error getting user interactions:", error);
+    return empty;
   }
 };
-
-/**
- * Get all replies/comments by a specific user
- */
-export const getUserReplies = async (userId: string): Promise<ForumReply[]> => {
-  try {
-    const result = await graphqlQuery<{
-      listReplies: { items: ForumReply[] };
-    }>(
-      LIST_REPLIES_QUERY,
-      {
-        filter: {
-          authorId: { eq: userId }
-        },
-        limit: 1000 // Get up to 1000 replies
-      },
-      { authMode: 'userPool' }
-    );
-    
-    return result.listReplies?.items?.filter((reply): reply is ForumReply => 
-      Boolean(reply) && !reply.isDeleted
-    ) || [];
-  } catch (error) {
-    console.error('Error getting user replies:', error);
-    throw error;
-  }
+export const getUserReplies = async (_userId: string): Promise<ForumReply[]> => {
+  return [];
 };
-
-/**
- * Get all replies/comments on a specific post (with author info)
- */
 export const getPostComments = async (postId: string): Promise<ForumReply[]> => {
   try {
     return await getForumPostReplies(postId, 1000);

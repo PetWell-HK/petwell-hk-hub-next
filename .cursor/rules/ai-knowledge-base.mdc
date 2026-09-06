@@ -1,0 +1,68 @@
+---
+description: Use docs/ai/ cache before exploring codebase; create/update AI docs after learning or changing code
+alwaysApply: true
+---
+
+# AI Knowledge Base (docs/ai/)
+
+Avoid repeated full codebase deep dives. Use cached AI docs first; write or refresh them after you learn something new.
+
+## Before exploring code
+
+1. Read [`docs/ai/INDEX.md`](../../docs/ai/INDEX.md) and find a doc for the task domain.
+2. If a doc exists, read it and treat it as the source of truth for **architecture, file map, and flows**.
+3. Open source files only when you need to **edit**, **verify stale info**, or **fill a gap** the doc does not cover.
+4. Do **not** re-scan the whole repo, launch broad explore agents, or re-derive architecture when a current doc already answers the question.
+
+Human onboarding docs (`docs/PLATFORM_TECHNICAL_DOCUMENTATION.md`, `docs/FEATURE_MECHANISMS.md`) are reference only — prefer `docs/ai/` for agent workflow.
+
+## When no AI doc exists
+
+1. Do a **targeted** investigation (specific routes, models, hooks — not the entire codebase).
+2. **Create** a doc under `docs/ai/` before finishing the task (see layout in [`docs/ai/README.md`](../../docs/ai/README.md)).
+3. **Add a row** to `docs/ai/INDEX.md`.
+4. In the doc, link related sections in existing human docs when they exist.
+
+## When you change code
+
+In the **same session**, update every affected `docs/ai/` doc:
+
+- Key file paths, APIs, models, hooks
+- Data flow or business rules you changed
+- Gotchas and edge cases
+- `Last updated` date (UTC+8)
+
+If the change makes a doc wrong or obsolete, fix or delete it and update `INDEX.md`.
+
+## Doc quality bar
+
+Each AI doc should be **short and scannable** (aim < 120 lines):
+
+- **Purpose** — one sentence
+- **Key files** — paths only, grouped by layer (page, API, model, lib, component)
+- **Flow** — numbered steps or a small mermaid diagram when helpful
+- **Rules / gotchas** — validation, permissions, timezone (UTC+8), known traps
+- **Related** — links to `docs/ai/` siblings and human docs
+
+Skip prose that merely restates obvious code. Write what saves the **next agent** from re-exploring.
+
+## File layout
+
+```
+docs/ai/
+  README.md          # conventions (do not duplicate in every doc)
+  INDEX.md           # topic → file lookup (keep sorted)
+  <domain>/
+    <topic>.md       # e.g. employees/service-agencies.md
+```
+
+- **Domain** = business area (`employees`, `members`, `dashboard`, `auth`, `shared`, `forum`, `platform`, …).
+- **Topic** = one coherent feature or subsystem per file.
+- Use kebab-case filenames. Split when a file exceeds ~120 lines.
+
+## Anti-patterns
+
+- Broad codebase search when `docs/ai/` already has the answer
+- Creating duplicate docs for the same topic
+- Leaving docs stale after code changes
+- Dumping full file contents into docs — point to paths instead

@@ -21,6 +21,8 @@ const SENSITIVE_DISALLOW = [
   "/pet/",
   "/vendor-application/thank-you",
   "/test-booking",
+  "/mid-autumn-taiwan-festival/pay",
+  "/mid-autumn-taiwan-festival/confirmed",
 ];
 
 export default function robots(): MetadataRoute.Robots {

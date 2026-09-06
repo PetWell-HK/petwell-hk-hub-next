@@ -89,9 +89,14 @@ export async function graphqlQuery<T>(
 
     // Handle errors
     if (result && 'errors' in result && result.errors && result.errors.length > 0) {
-      // If there's data along with errors, return the data (partial success)
-      // This is common when some items in a list have null values for non-nullable fields
-      if (result.data) {
+      // Partial success: keep data when at least one field resolved.
+      // A mutation that returns only nulls (e.g. applyMidAutumnBookingDiscount)
+      // is a failure — throw so callers see the Lambda message.
+      const dataValues = result.data
+        ? Object.values(result.data as Record<string, unknown>)
+        : [];
+      const hasPartialData = dataValues.some((value) => value != null);
+      if (hasPartialData) {
         console.warn('GraphQL query returned errors but has partial data:', {
           errorCount: result.errors.length,
           errors: result.errors.map((e: any) => ({

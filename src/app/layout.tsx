@@ -99,12 +99,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <JsonLd id="ld-website" data={localizedWebsiteLd} />
         <JsonLd id="ld-mobile-app" data={mobileAppLd} />
         <meta name="GPTBot" content="noindex, nofollow" />
-        <meta name="ChatGPT-User" content="noindex, nofollow" />
         <meta name="CCBot" content="noindex, nofollow" />
         <meta name="anthropic-ai" content="noindex, nofollow" />
         <meta name="ClaudeBot" content="noindex, nofollow" />
         <meta name="Google-Extended" content="noindex, nofollow" />
-        <meta name="PerplexityBot" content="noindex, nofollow" />
         <meta name="Bytespider" content="noindex, nofollow" />
         <meta name="AhrefsBot" content="noindex, nofollow" />
         <meta name="SemrushBot" content="noindex, nofollow" />

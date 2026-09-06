@@ -32,11 +32,51 @@ interface FeaturedActivityLike {
   href?: string | null;
 }
 
+export function stripHtmlText(value: string): string {
+  return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+type FeaturedActivityDisplay = FeaturedActivityLike & {
+  imageUrl?: string | null;
+  description?: string | null;
+  featured?: boolean;
+};
+
+export function withMidAutumnFeaturedOverrides<T extends FeaturedActivityDisplay>(
+  event: T,
+  overrides?: { imageUrl?: string },
+): T {
+  if (!isFeaturedActivity(event)) return event;
+  const description = stripHtmlText(
+    MID_AUTUMN_FEATURED_ACTIVITY.description || String(event.description ?? ""),
+  );
+  return {
+    ...event,
+    imageUrl: overrides?.imageUrl ?? event.imageUrl,
+    description,
+    href: MID_AUTUMN_FEATURED_ACTIVITY.href,
+    featured: true,
+  };
+}
+
 export function mergeFeaturedActivityFirst<T extends FeaturedActivityLike>(
   events: T[],
   featured: T,
 ): T[] {
   const existing = events.find((event) => isFeaturedActivity(event));
   const rest = events.filter((event) => !isFeaturedActivity(event));
-  return [existing ? { ...featured, ...existing, href: (featured as FeaturedActivityLike).href } : featured, ...rest];
+  const featuredDescription = (featured as { description?: string }).description;
+  return [
+    existing
+      ? {
+          ...featured,
+          ...existing,
+          href: (featured as FeaturedActivityLike).href,
+          description: featuredDescription
+            ? stripHtmlText(featuredDescription)
+            : stripHtmlText(String((existing as { description?: string }).description ?? "")),
+        }
+      : featured,
+    ...rest,
+  ];
 }

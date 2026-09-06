@@ -82,7 +82,14 @@ const extractKeywordsFromTitle = (title: string): string[] => {
 };
 
 // Generate comprehensive keywords for a blog post
-export const generateBlogKeywords = (post: BlogPost): string => {
+export const generateBlogKeywords = (post: BlogPost, language = "zh"): string => {
+  const isEn = language.toLowerCase().startsWith("en");
+  if (isEn && post.seoKeywords && post.seoKeywords.length > 0) {
+    return Array.from(
+      new Set([...post.seoKeywords, "PetWell", "PetWell HK", "Hong Kong", "HK"]),
+    ).join(",");
+  }
+
   const keywords: string[] = [];
   
   // Add custom keywords if provided
@@ -501,8 +508,10 @@ export const generateBlogFAQ = (post: BlogPost): Array<{ question: string; answe
 };
 
 // Generate comprehensive structured data
-export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
+export const generateBlogStructuredData = (post: BlogPost, slug: string, language = "zh") => {
   const description = generateBlogDescription(post);
+  const isEn = language.toLowerCase().startsWith("en");
+  const inLanguage = isEn ? "en-HK" : "zh-HK";
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -510,7 +519,7 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
     "description": description,
     "image": post.imageUrl,
     "datePublished": post.date,
-    "dateModified": post.date, // Assuming same as published for now
+    "dateModified": slug === "mid-autumn-pet-outings-hong-kong-2026" ? "2026-09-02" : post.date,
     "author": {
       "@type": "Organization",
       "name": post.author,
@@ -529,9 +538,9 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
       "@type": "WebPage",
       "@id": `https://petwellhk.com/${slug}`
     },
-    "articleSection": post.category,
-    "keywords": generateBlogKeywords(post),
-    "inLanguage": "zh-HK"
+    "articleSection": isEn ? (post.categoryEn ?? post.category) : post.category,
+    "keywords": generateBlogKeywords(post, language),
+    "inLanguage": inLanguage
   };
   
   const breadcrumbSchema = {
@@ -541,19 +550,19 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "首頁",
+        "name": isEn ? "Home" : "首頁",
         "item": "https://petwellhk.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "主人專區",
+        "name": isEn ? "Owner Zone" : "主人專區",
         "item": "https://petwellhk.com/owner-zone"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": post.category,
+        "name": isEn ? (post.categoryEn ?? post.category) : post.category,
         "item": `https://petwellhk.com/owner-zone?category=${encodeURIComponent(post.category)}`
       },
       {
@@ -572,7 +581,7 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
     "name": post.title.replace(/\s*\|\s*PetWell HK\s*$/i, "").trim(),
     "description": description,
     "url": `https://petwellhk.com/${slug}`,
-    "inLanguage": "zh-HK",
+    "inLanguage": inLanguage,
     "isPartOf": {
       "@type": "WebSite",
       "name": "PetWell HK",
@@ -583,7 +592,7 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
       "url": post.imageUrl
     },
     "datePublished": post.date,
-    "dateModified": post.date
+    "dateModified": slug === "mid-autumn-pet-outings-hong-kong-2026" ? "2026-09-02" : post.date
   };
 
   // HowTo schema for step-by-step guides (eligible for rich snippets)
@@ -592,20 +601,25 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
     howToSchemas.push({
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "毛孩沉浸台式中秋節",
-      "alternateName": "Taiwan Mid-Autumn Night",
-      "description": "2026年9月25–27日於觀塘海濱 AquaBeat 舉行的寵物中秋市集：十分車站／九份打卡、許願天燈、養生花膠月餅、美人魚表演與服裝租借。免費入場，無需預約，歡迎帶寵物。",
+      "name": isEn
+        ? "Furry Kids Immersive Taiwan Mid-Autumn Festival"
+        : "毛孩沉浸式台灣中秋祭｜2026 寵物中秋好去處",
+      "alternateName": isEn ? "毛孩沉浸式台灣中秋祭" : "Furry Kids Immersive Taiwan Mid-Autumn Festival",
+      "keywords": isEn
+        ? "pet-friendly Mid-Autumn Hong Kong,free pet hanfu rental,mermaid show pets,sky lanterns pets,Kwun Tong Promenade"
+        : "寵物中秋好去處,免費租借寵物漢服,寵物美人魚表演,許願天燈,觀塘海濱寵物",
+      "description": description,
       "image": post.imageUrl,
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "startDate": "2026-09-25T16:00:00+08:00",
       "endDate": "2026-09-27T21:00:00+08:00",
       "isAccessibleForFree": true,
-      "inLanguage": "zh-HK",
+      "inLanguage": inLanguage,
       "url": "https://petwellhk.com/mid-autumn-pet-outings-hong-kong-2026",
       "location": {
         "@type": "Place",
-        "name": "觀塘海濱 AquaBeat 活動空間 02",
+        "name": isEn ? "AquaBeat Space 02, Kwun Tong Promenade" : "觀塘海濱 AquaBeat 活動空間 02",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Kwun Tong Promenade",
@@ -626,7 +640,7 @@ export const generateBlogStructuredData = (post: BlogPost, slug: string) => {
       },
       "offers": {
         "@type": "Offer",
-        "name": "入場",
+        "name": isEn ? "Admission" : "入場",
         "price": "0",
         "priceCurrency": "HKD",
         "availability": "https://schema.org/InStock",

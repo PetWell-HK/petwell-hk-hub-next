@@ -3,6 +3,7 @@ import { christmasEvents } from "@/data/christmasEventData";
 import { blogPosts } from "@/data/blogData";
 import { ALL_AREA_SEO_SLUGS } from "@/data/hongKong18Districts";
 import { ngos } from "@/data/ngoData";
+import { getPetwellApiBase } from "@/config/petwellApi";
 import { getPublicEnv } from "@/lib/env";
 import { SITE_URL } from "@/lib/seo";
 import { getNutritionProductIds } from "@/lib/server/contentMetadata";
@@ -141,13 +142,19 @@ const LIST_EVENTS_QUERY = `
   }
 `;
 
-const LIST_FORUM_QUERY = `
-  query ListForumPosts($limit: Int) {
-    listForumPosts(limit: $limit) {
-      items { id isDeleted }
-    }
+async function fetchForumIds(): Promise<string[]> {
+  try {
+    const response = await fetch(`${getPetwellApiBase()}/api/forum/posts?sort=recent&limit=100`, {
+      headers: { accept: "application/json" },
+      next: { revalidate: 86400 },
+    });
+    if (!response.ok) return [];
+    const json = (await response.json()) as { items?: Array<{ id?: string; isDeleted?: boolean }> };
+    return [...new Set((json.items || []).filter((item) => item.id && !item.isDeleted).map((item) => item.id as string))];
+  } catch {
+    return [];
   }
-`;
+}
 
 async function fetchPriceReviewIds(): Promise<string[]> {
   const base = (getPublicEnv("VITE_PRICE_REVIEW_API_URL") || PRICE_REVIEW_API_URL).replace(
@@ -203,7 +210,7 @@ export async function buildDynamicSitemapEntries(): Promise<MetadataRoute.Sitema
     paginateListIds(LIST_MALLS_QUERY, "listMalls"),
     paginateListIds(LIST_HOME_VISITS_QUERY, "listHomeVisitProviders"),
     paginateListIds(LIST_EVENTS_QUERY, "listOrganizedEvents"),
-    paginateListIds(LIST_FORUM_QUERY, "listForumPosts", 3),
+    fetchForumIds(),
     fetchPriceReviewIds(),
     getNutritionProductIds().catch(() => [] as string[]),
   ]);

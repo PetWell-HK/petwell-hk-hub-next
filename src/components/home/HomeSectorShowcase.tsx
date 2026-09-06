@@ -42,6 +42,7 @@ import {
   MID_AUTUMN_FEATURED_ACTIVITY,
   isFeaturedActivity,
   mergeFeaturedActivityFirst,
+  withMidAutumnFeaturedOverrides,
 } from "@/data/featuredActivities";
 import type { HomeRails } from "@/types/homeRails";
 import HomeSuggestions from "@/components/home/HomeSuggestions";
@@ -215,7 +216,7 @@ const HomeSectorShowcase = ({
     i18n.language,
     initialHome?.lodgings,
   );
-  const midAutumnCover = "/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=20260901";
+  const midAutumnCover = "/assets/blog-mid-autumn-pet-hk/festival-hero-banner.jpg";
   const featuredCard: EventListCardData = {
     id: MID_AUTUMN_FEATURED_ACTIVITY.id,
     name: MID_AUTUMN_FEATURED_ACTIVITY.name,
@@ -234,11 +235,7 @@ const HomeSectorShowcase = ({
       .map(toEventListCardData)
       .filter((event): event is EventListCardData => event !== null);
     return mergeFeaturedActivityFirst(initial, featuredCard)
-      .map((event) =>
-        isFeaturedActivity(event)
-          ? { ...event, imageUrl: event.imageUrl || midAutumnCover, href: MID_AUTUMN_FEATURED_ACTIVITY.href, featured: true }
-          : event,
-      )
+      .map((event) => withMidAutumnFeaturedOverrides(event, { imageUrl: midAutumnCover }))
       .slice(0, 8);
   });
   const [eventsLoading, setEventsLoading] = useState(!initialHome?.events?.length);
@@ -257,11 +254,7 @@ const HomeSectorShowcase = ({
             .sort((a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()),
           featuredCard,
         )
-          .map((event) =>
-            isFeaturedActivity(event)
-              ? { ...event, imageUrl: event.imageUrl || midAutumnCover, href: MID_AUTUMN_FEATURED_ACTIVITY.href, featured: true }
-              : event,
-          )
+          .map((event) => withMidAutumnFeaturedOverrides(event, { imageUrl: midAutumnCover }))
           .slice(0, 8);
         if (!cancelled) setEvents(upcoming);
       } catch {

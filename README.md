@@ -28,6 +28,7 @@ Copy `.env.local` keys (already scaffolded from the Vite app):
 - `NEXT_PUBLIC_PLACE_SEARCH_BACKEND` (`dynamo` | `opensearch`)
 - `NEXT_PUBLIC_SITE_URL` (default `https://petwellhk.com`)
 - Optional: `NEXT_PUBLIC_GRAPHQL_ENDPOINT`, `NEXT_PUBLIC_GRAPHQL_API_KEY`, `NEXT_PUBLIC_PRICE_REVIEW_API_URL`
+- Forum HTTP: `NEXT_PUBLIC_PETWELL_API_URL` (or `VITE_PETWELL_API_URL` / `PETWELL_API_URL`)
 
 `VITE_*` aliases are also accepted via `getPublicEnv()` for migration compatibility.
 

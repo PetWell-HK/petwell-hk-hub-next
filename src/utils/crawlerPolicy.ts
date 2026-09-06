@@ -6,6 +6,13 @@ const SEARCH_ENGINE_ALLOWLIST = [
   "slurp",
   "baiduspider",
   "yandexbot",
+  // AI search / citation crawlers (not training scrapers)
+  "oai-searchbot",
+  "chatgpt-user",
+  "perplexitybot",
+  "perplexity-user",
+  "claude-searchbot",
+  "claude-user",
 ];
 
 const SOCIAL_PREVIEW_ALLOWLIST = [
@@ -17,14 +24,11 @@ const SOCIAL_PREVIEW_ALLOWLIST = [
 
 const BLOCKED_CRAWLER_PATTERNS = [
   "gptbot",
-  "chatgpt-user",
-  "oai-searchbot",
   "ccbot",
   "anthropic-ai",
   "claudebot",
   "claude-web",
   "google-extended",
-  "perplexitybot",
   "bytespider",
   "amazonbot",
   "applebot-extended",

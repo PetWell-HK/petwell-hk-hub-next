@@ -506,8 +506,10 @@ const Forum = ({
         try {
           const userId = await getOrCreateClient(userInfo.email, userInfo.email);
           
-          // Fetch all user interactions in batch (4 queries total instead of N*2 queries)
-          const interactions = await getUserInteractions(userId);
+          // Fetch liked/disliked state for the posts currently on screen
+          const interactions = await getUserInteractions(userId, {
+            postIds: fetchedPosts.map((p) => p.id),
+          });
           
           // Debug: Log all interactions fetched
           console.log('All user interactions fetched:', {
@@ -836,7 +838,10 @@ const Forum = ({
             const userId = await getOrCreateClient(userInfo.email, userInfo.email);
             
             // OPTIMIZED: Fetch all user interactions in batch (much faster than individual queries)
-            const interactions = await getUserInteractions(userId);
+            const interactions = await getUserInteractions(userId, {
+              postIds: [fullPost.id],
+              replyIds: allReplies.map((r) => r.id),
+            });
             
             // Update ALL liked/disliked posts from the batch query (not just this one post)
             // This ensures we have the complete state of all user interactions

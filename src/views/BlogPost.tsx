@@ -3,14 +3,15 @@
 import { useParams } from "next/navigation";
 import { routeParam } from "@/lib/routeParam";
 import AppLink from "@/components/AppLink";
-import { openPetwellContact } from "@/components/ContactUsWidget";
 import { useMemo, useState, useEffect, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import FAQSection from "@/components/FAQSection";
 import FehdPetFriendlyDirectory from "@/components/FehdPetFriendlyDirectory";
 import PetFriendlyMallsDirectory from "@/components/PetFriendlyMallsDirectory";
 import DogMerCalculator from "@/components/DogMerCalculator";
+import { GogoxVoucherCard } from "@/components/mid-autumn-rsvp/GogoxVoucherCard";
 import React from "react";
-import { blogPosts } from "@/data/blogData";
+import { blogPosts, isBlogEnglish, localizedBlogPost } from "@/data/blogData";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Calendar, User, ArrowLeft, MapPin, Clock, Sparkles, Navigation, X, ZoomIn } from "lucide-react";
@@ -24,24 +25,30 @@ import {
 } from "@/utils/blogSEO";
 import BlogAdSense from "@/components/BlogAdSense";
 
+const MID_AUTUMN_SLUG = "mid-autumn-pet-outings-hong-kong-2026";
+
 const BlogPost = () => {
   const slug = routeParam(useParams().slug);
+  const { i18n } = useTranslation();
+  const isEn = isBlogEnglish(i18n.language);
   const post = blogPosts.find((p) => p.slug === slug);
+  const display = post ? localizedBlogPost(post, i18n.language) : undefined;
+  const isMidAutumn = slug === MID_AUTUMN_SLUG;
 
   // Enhanced SEO with scalable system
   const seoData = useMemo(() => {
-    if (!post || !slug) return null;
+    if (!display || !slug) return null;
     
     return {
-      keywords: generateBlogKeywords(post),
-      description: generateBlogDescription(post),
-      structuredData: generateBlogStructuredData(post, slug),
-      faqItems: generateBlogFAQ(post)
+      keywords: generateBlogKeywords(display, i18n.language),
+      description: generateBlogDescription(display),
+      structuredData: generateBlogStructuredData(display, slug, i18n.language),
+      faqItems: generateBlogFAQ(display)
     };
-  }, [post, slug]);
+  }, [display, slug, i18n.language]);
 
 
-  if (!post) {
+  if (!post || !display) {
     return (
       <div className="min-h-screen flex flex-col">
         <main className="flex-1 py-10 md:py-12">
@@ -92,7 +99,7 @@ const BlogPost = () => {
           <AppLink href="/owner-zone" className="inline-block mb-8">
             <Button variant="ghost" size="sm">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              返回文章列表
+              {isMidAutumn && isEn ? "Back to articles" : "返回文章列表"}
             </Button>
           </AppLink>
 
@@ -100,11 +107,11 @@ const BlogPost = () => {
           <div className="max-w-4xl mx-auto mb-8">
             {post.slug !== 'hk-fehd-pet-friendly-restaurants-1000-list' &&
               post.slug !== 'dog-mer-calorie-calculator-hk' &&
-              post.slug !== "mid-autumn-pet-outings-hong-kong-2026" && (
+              post.slug !== MID_AUTUMN_SLUG && (
               <div className="mb-6 overflow-hidden rounded-2xl bg-neutral-950">
                 <img
                   src={post.imageUrl}
-                  alt={`${post.title} - ${post.category} - PetWell HK`}
+                  alt={`${display.title} - ${display.category} - PetWell HK`}
                   className="mx-auto block h-auto w-full max-h-[min(75vh,40rem)] object-contain"
                   loading="eager"
                 />
@@ -113,13 +120,13 @@ const BlogPost = () => {
 
             {/* Meta Info */}
             <div className="mb-6">
-              <Badge className="mb-2.5">{post.category}</Badge>
+              <Badge className="mb-2.5">{isEn && post.categoryEn ? post.categoryEn : post.category}</Badge>
               <h1 className="mb-3 text-[1.375rem] font-semibold leading-snug tracking-tight text-foreground md:text-[1.75rem]">
-                {post.title}
+                {display.title}
               </h1>
               {post.slug === "dog-mer-calorie-calculator-hk" && <DogMerCalculator />}
               <p className="mb-4 text-[15px] font-normal leading-7 text-muted-foreground">
-                {post.excerpt}
+                {display.excerpt}
               </p>
               
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -136,16 +143,20 @@ const BlogPost = () => {
 
             <BlogAdSense placement="top" />
 
-            {post.slug === "mid-autumn-pet-outings-hong-kong-2026" && (
+            {post.slug === MID_AUTUMN_SLUG && (
               <Card className="mb-8 overflow-hidden rounded-xl">
                 <div className="relative bg-neutral-950">
                   <img
-                    src="/assets/blog-mid-autumn-pet-hk/poster-family.jpg?v=20260901"
-                    alt="毛孩沉浸式台灣中秋祭海報｜觀塘海濱 AquaBeat 2026年9月25–27日"
+                    src={post.imageUrl}
+                    alt={
+                      isEn
+                        ? "Furry Kids Immersive Taiwan Mid-Autumn Festival poster | AquaBeat, Kwun Tong Promenade, 25–27 September 2026"
+                        : "毛孩沉浸式台灣中秋祭海報｜觀塘海濱 AquaBeat 2026年9月25–27日"
+                    }
                     className="mx-auto block h-auto w-full"
                   />
                   <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow-sm">
-                    免費入場 · 無需預約
+                    {isEn ? "Free entry · No booking" : "免費入場 · 無需預約"}
                   </span>
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col justify-between px-4 py-4 sm:px-5 sm:py-4">
@@ -154,47 +165,66 @@ const BlogPost = () => {
                       AQUABEAT × PETWELL
                     </p>
                     <h2 className="mt-1 text-[1.25rem] font-bold leading-snug sm:text-[1.35rem]">
-                      毛孩沉浸式台灣中秋祭
+                      {isEn
+                        ? "Furry Kids Immersive Taiwan Mid-Autumn Festival"
+                        : "毛孩沉浸式台灣中秋祭"}
                     </h2>
                     <dl className="mt-3 grid grid-cols-[2.25rem_1fr] gap-x-3 gap-y-1.5 text-sm">
-                      <dt className="text-muted-foreground">日期</dt>
-                      <dd>2026年9月25–27日</dd>
-                      <dt className="text-muted-foreground">時間</dt>
-                      <dd>週五 16:00–20:00 · 六日 15:00–21:00</dd>
-                      <dt className="text-muted-foreground">地點</dt>
-                      <dd>觀塘海濱 AquaBeat 活動空間 02</dd>
+                      <dt className="text-muted-foreground">{isEn ? "Dates" : "日期"}</dt>
+                      <dd>{isEn ? "25–27 September 2026" : "2026年9月25–27日"}</dd>
+                      <dt className="text-muted-foreground">{isEn ? "Hours" : "時間"}</dt>
+                      <dd>
+                        {isEn
+                          ? "Fri 16:00–20:00 · Sat–Sun 15:00–21:00"
+                          : "週五 16:00–20:00 · 六日 15:00–21:00"}
+                      </dd>
+                      <dt className="text-muted-foreground">{isEn ? "Venue" : "地點"}</dt>
+                      <dd>
+                        {isEn
+                          ? "AquaBeat Space 02, Kwun Tong Promenade"
+                          : "觀塘海濱 AquaBeat 活動空間 02"}
+                      </dd>
                     </dl>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      歡迎所有毛孩參加。賞月、九份夜市、十分天燈、美人魚表演、中秋服租借。想整花膠月餅要預先報名。
+                      {isEn
+                        ? "All pets welcome. Start with free hanfu rental and the mermaid show, then sky lanterns, workshops and photo sets. Mooncake class needs a booking."
+                        : "歡迎所有毛孩參加。先免費租中秋服、睇美人魚，再放天燈、做工作坊同打卡。想整花膠月餅要預先報名。"}
                     </p>
                   </div>
                   <div className="mt-4 flex flex-col gap-3 border-t border-border/70 pt-3">
                     <div className="flex flex-wrap gap-2">
-                      <Button
-                        type="button"
-                        size="sm"
-                        onClick={() => openPetwellContact("family-photo")}
-                      >
-                        立即登記・免費送全家福
+                      <Button type="button" size="sm" asChild>
+                        <AppLink href="/mid-autumn-taiwan-festival">
+                          {isEn ? "RSVP · free family portrait" : "立即登記・免費送全家福"}
+                        </AppLink>
                       </Button>
-                      <Button
-                        type="button"
-                        size="sm"
-                        variant="outline"
-                        onClick={() => openPetwellContact("mooncake")}
-                      >
-                        報名花膠月餅
+                      <Button type="button" size="sm" variant="outline" asChild>
+                        <AppLink href="/mid-autumn-taiwan-festival">
+                          {isEn ? "Book mooncake class" : "報名花膠月餅"}
+                        </AppLink>
                       </Button>
                       <Button asChild size="sm" variant="ghost">
-                        <a href="#experiences">睇行程</a>
+                        <a href="#outfit">{isEn ? "See the trail" : "睇行程"}</a>
                       </Button>
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      免費入場，帶毛孩即場參加就得。檔主、傳媒或品牌請用{" "}
-                      <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
-                        開檔申請
-                      </AppLink>
-                      。
+                      {isEn ? (
+                        <>
+                          Free walk-in entry. Vendors, press or brands please{" "}
+                          <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
+                            apply here
+                          </AppLink>
+                          .
+                        </>
+                      ) : (
+                        <>
+                          免費入場，帶毛孩即場參加就得。檔主、傳媒或品牌請用{" "}
+                          <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
+                            開檔申請
+                          </AppLink>
+                          。
+                        </>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -404,7 +434,7 @@ const BlogPost = () => {
             {/* Content */}
             {post.slug === 'hk-fehd-pet-friendly-restaurants-1000-list' ? (
               (() => {
-                const parts = post.content.split('<div data-component="fehd-directory"></div>');
+                const parts = display.content.split('<div data-component="fehd-directory"></div>');
                 return (
                   <div className="mb-12">
                     <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: parts[0] }} />
@@ -417,13 +447,37 @@ const BlogPost = () => {
               })()
             ) : post.slug === 'rainy-day-pet-friendly-indoor-hong-kong' || post.slug === 'typhoon-weekend-pet-friendly-malls-hong-kong' ? (
               (() => {
-                const parts = post.content.split('<div data-component="malls-directory"></div>');
+                const parts = display.content.split('<div data-component="malls-directory"></div>');
                 return (
                   <div className="mb-12">
                     <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: parts[0] }} />
                     <PetFriendlyMallsDirectory />
                     {parts[1] && (
                       <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: parts[1] }} />
+                    )}
+                  </div>
+                );
+              })()
+            ) : post.slug === MID_AUTUMN_SLUG ? (
+              (() => {
+                const parts = display.content.split(
+                  '<div data-component="gogox-voucher"></div>',
+                );
+                return (
+                  <div className="mb-12">
+                    <div
+                      className="prose prose-lg max-w-none"
+                      dangerouslySetInnerHTML={{ __html: parts[0] }}
+                    />
+                    <GogoxVoucherCard
+                      lang={isEn ? "en" : "zh"}
+                      className="mb-6"
+                    />
+                    {parts[1] && (
+                      <div
+                        className="prose prose-lg max-w-none"
+                        dangerouslySetInnerHTML={{ __html: parts[1] }}
+                      />
                     )}
                   </div>
                 );
@@ -435,7 +489,7 @@ const BlogPost = () => {
                     ? 'cny-blog-content' 
                     : ''
                 }`}
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ __html: display.content }}
               />
             )}
 
@@ -444,7 +498,7 @@ const BlogPost = () => {
             {/* FAQ Section */}
             {seoData?.faqItems && seoData.faqItems.length > 0 && (
               <FAQSection 
-                title="常見問題"
+                title={isEn ? "FAQ" : "常見問題"}
                 items={seoData.faqItems}
                 className="mb-12 bg-muted/30"
               />

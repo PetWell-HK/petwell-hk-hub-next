@@ -50,11 +50,14 @@ function isPlaceDetailPath(pathname: string): boolean {
   return PLACE_DETAIL_PATH.test(pathname);
 }
 
+const FESTIVAL_RSVP_PATH = "/mid-autumn-taiwan-festival";
+
 const ContactUsWidget = () => {
   const { t } = useTranslation();
   const pathname = usePathname() || "/";
   const isMidAutumnPage = pathname.includes("mid-autumn");
   const hideOnPlaceDetail = isPlaceDetailPath(pathname);
+  const hideOnFestivalRsvp = pathname.startsWith(FESTIVAL_RSVP_PATH);
   const [isOpen, setIsOpen] = useState(false);
   const [contactTopic, setContactTopic] = useState<ContactTopic | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -94,22 +97,22 @@ const ContactUsWidget = () => {
 
   useEffect(() => {
     const openFromPage = (event: Event) => {
-      if (hideOnPlaceDetail) return;
+      if (hideOnPlaceDetail || hideOnFestivalRsvp) return;
       const topic = (event as CustomEvent<OpenContactDetail>).detail?.topic;
       setContactTopic(topic ?? (isMidAutumnPage ? "event" : null));
       setIsOpen(true);
     };
     window.addEventListener("petwell:open-contact", openFromPage);
     return () => window.removeEventListener("petwell:open-contact", openFromPage);
-  }, [hideOnPlaceDetail, isMidAutumnPage]);
+  }, [hideOnPlaceDetail, hideOnFestivalRsvp, isMidAutumnPage]);
 
   useEffect(() => {
-    if (hideOnPlaceDetail) {
+    if (hideOnPlaceDetail || hideOnFestivalRsvp) {
       setIsOpen(false);
     }
-  }, [hideOnPlaceDetail]);
+  }, [hideOnPlaceDetail, hideOnFestivalRsvp]);
 
-  if (hideOnPlaceDetail) {
+  if (hideOnPlaceDetail || hideOnFestivalRsvp) {
     return null;
   }
 
