@@ -46,6 +46,7 @@ import { resolvePlaceReviewImageUrl } from "@/services/placeReviewApi";
 import PlaceReservationDialog from "@/components/PlaceReservationDialog";
 import { BusinessReviewReply } from "@/components/BusinessReviewReply";
 import { canShowPartnerBooking } from "@/utils/restaurantReservationAvailability";
+import { importedReviewerName, shouldShowReviewTitle } from "@/utils/reviewDisplay";
 import type { RestaurantReservationSettings } from "@/services/restaurantApi";
 
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
@@ -316,6 +317,10 @@ const PlaceDetailLayout = ({
                           0,
                           Math.min(5, Math.round(review.totalRating || 0)),
                         );
+                        const authorName =
+                          review.reviewer?.displayName ||
+                          review.reviewer?.firstName ||
+                          importedReviewerName(review.source, review.title);
                         return (
                           <article
                             key={review.id}
@@ -328,11 +333,9 @@ const PlaceDetailLayout = ({
                                     reviewerId={review.reviewerId || review.reviewer?.id}
                                     anonymous={review.anonymous}
                                     source={review.source}
-                                    displayName={
-                                      review.reviewer?.displayName || review.reviewer?.firstName
-                                    }
+                                    displayName={authorName}
                                     profileImage={review.reviewer?.profileImage}
-                                    avatarClassName="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-lg"
+                                    avatarClassName="h-11 w-11"
                                   />
                                 </div>
                                 <div
@@ -347,7 +350,7 @@ const PlaceDetailLayout = ({
                                     />
                                   ))}
                                 </div>
-                                {review.title ? (
+                                {shouldShowReviewTitle(review.title, authorName) ? (
                                   <h3 className="font-bold mb-1.5">{review.title}</h3>
                                 ) : null}
                                 {review.description ? (

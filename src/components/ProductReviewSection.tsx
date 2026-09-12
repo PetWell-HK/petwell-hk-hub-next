@@ -363,7 +363,7 @@ export default function ProductReviewSection({
                             review.reviewer?.displayName || review.reviewer?.firstName || null
                           }
                           profileImage={review.reviewer?.profileImage}
-                          avatarClassName="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/15 text-sm font-semibold text-primary"
+                          avatarClassName="h-9 w-9"
                         />
                         <span className="text-[11px] text-muted-foreground">{formatReviewDate(review.createdAt)}</span>
                       </div>

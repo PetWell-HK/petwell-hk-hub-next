@@ -1,7 +1,14 @@
 import AppLink from "@/components/AppLink";
 import { useTranslation } from "react-i18next";
 import { canLinkToUserProfile } from "@/services/userReviewApi";
-import { isExternalReviewSource, resolveProfileImageUrl } from "@/utils/reviewDisplay";
+import {
+  ANON_AVATAR_TONE,
+  isExternalReviewSource,
+  resolveProfileImageUrl,
+  reviewAuthorInitials,
+  reviewAvatarTone,
+} from "@/utils/reviewDisplay";
+import { cn } from "@/lib/utils";
 
 type ReviewAuthorLinkProps = {
   reviewerId?: string | null;
@@ -26,30 +33,24 @@ export default function ReviewAuthorLink({
   const isExternal = isExternalReviewSource(source);
   const name = anonymous
     ? t("userReviews.anonymousUser")
-    : isExternal
-      ? `${t("userReviews.externalUser")} ${source}`
-      : displayName?.trim() || t("userReviews.unknownUser");
+    : displayName?.trim() || t("userReviews.unknownUser");
 
   const canLink = canLinkToUserProfile({ anonymous, source, reviewerId });
-  const initial = name.charAt(0).toUpperCase() || "?";
-  const avatarUrl =
-    !anonymous && !isExternal ? resolveProfileImageUrl(profileImage) : null;
+  const initials = anonymous ? "?" : reviewAuthorInitials(name);
+  const tone = anonymous ? ANON_AVATAR_TONE : reviewAvatarTone(name);
+  const avatarUrl = !anonymous && !isExternal ? resolveProfileImageUrl(profileImage) : null;
 
   const avatar = (
     <div
-      className={
-        avatarClassName ||
-        "flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-sm font-semibold text-foreground"
-      }
+      className={cn(
+        "flex shrink-0 items-center justify-center overflow-hidden rounded-full font-semibold",
+        avatarClassName || "h-9 w-9",
+        initials.length > 1 ? "text-[11px] tracking-wide" : "text-sm",
+      )}
+      style={avatarUrl ? undefined : { background: tone.bg, color: tone.fg }}
       aria-hidden
     >
-      {avatarUrl ? (
-        <img src={avatarUrl} alt="" className="h-full w-full object-cover" />
-      ) : anonymous || isExternal ? (
-        "👤"
-      ) : (
-        initial
-      )}
+      {avatarUrl ? <img src={avatarUrl} alt="" className="h-full w-full object-cover" /> : initials}
     </div>
   );
 

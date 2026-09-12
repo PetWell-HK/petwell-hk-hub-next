@@ -54,6 +54,7 @@ import {
 import { getRestaurantCombinedRating } from "@/utils/restaurantRating";
 import { getGoogleMapsEmbedUrl, getGoogleMapsUrl } from "@/utils/placeMaps";
 import { canShowPartnerBooking } from "@/utils/restaurantReservationAvailability";
+import { importedReviewerName, shouldShowReviewTitle } from "@/utils/reviewDisplay";
 import type { ApiRestaurant } from "@/services/restaurantApi";
 import { resolvePlaceReviewImageUrl } from "@/services/placeReviewApi";
 
@@ -537,6 +538,10 @@ const RestaurantDetail = ({
                         0,
                         Math.min(5, Math.round(review.totalRating || 0)),
                       );
+                      const authorName =
+                        review.reviewer?.displayName ||
+                        review.reviewer?.firstName ||
+                        importedReviewerName(review.source, review.title);
                       return (
                         <article key={review.id} className="restaurant-review-card">
                           <div className="flex gap-3">
@@ -546,9 +551,7 @@ const RestaurantDetail = ({
                                   reviewerId={review.reviewerId || review.reviewer?.id}
                                   anonymous={review.anonymous}
                                   source={review.source}
-                                  displayName={
-                                    review.reviewer?.displayName || review.reviewer?.firstName
-                                  }
+                                  displayName={authorName}
                                   profileImage={review.reviewer?.profileImage}
                                 />
                               </div>
@@ -564,7 +567,7 @@ const RestaurantDetail = ({
                                   />
                                 ))}
                               </div>
-                              {review.title && (
+                              {shouldShowReviewTitle(review.title, authorName) && (
                                 <h3 className="font-semibold text-sm mb-1">{review.title}</h3>
                               )}
                               {review.description ? (
