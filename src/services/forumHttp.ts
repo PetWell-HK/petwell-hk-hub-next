@@ -19,7 +19,7 @@ export async function forumRequest<T = Record<string, unknown>>(
     if (!token) throw new Error("Authentication required. Please log in.");
     headers.Authorization = `Bearer ${token}`;
   }
-  const res = await fetch(`${getPetwellApiBase()}${path}`, {
+  const res = await fetch(`${await getPetwellApiBase()}${path}`, {
     method,
     headers,
     body: body !== undefined ? JSON.stringify(body) : undefined,

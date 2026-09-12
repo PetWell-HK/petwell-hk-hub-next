@@ -393,7 +393,7 @@ export async function ssrHomeVisits(
 export async function ssrForumPost(id: string): Promise<SsrEntity<ForumPost>> {
   try {
     const response = await fetch(
-      `${getPetwellApiBase()}/api/forum/posts/${encodeURIComponent(id)}`,
+      `${await getPetwellApiBase()}/api/forum/posts/${encodeURIComponent(id)}`,
       { headers: { accept: "application/json" }, next: { revalidate: 600 } },
     );
     if (response.status === 404) return { state: "missing" };
@@ -497,7 +497,7 @@ export async function ssrForumListing(limit = 50): Promise<ForumPost[] | null> {
       sort: "recent",
       limit: String(Math.min(Math.max(limit, 1), 100)),
     });
-    const response = await fetch(`${getPetwellApiBase()}/api/forum/posts?${params.toString()}`, {
+    const response = await fetch(`${await getPetwellApiBase()}/api/forum/posts?${params.toString()}`, {
       headers: { accept: "application/json" },
       next: { revalidate: 600 },
     });

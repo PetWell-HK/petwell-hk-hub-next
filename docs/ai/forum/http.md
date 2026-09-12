@@ -12,12 +12,12 @@
 
 ## Env
 
-- `NEXT_PUBLIC_PETWELL_API_URL` or `VITE_PETWELL_API_URL`
-- Server-only fallback: `PETWELL_API_URL`
-- Local default: `http://127.0.0.1:3457`
+- Production: `NEXT_PUBLIC_PETWELL_API_URL` or `VITE_PETWELL_API_URL` (server: `PETWELL_API_URL`). Default `https://api.petwellhk.com`.
+- Local: `NEXT_PUBLIC_PETWELL_API_URL_DEV` / `VITE_PETWELL_API_URL_DEV` / `PETWELL_API_URL_DEV`. Default `http://127.0.0.1:3457`.
+- `next dev`: probe `GET /api/health` on local, then fall back to production. `next start` / Vercel: production URL only. Localhost in the prod var is ignored.
 
 ## Gotchas
 
 - Vote POST returns `{ value, post|reply }` with updated counters.
 
-Last updated: 2026-09-06 (UTC+8)
+Last updated: 2026-09-13 (UTC+8)

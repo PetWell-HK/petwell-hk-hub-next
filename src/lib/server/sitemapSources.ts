@@ -144,7 +144,7 @@ const LIST_EVENTS_QUERY = `
 
 async function fetchForumIds(): Promise<string[]> {
   try {
-    const response = await fetch(`${getPetwellApiBase()}/api/forum/posts?sort=recent&limit=100`, {
+    const response = await fetch(`${await getPetwellApiBase()}/api/forum/posts?sort=recent&limit=100`, {
       headers: { accept: "application/json" },
       next: { revalidate: 86400 },
     });
