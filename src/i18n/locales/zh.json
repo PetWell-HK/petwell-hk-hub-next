@@ -367,7 +367,11 @@
       "reviewsMoreTitle": "想睇更多評論？",
       "reviewsMoreDescription": "下載 PetWell App 睇曬全部評論",
       "businessReplyFrom": "來自「{{placeName}}」的回覆",
-      "businessReplyOfficial": "店家官方"
+      "businessReplyOfficial": "店家官方",
+      "registeredVetsTitle": "註冊獸醫",
+      "registeredVetsSubtitle": "配對到 {{count}} 位持有有效執業證明書的獸醫",
+      "registeredVetsSource": "資料來源：",
+      "registeredVetsSourceName": "香港獸醫管理局註冊獸醫名單"
     }
   },
   "salons": {

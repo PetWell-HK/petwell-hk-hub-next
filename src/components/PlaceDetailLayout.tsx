@@ -45,6 +45,7 @@ import { getGoogleMapsEmbedUrl, getGoogleMapsUrl } from "@/utils/placeMaps";
 import { resolvePlaceReviewImageUrl } from "@/services/placeReviewApi";
 import PlaceReservationDialog from "@/components/PlaceReservationDialog";
 import { BusinessReviewReply } from "@/components/BusinessReviewReply";
+import ClinicRegisteredVets from "@/components/ClinicRegisteredVets";
 import { canShowPartnerBooking } from "@/utils/restaurantReservationAvailability";
 import { importedReviewerName, shouldShowReviewTitle } from "@/utils/reviewDisplay";
 import type { RestaurantReservationSettings } from "@/services/restaurantApi";
@@ -271,6 +272,10 @@ const PlaceDetailLayout = ({
                   title={t(`${ns}.services`)}
                   services={serviceOfferings}
                 />
+
+                {placeType === "clinic" && (
+                  <ClinicRegisteredVets clinicId={placeId} />
+                )}
 
                 {hasGallery && (
                   <Card className="p-5 md:p-6">

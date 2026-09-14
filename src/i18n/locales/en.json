@@ -367,7 +367,11 @@
       "reviewsMoreTitle": "Want more reviews?",
       "reviewsMoreDescription": "Download PetWell to read all reviews",
       "businessReplyFrom": "Reply from {{placeName}}",
-      "businessReplyOfficial": "Official"
+      "businessReplyOfficial": "Official",
+      "registeredVetsTitle": "Registered veterinary surgeons",
+      "registeredVetsSubtitle": "{{count}} surgeons with a valid practising certificate matched to this clinic",
+      "registeredVetsSource": "Source:",
+      "registeredVetsSourceName": "Veterinary Surgeons Board of Hong Kong register"
     }
   },
   "salons": {
