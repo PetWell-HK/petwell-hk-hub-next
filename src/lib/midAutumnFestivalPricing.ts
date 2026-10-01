@@ -1,7 +1,6 @@
 export const FESTIVAL_ITEM_IDS = [
   "mooncake",
   "scarf",
-  "magnet",
   "familyPhoto",
 ] as const;
 
@@ -17,7 +16,7 @@ export interface FestivalItem {
   capacity: number | null;
   regularPrice: number;
   earlyBirdPrice: number;
-  /** Early-bird form uses 早鳥價 only for mooncake (and All-in via bundle). */
+  /** Special last-3-day workshop price uses earlyBirdPrice. */
   useEarlyBirdAlone: boolean;
   kind: FestivalItemKind;
 }
@@ -30,7 +29,7 @@ export const FESTIVAL_ITEMS: Record<FestivalItemId, FestivalItem> = {
     durationMin: 90,
     capacity: 10,
     regularPrice: 688,
-    earlyBirdPrice: 638,
+    earlyBirdPrice: 480,
     useEarlyBirdAlone: true,
     kind: "workshop",
   },
@@ -41,19 +40,8 @@ export const FESTIVAL_ITEMS: Record<FestivalItemId, FestivalItem> = {
     durationMin: 30,
     capacity: 10,
     regularPrice: 288,
-    earlyBirdPrice: 238,
-    useEarlyBirdAlone: false,
-    kind: "workshop",
-  },
-  magnet: {
-    id: "magnet",
-    name: "手繪寵物磁石貼工作坊",
-    shortName: "手繪磁石貼",
-    durationMin: 30,
-    capacity: 5,
-    regularPrice: 288,
-    earlyBirdPrice: 238,
-    useEarlyBirdAlone: false,
+    earlyBirdPrice: 180,
+    useEarlyBirdAlone: true,
     kind: "workshop",
   },
   familyPhoto: {
@@ -78,71 +66,7 @@ export interface FestivalBundle {
   featured: boolean;
 }
 
-export const FESTIVAL_BUNDLES: FestivalBundle[] = [
-  {
-    id: "all-in",
-    label: "全場通行套餐",
-    blurb: "三個工作坊及全家福攝影，全場最完整套餐",
-    items: ["mooncake", "scarf", "magnet", "familyPhoto"],
-    price: 1100,
-    featured: true,
-  },
-  {
-    id: "mooncake-scarf",
-    label: "月餅 + 圍巾",
-    blurb: "親手製作應節月餅及寵物圍巾",
-    items: ["mooncake", "scarf"],
-    price: 888,
-    featured: true,
-  },
-  {
-    id: "mooncake-magnet",
-    label: "月餅 + 磁石貼",
-    blurb: "完成課堂後可帶走手作紀念品",
-    items: ["mooncake", "magnet"],
-    price: 888,
-    featured: true,
-  },
-  {
-    id: "mooncake-family",
-    label: "月餅 + 全家福",
-    blurb: "月餅工作坊連全家福攝影",
-    items: ["mooncake", "familyPhoto"],
-    price: 788,
-    featured: true,
-  },
-  {
-    id: "scarf-magnet",
-    label: "圍巾 + 磁石貼",
-    blurb: "兩節各三十分鐘，輕鬆完成",
-    items: ["scarf", "magnet"],
-    price: 528,
-    featured: true,
-  },
-  {
-    id: "scarf-family",
-    label: "圍巾 + 全家福",
-    blurb: "",
-    items: ["scarf", "familyPhoto"],
-    price: 438,
-    featured: false,
-  },
-  {
-    id: "magnet-family",
-    label: "磁石貼 + 全家福",
-    blurb: "",
-    items: ["magnet", "familyPhoto"],
-    price: 438,
-    featured: false,
-  },
-];
-
-export const FEATURED_BUNDLES = FESTIVAL_BUNDLES.filter((bundle) => bundle.featured);
-
-/** Calm RSVP menu: one full-day offer + two easy pairs. */
-export const PRIMARY_BUNDLES = FESTIVAL_BUNDLES.filter((bundle) =>
-  bundle.id === "all-in" || bundle.id === "mooncake-scarf" || bundle.id === "mooncake-family",
-);
+export const FESTIVAL_BUNDLES: FestivalBundle[] = [];
 
 export type DiscountKind = "percent" | "fixed";
 
@@ -341,47 +265,10 @@ export function quotePercentOff(quote: PriceQuote): number {
   return percentOff(quote.originalTotal, quote.total);
 }
 
-export function isExactBundle(itemIds: FestivalItemId[], bundle: FestivalBundle): boolean {
-  const selected = sortFestivalItems(itemIds);
-  const wanted = sortFestivalItems(bundle.items);
-  return selected.length === wanted.length && selected.every((id, index) => id === wanted[index]);
-}
-
-export function appliedBundleLines(quote: PriceQuote): Extract<QuoteLine, { kind: "bundle" }>[] {
-  return quote.lines.filter((line): line is Extract<QuoteLine, { kind: "bundle" }> => line.kind === "bundle");
-}
-
 export function isWorkshopItem(id: FestivalItemId): boolean {
   return FESTIVAL_ITEMS[id].kind === "workshop";
 }
 
 export function workshopItemIds(ids: FestivalItemId[]): FestivalItemId[] {
   return ids.filter(isWorkshopItem);
-}
-
-export const ALL_IN_BUNDLE = FESTIVAL_BUNDLES.find((bundle) => bundle.id === "all-in")!;
-
-export interface AllInOffer {
-  remainingIds: FestivalItemId[];
-  remainingCount: number;
-  currentTotal: number;
-  allInPrice: number;
-  originalTotal: number;
-  extraToUpgrade: number;
-  applied: boolean;
-}
-
-/** What it would cost to jump from the current cart to the All-in package. */
-export function allInOffer(selected: FestivalItemId[]): AllInOffer {
-  const remainingIds = FESTIVAL_ITEM_IDS.filter((id) => !selected.includes(id));
-  const currentTotal = quoteFestivalItems(selected).total;
-  return {
-    remainingIds,
-    remainingCount: remainingIds.length,
-    currentTotal,
-    allInPrice: ALL_IN_BUNDLE.price,
-    originalTotal: regularTotal([...FESTIVAL_ITEM_IDS]),
-    extraToUpgrade: ALL_IN_BUNDLE.price - currentTotal,
-    applied: remainingIds.length === 0,
-  };
 }

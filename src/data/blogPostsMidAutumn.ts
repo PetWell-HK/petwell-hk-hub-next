@@ -80,12 +80,12 @@ const zhContent = `
         "十分天燈打卡位：現場採用寵物友善 LED 天燈，無需明火。",
       )}
 
-      <h3 id="workshops" style="${H3}">4. 手作工作坊：月餅、圍巾、磁石貼</h3>
+      <h3 id="workshops" style="${H3}">4. 手作工作坊：月餅、圍巾</h3>
       <p style="${P}">人類月餅又甜又油，蓮蓉、糖分及油脂對狗的腸胃負擔較大，部分更可能含有木糖醇。與其偷偷分牠一小塊，不如預先報名，在室內課室親手製作一款<strong>寵物可食用</strong>的養生花膠月餅。</p>
       <p style="${P}">今次<strong>只設花膠月餅，不設凍乾月餅</strong>。餡料包括花膠、雞肉、鱷魚肉、茯苓、鯊魚軟骨、杞子、鴨肝、蝦、吞拿魚、山藥、蛋黃、鵪鶉肉等食材。工作坊於室內課室進行，<strong>不設即場體驗，必須預先報名</strong>。</p>
-      <p style="${P}">另外亦有寵物圍巾 DIY（繡名、自選公仔）及立體狗頭磁石貼上色。早鳥套餐詳見<a href="${RSVP_PATH}" style="${LINK}">提早登記頁</a>。</p>
+      <p style="${P}">另外亦有寵物圍巾 DIY（繡名、自選公仔）。最後 3 日工作坊特價（花膠月餅 $480、圍巾 $180）詳見<a href="${RSVP_PATH}" style="${LINK}">報名頁</a>。</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;">
-        <a href="${RSVP_PATH}" style="display:inline-block;${BTN_PRIMARY};text-decoration:none;">提早登記・工作坊早鳥</a>
+        <a href="${RSVP_PATH}" style="display:inline-block;${BTN_PRIMARY};text-decoration:none;">報名工作坊・最後3日特價</a>
         <button type="button" onclick="window.dispatchEvent(new CustomEvent('petwell:open-contact',{detail:{topic:'mooncake'}}))" style="${BTN_OUTLINE}">聯絡我們報名</button>
       </div>
       ${figure(
@@ -178,7 +178,7 @@ const zhContent = `
           <p style="margin:0 0 14px;font-size:14px;line-height:1.7;color:#44403C !important;">地點：觀塘海濱 AquaBeat 活動空間 02</p>
           <p style="margin:0 0 18px;font-size:14px;line-height:1.75;color:#44403C !important;">免費入場。中秋服租借、美人魚表演、許願天燈、九份打卡一應俱全。想免費拎全家福 soft copy，先登記；花膠月餅工作坊須預先報名。</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px;">
-            <a href="${RSVP_PATH}" style="display:inline-block;border:0;background:#FF6B35;color:#ffffff !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">提早登記・工作坊早鳥</a>
+            <a href="${RSVP_PATH}" style="display:inline-block;border:0;background:#FF6B35;color:#ffffff !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">報名工作坊・最後3日特價</a>
             <a href="${RSVP_PATH}" style="display:inline-block;border:1.5px solid #FF6B35;background:#ffffff;color:#C2410C !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">報名花膠月餅</a>
             <a href="${MAPS_URL}" target="_blank" rel="noopener noreferrer" style="display:inline-block;border:1.5px solid #D6D3D1;background:#ffffff;color:#1C1917 !important;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none;">開啟地圖</a>
           </div>
@@ -230,12 +230,12 @@ const enContent = `
         "Shifen lantern photo spot: pet-friendly LED lanterns, no open flame.",
       )}
 
-      <h3 id="workshops" style="${H3}">4. Workshops: mooncakes, scarves, magnets</h3>
+      <h3 id="workshops" style="${H3}">4. Workshops: mooncakes and scarves</h3>
       <p style="${P}">Human mooncakes are sweet and oily. Lotus paste, sugar and fat are hard on a dog’s stomach, and some fillings may contain xylitol. Instead of sneaking a bite, pre-book an indoor class and make a <strong>pet-safe</strong> fish-maw mooncake together.</p>
       <p style="${P}">This year we run <strong>fish-maw mooncakes only — no freeze-dried mooncakes</strong>. Fillings may include fish maw, chicken, crocodile, poria, shark cartilage, goji, duck liver, shrimp, tuna, yam, egg yolk and quail. Classes are indoors. <strong>No walk-in spots; booking is required.</strong></p>
-      <p style="${P}">There are also pet-scarf DIY (name embroidery, charms) and 3D dog-head magnet painting. Early-bird bundles are on the <a href="${RSVP_PATH}" style="${LINK}">RSVP page</a>.</p>
+      <p style="${P}">There is also pet-scarf DIY (name embroidery, charms). Last 3 days for workshop specials (mooncake $480, scarf $180) on the <a href="${RSVP_PATH}" style="${LINK}">RSVP page</a>.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;">
-        <a href="${RSVP_PATH}" style="display:inline-block;${BTN_PRIMARY};text-decoration:none;">RSVP · workshop early bird</a>
+        <a href="${RSVP_PATH}" style="display:inline-block;${BTN_PRIMARY};text-decoration:none;">Book a workshop · last-3-day price</a>
         <button type="button" onclick="window.dispatchEvent(new CustomEvent('petwell:open-contact',{detail:{topic:'mooncake'}}))" style="${BTN_OUTLINE}">Contact us to book</button>
       </div>
       ${figure(
@@ -328,7 +328,7 @@ const enContent = `
           <p style="margin:0 0 14px;font-size:14px;line-height:1.7;color:#44403C !important;">Venue: AquaBeat Space 02, Kwun Tong Promenade</p>
           <p style="margin:0 0 18px;font-size:14px;line-height:1.75;color:#44403C !important;">Free entry. Costume rental, mermaid show, sky lanterns and Jiufen sets included. Register for a free family-portrait soft copy. Fish-maw mooncake workshop requires booking.</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px;">
-            <a href="${RSVP_PATH}" style="display:inline-block;border:0;background:#FF6B35;color:#ffffff !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">RSVP · workshop early bird</a>
+            <a href="${RSVP_PATH}" style="display:inline-block;border:0;background:#FF6B35;color:#ffffff !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">Book a workshop · last-3-day price</a>
             <a href="${RSVP_PATH}" style="display:inline-block;border:1.5px solid #FF6B35;background:#ffffff;color:#C2410C !important;font-weight:800;padding:11px 18px;border-radius:10px;text-decoration:none;">Book mooncake class</a>
             <a href="${MAPS_URL}" target="_blank" rel="noopener noreferrer" style="display:inline-block;border:1.5px solid #D6D3D1;background:#ffffff;color:#1C1917 !important;font-weight:700;padding:11px 18px;border-radius:10px;text-decoration:none;">Open map</a>
           </div>

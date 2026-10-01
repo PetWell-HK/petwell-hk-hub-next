@@ -150,7 +150,7 @@ export default function WritePlaceReviewCTA({
       const fileAttachments = await uploadPlaceReviewImages(values.photos, placeType);
       const rating = values.rating;
 
-      await createReview.mutateAsync({
+      const created = await createReview.mutateAsync({
         reviewerId: userInfo.userId,
         placeType,
         placeId,
@@ -169,7 +169,11 @@ export default function WritePlaceReviewCTA({
       clearPlaceReviewDraft();
       pendingPhotosRef.current = null;
       setInitialValues(null);
-      toast.success("已提交評價");
+      if (created && typeof created === "object" && "pendingReview" in created && created.pendingReview) {
+        toast.success("評價已送出審核，通過後會公開顯示");
+      } else {
+        toast.success("已提交評價");
+      }
       setDialogOpen(false);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "提交失敗，請稍後再試");

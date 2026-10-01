@@ -1,11 +1,13 @@
 # Architecture
 
-**Purpose:** PetWell HK public Next.js site (forum, places, events, Mid-Autumn RSVP). Places/events still use AppSync; **forum uses petwell-api HTTP**.
+**Purpose:** PetWell HK public Next.js site (forum, places, events, Mid-Autumn RSVP). Place search and forum use petwell-api HTTP. Place detail, events, and Mid-Autumn booking still use AppSync.
 
 ## Key files
 
-- GraphQL client (Client profile + places + Mid-Autumn booking): `src/services/graphqlClient.ts`
-- Forum HTTP: `src/services/forumHttp.ts`, `src/services/forumApi.ts` (forum functions), `src/config/petwellApi.ts`
+- GraphQL client (Client profile + place detail + Mid-Autumn booking): `src/services/graphqlClient.ts`
+- Forum HTTP: `src/services/forumHttp.ts`, `src/services/forumApi.ts`, `src/config/petwellApi.ts`
+- Place search HTTP: `src/services/placeSearchUtils.ts`
+- Place review submit: `src/services/placeReviewApi.ts` (`POST /api/reviews`)
 - Forum UI: `src/views/Forum.tsx`, `src/app/(forum)/forum/`
 - Mid-Autumn RSVP: `src/app/(chrome)/mid-autumn-taiwan-festival/`, `src/views/MidAutumnFestival*.tsx`, `src/components/mid-autumn-rsvp/`
 - SSR/sitemap forum: `src/lib/server/ssrContent.ts`, `src/lib/server/sitemapSources.ts`
@@ -18,4 +20,4 @@
 - Client profile (`getOrCreateClient`) stays GraphQL.
 - Mid-Autumn promo apply treats an all-null GraphQL mutation as failure.
 
-Last updated: 2026-09-06 (UTC+8)
+Last updated: 2026-10-02 (UTC+8)

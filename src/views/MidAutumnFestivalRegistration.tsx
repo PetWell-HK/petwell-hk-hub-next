@@ -23,6 +23,7 @@ import {
   MID_AUTUMN_PAYMENT_PATH,
   PET_COUNTS,
   isMidAutumnRegistrationOpen,
+  WORKSHOP_IDS,
   parseWorkshopSlotId,
   workshopSlotsOverlap,
   type EventDayId,
@@ -39,8 +40,6 @@ import { lookupMidAutumnDiscountCode, submitHoldBooking } from "@/services/midAu
 
 const perkFamily = "/assets/blog-mid-autumn-pet-hk/perk-family.jpg";
 const perkCostume = "/assets/blog-mid-autumn-pet-hk/perk-costume.jpg";
-
-const WORKSHOP_IDS: WorkshopId[] = ["mooncake", "scarf", "magnet"];
 
 const ENQUIRY_WHATSAPP = "85262722164";
 const ENQUIRY_WHATSAPP_DISPLAY = "6272 2164";
@@ -423,7 +422,7 @@ const MidAutumnFestivalRegistration = () => {
         <FormSection
           step={4}
           title="報名工作坊（選填）"
-          description="工作坊為自費項目，可自由選購，名額有限。同時報名多個工作坊可享組合優惠。"
+          description="最後 3 日報名工作坊，特價發售。名額有限，單項計價。"
         >
           <FestivalOfferBoard
             itemIds={itemIds}
@@ -431,7 +430,6 @@ const MidAutumnFestivalRegistration = () => {
             overlap={overlap}
             slotError={fieldErrors.slots}
             onToggleItem={toggleItem}
-            onSetItems={setItems}
             onPickSlot={pickSlot}
           />
           <div className="mt-4">

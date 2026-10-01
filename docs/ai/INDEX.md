@@ -7,6 +7,8 @@ Read this first. Prefer these docs for architecture/file map; open code to edit 
 | events | Mid-Autumn RSVP funnel | [events/mid-autumn-rsvp.md](./events/mid-autumn-rsvp.md) |
 | clinics | VSB registered vets on clinic pages | [clinics/gov-vets.md](./clinics/gov-vets.md) |
 | forum | HTTP via petwell-api | [forum/http.md](./forum/http.md) |
+| places | HTTP place search | [places/search.md](./places/search.md) |
 | platform | Amplify freeze / petwell-api | [platform/change-cases.md](./platform/change-cases.md) |
 | reviews | Google author name + initials avatar | [reviews/author-display.md](./reviews/author-display.md) |
+| reviews | Place review submit + moderation | [reviews/submit.md](./reviews/submit.md) |
 | shared | Next.js public site + AppSync | [architecture.md](./architecture.md) |

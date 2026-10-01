@@ -24,8 +24,8 @@ describe("workshopSlotsOverlap", () => {
   it("allows back-to-back sessions", () => {
     expect(
       workshopSlotsOverlap({
-        scarf: "scarf|fri|16:00",
-        magnet: "magnet|fri|16:30",
+        mooncake: "mooncake|fri|16:00",
+        scarf: "scarf|fri|17:30",
       }),
     ).toBe(false);
   });
@@ -54,7 +54,7 @@ describe("discountFromLookup", () => {
     expect(discountFromLookup(null)).toBeNull();
   });
 
-  it("applies 10% after the workshop bundle price", () => {
+  it("applies 10% after item prices", () => {
     const discount = discountFromLookup({
       valid: true,
       code: "BOAT",
@@ -63,8 +63,8 @@ describe("discountFromLookup", () => {
       label: "推廣碼九折",
     });
     const quote = quoteFestivalItems(["mooncake", "scarf"], discount);
-    expect(quote.subtotal).toBe(888);
-    expect(quote.discountAmount).toBe(89);
-    expect(quote.total).toBe(799);
+    expect(quote.subtotal).toBe(660);
+    expect(quote.discountAmount).toBe(66);
+    expect(quote.total).toBe(594);
   });
 });

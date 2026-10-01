@@ -1,4 +1,4 @@
-import type { FestivalDiscountCode, FestivalItemId } from "@/lib/midAutumnFestivalPricing";
+import { FESTIVAL_ITEMS, type FestivalDiscountCode, type FestivalItemId } from "@/lib/midAutumnFestivalPricing";
 
 export const MID_AUTUMN_REGISTRATION_PATH = "/mid-autumn-taiwan-festival";
 export const MID_AUTUMN_PAYMENT_PATH = "/mid-autumn-taiwan-festival/pay";
@@ -102,12 +102,6 @@ const SCARF_STARTS: Record<EventDayId, string[]> = {
   sun: ["15:00", "16:00", "17:00", "18:00", "19:00", "20:00"],
 };
 
-const MAGNET_STARTS: Record<EventDayId, string[]> = {
-  fri: ["16:30", "17:00", "17:30", "18:30", "19:00", "19:30"],
-  sat: ["15:30", "16:30", "17:30", "18:30", "19:30", "20:30"],
-  sun: ["15:30", "16:30", "17:30", "18:30", "19:30", "20:30"],
-};
-
 function allSlots(
   itemId: FestivalItemId,
   starts: Record<EventDayId, string[]>,
@@ -116,13 +110,17 @@ function allSlots(
   return EVENT_DAYS.flatMap((day) => slotsFor(itemId, day.id, starts[day.id], durationMin));
 }
 
-export const WORKSHOP_SLOTS: Record<"mooncake" | "scarf" | "magnet", WorkshopSlot[]> = {
+export const WORKSHOP_IDS = ["mooncake", "scarf"] as const;
+export type WorkshopId = (typeof WORKSHOP_IDS)[number];
+
+export const WORKSHOP_SLOTS: Record<WorkshopId, WorkshopSlot[]> = {
   mooncake: allSlots("mooncake", MOONCAKE_STARTS, 90),
   scarf: allSlots("scarf", SCARF_STARTS, 30),
-  magnet: allSlots("magnet", MAGNET_STARTS, 30),
 };
 
-export type WorkshopId = "mooncake" | "scarf" | "magnet";
+function isWorkshopId(id: string): id is WorkshopId {
+  return (WORKSHOP_IDS as readonly string[]).includes(id);
+}
 
 export function slotsForDays(itemId: WorkshopId, dayIds: EventDayId[]): WorkshopSlot[] {
   if (dayIds.length === 0) return [];
@@ -134,7 +132,7 @@ export function parseWorkshopSlotId(
 ): { itemId: WorkshopId; dayId: EventDayId; start: string } | null {
   const [itemId, dayId, start] = id.split("|");
   if (!itemId || !dayId || !start) return null;
-  if (itemId !== "mooncake" && itemId !== "scarf" && itemId !== "magnet") return null;
+  if (!isWorkshopId(itemId)) return null;
   if (dayId !== "fri" && dayId !== "sat" && dayId !== "sun") return null;
   return { itemId, dayId, start };
 }
@@ -151,7 +149,7 @@ export function workshopSlotsOverlap(
     .map(parseWorkshopSlotId)
     .filter((slot): slot is NonNullable<typeof slot> => Boolean(slot))
     .map((slot) => {
-      const duration = slot.itemId === "mooncake" ? 90 : 30;
+      const duration = FESTIVAL_ITEMS[slot.itemId].durationMin;
       const start = timeToMinutes(slot.start);
       return { dayId: slot.dayId, start, end: start + duration };
     });

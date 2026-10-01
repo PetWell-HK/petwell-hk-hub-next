@@ -10,6 +10,7 @@ import {
   type MidAutumnDiscountLookup,
   type PetCountId,
   type PetTypeId,
+  WORKSHOP_IDS,
   type WorkshopId,
 } from "@/data/midAutumnFestival2026";
 import {
@@ -317,8 +318,8 @@ function dayLabel(id: EventDayId): string {
   return EVENT_DAYS.find((day) => day.id === id)?.label ?? id;
 }
 
-function itemName(id: FestivalItemId): string {
-  return FESTIVAL_ITEMS[id].name;
+function itemName(id: string): string {
+  return id in FESTIVAL_ITEMS ? FESTIVAL_ITEMS[id as FestivalItemId].name : id;
 }
 
 export function formatBookingMessage(
@@ -326,7 +327,7 @@ export function formatBookingMessage(
   stage: "hold" | "paid" | "free",
 ): string {
   const quote = booking.quote;
-  const slotLines = (["mooncake", "scarf", "magnet"] as WorkshopId[])
+  const slotLines = WORKSHOP_IDS
     .map((id) => {
       const slot = booking.workshopSlots[id];
       if (!slot) return null;
