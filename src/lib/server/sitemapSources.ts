@@ -29,34 +29,35 @@ function entry(
 }
 
 async function paginateSearchIds(
-  query: string,
-  key: string,
-  extraVars: Record<string, unknown> = {},
-  pages = 8,
+  placeType: string,
+  extra: Record<string, string> = {},
+  pages = 40,
 ): Promise<string[]> {
+  const base = await getPetwellApiBase();
   const ids: string[] = [];
-  let nextToken: unknown = undefined;
+  let offset = 0;
   for (let i = 0; i < pages; i += 1) {
-    const data = await serverGraphqlFetch<
-      Record<string, { items?: IdItem[]; nextToken?: unknown } | null>
-    >(
-      query,
-      {
-        location: HK_LOCATION,
-        limit: 500,
-        sortMethod: "DISTANCE",
-        nextToken,
-        ...extraVars,
-      },
-      86400,
-    );
-    const page = data?.[key];
-    const items = page?.items || [];
+    const params = new URLSearchParams({
+      type: placeType,
+      lat: String(HK_LOCATION.lat),
+      lon: String(HK_LOCATION.lon),
+      limit: "100",
+      sort: "rating-desc",
+      nextToken: String(offset),
+      ...extra,
+    });
+    const response = await fetch(`${base}/api/places/search?${params.toString()}`, {
+      next: { revalidate: 86400 },
+    });
+    if (!response.ok) break;
+    const page = await response.json() as { items?: IdItem[]; nextToken?: number[] };
+    const items = page.items || [];
     for (const item of items) {
       if (item?.id) ids.push(item.id);
     }
-    nextToken = page?.nextToken;
-    if (!nextToken || items.length === 0) break;
+    const next = page.nextToken?.[0];
+    if (next == null || items.length === 0) break;
+    offset = Number(next);
   }
   return [...new Set(ids)];
 }
@@ -78,42 +79,6 @@ async function paginateListIds(query: string, key: string, pages = 8): Promise<s
   }
   return [...new Set(ids)];
 }
-
-const RESTAURANT_IDS_QUERY = `
-  query DynamoRestaurantSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $verified: Boolean, $nextToken: [Float]) {
-    dynamoRestaurantSearch(location: $location, limit: $limit, sortMethod: $sortMethod, verified: $verified, nextToken: $nextToken) {
-      items { id }
-      nextToken
-    }
-  }
-`;
-
-const CLINIC_IDS_QUERY = `
-  query DynamoClinicSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $nextToken: [Float]) {
-    dynamoClinicSearch(location: $location, limit: $limit, sortMethod: $sortMethod, nextToken: $nextToken) {
-      items { id }
-      nextToken
-    }
-  }
-`;
-
-const SALON_IDS_QUERY = `
-  query DynamoSalonSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $nextToken: [Float]) {
-    dynamoSalonSearch(location: $location, limit: $limit, sortMethod: $sortMethod, nextToken: $nextToken) {
-      items { id }
-      nextToken
-    }
-  }
-`;
-
-const LODGING_IDS_QUERY = `
-  query DynamoLodgingSearch($location: LocationInput!, $limit: Int, $sortMethod: String, $nextToken: [Float]) {
-    dynamoLodgingSearch(location: $location, limit: $limit, sortMethod: $sortMethod, nextToken: $nextToken) {
-      items { id }
-      nextToken
-    }
-  }
-`;
 
 const LIST_MALLS_QUERY = `
   query ListMalls($limit: Int, $nextToken: String) {
@@ -203,10 +168,10 @@ export async function buildDynamicSitemapEntries(): Promise<MetadataRoute.Sitema
     reviewIds,
     nutritionIds,
   ] = await Promise.all([
-    paginateSearchIds(RESTAURANT_IDS_QUERY, "dynamoRestaurantSearch", { verified: true }),
-    paginateSearchIds(CLINIC_IDS_QUERY, "dynamoClinicSearch"),
-    paginateSearchIds(SALON_IDS_QUERY, "dynamoSalonSearch"),
-    paginateSearchIds(LODGING_IDS_QUERY, "dynamoLodgingSearch"),
+    paginateSearchIds("restaurant", { verified: "true" }),
+    paginateSearchIds("clinic"),
+    paginateSearchIds("salon"),
+    paginateSearchIds("lodging"),
     paginateListIds(LIST_MALLS_QUERY, "listMalls"),
     paginateListIds(LIST_HOME_VISITS_QUERY, "listHomeVisitProviders"),
     paginateListIds(LIST_EVENTS_QUERY, "listOrganizedEvents"),

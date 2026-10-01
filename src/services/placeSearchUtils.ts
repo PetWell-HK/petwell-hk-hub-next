@@ -1,9 +1,6 @@
+import { getPetwellApiBase } from '@/config/petwellApi';
 import { mapFilterToRegionKey } from '@/data/hongKongDistricts';
-import { graphqlQuery } from '@/services/graphqlClient';
-import {
-  getPlaceSearchQueryConfig,
-  type PlaceSearchType,
-} from '@/services/placeSearchConfig';
+import { type PlaceSearchType } from '@/services/placeSearchConfig';
 
 export const HK_CENTER = { lat: 22.3193, lon: 114.1694 };
 
@@ -108,29 +105,55 @@ export async function runPlaceSearch<TItem>(
   variables: Record<string, unknown>,
   options: RunPlaceSearchOptions = {},
 ): Promise<PlaceSearchResult<TItem>> {
-  const { query, key, backend } = getPlaceSearchQueryConfig(placeType, options);
   const fallback = options.fallback ?? 'Search failed';
+  const params = new URLSearchParams();
+  params.set('type', placeType);
+  const location = variables.location as { lat?: number; lon?: number } | undefined;
+  if (location?.lat != null) params.set('lat', String(location.lat));
+  if (location?.lon != null) params.set('lon', String(location.lon));
+  const set = (key: string, value: unknown) => {
+    if (value === undefined || value === null || value === '') return;
+    if (Array.isArray(value)) {
+      if (value.length) params.set(key, value.map(String).join(','));
+      return;
+    }
+    if (typeof value === 'boolean') {
+      params.set(key, value ? 'true' : 'false');
+      return;
+    }
+    params.set(key, String(value));
+  };
+  set('q', variables.keyword);
+  set('region', variables.region);
+  set('district', variables.district);
+  set('districts', variables.districts);
+  set('sort', variables.sortMethod);
+  set('is247', variables.is247);
+  set('verified', variables.verified);
+  set('fehdLicensed', variables.fehdLicensed);
+  set('petAccessArea', variables.petAccessArea);
+  set('petEntryPolicy', variables.petEntryPolicy);
+  set('includeDevListings', variables.includeDevListings);
+  set('limit', variables.limit);
+  const token = Array.isArray(variables.nextToken) ? variables.nextToken[0] : variables.nextToken;
+  set('nextToken', token);
 
   try {
-    const result = await graphqlQuery<
-      Record<string, { items?: TItem[]; total?: number; nextToken?: number[] | null }>
-    >(query, variables);
-
-    const payload = result[key];
+    const base = await getPetwellApiBase();
+    const response = await fetch(`${base}/api/places/search?${params.toString()}`);
+    const payload = await response.json().catch(() => ({})) as {
+      items?: TItem[];
+      total?: number;
+      nextToken?: number[] | null;
+      error?: string;
+    };
+    if (!response.ok) throw new Error(payload.error || fallback);
     return {
-      items: payload?.items ?? [],
-      total: payload?.total ?? 0,
-      nextToken: normalizePlaceSearchNextToken(payload?.nextToken),
+      items: payload.items ?? [],
+      total: payload.total ?? 0,
+      nextToken: normalizePlaceSearchNextToken(payload.nextToken),
     };
   } catch (error) {
-    if (backend === 'dynamo' && isPlaceSearchLambdaMissingError(error)) {
-      throw new Error(getPlaceSearchLambdaMissingMessage());
-    }
-    if (backend === 'opensearch' && isOpenSearchIndexMissingError(error)) {
-      throw new Error(
-        'Place search index is not ready yet. Please wait a few minutes after deployment.',
-      );
-    }
     throw new Error(formatGraphqlError(error, fallback));
   }
 }

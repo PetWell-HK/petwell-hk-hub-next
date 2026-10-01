@@ -28,8 +28,8 @@ import {
   type ApiMall,
   type Mall,
 } from "@/services/mallApi";
-import { getPlaceSearchQueryConfig, type PlaceSearchType } from "@/services/placeSearchConfig";
-import { applyPlaceDistrictSearchVariables, getPlaceSearchRegionParam } from "@/services/placeSearchUtils";
+import { type PlaceSearchType } from "@/services/placeSearchConfig";
+import { applyPlaceDistrictSearchVariables, getPlaceSearchRegionParam, runPlaceSearch } from "@/services/placeSearchUtils";
 import {
   GET_RESTAURANT_QUERY,
   GET_RESTAURANT_QUERY_LEGACY,
@@ -186,25 +186,12 @@ async function searchPlacePage<TItem>(
   placeType: PlaceSearchType,
   extraVariables: Record<string, unknown> = {},
 ): Promise<{ items: TItem[]; total: number; nextToken: number[] | null }> {
-  const { query, key } = getPlaceSearchQueryConfig(placeType);
-  const data = await serverGraphqlFetch<
-    Record<string, { items?: TItem[]; total?: number; nextToken?: number[] | null }>
-  >(
-    query,
-    {
-      location: HK_CENTER,
-      limit: RESTAURANT_SEARCH_PAGE_SIZE,
-      sortMethod: "rating-desc",
-      ...extraVariables,
-    },
-    900,
-  );
-  const payload = data?.[key];
-  return {
-    items: payload?.items ?? [],
-    total: payload?.total ?? 0,
-    nextToken: payload?.nextToken ?? null,
-  };
+  return runPlaceSearch<TItem>(placeType, {
+    location: HK_CENTER,
+    limit: RESTAURANT_SEARCH_PAGE_SIZE,
+    sortMethod: "rating-desc",
+    ...extraVariables,
+  });
 }
 
 export async function ssrRestaurant(id: string): Promise<SsrEntity<ApiRestaurant>> {
