@@ -42,7 +42,7 @@ export default function RoutePage() {
             name: "入場",
             price: "0",
             priceCurrency: "HKD",
-            availability: "https://schema.org/InStock",
+            availability: "https://schema.org/SoldOut",
             url: absoluteUrl("/mid-autumn-taiwan-festival"),
           },
         }}

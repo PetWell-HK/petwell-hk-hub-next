@@ -11,6 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
+import { EventEndedNotice } from "@/components/mid-autumn-rsvp/EventEndedNotice";
 import { FestivalRsvpHero } from "@/components/mid-autumn-rsvp/FestivalRsvpHero";
 import { FestivalOfferBoard } from "@/components/mid-autumn-rsvp/FestivalOfferBoard";
 import { FestivalTicketBar } from "@/components/mid-autumn-rsvp/FestivalTicketBar";
@@ -254,6 +255,17 @@ const MidAutumnFestivalRegistration = () => {
       setSubmitting(false);
     }
   };
+
+  if (!registrationOpen) {
+    return (
+      <div className="min-h-[100dvh] bg-background">
+        <div className="container mx-auto max-w-2xl px-4 pb-16 pt-6 lg:pt-10">
+          <FestivalRsvpHero />
+          <EventEndedNotice className="mt-8" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-[100dvh] bg-background">

@@ -30,6 +30,14 @@ Promo codes apply on the RSVP workshop step. WhatsApp **6272 2164**. Pay by bank
 3. Paid → `/pay?ref=` receipt upload; free → `/confirmed?ref=`.
 4. Confirmed copy points back to last-3-day workshop prices if they skipped add-ons.
 
+## Closed
+
+Festival ended 27 Sep 2026 (UTC+8). `isMidAutumnRegistrationOpen` and `isMidAutumnVendorApplicationOpen` return false.
+
+- `/mid-autumn-taiwan-festival` and `/vendor-application` show `EventEndedNotice` and do not submit.
+- Mid-Autumn pages in `ContactUsWidget` show the same notice instead of `ContactUsForm`.
+- `manageMidAutumnBooking` rejects `submitMidAutumnBooking` and `submitWhatsAppSignup`. Payment proof on an existing booking still works.
+
 ## Gotchas
 
 - Magnet workshop is not offered. Do not reintroduce a $288 magnet special.
@@ -39,4 +47,4 @@ Promo codes apply on the RSVP workshop step. WhatsApp **6272 2164**. Pay by bank
 - Images live in `public/assets/blog-mid-autumn-pet-hk/`.
 - Timezone UTC+8. Festival 25–27 Sep 2026.
 
-Last updated: 2026-10-02 (UTC+8)
+Last updated: 2026-10-03 (UTC+8)

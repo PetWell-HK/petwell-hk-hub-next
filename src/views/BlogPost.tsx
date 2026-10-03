@@ -187,44 +187,15 @@ const BlogPost = () => {
                     </dl>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">
                       {isEn
-                        ? "All pets welcome. Start with free hanfu rental and the mermaid show, then sky lanterns, workshops and photo sets. Mooncake class needs a booking."
-                        : "歡迎所有毛孩參加。先免費租中秋服、睇美人魚，再放天燈、做工作坊同打卡。想整花膠月餅要預先報名。"}
+                        ? "This event has ended. Thanks for coming — see you at the next one."
+                        : "活動已結束，多謝支持。期待下個活動。"}
                     </p>
                   </div>
-                  <div className="mt-4 flex flex-col gap-3 border-t border-border/70 pt-3">
-                    <div className="flex flex-wrap gap-2">
-                      <Button type="button" size="sm" asChild>
-                        <AppLink href="/mid-autumn-taiwan-festival">
-                          {isEn ? "RSVP · free family portrait" : "立即登記・免費送全家福"}
-                        </AppLink>
-                      </Button>
-                      <Button type="button" size="sm" variant="outline" asChild>
-                        <AppLink href="/mid-autumn-taiwan-festival">
-                          {isEn ? "Book mooncake class" : "報名花膠月餅"}
-                        </AppLink>
-                      </Button>
-                      <Button asChild size="sm" variant="ghost">
-                        <a href="#outfit">{isEn ? "See the trail" : "睇行程"}</a>
-                      </Button>
-                    </div>
-                    <p className="text-xs text-muted-foreground">
-                      {isEn ? (
-                        <>
-                          Free walk-in entry. Vendors, press or brands please{" "}
-                          <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
-                            apply here
-                          </AppLink>
-                          .
-                        </>
-                      ) : (
-                        <>
-                          免費入場，帶毛孩即場參加就得。檔主、傳媒或品牌請用{" "}
-                          <AppLink href="/vendor-application" className="font-semibold text-foreground underline-offset-2 hover:underline">
-                            開檔申請
-                          </AppLink>
-                          。
-                        </>
-                      )}
+                  <div className="mt-4 border-t border-border/70 pt-3">
+                    <p className="text-sm font-medium text-foreground">
+                      {isEn
+                        ? "Registration and vendor applications are closed."
+                        : "報名及檔主申請已截止，不再接收新申請。"}
                     </p>
                   </div>
                 </div>

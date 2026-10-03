@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "毛孩沉浸式台灣中秋祭｜免費入場預留手帶 | PetWell × AquaBeat",
+  title: "毛孩沉浸式台灣中秋祭｜活動已結束 | PetWell × AquaBeat",
   description:
-    "2026年9月25日至27日，觀塘海濱 AquaBeat。免費入場，預先登記即送全家福電子相片及嫦娥服免費租借。最後 3 日報名工作坊特價：花膠月餅 $480、圍巾 $180。",
+    "2026年9月25日至27日觀塘海濱中秋活動已經完結。報名已經截止，不再接收新申請。多謝支持，期待下個活動。",
   keywords: [
     "寵物中秋好去處",
     "毛孩沉浸式台灣中秋祭",

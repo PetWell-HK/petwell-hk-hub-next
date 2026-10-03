@@ -5,14 +5,14 @@ export const MID_AUTUMN_PAYMENT_PATH = "/mid-autumn-taiwan-festival/pay";
 export const MID_AUTUMN_CONFIRMED_PATH = "/mid-autumn-taiwan-festival/confirmed";
 
 /**
- * Public RSVP registration gate.
- * Append `?comingSoon=1` to preview the coming-soon dialog (e.g. for QA).
+ * Festival ended 27 Sep 2026 (UTC+8). RSVP and vendor applications stay closed.
  */
 export function isMidAutumnRegistrationOpen(): boolean {
-  if (typeof window !== "undefined") {
-    return new URLSearchParams(window.location.search).get("comingSoon") !== "1";
-  }
-  return true;
+  return false;
+}
+
+export function isMidAutumnVendorApplicationOpen(): boolean {
+  return false;
 }
 
 export const PAYMENT_HOLD_MS = 24 * 60 * 60 * 1000;

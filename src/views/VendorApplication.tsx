@@ -27,7 +27,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
+import { EventEndedNotice } from "@/components/mid-autumn-rsvp/EventEndedNotice";
 import { createContactUsReport } from "@/services/reportService";
+import { isMidAutumnVendorApplicationOpen } from "@/data/midAutumnFestival2026";
 import { cn } from "@/lib/utils";
 
 const vendorEventCover = "/assets/vendor-event-cover.jpg";
@@ -374,6 +376,10 @@ const VendorApplication = () => {
   };
 
   const handleSubmit = async () => {
+    if (!isMidAutumnVendorApplicationOpen()) {
+      toast.error("活動已結束，不再接收新申請", { duration: 3000 });
+      return;
+    }
     if (!validateStep("terms") || !joinType) return;
 
     const parsed = applicationSchema.safeParse(form);
@@ -417,6 +423,39 @@ const VendorApplication = () => {
   };
 
   const isLastStep = currentStep === stepIds.length - 1;
+  const applicationsOpen = isMidAutumnVendorApplicationOpen();
+
+  if (!applicationsOpen) {
+    return (
+      <div className="min-h-screen bg-[hsl(30_20%_97%)]">
+        <div className="border-b border-border bg-background">
+          <img
+            src={vendorEventCover}
+            alt="PetWell x Aquabeat 觀塘寵物市集｜檔主招募 09-2026"
+            className="block w-full h-auto"
+            width={1024}
+            height={576}
+            fetchPriority="high"
+          />
+          <div className="container mx-auto max-w-2xl px-4 py-5 md:py-6">
+            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5">
+              官方申請表格
+            </p>
+            <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-foreground">
+              PetWell × AquaBeat 觀塘寵物市集
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">檔主及贊助招募 · 2026年9月</p>
+          </div>
+        </div>
+        <main className="container mx-auto max-w-2xl px-4 py-8 md:py-10">
+          <EventEndedNotice
+            title="檔主及贊助申請已截止"
+            body="今次中秋市集已經完結，我們不再接收新的開檔或贊助申請。多謝支持，期待下個活動。"
+          />
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[hsl(30_20%_97%)]">

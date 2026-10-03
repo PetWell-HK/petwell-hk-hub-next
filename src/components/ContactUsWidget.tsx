@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation";
 import { MessageCircle, X } from "lucide-react";
 import ContactUsForm from "@/components/ContactUsForm";
+import { EventEndedNotice } from "@/components/mid-autumn-rsvp/EventEndedNotice";
 import { cn } from "@/lib/utils";
 
 export type ContactTopic = "mooncake" | "family-photo" | "event";
@@ -142,10 +143,12 @@ const ContactUsWidget = () => {
           <div className="flex items-start justify-between gap-3 border-b border-border px-4 py-3">
             <div className="min-w-0 pr-2">
               <h2 id="contact-us-title" className="text-base font-semibold leading-tight">
-                {preset?.title ?? t("about.contact.title")}
+                {isMidAutumnPage ? "活動已結束" : (preset?.title ?? t("about.contact.title"))}
               </h2>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                {preset?.description ?? t("about.contact.description")}
+                {isMidAutumnPage
+                  ? "今次中秋活動已經完結，不再接收新報名。"
+                  : (preset?.description ?? t("about.contact.description"))}
               </p>
             </div>
             <button
@@ -159,18 +162,16 @@ const ContactUsWidget = () => {
           </div>
 
           <div className="max-h-[min(70vh,560px)] overflow-y-auto px-4 py-4">
-            <ContactUsForm
-              key={`${isMidAutumnPage ? (contactTopic ?? "event") : "site"}`}
-              sourceLabel={
-                preset?.source ??
-                (isMidAutumnPage
-                  ? "[活動查詢] 毛孩沉浸台式中秋節 2026"
-                  : "[Site Contact Widget]")
-              }
-              defaultMessage={preset?.message}
-              compact
-              onSuccess={() => setIsOpen(false)}
-            />
+            {isMidAutumnPage ? (
+              <EventEndedNotice className="border-0 bg-transparent px-1 py-2" />
+            ) : (
+              <ContactUsForm
+                key="site"
+                sourceLabel="[Site Contact Widget]"
+                compact
+                onSuccess={() => setIsOpen(false)}
+              />
+            )}
           </div>
         </div>
 
@@ -198,7 +199,7 @@ const ContactUsWidget = () => {
             <MessageCircle className="h-5 w-5" />
           )}
           <span className="max-[380px]:sr-only">
-            {isMidAutumnPage ? "活動查詢" : t("contactWidget.label")}
+            {isMidAutumnPage ? "活動已結束" : t("contactWidget.label")}
           </span>
         </button>
       </div>
