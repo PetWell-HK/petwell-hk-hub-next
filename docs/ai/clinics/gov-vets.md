@@ -1,6 +1,6 @@
 # Clinic registered vets (web)
 
-**Purpose:** Show VSB-registered vets on petwellhk.com clinic detail pages. App later.
+**Purpose:** Show VSB-registered vets on petwellhk.com clinic detail pages. The mobile app has its own section; see petwell `docs/ai/discover/clinic-vets.md`.
 
 ## Key files
 
@@ -23,5 +23,6 @@
 ## Related
 
 - petwell-api `docs/ai/clinics/gov-vets.md`
+- petwell `docs/ai/discover/clinic-vets.md`
 
-Last updated: 2026-09-14 (UTC+8)
+Last updated: 2026-10-06 (UTC+8)
