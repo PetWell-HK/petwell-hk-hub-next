@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { signUp, confirmSignUp, resendSignUpCode, resetPassword, confirmResetPassword, getCurrentUser, confirmSignIn, signOut } from "aws-amplify/auth";
+import { signUp, confirmSignUp, resendSignUpCode, resetPassword, confirmResetPassword, getCurrentUser, confirmSignIn, signOut, fetchAuthSession } from "aws-amplify/auth";
+import { claimPhoneEmail, cognitoLoginUsername, isPhoneBootstrapEmail, looksLikePhoneLogin } from "@/lib/phoneLogin";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -87,6 +88,7 @@ const AuthPanel = () => {
   const [timeRemaining, setTimeRemaining] = useState(60);
   const [confirmationCode, setConfirmationCode] = useState("");
   const [password, setPassword] = useState("");
+  const [claimEmail, setClaimEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [userType, setUserType] = useState<"NEW" | "EXISTING" | null>(null);
@@ -209,12 +211,22 @@ const AuthPanel = () => {
 
     try {
       const { isSignedIn, nextStep } = await signInWithAutoSignOut({
-        username: email,
+        username: cognitoLoginUsername(email),
         password,
         options: { authFlowType: "USER_PASSWORD_AUTH" }
       });
 
       if (isSignedIn) {
+        const session = await fetchAuthSession();
+        const tokenEmail = session.tokens?.idToken?.payload?.email;
+        if (isPhoneBootstrapEmail(typeof tokenEmail === "string" ? tokenEmail : "")) {
+          setClaimEmail("");
+          setNewPassword("");
+          setConfirmNewPassword("");
+          setView("CLAIM_EMAIL");
+          setLoading(false);
+          return;
+        }
         await completeLogin();
         return;
       }
@@ -330,6 +342,14 @@ const AuthPanel = () => {
   const handleEmailSubmit = async () => {
     setError(null);
     setLoading(true);
+
+    if (looksLikePhoneLogin(email)) {
+      setUserType("EXISTING");
+      setPassword("");
+      setView("PASSWORD");
+      setLoading(false);
+      return;
+    }
 
     if (!email || !isValidEmail(email)) {
       setError(t("auth.emailInvalid"));
@@ -670,6 +690,47 @@ const AuthPanel = () => {
     }
   };
 
+  const handleClaimEmail = async () => {
+    const nextEmail = claimEmail.trim().toLowerCase();
+    if (!nextEmail.includes("@") || isPhoneBootstrapEmail(nextEmail)) {
+      setError("請輸入有效電郵");
+      return;
+    }
+    if (newPassword.length < 8 || !/[a-zA-Z]/.test(newPassword)) {
+      setError("密碼至少要 8 個字元，並包含英文字母");
+      return;
+    }
+    if (newPassword !== confirmNewPassword) {
+      setError("兩次輸入的密碼不一致");
+      return;
+    }
+    if (newPassword === "Suppaw2026") {
+      setError("請設定一個新的密碼");
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    try {
+      const session = await fetchAuthSession();
+      const token = session.tokens?.idToken?.toString();
+      if (!token) throw new Error("請先登入");
+      await claimPhoneEmail(token, nextEmail, newPassword);
+      await signOutUser();
+      const { isSignedIn } = await signInWithAutoSignOut({
+        username: nextEmail,
+        password: newPassword,
+        options: { authFlowType: "USER_PASSWORD_AUTH" },
+      });
+      if (!isSignedIn) throw new Error("登入失敗");
+      setEmail(nextEmail);
+      await completeLogin();
+    } catch (claimError: unknown) {
+      const message = claimError instanceof Error ? claimError.message : "未能改成電郵登入";
+      setError(message);
+      setLoading(false);
+    }
+  };
+
   const getTitle = () => {
     switch (currentView) {
       case "LANDING":
@@ -682,6 +743,8 @@ const AuthPanel = () => {
         return t("auth.completeProfile");
       case "NEW_PASSWORD":
         return t("auth.setNewPassword");
+      case "CLAIM_EMAIL":
+        return "設定電郵";
       default: {
         const _exhaustive: never = currentView;
         return _exhaustive;
@@ -701,6 +764,8 @@ const AuthPanel = () => {
         return t("auth.completeProfileDesc");
       case "NEW_PASSWORD":
         return t("auth.newPasswordRequiredDesc");
+      case "CLAIM_EMAIL":
+        return "請留下你的電郵和新密碼。之後用電郵登入。";
       default: {
         const _exhaustive: never = currentView;
         return _exhaustive;
@@ -758,7 +823,7 @@ const AuthPanel = () => {
                 <Label htmlFor="email">{t("auth.email")}</Label>
                 <Input
                   id="email"
-                  type="email"
+                  type="text"
                   value={email}
                   onChange={(e) => handleEmailChange(e.target.value)}
                   placeholder={t("auth.emailPlaceholder")}
@@ -904,6 +969,7 @@ const AuthPanel = () => {
                 )}
               </Button>
 
+              {!looksLikePhoneLogin(email) && (
               <div className="text-center">
                 <Button
                   variant="link"
@@ -914,6 +980,7 @@ const AuthPanel = () => {
                   {t("auth.forgotPassword")}
                 </Button>
               </div>
+              )}
 
               <p className="text-xs text-muted-foreground text-center">
                 {t("authLinking.signInMethodHint")}
@@ -1022,6 +1089,53 @@ const AuthPanel = () => {
                   {t("auth.back")}
                 </Button>
               </div>
+            </>
+          )}
+
+          {currentView === "CLAIM_EMAIL" && (
+            <>
+              <div className="space-y-2">
+                <Label htmlFor="claim-email">電郵</Label>
+                <Input
+                  id="claim-email"
+                  type="email"
+                  value={claimEmail}
+                  onChange={(e) => setClaimEmail(e.target.value)}
+                  autoComplete="email"
+                  disabled={loading}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="claim-password">新密碼</Label>
+                <Input
+                  id="claim-password"
+                  type="password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  autoComplete="new-password"
+                  disabled={loading}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="claim-confirm">確認新密碼</Label>
+                <Input
+                  id="claim-confirm"
+                  type="password"
+                  value={confirmNewPassword}
+                  onChange={(e) => setConfirmNewPassword(e.target.value)}
+                  autoComplete="new-password"
+                  disabled={loading}
+                />
+              </div>
+              <Button
+                onClick={handleClaimEmail}
+                disabled={loading || !claimEmail || !newPassword || !confirmNewPassword}
+                className="w-full bg-[#FF902A] hover:bg-[#FF7A1A] text-white"
+                size="lg"
+              >
+                {loading ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : null}
+                完成並登入
+              </Button>
             </>
           )}
 

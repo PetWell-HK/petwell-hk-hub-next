@@ -4,6 +4,7 @@ Read this first. Prefer these docs for architecture/file map; open code to edit 
 
 | Domain | Topic | File |
 |--------|-------|------|
+| auth | Phone login then email claim | [auth/phone-login.md](./auth/phone-login.md) |
 | events | Mid-Autumn RSVP funnel | [events/mid-autumn-rsvp.md](./events/mid-autumn-rsvp.md) |
 | clinics | VSB registered vets on clinic pages | [clinics/gov-vets.md](./clinics/gov-vets.md) |
 | forum | HTTP via petwell-api | [forum/http.md](./forum/http.md) |

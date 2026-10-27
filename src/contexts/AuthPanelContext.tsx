@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useRef, useCallback, ReactNode } from 'react';
 
-type AuthView = "LANDING" | "PASSWORD" | "OTP" | "PROFILE" | "NEW_PASSWORD";
+type AuthView = "LANDING" | "PASSWORD" | "OTP" | "PROFILE" | "NEW_PASSWORD" | "CLAIM_EMAIL";
 
 interface AuthPanelContextType {
   isOpen: boolean;
